@@ -67,6 +67,17 @@ Um servidor MCP roda como um processo à parte, com acesso ao que você autoriza
 - **Escopo.** Peça o menor conjunto de permissões que a tarefa exige. Um servidor de banco de dados com acesso só de leitura remove uma categoria inteira de risco, mesmo quando o acesso de escrita está disponível.
 - **Auditabilidade.** Se o servidor é open source, alguém do time já leu o código antes de conectar em produção? Um servidor fechado, sem essa possibilidade, exige mais confiança na origem para compensar.
 
+## Quanto de autonomia liberar
+
+A régua de autonomia e supervisão vista em [Conceitos](conceitos.md#autonomia-e-supervisao-o-que-o-ambiente-deixa-o-agente-decidir-sozinho) se decide caso a caso, não uma vez para o time inteiro. Três perguntas ajudam:
+
+- A ação é fácil de reverter (editar um arquivo ainda não commitado) ou difícil (enviar um e-mail, fazer deploy, apagar dado em produção)? Ação fácil de reverter aceita mais autonomia; ação difícil de reverter pede confirmação antes de executar.
+- O agente está rodando dentro de um ambiente isolado, como um worktree ou um contêiner descartável, ou direto no ambiente de produção? Isolamento reduz o raio de impacto de um erro, o que justifica liberar mais autonomia dentro dele.
+- A tarefa se repete todo dia, do mesmo jeito? Se sim, vale configurar um hook uma vez, em vez de repetir a mesma confirmação manual centenas de vezes.
+
+!!! tip "Aplique agora"
+    Pense na última vez que um agente fez algo que você não esperava. A ação era fácil de reverter? Se não era, o nível de autonomia configurado hoje provavelmente está alto demais para aquele tipo de tarefa.
+
 ## Anti-padrão: arquivo de instrução que ninguém mantém
 
 O arquivo de instrução decai do mesmo jeito que qualquer documentação: escrito com cuidado na primeira semana, e nunca mais atualizado depois que uma convenção muda. O sintoma é sempre o mesmo — o agente sugere um comando de build que não existe mais, ou uma convenção de nomenclatura que o time abandonou há dois meses, e ninguém percebe até o terceiro ou quarto prompt confuso na mesma sessão.

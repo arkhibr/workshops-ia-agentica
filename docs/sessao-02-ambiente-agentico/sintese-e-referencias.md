@@ -1,6 +1,6 @@
 # Síntese e referências
 
-## Onze ideias essenciais
+## Doze ideias essenciais
 
 1. **Um ambiente agêntico tem quatro peças: harness, arquivo de configuração, MCP e isolamento por ramo.** Só a primeira depende de qual ferramenta o time escolhe; as outras três são agnósticas.
 2. **Context engineering é mais amplo que prompt engineering.** Cuida de tudo que chega à janela de contexto numa execução, não só do texto da instrução.
@@ -13,6 +13,7 @@
 9. **Isolamento por ramo resolve conflito de sistema de arquivos, não de comunicação entre pessoas.** As duas coisas são problemas diferentes, mesmo quando aparecem juntas no mesmo incidente.
 10. **Arquivo de instrução decai como qualquer documentação.** A correção é revisá-lo no mesmo PR que muda a convenção que ele documenta, e verificar de vez em quando, manualmente ou pela esteira de CI, se os comandos documentados ainda existem.
 11. **Isolar por ramo tem custo de ambiente, não só de git.** Cada worktree precisa da própria instalação de dependências; sem automatizar esse passo, a fricção de esperar a instalação desestimula o hábito exatamente nos casos em que ele mais evitaria um conflito.
+12. **Autonomia é uma propriedade do ambiente, não do modelo.** O mesmo modelo pode operar sob supervisão apertada ou com autonomia ampla, dependendo de como o harness foi configurado; a decisão certa depende de reversibilidade da ação e do raio de impacto contido pelo isolamento.
 
 ## Checklist antes de encerrar a sessão
 
@@ -22,6 +23,7 @@
 - [ ] Ninguém saiu achando que MCP é uma ferramenta específica — é um protocolo que qualquer ferramenta pode implementar.
 - [ ] O grupo sabe nomear os três critérios (origem, escopo, auditabilidade) para avaliar um servidor MCP antes de conectar.
 - [ ] O grupo sabe explicar por que um worktree novo pode exigir instalação de dependências antes de estar pronto para uso.
+- [ ] Cada participante sabe dizer qual modo de permissão o próprio agente usa hoje, e se essa escolha foi deliberada.
 
 ## Autoavaliação
 

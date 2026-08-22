@@ -101,4 +101,17 @@ Cada comando cria um diretório de trabalho novo, numa branch nova, apontando pa
 !!! question "Antes de continuar"
     Das quatro peças da tabela, qual o seu time já tem hoje? Qual está completamente ausente?
 
+## Autonomia e supervisão: o que o ambiente deixa o agente decidir sozinho
+
+As quatro peças anteriores decidem o que o agente sabe e a que ele tem acesso. Falta uma decisão diferente, que nenhuma delas cobre: quanto o agente decide e executa sozinho antes de um humano olhar. Essa decisão também é uma propriedade do ambiente, não do modelo: o mesmo modelo, no mesmo repositório, pode operar sob supervisão apertada ou com autonomia ampla, dependendo de como o harness foi configurado para aquela sessão.
+
+A maioria dos harnesses de codificação oferece pelo menos três posições nesse espectro: perguntar antes de cada ação, em que o agente propõe e o humano aprova cada edição ou comando antes de executar; aprovar edições automaticamente mas confirmar comandos com efeito fora do repositório, como rede ou banco de dados; e autonomia ampla dentro de um ambiente isolado, como um worktree descartável, onde o risco de um erro é menor porque o raio de impacto está contido.
+
+Essa régua se conecta direto ao princípio de simplicidade da Sessão 1: a Anthropic recomenda teste extensivo em ambiente controlado, com salvaguardas apropriadas, antes de liberar autonomia total em produção. Autonomia ampla sem isolamento correspondente é exatamente o cenário que o guia desaconselha: o risco de um erro numa etapa se propagar, sem supervisão, pelas etapas seguintes.
+
+Alguns harnesses vão além do modo de permissão e oferecem hooks: pontos de interceptação que rodam antes ou depois de o agente executar uma ferramenta, e podem bloquear a ação, registrar um log, ou pedir confirmação extra para comandos específicos, por exemplo qualquer comando que toque um arquivo de credenciais ou qualquer push direto para a branch principal. Um hook não substitui o arquivo de instrução, nem o MCP: o AGENTS.md documenta a convenção esperada; o hook aplica um limite na camada de execução, que continua valendo mesmo se o agente ignorar a convenção documentada.
+
+!!! tip "Aplique agora"
+    No ambiente que você usa hoje, o agente pede confirmação antes de cada ação, ou já roda edições automaticamente? Isso foi uma decisão deliberada, calibrada pelo risco da tarefa, ou é só o padrão de fábrica que ninguém revisitou?
+
 **Próxima página:** [Padrões e decisões](padroes-e-decisoes.md).
