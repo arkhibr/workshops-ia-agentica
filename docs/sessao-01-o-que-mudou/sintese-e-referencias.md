@@ -1,6 +1,6 @@
 # Síntese e referências
 
-## Seis ideias essenciais
+## Oito ideias essenciais
 
 1. **Vibe coding, assistência de codificação e SDD são famílias de risco, não degraus de maturidade.** A escolha depende da tarefa, não de uma régua de "quão avançado" o time está.
 2. **Um prompt funciona como programa porque o modelo aprende em contexto**, sem ajuste de peso — mecanismo empírico demonstrado por Brown et al. (2020).
@@ -8,6 +8,8 @@
 4. **Um agente se distingue de um chat pelo ciclo de raciocínio e ação** (Yao et al., ReAct), não pelo tamanho do modelo.
 5. **Piso, teto e julgamento humano sobem em ritmos diferentes.** Confundir "o código roda" com "o código está correto" é o erro mais caro e mais comum.
 6. **A diferença entre um prompt intuitivo e um estruturado quase nunca está no modelo.** Está em quem já tinha feito, antes de escrever o pedido, o trabalho de reunir a regra de negócio inteira.
+7. **O ganho de produtividade depende do tipo de tarefa, com números reais para provar.** Peng et al. mediram 55,8% de ganho numa tarefa nova e delimitada; o METR mediu 19% de perda numa tarefa de manutenção em sistema maduro — e os próprios desenvolvedores não perceberam a perda.
+8. **A régua de decisão é a simplicidade, não a ferramenta mais avançada.** A recomendação da Anthropic em "Building Effective Agents" vale para os três modos desta sessão: comece pelo mais simples que a tarefa permitir.
 
 ## Checklist antes de encerrar a sessão
 
@@ -25,13 +27,26 @@
 
 Se duas ou mais respostas forem "ainda não", releia [Conceitos](conceitos.md) antes da Sessão 2.
 
-## Fundamentação
+**Fundamentos técnicos**
 
 - VASWANI, Ashish et al. *Attention Is All You Need*. NeurIPS, 2017.
 - BROWN, Tom B. et al. *Language Models are Few-Shot Learners*. NeurIPS, 2020.
 - YAO, Shunyu et al. *ReAct: Synergizing Reasoning and Acting in Language Models*. ICLR, 2023.
-- KARPATHY, Andrej. *Software Is Changing (Again)*. Palestra, YC AI Startup School, 17 jun. 2025.
-- WILLISON, Simon. "What is agentic engineering?" — *Agentic Engineering Patterns*. simonwillison.net, mar. 2026.
+
+**Evidência empírica**
+
+- PENG, Sida et al. *The Impact of AI on Developer Productivity: Evidence from GitHub Copilot*. arXiv, 2023.
+- METR. *Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity*. jul. 2025.
+- PEARCE, Hammond et al. *Asleep at the Keyboard? Assessing the Security of GitHub Copilot's Code Contributions*. IEEE S&P, 2022.
+
+**Síntese de mercado**
+
+- KARPATHY, Andrej. "Software 2.0". Medium, 2017; e *Software Is Changing (Again)*, palestra, 2025.
+- WILLISON, Simon. "What is agentic engineering?". simonwillison.net, 2026.
+- ANTHROPIC. "Building Effective Agents". Anthropic Engineering, dez. 2024.
+
+**Curso irmão**
+
 - Disciplina de Arquitetura de Soluções com IA Generativa (Arkhi), Módulo 4 — Agentes: distinção vibe coding / assistência de codificação / SDD.
 
 Citações completas, com URL e resumo, em [../referencia/bibliografia.md](../referencia/bibliografia.md).

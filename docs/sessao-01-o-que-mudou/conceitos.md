@@ -20,15 +20,25 @@ Simon Willison, que documenta práticas de desenvolvimento assistido por IA desd
 
 O próprio Karpathy documentou o limite na prática: os ganhos de velocidade do vibe coding "vanished shortly after getting local code running". A aceleração desaparece quando o código precisa integrar, ser mantido, ou sobreviver a um caso de borda fora do que o prompt original previu.
 
+## A evidência empírica: ganhos que aparecem e ganhos que desaparecem
+
+A frase de Karpathy tem confirmação empírica, e ela é mais desconfortável do que a frase sozinha sugere. Peng et al. (2023) conduziram um experimento randomizado com 70 desenvolvedores profissionais implementando um servidor HTTP em JavaScript: o grupo com GitHub Copilot terminou a tarefa em 71 minutos contra 161 minutos do grupo de controle, um ganho de 55,8%. O efeito foi maior justamente para desenvolvedores menos experientes.
+
+O METR, em 2025, testou uma situação diferente: 16 desenvolvedores experientes, cada um com cerca de cinco anos de trajetória nos próprios projetos open source maduros, resolvendo 246 tarefas reais de manutenção. O resultado inverteu a expectativa: usar IA tornou a conclusão das tarefas 19% mais lenta. Mais revelador ainda, os próprios desenvolvedores, depois de terminar, estimaram que a IA os havia deixado 20% mais rápidos — o oposto exato do que os dados mediram.
+
+A contradição entre os dois estudos não invalida nenhum dos dois. Ela aponta a variável que mais importa: tarefa nova e bem delimitada versus manutenção de um sistema grande que o desenvolvedor já conhece de cor. O ganho de piso do Bloco seguinte aparece rápido no primeiro caso; no segundo, sem disciplina, o tempo gasto revisando e corrigindo a proposta do agente supera o tempo que teria sido gasto escrevendo o código direto.
+
 ### Os três sintomas do time que ainda não saiu da primeira linha
 
 - **Inconsistente.** Alguns desenvolvedores extraem resultados excelentes do mesmo modelo que outros usam apenas como um completador de código sofisticado. A causa está em como cada um pede ao modelo.
-- **Sem rede.** Código é aceito sem que quem aceitou entenda de fato o que ele faz. Quando esse código quebra em produção, não há protocolo de depuração, só tentativa e erro.
+- **Sem rede.** Código é aceito sem que quem aceitou entenda de fato o que ele faz. Pearce et al. (2022), em um estudo hoje seminal, submeteram o GitHub Copilot a 89 cenários de programação cobrindo as principais categorias de vulnerabilidade (CWE Top 25) e encontraram falha de segurança em cerca de 40% dos programas gerados. Quando esse código quebra ou é explorado em produção, não há protocolo de depuração, só tentativa e erro.
 - **Ad hoc.** Não existe fluxo, vocabulário ou critério de aceitação compartilhado entre o time para o que "um bom pedido à IA" significa.
 
 ## A tese do Software 3.0
 
-A arquitetura Transformer, descrita por Vaswani et al. em 2017, é a base técnica de todo LLM usado hoje em ferramentas agênticas de codificação. Ela é o que torna prática a aprendizagem em contexto descrita acima, e é sobre essa maturidade técnica que Karpathy constrói uma tese de fundo, apresentada na YC AI Startup School de 17 de junho de 2025: a programação teve, ao longo da história, um paradigma dominante por vez, e agora tem três coexistindo.
+A arquitetura Transformer, descrita por Vaswani et al. em 2017, é a base técnica de todo LLM usado hoje em ferramentas agênticas de codificação. Ela é o que torna prática a aprendizagem em contexto descrita acima, e é sobre essa maturidade técnica que Karpathy constrói uma tese de fundo, apresentada na YC AI Startup School de 17 de junho de 2025.
+
+A tese não nasceu isolada. Em 2017, no mesmo ano do artigo de Vaswani et al., Karpathy já havia publicado o ensaio "Software 2.0", propondo que uma rede neural treinada é um tipo de programa diferente: em vez de escrito à mão em Python ou C++, ele é compilado a partir de dados por um processo de otimização. Software 3.0 estende essa mesma lógica um passo adiante — a programação teve, ao longo da história, um paradigma dominante por vez, e agora tem três coexistindo.
 
 **Software 1.0** é código explícito, escrito por humanos em linguagens de programação. **Software 2.0** são redes neurais: em vez de código, o time ajusta pesos por treinamento. **Software 3.0** é o prompt em linguagem natural funcionando como o próprio programa, interpretado por um LLM. Karpathy resume a virada numa frase que já circula como definição: "the hottest new programming language is English."
 
