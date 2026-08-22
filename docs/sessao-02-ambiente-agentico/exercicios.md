@@ -46,13 +46,25 @@ Um colega escreve num AGENTS.md: "escreva código limpo e siga boas práticas." 
 A linha não dá nenhuma informação que o agente não teria por padrão. Uma linha útil responde uma pergunta concreta que muda uma decisão real — por exemplo, qual comando roda os testes, ou qual convenção de nomenclatura o time usa.
 </details>
 
+### 5. Tool ou resource?
+
+Um agente precisa saber, a cada execução, o status atual de um pedido num sistema externo de logística que muda várias vezes ao dia. Essa informação deveria chegar como *tool* ou como *resource*? Justifique com o critério de quem decide quando buscar a informação.
+
+<details>
+<summary>Ver resposta</summary>
+
+*Tool*. O status muda com frequência e só é útil se buscado no momento certo, algo que o próprio agente deveria decidir durante a execução, não algo que a aplicação injeta de antemão em todo prompt. Um *resource* faz mais sentido para informação estável, sempre necessária, que não depende de o agente decidir buscar.
+</details>
+
 ## Aplicar
 
-### 5. Exercício-âncora: ciclo entrada → resposta → verificação
+### 6. Exercício-âncora: ciclo entrada → resposta → verificação
 
 **O que é:** configurar um arquivo de instrução real e rodar um ciclo completo com o agente, medindo se o arquivo de fato mudou o comportamento.
 
 **Onde encontrar:** [Oficina de ferramentas](oficina-de-ferramentas.md#experimento-a-escreva-o-agentsmd-do-seu-proprio-repositorio) já produziu um `AGENTS.md` ou `CLAUDE.md` real. Este exercício usa esse mesmo arquivo.
+
+Antes de rodar o ciclo, aplique a verificação de [Padrões e decisões](padroes-e-decisoes.md#como-saber-se-o-arquivo-ainda-funciona): rode cada comando documentado no arquivo, um por um, e confirme que nenhum falhou antes de usar o arquivo no exercício.
 
 **Situação**
 
@@ -89,19 +101,23 @@ Um registro de três linhas: o que foi pedido, o que o agente entregou, e o resu
 
 ## Analisar
 
-### 6. Comparando com o exemplo da Vetor
+### 7. Comparando com o exemplo da Vetor
 
-Compare seu `AGENTS.md`/`CLAUDE.md` do exercício 5 com o exemplo mostrado em [Exemplo arquitetural](exemplo-arquitetural.md). Alguma seção do exemplo da Vetor faria sentido no seu arquivo, e não estava lá? Alguma seção sua não teria lugar no exemplo da Vetor?
+Compare seu `AGENTS.md`/`CLAUDE.md` do exercício 6 com o exemplo mostrado em [Exemplo arquitetural](exemplo-arquitetural.md). Alguma seção do exemplo da Vetor faria sentido no seu arquivo, e não estava lá? Alguma seção sua não teria lugar no exemplo da Vetor?
+
+### 8. Avaliando um servidor MCP antes de conectar
+
+Escolha um servidor MCP que você usa ou pretende usar (pode ser o do rastreador de tarefas do seu time, um servidor de arquivos, ou qualquer outro). Aplique os três critérios de [Padrões e decisões](padroes-e-decisoes.md#antes-de-conectar-avaliar-a-origem-do-servidor-mcp) (origem, escopo, auditabilidade) e aponte qual dos três é o ponto mais fraco desse servidor específico hoje.
 
 ## Avaliar
 
-### 7. O commit que sumiu
+### 9. O commit que sumiu
 
 Releia o [Estudo de caso](estudo-de-caso.md). Em até 100 palavras, defenda uma posição: o time da Vetor deveria exigir worktree separado para toda tarefa, mesmo as pequenas e solo? Justifique com o critério de frequência de uso e tamanho do time, não com preferência pessoal.
 
 ## Criar
 
-### 8. Um AGENTS.md para o time
+### 10. Um AGENTS.md para o time
 
 Escreva um `AGENTS.md` de no máximo cinco linhas para um time fictício que você conhece bem (pode ser um projeto pessoal, ou um cenário hipotético). Cada linha precisa responder uma pergunta concreta que um agente teria dúvida sem ela.
 
