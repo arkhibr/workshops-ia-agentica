@@ -15,8 +15,6 @@ Esta oficina usa o agente de codificação já configurado pelo participante (Cl
 
 ## Experimento A — escreva o AGENTS.md do seu próprio repositório
 
-**Classificação:** Essencial em aula.
-
 **Objetivo:** produzir um arquivo de instrução que muda comportamento real do agente, não uma lista de boas intenções.
 
 **Execute:**
@@ -33,8 +31,6 @@ Esta oficina usa o agente de codificação já configurado pelo participante (Cl
 - O que você escreveria de novo se seu time inteiro fosse ler esse arquivo amanhã?
 
 ## Experimento B — conecte e examine um servidor MCP real
-
-**Classificação:** Essencial em aula.
 
 **Objetivo:** conectar um servidor MCP real, sem precisar de conta nem de credencial, e examinar exatamente qual ferramenta o agente chamou e o que voltou dessa chamada — não só o resumo final que o modelo escreve para você.
 
@@ -79,8 +75,6 @@ Esta oficina usa o agente de codificação já configurado pelo participante (Cl
 
 ## Experimento C — isole duas sessões por worktree
 
-**Classificação:** Essencial em aula.
-
 **Objetivo:** sentir na prática por que isolamento por ramo evita o incidente do [Estudo de caso](estudo-de-caso.md).
 
 **Execute:**
@@ -107,8 +101,6 @@ git worktree remove ../teste-worktree-b
 - Isolar por worktree substitui a necessidade de comunicação entre quem está mexendo em partes relacionadas do sistema, ou só reduz um tipo específico de risco?
 
 ## Experimento D — compare dois níveis de autonomia
-
-**Classificação:** Extensão para quem terminar antes.
 
 **Objetivo:** sentir a diferença de risco e de velocidade entre dois modos de permissão da mesma aplicação agêntica, aplicando o critério de [Padrões e decisões](padroes-e-decisoes.md#quanto-de-autonomia-liberar).
 

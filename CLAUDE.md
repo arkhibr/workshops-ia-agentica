@@ -55,7 +55,7 @@ docs/sessao-NN-slug/
 ├── padroes-e-decisoes.md       # comparação de abordagens, critério de decisão, anti-padrão
 ├── exemplo-arquitetural.md     # demonstração conduzida pelo instrutor, com o caso Vetor
 ├── estudo-de-caso.md           # dilema sem resposta prescrita, perguntas para orientar a discussão
-├── oficina-de-ferramentas.md   # prática guiada em experimentos (Essencial em aula / Exploração em dupla / Extensão)
+├── oficina-de-ferramentas.md   # prática guiada em experimentos, com roteiro sugerido de condução no topo da página
 ├── exercicios.md               # exercícios em 6 níveis de Bloom (Recordar → Criar), com rubrica no nível Aplicar
 └── sintese-e-referencias.md    # ideias essenciais, checklist, autoavaliação, fontes completas
 ```
@@ -89,5 +89,7 @@ docs/sessao-NN-slug/
 - Fontes de prática de mercado (Karpathy, Willison, blog do GitHub) são legítimas para nomear fenômenos recentes sem literatura acadêmica ainda, mas complementam a base primária — não a substituem.
 - Reaproveitar frameworks já validados nas disciplinas da Arkhi em vez de reinventar categorias novas — ex.: a distinção vibe coding / assistência de codificação / SDD do Módulo 4 (Agentes) é a referência para qualquer sessão que toque nesse tema, não uma dicotomia "ad hoc vs. disciplinado" inventada para o workshop.
 - Toda citação em prosa tem par na seção "Fundamentação" de `sintese-e-referencias.md` e entrada completa em `docs/referencia/bibliografia.md` (autor, título, veículo, data, URL).
+
+**Sem campo "Classificação" por experimento na oficina de ferramentas.** Qual experimento é essencial em aula, exploração em dupla ou extensão opcional aparece uma única vez, na seção "Roteiro sugerido para a sessão" no topo de `oficina-de-ferramentas.md` — não repetir como rótulo `**Classificação:**` sob cada `## Experimento`.
 
 **Convenções de commit:** `<type>: <mensagem>` — tipos usados: `feat`, `docs`, `refactor`, `fix`.

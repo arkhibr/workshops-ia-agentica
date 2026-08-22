@@ -15,8 +15,6 @@ Esta oficina usa o agente de codificação já configurado pelo participante (Cl
 
 ## Experimento A — autodiagnóstico
 
-**Classificação:** Essencial em aula.
-
 **Objetivo:** ter um retrato honesto do próprio uso de IA hoje, sem julgamento.
 
 **Execute:** responda por escrito, individualmente:
@@ -29,8 +27,6 @@ Esta oficina usa o agente de codificação já configurado pelo participante (Cl
 **Observe:** guarde as respostas. O Bloco 5 (exercícios) e a Sessão 9 (depuração sistemática) revisitam exatamente estas mesmas perguntas para medir o que mudou.
 
 ## Experimento B — contexto explícito
-
-**Classificação:** Essencial em aula.
 
 **Objetivo:** sentir, num caso pequeno, o que "contexto explícito" muda antes de aplicar no exercício-âncora.
 
@@ -71,8 +67,6 @@ Exemplos:
 Guarde as duas saídas: o Experimento C usa exatamente elas.
 
 ## Experimento C — onde entrou o julgamento
-
-**Classificação:** Exploração em dupla.
 
 **Objetivo:** localizar, nas próprias saídas do Experimento B, onde cada seta de [Conceitos](conceitos.md#o-que-sobe-piso-teto-julgamento) apareceu.
 
