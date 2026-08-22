@@ -71,6 +71,14 @@ docs/sessao-NN-slug/
 
 **Cadeia de ferramentas agnóstica.** O conteúdo metodológico não depende de uma ferramenta específica — todas passam pelos comandos `/specify` · `/plan` · `/tasks` do GitHub Spec Kit. Recomendado Claude Code + Codex CLI; alternativas: GitHub Copilot + VS Code/JetBrains, Cursor IDE.
 
-**Escrita dos READMEs:** conceito antes da ferramenta, sem cacoetes de IA (aberturas dramáticas, "não apenas... mas também", conclusões retóricas), tom direto e factual, com fragmentos de código e links relativos aos arquivos.
+**Escrita dos READMEs:** conceito antes da ferramenta, tom direto e factual, com fragmentos de código e links relativos aos arquivos.
+
+**Revisão anti-cacoetes obrigatória, sem exceção.** Toda saída de conteúdo (teoria, exercício, README) passa pelo SOP anti-cacoetes-llm do PKA (repositório separado — `system/bkm/sops/anti-cacoetes-llm.md` em `Dropbox/Pessoal/pka`) antes de ser apresentada ou commitada — primeira versão já sem os 18 marcadores, mais uma passada de autorrevisão separada. As verificações mecânicas dos marcadores 13 (contrastes artificiais/quiasmo) e 18 (travessão, máx. 1 por parágrafo) são obrigatórias, não "de olho": contar `—` por parágrafo e checar toda ocorrência de "não" perto de travessão/dois-pontos antes de considerar o texto pronto. Aplicar o teste de autoria: a escrita parece de alguém que já pagou o preço das próprias opiniões?
+
+**Barra de fundamentação: nível pós-graduação, não paráfrase de proposta comercial.** A teoria de cada sessão usa como referência de rigor as disciplinas de pós-graduação do Marco (ver `arquitetura-solucoes-ia-generativa`, especialmente `docs/modulo-1-fundamentos/sintese-e-referencias.md` e `docs/modulo-4-agentes/`). Isso significa:
+- Fundamentar em pesquisa primária quando ela existe — artigos (arXiv, NeurIPS, ACL), especificações técnicas (Model Context Protocol, GitHub Spec Kit), padrões de organismos (NIST, OWASP) — não só posts de blog ou talks de conferência.
+- Fontes de prática de mercado (Karpathy, Willison, blog do GitHub) são legítimas para nomear fenômenos recentes sem literatura acadêmica ainda, mas complementam a base primária — não a substituem.
+- Reaproveitar frameworks já validados nas disciplinas da Arkhi em vez de reinventar categorias novas — ex.: a distinção vibe coding / assistência de codificação / SDD do Módulo 4 (Agentes) é a referência para qualquer sessão que toque nesse tema, não uma dicotomia "ad hoc vs. disciplinado" inventada para o workshop.
+- Toda citação em prosa tem par na seção "Fontes desta sessão" (no `index.md`) e entrada completa em `docs/referencia/bibliografia.md` (autor, título, veículo, data, URL).
 
 **Convenções de commit:** `<type>: <mensagem>` — tipos usados: `feat`, `docs`, `refactor`, `fix`.

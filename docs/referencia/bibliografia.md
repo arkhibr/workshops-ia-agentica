@@ -45,6 +45,17 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 **ZELLER, Andreas. *Why Programs Fail: A Guide to Systematic Debugging*. Morgan Kaufmann, 2005.** Base do protocolo hipótese → investigação → correção → verificação usado na Sessão 9.
 → Sessão 9.
 
+## Fundamentos Técnicos (LLMs e Agentes)
+
+**VASWANI, Ashish et al. *Attention Is All You Need*.** NeurIPS, 2017. <https://proceedings.neurips.cc/paper_files/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html>. Artigo que introduziu a arquitetura Transformer — base técnica de todo LLM usado em ferramentas agênticas de codificação.
+→ Sessão 1.
+
+**BROWN, Tom B. et al. *Language Models are Few-Shot Learners*.** NeurIPS, 2020. <https://proceedings.neurips.cc/paper_files/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html>. Artigo de apresentação do GPT-3 — demonstra empiricamente o aprendizado em contexto (*in-context learning*): um modelo executa uma tarefa nova a partir da descrição em linguagem natural e de poucos exemplos, sem ajuste de peso. Mecanismo técnico que torna um prompt capaz de funcionar como programa (Software 3.0).
+→ Sessão 1.
+
+**YAO, Shunyu et al. *ReAct: Synergizing Reasoning and Acting in Language Models*.** ICLR, 2023. <https://openreview.net/forum?id=WE_vluYUL-X>. Formaliza o ciclo de raciocínio intercalado com ação verificável — a base técnica que distingue um agente de codificação de um LLM respondendo uma pergunta isolada.
+→ Sessão 1.
+
 ## Engenharia de Software na Era dos LLMs
 
 **KARPATHY, Andrej. *Software Is Changing (Again)*.** Palestra, YC AI Startup School, 17 jun. 2025. Recapitulação: Latent Space, <https://www.latent.space/p/s3>. Formulação dos três paradigmas coexistentes — Software 1.0 (código explícito), Software 2.0 (redes neurais treinadas), Software 3.0 (prompt em linguagem natural como programa executável) — e do conceito de *generation-verification loop* ("demo is works.any(), product is works.all()"). Karpathy também cunhou o termo *vibe coding*, em publicação de fevereiro de 2025.
@@ -53,5 +64,5 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 **WILLISON, Simon. "What is agentic engineering?"** — *Agentic Engineering Patterns*. simonwillison.net, mar. 2026. <https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/>. Define engenharia agêntica como "a prática de desenvolver software com o auxílio de agentes de codificação", sustentada por três responsabilidades humanas — especificação do problema, provisão de ferramentas, verificação e iteração — e distingue a prática de "vibe coding", termo que reserva para código de protótipo não revisado.
 → Sessão 1.
 
-**Glossário controlado — disciplina de Arquitetura de Soluções com IA Generativa (Arkhi).** Definições compartilhadas de *vibe coding*, *janela de contexto*, *agente de codificação*, *SDD*, *spec* e *constitution* — vocabulário comum entre os dois cursos da Arkhi sobre IA aplicada à engenharia de software.
+**Disciplina de Arquitetura de Soluções com IA Generativa (Arkhi), Módulo 4 — Agentes.** `docs/modulo-4-agentes/conceitos.md` e `docs/referencia/glossario.md`. Distinção entre vibe coding, assistência de codificação e SDD (artefato que governa, critério de qualidade, risco dominante); definições compartilhadas de *janela de contexto*, *agente de codificação*, *SDD*, *spec* e *constitution* — vocabulário comum entre os dois cursos da Arkhi sobre IA aplicada à engenharia de software.
 → Sessão 1.
