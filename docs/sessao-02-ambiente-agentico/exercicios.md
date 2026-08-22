@@ -11,7 +11,7 @@ Nomeie as quatro peças de um ambiente agêntico descritas nesta sessão.
 <details>
 <summary>Ver resposta</summary>
 
-Arquivo de configuração (AGENTS.md/CLAUDE.md), MCP (acesso a ferramentas externas), isolamento por ramo (worktree) e o harness (Claude Code, Copilot, Cursor).
+Arquivo de configuração (AGENTS.md/CLAUDE.md), MCP (acesso a ferramentas externas), isolamento por ramo (worktree) e a aplicação agêntica (Claude Code, Copilot, Cursor).
 </details>
 
 ### 2. O problema M×N

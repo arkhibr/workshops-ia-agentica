@@ -2,7 +2,7 @@
 
 ## Do ambiente individual ao ambiente compartilhado
 
-Um ambiente agêntico é a combinação de quatro peças: o modelo, o harness que orquestra a conversa com ele (Claude Code, Codex CLI, Copilot, Cursor), o arquivo de configuração que carrega convenções do repositório, e o conjunto de ferramentas que o agente pode acionar. Quando cada desenvolvedor monta essa combinação à própria maneira, o time herda exatamente o sintoma "ad hoc" descrito na Sessão 1: nenhum vocabulário compartilhado sobre o que configurar, e o resultado de um prompt na máquina de alguém não se repete na do colega.
+Um ambiente agêntico é a combinação de quatro peças: o modelo, a aplicação agêntica que orquestra a conversa com ele (Claude Code, Codex CLI, Copilot, Cursor), o arquivo de configuração que carrega convenções do repositório, e o conjunto de ferramentas que o agente pode acionar. Quando cada desenvolvedor monta essa combinação à própria maneira, o time herda exatamente o sintoma "ad hoc" descrito na Sessão 1: nenhum vocabulário compartilhado sobre o que configurar, e o resultado de um prompt na máquina de alguém não se repete na do colega.
 
 A correção não é escolher uma ferramenta única para todo o time. É compartilhar as três peças que independem da ferramenta escolhida: o arquivo de configuração, o protocolo de acesso a ferramentas externas, e a disciplina de isolamento de contexto.
 
@@ -26,11 +26,11 @@ Antes de novembro de 2024, conectar um agente a uma ferramenta externa (um banco
 
 A Anthropic abriu o código do Model Context Protocol (MCP) para resolver exatamente essa conta: um protocolo aberto no qual cada modelo implementa o MCP uma vez, e cada ferramenta ou serviço implementa o MCP uma vez. A multiplicação vira soma. Um ano depois do lançamento, o protocolo já tinha adoção de OpenAI, Google e Microsoft, tornando-se o padrão de fato para conectar agentes a sistemas externos — não porque uma empresa impôs, mas porque resolvia um problema real de manutenção que todo mundo compartilhava.
 
-O protocolo formaliza essa integração numa arquitetura cliente-servidor: a aplicação hospedeira, o harness, mantém um cliente MCP para cada servidor a que se conecta, e cada servidor expõe suas capacidades por três primitivas independentes. *Tools* são funções que o próprio modelo decide quando chamar, como consultar um rastreador de tarefas. *Resources* são dados que a aplicação injeta no contexto por conta própria, como o conteúdo de um arquivo específico. *Prompts* são modelos de instrução prontos, escolhidos por quem usa a ferramenta, não pelo modelo. Um servidor não precisa expor as três; a maioria expõe só *tools*.
+O protocolo formaliza essa integração numa arquitetura cliente-servidor: a aplicação agêntica mantém um cliente MCP para cada servidor a que se conecta, e cada servidor expõe suas capacidades por três primitivas independentes. *Tools* são funções que o próprio modelo decide quando chamar, como consultar um rastreador de tarefas. *Resources* são dados que a aplicação injeta no contexto por conta própria, como o conteúdo de um arquivo específico. *Prompts* são modelos de instrução prontos, escolhidos por quem usa a ferramenta, não pelo modelo. Um servidor não precisa expor as três; a maioria expõe só *tools*.
 
-O protocolo também define como o harness fala com cada servidor. Um servidor local, que roda como processo na mesma máquina do agente, se comunica por *stdio* (entrada e saída padrão do processo). Um servidor remoto, acessado pela rede e compartilhado por várias pessoas ao mesmo tempo, usa HTTP com streaming. A escolha de transporte não muda o que o servidor expõe, só como o harness conversa com ele: servidor de uso individual costuma rodar em *stdio*; servidor de uso compartilhado pelo time inteiro tende a rodar como serviço HTTP.
+O protocolo também define como a aplicação agêntica fala com cada servidor. Um servidor local, que roda como processo na mesma máquina do agente, se comunica por *stdio* (entrada e saída padrão do processo). Um servidor remoto, acessado pela rede e compartilhado por várias pessoas ao mesmo tempo, usa HTTP com streaming. A escolha de transporte não muda o que o servidor expõe, só como a aplicação agêntica conversa com ele: servidor de uso individual costuma rodar em *stdio*; servidor de uso compartilhado pelo time inteiro tende a rodar como serviço HTTP.
 
-Na prática, conectar um servidor MCP a um harness como o Claude Code ou o Cursor é uma questão de configuração, não de código novo:
+Na prática, conectar um servidor MCP a uma aplicação agêntica como o Claude Code ou o Cursor é uma questão de configuração, não de código novo:
 
 ```json
 {
@@ -46,7 +46,7 @@ Na prática, conectar um servidor MCP a um harness como o Claude Code ou o Curso
 }
 ```
 
-O harness lê essa configuração, inicia o processo do servidor e passa a oferecer as ferramentas que ele expõe como parte do conjunto disponível ao modelo. O `AGENTS.md` do repositório não precisa mudar uma linha para isso funcionar. As duas peças são independentes.
+A aplicação agêntica lê essa configuração, inicia o processo do servidor e passa a oferecer as ferramentas que ele expõe como parte do conjunto disponível ao modelo. O `AGENTS.md` do repositório não precisa mudar uma linha para isso funcionar. As duas peças são independentes.
 
 ## Um arquivo de instrução, qualquer ferramenta: AGENTS.md
 
@@ -96,20 +96,20 @@ Cada comando cria um diretório de trabalho novo, numa branch nova, apontando pa
 | Arquivo de configuração (AGENTS.md / CLAUDE.md) | O agente conhece as convenções do repositório | Sim — mesmo arquivo, qualquer agente que o leia |
 | MCP | O agente acessa uma ferramenta externa sem integração específica | Sim — protocolo aberto, adotado por múltiplos fornecedores |
 | Isolamento por ramo (worktree) | Duas sessões não corrompem o trabalho uma da outra | Sim — é uma prática de git, não de uma ferramenta de IA específica |
-| Harness (Claude Code, Copilot, Cursor) | Orquestra a conversa entre humano, modelo e ferramentas | Não — cada equipe escolhe o próprio, o método é agnóstico |
+| Aplicação agêntica (Claude Code, Copilot, Cursor) | Orquestra a conversa entre humano, modelo e ferramentas | Não — cada equipe escolhe a própria, o método é agnóstico |
 
 !!! question "Antes de continuar"
     Das quatro peças da tabela, qual o seu time já tem hoje? Qual está completamente ausente?
 
 ## Autonomia e supervisão: o que o ambiente deixa o agente decidir sozinho
 
-As quatro peças anteriores decidem o que o agente sabe e a que ele tem acesso. Falta uma decisão diferente, que nenhuma delas cobre: quanto o agente decide e executa sozinho antes de um humano olhar. Essa decisão também é uma propriedade do ambiente, não do modelo: o mesmo modelo, no mesmo repositório, pode operar sob supervisão apertada ou com autonomia ampla, dependendo de como o harness foi configurado para aquela sessão.
+As quatro peças anteriores decidem o que o agente sabe e a que ele tem acesso. Falta uma decisão diferente, que nenhuma delas cobre: quanto o agente decide e executa sozinho antes de um humano olhar. Essa decisão também é uma propriedade do ambiente, não do modelo: o mesmo modelo, no mesmo repositório, pode operar sob supervisão apertada ou com autonomia ampla, dependendo de como a aplicação agêntica foi configurada para aquela sessão.
 
-A maioria dos harnesses de codificação oferece pelo menos três posições nesse espectro: perguntar antes de cada ação, em que o agente propõe e o humano aprova cada edição ou comando antes de executar; aprovar edições automaticamente mas confirmar comandos com efeito fora do repositório, como rede ou banco de dados; e autonomia ampla dentro de um ambiente isolado, como um worktree descartável, onde o risco de um erro é menor porque o raio de impacto está contido.
+A maioria das aplicações agênticas de codificação oferece pelo menos três posições nesse espectro: perguntar antes de cada ação, em que o agente propõe e o humano aprova cada edição ou comando antes de executar; aprovar edições automaticamente mas confirmar comandos com efeito fora do repositório, como rede ou banco de dados; e autonomia ampla dentro de um ambiente isolado, como um worktree descartável, onde o risco de um erro é menor porque o raio de impacto está contido.
 
 Essa régua se conecta direto ao princípio de simplicidade da Sessão 1: a Anthropic recomenda teste extensivo em ambiente controlado, com salvaguardas apropriadas, antes de liberar autonomia total em produção. Autonomia ampla sem isolamento correspondente é exatamente o cenário que o guia desaconselha: o risco de um erro numa etapa se propagar, sem supervisão, pelas etapas seguintes.
 
-Alguns harnesses vão além do modo de permissão e oferecem hooks: pontos de interceptação que rodam antes ou depois de o agente executar uma ferramenta, e podem bloquear a ação, registrar um log, ou pedir confirmação extra para comandos específicos, por exemplo qualquer comando que toque um arquivo de credenciais ou qualquer push direto para a branch principal. Um hook não substitui o arquivo de instrução, nem o MCP: o AGENTS.md documenta a convenção esperada; o hook aplica um limite na camada de execução, que continua valendo mesmo se o agente ignorar a convenção documentada.
+Algumas aplicações agênticas vão além do modo de permissão e oferecem hooks: pontos de interceptação que rodam antes ou depois de o agente executar uma ferramenta, e podem bloquear a ação, registrar um log, ou pedir confirmação extra para comandos específicos, por exemplo qualquer comando que toque um arquivo de credenciais ou qualquer push direto para a branch principal. Um hook não substitui o arquivo de instrução, nem o MCP: o AGENTS.md documenta a convenção esperada; o hook aplica um limite na camada de execução, que continua valendo mesmo se o agente ignorar a convenção documentada.
 
 !!! tip "Aplique agora"
     No ambiente que você usa hoje, o agente pede confirmação antes de cada ação, ou já roda edições automaticamente? Isso foi uma decisão deliberada, calibrada pelo risco da tarefa, ou é só o padrão de fábrica que ninguém revisitou?
