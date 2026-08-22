@@ -41,6 +41,8 @@ git worktree add ../vetor-relatorio feature/relatorio-vendas
 
 Cada agente roda no próprio diretório, na própria branch, sem risco de um sobrescrever a edição do outro enquanto os dois trabalham ao mesmo tempo.
 
+![A plataforma Vetor sai de quatro configurações diferentes para um ambiente construído em três passos: AGENTS.md compartilhado, rastreador conectado via MCP e worktrees isolados para a correção de checkout e o relatório de vendas.](../assets/images/s2-vetor-ambiente-tres-passos.png)
+
 ## Leitura do exemplo
 
 Nenhuma das três peças exigiu escolher uma ferramenta de IA específica. O `AGENTS.md` é lido por qualquer agente de codificação compatível com o padrão; o MCP é um protocolo aberto; o worktree é um recurso do próprio git. É exatamente o ponto da Sessão 2: o ambiente compartilhado não depende de a equipe concordar sobre qual ferramenta usar.

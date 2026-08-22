@@ -8,6 +8,8 @@ Dois desenvolvedores da Vetor, plataforma fictícia de e-commerce B2B usada como
 
 Na reunião de retrospectiva, uma pessoa sugere: "vamos exigir que todo mundo use worktree separado a partir de agora, para qualquer tarefa, mesmo pequena." Outra pessoa acha exagero: "isso só aconteceu porque os dois mexeram no mesmo arquivo ao mesmo tempo, é raro, basta avisar no chat quando for mexer em algo compartilhado."
 
+![Linha do tempo de duas edições concorrentes: dois agentes leem a mesma versão, aplicam mudanças diferentes no mesmo diretório, uma sobrescrita silenciosa remove o log de auditoria e a falha aparece dias depois em produção. O diagrama separa contexto da conversa de estado em disco e mantém abertas duas políticas para decisão do grupo.](../assets/images/s2-commit-que-sumiu.png)
+
 ## Como usar este estudo de caso
 
 Não existe uma resposta única aqui. O objetivo é praticar o critério da tabela de [Padrões e decisões](padroes-e-decisoes.md#quando-vale-configurar-um-ambiente-compartilhado) num caso ambíguo de verdade.

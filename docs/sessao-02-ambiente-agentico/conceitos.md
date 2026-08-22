@@ -6,6 +6,8 @@ Um ambiente agêntico é a combinação de quatro peças: o modelo, a aplicaçã
 
 A correção não é escolher uma ferramenta única para todo o time. É compartilhar as três peças que independem da ferramenta escolhida: o arquivo de configuração, o protocolo de acesso a ferramentas externas, e a disciplina de isolamento de contexto.
 
+![Quatro módulos formam o ambiente agêntico: modelo, aplicação agêntica, instruções e ferramentas. A aplicação orquestra os demais; modelo e aplicação podem ser escolhas locais, enquanto instruções e ferramentas formam o contrato compartilhado pelo time.](../assets/images/s2-anatomia-ambiente-agentico.png)
+
 ## De prompt engineering para context engineering
 
 A Anthropic, no guia de engenharia "Effective context engineering for AI agents" (setembro de 2025), descreve uma virada de foco: depois de alguns anos em que prompt engineering (encontrar as palavras certas para uma instrução) dominava a atenção, o problema real passou a ser outro: qual configuração de contexto tem mais chance de produzir o comportamento desejado do modelo. Prompt engineering cuida do texto da instrução. Context engineering cuida de tudo que chega à janela de contexto numa execução: instruções, histórico, resultados de ferramentas, arquivos lidos.
@@ -18,6 +20,8 @@ O guia recomenda duas técnicas concretas contra essa degradação. A primeira �
 
 Uma terceira técnica separa o problema por arquitetura: sub-agentes com contexto isolado. Um agente principal delega uma exploração extensa, por exemplo varrer um repositório grande atrás da causa de um bug, para um sub-agente, que devolve um resumo condensado, muitas vezes na casa de 1 a 2 mil tokens. O agente principal recebe só a conclusão da investigação.
 
+![Uma janela sobrecarregada sofre degradação de contexto. Recuperação just-in-time, compactação e subagentes funcionam como filtros que entregam ao agente principal somente o contexto relevante.](../assets/images/s2-context-engineering.png)
+
 O mesmo raciocínio vale para a instrução que configura o agente, seja um prompt de sistema ou um arquivo como o AGENTS.md discutido adiante: o guia chama de altitude certa o ponto de equilíbrio entre instrução específica demais, que quebra assim que a tarefa foge um pouco do previsto, e instrução genérica demais, que não muda decisão nenhuma. Uma instrução na altitude certa é específica o bastante para guiar o comportamento, e flexível o bastante para deixar o modelo aplicar critério nos casos que ela não previu.
 
 ## O problema M×N e o Model Context Protocol
@@ -29,6 +33,8 @@ A Anthropic abriu o código do Model Context Protocol (MCP) para resolver exatam
 O protocolo formaliza essa integração numa arquitetura cliente-servidor: a aplicação agêntica mantém um cliente MCP para cada servidor a que se conecta, e cada servidor expõe suas capacidades por três primitivas independentes. *Tools* são funções que o próprio modelo decide quando chamar, como consultar um rastreador de tarefas. *Resources* são dados que a aplicação injeta no contexto por conta própria, como o conteúdo de um arquivo específico. *Prompts* são modelos de instrução prontos, escolhidos por quem usa a ferramenta, não pelo modelo. Um servidor não precisa expor as três; a maioria expõe só *tools*.
 
 O protocolo também define como a aplicação agêntica fala com cada servidor. Um servidor local, que roda como processo na mesma máquina do agente, se comunica por *stdio* (entrada e saída padrão do processo). Um servidor remoto, acessado pela rede e compartilhado por várias pessoas ao mesmo tempo, usa HTTP com streaming. A escolha de transporte não muda o que o servidor expõe, só como a aplicação agêntica conversa com ele: servidor de uso individual costuma rodar em *stdio*; servidor de uso compartilhado pelo time inteiro tende a rodar como serviço HTTP.
+
+![À esquerda, três modelos e quatro ferramentas exigem doze integrações específicas. À direita, o MCP reduz a estrutura a sete conexões simples e organiza tools, resources e prompts, com transporte local por stdio ou remoto por HTTP.](../assets/images/s2-mcp-mxn-mmaisn.png)
 
 Na prática, conectar um servidor MCP a uma aplicação agêntica como o Claude Code ou o Cursor é uma questão de configuração, não de código novo:
 
@@ -97,6 +103,8 @@ Cada comando cria um diretório de trabalho novo, numa branch nova, apontando pa
 | MCP | O agente acessa uma ferramenta externa sem integração específica | Sim — protocolo aberto, adotado por múltiplos fornecedores |
 | Isolamento por ramo (worktree) | Duas sessões não corrompem o trabalho uma da outra | Sim — é uma prática de git, não de uma ferramenta de IA específica |
 | Aplicação agêntica (Claude Code, Copilot, Cursor) | Orquestra a conversa entre humano, modelo e ferramentas | Não — cada equipe escolhe a própria, o método é agnóstico |
+
+![Arquitetura em três camadas: instruções com precedência de AGENTS.md, acesso externo por clientes e servidores MCP, e isolamento de dois worktrees ligados ao mesmo repositório Git. O método permanece o mesmo em qualquer aplicação agêntica.](../assets/images/s2-ambiente-compartilhado.png)
 
 !!! question "Antes de continuar"
     Das quatro peças da tabela, qual o seu time já tem hoje? Qual está completamente ausente?

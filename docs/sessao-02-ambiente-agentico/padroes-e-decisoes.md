@@ -13,6 +13,8 @@ Montar um arquivo de instrução, conectar uma ferramenta via MCP e isolar conte
 
 Um repositório pessoal, de uso esporádico, não precisa de MCP nem de isolamento por worktree — um arquivo de instrução simples já resolve a maior parte do ganho. Um time de vários desenvolvedores usando agente todo dia num sistema de produção está do lado direito da tabela inteira.
 
+![Quatro réguas avaliam tamanho do time, vida do repositório, frequência de uso do agente e necessidade de ferramentas externas. A combinação de duas condições conduz do ambiente mínimo ao compartilhado e ao completo.](../assets/images/s2-regua-investimento.png)
+
 O cálculo é o mesmo por trás de qualquer decisão de investir tempo em preparação antes de começar: o custo de configurar aparece agora, de uma vez, e o ganho aparece depois, espalhado por cada sessão futura de agente. Numa tarefa esporádica, esse ganho futuro não paga o custo presente. No repositório que o time usa todo dia, paga rápido: a segunda sessão de agente já reaproveita o mesmo arquivo de instrução, a mesma conexão MCP e o mesmo hábito de isolar por ramo, sem reconfigurar nada.
 
 !!! tip "Aplique agora"
@@ -66,6 +68,8 @@ Um servidor MCP roda como um processo à parte, com acesso ao que você autoriza
 - **Origem.** Servidor mantido pelo próprio fornecedor da ferramenta (o rastreador de tarefas, o banco de dados) tem manutenção e segurança verificadas por quem construiu o sistema de origem. Servidor de terceiro, sem essa relação, pede mais cautela antes de conectar.
 - **Escopo.** Peça o menor conjunto de permissões que a tarefa exige. Um servidor de banco de dados com acesso só de leitura remove uma categoria inteira de risco, mesmo quando o acesso de escrita está disponível.
 - **Auditabilidade.** Se o servidor é open source, alguém do time já leu o código antes de conectar em produção? Um servidor fechado, sem essa possibilidade, exige mais confiança na origem para compensar.
+
+![Dois fluxos de decisão verificam se uma informação deve entrar no AGENTS.md ou exigir MCP. O primeiro filtra comandos, regras, limites e consequências; o segundo avalia origem externa, escopo de permissão e auditabilidade.](../assets/images/s2-decisoes-instrucao-mcp.png)
 
 ## Quanto de autonomia liberar
 
