@@ -45,6 +45,11 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 **ZELLER, Andreas. *Why Programs Fail: A Guide to Systematic Debugging*. Morgan Kaufmann, 2005.** Base do protocolo hipótese → investigação → correção → verificação usado na Sessão 9.
 → Sessão 9.
 
+## Economia de Engenharia de Software
+
+**BOEHM, Barry W. *Software Engineering Economics*.** Prentice-Hall, 1981. Documentou que o custo de corrigir um defeito cresce a cada fase do desenvolvimento — em sistemas grandes e críticos, um problema descoberto depois da entrega pode custar da ordem de 100 vezes mais do que o mesmo problema pego na fase de requisitos. Pesquisa mais recente questiona o multiplicador exato em times ágeis com integração contínua, mas não a direção do efeito. Fundamenta por que reversibilidade e tempo de vida pesam na escolha entre vibe coding, assistência e SDD.
+→ Sessão 1.
+
 ## Fundamentos Técnicos (LLMs e Agentes)
 
 **VASWANI, Ashish et al. *Attention Is All You Need*.** NeurIPS, 2017. <https://proceedings.neurips.cc/paper_files/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html>. Artigo que introduziu a arquitetura Transformer — base técnica de todo LLM usado em ferramentas agênticas de codificação.

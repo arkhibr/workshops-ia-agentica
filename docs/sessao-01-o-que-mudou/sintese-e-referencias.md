@@ -1,6 +1,6 @@
 # Síntese e referências
 
-## Nove ideias essenciais
+## Dez ideias essenciais
 
 1. **Vibe coding, assistência de codificação e SDD são famílias de risco, não degraus de maturidade.** A escolha depende da tarefa, não de uma régua de "quão avançado" o time está.
 2. **Um prompt funciona como programa porque o modelo aprende em contexto**, sem ajuste de peso — mecanismo empírico demonstrado por Brown et al. (2020).
@@ -11,6 +11,7 @@
 7. **O ganho de produtividade depende do tipo de tarefa, com números reais para provar.** Peng et al. mediram 55,8% de ganho numa tarefa nova e delimitada; o METR mediu 19% de perda numa tarefa de manutenção em sistema maduro — e os próprios desenvolvedores não perceberam a perda.
 8. **A régua de decisão é a simplicidade, não a ferramenta mais avançada.** A recomendação da Anthropic em "Building Effective Agents" vale para os três modos desta sessão: comece pelo mais simples que a tarefa permitir.
 9. **A capacidade de resolver problemas reais deu um salto medido, não só sentido.** O SWE-bench foi de 1,96% de resolução em 2024 para cerca de 97% em 2026 — o mesmo "works.any() vira works.all()" de Karpathy, numa escala de dois anos.
+10. **Reversibilidade e tempo de vida importam porque corrigir cedo é mais barato.** Boehm documentou isso em 1981, décadas antes de qualquer LLM: quanto mais tarde uma ambiguidade aparece, mais caro fica resolvê-la.
 
 ## Checklist antes de encerrar a sessão
 
@@ -41,6 +42,10 @@ Se duas ou mais respostas forem "ainda não", releia [Conceitos](conceitos.md) a
 - PENG, Sida et al. *The Impact of AI on Developer Productivity: Evidence from GitHub Copilot*. arXiv, 2023.
 - METR. *Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity*. jul. 2025.
 - PEARCE, Hammond et al. *Asleep at the Keyboard? Assessing the Security of GitHub Copilot's Code Contributions*. IEEE S&P, 2022.
+
+**Economia de engenharia de software**
+
+- BOEHM, Barry W. *Software Engineering Economics*. Prentice-Hall, 1981.
 
 **Síntese de mercado**
 

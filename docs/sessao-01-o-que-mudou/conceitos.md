@@ -36,8 +36,8 @@ A contradição entre os dois estudos não invalida nenhum dos dois. Ela aponta 
 - **Sem rede.** Código é aceito sem que quem aceitou entenda de fato o que ele faz. Pearce et al. (2022), em um estudo hoje seminal, submeteram o GitHub Copilot a 89 cenários de programação cobrindo as principais categorias de vulnerabilidade (CWE Top 25) e encontraram falha de segurança em cerca de 40% dos programas gerados. Quando esse código quebra ou é explorado em produção, não há protocolo de depuração, só tentativa e erro.
 - **Ad hoc.** Não existe fluxo, vocabulário ou critério de aceitação compartilhado entre o time para o que "um bom pedido à IA" significa.
 
-!!! question "Pare e pergunte à turma"
-    Qual desses três sintomas apareceu no time de vocês na última semana? Peça exemplos concretos, sem citar nomes. O objetivo aqui é reconhecer o padrão coletivo, sem transformar a conversa em apontar responsáveis.
+!!! question "Antes de continuar"
+    Qual desses três sintomas apareceu no seu time na última semana? Pense num exemplo concreto, sem apontar culpados: o objetivo é reconhecer o padrão coletivo.
 
 ## A tese do Software 3.0
 
@@ -89,7 +89,7 @@ Willison localiza esse julgamento em "figuring out *what* code to write": navega
 | Teto sobe com disciplina | Especificação + ferramental | O código resolve exatamente o problema, nos casos de borda que importam? |
 | Julgamento humano sobe de valor | Verificação | Esse era o problema certo? O resultado está pronto para produção, ou é só um demo que passou uma vez? |
 
-!!! question "Pare e pergunte à turma"
-    Pensem num código aceito recentemente sem revisão cuidadosa. Ele passou pela coluna "piso" (rodou) ou também pela coluna "teto" (foi verificado nos casos que importam)? Peça que alguém responda em voz alta antes de seguir.
+!!! question "Antes de continuar"
+    Pense num código aceito recentemente sem revisão cuidadosa. Ele passou pela coluna "piso" (rodou) ou também pela coluna "teto" (foi verificado nos casos que importam)?
 
 **Próxima página:** [Padrões e decisões](padroes-e-decisoes.md).
