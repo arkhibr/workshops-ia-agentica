@@ -6,6 +6,8 @@
 
 Esta oficina usa o agente de codificação já configurado pelo participante (Claude Code, Copilot ou Cursor), o próprio git, já instalado em qualquer máquina de desenvolvimento, e Node.js com `npx` disponível no terminal para o Experimento B (participantes de C# sem Node instalado devem instalar antes da aula, ou parear com um colega que tenha). Tempo estimado: 30 minutos.
 
+Todo comando de terminal desta página tem versão para macOS/Linux e para Windows (PowerShell) — escolha a aba do seu sistema antes de copiar.
+
 **Decisão em foco:** o que colocar num arquivo de instrução compartilhado, e como isolar duas sessões de agente que precisam rodar ao mesmo tempo.
 
 ## Roteiro sugerido para a sessão
@@ -38,39 +40,62 @@ Esta oficina usa o agente de codificação já configurado pelo participante (Cl
 
 **Execute:**
 
-1. Crie uma pasta de teste fora do repositório atual, com dois arquivos dentro:
+**Passo 1:** crie a pasta de teste. Fora do repositório atual, com dois arquivos dentro. Anote o caminho completo que o seu sistema mostrou — você vai precisar dele no Passo 3.
 
-   ```bash
-   mkdir -p ~/mcp-teste
-   echo "Senha do cofre de testes: abacate-37." > ~/mcp-teste/anotacoes.txt
-   printf "produto,preco\nteclado,150\nmonitor,900\n" > ~/mcp-teste/precos.csv
-   ```
+=== "macOS/Linux"
+    ```bash
+    mkdir -p ~/mcp-teste
+    echo "Senha do cofre de testes: abacate-37." > ~/mcp-teste/anotacoes.txt
+    printf "produto,preco\nteclado,150\nmonitor,900\n" > ~/mcp-teste/precos.csv
+    pwd -P  # confirme o caminho completo (ex.: /Users/seu-usuario/mcp-teste)
+    ```
 
-2. **Antes de conectar nada**, pergunte ao seu agente: "Liste os arquivos em `~/mcp-teste` e me diga qual é a senha do cofre de testes mencionada em anotacoes.txt." Guarde a resposta. Ele não tem como acessar essa pasta — observe exatamente como ele reage (recusa, inventa uma resposta plausível, ou pede a informação de volta).
+=== "Windows (PowerShell)"
+    ```powershell
+    New-Item -ItemType Directory -Force -Path "$HOME\mcp-teste" | Out-Null
+    "Senha do cofre de testes: abacate-37." | Out-File -Encoding utf8 "$HOME\mcp-teste\anotacoes.txt"
+    "produto,preco`nteclado,150`nmonitor,900" | Out-File -Encoding utf8 "$HOME\mcp-teste\precos.csv"
+    Resolve-Path "$HOME\mcp-teste"  # confirme o caminho completo (ex.: C:\Users\seu-usuario\mcp-teste)
+    ```
 
-3. Adicione o servidor à configuração de MCP da sua aplicação agêntica, apontando só para a pasta de teste:
+**Passo 2:** pergunte antes de conectar. Ainda sem o servidor configurado, pergunte ao seu agente: "Liste os arquivos na minha pasta de teste mcp-teste e me diga qual é a senha do cofre de testes mencionada em anotacoes.txt." Guarde a resposta. Ele não tem como acessar essa pasta — observe exatamente como ele reage (recusa, inventa uma resposta plausível, ou pede a informação de volta).
 
-   ```json
-   {
-     "mcpServers": {
-       "arquivos-teste": {
-         "command": "npx",
-         "args": ["-y", "@modelcontextprotocol/server-filesystem", "/caminho/completo/para/mcp-teste"]
-       }
-     }
-   }
-   ```
+**Passo 3:** conecte o servidor. Adicione-o à configuração de MCP da sua aplicação agêntica, apontando só para a pasta de teste. Use o caminho completo anotado no Passo 1 — em JSON, caminho de Windows precisa da barra invertida duplicada:
 
-4. Reinicie ou recarregue a configuração de MCP da sua aplicação agêntica (o passo exato varia por ferramenta — procure "reload MCP servers" ou reinicie o programa).
+=== "macOS/Linux"
+    ```json
+    {
+      "mcpServers": {
+        "arquivos-teste": {
+          "command": "npx",
+          "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/seu-usuario/mcp-teste"]
+        }
+      }
+    }
+    ```
 
-5. Repita exatamente a mesma pergunta do passo 2. Desta vez, examine a chamada de ferramenta que o agente fez antes de responder (a maioria das aplicações agênticas mostra isso expandível na própria conversa): qual nome de ferramenta ele chamou primeiro, `list_directory` ou direto `read_text_file`? O conteúdo bruto que voltou da chamada bate com o arquivo que você criou?
+=== "Windows"
+    ```json
+    {
+      "mcpServers": {
+        "arquivos-teste": {
+          "command": "npx",
+          "args": ["-y", "@modelcontextprotocol/server-filesystem", "C:\\Users\\seu-usuario\\mcp-teste"]
+        }
+      }
+    }
+    ```
 
-6. Teste o limite do escopo: peça ao agente para listar um diretório fora de `~/mcp-teste`, por exemplo sua pasta de Documentos inteira. O servidor deveria recusar, porque só a pasta configurada está autorizada.
+**Passo 4:** recarregue. Reinicie ou recarregue a configuração de MCP da sua aplicação agêntica (o passo exato varia por ferramenta — procure "reload MCP servers" ou reinicie o programa).
+
+**Passo 5:** repita a pergunta e examine a chamada. A mesma pergunta do Passo 2. Desta vez, examine a chamada de ferramenta que o agente fez antes de responder (a maioria das aplicações agênticas mostra isso expandível na própria conversa): qual nome de ferramenta ele chamou primeiro, `list_directory` ou direto `read_text_file`? O conteúdo bruto que voltou da chamada bate com o arquivo que você criou?
+
+**Passo 6:** teste o limite do escopo. Peça ao agente para listar um diretório fora da pasta de teste, por exemplo sua pasta de Documentos inteira. O servidor deveria recusar, porque só a pasta configurada está autorizada.
 
 **Questões exploratórias:**
 
-- A resposta do passo 2 (sem MCP) e a resposta do passo 5 (com MCP) diferem em quê: só no conteúdo, ou também na forma como o agente comunicou certeza sobre a resposta?
-- O que aconteceu no passo 6 confirma ou contradiz o critério de escopo mínimo de [Padrões e decisões](padroes-e-decisoes.md#antes-de-conectar-avaliar-a-origem-do-servidor-mcp)?
+- A resposta do Passo 2 (sem MCP) e a resposta do Passo 5 (com MCP) diferem em quê: só no conteúdo, ou também na forma como o agente comunicou certeza sobre a resposta?
+- O que aconteceu no Passo 6 confirma ou contradiz o critério de escopo mínimo de [Padrões e decisões](padroes-e-decisoes.md#antes-de-conectar-avaliar-a-origem-do-servidor-mcp)?
 - Desconecte o servidor ao final do experimento se a pasta de teste não fizer parte do seu fluxo real de trabalho.
 
 ## Experimento C — isole duas sessões por worktree
