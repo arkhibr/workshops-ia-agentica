@@ -1,6 +1,6 @@
 # Síntese e referências
 
-## Oito ideias essenciais
+## Nove ideias essenciais
 
 1. **Vibe coding, assistência de codificação e SDD são famílias de risco, não degraus de maturidade.** A escolha depende da tarefa, não de uma régua de "quão avançado" o time está.
 2. **Um prompt funciona como programa porque o modelo aprende em contexto**, sem ajuste de peso — mecanismo empírico demonstrado por Brown et al. (2020).
@@ -10,6 +10,7 @@
 6. **A diferença entre um prompt intuitivo e um estruturado quase nunca está no modelo.** Está em quem já tinha feito, antes de escrever o pedido, o trabalho de reunir a regra de negócio inteira.
 7. **O ganho de produtividade depende do tipo de tarefa, com números reais para provar.** Peng et al. mediram 55,8% de ganho numa tarefa nova e delimitada; o METR mediu 19% de perda numa tarefa de manutenção em sistema maduro — e os próprios desenvolvedores não perceberam a perda.
 8. **A régua de decisão é a simplicidade, não a ferramenta mais avançada.** A recomendação da Anthropic em "Building Effective Agents" vale para os três modos desta sessão: comece pelo mais simples que a tarefa permitir.
+9. **A capacidade de resolver problemas reais deu um salto medido, não só sentido.** O SWE-bench foi de 1,96% de resolução em 2024 para cerca de 97% em 2026 — o mesmo "works.any() vira works.all()" de Karpathy, numa escala de dois anos.
 
 ## Checklist antes de encerrar a sessão
 
@@ -31,7 +32,9 @@ Se duas ou mais respostas forem "ainda não", releia [Conceitos](conceitos.md) a
 
 - VASWANI, Ashish et al. *Attention Is All You Need*. NeurIPS, 2017.
 - BROWN, Tom B. et al. *Language Models are Few-Shot Learners*. NeurIPS, 2020.
+- WEI, Jason et al. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*. NeurIPS, 2022.
 - YAO, Shunyu et al. *ReAct: Synergizing Reasoning and Acting in Language Models*. ICLR, 2023.
+- JIMENEZ, Carlos E. et al. *SWE-bench: Can Language Models Resolve Real-World GitHub Issues?*. ICLR, 2024.
 
 **Evidência empírica**
 
@@ -44,10 +47,6 @@ Se duas ou mais respostas forem "ainda não", releia [Conceitos](conceitos.md) a
 - KARPATHY, Andrej. "Software 2.0". Medium, 2017; e *Software Is Changing (Again)*, palestra, 2025.
 - WILLISON, Simon. "What is agentic engineering?". simonwillison.net, 2026.
 - ANTHROPIC. "Building Effective Agents". Anthropic Engineering, dez. 2024.
-
-**Curso irmão**
-
-- Disciplina de Arquitetura de Soluções com IA Generativa (Arkhi), Módulo 4 — Agentes: distinção vibe coding / assistência de codificação / SDD.
 
 Citações completas, com URL e resumo, em [../referencia/bibliografia.md](../referencia/bibliografia.md).
 

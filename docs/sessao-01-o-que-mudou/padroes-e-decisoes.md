@@ -16,7 +16,8 @@ Os três modos de [Conceitos](conceitos.md) não são degraus de maturidade que 
 
 A pergunta que resume a tabela: se esse código quebrar em produção, alguém vai conseguir reconstruir por que ele foi escrito daquele jeito? Vibe coding não deixa rastro para responder. Assistência de codificação deixa o código e o ticket. SDD deixa a especificação inteira.
 
-> **Aplique agora:** pense numa tarefa real do seu backlog desta semana. Percorra as cinco linhas da tabela e classifique-a — ela puxa para vibe coding, assistência ou SDD? Compare com a pessoa ao lado: vocês chegaram no mesmo modo para tarefas parecidas?
+!!! tip "Aplique agora"
+    Pense numa tarefa real do seu backlog desta semana. Percorra as cinco linhas da tabela e classifique-a: ela puxa para vibe coding, assistência ou SDD? Compare com a pessoa ao lado — vocês chegaram no mesmo modo para tarefas parecidas?
 
 ## O que a evidência empírica recomenda
 

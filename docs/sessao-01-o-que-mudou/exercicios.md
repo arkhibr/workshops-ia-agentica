@@ -1,6 +1,6 @@
 # Exercícios
 
-Tente responder antes de abrir os blocos de feedback nos dois primeiros níveis. A progressão segue a mesma Taxonomia de Bloom usada nas disciplinas de pós-graduação da Arkhi.
+Tente responder antes de abrir os blocos de feedback nos dois primeiros níveis. A progressão segue a Taxonomia de Bloom, do nível mais simples (recordar) ao mais exigente (criar).
 
 ## Recordar
 

@@ -53,7 +53,13 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 **BROWN, Tom B. et al. *Language Models are Few-Shot Learners*.** NeurIPS, 2020. <https://proceedings.neurips.cc/paper_files/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html>. Artigo de apresentação do GPT-3 — demonstra empiricamente o aprendizado em contexto (*in-context learning*): um modelo executa uma tarefa nova a partir da descrição em linguagem natural e de poucos exemplos, sem ajuste de peso. Mecanismo técnico que torna um prompt capaz de funcionar como programa (Software 3.0).
 → Sessão 1.
 
+**WEI, Jason et al. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*.** NeurIPS, 2022. <https://arxiv.org/abs/2201.11903>. Demonstra que pedir ao modelo para expor o raciocínio passo a passo antes da resposta final melhora o desempenho em tarefas de múltiplas etapas — a metade "raciocínio" que o ReAct combina com ação.
+→ Sessão 1.
+
 **YAO, Shunyu et al. *ReAct: Synergizing Reasoning and Acting in Language Models*.** ICLR, 2023. <https://openreview.net/forum?id=WE_vluYUL-X>. Formaliza o ciclo de raciocínio intercalado com ação verificável — a base técnica que distingue um agente de codificação de um LLM respondendo uma pergunta isolada.
+→ Sessão 1.
+
+**JIMENEZ, Carlos E. et al. *SWE-bench: Can Language Models Resolve Real-World GitHub Issues?*.** ICLR, 2024. <https://arxiv.org/abs/2310.06770>. Benchmark que mede se um agente resolve issues reais de repositórios GitHub, produzindo um patch que passa nos testes da comunidade. O melhor resultado do artigo original (Claude 2 com recuperação por palavras-chave) resolveu 1,96% dos casos; em 2026, os melhores agentes resolvem cerca de 97% na versão revisada (SWE-bench Verified) — a evidência quantitativa por trás de "por que agora".
 → Sessão 1.
 
 ## Evidência Empírica sobre Produtividade e Risco
@@ -79,7 +85,4 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 → Sessão 1.
 
 **ANTHROPIC. "Building Effective Agents".** Anthropic Engineering, dez. 2024. <https://www.anthropic.com/engineering/building-effective-agents>. Guia de referência do mercado para decidir entre workflow (código orquestra o modelo em caminho predefinido) e agente (o modelo decide os próprios passos); recomenda a solução mais simples possível, aumentando autonomia apenas quando o problema exigir. Cataloga cinco padrões de workflow: encadeamento de prompts, roteamento, paralelização, orquestrador-trabalhadores, avaliador-otimizador.
-→ Sessão 1.
-
-**Disciplina de Arquitetura de Soluções com IA Generativa (Arkhi), Módulo 4 — Agentes.** `docs/modulo-4-agentes/conceitos.md` e `docs/referencia/glossario.md`. Distinção entre vibe coding, assistência de codificação e SDD (artefato que governa, critério de qualidade, risco dominante); definições compartilhadas de *janela de contexto*, *agente de codificação*, *SDD*, *spec* e *constitution*: vocabulário comum entre os dois cursos da Arkhi sobre IA aplicada à engenharia de software.
 → Sessão 1.

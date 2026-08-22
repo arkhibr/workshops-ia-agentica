@@ -2,7 +2,7 @@
 
 ## Três modos de trabalho que a maioria dos times mistura num só
 
-A disciplina de Arquitetura de Soluções com IA Generativa da Arkhi separa três modos de trabalho com IA no desenvolvimento de software:
+Três modos de trabalho com IA se destacam na prática atual de desenvolvimento de software:
 
 | Modo | Artefato que governa | Como a qualidade é julgada | Risco dominante |
 |---|---|---|---|
@@ -36,7 +36,8 @@ A contradição entre os dois estudos não invalida nenhum dos dois. Ela aponta 
 - **Sem rede.** Código é aceito sem que quem aceitou entenda de fato o que ele faz. Pearce et al. (2022), em um estudo hoje seminal, submeteram o GitHub Copilot a 89 cenários de programação cobrindo as principais categorias de vulnerabilidade (CWE Top 25) e encontraram falha de segurança em cerca de 40% dos programas gerados. Quando esse código quebra ou é explorado em produção, não há protocolo de depuração, só tentativa e erro.
 - **Ad hoc.** Não existe fluxo, vocabulário ou critério de aceitação compartilhado entre o time para o que "um bom pedido à IA" significa.
 
-> **Pare e pergunte à turma:** qual desses três sintomas apareceu no time de vocês na última semana? Peça exemplos concretos, sem citar nomes. O objetivo aqui é reconhecer o padrão coletivo, sem transformar a conversa em apontar responsáveis.
+!!! question "Pare e pergunte à turma"
+    Qual desses três sintomas apareceu no time de vocês na última semana? Peça exemplos concretos, sem citar nomes. O objetivo aqui é reconhecer o padrão coletivo, sem transformar a conversa em apontar responsáveis.
 
 ## A tese do Software 3.0
 
@@ -52,9 +53,15 @@ A previsão de Karpathy para a década segue a mesma lógica: "Software 3.0 is e
 
 ![Evolução de Software 1.0, no qual humanos escrevem regras em código, para Software 2.0, no qual dados e otimização produzem pesos, e Software 3.0, no qual linguagem natural, regras, convenções, exemplos e casos de borda entram na janela de contexto de um LLM.](../assets/images/s1-software-1-2-3.png)
 
+## Por que agora: a curva de capacidade
+
+A tese de Karpathy não seria interessante sem uma pergunta anterior: por que a virada está acontecendo agora, e não há cinco anos? O SWE-bench, apresentado por Jimenez et al. em 2024, mede exatamente isso. O benchmark pega problemas reais, reportados como issues em repositórios populares do GitHub, e pede ao agente que produza o patch que resolve o problema. Diferente de gerar uma função isolada, a tarefa exige localizar a causa no repositório inteiro e passar nos testes que a própria comunidade usa para aceitar contribuições.
+
+No artigo original, o melhor resultado (Claude 2 com recuperação por palavras-chave) resolveu 1,96% dos problemas. Em 2026, os agentes de codificação mais avançados resolvem cerca de 97% dos mesmos problemas na versão revisada do benchmark (SWE-bench Verified). Essa curva não mede um modelo ficando mais esperto sozinho, mede a disciplina em volta do modelo amadurecendo: melhor navegação do repositório, uso real de ferramentas, verificação antes de declarar a tarefa concluída. É a mesma equação de piso, teto e julgamento vista a seguir, só que numa escala de dois anos em vez de uma sessão de trabalho.
+
 ## O que torna um sistema agêntico
 
-Uma segunda peça técnica separa um agente de um LLM respondendo uma pergunta isolada: a capacidade de intercalar raciocínio e ação, lendo o resultado de uma ferramenta, decidindo o próximo passo, agindo de novo. Yao et al., no artigo que introduziu o framework ReAct (2023), formalizaram esse ciclo combinando cadeia de raciocínio com execução verificável de ações.
+Antes de intercalar ação, um agente precisa raciocinar de forma explícita. Wei et al. (2022) mostraram que pedir ao modelo para expor o raciocínio passo a passo antes de responder, a técnica de cadeia de pensamento, melhora sensivelmente o desempenho em tarefas com múltiplas etapas de lógica. Yao et al. deram o passo seguinte, no artigo que introduziu o framework ReAct (2023): ligaram esse raciocínio explícito a ações reais e verificáveis, formalizando o ciclo que intercala raciocínio e ação, lendo o resultado de uma ferramenta, decidindo o próximo passo, agindo de novo.
 
 Um chat comum recebe um pedido como "corrija os testes que estão falhando" e devolve uma sugestão de texto. Um agente lê a saída real do executor de testes, decide qual arquivo abrir com base nela, edita o arquivo, roda os testes de novo, lê a nova saída e só para quando o resultado bate — ou quando decide que precisa perguntar algo a quem o acionou. É esse ciclo de raciocínio e ação, mais do que o tamanho do modelo, que separa Claude Code ou Codex de um chat comum, e o que torna possível a engenharia agêntica.
 
@@ -82,6 +89,7 @@ Willison localiza esse julgamento em "figuring out *what* code to write": navega
 | Teto sobe com disciplina | Especificação + ferramental | O código resolve exatamente o problema, nos casos de borda que importam? |
 | Julgamento humano sobe de valor | Verificação | Esse era o problema certo? O resultado está pronto para produção, ou é só um demo que passou uma vez? |
 
-> **Pare e pergunte à turma:** pensem num código aceito recentemente sem revisão cuidadosa. Ele passou pela coluna "piso" (rodou) ou também pela coluna "teto" (foi verificado nos casos que importam)? Peça que alguém responda em voz alta antes de seguir.
+!!! question "Pare e pergunte à turma"
+    Pensem num código aceito recentemente sem revisão cuidadosa. Ele passou pela coluna "piso" (rodou) ou também pela coluna "teto" (foi verificado nos casos que importam)? Peça que alguém responda em voz alta antes de seguir.
 
 **Próxima página:** [Padrões e decisões](padroes-e-decisoes.md).
