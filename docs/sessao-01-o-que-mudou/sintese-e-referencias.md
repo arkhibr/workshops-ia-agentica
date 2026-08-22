@@ -55,6 +55,7 @@ Se duas ou mais respostas forem "ainda não", releia [Conceitos](conceitos.md) a
 - SWE-bench. "SWE-bench Verified Leaderboard" e "SWE-bench Pro Leaderboard". swebench.com — consultar antes de decidir, o placar da Sessão 1 envelhece rápido.
 - ANTHROPIC. "Introducing Claude Haiku 4.5". Anthropic News, 2026.
 - OpenAI. "GPT-5.6" (Sol, Terra, Luna). Anúncio de lançamento, 9 jul. 2026 — lançado sem SWE-bench Verified, só Pro.
+- Datacurve. "DeepSWE". benchlm.ai, atualizado em 20/08/2026 — compara Claude e GPT-5.6 sob a mesma régua.
 
 **Síntese de mercado**
 

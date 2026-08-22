@@ -87,7 +87,21 @@ Não entra na tabela acima por um motivo que já é a própria lição desta se�
 
 Colocar o Sol (64,6%) ao lado do Claude Opus 5 da tabela Verified (97,0%) seria comparar maçã com laranja: são benchmarks diferentes, com dificuldade diferente. É exatamente o tipo de comparação que o critério anterior (desconfiar do número que o próprio fabricante escolhe divulgar) existe para impedir. Quando um fabricante muda de benchmark de um lançamento para o outro, vale perguntar por que ele parou de reportar o benchmark anterior, não só por que o número novo parece mais baixo.
 
-**Este placar envelhece rápido em qualquer uma das duas tabelas**: confira a [SWE-bench Verified Leaderboard](https://www.swebench.com/) e a [SWE-bench Pro Leaderboard](https://www.vals.ai/benchmarks/swebench) atualizadas antes de decidir, não confie em número congelado numa página de workshop.
+### Um benchmark que compara todo mundo pela mesma régua
+
+A resposta para esse impasse não é desistir de comparar Claude e GPT: é procurar um benchmark que avalie os dois sob a mesma régua, na mesma data. O DeepSWE, da Datacurve, faz isso — 113 tarefas de longo horizonte, tiradas de 91 repositórios open source ativos em 5 linguagens, verificadas por programa, não por humano lendo o diff:
+
+| Modelo | Organização | DeepSWE |
+|---|---|---|
+| Claude Opus 5 | Anthropic | 73,6% |
+| GPT-5.6 Sol | OpenAI | 72,7% |
+| Claude Fable 5 | Anthropic | 69,7% |
+| GPT-5.6 Terra | OpenAI | 69,6% |
+| GLM-5.3 | Z.AI | 69,0% |
+
+Fonte: [benchlm.ai — DeepSWE](https://benchlm.ai/benchmarks/deepswe), atualizado em 20 de agosto de 2026, 25 modelos avaliados. Repare como a distância entre o primeiro e o quinto colocado (4,6 pontos) é bem menor do que a distância entre Sol e Terra no SWE-bench Pro: o ranking muda de cara dependendo de qual benchmark você escolhe, e nenhum dos dois é "o errado": medem coisas ligeiramente diferentes. A régua prática: quando precisar comparar fabricantes diferentes, procure primeiro um benchmark que avalie todos sob o mesmo teto antes de comparar números de tabelas separadas.
+
+**Este placar envelhece rápido nas três tabelas**: confira a [SWE-bench Verified Leaderboard](https://www.swebench.com/), a [SWE-bench Pro Leaderboard](https://www.vals.ai/benchmarks/swebench) e o [DeepSWE Leaderboard](https://benchlm.ai/benchmarks/deepswe) atualizados antes de decidir, não confie em número congelado numa página de workshop.
 
 ## Anti-padrão: vibe coding tratado como produto
 

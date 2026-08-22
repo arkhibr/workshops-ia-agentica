@@ -82,6 +82,9 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 **OpenAI. "GPT-5.6" (Sol, Terra, Luna).** Anúncio de lançamento, 9 jul. 2026. Recapitulação: MarkTechPost, <https://www.marktechpost.com/2026/07/09/openai-releases-gpt-5-6-a-three-tier-model-family-with-programmatic-tool-calling/>. Família de três níveis lançada sem número de SWE-bench Verified — só SWE-bench Pro foi divulgado. Exemplo real do critério "desconfie do benchmark que o fabricante escolhe divulgar".
 → Sessão 1.
 
+**Datacurve. "DeepSWE".** Leaderboard independente. <https://benchlm.ai/benchmarks/deepswe>. Benchmark de longo horizonte com 113 tarefas de 91 repositórios open source ativos em 5 linguagens, verificadas por programa. Avalia Claude, GPT-5.6 e GLM sob a mesma régua e na mesma data — referência para comparar fabricantes diferentes sem misturar benchmarks distintos.
+→ Sessão 1.
+
 ## Evidência Empírica sobre Produtividade e Risco
 
 **PENG, Sida; KALLIAMVAKOU, Eirini; CIHON, Peter; DEMIRER, Mert. *The Impact of AI on Developer Productivity: Evidence from GitHub Copilot*.** arXiv:2302.06590, 2023. <https://arxiv.org/abs/2302.06590>. Experimento randomizado com 70 desenvolvedores profissionais: o grupo com Copilot completou uma tarefa de implementação de servidor HTTP 55,8% mais rápido (71 min contra 161 min). O efeito foi maior para desenvolvedores menos experientes.
