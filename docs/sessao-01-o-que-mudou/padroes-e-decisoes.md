@@ -19,7 +19,7 @@ A pergunta que resume a tabela: se esse código quebrar em produção, alguém v
 !!! tip "Aplique agora"
     Pense numa tarefa real do seu backlog desta semana. Percorra as cinco linhas da tabela e classifique-a: ela puxa para vibe coding, assistência ou SDD? Compare com a pessoa ao lado — vocês chegaram no mesmo modo para tarefas parecidas?
 
-## Por que reversibilidade e tempo de vida pesam tanto
+## O peso econômico de reversibilidade e tempo de vida
 
 Boehm, em *Software Engineering Economics* (1981), documentou algo que antecede qualquer LLM: o custo de corrigir um defeito cresce a cada fase do desenvolvimento. Em sistemas pequenos, o crescimento é suave; em sistemas grandes e críticos, um problema descoberto depois da entrega pode custar da ordem de 100 vezes mais para corrigir do que o mesmo problema pego na fase de requisitos. A proporção exata varia por contexto (pesquisa mais recente questiona se o multiplicador de Boehm ainda vale em times ágeis com integração contínua), mas a direção não mudou em quatro décadas: quanto mais tarde uma ambiguidade aparece, mais caro fica resolvê-la.
 

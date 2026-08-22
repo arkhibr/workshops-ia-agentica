@@ -36,7 +36,7 @@ Explique a diferença entre as duas práticas, sem usar a palavra "melhor" para 
 Prompt engineering cuida do texto da instrução. Context engineering cuida de tudo que chega à janela de contexto numa execução — instruções, histórico, resultado de ferramentas, arquivos lidos. A segunda é mais ampla que a primeira, não uma substituta.
 </details>
 
-### 4. Por que um arquivo genérico não muda comportamento
+### 4. O efeito de uma linha genérica de instrução
 
 Um colega escreve num AGENTS.md: "escreva código limpo e siga boas práticas." Explique por que essa linha, sozinha, não muda nenhum comportamento observável do agente.
 

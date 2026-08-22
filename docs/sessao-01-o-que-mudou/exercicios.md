@@ -26,7 +26,7 @@ Em uma frase, explique o que é aprendizado em contexto (in-context learning) e 
 
 ## Compreender
 
-### 3. Por que vibe coding não é o problema
+### 3. O limite entre vibe coding legítimo e arriscado
 
 Explique por que vibe coding não é, por si, uma prática ruim — e onde exatamente ela se torna um risco.
 

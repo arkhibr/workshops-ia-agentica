@@ -53,9 +53,9 @@ A previsão de Karpathy para a década segue a mesma lógica: "Software 3.0 is e
 
 ![Evolução de Software 1.0, no qual humanos escrevem regras em código, para Software 2.0, no qual dados e otimização produzem pesos, e Software 3.0, no qual linguagem natural, regras, convenções, exemplos e casos de borda entram na janela de contexto de um LLM.](../assets/images/s1-software-1-2-3.png)
 
-## Por que agora: a curva de capacidade
+## A curva de capacidade por trás do momento atual
 
-A tese de Karpathy não seria interessante sem uma pergunta anterior: por que a virada está acontecendo agora, e não há cinco anos? O SWE-bench, apresentado por Jimenez et al. em 2024, mede exatamente isso. O benchmark pega problemas reais, reportados como issues em repositórios populares do GitHub, e pede ao agente que produza o patch que resolve o problema. Diferente de gerar uma função isolada, a tarefa exige localizar a causa no repositório inteiro e passar nos testes que a própria comunidade usa para aceitar contribuições.
+A tese de Karpathy explica o que está mudando. O SWE-bench, apresentado por Jimenez et al. em 2024, mede quando essa mudança passou a valer na prática. O benchmark pega problemas reais, reportados como issues em repositórios populares do GitHub, e pede ao agente que produza o patch que resolve o problema. Diferente de gerar uma função isolada, a tarefa exige localizar a causa no repositório inteiro e passar nos testes que a própria comunidade usa para aceitar contribuições.
 
 No artigo original, o melhor resultado (Claude 2 com recuperação por palavras-chave) resolveu 1,96% dos problemas. Em 2026, os agentes de codificação mais avançados resolvem cerca de 97% dos mesmos problemas na versão revisada do benchmark (SWE-bench Verified). Essa curva não mede um modelo ficando mais esperto sozinho, mede a disciplina em volta do modelo amadurecendo: melhor navegação do repositório, uso real de ferramentas, verificação antes de declarar a tarefa concluída. É a mesma equação de piso, teto e julgamento vista a seguir, só que numa escala de dois anos em vez de uma sessão de trabalho.
 
