@@ -17,7 +17,7 @@ Conteúdo textual obrigatório, grafado exatamente: “SIMPLICIDADE E RISCO”, 
 
 Estilo visual: diagrama vetorial técnico e editorial, semelhante a uma prancha de arquitetura acadêmica. Nós retangulares claros, ícones lineares, setas direcionais com significado, grade técnica discreta e bastante espaço em branco. Sem robôs, sem pessoas, sem fotorrealismo, sem 3D, sem logotipos e sem marcas-d’água.
 
-Paleta de cores: azul-marinho #16243A, cobalto #254DB8, ciano #5FC0D1, papel #F2F6FB e branco #FFFFFF; âmbar #F2B84B somente para risco e anti-padrão.
+Paleta de cores: verde-floresta #123C2B, verde-esmeralda #15803D, verde-menta #5FCF9B, fundo verde muito claro #F2F8F4 e branco #FFFFFF; laranja #F28C28 e laranja-escuro #C95D14 somente para risco e anti-padrão.
 
 Tipografia: sans-serif condensada em negrito para títulos; sans-serif limpa para rótulos; português brasileiro correto e acentos preservados.
 

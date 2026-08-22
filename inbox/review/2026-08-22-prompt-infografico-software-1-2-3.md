@@ -17,7 +17,7 @@ Conteúdo textual obrigatório, grafado exatamente: “SOFTWARE 1.0”, “Códi
 
 Estilo visual: prancha de arquitetura acadêmica, vetorial, precisa e sóbria; ícones lineares; caixas e setas com espessura uniforme; grade técnica azul muito clara; composição inspirada em diagramas de arquitetura corporativa, sem aparência de slide genérico. Sem pessoas, sem fotorrealismo, sem 3D, sem logotipos e sem marcas-d’água.
 
-Paleta de cores: azul-marinho #16243A, cobalto #254DB8, ciano #5FC0D1, papel #F2F6FB, branco #FFFFFF; âmbar #F2B84B para destacar a janela de contexto.
+Paleta de cores: verde-floresta #123C2B, verde-esmeralda #15803D, verde-menta #5FCF9B, fundo verde muito claro #F2F8F4 e branco #FFFFFF; laranja #F28C28 e laranja-escuro #C95D14 para destacar a janela de contexto.
 
 Tipografia: sans-serif condensada em negrito nos títulos e sans-serif limpa nos rótulos; português brasileiro correto e acentos preservados.
 

@@ -17,7 +17,7 @@ Conteúdo textual obrigatório, grafado exatamente: “RÉGUA DE ESCOLHA”, “
 
 Estilo visual: prancha técnica de decisão, vetorial e acadêmica; linhas de cota, marcadores deslizantes, conectores precisos e ícones lineares mínimos. Grande clareza de leitura, sem aparência de dashboard comercial. Sem pessoas, sem fotorrealismo, sem 3D, sem logotipos e sem marcas-d’água.
 
-Paleta de cores: azul-marinho #16243A, cobalto #254DB8, ciano #5FC0D1, papel #F2F6FB, branco #FFFFFF; âmbar #F2B84B para o selo de decisão.
+Paleta de cores: verde-floresta #123C2B, verde-esmeralda #15803D, verde-menta #5FCF9B, fundo verde muito claro #F2F8F4 e branco #FFFFFF; laranja #F28C28 e laranja-escuro #C95D14 para o selo de decisão.
 
 Tipografia: sans-serif condensada em negrito nos títulos, sans-serif limpa nos rótulos, acentos corretos.
 

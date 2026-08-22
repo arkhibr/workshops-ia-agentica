@@ -17,7 +17,7 @@ Conteúdo textual obrigatório, grafado exatamente: “ENGENHARIA AGÊNTICA”, 
 
 Estilo visual: diagrama vetorial técnico, sóbrio e acadêmico, com a linguagem de uma prancha de arquitetura. Ícones lineares consistentes, setas semânticas, caixas claras, fundo com grade mínima. Sem representação antropomórfica do agente, sem robôs, sem cérebro humano, sem fotorrealismo, sem 3D, sem logotipos e sem marcas-d’água.
 
-Paleta de cores: azul-marinho #16243A e cobalto #254DB8 como base; ciano #5FC0D1 para o ciclo; âmbar #F2B84B para decisões humanas; papel #F2F6FB e branco #FFFFFF.
+Paleta de cores: verde-floresta #123C2B e verde-esmeralda #15803D como base; verde-menta #5FCF9B para o ciclo; laranja #F28C28 e laranja-escuro #C95D14 para decisões humanas; fundo verde muito claro #F2F8F4 e branco #FFFFFF.
 
 Tipografia: sans-serif condensada em negrito nos títulos e rótulos principais; sans-serif limpa nas legendas; português brasileiro correto e acentos preservados.
 

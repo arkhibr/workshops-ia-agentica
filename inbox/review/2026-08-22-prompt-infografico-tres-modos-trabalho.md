@@ -17,7 +17,7 @@ Conteúdo textual obrigatório, grafado exatamente: “TRÊS MODOS DE TRABALHO�
 
 Estilo visual: prancha de arquitetura acadêmica, diagrama vetorial técnico e limpo, ícones lineares consistentes, caixas verticais de cantos levemente arredondados, linhas de cota e grade técnica muito sutil ao fundo. Hierarquia visual forte, muito espaço em branco, legibilidade projetada para página web e projeção em sala. Sem pessoas, sem fotorrealismo, sem efeitos 3D, sem logotipos, sem marcas-d’água.
 
-Paleta de cores: tinta azul-marinho #16243A, azul-cobalto #254DB8, ciano #5FC0D1, papel #F2F6FB, branco #FFFFFF e âmbar #F2B84B apenas para pontos de decisão e alertas.
+Paleta de cores: verde-floresta #123C2B, verde-esmeralda #15803D, verde-menta #5FCF9B, fundo verde muito claro #F2F8F4, branco #FFFFFF, laranja #F28C28 e laranja-escuro #C95D14 para pontos de decisão e alertas.
 
 Tipografia: títulos condensados sans-serif em negrito; rótulos em sans-serif limpa; português brasileiro correto; acentos preservados.
 
