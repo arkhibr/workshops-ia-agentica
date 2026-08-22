@@ -4,6 +4,9 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 
 ## Spec-Driven Development
 
+**DELIMARSKY, Den. "Spec-driven development with AI: Get started with a new open source toolkit".** *The GitHub Blog*, 2 set. 2025. <https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/>. Post oficial de lançamento do GitHub Spec Kit — define o problema do vibe coding ("você descreve o objetivo, recebe um bloco de código de volta, e frequentemente... parece certo, mas não funciona direito") e o papel da especificação como "contrato para como seu código deve se comportar".
+→ Sessões 1, 3, 5, 8.
+
 **GitHub Spec Kit.** Implementação de referência open source do Spec-Driven Development (SDD) — mais de 90 mil estrelas no GitHub. Define os quatro artefatos canônicos (`constitution.md`, `spec.md`, `plan.md`, `tasks.md`) e os comandos `/specify`, `/plan`, `/tasks`, compatíveis com Claude Code, GitHub Copilot e Cursor.
 → Sessões 3, 5, 8.
 
@@ -44,5 +47,11 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 
 ## Engenharia de Software na Era dos LLMs
 
-**KARPATHY, Andrej.** Formulação do conceito de "Software 3.0" — o LLM como novo tipo de computador, programado em linguagem natural.
+**KARPATHY, Andrej. *Software Is Changing (Again)*.** Palestra, YC AI Startup School, 17 jun. 2025. Recapitulação: Latent Space, <https://www.latent.space/p/s3>. Formulação dos três paradigmas coexistentes — Software 1.0 (código explícito), Software 2.0 (redes neurais treinadas), Software 3.0 (prompt em linguagem natural como programa executável) — e do conceito de *generation-verification loop* ("demo is works.any(), product is works.all()"). Karpathy também cunhou o termo *vibe coding*, em publicação de fevereiro de 2025.
+→ Sessão 1.
+
+**WILLISON, Simon. "What is agentic engineering?"** — *Agentic Engineering Patterns*. simonwillison.net, mar. 2026. <https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/>. Define engenharia agêntica como "a prática de desenvolver software com o auxílio de agentes de codificação", sustentada por três responsabilidades humanas — especificação do problema, provisão de ferramentas, verificação e iteração — e distingue a prática de "vibe coding", termo que reserva para código de protótipo não revisado.
+→ Sessão 1.
+
+**Glossário controlado — disciplina de Arquitetura de Soluções com IA Generativa (Arkhi).** Definições compartilhadas de *vibe coding*, *janela de contexto*, *agente de codificação*, *SDD*, *spec* e *constitution* — vocabulário comum entre os dois cursos da Arkhi sobre IA aplicada à engenharia de software.
 → Sessão 1.

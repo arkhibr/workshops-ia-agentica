@@ -27,15 +27,19 @@ Diferenciar o uso ad hoc de IA (prompt improvisado, resultado imprevisível) do 
 
 ### Teoria (15 min)
 
-Todo time de desenvolvimento hoje já usa IA. Isso não é o problema — é o ponto de partida. O problema é que o uso é ad hoc: cada desenvolvedor improvisa o próprio jeito de pedir código ao LLM, sem vocabulário, ritual ou contrato compartilhados com o resto do time.
+O nome preciso para o que a maioria dos times já faz é *vibe coding* — termo cunhado por Andrej Karpathy, pesquisador que liderou IA da Tesla e cofundou a OpenAI, numa publicação de fevereiro de 2025. O glossário da disciplina de Arquitetura de Soluções com IA Generativa da Arkhi define vibe coding como "a prática de pedir implementação por linguagem natural sem tornar requisitos, testes e critérios de aceite artefatos explícitos" ([Glossário — Módulo 4, Agentes](../referencia/bibliografia.md)). Não é uma gíria pejorativa — é uma prática com uso legítimo, mas um uso específico.
 
-Esse uso ad hoc se manifesta de três formas, que costumam coexistir no mesmo time:
+Simon Willison — que documenta e nomeia práticas de desenvolvimento assistido por IA desde 2022 — é direto sobre onde esse uso legítimo termina: "vibe coding is more useful in its original definition — we need a term to describe unreviewed, prototype-quality LLM-generated code" (Willison, *Agentic Engineering Patterns*, 2026). Vibe coding é ótimo para um protótipo descartável. O problema começa quando o time trata esse protótipo como produto — porque ninguém tornou explícito, em nenhum momento, o que o código deveria fazer.
+
+O próprio Karpathy documentou o limite na prática: os ganhos de velocidade do vibe coding "vanished shortly after getting local code running" (YC AI Startup School, jun. 2025) — a aceleração desaparece assim que o código precisa integrar, ser mantido ou sobreviver a um caso de borda que o prompt original não previu.
+
+Esse é o diagnóstico do time hoje, em três sintomas que costumam coexistir:
 
 - **Inconsistente.** Alguns desenvolvedores extraem resultados excelentes do mesmo modelo que outros usam apenas como um completador de código sofisticado — a diferença não está no modelo, está em como cada um pede.
 - **Sem rede.** Código é aceito sem que quem aceitou entenda de fato o que ele faz. Quando esse código quebra em produção, não há protocolo de depuração — só tentativa e erro.
 - **Ad hoc.** Não existe um fluxo, um vocabulário ou um critério de aceitação compartilhado entre o time para o que "um bom pedido à IA" significa.
 
-O resultado é desigual: a mesma ferramenta produz efeitos muito diferentes, dependendo de quem a usa. Esse workshop existe para fechar essa distância — não trazendo uma ferramenta nova, mas um método.
+O nome para a disciplina que resolve isso — assunto do resto do workshop — também já existe: **engenharia agêntica**. Willison a define como "the practice of developing software with the assistance of coding agents" (Claude Code, Codex, Gemini CLI), sustentada por três responsabilidades que continuam humanas mesmo quando o código é escrito por um agente: especificar o problema, prover as ferramentas certas, e verificar e iterar sobre o resultado. Essas três responsabilidades — especificação, ferramental, verificação — são o mapa dos Blocos 2, 3 e 4 desta sessão, e da estrutura inteira do workshop.
 
 ### Prática (10 min)
 
@@ -49,15 +53,17 @@ Autodiagnóstico individual, sem julgamento — o objetivo é ter um retrato hon
 
 ### Teoria (15 min)
 
-A mudança de fundo é esta: o LLM é o interpretador, e o desenvolvedor escreve em linguagem natural. O que antes era arte ou intuição — saber pedir a coisa certa, da forma certa — agora é engenharia: especificação, decomposição, verificação. A janela de contexto do agente é, na prática, o programa que ele vai executar.
+Karpathy apresentou essa mudança como uma tese de fundo, na YC AI Startup School de 17 de junho de 2025: a programação sempre teve, ao longo da história, um único paradigma dominante por vez — e agora tem três coexistindo. **Software 1.0** é código explícito, escrito por humanos em linguagens de programação. **Software 2.0** são redes neurais: em vez de código, o programador ajusta pesos por treinamento. **Software 3.0** é o prompt em linguagem natural funcionando como o próprio programa, interpretado por um LLM. Karpathy resume a virada numa frase que já circula como definição: "the hottest new programming language is English."
+
+O prompt não é mais um pedido informal para um assistente — é a especificação executável. Tecnicamente, o que o LLM processa em cada execução é limitado pela **janela de contexto** — "o limite de unidades de entrada e saída que o modelo consegue considerar" (glossário da disciplina de Arquitetura de Soluções com IA Generativa da Arkhi). Na prática do desenvolvedor, isso significa que tudo que o agente sabe sobre o problema — convenções do repositório, regra de negócio, casos de borda — precisa caber, de forma explícita, dentro dessa janela. É por isso que "a janela de contexto virou o programa": o que não está lá dentro simplesmente não existe para o agente. E a previsão de Karpathy para a década é direta: "Software 3.0 is eating 1.0/2.0" — não porque código explícito e modelos treinados deixam de existir, mas porque uma fração crescente do comportamento de um sistema passa a ser especificada em linguagem natural, e não em sintaxe de linguagem de programação.
 
 Essa mudança sobe três coisas ao mesmo tempo, mas em ritmos diferentes:
 
-- **O piso sobe para todos.** Qualquer desenvolvedor, com qualquer nível de experiência, consegue hoje produzir código que compila e roda. Isso já não é mais diferencial.
-- **O teto sobe só com disciplina.** Quem domina o método — dar contexto explícito, especificar antes de pedir, verificar antes de aceitar — extrai da mesma ferramenta um resultado muito superior. Essa diferença não aparece sozinha; ela é construída.
-- **O julgamento humano sobe de valor.** Gosto, especificação e arquitetura são exatamente as decisões que o modelo não toma por conta própria. Quanto mais poderosa a ferramenta, mais caro fica um julgamento ruim sobre o que pedir a ela.
+- **O piso sobe para todos.** Se a linguagem de programação é o português ou o inglês, qualquer desenvolvedor — júnior, sênior, ou alguém fora da equipe de engenharia — consegue hoje produzir código que compila e roda. Isso já não é mais diferencial.
+- **O teto sobe só com disciplina.** O próprio Karpathy nomeia a lacuna: "demo is works.any(), product is works.all()" — um protótipo só precisa funcionar uma vez, um produto precisa funcionar em todos os casos que importam. Fechar essa lacuna é o que ele chama de *generation-verification loop*: gerar, verificar, ajustar, repetir — e é exatamente o método que dá disciplina ao vibe coding do Bloco 1.
+- **O julgamento humano sobe de valor.** As três responsabilidades de Willison — especificar, prover ferramentas, verificar — são decisões que o modelo não toma sozinho. Quanto mais poderoso o modelo, mais caro fica errar nelas.
 
-Este workshop inteiro é sobre a segunda seta — como construir o teto.
+Este workshop inteiro é sobre a segunda seta — como fechar a lacuna entre demo e produto.
 
 ### Prática (15 min)
 
@@ -71,9 +77,17 @@ Duas versões do mesmo pedido, lado a lado: uma intuitiva, uma com contexto expl
 
 ### Teoria (10 min)
 
-A tese do Bloco 2 só é útil se o time souber reconhecer, no próprio trabalho, onde cada seta age. Nem todo ganho de produtividade é igual: um ganho de piso (o código funciona) não é o mesmo que um ganho de teto (o código está correto, testável e alinhado à arquitetura do sistema) — e nenhum dos dois substitui o julgamento sobre se aquele era o problema certo a resolver.
+A tese do Bloco 2 só é útil se o time souber reconhecer, no próprio trabalho, onde cada seta age. Willison é específico sobre onde o valor humano se concentra: não em escrever código, mas em "figuring out *what* code to write" e em navegar as decisões de arquitetura que sobram depois que o agente gera uma proposta. Um ganho de piso (o código roda) não é o mesmo que um ganho de teto (o código está correto, testável e alinhado à arquitetura do sistema) — e nenhum dos dois substitui o julgamento sobre se aquele era o problema certo a resolver.
 
-Esse é o critério que vai acompanhar o time no resto do workshop: perguntar, diante de qualquer saída de IA, qual dessas três coisas ela resolveu — e qual ela deixou para o humano decidir.
+As três responsabilidades de Willison mapeiam diretamente nas três setas:
+
+| Seta (Karpathy/Willison) | Responsabilidade que sobe de valor | Pergunta que ela responde |
+|---|---|---|
+| Piso sobe para todos | — | O código compila e roda? |
+| Teto sobe com disciplina | Especificação + ferramental (*problem specification*, *tool provisioning*) | O código resolve exatamente o problema, nos casos de borda que importam? |
+| Julgamento humano sobe de valor | Verificação (*verification and iteration*) | Esse era o problema certo? O resultado está pronto para produção, ou é só um demo que passou uma vez? |
+
+Esse é o critério que acompanha o time no resto do workshop: diante de qualquer saída de IA, perguntar qual dessas três coisas ela resolveu — e qual ela deixou para o humano decidir.
 
 ### Prática (10 min)
 
@@ -96,6 +110,15 @@ O exercício pede a mesma coisa duas vezes ao agente — primeiro com um prompt 
 → [exercicios/exercicio-04-intuicao-vs-estruturado/index.md](exercicios/exercicio-04-intuicao-vs-estruturado/index.md)
 
 ---
+
+## Fontes desta sessão
+
+- KARPATHY, Andrej. *Software Is Changing (Again)*. Palestra, YC AI Startup School, 17 jun. 2025.
+- WILLISON, Simon. "What is agentic engineering?" — *Agentic Engineering Patterns*. simonwillison.net, mar. 2026.
+- DELIMARSKY, Den. "Spec-driven development with AI: Get started with a new open source toolkit". *The GitHub Blog*, 2 set. 2025.
+- Glossário controlado, disciplina de Arquitetura de Soluções com IA Generativa (Arkhi) — definições de *vibe coding*, *janela de contexto*, *agente de codificação*.
+
+Citações completas em [referencia/bibliografia.md](../referencia/bibliografia.md).
 
 ## Inventário de arquivos
 
