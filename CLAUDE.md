@@ -64,6 +64,10 @@ docs/sessao-NN-slug/
 
 **Caso contínuo: Vetor.** Uma plataforma fictícia de e-commerce B2B (clientes padrão e atacado) atravessa as dez sessões como fio condutor de exemplos e exercícios, equivalente aos casos Horizonte/Aurora/Lume do `arquitetura-solucoes-ia-generativa`. Cenários genéricos de C#/JS/TS usam a Vetor; variações no domínio FUNDEP continuam restritas aos Blocos 3 e 4, como exercício adicional.
 
+**O caso aplicado fica fora de `conceitos.md` e `padroes-e-decisoes.md`.** Essas duas páginas ficam em nível conceitual — framework, tabela de critérios, evidência empírica, princípio geral. A Vetor (ou qualquer cenário concreto) só entra em `exemplo-arquitetural.md`, `estudo-de-caso.md`, `oficina-de-ferramentas.md` e `exercicios.md`. Um framework teórico seguido de repente por "a Vetor precisa de..." é uma quebra de nível que o participante não tem como acompanhar — o exemplo cabe na página feita para exemplo.
+
+**Toda página é autocontida — sem exceção.** O `nav:` do mkdocs lista as 8 páginas de cada sessão lado a lado; o participante pode abrir qualquer uma diretamente, sem ter lido as anteriores. Por isso, a primeira vez que uma página usa a Vetor (ou qualquer termo específico do workshop definido em outra página, mesmo que já definido no `index.md` da sessão), ela recebe uma frase curta de contexto — "a Vetor, plataforma fictícia de e-commerce B2B usada nesta sessão" — antes de assumir que o leitor já sabe do que se trata.
+
 ## Convenções críticas
 
 **Sem par ruim/bom.** Este não é um workshop de refatoração de código — é um workshop de método com IA. O exercício típico é rodar um fluxo com o agente (especificar, planejar, testar, depurar) e comparar contra um critério de aceitação, não comparar uma versão "ruim" e uma "boa" do mesmo código.

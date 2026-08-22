@@ -32,8 +32,4 @@ O anti-padrão não é usar vibe coding. É usar vibe coding e depois esquecer q
 
 A correção não é proibir vibe coding. É decidir o modo antes de começar, não depois que o protótipo já virou dependência de outras equipes.
 
-## O caso Vetor sob este critério
-
-A Vetor precisa de uma função de desconto por volume de pedido, usada no checkout de produção, com uma regra de teto e uma variação por tipo de cliente. Aplicando a tabela: baixa reversibilidade (afeta faturamento), tempo de vida longo (parte do checkout), várias pessoas vão mexer depois (time de pagamentos, time de relatórios financeiros), regra de negócio real com exceções. Essa combinação aponta para assistência de codificação disciplinada como piso mínimo aceitável — o que o Bloco 4 desta sessão pratica diretamente.
-
-**Próxima página:** [Exemplo arquitetural](exemplo-arquitetural.md).
+**Próxima página:** [Exemplo arquitetural](exemplo-arquitetural.md) aplica esta tabela a um caso concreto.

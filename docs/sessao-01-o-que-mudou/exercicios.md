@@ -56,7 +56,7 @@ Confunde piso (o código roda) com teto (o código está correto e testável) e 
 
 **Situação**
 
-A Vetor precisa da mesma função de desconto do exemplo, mas agora você vai gerá-la do zero, medindo o próprio resultado contra critérios que só serão revelados depois do primeiro prompt.
+A Vetor (a plataforma fictícia de e-commerce B2B usada nesta sessão) precisa da mesma função de desconto do exemplo, mas agora você vai gerá-la do zero, medindo o próprio resultado contra critérios que só serão revelados depois do primeiro prompt.
 
 **Seu papel**
 

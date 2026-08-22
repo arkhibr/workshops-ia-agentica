@@ -2,6 +2,8 @@
 
 Este exemplo é uma demonstração conduzida pelo instrutor, não um exercício. O objetivo é ver, antes de praticar, exatamente onde um prompt vago perde regra de negócio.
 
+**A Vetor**, usada como caso em toda esta sessão, é uma plataforma fictícia de e-commerce B2B que atende dois tipos de cliente: padrão e atacado.
+
 ## A regra de negócio completa
 
 A Vetor calcula desconto sobre o valor total de um pedido:
