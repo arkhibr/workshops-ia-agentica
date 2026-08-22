@@ -97,3 +97,14 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 
 **ANTHROPIC. "Building Effective Agents".** Anthropic Engineering, dez. 2024. <https://www.anthropic.com/engineering/building-effective-agents>. Guia de referência do mercado para decidir entre workflow (código orquestra o modelo em caminho predefinido) e agente (o modelo decide os próprios passos); recomenda a solução mais simples possível, aumentando autonomia apenas quando o problema exigir. Cataloga cinco padrões de workflow: encadeamento de prompts, roteamento, paralelização, orquestrador-trabalhadores, avaliador-otimizador.
 → Sessão 1.
+
+## Ambiente Agêntico e Context Engineering
+
+**ANTHROPIC. "Effective context engineering for AI agents".** Anthropic Engineering, set. 2025. <https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents>. Define context engineering como a evolução do prompt engineering: cuidar de tudo que chega à janela de contexto numa execução, não só do texto da instrução. Descreve ferramentas como o contrato entre o agente e o ambiente, desenhadas para eficiência de token.
+→ Sessão 2.
+
+**ANTHROPIC. "Introducing the Model Context Protocol".** Anthropic News, 25 nov. 2024. <https://www.anthropic.com/news/model-context-protocol>. Anúncio do MCP, protocolo aberto que resolve o problema M×N de integrações entre modelos e ferramentas. Um ano depois, adotado por OpenAI, Google e Microsoft.
+→ Sessão 2.
+
+**Agentic AI Foundation (Linux Foundation). "AGENTS.md".** Padrão aberto, formalizado em ago. 2025 por OpenAI, Google, Cursor, Factory e Sourcegraph. <https://agents.md/>. Arquivo markdown na raiz do repositório, sem esquema obrigatório, que instrui agentes de codificação sobre build, testes, convenções e segurança — mais de 20 mil repositórios adotantes, lido por ferramentas de múltiplos fornecedores concorrentes.
+→ Sessão 2.

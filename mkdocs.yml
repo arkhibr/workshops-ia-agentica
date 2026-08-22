@@ -42,7 +42,15 @@ nav:
           - Oficina de ferramentas: sessao-01-o-que-mudou/oficina-de-ferramentas.md
           - Exercícios: sessao-01-o-que-mudou/exercicios.md
           - Síntese e referências: sessao-01-o-que-mudou/sintese-e-referencias.md
-      - S2 — O ambiente agêntico: sessao-02-ambiente-agentico/index.md
+      - S2 — O ambiente agêntico:
+          - Visão geral: sessao-02-ambiente-agentico/index.md
+          - Conceitos: sessao-02-ambiente-agentico/conceitos.md
+          - Padrões e decisões: sessao-02-ambiente-agentico/padroes-e-decisoes.md
+          - Exemplo arquitetural: sessao-02-ambiente-agentico/exemplo-arquitetural.md
+          - Estudo de caso: sessao-02-ambiente-agentico/estudo-de-caso.md
+          - Oficina de ferramentas: sessao-02-ambiente-agentico/oficina-de-ferramentas.md
+          - Exercícios: sessao-02-ambiente-agentico/exercicios.md
+          - Síntese e referências: sessao-02-ambiente-agentico/sintese-e-referencias.md
   - Bloco 2 — Especificação e Planejamento:
       - S3 — Exploração e especificação: sessao-03-exploracao-especificacao/index.md
       - S4 — Regras formais com IA: sessao-04-regras-formais-com-ia/index.md
