@@ -70,19 +70,7 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 **CHEN, Mark et al. *Evaluating Large Language Models Trained on Code*.** arXiv:2107.03374, 2021. <https://arxiv.org/abs/2107.03374>. Artigo do Codex que introduziu o HumanEval — benchmark de geração de função isolada a partir de enunciado. Contraste com o SWE-bench: mede capacidade de codificação, não de engenharia de software num repositório real.
 → Sessão 1.
 
-**vals.ai. "SWE-bench Verified".** Leaderboard independente, atualizado continuamente. <https://www.vals.ai/benchmarks/swebench>. Reavalia modelos de diferentes fabricantes sob o mesmo arnês de teste — referência para comparar sem depender de número autorreportado pelo fabricante do modelo.
-→ Sessão 1.
-
-**SWE-bench. "SWE-bench Verified Leaderboard".** <https://www.swebench.com/>. Leaderboard oficial do benchmark, com as variantes Verified, Lite, Pro e Multimodal.
-→ Sessão 1.
-
-**ANTHROPIC. "Introducing Claude Haiku 4.5".** Anthropic News, 2026. <https://www.anthropic.com/news/claude-haiku-4-5>. Anúncio oficial de lançamento, com os números de SWE-bench Verified do modelo mais barato da família Claude — referência de custo-benefício frente aos modelos de topo da tabela.
-→ Sessão 1.
-
-**OpenAI. "GPT-5.6" (Sol, Terra, Luna).** Anúncio de lançamento, 9 jul. 2026. Recapitulação: MarkTechPost, <https://www.marktechpost.com/2026/07/09/openai-releases-gpt-5-6-a-three-tier-model-family-with-programmatic-tool-calling/>. Família de três níveis lançada sem número de SWE-bench Verified — só SWE-bench Pro foi divulgado. Exemplo real do critério "desconfie do benchmark que o fabricante escolhe divulgar".
-→ Sessão 1.
-
-**Datacurve. "DeepSWE".** Leaderboard independente. <https://benchlm.ai/benchmarks/deepswe>. Benchmark de longo horizonte com 113 tarefas de 91 repositórios open source ativos em 5 linguagens, verificadas por programa. Avalia Claude, GPT-5.6 e GLM sob a mesma régua e na mesma data — referência para comparar fabricantes diferentes sem misturar benchmarks distintos.
+**Datacurve. "DeepSWE".** Leaderboard independente. <https://benchlm.ai/benchmarks/deepswe>. Benchmark de longo horizonte com 113 tarefas de 91 repositórios open source ativos em 5 linguagens, verificadas por programa. Avalia Claude, GPT-5.6 e GLM sob a mesma régua e na mesma data — referência para comparar fabricantes diferentes sem depender do número que cada um escolhe divulgar.
 → Sessão 1.
 
 ## Evidência Empírica sobre Produtividade e Risco

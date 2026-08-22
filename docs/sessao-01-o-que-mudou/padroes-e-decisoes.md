@@ -49,47 +49,17 @@ O mesmo princípio vale para a escolha entre vibe coding, assistência e SDD: co
 
 Escolher um modelo pelo nome mais falado do momento é o mesmo erro de raiz do vibe coding: aceitar sem verificar. Cinco critérios tornam essa escolha uma decisão, não uma torcida.
 
-**Use um benchmark que meça o trabalho real, não a função isolada.** O HumanEval (Chen et al., 2021) mede se o modelo escreve uma função correta a partir de um enunciado — útil, mas distante do que a Sessão 8 chama de engenharia agêntica. O SWE-bench (Jimenez et al., 2024) mede se o agente resolve uma issue real de um repositório existente: localizar a causa, editar os arquivos certos, passar na suíte de testes da comunidade. É o benchmark mais próximo do que a Vetor precisa.
+**Use um benchmark que meça o trabalho real, não a função isolada.** O HumanEval (Chen et al., 2021) mede se o modelo escreve uma função correta a partir de um enunciado — útil, mas distante do que a Sessão 8 chama de engenharia agêntica. Um benchmark como o DeepSWE mede se o agente resolve uma tarefa real, de longo horizonte, dentro de um repositório existente: localizar a causa, editar os arquivos certos, passar num verificador automático. É o tipo de medida mais próximo do que a Vetor precisa.
 
-**Prefira o subconjunto verificado por humanos ao bruto.** O SWE-bench Verified é uma seleção de 500 instâncias revisadas manualmente quanto à solubilidade e à qualidade dos testes de aceitação — o SWE-bench "Full" original tinha instâncias irresolvíveis e testes instáveis. O "Lite" é uma versão mais fácil, útil para iteração rápida, não para decisão final.
+**Prefira tarefas verificadas por programa a julgamento humano de "parece bom".** O DeepSWE verifica cada uma das 113 tarefas por execução de programa, não por alguém lendo o diff e achando que ficou razoável. Isso remove subjetividade do resultado: ou o teste passa, ou não passa.
 
-**Desconfie de número saturado ou contaminado.** Em agosto de 2026, os modelos de fronteira no SWE-bench Verified estão a menos de um ponto percentual de diferença entre si — sinal de que o benchmark está perto da saturação para essa classe de modelo, e de que parte do ganho marginal pode vir de contaminação de treino (o repositório do benchmark é público). Quando os números empatam, o SWE-bench Pro (variante resistente a contaminação, com tarefas mais difíceis) costuma reordenar o ranking.
+**Desconfie de benchmark saturado.** Quando os modelos de fronteira empatam a menos de um ponto percentual de diferença entre si, o benchmark provavelmente está perto do teto para aquela classe de modelo. O DeepSWE, em agosto de 2026, ainda separa o primeiro colocado do quinto por 4,6 pontos e o top 10 inteiro por 8,3 pontos — sinal de que ainda há distinção real de capacidade para medir, não um empate técnico disfarçado de ranking.
 
-**Desconfie de número autorreportado por quem vende o modelo.** A própria OpenAI parou de reportar SWE-bench Verified para seus modelos mais recentes e passou a recomendar o SWE-bench Pro. O Google já divulgou, para o Gemini, um número de SWE-bench sensivelmente mais alto do que testes independentes padronizados reproduziram depois. Prefira leitores independentes (vals.ai, Epoch AI) que rodam todos os modelos sob o mesmo arnês, em vez do número que aparece no anúncio de lançamento.
+**Desconfie de número autorreportado por quem vende o modelo.** Fabricantes escolhem qual benchmark divulgar no anúncio de lançamento, e às vezes trocam de benchmark de uma versão para a outra sem explicar por quê. Prefira leitores independentes que avaliam todos os fabricantes sob o mesmo arnês de teste, na mesma data — é exatamente o que o DeepSWE (mantido pela Datacurve, publicado em benchlm.ai) faz: roda Claude, GPT e modelos abertos como o GLM lado a lado, sem depender do número que cada fabricante escolheu anunciar.
 
-**Nota da placar não é a decisão inteira.** Custo por tarefa resolvida, latência, tamanho da janela de contexto e confiabilidade dentro do seu ambiente agêntico específico pesam tanto quanto o resolve rate — um modelo 3 pontos percentuais à frente, mas 5 vezes mais caro por tarefa, raramente compensa para o dia a dia de um time.
+**Nota do placar não é a decisão inteira.** Custo por tarefa resolvida, latência, tamanho da janela de contexto e confiabilidade dentro do seu ambiente agêntico específico pesam tanto quanto o resolve rate — um modelo 3 pontos percentuais à frente, mas 5 vezes mais caro por tarefa, raramente compensa para o dia a dia de um time.
 
-### Placar de referência — SWE-bench Verified
-
-| Modelo | Organização | Resolve rate |
-|---|---|---|
-| Claude Opus 5 | Anthropic | 97,0% |
-| DeepSeek V4 Pro 0813 | DeepSeek | 96,4% |
-| Kimi K3 | Moonshot AI | 93,4% |
-| Claude Opus 4.8 | Anthropic | 88,6% |
-| Grok 4.5 | xAI | 86,6% |
-| Claude Sonnet 5 | Anthropic | 82,1% |
-| Claude Haiku 4.5 | Anthropic | 73,3% |
-
-Fonte: [vals.ai — SWE-bench Verified](https://www.vals.ai/benchmarks/swebench), snapshot de 19 de agosto de 2026, complementado com dados públicos de lançamento da Anthropic para Sonnet 5 e Haiku 4.5.
-
-### E a família GPT-5.6 (Sol, Terra, Luna)?
-
-Não entra na tabela acima por um motivo que já é a própria lição desta seção: a OpenAI, ao lançar o GPT-5.6 em três níveis (Sol, Terra, Luna) em julho de 2026, **não publicou nenhum número de SWE-bench Verified** para a família — só divulgou SWE-bench Pro, a variante mais difícil e resistente a contaminação:
-
-| Modelo | Organização | SWE-bench Pro |
-|---|---|---|
-| Claude Fable 5 | Anthropic | 80,0% |
-| Claude Opus 5 | Anthropic | 79,2% |
-| GPT-5.6 Sol | OpenAI | 64,6% |
-| GPT-5.6 Terra | OpenAI | 63,4% |
-| GPT-5.6 Luna | OpenAI | não divulgado |
-
-Colocar o Sol (64,6%) ao lado do Claude Opus 5 da tabela Verified (97,0%) seria comparar maçã com laranja: são benchmarks diferentes, com dificuldade diferente. É exatamente o tipo de comparação que o critério anterior (desconfiar do número que o próprio fabricante escolhe divulgar) existe para impedir. Quando um fabricante muda de benchmark de um lançamento para o outro, vale perguntar por que ele parou de reportar o benchmark anterior, não só por que o número novo parece mais baixo.
-
-### Um benchmark que compara todo mundo pela mesma régua
-
-A resposta para esse impasse não é desistir de comparar Claude e GPT: é procurar um benchmark que avalie os dois sob a mesma régua, na mesma data. O DeepSWE, da Datacurve, faz isso — 113 tarefas de longo horizonte, tiradas de 91 repositórios open source ativos em 5 linguagens, verificadas por programa, não por humano lendo o diff:
+### Placar de referência — DeepSWE
 
 | Modelo | Organização | DeepSWE |
 |---|---|---|
@@ -99,9 +69,9 @@ A resposta para esse impasse não é desistir de comparar Claude e GPT: é procu
 | GPT-5.6 Terra | OpenAI | 69,6% |
 | GLM-5.3 | Z.AI | 69,0% |
 
-Fonte: [benchlm.ai — DeepSWE](https://benchlm.ai/benchmarks/deepswe), atualizado em 20 de agosto de 2026, 25 modelos avaliados. Repare como a distância entre o primeiro e o quinto colocado (4,6 pontos) é bem menor do que a distância entre Sol e Terra no SWE-bench Pro: o ranking muda de cara dependendo de qual benchmark você escolhe, e nenhum dos dois é "o errado": medem coisas ligeiramente diferentes. A régua prática: quando precisar comparar fabricantes diferentes, procure primeiro um benchmark que avalie todos sob o mesmo teto antes de comparar números de tabelas separadas.
+Fonte: [benchlm.ai — DeepSWE](https://benchlm.ai/benchmarks/deepswe), atualizado em 20 de agosto de 2026, 25 modelos avaliados: 113 tarefas de longo horizonte, tiradas de 91 repositórios open source ativos em 5 linguagens, verificadas por programa.
 
-**Este placar envelhece rápido nas três tabelas**: confira a [SWE-bench Verified Leaderboard](https://www.swebench.com/), a [SWE-bench Pro Leaderboard](https://www.vals.ai/benchmarks/swebench) e o [DeepSWE Leaderboard](https://benchlm.ai/benchmarks/deepswe) atualizados antes de decidir, não confie em número congelado numa página de workshop.
+**Este placar envelhece rápido**: confira o [DeepSWE Leaderboard](https://benchlm.ai/benchmarks/deepswe) atualizado antes de decidir, não confie em número congelado numa página de workshop.
 
 ## Anti-padrão: vibe coding tratado como produto
 

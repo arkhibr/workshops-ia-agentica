@@ -12,7 +12,7 @@
 8. **A régua de decisão é a simplicidade, não a ferramenta mais avançada.** A recomendação da Anthropic em "Building Effective Agents" vale para os três modos desta sessão: comece pelo mais simples que a tarefa permitir.
 9. **A capacidade de resolver problemas reais deu um salto medido, não só sentido.** O SWE-bench foi de 1,96% de resolução em 2024 para cerca de 97% em 2026 — o mesmo "works.any() vira works.all()" de Karpathy, numa escala de dois anos.
 10. **Reversibilidade e tempo de vida importam porque corrigir cedo é mais barato.** Boehm documentou isso em 1981, décadas antes de qualquer LLM: quanto mais tarde uma ambiguidade aparece, mais caro fica resolvê-la.
-11. **Escolher modelo pelo nome mais falado é o mesmo erro do vibe coding: aceitar sem verificar.** Use benchmark de engenharia real (SWE-bench), desconfie de número saturado ou autorreportado, e lembre que o placar muda a cada poucas semanas.
+11. **Escolher modelo pelo nome mais falado é o mesmo erro do vibe coding: aceitar sem verificar.** Use benchmark de engenharia real e independente (como o DeepSWE), desconfie de número autorreportado pelo fabricante, e lembre que o placar muda a cada poucas semanas.
 
 ## Checklist antes de encerrar a sessão
 
@@ -49,13 +49,9 @@ Se duas ou mais respostas forem "ainda não", releia [Conceitos](conceitos.md) a
 
 - BOEHM, Barry W. *Software Engineering Economics*. Prentice-Hall, 1981.
 
-**Placares de modelos**
+**Placar de modelos**
 
-- vals.ai. "SWE-bench Verified". Leaderboard independente, snapshot de 19/08/2026.
-- SWE-bench. "SWE-bench Verified Leaderboard" e "SWE-bench Pro Leaderboard". swebench.com — consultar antes de decidir, o placar da Sessão 1 envelhece rápido.
-- ANTHROPIC. "Introducing Claude Haiku 4.5". Anthropic News, 2026.
-- OpenAI. "GPT-5.6" (Sol, Terra, Luna). Anúncio de lançamento, 9 jul. 2026 — lançado sem SWE-bench Verified, só Pro.
-- Datacurve. "DeepSWE". benchlm.ai, atualizado em 20/08/2026 — compara Claude e GPT-5.6 sob a mesma régua.
+- Datacurve. "DeepSWE". benchlm.ai, atualizado em 20/08/2026 — compara Claude, GPT-5.6 e GLM sob a mesma régua; consultar antes de decidir, o placar da Sessão 1 envelhece rápido.
 
 **Síntese de mercado**
 
