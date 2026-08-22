@@ -13,6 +13,8 @@ Workshop de engenharia agêntica disciplinada para a equipe de desenvolvimento C
 
 Baseado no GitHub Spec Kit (Spec-Driven Development), OMG SBVR + RuleSpeak (Ronald G. Ross), MADR v4, xUnit Test Patterns (Meszaros) e testes de propriedade/mutação (fast-check, FsCheck, Stryker). Ver [docs/referencia/bibliografia.md](docs/referencia/bibliografia.md).
 
+**Horário fixo: todas as sessões vão das 14h às 16h.** Não é provisório — use este horário em qualquer plano de aula ou material que faça referência a hora do relógio, sem ressalva de "a confirmar".
+
 ## Publicação (mkdocs)
 
 O site é publicado com Material for MkDocs. Todo o conteúdo do participante vive em `docs/`; a raiz do repositório só tem infraestrutura (`mkdocs.yml`, `requirements.txt`, `CLAUDE.md`).
