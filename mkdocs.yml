@@ -1,0 +1,49 @@
+site_name: IA Agêntica na Prática
+site_description: Workshop de engenharia agêntica disciplinada para a equipe de desenvolvimento C#, JavaScript e TypeScript da FUNDEP
+# `site_url` será definido somente após a definição do endereço público no GitHub Pages.
+use_directory_urls: true
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    scheme: default
+    primary: green
+    accent: green
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - search.suggest
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - tables
+  - footnotes
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - Início: index.md
+  - Bloco 1 — Fundamentos:
+      - S1 — O que mudou: sessao-01-o-que-mudou/index.md
+      - S2 — O ambiente agêntico: sessao-02-ambiente-agentico/index.md
+  - Bloco 2 — Especificação e Planejamento:
+      - S3 — Exploração e especificação: sessao-03-exploracao-especificacao/index.md
+      - S4 — Regras formais com IA: sessao-04-regras-formais-com-ia/index.md
+      - S5 — Decomposição: sessao-05-decomposicao/index.md
+  - Bloco 3 — Execução:
+      - S6 — TDD assistido por IA: sessao-06-tdd-assistido/index.md
+      - S7 — Estratégias avançadas de teste: sessao-07-estrategias-avancadas-teste/index.md
+      - S8 — SDD ciclo completo: sessao-08-sdd-ciclo-completo/index.md
+  - Bloco 4 — Qualidade e Integração:
+      - S9 — Depuração sistemática: sessao-09-depuracao-sistematica/index.md
+      - S10 — Esteira completa: sessao-10-esteira-completa/index.md
+  - Referência:
+      - Bibliografia: referencia/bibliografia.md

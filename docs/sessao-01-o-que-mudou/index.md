@@ -93,7 +93,7 @@ O exercício pede a mesma coisa duas vezes ao agente — primeiro com um prompt 
 
 ### Prática (20 min)
 
-→ [exercicios/exercicio-04-intuicao-vs-estruturado/README.md](exercicios/exercicio-04-intuicao-vs-estruturado/README.md)
+→ [exercicios/exercicio-04-intuicao-vs-estruturado/index.md](exercicios/exercicio-04-intuicao-vs-estruturado/index.md)
 
 ---
 
@@ -104,7 +104,7 @@ O exercício pede a mesma coisa duas vezes ao agente — primeiro com um prompt 
 | `exercicios/exercicio-01-autodiagnostico.md` | Worksheet individual — classificar o próprio uso de IA hoje |
 | `exercicios/exercicio-02-contexto-explicito.md` | Mesmo pedido pequeno, rodado com e sem contexto explícito |
 | `exercicios/exercicio-03-onde-entrou-julgamento.md` | Reflexão em dupla sobre as saídas do Exercício 2 |
-| `exercicios/exercicio-04-intuicao-vs-estruturado/README.md` | Instruções do exercício-âncora |
+| `exercicios/exercicio-04-intuicao-vs-estruturado/index.md` | Instruções do exercício-âncora |
 | `exercicios/exercicio-04-intuicao-vs-estruturado/cenario.md` | Regra de negócio completa (gabarito do instrutor) — desconto por volume |
 | `exercicios/exercicio-04-intuicao-vs-estruturado/criterios-aceitacao.md` | Casos de teste para verificar as duas saídas geradas |
 

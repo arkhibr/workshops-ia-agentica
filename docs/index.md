@@ -25,16 +25,16 @@ A tese: a janela de contexto virou o programa. O LLM é o interpretador; o desen
 
 | # | Sessão | Bloco |
 |---|---|---|
-| S1 | [O que mudou: Software 3.0 e Engenharia Agêntica](sessao-01-o-que-mudou/README.md) | 1 — Fundamentos |
-| S2 | [O ambiente agêntico — ferramentas e fluxo](sessao-02-ambiente-agentico/README.md) | 1 — Fundamentos |
-| S3 | [Exploração e especificação](sessao-03-exploracao-especificacao/README.md) | 2 — Especificação e Planejamento |
-| S4 | [Regras formais com IA](sessao-04-regras-formais-com-ia/README.md) | 2 — Especificação e Planejamento |
-| S5 | [Decomposição — planos para SDD](sessao-05-decomposicao/README.md) | 2 — Especificação e Planejamento |
-| S6 | [TDD assistido por IA](sessao-06-tdd-assistido/README.md) | 3 — Execução |
-| S7 | [Estratégias avançadas de teste](sessao-07-estrategias-avancadas-teste/README.md) | 3 — Execução |
-| S8 | [SDD — ciclo completo](sessao-08-sdd-ciclo-completo/README.md) | 3 — Execução |
-| S9 | [Depuração sistemática e revisão de código](sessao-09-depuracao-sistematica/README.md) | 4 — Qualidade e Integração |
-| S10 | [Esteira completa e decisões arquiteturais](sessao-10-esteira-completa/README.md) | 4 — Qualidade e Integração |
+| S1 | [O que mudou: Software 3.0 e Engenharia Agêntica](sessao-01-o-que-mudou/index.md) | 1 — Fundamentos |
+| S2 | [O ambiente agêntico — ferramentas e fluxo](sessao-02-ambiente-agentico/index.md) | 1 — Fundamentos |
+| S3 | [Exploração e especificação](sessao-03-exploracao-especificacao/index.md) | 2 — Especificação e Planejamento |
+| S4 | [Regras formais com IA](sessao-04-regras-formais-com-ia/index.md) | 2 — Especificação e Planejamento |
+| S5 | [Decomposição — planos para SDD](sessao-05-decomposicao/index.md) | 2 — Especificação e Planejamento |
+| S6 | [TDD assistido por IA](sessao-06-tdd-assistido/index.md) | 3 — Execução |
+| S7 | [Estratégias avançadas de teste](sessao-07-estrategias-avancadas-teste/index.md) | 3 — Execução |
+| S8 | [SDD — ciclo completo](sessao-08-sdd-ciclo-completo/index.md) | 3 — Execução |
+| S9 | [Depuração sistemática e revisão de código](sessao-09-depuracao-sistematica/index.md) | 4 — Qualidade e Integração |
+| S10 | [Esteira completa e decisões arquiteturais](sessao-10-esteira-completa/index.md) | 4 — Qualidade e Integração |
 
 ## Critérios de sucesso
 
