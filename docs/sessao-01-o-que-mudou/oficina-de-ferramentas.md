@@ -28,41 +28,52 @@ Esta oficina usa o agente de codificação já configurado pelo participante (Cl
 
 ## Experimento B — contexto explícito
 
-**Objetivo:** sentir, num caso pequeno, o que "contexto explícito" muda antes de aplicar no exercício-âncora.
+**Objetivo:** sentir, num caso com regras de negócio reais, o que "contexto explícito" muda antes de aplicar no exercício-âncora.
 
-**Cenário:** uma função que formata um número de telefone brasileiro. Celular tem 9 dígitos, fixo tem 8, e um número inválido precisa de comportamento definido.
+**Cenário:** validar se um cupom de desconto pode ser aplicado a um pedido de e-commerce. As quatro regras abaixo só devem ser usadas na parte 2 — leia a parte 1 e execute-a antes de olhar a lista de regras.
+
+Regras:
+
+- O cupom só vale dentro do prazo de validade (data de início e data de fim).
+- O pedido precisa atingir o valor mínimo de R$ 150,00 para o cupom valer.
+- Cada cliente só pode usar um cupom específico uma vez; um segundo uso do mesmo código é inválido.
+- Cupom da categoria "frete grátis" não se acumula com cupom da categoria "percentual" no mesmo pedido.
 
 **Execute — parte 1.** Peça ao agente, exatamente assim:
 
 ```text
-Escreva uma função que formata um número de telefone.
+Escreva uma função que valida se um cupom de desconto pode ser aplicado a um pedido.
 ```
 
 **Execute — parte 2.** Peça de novo, agora com contexto:
 
 ```text
-Escreva uma função formatarTelefone(numero: string): string que recebe um
-número de telefone brasileiro em dígitos (sem formatação) e devolve o
-formato de exibição.
+Escreva uma função validarCupom(cupom: Cupom, pedido: Pedido, cliente: Cliente): ResultadoValidacao
+que decide se um cupom pode ser aplicado a um pedido, seguindo estas regras:
 
-Regras:
-- Celular (9 dígitos após o DDD): (DD) 9XXXX-XXXX
-- Fixo (8 dígitos após o DDD): (DD) XXXX-XXXX
-- Se o número não tiver 10 ou 11 dígitos, lance uma exceção
-  NumeroInvalidoException com a mensagem "Número de telefone inválido".
+- O cupom só vale entre cupom.dataInicio e cupom.dataFim (inclusive).
+- O valor total do pedido precisa ser de pelo menos R$ 150,00.
+- Se cliente.cuponsJaUsados já contém o código do cupom, a validação falha.
+- Se o pedido já tem um cupom de categoria "frete-gratis" aplicado e o novo
+  cupom é da categoria "percentual" (ou vice-versa), a validação falha.
+
+ResultadoValidacao deve indicar se o cupom é válido e, se não for, o motivo
+específico da rejeição (não só um booleano).
 
 Exemplos:
-- "11987654321" -> "(11) 98765-4321"
-- "1132654321" -> "(11) 3265-4321"
-- "123" -> lança exceção
+- Cupom "BEMVINDO10" com dataFim de ontem -> inválido, motivo: cupom expirado
+- Pedido de R$ 90,00 com cupom que exige mínimo de R$ 150,00 -> inválido, motivo: valor mínimo não atingido
+- Cliente com "BEMVINDO10" em cuponsJaUsados tentando usar "BEMVINDO10" de novo -> inválido, motivo: cupom já utilizado
+- Pedido com cupom "FRETE-GRATIS" aplicado recebendo também "10OFF" (percentual) -> inválido, motivo: cupons não acumuláveis
 ```
 
-**Compare:** a primeira saída tratou o caso de número inválido? Distinguiu celular de fixo? A segunda seguiu exatamente a assinatura e as regras pedidas? Alguma das duas inventou uma regra que você não pediu?
+**Compare:** a primeira saída validou alguma das quatro regras, ou só verificou se o cupom existe? A segunda tratou os quatro casos de exemplo corretamente, incluindo o motivo específico de rejeição? Alguma das duas inventou uma regra que você não pediu (por exemplo, um limite de uso diário que não existe no enunciado)?
 
 **Questões exploratórias:**
 
 - Qual das duas saídas você aceitaria em produção sem revisão adicional?
 - O que fez a segunda saída ser melhor: o modelo, ou o pedido?
+- A regra de não acumulação (frete grátis + percentual) foi a mais fácil de esquecer nas duas saídas? Por que essa costuma ser a regra que primeiro passa despercebida em revisão de código real?
 
 Guarde as duas saídas: o Experimento C usa exatamente elas.
 
