@@ -67,6 +67,15 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 **JIMENEZ, Carlos E. et al. *SWE-bench: Can Language Models Resolve Real-World GitHub Issues?*.** ICLR, 2024. <https://arxiv.org/abs/2310.06770>. Benchmark que mede se um agente resolve issues reais de repositórios GitHub, produzindo um patch que passa nos testes da comunidade. O melhor resultado do artigo original (Claude 2 com recuperação por palavras-chave) resolveu 1,96% dos casos; em 2026, os melhores agentes resolvem cerca de 97% na versão revisada (SWE-bench Verified) — a evidência quantitativa por trás de "por que agora".
 → Sessão 1.
 
+**CHEN, Mark et al. *Evaluating Large Language Models Trained on Code*.** arXiv:2107.03374, 2021. <https://arxiv.org/abs/2107.03374>. Artigo do Codex que introduziu o HumanEval — benchmark de geração de função isolada a partir de enunciado. Contraste com o SWE-bench: mede capacidade de codificação, não de engenharia de software num repositório real.
+→ Sessão 1.
+
+**vals.ai. "SWE-bench Verified".** Leaderboard independente, atualizado continuamente. <https://www.vals.ai/benchmarks/swebench>. Reavalia modelos de diferentes fabricantes sob o mesmo arnês de teste — referência para comparar sem depender de número autorreportado pelo fabricante do modelo.
+→ Sessão 1.
+
+**SWE-bench. "SWE-bench Verified Leaderboard".** <https://www.swebench.com/>. Leaderboard oficial do benchmark, com as variantes Verified, Lite, Pro e Multimodal.
+→ Sessão 1.
+
 ## Evidência Empírica sobre Produtividade e Risco
 
 **PENG, Sida; KALLIAMVAKOU, Eirini; CIHON, Peter; DEMIRER, Mert. *The Impact of AI on Developer Productivity: Evidence from GitHub Copilot*.** arXiv:2302.06590, 2023. <https://arxiv.org/abs/2302.06590>. Experimento randomizado com 70 desenvolvedores profissionais: o grupo com Copilot completou uma tarefa de implementação de servidor HTTP 55,8% mais rápido (71 min contra 161 min). O efeito foi maior para desenvolvedores menos experientes.

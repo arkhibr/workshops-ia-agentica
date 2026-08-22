@@ -1,6 +1,6 @@
 # Síntese e referências
 
-## Dez ideias essenciais
+## Onze ideias essenciais
 
 1. **Vibe coding, assistência de codificação e SDD são famílias de risco, não degraus de maturidade.** A escolha depende da tarefa, não de uma régua de "quão avançado" o time está.
 2. **Um prompt funciona como programa porque o modelo aprende em contexto**, sem ajuste de peso — mecanismo empírico demonstrado por Brown et al. (2020).
@@ -12,6 +12,7 @@
 8. **A régua de decisão é a simplicidade, não a ferramenta mais avançada.** A recomendação da Anthropic em "Building Effective Agents" vale para os três modos desta sessão: comece pelo mais simples que a tarefa permitir.
 9. **A capacidade de resolver problemas reais deu um salto medido, não só sentido.** O SWE-bench foi de 1,96% de resolução em 2024 para cerca de 97% em 2026 — o mesmo "works.any() vira works.all()" de Karpathy, numa escala de dois anos.
 10. **Reversibilidade e tempo de vida importam porque corrigir cedo é mais barato.** Boehm documentou isso em 1981, décadas antes de qualquer LLM: quanto mais tarde uma ambiguidade aparece, mais caro fica resolvê-la.
+11. **Escolher modelo pelo nome mais falado é o mesmo erro do vibe coding: aceitar sem verificar.** Use benchmark de engenharia real (SWE-bench), desconfie de número saturado ou autorreportado, e lembre que o placar muda a cada poucas semanas.
 
 ## Checklist antes de encerrar a sessão
 
@@ -36,6 +37,7 @@ Se duas ou mais respostas forem "ainda não", releia [Conceitos](conceitos.md) a
 - WEI, Jason et al. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*. NeurIPS, 2022.
 - YAO, Shunyu et al. *ReAct: Synergizing Reasoning and Acting in Language Models*. ICLR, 2023.
 - JIMENEZ, Carlos E. et al. *SWE-bench: Can Language Models Resolve Real-World GitHub Issues?*. ICLR, 2024.
+- CHEN, Mark et al. *Evaluating Large Language Models Trained on Code*. arXiv, 2021.
 
 **Evidência empírica**
 
@@ -46,6 +48,11 @@ Se duas ou mais respostas forem "ainda não", releia [Conceitos](conceitos.md) a
 **Economia de engenharia de software**
 
 - BOEHM, Barry W. *Software Engineering Economics*. Prentice-Hall, 1981.
+
+**Placares de modelos**
+
+- vals.ai. "SWE-bench Verified". Leaderboard independente, snapshot de 19/08/2026.
+- SWE-bench. "SWE-bench Verified Leaderboard". swebench.com — consultar antes de decidir, o placar da Sessão 1 envelhece rápido.
 
 **Síntese de mercado**
 

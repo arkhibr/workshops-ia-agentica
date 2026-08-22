@@ -45,6 +45,32 @@ O mesmo princípio vale para a escolha entre vibe coding, assistência e SDD: co
 
 ![Trajetória de complexidade crescente que parte de uma chamada direta, passa por workflows previsíveis e chega a um agente que decide os próprios passos. A autonomia aumenta junto com o custo de verificação, enquanto um alerta destaca o anti-padrão de tratar protótipo como produto.](../assets/images/s1-simplicidade-risco.png)
 
+## Como avaliar modelos para engenharia de software
+
+Escolher um modelo pelo nome mais falado do momento é o mesmo erro de raiz do vibe coding: aceitar sem verificar. Cinco critérios tornam essa escolha uma decisão, não uma torcida.
+
+**Use um benchmark que meça o trabalho real, não a função isolada.** O HumanEval (Chen et al., 2021) mede se o modelo escreve uma função correta a partir de um enunciado — útil, mas distante do que a Sessão 8 chama de engenharia agêntica. O SWE-bench (Jimenez et al., 2024) mede se o agente resolve uma issue real de um repositório existente: localizar a causa, editar os arquivos certos, passar na suíte de testes da comunidade. É o benchmark mais próximo do que a Vetor precisa.
+
+**Prefira o subconjunto verificado por humanos ao bruto.** O SWE-bench Verified é uma seleção de 500 instâncias revisadas manualmente quanto à solubilidade e à qualidade dos testes de aceitação — o SWE-bench "Full" original tinha instâncias irresolvíveis e testes instáveis. O "Lite" é uma versão mais fácil, útil para iteração rápida, não para decisão final.
+
+**Desconfie de número saturado ou contaminado.** Em agosto de 2026, os modelos de fronteira no SWE-bench Verified estão a menos de um ponto percentual de diferença entre si — sinal de que o benchmark está perto da saturação para essa classe de modelo, e de que parte do ganho marginal pode vir de contaminação de treino (o repositório do benchmark é público). Quando os números empatam, o SWE-bench Pro (variante resistente a contaminação, com tarefas mais difíceis) costuma reordenar o ranking.
+
+**Desconfie de número autorreportado por quem vende o modelo.** A própria OpenAI parou de reportar SWE-bench Verified para seus modelos mais recentes e passou a recomendar o SWE-bench Pro. O Google já divulgou, para o Gemini, um número de SWE-bench sensivelmente mais alto do que testes independentes padronizados reproduziram depois. Prefira leitores independentes (vals.ai, Epoch AI) que rodam todos os modelos sob o mesmo arnês, em vez do número que aparece no anúncio de lançamento.
+
+**Nota da placar não é a decisão inteira.** Custo por tarefa resolvida, latência, tamanho da janela de contexto e confiabilidade dentro do seu ambiente agêntico específico pesam tanto quanto o resolve rate — um modelo 3 pontos percentuais à frente, mas 5 vezes mais caro por tarefa, raramente compensa para o dia a dia de um time.
+
+### Placar de referência — SWE-bench Verified
+
+| Modelo | Organização | Resolve rate |
+|---|---|---|
+| Claude Opus 5 | Anthropic | 97,0% |
+| DeepSeek V4 Pro 0813 | DeepSeek | 96,4% |
+| Kimi K3 | Moonshot AI | 93,4% |
+| Claude Opus 4.8 | Anthropic | 88,6% |
+| Grok 4.5 | xAI | 86,6% |
+
+Fonte: [vals.ai — SWE-bench Verified](https://www.vals.ai/benchmarks/swebench), snapshot de 19 de agosto de 2026. GPT (OpenAI) e Gemini (Google) ficaram fora desta tabela porque, na data de escrita, os números publicados por fonte independente e os autorreportados pelos fabricantes divergiam de forma relevante: exatamente o problema descrito acima. **Este placar envelhece rápido**: confira a [SWE-bench Verified Leaderboard](https://www.swebench.com/) atualizada antes de decidir, não confie neste número congelado.
+
 ## Anti-padrão: vibe coding tratado como produto
 
 O anti-padrão não é usar vibe coding. É usar vibe coding e depois esquecer que foi usado. Os sintomas aparecem sempre na mesma ordem: o protótipo funciona na demonstração, alguém decide "já está pronto, só falta subir", ninguém escreve a especificação que existia apenas na cabeça de quem conversou com o agente, e o próximo bug custa uma investigação inteira porque não há teste, não há decisão registrada e não há ninguém que lembre por que aquele caso de borda foi ignorado.
