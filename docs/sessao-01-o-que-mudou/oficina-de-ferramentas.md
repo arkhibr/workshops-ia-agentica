@@ -4,7 +4,7 @@
 
 ## Ferramenta
 
-Esta oficina usa o agente de codificação já configurado pelo participante (Claude Code, Copilot, Cursor ou equivalente) e não exige nenhuma instalação nova. Tempo estimado: 35 minutos.
+Esta oficina usa o agente de codificação já configurado pelo participante (Claude Code, Copilot, Cursor ou equivalente) e não exige nenhuma instalação nova. Tempo estimado: 30 minutos.
 
 **Decisão em foco:** quando um pedido em linguagem natural precisa de contexto explícito para não perder regra de negócio, e quando o time está aceitando código sem entender o que ele faz.
 

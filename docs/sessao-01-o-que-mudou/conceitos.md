@@ -34,6 +34,8 @@ A contradição entre os dois estudos não invalida nenhum dos dois. Ela aponta 
 - **Sem rede.** Código é aceito sem que quem aceitou entenda de fato o que ele faz. Pearce et al. (2022), em um estudo hoje seminal, submeteram o GitHub Copilot a 89 cenários de programação cobrindo as principais categorias de vulnerabilidade (CWE Top 25) e encontraram falha de segurança em cerca de 40% dos programas gerados. Quando esse código quebra ou é explorado em produção, não há protocolo de depuração, só tentativa e erro.
 - **Ad hoc.** Não existe fluxo, vocabulário ou critério de aceitação compartilhado entre o time para o que "um bom pedido à IA" significa.
 
+> **Pare e pergunte à turma:** qual desses três sintomas apareceu no time de vocês na última semana? Peça exemplos concretos, sem citar nomes. O objetivo aqui é reconhecer o padrão coletivo, sem transformar a conversa em apontar responsáveis.
+
 ## A tese do Software 3.0
 
 A arquitetura Transformer, descrita por Vaswani et al. em 2017, é a base técnica de todo LLM usado hoje em ferramentas agênticas de codificação. Ela é o que torna prática a aprendizagem em contexto descrita acima, e é sobre essa maturidade técnica que Karpathy constrói uma tese de fundo, apresentada na YC AI Startup School de 17 de junho de 2025.
@@ -48,9 +50,15 @@ A previsão de Karpathy para a década segue a mesma lógica: "Software 3.0 is e
 
 ## O que torna um sistema agêntico
 
-Uma segunda peça técnica separa um agente de um LLM respondendo uma pergunta isolada: a capacidade de intercalar raciocínio e ação, lendo o resultado de uma ferramenta, decidindo o próximo passo, agindo de novo. Yao et al., no artigo que introduziu o framework ReAct (2023), formalizaram esse ciclo combinando cadeia de raciocínio com execução verificável de ações. É esse ciclo de raciocínio e ação, mais do que o tamanho do modelo, que separa Claude Code ou Codex de um chat comum, e o que torna possível a engenharia agêntica.
+Uma segunda peça técnica separa um agente de um LLM respondendo uma pergunta isolada: a capacidade de intercalar raciocínio e ação, lendo o resultado de uma ferramenta, decidindo o próximo passo, agindo de novo. Yao et al., no artigo que introduziu o framework ReAct (2023), formalizaram esse ciclo combinando cadeia de raciocínio com execução verificável de ações.
 
-Willison define engenharia agêntica como "the practice of developing software with the assistance of coding agents" (Claude Code, Codex, Gemini CLI), sustentada por três responsabilidades que continuam humanas mesmo com o código escrito por um agente: especificar o problema, prover as ferramentas certas, verificar e iterar sobre o resultado.
+Um chat comum recebe um pedido como "corrija os testes que estão falhando" e devolve uma sugestão de texto. Um agente lê a saída real do executor de testes, decide qual arquivo abrir com base nela, edita o arquivo, roda os testes de novo, lê a nova saída e só para quando o resultado bate — ou quando decide que precisa perguntar algo a quem o acionou. É esse ciclo de raciocínio e ação, mais do que o tamanho do modelo, que separa Claude Code ou Codex de um chat comum, e o que torna possível a engenharia agêntica.
+
+Willison define engenharia agêntica como "the practice of developing software with the assistance of coding agents" (Claude Code, Codex, Gemini CLI), sustentada por três responsabilidades que continuam humanas mesmo com o código escrito por um agente:
+
+- **Especificar o problema.** O pedido descreve o comportamento esperado nos casos de borda, ou só o caminho feliz?
+- **Prover as ferramentas certas.** O agente tem acesso ao terminal, ao executor de testes, ao linter — ou só gera texto sem verificar nada contra o sistema real?
+- **Verificar e iterar.** Alguém rodou o resultado antes de aceitar, ou o código entrou porque "parecia certo"?
 
 ## O que sobe: piso, teto, julgamento
 
@@ -67,5 +75,7 @@ Willison localiza esse julgamento em "figuring out *what* code to write": navega
 | Piso sobe para todos | — | O código compila e roda? |
 | Teto sobe com disciplina | Especificação + ferramental | O código resolve exatamente o problema, nos casos de borda que importam? |
 | Julgamento humano sobe de valor | Verificação | Esse era o problema certo? O resultado está pronto para produção, ou é só um demo que passou uma vez? |
+
+> **Pare e pergunte à turma:** pensem num código aceito recentemente sem revisão cuidadosa. Ele passou pela coluna "piso" (rodou) ou também pela coluna "teto" (foi verificado nos casos que importam)? Peça que alguém responda em voz alta antes de seguir.
 
 **Próxima página:** [Padrões e decisões](padroes-e-decisoes.md).

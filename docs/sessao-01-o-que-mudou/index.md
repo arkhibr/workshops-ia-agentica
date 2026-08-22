@@ -29,18 +29,19 @@ A **Vetor** é uma plataforma fictícia de e-commerce B2B usada como fio conduto
 
 | # | Página | Bloco | Tempo | Resultado esperado |
 |---|---|---|---|---|
-| 1 | [Conceitos](conceitos.md) | Teoria | 40 min | Vocabulário: vibe coding, assistência, SDD, Software 3.0, engenharia agêntica |
+| 1 | [Conceitos](conceitos.md) | Teoria | 30 min | Vocabulário: vibe coding, assistência, SDD, Software 3.0, engenharia agêntica |
 | 2 | [Padrões e decisões](padroes-e-decisoes.md) | Teoria | 15 min | Critério para escolher o modo de trabalho conforme a tarefa |
 | 3 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 10 min | Ver, com a Vetor, onde um prompt vago perde regra de negócio |
-| 4 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 35 min | Quatro experimentos práticos com o próprio agente do participante |
-| 5 | [Exercícios](exercicios.md) | Prática avaliada | 20 min | Exercício-âncora: intuição vs. prompt estruturado |
-| — | [Síntese e referências](sintese-e-referencias.md) | Fechamento | 10 min | Checklist, autoavaliação e fontes completas |
-| | | | **130 min\*** | |
-
-\* 130 min inclui um pulmão de 10 min já distribuído entre os blocos; ajuste o ritmo conforme a turma.
+| 4 | [Estudo de caso](estudo-de-caso.md) | Discussão em grupo | 15 min | Critério (não opinião) para quando SDD se justifica |
+| 5 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 30 min | Três experimentos práticos com o próprio agente do participante |
+| 6 | [Exercícios](exercicios.md) | Prática avaliada | 15 min | Exercício-âncora: intuição vs. prompt estruturado |
+| — | [Síntese e referências](sintese-e-referencias.md) | Fechamento | 5 min | Checklist, autoavaliação e fontes completas |
+| | | | **120 min** | |
 
 ## Como conduzir
 
-Ao apresentar um conceito, pare e pergunte à turma um exemplo do próprio dia a dia antes de seguir para a próxima seção. Ao chegar num exercício, resista à tentação de resolver no lugar do participante: o valor está em cada um sentir, no próprio prompt, onde a ambiguidade custou uma regra de negócio.
+[Conceitos](conceitos.md) e [Padrões e decisões](padroes-e-decisoes.md) têm caixas de destaque ("Pare e pergunte", "Aplique agora") embutidas no texto — elas não são opcionais nem decoração. É nelas que o tempo alocado de 30 e 15 minutos se realiza de fato: pare de verdade, espere a turma responder, não apenas leia a pergunta e siga em frente.
+
+Ao chegar num exercício, resista à tentação de resolver no lugar do participante: o valor está em cada um sentir, no próprio prompt, onde a ambiguidade custou uma regra de negócio.
 
 **Próxima página:** [Conceitos](conceitos.md).
