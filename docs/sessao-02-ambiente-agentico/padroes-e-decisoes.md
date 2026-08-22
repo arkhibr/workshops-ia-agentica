@@ -11,7 +11,7 @@ Montar um arquivo de instrução, conectar uma ferramenta via MCP e isolar conte
 | Frequência de uso do agente | esporádica | diária, múltiplas sessões em paralelo |
 | Ferramentas externas necessárias | nenhuma, só leitura/escrita de arquivo | acesso a banco de dados, API interna, rastreador de tarefas |
 
-Um repositório pessoal, de uso esporádico, não precisa de MCP nem de isolamento por worktree — um arquivo de instrução simples já resolve a maior parte do ganho. A Vetor, com quatro desenvolvedores usando agente todo dia num sistema de produção, está do lado direito da tabela inteira.
+Um repositório pessoal, de uso esporádico, não precisa de MCP nem de isolamento por worktree — um arquivo de instrução simples já resolve a maior parte do ganho. Um time de vários desenvolvedores usando agente todo dia num sistema de produção está do lado direito da tabela inteira.
 
 O cálculo é o mesmo por trás de qualquer decisão de investir tempo em preparação antes de começar: o custo de configurar aparece agora, de uma vez, e o ganho aparece depois, espalhado por cada sessão futura de agente. Numa tarefa esporádica, esse ganho futuro não paga o custo presente. No repositório que o time usa todo dia, paga rápido: a segunda sessão de agente já reaproveita o mesmo arquivo de instrução, a mesma conexão MCP e o mesmo hábito de isolar por ramo, sem reconfigurar nada.
 
@@ -86,4 +86,4 @@ npm test       # idem
 
 Se um comando falhar, ou não existir mais, o arquivo está desatualizado, mesmo tendo sido revisado num PR recente para outro motivo. Times maiores automatizam essa checagem como um passo da esteira de CI, que roda os comandos documentados contra o projeto real e falha o build se algum deles não existir mais — uma forma de o arquivo de instrução ser verificado por máquina, não só por revisão humana esporádica.
 
-**Próxima página:** [Exemplo arquitetural](exemplo-arquitetural.md) aplica esses critérios à Vetor.
+**Próxima página:** [Exemplo arquitetural](exemplo-arquitetural.md) aplica esses critérios a um caso concreto.
