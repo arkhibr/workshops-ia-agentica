@@ -32,7 +32,15 @@ markdown_extensions:
 nav:
   - Início: index.md
   - Bloco 1 — Fundamentos:
-      - S1 — O que mudou: sessao-01-o-que-mudou/index.md
+      - S1 — O que mudou:
+          - Visão geral: sessao-01-o-que-mudou/index.md
+          - Conceitos: sessao-01-o-que-mudou/conceitos.md
+          - Padrões e decisões: sessao-01-o-que-mudou/padroes-e-decisoes.md
+          - Exemplo arquitetural: sessao-01-o-que-mudou/exemplo-arquitetural.md
+          - Estudo de caso: sessao-01-o-que-mudou/estudo-de-caso.md
+          - Oficina de ferramentas: sessao-01-o-que-mudou/oficina-de-ferramentas.md
+          - Exercícios: sessao-01-o-que-mudou/exercicios.md
+          - Síntese e referências: sessao-01-o-que-mudou/sintese-e-referencias.md
       - S2 — O ambiente agêntico: sessao-02-ambiente-agentico/index.md
   - Bloco 2 — Especificação e Planejamento:
       - S3 — Exploração e especificação: sessao-03-exploracao-especificacao/index.md

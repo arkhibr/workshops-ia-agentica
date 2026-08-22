@@ -44,22 +44,25 @@ docs/
 └── sessao-10-esteira-completa/               # Bloco 4: esteira ponta a ponta + ADR (MADR v4)
 ```
 
-Cada sessão é autocontida e cobre o material completo de um encontro de 2h. O formato foi validado na Sessão 1 e se repete nas demais:
+Cada sessão é autocontida e cobre o material completo de um encontro de 2h. O formato foi validado na Sessão 1 e se repete nas demais — mesmo esqueleto de 8 páginas das disciplinas de pós-graduação da Arkhi (`arquitetura-solucoes-ia-generativa/docs/modulo-N/`), com profundidade calibrada para 2h ao vivo, não para um módulo de leitura de 60–90 min:
 
 ```
 docs/sessao-NN-slug/
-├── index.md                # agenda em blocos teoria+prática cronometrados, teoria de cada bloco inline, links para os exercícios
-└── exercicios/
-    ├── exercicio-NN-slug.md              # exercício simples, autocontido no próprio arquivo
-    └── exercicio-NN-slug/                # exercício com múltiplos arquivos (cenário, critérios de aceitação)
-        ├── index.md
-        ├── cenario.md
-        └── criterios-aceitacao.md
+├── index.md                    # pergunta-guia, objetivos Bloom, roteiro cronometrado com link para cada página
+├── conceitos.md                # teoria fundamentada — o que o instrutor explora ao vivo
+├── padroes-e-decisoes.md       # comparação de abordagens, critério de decisão, anti-padrão
+├── exemplo-arquitetural.md     # demonstração conduzida pelo instrutor, com o caso Vetor
+├── estudo-de-caso.md           # dilema sem resposta prescrita, perguntas para orientar a discussão
+├── oficina-de-ferramentas.md   # prática guiada em experimentos (Essencial em aula / Exploração em dupla / Extensão)
+├── exercicios.md               # exercícios em 6 níveis de Bloom (Recordar → Criar), com rubrica no nível Aplicar
+└── sintese-e-referencias.md    # ideias essenciais, checklist, autoavaliação, fontes completas
 ```
 
-`index.md` é o nome obrigatório (não `README.md`) — é o que o mkdocs usa como página de entrada de cada pasta. Nem toda página de exercício precisa estar em `nav:` no `mkdocs.yml`; exercícios de apoio ficam acessíveis por link a partir do `index.md` da sessão, sem poluir o menu principal.
+`index.md` é o nome obrigatório (não `README.md`) — é o que o mkdocs usa como página de entrada de cada pasta. Todas as 8 páginas de uma sessão entram no `nav:` do `mkdocs.yml`, aninhadas sob o título da sessão (ver S1 como referência).
 
-**Teoria e prática intercaladas, nunca em bloco único.** Uma sessão de 2h não é uma hora de aula seguida de meia hora de exercício — é dividida em 3–5 blocos de 20–35 min, cada um com teoria curta (10–15 min) seguida de prática imediata (10–20 min) sobre o que acabou de ser apresentado. O último bloco de cada sessão é o exercício-âncora, mais longo, que integra os blocos anteriores.
+**Estas páginas não são leitura prévia do aluno.** Diferente do `arquitetura-solucoes-ia-generativa`, ninguém lê 60–90 minutos antes da sessão. O instrutor conduz a exploração dos conceitos e o trabalho dos exercícios ao vivo, durante as 2h — a estrutura em 8 páginas organiza o material de apoio do instrutor, não uma tarefa de casa. Cada `index.md` declara isso explicitamente em "Como usar este material".
+
+**Caso contínuo: Vetor.** Uma plataforma fictícia de e-commerce B2B (clientes padrão e atacado) atravessa as dez sessões como fio condutor de exemplos e exercícios, equivalente aos casos Horizonte/Aurora/Lume do `arquitetura-solucoes-ia-generativa`. Cenários genéricos de C#/JS/TS usam a Vetor; variações no domínio FUNDEP continuam restritas aos Blocos 3 e 4, como exercício adicional.
 
 ## Convenções críticas
 
@@ -79,6 +82,6 @@ docs/sessao-NN-slug/
 - Fundamentar em pesquisa primária quando ela existe — artigos (arXiv, NeurIPS, ACL), especificações técnicas (Model Context Protocol, GitHub Spec Kit), padrões de organismos (NIST, OWASP) — não só posts de blog ou talks de conferência.
 - Fontes de prática de mercado (Karpathy, Willison, blog do GitHub) são legítimas para nomear fenômenos recentes sem literatura acadêmica ainda, mas complementam a base primária — não a substituem.
 - Reaproveitar frameworks já validados nas disciplinas da Arkhi em vez de reinventar categorias novas — ex.: a distinção vibe coding / assistência de codificação / SDD do Módulo 4 (Agentes) é a referência para qualquer sessão que toque nesse tema, não uma dicotomia "ad hoc vs. disciplinado" inventada para o workshop.
-- Toda citação em prosa tem par na seção "Fontes desta sessão" (no `index.md`) e entrada completa em `docs/referencia/bibliografia.md` (autor, título, veículo, data, URL).
+- Toda citação em prosa tem par na seção "Fundamentação" de `sintese-e-referencias.md` e entrada completa em `docs/referencia/bibliografia.md` (autor, título, veículo, data, URL).
 
 **Convenções de commit:** `<type>: <mensagem>` — tipos usados: `feat`, `docs`, `refactor`, `fix`.
