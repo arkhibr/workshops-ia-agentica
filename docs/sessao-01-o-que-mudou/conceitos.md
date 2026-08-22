@@ -10,6 +10,8 @@ A disciplina de Arquitetura de Soluções com IA Generativa da Arkhi separa trê
 | Assistência de codificação | ticket, código existente, revisão do desenvolvedor | testes e revisão depois de gerar | contexto fragmentado, decisões não registradas |
 | SDD (Sessão 8) | constitution, spec, plano, tarefas, testes e gates versionados | rastreabilidade entre intenção, implementação e evidência | custo de especificar sem manter os artefatos vivos |
 
+![Três colunas comparam vibe coding, assistência de codificação e SDD pelos artefatos que governam o trabalho, pela forma de verificação e pelo risco dominante. Uma seta inferior mostra a progressão de conversa para código e ticket, até artefatos versionados.](../assets/images/s1-tres-modos-trabalho.png)
+
 Este workshop move o time da primeira linha para a terceira ao longo de dez sessões: assistência de codificação disciplinada do Bloco 2 ao Bloco 3, SDD completo na Sessão 8.
 
 ## De onde vem o vibe coding
@@ -48,6 +50,8 @@ O prompt deixa de ser um pedido informal para um assistente e passa a ser a espe
 
 A previsão de Karpathy para a década segue a mesma lógica: "Software 3.0 is eating 1.0/2.0". Código explícito e modelos treinados não desaparecem; uma fração crescente do comportamento de um sistema passa a ser especificada diretamente em linguagem natural.
 
+![Evolução de Software 1.0, no qual humanos escrevem regras em código, para Software 2.0, no qual dados e otimização produzem pesos, e Software 3.0, no qual linguagem natural, regras, convenções, exemplos e casos de borda entram na janela de contexto de um LLM.](../assets/images/s1-software-1-2-3.png)
+
 ## O que torna um sistema agêntico
 
 Uma segunda peça técnica separa um agente de um LLM respondendo uma pergunta isolada: a capacidade de intercalar raciocínio e ação, lendo o resultado de uma ferramenta, decidindo o próximo passo, agindo de novo. Yao et al., no artigo que introduziu o framework ReAct (2023), formalizaram esse ciclo combinando cadeia de raciocínio com execução verificável de ações.
@@ -59,6 +63,8 @@ Willison define engenharia agêntica como "the practice of developing software w
 - **Especificar o problema.** O pedido descreve o comportamento esperado nos casos de borda, ou só o caminho feliz?
 - **Prover as ferramentas certas.** O agente tem acesso ao terminal, ao executor de testes, ao linter — ou só gera texto sem verificar nada contra o sistema real?
 - **Verificar e iterar.** Alguém rodou o resultado antes de aceitar, ou o código entrou porque "parecia certo"?
+
+![Ciclo da engenharia agêntica conectando contexto, raciocínio, ação, evidência e ajuste. As responsabilidades humanas de especificar, prover ferramentas e verificar e iterar alimentam o ciclo. Uma régua lateral distingue piso, teto e julgamento.](../assets/images/s1-ciclo-engenharia-agentica.png)
 
 ## O que sobe: piso, teto, julgamento
 
