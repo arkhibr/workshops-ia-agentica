@@ -1,6 +1,6 @@
 site_name: IA Agêntica na Prática
 site_description: Workshop de engenharia agêntica disciplinada para a equipe de desenvolvimento C#, JavaScript e TypeScript da FUNDEP
-# `site_url` será definido somente após a definição do endereço público no GitHub Pages.
+site_url: https://arkhibr.github.io/workshops-ia-agentica/
 use_directory_urls: true
 
 theme:
