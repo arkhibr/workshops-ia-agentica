@@ -33,13 +33,25 @@ A régua prática: quanto mais o problema depende de conhecimento tácito do sis
 
 ## O princípio de simplicidade
 
-A Anthropic, no guia de engenharia "Building Effective Agents" (dezembro de 2024), recomenda encontrar a solução mais simples possível, aumentando a complexidade apenas quando o problema exigir. Isso pode significar preferir um fluxo determinístico com uma ou duas chamadas ao modelo, mais simples que um agente autônomo. O guia distingue **workflows** (código orquestra o modelo em um caminho predefinido) de **agentes** (o modelo decide dinamicamente os próprios passos), e cataloga cinco padrões de workflow antes de recomendar autonomia plena:
+A peça básica de qualquer sistema agêntico, segundo o mesmo guia da Anthropic, é o *augmented LLM*: um modelo aumentado com acesso a busca, ferramentas e memória, capaz de decidir sozinho que consulta fazer, qual ferramenta acionar e o que vale a pena reter. Workflow e agente são duas formas diferentes de organizar esse mesmo bloco básico — a diferença está em quem controla o caminho, o código ou o próprio modelo.
+
+A partir desse bloco, a Anthropic, no guia de engenharia "Building Effective Agents" (dezembro de 2024), recomenda encontrar a solução mais simples possível, aumentando a complexidade apenas quando o problema exigir. O guia é explícito sobre o preço dessa escolha: sistemas agênticos trocam latência e custo por desempenho melhor na tarefa, e cabe a quem projeta decidir quando essa troca compensa. Um agente com autonomia plena carrega, além do custo mais alto, o risco de um erro numa etapa inicial se propagar sem supervisão pelas etapas seguintes; por isso o guia recomenda teste extensivo em ambiente controlado, com salvaguardas apropriadas, antes de liberar autonomia total em produção.
+
+!!! tip "Aplique agora"
+    Antes de adicionar mais uma etapa autônoma a um agente que seu time já usa, responda: essa etapa resolve um problema real de desempenho que a etapa anterior não resolvia, ou só parece mais sofisticada? Se não houver um problema real por trás, o guia recomenda não adicionar.
+
+O guia também recomenda cautela com frameworks de agente antes de entender bem o problema: eles costumam criar camadas extras de abstração que escondem o prompt e a resposta reais, dificultando a depuração quando algo sai errado. A recomendação é começar direto pela API do modelo — muitos dos padrões abaixo cabem em poucas linhas de código, sem framework nenhum.
+
+O guia distingue **workflows** (código orquestra o modelo em um caminho predefinido) de **agentes** (o modelo decide dinamicamente os próprios passos): workflows entregam previsibilidade e consistência para tarefas bem definidas, enquanto agentes fazem mais sentido quando o problema pede flexibilidade e decisão do próprio modelo em escala. Antes de recomendar autonomia plena, o guia cataloga cinco padrões de workflow:
 
 - **Encadeamento de prompts.** A saída de uma chamada vira a entrada da próxima, numa sequência fixa.
 - **Roteamento.** Uma primeira chamada classifica o pedido e direciona para o caminho especializado certo.
 - **Paralelização.** Várias chamadas rodam ao mesmo tempo sobre partes independentes do problema, e os resultados se combinam no final.
 - **Orquestrador-trabalhadores.** Uma chamada central decompõe a tarefa e distribui pedaços para outras chamadas especializadas.
 - **Avaliador-otimizador.** Uma chamada gera, outra critica o resultado contra um critério definido, e o ciclo repete até passar.
+
+!!! question "Antes de continuar"
+    Pense num agente ou numa automação de IA que seu time usa hoje. Ele decide o próprio caminho a cada execução, ou segue, na prática, uma sequência fixa de passos vestida de "agente"? Isso muda o quanto você revisa o resultado antes de confiar nele?
 
 O mesmo princípio vale para a escolha entre vibe coding, assistência e SDD: comece pelo modo mais simples que a linha da tabela permitir, e suba de nível só quando a tarefa concreta, não a vontade de usar a ferramenta mais avançada, exigir.
 
