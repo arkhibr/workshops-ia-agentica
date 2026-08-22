@@ -68,8 +68,26 @@ Escolher um modelo pelo nome mais falado do momento é o mesmo erro de raiz do v
 | Kimi K3 | Moonshot AI | 93,4% |
 | Claude Opus 4.8 | Anthropic | 88,6% |
 | Grok 4.5 | xAI | 86,6% |
+| Claude Sonnet 5 | Anthropic | 82,1% |
+| Claude Haiku 4.5 | Anthropic | 73,3% |
 
-Fonte: [vals.ai — SWE-bench Verified](https://www.vals.ai/benchmarks/swebench), snapshot de 19 de agosto de 2026. GPT (OpenAI) e Gemini (Google) ficaram fora desta tabela porque, na data de escrita, os números publicados por fonte independente e os autorreportados pelos fabricantes divergiam de forma relevante: exatamente o problema descrito acima. **Este placar envelhece rápido**: confira a [SWE-bench Verified Leaderboard](https://www.swebench.com/) atualizada antes de decidir, não confie neste número congelado.
+Fonte: [vals.ai — SWE-bench Verified](https://www.vals.ai/benchmarks/swebench), snapshot de 19 de agosto de 2026, complementado com dados públicos de lançamento da Anthropic para Sonnet 5 e Haiku 4.5.
+
+### E a família GPT-5.6 (Sol, Terra, Luna)?
+
+Não entra na tabela acima por um motivo que já é a própria lição desta seção: a OpenAI, ao lançar o GPT-5.6 em três níveis (Sol, Terra, Luna) em julho de 2026, **não publicou nenhum número de SWE-bench Verified** para a família — só divulgou SWE-bench Pro, a variante mais difícil e resistente a contaminação:
+
+| Modelo | Organização | SWE-bench Pro |
+|---|---|---|
+| Claude Fable 5 | Anthropic | 80,0% |
+| Claude Opus 5 | Anthropic | 79,2% |
+| GPT-5.6 Sol | OpenAI | 64,6% |
+| GPT-5.6 Terra | OpenAI | 63,4% |
+| GPT-5.6 Luna | OpenAI | não divulgado |
+
+Colocar o Sol (64,6%) ao lado do Claude Opus 5 da tabela Verified (97,0%) seria comparar maçã com laranja: são benchmarks diferentes, com dificuldade diferente. É exatamente o tipo de comparação que o critério anterior (desconfiar do número que o próprio fabricante escolhe divulgar) existe para impedir. Quando um fabricante muda de benchmark de um lançamento para o outro, vale perguntar por que ele parou de reportar o benchmark anterior, não só por que o número novo parece mais baixo.
+
+**Este placar envelhece rápido em qualquer uma das duas tabelas**: confira a [SWE-bench Verified Leaderboard](https://www.swebench.com/) e a [SWE-bench Pro Leaderboard](https://www.vals.ai/benchmarks/swebench) atualizadas antes de decidir, não confie em número congelado numa página de workshop.
 
 ## Anti-padrão: vibe coding tratado como produto
 

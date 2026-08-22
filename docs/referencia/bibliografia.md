@@ -76,6 +76,12 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 **SWE-bench. "SWE-bench Verified Leaderboard".** <https://www.swebench.com/>. Leaderboard oficial do benchmark, com as variantes Verified, Lite, Pro e Multimodal.
 → Sessão 1.
 
+**ANTHROPIC. "Introducing Claude Haiku 4.5".** Anthropic News, 2026. <https://www.anthropic.com/news/claude-haiku-4-5>. Anúncio oficial de lançamento, com os números de SWE-bench Verified do modelo mais barato da família Claude — referência de custo-benefício frente aos modelos de topo da tabela.
+→ Sessão 1.
+
+**OpenAI. "GPT-5.6" (Sol, Terra, Luna).** Anúncio de lançamento, 9 jul. 2026. Recapitulação: MarkTechPost, <https://www.marktechpost.com/2026/07/09/openai-releases-gpt-5-6-a-three-tier-model-family-with-programmatic-tool-calling/>. Família de três níveis lançada sem número de SWE-bench Verified — só SWE-bench Pro foi divulgado. Exemplo real do critério "desconfie do benchmark que o fabricante escolhe divulgar".
+→ Sessão 1.
+
 ## Evidência Empírica sobre Produtividade e Risco
 
 **PENG, Sida; KALLIAMVAKOU, Eirini; CIHON, Peter; DEMIRER, Mert. *The Impact of AI on Developer Productivity: Evidence from GitHub Copilot*.** arXiv:2302.06590, 2023. <https://arxiv.org/abs/2302.06590>. Experimento randomizado com 70 desenvolvedores profissionais: o grupo com Copilot completou uma tarefa de implementação de servidor HTTP 55,8% mais rápido (71 min contra 161 min). O efeito foi maior para desenvolvedores menos experientes.
