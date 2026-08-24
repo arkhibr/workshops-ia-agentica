@@ -1,6 +1,6 @@
 # Workshop: IA Agêntica na Prática
 
-Workshop de engenharia agêntica disciplinada para a equipe de desenvolvimento C#, JavaScript e TypeScript da FUNDEP. Dez sessões que levam o time do uso ad hoc de LLMs — cada desenvolvedor com seu próprio jeito de pedir código, sem vocabulário ou contrato compartilhado — a uma esteira de engenharia com IA como parceiro de execução controlado e saídas previsíveis.
+Workshop de engenharia agêntica disciplinada para a equipe de desenvolvimento C#, JavaScript e TypeScript da FUNDEP. Dez sessões que levam o time do uso ad hoc de LLMs (cada desenvolvedor com seu próprio jeito de pedir código, sem vocabulário ou contrato compartilhado) a uma esteira de engenharia com IA como parceiro de execução controlado e saídas previsíveis.
 
 A tese: a janela de contexto virou o programa. O LLM é o interpretador; o desenvolvedor escreve em linguagem natural, e o que era arte ou intuição agora é engenharia — especificação, decomposição, verificação. O piso sobe para todos; o teto sobe só com disciplina; o julgamento humano sobe de valor.
 

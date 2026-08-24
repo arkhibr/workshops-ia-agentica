@@ -8,7 +8,7 @@ Regras de negócio escritas em prosa são lidas de formas diferentes pelo desenv
 
 ## Intenção metodológica
 
-SBVR (Semantics of Business Vocabulary and Business Rules) como padrão de linguagem controlada: vocabulário, regra comportamental e regra definitiva. RuleSpeak nas três formas — obrigação, proibição, possibilidade — e tabelas de decisão para regras de cálculo. A IA atua como formalizadora: recebe a regra em prosa e devolve a versão sem ambiguidade.
+SBVR (Semantics of Business Vocabulary and Business Rules) como padrão de linguagem controlada: vocabulário, regra comportamental e regra definitiva. RuleSpeak nas três formas (obrigação, proibição, possibilidade) e tabelas de decisão para regras de cálculo. A IA atua como formalizadora: recebe a regra em prosa e devolve a versão sem ambiguidade.
 
 ## Ao final desta sessão, o participante consegue
 

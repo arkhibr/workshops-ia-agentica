@@ -1,4 +1,4 @@
-# S8 — SDD — ciclo completo
+# S8 — SDD: ciclo completo
 
 **Bloco:** 3 — Execução
 
@@ -8,7 +8,7 @@ Especificação, plano e testes que não se conectam num ciclo executável viram
 
 ## Intenção metodológica
 
-Spec-Driven Development (SDD) com o GitHub Spec Kit como implementação de referência: quatro artefatos canônicos — `constitution.md` (princípios e restrições não negociáveis do projeto), `spec.md` (o quê e por quê), `plan.md` (como, com decisões de implementação) e `tasks.md` (tarefas atômicas priorizadas) — executados ponta a ponta em um repositório real, via os comandos `/specify`, `/plan`, `/tasks`. A especificação é o artefato primário; o código é o produto compilado. SDD não substitui o bom senso: tarefas simples não precisam da sobrecarga dos quatro artefatos.
+Spec-Driven Development (SDD) com o GitHub Spec Kit como implementação de referência: quatro artefatos canônicos, `constitution.md` (princípios e restrições não negociáveis do projeto), `spec.md` (o quê e por quê), `plan.md` (como, com decisões de implementação) e `tasks.md` (tarefas atômicas priorizadas), executados ponta a ponta em um repositório real, via os comandos `/specify`, `/plan`, `/tasks`. A especificação é o artefato primário; o código é o produto compilado. SDD não substitui o bom senso: tarefas simples não precisam da sobrecarga dos quatro artefatos.
 
 ## Ao final desta sessão, o participante consegue
 

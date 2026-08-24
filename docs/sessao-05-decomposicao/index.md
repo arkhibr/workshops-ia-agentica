@@ -1,4 +1,4 @@
-# S5 — Decomposição — planos para SDD
+# S5 — Decomposição: planos para SDD
 
 **Bloco:** 2 — Especificação e Planejamento
 
