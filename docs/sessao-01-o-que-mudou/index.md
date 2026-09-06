@@ -29,23 +29,25 @@ A **Vetor** é uma plataforma fictícia de e-commerce B2B usada como fio conduto
 
 | # | Página | Bloco | Tempo | Resultado esperado |
 |---|---|---|---|---|
-| 1 | [Modos de trabalho com IA](modos-de-trabalho.md) | Teoria | 11 min | Vocabulário dos três modos e critério para escolher um por tarefa |
-| 2 | [Evidência empírica de produtividade](evidencia-empirica.md) | Teoria | 5 min | O contraste entre os dois estudos e a régua que sai dele |
-| 3 | [A tese do Software 3.0](software-3-0.md) | Teoria | 9 min | O prompt como artefato que governa o sistema; piso, teto e julgamento |
-| 4 | [Sistemas agênticos e simplicidade](sistemas-agenticos.md) | Teoria | 10 min | Fronteira entre fluxo de trabalho e agente, e a recomendação de simplicidade |
-| 5 | [Avaliação de modelos](avaliacao-de-modelos.md) | Teoria | 5 min | Cinco critérios para ler um benchmark antes de escolher um modelo |
+| 1 | [Modos de trabalho com IA](modos-de-trabalho.md) | Teoria | 9 min | Vocabulário dos três modos e critério para escolher um por tarefa |
+| 2 | [Evidência empírica de produtividade](evidencia-empirica.md) | Teoria | 4 min | O contraste entre os dois estudos e a régua que sai dele |
+| 3 | [A tese do Software 3.0](software-3-0.md) | Teoria | 7 min | O prompt como artefato que governa o sistema; piso, teto e julgamento |
+| 4 | [Sistemas agênticos e simplicidade](sistemas-agenticos.md) | Teoria | 7 min | Fronteira entre fluxo de trabalho e agente, e a recomendação de simplicidade |
+| 5 | [Avaliação de modelos](avaliacao-de-modelos.md) | Teoria | 3 min | Cinco critérios para ler um benchmark antes de escolher um modelo |
 | 6 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 10 min | Ver, com a Vetor, onde um prompt vago perde regra de negócio |
-| 7 | [Estudo de caso](estudo-de-caso.md) | Discussão em grupo | 15 min | Critério (não opinião) para quando SDD se justifica |
+| 7 | [Estudo de caso](estudo-de-caso.md) | Leitura depois da aula | depois da aula | Critério (não opinião) para quando SDD se justifica |
 | — | Intervalo | — | 5 min | — |
-| 8 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 30 min | Três experimentos práticos com o próprio agente do participante |
-| 9 | [Exercícios](exercicios.md) | Prática avaliada | 15 min | Exercício-âncora: intuição vs. prompt estruturado |
+| 8 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 35 min | Três experimentos práticos com o próprio agente do participante |
+| 9 | [Exercícios](exercicios.md) | Prática avaliada | 35 min | Classificação de três tarefas reais do backlog, antes do intervalo, e exercício-âncora depois da oficina |
 | — | [Síntese e referências](sintese-e-referencias.md) | Fechamento | 5 min | Checklist, autoavaliação e fontes completas |
 | | | | **120 min** | |
 
 ## Como conduzir
 
-As cinco páginas de teoria têm caixas de destaque ("Pare e pergunte", "Aplique agora") embutidas no texto, e elas não são decoração. É nelas que os 45 minutos alocados ao bloco de teoria se realizam de fato: pare de verdade e espere a turma responder, em vez de ler a pergunta e seguir em frente.
+As cinco páginas de teoria têm caixas de destaque ("Pare e pergunte", "Aplique agora") embutidas no texto, e elas não são decoração. É nelas que os 30 minutos alocados ao bloco de teoria se realizam de fato: pare de verdade e espere a turma responder, em vez de ler a pergunta e seguir em frente.
 
 Ao chegar num exercício, resista à tentação de resolver no lugar do participante: o valor está em cada um sentir, no próprio prompt, onde a ambiguidade custou uma regra de negócio.
+
+O exercício 6, de classificação de tarefas reais, ocupa os 20 minutos que antecedem o intervalo e é a única atividade da sessão que toca o backlog de verdade de cada participante. Ninguém precisa mostrar código: as tarefas são descritas em uma linha. O estudo de caso sai do relógio da aula e fica como leitura depois dela.
 
 **Próxima página:** [Modos de trabalho com IA](modos-de-trabalho.md).

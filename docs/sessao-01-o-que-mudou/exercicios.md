@@ -94,23 +94,57 @@ As duas saídas (passos 1 e 2) e uma tabela marcando quais dos cinco casos cada 
 
 **Como verificar antes de entregar:** confira se os casos 4 e 5 (os que dependem do teto e do tipo de cliente) foram mesmo testados, não só assumidos como corretos.
 
-### 6. Classifique e rode uma tarefa real do seu backlog
+### 6. Exercício de aplicação: classifique três tarefas reais do seu backlog
 
-Escolha uma tarefa real do seu backlog, fora deste material. Antes de pedir qualquer coisa ao agente, classifique-a contra a tabela de cinco critérios de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica) e decida, por escrito, qual modo você vai usar e por quê.
+**O que é:** a atividade de 20 minutos em que a tabela de critérios sai do slide e encosta no trabalho que você tem para fazer nesta semana. Vale para qualquer repositório, inclusive privado, porque nada aqui exige mostrar código.
 
-**Execute:**
+**Situação**
 
-1. Escreva sua classificação e a justificativa (duas ou três frases) antes de abrir o agente.
-2. Peça ao agente para executar a tarefa no modo escolhido. Se você escolheu vibe coding ou assistência, um prompt já resolve; se escolheu SDD, escreva pelo menos a especificação da tarefa antes de pedir o código.
-3. Releia o resultado e responda: ele confirmou sua classificação, ou revelou que a tarefa pedia mais (ou menos) cuidado do que você esperava?
+Você tem um backlog real, com tarefas de tamanhos e riscos diferentes. A tabela de cinco critérios de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica) diz qual modo cada tarefa pede. O que este exercício mede é se você consegue aplicar a tabela quando a resposta não é óbvia.
 
-**Entrega esperada:** a classificação escrita antes de começar, o prompt ou especificação usado, e a resposta do passo 3.
+**Seu papel**
 
-<details>
-<summary>O que evidencia um bom resultado</summary>
+Você decide, por escrito e antes de abrir o agente, como vai atacar cada uma das três tarefas, e depois defende essa decisão para um colega que não conhece o seu sistema.
 
-A classificação foi feita antes de ver o resultado, não ajustada depois para combinar com o que aconteceu. A resposta do passo 3 aponta um motivo concreto, não uma impressão vaga como "funcionou bem".
-</details>
+**Insumos disponíveis**
+
+Seu próprio backlog, a tabela de cinco critérios e um colega de dupla. Nenhum código precisa ser exibido: as tarefas são descritas em uma linha cada.
+
+**Como conduzir**
+
+**Etapa 1 — Levantamento (5 min, individual).** Escreva três tarefas reais do seu backlog, uma linha cada, escolhidas assim: uma que você faria hoje sem pensar duas vezes com vibe coding, uma que pediria assistência de codificação com revisão, e uma que você suspeita que exija SDD. Se não conseguir preencher as três, a lacuna já é um achado: registre qual faltou.
+
+**Etapa 2 — Classificação (7 min, individual).** Escolha a tarefa sobre a qual você tem *menos* certeza e preencha a tabela abaixo para ela. Feche com duas frases: qual modo você vai usar e por quê.
+
+| Critério | A tarefa é... | Puxa para |
+|---|---|---|
+| Reversibilidade | fácil ou difícil de desfazer depois de pronta? | fácil → vibe coding · difícil → SDD |
+| Tempo de vida | descartável ou vai durar meses no sistema? | descartável → vibe coding · duradoura → SDD |
+| Quantas pessoas mexem depois | só você ou o time inteiro? | só você → vibe coding · time → SDD |
+| Regra de negócio | tem regra que só existe na cabeça de alguém? | não tem → vibe coding · tem → SDD |
+| Familiaridade com o código | você conhece bem essa parte do sistema? | conhece → vibe coding · não conhece → SDD |
+
+**Etapa 3 — Defesa em dupla (6 min).** Troque a classificação com um colega. Cada um defende a decisão do outro contra os cinco critérios, procurando a linha em que discordaria. O objetivo não é convencer: é achar o critério que não é autoevidente.
+
+**Etapa 4 — Divergências (2 min, plenário).** Só as discordâncias vão para o plenário. Elas mostram onde a tabela precisa de julgamento e onde ela decide sozinha.
+
+**Entrega esperada**
+
+As três tarefas em uma linha cada, a tabela preenchida para a tarefa escolhida, as duas frases de decisão, e o critério em que a dupla divergiu (ou a confirmação de que não divergiu em nenhum).
+
+**Critérios de avaliação**
+
+| Critério | Peso | O que evidencia atendimento adequado |
+|---|---:|---|
+| As três tarefas são reais e distintas em risco | 20% | Vieram do backlog de verdade e não são três variações da mesma coisa |
+| A classificação usa os cinco critérios | 40% | Cada linha da tabela foi respondida para a tarefa escolhida, inclusive as que puxam para lados opostos |
+| A decisão é justificada pelos critérios | 20% | As duas frases citam as linhas que pesaram, e não preferência pessoal ou hábito |
+| A divergência foi examinada | 20% | Nomeia o critério em que a dupla discordou e por quê, ou registra que a leitura foi idêntica nos cinco |
+
+**Como verificar antes de entregar:** se todas as cinco linhas apontaram para o mesmo modo, você provavelmente escolheu a tarefa fácil. Troque pela que estava em segundo lugar na sua lista de incerteza.
+
+!!! tip "Depois da aula"
+    Rode a tarefa no modo que você decidiu e compare: o resultado confirmou a classificação, ou revelou que ela pedia mais cuidado do que você achava? Essa comparação é a que faz o critério grudar.
 
 ## Analisar
 
