@@ -103,6 +103,15 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 **DATACURVE. *DeepSWE Leaderboard*.** Publicado em benchlm.ai. <https://benchlm.ai/benchmarks/deepswe>. Leitura independente de modelos em 113 tarefas de engenharia de software de longo horizonte, tiradas de 91 repositórios de código aberto em 5 linguagens, verificadas por programa. Espelha o placar público do DeepSWE usando, para cada modelo, a melhor configuração disponível do `mini-swe-agent` — o que mede o par modelo mais arnês, e não o modelo isolado.
 → Sessões 1, 2.
 
+**ANTHROPIC. "Writing effective tools for agents".** Anthropic Engineering, 2025. <https://www.anthropic.com/engineering/writing-tools-for-agents>. Critério verificável para catálogo de ferramentas: se uma pessoa da engenharia não sabe dizer qual ferramenta usar numa situação, o modelo também não saberá. Recomenda consolidar por fluxo de trabalho em vez de espelhar endpoints.
+→ Sessão 2.
+
+**ANTHROPIC. "Code execution with MCP".** Anthropic Engineering, 2025. <https://www.anthropic.com/engineering/code-execution-with-mcp>. Caso em que carregar definições de ferramenta sob demanda, em vez de todas de uma vez, reduziu o consumo de 150 mil para 2 mil tokens.
+→ Sessão 2.
+
+**ANTHROPIC. "Steering Claude Code".** Anthropic Blog, 2026. <https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more>. Separa os mecanismos que guiam o modelo, como arquivos de contexto, dos que impõem comportamento, como hooks e permissões — a base da regra de que proteção real precisa ser determinística.
+→ Sessões 2, 10.
+
 **TRIVEDY, Vivek. "The Anatomy of an Agent Harness".** *LangChain Blog*, 2026. <https://www.langchain.com/blog/the-anatomy-of-an-agent-harness>. Formulação canônica do arnês (*harness*) como tudo o que cerca o modelo e o transforma em agente — "if you're not the model, you're the harness" — com a medição de que a mesma família de modelo muda de faixa no Terminal Bench 2.0 quando só o arnês muda.
 → Sessão 2.
 

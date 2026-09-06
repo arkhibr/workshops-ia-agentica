@@ -10,15 +10,7 @@ A maioria das aplicações agênticas de codificação oferece pelo menos três 
 
 Essa régua se conecta direto ao princípio de simplicidade da Sessão 1: a Anthropic recomenda teste extensivo em ambiente controlado, com salvaguardas apropriadas, antes de liberar autonomia total em produção. Autonomia ampla sem isolamento correspondente é exatamente o cenário que o guia desaconselha: o risco de um erro numa etapa se propagar, sem supervisão, pelas etapas seguintes.
 
-Há uma aritmética por trás dessa recomendação, e ela é menos intuitiva do que parece. Um agente autônomo executa muitas etapas seguidas, e etapas se compõem por multiplicação. Suponha 99% de confiabilidade por etapa, um número que soa excelente:
-
-| Etapas na tarefa | Confiabilidade por etapa | Chance de a tarefa inteira dar certo |
-|---:|---:|---:|
-| 10 | 99% | 90,4% |
-| 20 | 99% | 81,8% |
-| 50 | 99% | 60,5% |
-
-A conta é `0,99^n`. Uma taxa de acerto por passo que pareceria ótima isoladamente produz uma taxa de fracasso relevante numa tarefa longa. O problema é estrutural do encadeamento, então não se resolve trocando de modelo. Ataca-se no arnês, por quatro vias: dar ao agente uma forma de conferir o próprio trabalho antes de avançar, definir pontos de parada em fronteiras claras, reduzir a ambiguidade de cada etapa, e manter o contexto limpo. A mesma conta impõe também um limite honesto: reduzir o número de etapas costuma render mais que aumentar a confiabilidade de cada uma.
+A aritmética do erro composto, vista em [O arnês do agente](arnes.md#erro-composto-a-aritmetica-da-trajetoria), é o que dá tamanho a esse risco: numa trajetória de vinte etapas, 99% de acerto por etapa deixa a tarefa inteira em 81,8%. É por isso que autonomia ampla pede isolamento e verificação, não confiança no modelo.
 
 Algumas aplicações agênticas vão além do modo de permissão e oferecem *hooks*: pontos de interceptação que rodam antes ou depois de o agente executar uma ferramenta, e podem bloquear a ação, registrar um log, ou pedir confirmação extra para comandos específicos, por exemplo qualquer comando que toque um arquivo de credenciais ou qualquer push direto para a branch principal. Um *hook* não substitui o arquivo de instrução, nem o MCP: o AGENTS.md documenta a convenção esperada; o hook aplica um limite na camada de execução, que continua valendo mesmo se o agente ignorar a convenção documentada.
 
