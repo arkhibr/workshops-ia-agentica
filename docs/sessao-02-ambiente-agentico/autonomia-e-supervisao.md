@@ -10,7 +10,17 @@ A maioria das aplicações agênticas de codificação oferece pelo menos três 
 
 Essa régua se conecta direto ao princípio de simplicidade da Sessão 1: a Anthropic recomenda teste extensivo em ambiente controlado, com salvaguardas apropriadas, antes de liberar autonomia total em produção. Autonomia ampla sem isolamento correspondente é exatamente o cenário que o guia desaconselha: o risco de um erro numa etapa se propagar, sem supervisão, pelas etapas seguintes.
 
-Algumas aplicações agênticas vão além do modo de permissão e oferecem hooks: pontos de interceptação que rodam antes ou depois de o agente executar uma ferramenta, e podem bloquear a ação, registrar um log, ou pedir confirmação extra para comandos específicos, por exemplo qualquer comando que toque um arquivo de credenciais ou qualquer push direto para a branch principal. Um hook não substitui o arquivo de instrução, nem o MCP: o AGENTS.md documenta a convenção esperada; o hook aplica um limite na camada de execução, que continua valendo mesmo se o agente ignorar a convenção documentada.
+Há uma aritmética por trás dessa recomendação, e ela é menos intuitiva do que parece. Um agente autônomo executa muitas etapas seguidas, e etapas se compõem por multiplicação. Suponha 99% de confiabilidade por etapa, um número que soa excelente:
+
+| Etapas na tarefa | Confiabilidade por etapa | Chance de a tarefa inteira dar certo |
+|---:|---:|---:|
+| 10 | 99% | 90,4% |
+| 20 | 99% | 81,8% |
+| 50 | 99% | 60,5% |
+
+A conta é `0,99^n`. Uma taxa de acerto por passo que pareceria ótima isoladamente produz uma taxa de fracasso relevante numa tarefa longa. O problema é estrutural do encadeamento, então não se resolve trocando de modelo. Ataca-se no arnês, por quatro vias: dar ao agente uma forma de conferir o próprio trabalho antes de avançar, definir pontos de parada em fronteiras claras, reduzir a ambiguidade de cada etapa, e manter o contexto limpo. A mesma conta impõe também um limite honesto: reduzir o número de etapas costuma render mais que aumentar a confiabilidade de cada uma.
+
+Algumas aplicações agênticas vão além do modo de permissão e oferecem *hooks*: pontos de interceptação que rodam antes ou depois de o agente executar uma ferramenta, e podem bloquear a ação, registrar um log, ou pedir confirmação extra para comandos específicos, por exemplo qualquer comando que toque um arquivo de credenciais ou qualquer push direto para a branch principal. Um *hook* não substitui o arquivo de instrução, nem o MCP: o AGENTS.md documenta a convenção esperada; o hook aplica um limite na camada de execução, que continua valendo mesmo se o agente ignorar a convenção documentada.
 
 !!! tip "Aplique agora"
     No ambiente que você usa hoje, o agente pede confirmação antes de cada ação, ou já roda edições automaticamente? Isso foi uma decisão deliberada, calibrada pelo risco da tarefa, ou é só o padrão de fábrica que ninguém revisitou?
@@ -19,9 +29,9 @@ Algumas aplicações agênticas vão além do modo de permissão e oferecem hook
 
 A régua de autonomia e supervisão vista em [Autonomia e supervisão](autonomia-e-supervisao.md#autonomia-e-supervisao-o-que-o-ambiente-deixa-o-agente-decidir-sozinho) se decide caso a caso, não uma vez para o time inteiro. Três perguntas ajudam:
 
-- A ação é fácil de reverter (editar um arquivo ainda não commitado) ou difícil (enviar um e-mail, fazer deploy, apagar dado em produção)? Ação fácil de reverter aceita mais autonomia; ação difícil de reverter pede confirmação antes de executar.
+- A ação é fácil de reverter (editar um arquivo ainda não commitado) ou difícil (enviar um e-mail, fazer uma implantação, apagar dado em produção)? Ação fácil de reverter aceita mais autonomia; ação difícil de reverter pede confirmação antes de executar.
 - O agente está rodando dentro de um ambiente isolado, como um worktree ou um contêiner descartável, ou direto no ambiente de produção? Isolamento reduz o raio de impacto de um erro, o que justifica liberar mais autonomia dentro dele.
-- A tarefa se repete todo dia, do mesmo jeito? Se sim, vale configurar um hook uma vez, em vez de repetir a mesma confirmação manual centenas de vezes.
+- A tarefa se repete todo dia, do mesmo jeito? Se sim, vale configurar um *hook* uma vez, em vez de repetir a mesma confirmação manual centenas de vezes.
 
 !!! tip "Aplique agora"
     Pense na última vez que um agente fez algo que você não esperava. A ação era fácil de reverter? Se não era, o nível de autonomia configurado hoje provavelmente está alto demais para aquele tipo de tarefa.

@@ -4,13 +4,13 @@ O Model Context Protocol (MCP) é o padrão aberto que dá ao agente acesso a um
 
 ## O problema M×N e o Model Context Protocol
 
-Antes de novembro de 2024, conectar um agente a uma ferramenta externa (um banco de dados, um rastreador de issues, um sistema de arquivos) exigia uma integração específica para aquele par modelo-ferramenta. Com M modelos e N ferramentas, o time enfrentava M×N integrações para manter.
+Antes de novembro de 2024, conectar um agente a uma ferramenta externa (um banco de dados, um rastreador de tarefas, um sistema de arquivos) exigia uma integração específica para aquele par modelo-ferramenta. Com M modelos e N ferramentas, o time enfrentava M×N integrações para manter.
 
 A Anthropic abriu o código do Model Context Protocol (MCP) para resolver exatamente essa conta: um protocolo aberto no qual cada modelo implementa o MCP uma vez, e cada ferramenta ou serviço implementa o MCP uma vez. A multiplicação vira soma. Um ano depois do lançamento, o protocolo já tinha adoção de OpenAI, Google e Microsoft, tornando-se o padrão de fato para conectar agentes a sistemas externos — não porque uma empresa impôs, mas porque resolvia um problema real de manutenção que todo mundo compartilhava.
 
 O protocolo formaliza essa integração numa arquitetura cliente-servidor: a aplicação agêntica mantém um cliente MCP para cada servidor a que se conecta, e cada servidor expõe suas capacidades por três primitivas independentes. *Tools* são funções que o próprio modelo decide quando chamar, como consultar um rastreador de tarefas. *Resources* são dados que a aplicação injeta no contexto por conta própria, como o conteúdo de um arquivo específico. *Prompts* são modelos de instrução prontos, escolhidos por quem usa a ferramenta, não pelo modelo. Um servidor não precisa expor as três; a maioria expõe só *tools*.
 
-O protocolo também define como a aplicação agêntica fala com cada servidor. Um servidor local, que roda como processo na mesma máquina do agente, se comunica por *stdio* (entrada e saída padrão do processo). Um servidor remoto, acessado pela rede e compartilhado por várias pessoas ao mesmo tempo, usa HTTP com streaming. A escolha de transporte não muda o que o servidor expõe, só como a aplicação agêntica conversa com ele: servidor de uso individual costuma rodar em *stdio*; servidor de uso compartilhado pelo time inteiro tende a rodar como serviço HTTP.
+O protocolo também define como a aplicação agêntica fala com cada servidor. Um servidor local, que roda como processo na mesma máquina do agente, se comunica por *stdio* (entrada e saída padrão do processo). Um servidor remoto, acessado pela rede e compartilhado por várias pessoas ao mesmo tempo, usa HTTP com *streaming*. A escolha de transporte não muda o que o servidor expõe, só como a aplicação agêntica conversa com ele: servidor de uso individual costuma rodar em *stdio*; servidor de uso compartilhado pelo time inteiro tende a rodar como serviço HTTP.
 
 ![À esquerda, três modelos e quatro ferramentas exigem doze integrações específicas. À direita, o MCP reduz a estrutura a sete conexões simples e organiza tools, resources e prompts, com transporte local por stdio ou remoto por HTTP.](../assets/images/s2-mcp-mxn-mmaisn.png)
 
@@ -34,14 +34,18 @@ A aplicação agêntica lê essa configuração, inicia o processo do servidor e
 
 ## MCP: quando conectar uma ferramenta externa vale a pena
 
-Conectar uma ferramenta via MCP tem sentido quando o agente precisa de informação ou de capacidade de ação que não existe no próprio código do repositório: consultar o estado atual de um banco de dados, abrir uma issue num rastreador, buscar a versão vigente de uma política num sistema externo. Não faz sentido para informação que já cabe num arquivo do repositório — nesse caso, o próprio agente já lê o arquivo diretamente, sem precisar de um protocolo de acesso externo.
+Conectar uma ferramenta via MCP tem sentido quando o agente precisa de informação ou de capacidade de ação que não existe no próprio código do repositório: consultar o estado atual de um banco de dados, abrir um chamado num rastreador, buscar a versão vigente de uma política num sistema externo. Não faz sentido para informação que já cabe num arquivo do repositório — nesse caso, o próprio agente já lê o arquivo diretamente, sem precisar de um protocolo de acesso externo.
 
 A pergunta que resume a decisão: essa informação muda independentemente do código, num sistema que o agente não teria como acessar de outra forma? Se sim, MCP. Se a informação já está versionada no repositório, um MCP é complexidade desnecessária.
 
 As três primitivas do protocolo, vistas em [MCP e ferramentas externas](mcp.md#o-problema-mn-e-o-model-context-protocol), ajudam a decidir que tipo de acesso pedir, não só se vale conectar. Se o agente precisa decidir sozinho quando buscar a informação, ela deveria chegar como *tool*. Se a informação é sempre necessária, e não depende de decisão do agente, faz mais sentido a aplicação injetar como *resource*, sem gastar uma chamada de ferramenta para buscar algo que já era certo que ia ser usado.
 
+Existe um segundo motivo para conectar menos do que a vontade pede, e ele contraria a intuição. Diante de um agente que erra, o reflexo é ampliar a capacidade dele. A Vercel [removeu 80% das ferramentas](https://vercel.com/blog/we-removed-80-percent-of-our-agents-tools) de um agente que traduzia texto para SQL, trocando dezesseis ferramentas especializadas por acesso a um sistema de arquivos com execução de comandos, e relatou a taxa de sucesso subindo de 80% para 100%, com 40% menos passos e o tempo médio de resposta caindo de 274 para 77 segundos. Cada ferramenta adicional amplia o espaço de decisão de cada etapa, e ferramentas com fronteiras parecidas criam pontos de decisão ambíguos. A Anthropic dá o critério em forma verificável: se uma pessoa da engenharia não consegue dizer com segurança qual ferramenta usar numa situação, não dá para esperar que o modelo decida melhor.
+
+O custo simétrico é de contexto. Descrições de ferramenta ocupam a janela antes de qualquer pedido, então um catálogo inchado consome espaço que iria para informação útil. Catálogo mínimo é decisão de qualidade e de custo ao mesmo tempo.
+
 !!! tip "Aplique agora"
-    Antes de conectar o próximo servidor MCP no seu ambiente, confira a origem: é mantido pelo fornecedor oficial da ferramenta, ou por um terceiro sem relação com quem construiu o sistema que ele acessa? Servidor de terceiro não é proibido, mas pede leitura do código, se for open source, e o menor escopo de permissão que a tarefa permitir.
+    Antes de conectar o próximo servidor MCP no seu ambiente, confira a origem: é mantido pelo fornecedor oficial da ferramenta, ou por um terceiro sem relação com quem construiu o sistema que ele acessa? Servidor de terceiro não é proibido, mas pede leitura do código, se for aberto, e o menor escopo de permissão que a tarefa permitir.
 
 ## Antes de conectar: avaliar a origem do servidor MCP
 
@@ -49,7 +53,7 @@ Um servidor MCP roda como um processo à parte, com acesso ao que você autoriza
 
 - **Origem.** Servidor mantido pelo próprio fornecedor da ferramenta (o rastreador de tarefas, o banco de dados) tem manutenção e segurança verificadas por quem construiu o sistema de origem. Servidor de terceiro, sem essa relação, pede mais cautela antes de conectar.
 - **Escopo.** Peça o menor conjunto de permissões que a tarefa exige. Um servidor de banco de dados com acesso só de leitura remove uma categoria inteira de risco, mesmo quando o acesso de escrita está disponível.
-- **Auditabilidade.** Se o servidor é open source, alguém do time já leu o código antes de conectar em produção? Um servidor fechado, sem essa possibilidade, exige mais confiança na origem para compensar.
+- **Auditabilidade.** Se o servidor é de código aberto, alguém do time já leu o código antes de conectar em produção? Um servidor fechado, sem essa possibilidade, exige mais confiança na origem para compensar.
 
 ![Dois fluxos de decisão verificam se uma informação deve entrar no AGENTS.md ou exigir MCP. O primeiro filtra comandos, regras, limites e consequências; o segundo avalia origem externa, escopo de permissão e auditabilidade.](../assets/images/s2-decisoes-instrucao-mcp.png)
 

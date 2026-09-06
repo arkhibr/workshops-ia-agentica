@@ -98,7 +98,16 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 **ANTHROPIC. "Building Effective Agents".** Anthropic Engineering, dez. 2024. <https://www.anthropic.com/engineering/building-effective-agents>. Guia de referência do mercado para decidir entre workflow (código orquestra o modelo em caminho predefinido) e agente (o modelo decide os próprios passos); recomenda a solução mais simples possível, aumentando autonomia apenas quando o problema exigir. Cataloga cinco padrões de workflow: encadeamento de prompts, roteamento, paralelização, orquestrador-trabalhadores, avaliador-otimizador.
 → Sessão 1.
 
-## Ambiente Agêntico e Context Engineering
+## Ambiente Agêntico e Engenharia de Contexto
+
+**TRIVEDY, Vivek. "The Anatomy of an Agent Harness".** *LangChain Blog*, 2026. <https://www.langchain.com/blog/the-anatomy-of-an-agent-harness>. Formulação canônica do arnês (*harness*) como tudo o que cerca o modelo e o transforma em agente — "if you're not the model, you're the harness" — com a medição de que a mesma família de modelo muda de faixa no Terminal Bench 2.0 quando só o arnês muda.
+→ Sessão 2.
+
+**OSMANI, Addy. "Agent Harness Engineering".** Blog pessoal, 2026. <https://addyosmani.com/blog/agent-harness-engineering/>. Síntese prática do mesmo achado: um modelo mediano dentro de um bom arnês supera um bom modelo dentro de um arnês ruim.
+→ Sessão 2.
+
+**VERCEL. "We removed 80% of our agent's tools".** *Vercel Blog*, 2026. <https://vercel.com/blog/we-removed-80-percent-of-our-agents-tools>. Relato de redução de dezesseis ferramentas especializadas para acesso a sistema de arquivos num agente de texto para SQL, com taxa de sucesso subindo de 80% para 100% e 40% menos passos — evidência de que catálogo mínimo de ferramentas é decisão de qualidade.
+→ Sessão 2.
 
 **ANTHROPIC. "Effective context engineering for AI agents".** Anthropic Engineering, set. 2025. <https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents>. Define context engineering como a evolução do prompt engineering: cuidar de tudo que chega à janela de contexto numa execução, não só do texto da instrução. Descreve ferramentas como o contrato entre o agente e o ambiente, desenhadas para eficiência de token.
 → Sessão 2.

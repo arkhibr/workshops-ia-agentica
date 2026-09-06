@@ -50,7 +50,8 @@ nav:
       - S2 — O ambiente agêntico:
           - Visão geral: sessao-02-ambiente-agentico/index.md
           - O ambiente compartilhado: sessao-02-ambiente-agentico/ambiente-compartilhado.md
-          - Context engineering: sessao-02-ambiente-agentico/context-engineering.md
+          - O arnês do agente: sessao-02-ambiente-agentico/arnes.md
+          - Engenharia de contexto: sessao-02-ambiente-agentico/engenharia-de-contexto.md
           - MCP e ferramentas externas: sessao-02-ambiente-agentico/mcp.md
           - O arquivo de instrução: sessao-02-ambiente-agentico/arquivo-de-instrucao.md
           - Isolamento por ramo: sessao-02-ambiente-agentico/isolamento-por-ramo.md
