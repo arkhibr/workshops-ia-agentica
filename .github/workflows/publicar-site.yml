@@ -36,6 +36,12 @@ jobs:
         with:
           enablement: true
 
+      - name: Executar os testes
+        run: python -m unittest discover -s tests -v
+
+      - name: Validar conteúdo completo
+        run: python scripts/validate_content.py --all
+
       - name: Construir o site
         run: mkdocs build --strict
 
