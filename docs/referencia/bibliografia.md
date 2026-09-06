@@ -100,6 +100,9 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 
 ## Ambiente Agêntico e Engenharia de Contexto
 
+**DATACURVE. *DeepSWE Leaderboard*.** Publicado em benchlm.ai. <https://benchlm.ai/benchmarks/deepswe>. Leitura independente de modelos em 113 tarefas de engenharia de software de longo horizonte, tiradas de 91 repositórios de código aberto em 5 linguagens, verificadas por programa. Espelha o placar público do DeepSWE usando, para cada modelo, a melhor configuração disponível do `mini-swe-agent` — o que mede o par modelo mais arnês, e não o modelo isolado.
+→ Sessões 1, 2.
+
 **TRIVEDY, Vivek. "The Anatomy of an Agent Harness".** *LangChain Blog*, 2026. <https://www.langchain.com/blog/the-anatomy-of-an-agent-harness>. Formulação canônica do arnês (*harness*) como tudo o que cerca o modelo e o transforma em agente — "if you're not the model, you're the harness" — com a medição de que a mesma família de modelo muda de faixa no Terminal Bench 2.0 quando só o arnês muda.
 → Sessão 2.
 

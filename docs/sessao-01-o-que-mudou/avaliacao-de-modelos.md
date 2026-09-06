@@ -14,7 +14,13 @@ Escolher um modelo pelo nome mais falado do momento é o mesmo erro de raiz do v
 
 Vale a comparação com a edição anterior deste mesmo material, de 20 de agosto de 2026, quando a distância do primeiro ao quinto era de 4,6 pontos e hoje é de 4,1. O placar não mudou só de nomes; ele encolheu. Um *benchmark* que aperta a cada rodada é um *benchmark* caminhando para a aposentadoria.
 
-**Desconfie de número autorreportado por quem vende o modelo.** Fabricantes escolhem qual benchmark divulgar no anúncio de lançamento, e às vezes trocam de benchmark de uma versão para a outra sem explicar por quê. Prefira leitores independentes que avaliam todos os fabricantes sob o mesmo arnês de teste, na mesma data — é exatamente o que o DeepSWE (mantido pela Datacurve, publicado em benchlm.ai) faz: roda Claude, GPT, Gemini e modelos abertos como o GLM lado a lado, sem depender do número que cada fabricante escolheu anunciar.
+**Desconfie de número autorreportado por quem vende o modelo.** Fabricantes escolhem qual benchmark divulgar no anúncio de lançamento, e às vezes trocam de benchmark de uma versão para a outra sem explicar por quê. Prefira leitura independente, que avalia os fabricantes lado a lado e na mesma data, como a do DeepSWE publicada em benchlm.ai, que espelha o placar público e roda Claude, GPT, Gemini e modelos abertos como o GLM.
+
+Vale saber o que "independente" garante e o que não garante, porque a distinção usa o vocabulário da Sessão 2. O benchlm.ai declara usar, para cada modelo, a melhor configuração disponível do `mini-swe-agent`, e não uma configuração idêntica para todos. Ou seja, o placar mede cada modelo no seu melhor arnês, não todos no mesmo arnês. Isso é uma escolha defensável, e muda o que a nota significa: ela é resultado do par modelo mais arnês, não do modelo sozinho.
+
+O Claude Fable 5.1 serve de caso concreto para os dois cuidados acima, e é por isso que ele **não** aparece na tabela abaixo. Ele ainda não tem linha na leitura independente. O número que circula para ele, 67,4% no DeepSWE v1.1, foi publicado pela OpenAI, uma concorrente, ao comparar o próprio GPT-6 Astra com ele. Três coisas para observar nesse arranjo antes de usar o número: quem mede é parte interessada; a versão do teste é outra, v1.1, e por isso a comparação linha a linha com a tabela abaixo não se sustenta; e no mesmo material a OpenAI reporta 74,1% para o próprio Astra, enquanto a leitura independente lê 73,2% para ele. A divergência de 0,9 ponto entre o número do fabricante e o do leitor independente é pequena, e é justamente do tamanho que decide um ranking apertado.
+
+O mesmo material dá o exemplo mais didático de todos: no Terminal-Bench 4.0, a tabela da OpenAI mostra 57,7% para o Astra e a legenda do gráfico dela mesma mostra 57,9%. Quando o fabricante diverge de si próprio dentro do mesmo documento, a lição não é escolher qual dos dois números vale.
 
 **Nota do placar não é a decisão inteira.** Custo por tarefa resolvida, latência, tamanho da janela de contexto e confiabilidade dentro do seu ambiente agêntico específico pesam tanto quanto a taxa de resolução — um modelo 3 pontos percentuais à frente, mas 5 vezes mais caro por tarefa, raramente compensa para o dia a dia de um time.
 
@@ -28,7 +34,7 @@ Vale a comparação com a edição anterior deste mesmo material, de 20 de agost
 | GPT-5.6 Sol | OpenAI | 72,7% |
 | Claude Fable 5 | Anthropic | 69,7% |
 
-Fonte: [benchlm.ai — DeepSWE](https://benchlm.ai/benchmarks/deepswe), atualizado em 1º de setembro de 2026, 28 modelos avaliados: 113 tarefas de longo horizonte, tiradas de 91 repositórios ativos de código aberto em 5 linguagens, verificadas por programa.
+Fonte: [benchlm.ai — DeepSWE](https://benchlm.ai/benchmarks/deepswe), atualizado em 1º de setembro de 2026, 28 modelos avaliados, cada um na melhor configuração disponível do `mini-swe-agent`: 113 tarefas de longo horizonte, tiradas de 91 repositórios ativos de código aberto em 5 linguagens, verificadas por programa.
 
 **Este placar envelhece rápido**: confira o [DeepSWE Leaderboard](https://benchlm.ai/benchmarks/deepswe) atualizado antes de decidir, não confie em número congelado numa página de workshop.
 
