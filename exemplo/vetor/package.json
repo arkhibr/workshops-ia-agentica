@@ -1,0 +1,11 @@
+{
+  "name": "vetor-exemplo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Projeto de exemplo do workshop IA Agentica na Pratica. Sem dependencias: roda so com Node 20+.",
+  "scripts": {
+    "test": "node --test",
+    "verificar": "node --check src/desconto.js && node --test"
+  }
+}

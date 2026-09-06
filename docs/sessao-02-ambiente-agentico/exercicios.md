@@ -1,6 +1,25 @@
 # Exercícios
 
-Tente responder antes de abrir os blocos de feedback nos dois primeiros níveis. A progressão segue a Taxonomia de Bloom, do nível mais simples (recordar) ao mais exigente (criar).
+Tente responder antes de abrir os blocos de resposta nos dois primeiros níveis. A progressão segue a Taxonomia de Bloom, do nível mais simples (recordar) ao mais exigente (criar).
+
+## Situação compartilhada
+
+Todos os exercícios desta página se referem ao mesmo projeto da [Oficina de ferramentas](oficina-de-ferramentas.md). Se você não fez a oficina, o que está aqui é tudo o que precisa para responder.
+
+A **Vetor** é uma plataforma fictícia de e-commerce B2B que atravessa o workshop. A versão executável dela está em `exemplo/vetor`, dentro do repositório do workshop, e cabe em três arquivos:
+
+- `src/desconto.js` calcula o desconto de um pedido por faixa de valor: nada até R$ 500,00, 5% até R$ 2.000,00, 10% até R$ 5.000,00 e 15% acima disso, com teto de R$ 1.000,00 por pedido.
+- `test/desconto.test.js` tem seis testes cobrindo as quatro faixas, o teto e a entrada inválida.
+- `package.json` define `npm test` e nenhuma dependência.
+
+Três fatos do projeto que **não dá para deduzir lendo o código**, e que por isso são candidatos naturais a entrar num arquivo de instrução: o comando de teste é `npm test` e não existe compilação; `tipoCliente` chega sempre em minúsculas, `'padrao'` ou `'atacado'`; e `calcularDesconto` recebe `tipoCliente` sem usar, porque a faixa de 20% para atacado acima de R$ 10.000,00 ainda não foi implementada.
+
+Para clonar:
+
+```bash
+git clone https://github.com/arkhibr/workshops-ia-agentica.git
+cd workshops-ia-agentica/exemplo/vetor && npm test
+```
 
 ## Recordar
 
@@ -14,7 +33,17 @@ Nomeie as quatro peças de um ambiente agêntico descritas nesta sessão.
 Arquivo de configuração (AGENTS.md/CLAUDE.md), MCP (acesso a ferramentas externas), isolamento por ramo (worktree) e a aplicação agêntica (Claude Code, Copilot, Cursor).
 </details>
 
-### 2. O problema M×N
+### 2. A equação do arnês
+
+Complete: agente = modelo + ______. E diga qual das quatro peças do exercício anterior fica de fora desse segundo termo.
+
+<details>
+<summary>Ver resposta</summary>
+
+Agente = modelo + **arnês**. Nenhuma das quatro peças fica de fora: as quatro são arnês. O que fica de fora é o modelo, que não está entre elas.
+</details>
+
+### 3. O problema M×N
 
 Em uma frase, explique o problema que o MCP resolve.
 
@@ -26,99 +55,101 @@ Sem um protocolo comum, conectar M modelos a N ferramentas exige M×N integraç�
 
 ## Compreender
 
-### 3. Prompt engineering vs. context engineering
+### 4. Engenharia de prompt vs. engenharia de contexto
 
 Explique a diferença entre as duas práticas, sem usar a palavra "melhor" para nenhuma delas.
 
 <details>
 <summary>Ver resposta</summary>
 
-Prompt engineering cuida do texto da instrução. Context engineering cuida de tudo que chega à janela de contexto numa execução — instruções, histórico, resultado de ferramentas, arquivos lidos. A segunda é mais ampla que a primeira, não uma substituta.
+A engenharia de prompt cuida do texto da instrução. A engenharia de contexto cuida de tudo que chega à janela de contexto numa execução: instruções, histórico, resultado de ferramentas, arquivos lidos. A segunda é mais ampla que a primeira, e não uma substituta.
 </details>
 
-### 4. O efeito de uma linha genérica de instrução
+### 5. O efeito de uma linha genérica de instrução
 
-Um colega escreve num AGENTS.md: "escreva código limpo e siga boas práticas." Explique por que essa linha, sozinha, não muda nenhum comportamento observável do agente.
+Um colega abre um `AGENTS.md` no projeto Vetor e escreve uma única linha: "escreva código limpo e siga boas práticas." Explique por que essa linha não muda nenhum comportamento observável do agente, e escreva uma linha que mudaria, usando um dos três fatos da situação compartilhada.
 
 <details>
 <summary>Ver resposta</summary>
 
-A linha não dá nenhuma informação que o agente não teria por padrão. Uma linha útil responde uma pergunta concreta que muda uma decisão real — por exemplo, qual comando roda os testes, ou qual convenção de nomenclatura o time usa.
+A linha genérica não informa nada que o agente já não tentasse fazer por padrão, então nenhuma decisão dele muda por causa dela. Uma linha que muda decisão responde uma pergunta concreta que o código não responde. Por exemplo: "o comando de teste é `npm test`; não existe script de compilação" evita que o agente invente um `npm run build` inexistente. Ou: "`tipoCliente` chega em minúsculas, `'padrao'` ou `'atacado'`" evita a comparação com `'Atacado'`.
 </details>
 
-### 5. Tool ou resource?
+### 6. Tool ou resource?
 
-Um agente precisa saber, a cada execução, o status atual de um pedido num sistema externo de logística que muda várias vezes ao dia. Essa informação deveria chegar como *tool* ou como *resource*? Justifique com o critério de quem decide quando buscar a informação.
+A Vetor quer que o agente consulte o status de entrega de um pedido no sistema do transportador parceiro, que muda várias vezes ao dia e não existe no repositório. Essa informação deveria chegar como *tool* ou como *resource*? Justifique pelo critério de quem decide o momento de buscar.
 
 <details>
 <summary>Ver resposta</summary>
 
-*Tool*. O status muda com frequência e só é útil se buscado no momento certo, algo que o próprio agente deveria decidir durante a execução, não algo que a aplicação injeta de antemão em todo prompt. Um *resource* faz mais sentido para informação estável, sempre necessária, que não depende de o agente decidir buscar.
+*Tool*. O status muda com frequência e só serve se buscado no momento em que a pergunta aparece, decisão que cabe ao agente durante a execução. Um *resource* faz mais sentido para informação estável e sempre necessária, que a aplicação injeta de antemão sem gastar uma chamada de ferramenta.
 </details>
 
 ## Aplicar
 
-### 6. Exercício-âncora: ciclo entrada → resposta → verificação
+### 7. Exercício-âncora: ciclo entrada → resposta → verificação
 
-**O que é:** configurar um arquivo de instrução real e rodar um ciclo completo com o agente, medindo se o arquivo de fato mudou o comportamento.
-
-**Onde encontrar:** [Oficina de ferramentas](oficina-de-ferramentas.md#experimento-a-escreva-o-agentsmd-do-seu-proprio-repositorio) já produziu um `AGENTS.md` ou `CLAUDE.md` real. Este exercício usa esse mesmo arquivo.
-
-Antes de rodar o ciclo, aplique a verificação de [O arquivo de instrução](arquivo-de-instrucao.md#como-saber-se-o-arquivo-ainda-funciona): rode cada comando documentado no arquivo, um por um, e confirme que nenhum falhou antes de usar o arquivo no exercício.
+**O que é:** medir, com critério, se um arquivo de instrução muda mesmo o comportamento do agente, num ciclo completo de entrada, resposta e verificação.
 
 **Situação**
 
-Você tem, da oficina, um arquivo de instrução para um repositório real seu. Agora vai medir, com critério, se ele funciona.
+Você tem o projeto `exemplo/vetor` clonado e o `AGENTS.md` que escreveu no [Experimento A da oficina](oficina-de-ferramentas.md#experimento-a-escreva-o-agentsmd-do-projeto-vetor). Se não fez a oficina, escreva agora um `AGENTS.md` de até quatro linhas usando os três fatos da situação compartilhada.
 
 **Seu papel**
 
-Você é a pessoa responsável por decidir se esse arquivo está pronto para o time inteiro usar, ou se precisa de mais uma rodada.
+Você decide se esse arquivo está pronto para o time inteiro usar, ou se precisa de mais uma rodada.
 
 **Insumos disponíveis**
 
-O arquivo produzido na oficina e o próprio repositório.
+O projeto `exemplo/vetor` no estado original, que `git checkout -- src/ test/` sempre devolve, o seu `AGENTS.md` e o agente que você já usa.
 
 **Como conduzir**
 
-1. Escolha uma tarefa pequena e real do repositório que dependa de pelo menos uma convenção documentada no arquivo (por exemplo, uma convenção de nomenclatura ou um comando de teste específico).
-2. Peça ao agente para executar essa tarefa (entrada).
-3. Leia a saída do agente e verifique se ela respeitou a convenção documentada (resposta).
-4. Rode o comando de verificação real do projeto (teste, lint, build) para confirmar que a saída funciona de fato, não só parece correta (verificação).
+1. Antes de tudo, confira que o arquivo não está mentindo: rode cada comando que ele documenta e confirme que todos existem, como manda [O arquivo de instrução](arquivo-de-instrucao.md#como-saber-se-o-arquivo-ainda-funciona).
+2. **Entrada.** Peça ao agente: *"Implemente a faixa de atacado de 20% acima de R$ 10.000,00 em `calcularDesconto`, com testes."*
+3. **Resposta.** Leia o que ele produziu e confira três pontos contra a situação compartilhada. O valor comparado em `tipoCliente` está em minúsculas? O teto de R$ 1.000,00 continua valendo para a faixa nova? Ele alterou arquivos de `test/` que você não pediu para alterar?
+4. **Verificação.** Rode `npm test`. Os seis testes originais continuam passando, ou a mudança quebrou algum?
 
 **Entrega esperada**
 
-Um registro de três linhas: o que foi pedido, o que o agente entregou, e o resultado da verificação (passou, falhou, ou passou parcialmente).
+Um registro de três linhas: o que foi pedido, o que o agente entregou nos três pontos do passo 3, e o resultado de `npm test`.
 
 **Critérios de avaliação**
 
 | Critério | Peso | O que evidencia atendimento adequado |
 |---|---:|---|
-| Tarefa escolhida depende de fato de uma convenção do arquivo | 30% | Não é uma tarefa genérica que funcionaria igual sem o arquivo |
-| Verificação real executada | 40% | Rodou o comando de teste/lint/build de verdade, não assumiu que passaria |
-| Diagnóstico | 30% | Se falhou, aponta se foi o arquivo que estava incompleto ou o agente que ignorou a instrução |
+| O arquivo foi conferido antes de ser usado | 20% | Rodou os comandos documentados, em vez de supor que existiam |
+| Verificação real executada | 40% | Rodou `npm test` de verdade e relatou o resultado, inclusive quando passou |
+| Diagnóstico | 40% | Se algum dos três pontos falhou, aponta se faltou linha no arquivo ou se o agente ignorou uma linha existente |
 
-**Como verificar antes de entregar:** confira se você rodou a verificação de fato, não só leu a saída do agente e achou que parecia certa.
+**Como verificar antes de entregar:** o registro precisa dizer o que `npm test` respondeu. Se você não rodou, o exercício não está completo.
 
 ## Analisar
 
-### 7. Comparando com o exemplo da Vetor
+### 8. Diagnosticar pelo tipo de falha
 
-Compare seu `AGENTS.md`/`CLAUDE.md` do exercício 6 com o exemplo mostrado em [Exemplo arquitetural](exemplo-arquitetural.md). Alguma seção do exemplo da Vetor faria sentido no seu arquivo, e não estava lá? Alguma seção sua não teria lugar no exemplo da Vetor?
+No passo 3 do exercício anterior, ou alguma coisa saiu diferente do esperado, ou o agente acertou os três pontos. Nos dois casos, use a tabela de [O arnês do agente](arnes.md#diagnosticar-pelo-tipo-de-falha) e responda: se o mesmo pedido fosse feito num projeto sem nenhum arquivo de instrução, qual linha da tabela descreveria a falha mais provável, e qual seria a primeira intervenção?
 
-### 8. Avaliando um servidor MCP antes de conectar
+### 9. Avaliando dois servidores MCP
 
-Escolha um servidor MCP que você usa ou pretende usar (pode ser o do rastreador de tarefas do seu time, um servidor de arquivos, ou qualquer outro). Aplique os três critérios de [MCP e ferramentas externas](mcp.md#antes-de-conectar-avaliar-a-origem-do-servidor-mcp) (origem, escopo, auditabilidade) e aponte qual dos três é o ponto mais fraco desse servidor específico hoje.
+Compare dois servidores que dão ao agente acesso ao sistema de arquivos. O primeiro é o `@modelcontextprotocol/server-filesystem` do Experimento B, mantido pelo próprio projeto do MCP e configurado para uma única pasta. O segundo é um servidor hipotético de mesma função, publicado por um terceiro desconhecido, de código fechado, que pede acesso à sua pasta pessoal inteira. Aplique os três critérios de [MCP e ferramentas externas](mcp.md#antes-de-conectar-avaliar-a-origem-do-servidor-mcp) e diga em qual dos três a distância entre os dois é maior.
+
+### 10. O que o seu arquivo tem que o exemplo não tem
+
+Compare o `AGENTS.md` que você escreveu com o arquivo mostrado em [Exemplo arquitetural](exemplo-arquitetural.md). Alguma seção de lá faria sentido no seu e não estava presente? Alguma linha sua não teria lugar lá, e por quê?
 
 ## Avaliar
 
-### 9. O commit que sumiu
+### 11. O commit que sumiu
 
-Releia o [Estudo de caso](estudo-de-caso.md). Em até 100 palavras, defenda uma posição: o time da Vetor deveria exigir worktree separado para toda tarefa, mesmo as pequenas e solo? Justifique com o critério de frequência de uso e tamanho do time, não com preferência pessoal.
+No [Estudo de caso](estudo-de-caso.md) desta sessão, dois desenvolvedores da Vetor rodaram agentes ao mesmo tempo no mesmo diretório de trabalho, e a alteração de um desapareceu sem que ninguém percebesse na hora. Em até 100 palavras, defenda uma posição: o time deveria exigir worktree separado para toda tarefa, inclusive as pequenas e feitas por uma pessoa só? Justifique pelos critérios de tamanho de time e frequência de uso da tabela de [O ambiente compartilhado](ambiente-compartilhado.md#quando-vale-configurar-um-ambiente-compartilhado), em vez de preferência pessoal.
 
 ## Criar
 
-### 10. Um AGENTS.md para o time
+### 12. Um AGENTS.md para o módulo novo
 
-Escreva um `AGENTS.md` de no máximo cinco linhas para um time fictício que você conhece bem (pode ser um projeto pessoal, ou um cenário hipotético). Cada linha precisa responder uma pergunta concreta que um agente teria dúvida sem ela.
+A Vetor vai ganhar um segundo módulo, de cálculo de frete, com estas características: fica em `src/frete.js`, usa a mesma convenção de valores em reais, depende de uma tabela de CEP que muda toda semana num sistema externo, e nunca deve arredondar valor para cima.
+
+Escreva o `AGENTS.md` desse módulo, com no máximo cinco linhas. Cada linha precisa responder uma pergunta que o agente teria de verdade, e pelo menos uma delas precisa resolver se a tabela de CEP entra no arquivo de instrução ou pede um servidor MCP.
 
 Concluída a prática, faça a [síntese e autoavaliação](sintese-e-referencias.md).
