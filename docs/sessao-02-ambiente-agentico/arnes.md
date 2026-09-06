@@ -1,6 +1,6 @@
 # O arnês do agente
 
-As quatro peças da página anterior têm um nome coletivo na engenharia. Ele importa porque muda a ordem das decisões: reconstruir o que cerca o modelo costuma render mais do que trocar de modelo.
+As quatro peças da página anterior têm um nome coletivo na engenharia. Ele importa porque muda a ordem das decisões: estabelecer o que cerca o modelo costuma render mais do que trocar de modelo.
 
 ## Tudo o que cerca o modelo
 
@@ -57,13 +57,15 @@ Os dois primeiros itens costumam receber toda a atenção, e são os de menor re
 
 Vale registrar de onde vem esse vocabulário, para não importá-lo sem crítica. Ele nasceu na comunidade de agentes de codificação, que é exatamente o caso deste workshop, onde o arnês é um programa de linha de comando e os componentes têm nomes de arquivo concretos. A Anthropic documenta essa camada em ["Steering Claude Code"](https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more), separando os mecanismos que **guiam** o modelo, como arquivos de contexto, dos que **impõem** comportamento, como *hooks* e permissões. A distinção sustenta uma frase que vale para o resto do workshop: uma proteção real precisa ser determinística. Um arquivo de instrução pede; um *hook* obriga.
 
-## Reconstruir o arnês rende mais que trocar de modelo
+![Dois desenvolvedores seguem caminhos opostos: à esquerda, o GPT Astra opera num ambiente desorganizado, com erros, ferramentas soltas e baixo desempenho; à direita, o GPT Luna alcança desempenho superior conectado a um arnês organizado de instruções, ferramentas, contexto e verificação.](../assets/images/s2-astra-luna-arnes-performance.png)
+
+## Estabelecer o arnês rende mais que trocar de modelo
 
 Trivedy relata que a mesma família de modelo sai de fora das trinta primeiras posições para as cinco primeiras do Terminal Bench 2.0 quando apenas o arnês muda, e que um mesmo modelo pontua diferente dentro e fora do arnês de um produto comercial. A posição específica num placar envelhece rápido e não vale decorar; o que dura é a direção da relação. Osmani formula o mesmo achado em [Agent Harness Engineering](https://addyosmani.com/blog/agent-harness-engineering/): um modelo mediano dentro de um bom arnês supera um bom modelo dentro de um arnês ruim.
 
 Isso fecha um ponto aberto na Sessão 1. Em [Avaliação de modelos](../sessao-01-o-que-mudou/avaliacao-de-modelos.md) ficou dito que o número divulgado num *benchmark* depende tanto da forma como o teste foi conduzido quanto do modelo medido, e que a leitura independente do DeepSWE roda cada modelo na melhor configuração disponível do `mini-swe-agent`. O nome dessa configuração é arnês, e é por isso que a nota mede o par, não o modelo sozinho.
 
-A consequência prática é de ordem de gasto. Trocar de modelo é uma decisão cara e visível, que costuma vir primeiro na conversa. Reconstruir o arnês é barata e invisível, e frequentemente move mais o resultado.
+A consequência prática é de ordem de gasto. Trocar de modelo é uma decisão cara e visível, que costuma vir primeiro na conversa. Estabelecer o arnês é barato e invisível, e frequentemente move mais o resultado.
 
 ## Mais ferramentas não significa menos erro
 

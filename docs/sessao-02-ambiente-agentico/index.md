@@ -26,19 +26,20 @@ Ao final desta sessão, o participante deve ser capaz de:
 
 A Vetor, plataforma fictícia de e-commerce B2B introduzida na Sessão 1, tem hoje quatro desenvolvedores usando quatro agentes configurados de quatro jeitos diferentes — nenhum arquivo de instrução compartilhado, nenhuma ferramenta conectada em comum, nenhum isolamento quando duas pessoas usam o agente ao mesmo tempo. Esta sessão organiza isso.
 
-## Roteiro da sessão (2h)
+## Roteiro da sessão (2h, das 10h às 12h)
 
 | # | Página | Bloco | Tempo | Resultado esperado |
 |---|---|---|---|---|
 | 1 | [O ambiente compartilhado](ambiente-compartilhado.md) | Teoria | 4 min | As quatro peças do ambiente e quando vale configurá-las em conjunto |
-| 2 | [O arnês do agente](arnes.md) | Teoria | 12 min | A equação agente = modelo + arnês, o erro composto, os componentes e o diagnóstico por tipo de falha |
-| 3 | [Engenharia de contexto](engenharia-de-contexto.md) | Teoria | 5 min | A diferença entre cuidar da instrução e cuidar da janela de contexto |
-| 4 | [MCP e ferramentas externas](mcp.md) | Teoria | 9 min | O problema M×N, as três primitivas, o critério para conectar e o catálogo mínimo |
-| 5 | [O arquivo de instrução](arquivo-de-instrucao.md) | Teoria | 9 min | O que colocar no AGENTS.md, como estruturá-lo e como verificá-lo |
-| 6 | [Isolamento por ramo](isolamento-por-ramo.md) | Teoria | 4 min | O que o `git worktree` isola e o cuidado que ele exige |
+| 2 | [O arnês do agente](arnes.md) | Teoria | 11 min | A equação agente = modelo + arnês, o erro composto, os componentes e o diagnóstico por tipo de falha |
+| 3 | [Engenharia de contexto](engenharia-de-contexto.md) | Teoria | 4 min | A diferença entre cuidar da instrução e cuidar da janela de contexto |
+| 4 | [MCP e ferramentas externas](mcp.md) | Teoria | 8 min | O problema M×N, as três primitivas, o critério para conectar e o catálogo mínimo |
+| 5 | [O arquivo de instrução](arquivo-de-instrucao.md) | Teoria | 8 min | O que colocar no AGENTS.md, como estruturá-lo e como verificá-lo |
+| 6 | [Isolamento por ramo](isolamento-por-ramo.md) | Teoria | 3 min | O que o `git worktree` isola e o cuidado que ele exige |
 | 7 | [Autonomia e supervisão](autonomia-e-supervisao.md) | Teoria | 4 min | Erro composto, níveis de autonomia e o critério de reversibilidade |
 | 8 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 10 min | Ver, com a Vetor, o ambiente compartilhado montado do zero |
 | 9 | [Estudo de caso](estudo-de-caso.md) | Discussão em grupo | 13 min | Julgar se um incidente de contexto cruzado justifica isolamento formal |
+| — | Intervalo | — | 5 min | — |
 | 10 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 30 min | Três experimentos práticos com o próprio agente do participante |
 | 11 | [Exercícios](exercicios.md) | Prática avaliada | 15 min | Exercício-âncora: configurar e rodar um ciclo entrada → resposta → verificação |
 | — | [Síntese e referências](sintese-e-referencias.md) | Fechamento | 5 min | Checklist, autoavaliação e fontes completas |

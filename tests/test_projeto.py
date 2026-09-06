@@ -61,13 +61,14 @@ class EstruturaTest(unittest.TestCase):
                 self.assertEqual(["index.md"], [p.name for p in (DOCS / slug).glob("*.md")])
 
     def test_horario_fixo_declarado_no_material(self):
-        """14h–16h é decisão fechada; roteiro de 2h em toda sessão completa."""
+        """10h–12h com intervalo de 5 min às 11h é decisão fechada."""
         for slug, (_, completa, _) in SESSOES.items():
             if not completa:
                 continue
             with self.subTest(slug=slug):
                 indice = (DOCS / slug / "index.md").read_text(encoding="utf-8")
-                self.assertIn("Roteiro da sessão (2h)", indice)
+                self.assertIn("Roteiro da sessão (2h, das 10h às 12h)", indice)
+                self.assertIn("| — | Intervalo | — | 5 min | — |", indice)
 
 
 if __name__ == "__main__":
