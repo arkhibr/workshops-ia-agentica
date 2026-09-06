@@ -28,7 +28,7 @@
 3. Consigo apontar, na minha própria saída do exercício-âncora, qual caso de teste revelou a ausência de contexto?
 4. Sei distinguir um ganho de piso de um ganho de teto no meu próprio código do dia a dia?
 
-Se duas ou mais respostas forem "ainda não", releia [Conceitos](conceitos.md) antes da Sessão 2.
+Se duas ou mais respostas forem "ainda não", releia [Modos de trabalho com IA](modos-de-trabalho.md) e [A tese do Software 3.0](software-3-0.md) antes da Sessão 2.
 
 **Fundamentos técnicos**
 

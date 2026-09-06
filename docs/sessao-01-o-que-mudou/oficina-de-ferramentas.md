@@ -79,7 +79,7 @@ Guarde as duas saídas: o Experimento C usa exatamente elas.
 
 ## Experimento C — onde entrou o julgamento
 
-**Objetivo:** localizar, nas próprias saídas do Experimento B, onde cada seta de [Conceitos](conceitos.md#o-que-sobe-piso-teto-julgamento) apareceu.
+**Objetivo:** localizar, nas próprias saídas do Experimento B, onde cada seta de [A tese do Software 3.0](software-3-0.md#o-que-sobe-piso-teto-julgamento) apareceu.
 
 **Execute:** em dupla, para cada seta, aponte um trecho concreto das duas saídas do Experimento B:
 

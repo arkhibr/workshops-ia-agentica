@@ -37,8 +37,11 @@ nav:
   - Bloco 1 — Fundamentos:
       - S1 — O que mudou:
           - Visão geral: sessao-01-o-que-mudou/index.md
-          - Conceitos: sessao-01-o-que-mudou/conceitos.md
-          - Padrões e decisões: sessao-01-o-que-mudou/padroes-e-decisoes.md
+          - Modos de trabalho com IA: sessao-01-o-que-mudou/modos-de-trabalho.md
+          - Evidência empírica de produtividade: sessao-01-o-que-mudou/evidencia-empirica.md
+          - A tese do Software 3.0: sessao-01-o-que-mudou/software-3-0.md
+          - Sistemas agênticos e simplicidade: sessao-01-o-que-mudou/sistemas-agenticos.md
+          - Avaliação de modelos: sessao-01-o-que-mudou/avaliacao-de-modelos.md
           - Exemplo arquitetural: sessao-01-o-que-mudou/exemplo-arquitetural.md
           - Estudo de caso: sessao-01-o-que-mudou/estudo-de-caso.md
           - Oficina de ferramentas: sessao-01-o-que-mudou/oficina-de-ferramentas.md
@@ -46,8 +49,12 @@ nav:
           - Síntese e referências: sessao-01-o-que-mudou/sintese-e-referencias.md
       - S2 — O ambiente agêntico:
           - Visão geral: sessao-02-ambiente-agentico/index.md
-          - Conceitos: sessao-02-ambiente-agentico/conceitos.md
-          - Padrões e decisões: sessao-02-ambiente-agentico/padroes-e-decisoes.md
+          - O ambiente compartilhado: sessao-02-ambiente-agentico/ambiente-compartilhado.md
+          - Context engineering: sessao-02-ambiente-agentico/context-engineering.md
+          - MCP e ferramentas externas: sessao-02-ambiente-agentico/mcp.md
+          - O arquivo de instrução: sessao-02-ambiente-agentico/arquivo-de-instrucao.md
+          - Isolamento por ramo: sessao-02-ambiente-agentico/isolamento-por-ramo.md
+          - Autonomia e supervisão: sessao-02-ambiente-agentico/autonomia-e-supervisao.md
           - Exemplo arquitetural: sessao-02-ambiente-agentico/exemplo-arquitetural.md
           - Estudo de caso: sessao-02-ambiente-agentico/estudo-de-caso.md
           - Oficina de ferramentas: sessao-02-ambiente-agentico/oficina-de-ferramentas.md

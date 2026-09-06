@@ -29,19 +29,22 @@ A **Vetor** é uma plataforma fictícia de e-commerce B2B usada como fio conduto
 
 | # | Página | Bloco | Tempo | Resultado esperado |
 |---|---|---|---|---|
-| 1 | [Conceitos](conceitos.md) | Teoria | 30 min | Vocabulário: vibe coding, assistência, SDD, Software 3.0, engenharia agêntica |
-| 2 | [Padrões e decisões](padroes-e-decisoes.md) | Teoria | 15 min | Critério para escolher o modo de trabalho conforme a tarefa |
-| 3 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 10 min | Ver, com a Vetor, onde um prompt vago perde regra de negócio |
-| 4 | [Estudo de caso](estudo-de-caso.md) | Discussão em grupo | 15 min | Critério (não opinião) para quando SDD se justifica |
-| 5 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 30 min | Três experimentos práticos com o próprio agente do participante |
-| 6 | [Exercícios](exercicios.md) | Prática avaliada | 15 min | Exercício-âncora: intuição vs. prompt estruturado |
+| 1 | [Modos de trabalho com IA](modos-de-trabalho.md) | Teoria | 12 min | Vocabulário dos três modos e critério para escolher um por tarefa |
+| 2 | [Evidência empírica de produtividade](evidencia-empirica.md) | Teoria | 6 min | O contraste entre os dois estudos e a régua que sai dele |
+| 3 | [A tese do Software 3.0](software-3-0.md) | Teoria | 10 min | O prompt como artefato que governa o sistema; piso, teto e julgamento |
+| 4 | [Sistemas agênticos e simplicidade](sistemas-agenticos.md) | Teoria | 11 min | Fronteira entre workflow e agente, e a recomendação de simplicidade |
+| 5 | [Avaliação de modelos](avaliacao-de-modelos.md) | Teoria | 6 min | Cinco critérios para ler um benchmark antes de escolher um modelo |
+| 6 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 10 min | Ver, com a Vetor, onde um prompt vago perde regra de negócio |
+| 7 | [Estudo de caso](estudo-de-caso.md) | Discussão em grupo | 15 min | Critério (não opinião) para quando SDD se justifica |
+| 8 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 30 min | Três experimentos práticos com o próprio agente do participante |
+| 9 | [Exercícios](exercicios.md) | Prática avaliada | 15 min | Exercício-âncora: intuição vs. prompt estruturado |
 | — | [Síntese e referências](sintese-e-referencias.md) | Fechamento | 5 min | Checklist, autoavaliação e fontes completas |
 | | | | **120 min** | |
 
 ## Como conduzir
 
-[Conceitos](conceitos.md) e [Padrões e decisões](padroes-e-decisoes.md) têm caixas de destaque ("Pare e pergunte", "Aplique agora") embutidas no texto — elas não são opcionais nem decoração. É nelas que o tempo alocado de 30 e 15 minutos se realiza de fato: pare de verdade, espere a turma responder, não apenas leia a pergunta e siga em frente.
+As cinco páginas de teoria têm caixas de destaque ("Pare e pergunte", "Aplique agora") embutidas no texto, e elas não são decoração. É nelas que os 45 minutos alocados ao bloco de teoria se realizam de fato: pare de verdade e espere a turma responder, em vez de ler a pergunta e seguir em frente.
 
 Ao chegar num exercício, resista à tentação de resolver no lugar do participante: o valor está em cada um sentir, no próprio prompt, onde a ambiguidade custou uma regra de negócio.
 
-**Próxima página:** [Conceitos](conceitos.md).
+**Próxima página:** [Modos de trabalho com IA](modos-de-trabalho.md).

@@ -68,7 +68,7 @@ git worktree add ../vetor-fix-frete -b fix/VET-482-frete-zona-rural
 git worktree add ../vetor-relatorio -b feature/VET-490-filtro-status
 ```
 
-A VET-482 é uma correção pequena, num cálculo isolado, fácil de reverter: Ana deixa o agente rodar no modo de maior autonomia dentro do próprio worktree, sem confirmar cada edição. A VET-490 mexe no relatório de vendas usado pela diretoria toda semana; Bruno mantém o modo de confirmar antes de cada edição, mesmo isolado no próprio worktree — o critério de [Padrões e decisões](padroes-e-decisoes.md#quanto-de-autonomia-liberar) (reversibilidade da tarefa) decide o nível de autonomia, não o fato de estar isolado ou não.
+A VET-482 é uma correção pequena, num cálculo isolado, fácil de reverter: Ana deixa o agente rodar no modo de maior autonomia dentro do próprio worktree, sem confirmar cada edição. A VET-490 mexe no relatório de vendas usado pela diretoria toda semana; Bruno mantém o modo de confirmar antes de cada edição, mesmo isolado no próprio worktree — o critério de [Autonomia e supervisão](autonomia-e-supervisao.md#quanto-de-autonomia-liberar) (reversibilidade da tarefa) decide o nível de autonomia, não o fato de estar isolado ou não.
 
 Cada agente roda no próprio diretório, na própria branch, sem risco de um sobrescrever a edição do outro enquanto os dois trabalham ao mesmo tempo.
 

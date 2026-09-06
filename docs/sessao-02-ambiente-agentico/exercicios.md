@@ -64,7 +64,7 @@ Um agente precisa saber, a cada execução, o status atual de um pedido num sist
 
 **Onde encontrar:** [Oficina de ferramentas](oficina-de-ferramentas.md#experimento-a-escreva-o-agentsmd-do-seu-proprio-repositorio) já produziu um `AGENTS.md` ou `CLAUDE.md` real. Este exercício usa esse mesmo arquivo.
 
-Antes de rodar o ciclo, aplique a verificação de [Padrões e decisões](padroes-e-decisoes.md#como-saber-se-o-arquivo-ainda-funciona): rode cada comando documentado no arquivo, um por um, e confirme que nenhum falhou antes de usar o arquivo no exercício.
+Antes de rodar o ciclo, aplique a verificação de [O arquivo de instrução](arquivo-de-instrucao.md#como-saber-se-o-arquivo-ainda-funciona): rode cada comando documentado no arquivo, um por um, e confirme que nenhum falhou antes de usar o arquivo no exercício.
 
 **Situação**
 
@@ -107,7 +107,7 @@ Compare seu `AGENTS.md`/`CLAUDE.md` do exercício 6 com o exemplo mostrado em [E
 
 ### 8. Avaliando um servidor MCP antes de conectar
 
-Escolha um servidor MCP que você usa ou pretende usar (pode ser o do rastreador de tarefas do seu time, um servidor de arquivos, ou qualquer outro). Aplique os três critérios de [Padrões e decisões](padroes-e-decisoes.md#antes-de-conectar-avaliar-a-origem-do-servidor-mcp) (origem, escopo, auditabilidade) e aponte qual dos três é o ponto mais fraco desse servidor específico hoje.
+Escolha um servidor MCP que você usa ou pretende usar (pode ser o do rastreador de tarefas do seu time, um servidor de arquivos, ou qualquer outro). Aplique os três critérios de [MCP e ferramentas externas](mcp.md#antes-de-conectar-avaliar-a-origem-do-servidor-mcp) (origem, escopo, auditabilidade) e aponte qual dos três é o ponto mais fraco desse servidor específico hoje.
 
 ## Avaliar
 

@@ -96,7 +96,7 @@ As duas saídas (passos 1 e 2) e uma tabela marcando quais dos cinco casos cada 
 
 ### 6. Classifique e rode uma tarefa real do seu backlog
 
-Escolha uma tarefa real do seu backlog, fora deste material. Antes de pedir qualquer coisa ao agente, classifique-a contra a tabela de cinco critérios de [Padrões e decisões](padroes-e-decisoes.md#quando-cada-modo-se-justifica) e decida, por escrito, qual modo você vai usar e por quê.
+Escolha uma tarefa real do seu backlog, fora deste material. Antes de pedir qualquer coisa ao agente, classifique-a contra a tabela de cinco critérios de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica) e decida, por escrito, qual modo você vai usar e por quê.
 
 **Execute:**
 
@@ -132,7 +132,7 @@ Escreva um checklist de no máximo cinco itens que qualquer prompt de geração 
 
 ### 10. Desafio: um ciclo avaliador-otimizador para a função de desconto
 
-**Nível:** mais exigente que os demais exercícios desta sessão. Combina o padrão avaliador-otimizador de [Padrões e decisões](padroes-e-decisoes.md#o-principio-de-simplicidade) com o cenário do exercício-âncora.
+**Nível:** mais exigente que os demais exercícios desta sessão. Combina o padrão avaliador-otimizador de [Sistemas agênticos e simplicidade](sistemas-agenticos.md#o-principio-de-simplicidade) com o cenário do exercício-âncora.
 
 Você já gerou, no exercício 5, duas versões da função de desconto: uma a partir do prompt intuitivo, outra do prompt estruturado. Neste desafio, você vai usar o próprio agente para descobrir os erros da primeira versão, sem revelar a ele quais casos falham.
 

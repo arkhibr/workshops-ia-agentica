@@ -36,7 +36,7 @@ Todo comando de terminal desta página tem versão para macOS/Linux e para Windo
 
 **Objetivo:** conectar um servidor MCP real, sem precisar de conta nem de credencial, e examinar exatamente qual ferramenta o agente chamou e o que voltou dessa chamada — não só o resumo final que o modelo escreve para você.
 
-**Ferramenta usada:** o servidor de referência `@modelcontextprotocol/server-filesystem`, mantido pelo próprio projeto do MCP. Ele expõe operações de leitura e escrita de arquivo (`read_text_file`, `list_directory`, `search_files`, `write_file`, entre outras) restritas a uma ou mais pastas que você escolhe — o mesmo princípio de escopo mínimo visto em [Padrões e decisões](padroes-e-decisoes.md#antes-de-conectar-avaliar-a-origem-do-servidor-mcp).
+**Ferramenta usada:** o servidor de referência `@modelcontextprotocol/server-filesystem`, mantido pelo próprio projeto do MCP. Ele expõe operações de leitura e escrita de arquivo (`read_text_file`, `list_directory`, `search_files`, `write_file`, entre outras) restritas a uma ou mais pastas que você escolhe — o mesmo princípio de escopo mínimo visto em [MCP e ferramentas externas](mcp.md#antes-de-conectar-avaliar-a-origem-do-servidor-mcp).
 
 **Execute:**
 
@@ -95,7 +95,7 @@ Todo comando de terminal desta página tem versão para macOS/Linux e para Windo
 **Questões exploratórias:**
 
 - A resposta do Passo 2 (sem MCP) e a resposta do Passo 5 (com MCP) diferem em quê: só no conteúdo, ou também na forma como o agente comunicou certeza sobre a resposta?
-- O que aconteceu no Passo 6 confirma ou contradiz o critério de escopo mínimo de [Padrões e decisões](padroes-e-decisoes.md#antes-de-conectar-avaliar-a-origem-do-servidor-mcp)?
+- O que aconteceu no Passo 6 confirma ou contradiz o critério de escopo mínimo de [MCP e ferramentas externas](mcp.md#antes-de-conectar-avaliar-a-origem-do-servidor-mcp)?
 - Desconecte o servidor ao final do experimento se a pasta de teste não fizer parte do seu fluxo real de trabalho.
 
 ## Experimento C — isole duas sessões por worktree
@@ -127,7 +127,7 @@ git worktree remove ../teste-worktree-b
 
 ## Experimento D — compare dois níveis de autonomia
 
-**Objetivo:** sentir a diferença de risco e de velocidade entre dois modos de permissão da mesma aplicação agêntica, aplicando o critério de [Padrões e decisões](padroes-e-decisoes.md#quanto-de-autonomia-liberar).
+**Objetivo:** sentir a diferença de risco e de velocidade entre dois modos de permissão da mesma aplicação agêntica, aplicando o critério de [Autonomia e supervisão](autonomia-e-supervisao.md#quanto-de-autonomia-liberar).
 
 **Execute:**
 

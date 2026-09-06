@@ -33,7 +33,7 @@
 4. Sei distinguir um conflito de sistema de arquivos (que isolamento por ramo resolve) de um conflito de comunicação entre pessoas (que não resolve)?
 5. Antes de conectar um servidor MCP novo, sei dizer quais das três primitivas (*tool*, *resource*, *prompt*) ele deveria expor para o meu caso, e qual escopo de permissão pedir?
 
-Se duas ou mais respostas forem "ainda não", releia [Conceitos](conceitos.md) antes da Sessão 3.
+Se duas ou mais respostas forem "ainda não", releia [Context engineering](context-engineering.md) e [MCP e ferramentas externas](mcp.md) antes da Sessão 3.
 
 **Síntese de mercado**
 

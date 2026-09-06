@@ -10,7 +10,7 @@ Parte do time apoia, cansada de código quebrado sem explicação. Outra parte t
 
 ## Como usar este estudo de caso
 
-Não existe uma resposta única aqui. O objetivo é praticar o critério da tabela de [Padrões e decisões](padroes-e-decisoes.md#quando-cada-modo-se-justifica) num caso ambíguo de verdade, antes de aplicá-lo num código real na oficina.
+Não existe uma resposta única aqui. O objetivo é praticar o critério da tabela de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica) num caso ambíguo de verdade, antes de aplicá-lo num código real na oficina.
 
 ## Perguntas para orientar a análise
 
@@ -21,6 +21,6 @@ Não existe uma resposta única aqui. O objetivo é praticar o critério da tabe
 
 ## Depois da discussão
 
-Compare a posição que o grupo chegou com a tabela de [Padrões e decisões](padroes-e-decisoes.md#quando-cada-modo-se-justifica). A esteira completa de engenharia agêntica (Sessão 10) volta a esse mesmo dilema com uma ferramenta mais precisa: decisões arquiteturais registradas em ADR, permitindo que a proporcionalidade fique explícita em vez de depender de memória ou de regra geral.
+Compare a posição que o grupo chegou com a tabela de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica). A esteira completa de engenharia agêntica (Sessão 10) volta a esse mesmo dilema com uma ferramenta mais precisa: decisões arquiteturais registradas em ADR, permitindo que a proporcionalidade fique explícita em vez de depender de memória ou de regra geral.
 
 **Próxima página:** [Oficina de ferramentas](oficina-de-ferramentas.md).

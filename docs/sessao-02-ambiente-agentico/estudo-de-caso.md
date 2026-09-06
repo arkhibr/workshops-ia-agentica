@@ -12,7 +12,7 @@ Na reunião de retrospectiva, uma pessoa sugere: "vamos exigir que todo mundo us
 
 ## Como usar este estudo de caso
 
-Não existe uma resposta única aqui. O objetivo é praticar o critério da tabela de [Padrões e decisões](padroes-e-decisoes.md#quando-vale-configurar-um-ambiente-compartilhado) num caso ambíguo de verdade.
+Não existe uma resposta única aqui. O objetivo é praticar o critério da tabela de [O ambiente compartilhado](ambiente-compartilhado.md#quando-vale-configurar-um-ambiente-compartilhado) num caso ambíguo de verdade.
 
 ## Perguntas para orientar a análise
 
