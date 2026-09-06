@@ -4,7 +4,7 @@ Workshop de engenharia agêntica disciplinada para a equipe de desenvolvimento C
 
 A tese: a janela de contexto virou o programa. O LLM é o interpretador; o desenvolvedor escreve em linguagem natural, e o que era arte ou intuição agora é engenharia — especificação, decomposição, verificação. O piso sobe para todos; o teto sobe só com disciplina; o julgamento humano sobe de valor.
 
-**Público:** desenvolvedores C#, JavaScript e TypeScript com experiência intermediária na stack, que já experimentam IA no dia a dia sem processo formal.
+**Público:** desenvolvedores C#, JavaScript e TypeScript com experiência intermediária nessas linguagens, que já experimentam IA no dia a dia sem processo formal.
 
 **Formato:** 10 sessões de 2h cada (problema → método → exercício), 20h no total, modalidade online. Cenários genéricos C#/JS/TS alternam com variações no domínio FUNDEP nos Blocos 3 e 4.
 
@@ -51,7 +51,7 @@ Ao final das 20h, cada participante consegue:
 
 ## Fora de escopo
 
-Para deixar claro o que este workshop não cobre: treinamento em LLMs (operação de modelos, ajuste fino, infraestrutura), agentes customizados além do uso dos existentes, esteiras CI/CD automatizadas, gestão de custos de uso de API.
+Para deixar claro o que este workshop não cobre: treinamento em LLMs (operação de modelos, ajuste fino, infraestrutura), agentes feitos sob medida além do uso dos existentes, esteiras CI/CD automatizadas, gestão de custos de uso de API.
 
 ## Referências
 

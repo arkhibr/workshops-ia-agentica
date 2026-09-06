@@ -11,14 +11,14 @@ Um chat comum recebe um pedido como "corrija os testes que estão falhando" e de
 Willison define engenharia agêntica como "the practice of developing software with the assistance of coding agents" (Claude Code, Codex, Gemini CLI), sustentada por três responsabilidades que continuam humanas mesmo com o código escrito por um agente:
 
 - **Especificar o problema.** O pedido descreve o comportamento esperado nos casos de borda, ou só o caminho feliz?
-- **Prover as ferramentas certas.** O agente tem acesso ao terminal, ao executor de testes, ao linter — ou só gera texto sem verificar nada contra o sistema real?
+- **Prover as ferramentas certas.** O agente tem acesso ao terminal, ao executor de testes, ao analisador estático — ou só gera texto sem verificar nada contra o sistema real?
 - **Verificar e iterar.** Alguém rodou o resultado antes de aceitar, ou o código entrou porque "parecia certo"?
 
 ![Ciclo da engenharia agêntica conectando contexto, raciocínio, ação, evidência e ajuste. As responsabilidades humanas de especificar, prover ferramentas e verificar e iterar alimentam o ciclo. Uma régua lateral distingue piso, teto e julgamento.](../assets/images/s1-ciclo-engenharia-agentica.png)
 
 ## O princípio de simplicidade
 
-A peça básica de qualquer sistema agêntico, segundo o mesmo guia da Anthropic, é o *augmented LLM*: um modelo aumentado com acesso a busca, ferramentas e memória, capaz de decidir sozinho que consulta fazer, qual ferramenta acionar e o que vale a pena reter. Workflow e agente são duas formas diferentes de organizar esse mesmo bloco básico — a diferença está em quem controla o caminho, o código ou o próprio modelo.
+A peça básica de qualquer sistema agêntico, segundo o mesmo guia da Anthropic, é o *augmented LLM*: um modelo aumentado com acesso a busca, ferramentas e memória, capaz de decidir sozinho que consulta fazer, qual ferramenta acionar e o que vale a pena reter. Fluxo de trabalho (*workflow*) e agente são duas formas diferentes de organizar esse mesmo bloco básico — a diferença está em quem controla o caminho, o código ou o próprio modelo.
 
 A partir desse bloco, a Anthropic, no guia de engenharia "Building Effective Agents" (dezembro de 2024), recomenda encontrar a solução mais simples possível, aumentando a complexidade apenas quando o problema exigir. O guia é explícito sobre o preço dessa escolha: sistemas agênticos trocam latência e custo por desempenho melhor na tarefa, e cabe a quem projeta decidir quando essa troca compensa. Um agente com autonomia plena carrega, além do custo mais alto, o risco de um erro numa etapa inicial se propagar sem supervisão pelas etapas seguintes; por isso o guia recomenda teste extensivo em ambiente controlado, com salvaguardas apropriadas, antes de liberar autonomia total em produção.
 
@@ -27,7 +27,7 @@ A partir desse bloco, a Anthropic, no guia de engenharia "Building Effective Age
 
 O guia também recomenda cautela com frameworks de agente antes de entender bem o problema: eles costumam criar camadas extras de abstração que escondem o prompt e a resposta reais, dificultando a depuração quando algo sai errado. A recomendação é começar direto pela API do modelo — muitos dos padrões abaixo cabem em poucas linhas de código, sem framework nenhum.
 
-O guia distingue **workflows** (código orquestra o modelo em um caminho predefinido) de **agentes** (o modelo decide dinamicamente os próprios passos): workflows entregam previsibilidade e consistência para tarefas bem definidas, enquanto agentes fazem mais sentido quando o problema pede flexibilidade e decisão do próprio modelo em escala. Antes de recomendar autonomia plena, o guia cataloga cinco padrões de workflow:
+O guia distingue **fluxos de trabalho** (código orquestra o modelo em um caminho predefinido) de **agentes** (o modelo decide dinamicamente os próprios passos): fluxos de trabalho entregam previsibilidade e consistência para tarefas bem definidas, enquanto agentes fazem mais sentido quando o problema pede flexibilidade e decisão do próprio modelo em escala. Antes de recomendar autonomia plena, o guia cataloga cinco padrões de fluxo de trabalho:
 
 - **Encadeamento de prompts.** A saída de uma chamada vira a entrada da próxima, numa sequência fixa.
 - **Roteamento.** Uma primeira chamada classifica o pedido e direciona para o caminho especializado certo.
@@ -40,6 +40,6 @@ O guia distingue **workflows** (código orquestra o modelo em um caminho predefi
 
 O mesmo princípio vale para a escolha entre vibe coding, assistência e SDD: comece pelo modo mais simples que a linha da tabela permitir, e suba de nível só quando a tarefa concreta, não a vontade de usar a ferramenta mais avançada, exigir.
 
-![Trajetória de complexidade crescente que parte de uma chamada direta, passa por workflows previsíveis e chega a um agente que decide os próprios passos. A autonomia aumenta junto com o custo de verificação, enquanto um alerta destaca o anti-padrão de tratar protótipo como produto.](../assets/images/s1-simplicidade-risco.png)
+![Trajetória de complexidade crescente que parte de uma chamada direta, passa por fluxos de trabalho previsíveis e chega a um agente que decide os próprios passos. A autonomia aumenta junto com o custo de verificação, enquanto um alerta destaca o anti-padrão de tratar protótipo como produto.](../assets/images/s1-simplicidade-risco.png)
 
 **Próxima página:** [Avaliação de modelos](avaliacao-de-modelos.md).

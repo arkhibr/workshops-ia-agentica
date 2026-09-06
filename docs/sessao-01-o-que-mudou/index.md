@@ -23,7 +23,7 @@ Ao final desta sessão, o participante deve ser capaz de:
 
 ## O caso que nos acompanha: Vetor
 
-A **Vetor** é uma plataforma fictícia de e-commerce B2B usada como fio condutor nas dez sessões do workshop. A equipe de desenvolvimento da Vetor atende dois perfis de cliente (padrão e atacado) e mantém o código em C#, JavaScript e TypeScript, o mesmo stack real da FUNDEP. Cada sessão avança um pouco o código da Vetor; esta primeira usa uma regra de desconto por volume de pedido para tornar concretos os conceitos de vibe coding, contexto explícito e engenharia agêntica.
+A **Vetor** é uma plataforma fictícia de e-commerce B2B usada como fio condutor nas dez sessões do workshop. A equipe de desenvolvimento da Vetor atende dois perfis de cliente (padrão e atacado) e mantém o código em C#, JavaScript e TypeScript, as mesmas linguagens que a FUNDEP usa. Cada sessão avança um pouco o código da Vetor; esta primeira usa uma regra de desconto por volume de pedido para tornar concretos os conceitos de vibe coding, contexto explícito e engenharia agêntica.
 
 ## Roteiro da sessão (2h)
 
@@ -32,7 +32,7 @@ A **Vetor** é uma plataforma fictícia de e-commerce B2B usada como fio conduto
 | 1 | [Modos de trabalho com IA](modos-de-trabalho.md) | Teoria | 12 min | Vocabulário dos três modos e critério para escolher um por tarefa |
 | 2 | [Evidência empírica de produtividade](evidencia-empirica.md) | Teoria | 6 min | O contraste entre os dois estudos e a régua que sai dele |
 | 3 | [A tese do Software 3.0](software-3-0.md) | Teoria | 10 min | O prompt como artefato que governa o sistema; piso, teto e julgamento |
-| 4 | [Sistemas agênticos e simplicidade](sistemas-agenticos.md) | Teoria | 11 min | Fronteira entre workflow e agente, e a recomendação de simplicidade |
+| 4 | [Sistemas agênticos e simplicidade](sistemas-agenticos.md) | Teoria | 11 min | Fronteira entre fluxo de trabalho e agente, e a recomendação de simplicidade |
 | 5 | [Avaliação de modelos](avaliacao-de-modelos.md) | Teoria | 6 min | Cinco critérios para ler um benchmark antes de escolher um modelo |
 | 6 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 10 min | Ver, com a Vetor, onde um prompt vago perde regra de negócio |
 | 7 | [Estudo de caso](estudo-de-caso.md) | Discussão em grupo | 15 min | Critério (não opinião) para quando SDD se justifica |
