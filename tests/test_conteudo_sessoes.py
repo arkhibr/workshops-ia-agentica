@@ -41,7 +41,7 @@ class SessaoUmTest(unittest.TestCase):
     def test_placar_de_modelos_declara_fonte_e_data(self):
         placar = (S1 / "avaliacao-de-modelos.md").read_text(encoding="utf-8")
         self.assertIn("DeepSWE", placar)
-        self.assertRegex(placar, r"atualizado em \d{1,2} de \w+ de \d{4}")
+        self.assertRegex(placar, r"atualizado em \d{1,2}º? de \w+ de \d{4}")
 
     def test_criterio_de_escolha_do_modo_e_uma_tabela(self):
         modos = (S1 / "modos-de-trabalho.md").read_text(encoding="utf-8")
