@@ -20,6 +20,7 @@ Referências que embasam o conteúdo metodológico do workshop, em ordem alfabé
 - [Delimarsky — Spec-Driven Development with AI (2025)](#delimarsky-spec-driven-development-with-ai-2025)
 - [fast-check e FsCheck — Property-Based Testing](#fast-check-e-fscheck-property-based-testing)
 - [GitHub Spec Kit](#github-spec-kit)
+- [ISO/IEC/IEEE 29148:2018](#isoiecieee-291482018)
 - [Jimenez et al. — SWE-bench (2024)](#jimenez-et-al-swe-bench-2024)
 - [Karpathy — Software 2.0 (2017)](#karpathy-software-20-2017)
 - [Karpathy — Software Is Changing Again (2025)](#karpathy-software-is-changing-again-2025)
@@ -31,12 +32,14 @@ Referências que embasam o conteúdo metodológico do workshop, em ordem alfabé
 - [Osmani — Agent Harness Engineering (2026)](#osmani-agent-harness-engineering-2026)
 - [Pearce et al. — Copilot Security (2022)](#pearce-et-al-copilot-security-2022)
 - [Peng et al. — Copilot Productivity (2023)](#peng-et-al-copilot-productivity-2023)
+- [Ross (ed.) — Business Rules Manifesto (2003)](#ross-ed-business-rules-manifesto-2003)
 - [Ross — RuleSpeak](#ross-rulespeak)
 - [StrykerJS e Stryker.NET — Mutation Testing](#strykerjs-e-strykernet-mutation-testing)
 - [Trivedy — The Anatomy of an Agent Harness (2026)](#trivedy-the-anatomy-of-an-agent-harness-2026)
 - [Vaswani et al. — Attention Is All You Need (2017)](#vaswani-et-al-attention-is-all-you-need-2017)
 - [Vercel — Removing 80% of Agent Tools (2026)](#vercel-removing-80-of-agent-tools-2026)
 - [Wei et al. — Chain-of-Thought Prompting (2022)](#wei-et-al-chain-of-thought-prompting-2022)
+- [Wiegers e Beatty — Software Requirements (2013)](#wiegers-e-beatty-software-requirements-2013)
 - [Willison — What is Agentic Engineering (2026)](#willison-what-is-agentic-engineering-2026)
 - [Yao et al. — ReAct (2023)](#yao-et-al-react-2023)
 - [Zeller — Why Programs Fail (2005)](#zeller-why-programs-fail-2005)
@@ -165,7 +168,9 @@ Leitura independente de modelos em 113 tarefas de engenharia de software de long
 
 ### Decision Model and Notation (DMN)
 
-**Decision Model and Notation (DMN) / tabelas de decisão.** Notação para representar regras condicionais como tabelas — usada como complemento ao RuleSpeak para regras de cálculo e elegibilidade.
+**OMG. *Decision Model and Notation (DMN)*, versão 1.5.** Object Management Group, ago. 2024. <https://www.omg.org/spec/DMN/>
+
+Padrão para representar regras condicionais como tabelas de decisão, complemento ao RuleSpeak para regras de cálculo e elegibilidade que combinam várias condições. Define sete políticas de acerto (*hit policies*) que resolvem o que fazer quando mais de uma linha da tabela poderia se aplicar: Unique (as regras nunca se sobrepõem), Any (podem se sobrepor, mas toda regra que casar produz a mesma saída), Priority (vale a de maior prioridade), First (vale a primeira que casar, de cima para baixo), Collect (retorna todos os resultados, com agregação opcional de soma, mínimo, máximo ou contagem), Rule Order e Output Order (retornam todos os resultados, em ordem de aparição ou de prioridade).
 
 → Sessão 4.
 
@@ -191,9 +196,19 @@ Post oficial de lançamento do GitHub Spec Kit — define o problema do vibe cod
 
 ### GitHub Spec Kit
 
-**GitHub Spec Kit.** Implementação de referência open source do Spec-Driven Development (SDD) — mais de 90 mil estrelas no GitHub. Define os quatro artefatos canônicos (`constitution.md`, `spec.md`, `plan.md`, `tasks.md`) e os comandos `/specify`, `/plan`, `/tasks`, compatíveis com Claude Code, GitHub Copilot e Cursor.
+**GitHub Spec Kit.** Implementação de referência open source do Spec-Driven Development (SDD) — mais de 90 mil estrelas no GitHub. Define os quatro artefatos canônicos (`constitution.md`, `spec.md`, `plan.md`, `tasks.md`) e os comandos `/specify`, `/plan`, `/tasks`, compatíveis com Claude Code, GitHub Copilot e Cursor. O modelo de especificação (`spec-template.md`) numera cada requisito funcional com prefixo `FR-001`, `FR-002` etc., em frases no padrão "o sistema deve..."; não reserva uma seção separada para requisito não funcional.
 
 → Sessões 3, 5, 8.
+
+---
+
+### ISO/IEC/IEEE 29148:2018
+
+**ISO/IEC/IEEE. *Systems and software engineering — Life cycle processes — Requirements engineering*, 29148:2018.** <https://www.iso.org/standard/72089.html>
+
+Norma internacional de engenharia de requisitos, sucessora do IEEE 830. Distingue requisito funcional (o que o sistema deve fazer) de requisito não funcional ou de qualidade (o critério usado para julgar como o sistema opera, não um comportamento específico), e subdivide requisito não funcional em classes mais finas — desempenho, usabilidade, interface, entre outras. O texto normativo integral está atrás de paywall; a distinção funcional/não funcional citada aqui segue paráfrase amplamente aceita do padrão, não transcrição literal.
+
+→ Sessão 3.
 
 ---
 
@@ -267,7 +282,9 @@ Experimento randomizado com 16 desenvolvedores experientes (cerca de 5 anos de t
 
 ### OMG — Semantics of Business Vocabulary and Business Rules
 
-**OMG. *Semantics of Business Vocabulary and Business Rules (SBVR)*.** Especificação da Object Management Group para vocabulário de negócio e regras formais — a base do bloco de especificação em linguagem controlada.
+**OMG. *Semantics of Business Vocabulary and Business Rules (SBVR)*, versão 1.5.** Object Management Group, dez. 2019. <https://www.omg.org/spec/SBVR/1.5/About-SBVR/>
+
+Especificação para vocabulário de negócio e regras formais — a base do bloco de especificação em linguagem controlada. Distingue duas categorias de regra: a **regra estrutural** (ou definicional), que usa operadores aléticos ("é necessário que", "é possível que") para dizer como o negócio organiza e define seus próprios conceitos; e a **regra operativa** (ou comportamental), que usa operadores deônticos ("é obrigatório que", "é permitido que") para reger conduta — a única das duas que alguém pode efetivamente violar.
 
 → Sessão 4.
 
@@ -303,9 +320,21 @@ Experimento randomizado com 70 desenvolvedores profissionais que completam uma t
 
 ---
 
+### Ross (ed.) — Business Rules Manifesto (2003)
+
+**ROSS, Ronald G. (ed.). *Business Rules Manifesto — The Principles of Rule Independence*, versão 2.0.** Business Rules Group, 1 nov. 2003. <https://www.businessrulesgroup.org/brmanifesto/BRManifesto.pdf>
+
+Dez artigos que definem regra de negócio como categoria própria de conhecimento, separada de processo. O Artigo 2 ("Separate From Processes, Not Contained In Them") declara que "regras não são processo nem procedimento" e que "regras se aplicam através de processos e procedimentos — deve existir um corpo coeso de regras, cumprido de forma consistente em toda a atividade de negócio relevante". O Artigo 4 ("Declarative, Not Procedural") exige que toda regra seja expressa em frase declarativa, sem sequenciamento implícito — é essa declaratividade que distingue uma regra de negócio (BR) de um passo de um fluxo.
+
+→ Sessão 3, 4.
+
+---
+
 ### Ross — RuleSpeak
 
-**ROSS, Ronald G. *RuleSpeak* — Business Rules Solutions.** Notação em linguagem natural controlada para expressar as três formas de regra: obrigação, proibição e possibilidade.
+**ROSS, Ronald G. *RuleSpeak Sentence Forms*, versão 2.2.** Business Rule Solutions, LLC. Desenvolvido a partir de 1996. <https://www.rulespeak.com/en/>
+
+Notação em linguagem natural controlada para expressar regra de negócio sem ambiguidade. O documento normativo organiza cinco formas de sentença em torno de duas palavras-chave de regra e duas de conselho: **"must"** (algo é exigido), **"must not"** (algo é proibido), **"may ... only"** (permissão condicional — ainda uma regra de negócio, com exceção explícita) e, como *statements of advice* e não regra propriamente dita, **"may"** isolado e **"need not"**. O próprio documento afirma que o RuleSpeak foi "uma das três notações de referência usadas na criação do SBVR, e é consistente com esse padrão".
 
 → Sessão 4.
 
@@ -356,6 +385,16 @@ Relato de redução de dezesseis ferramentas especializadas para acesso a sistem
 Demonstra que solicitar ao modelo que gere uma sequência de passos intermediários de raciocínio — *chain of thought* — melhora significativamente o desempenho em tarefas de raciocínio complexo. A técnica emerge naturalmente em modelos suficientemente grandes quando exemplos de raciocínio são fornecidos como demonstrações no prompt. Experimentos comprovam ganho em tarefas aritméticas, senso comum e raciocínio simbólico. Um modelo de 540B parâmetros com apenas oito exemplos alcança estado-da-arte no benchmark GSM8K, superando até GPT-3 ajustado com verificador — a metade "raciocínio" que o ReAct combina com ação.
 
 → Sessão 1.
+
+---
+
+### Wiegers e Beatty — Software Requirements (2013)
+
+**WIEGERS, Karl; BEATTY, Joy. *Software Requirements*, 3ª ed.** Microsoft Press, 2013. <https://www.microsoftpressstore.com/store/software-requirements-9780735679665>
+
+Referência de mercado em engenharia de requisitos. Organiza requisitos em camadas — requisito de negócio, requisito de usuário, requisito funcional (de software) — e trata regra de negócio como categoria própria e anterior a essas camadas: uma regra de negócio não é, em si, um requisito de software, porque também rege operação manual; ela é a origem de onde requisitos funcionais são derivados, não um requisito por si só.
+
+→ Sessão 3.
 
 ---
 

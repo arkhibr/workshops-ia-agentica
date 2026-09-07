@@ -62,8 +62,28 @@ nav:
           - Exercícios: sessao-02-ambiente-agentico/exercicios.md
           - Síntese e referências: sessao-02-ambiente-agentico/sintese-e-referencias.md
   - Bloco 2 — Especificação e Planejamento:
-      - S3 — Exploração e especificação: sessao-03-exploracao-especificacao/index.md
-      - S4 — Regras formais com IA: sessao-04-regras-formais-com-ia/index.md
+      - S3 — Exploração e especificação:
+          - Visão geral: sessao-03-exploracao-especificacao/index.md
+          - O ciclo de especificação: sessao-03-exploracao-especificacao/ciclo-de-especificacao.md
+          - BR, FR e NFR: sessao-03-exploracao-especificacao/br-fr-nfr.md
+          - Perguntas que revelam ambiguidade: sessao-03-exploracao-especificacao/elicitacao-e-perguntas.md
+          - Especificação executável: sessao-03-exploracao-especificacao/especificacao-executavel.md
+          - Exemplo arquitetural: sessao-03-exploracao-especificacao/exemplo-arquitetural.md
+          - Estudo de caso: sessao-03-exploracao-especificacao/estudo-de-caso.md
+          - Oficina de ferramentas: sessao-03-exploracao-especificacao/oficina-de-ferramentas.md
+          - Exercícios: sessao-03-exploracao-especificacao/exercicios.md
+          - Síntese e referências: sessao-03-exploracao-especificacao/sintese-e-referencias.md
+      - S4 — Regras formais com IA:
+          - Visão geral: sessao-04-regras-formais-com-ia/index.md
+          - "SBVR: vocabulário e regras": sessao-04-regras-formais-com-ia/sbvr-vocabulario-e-regras.md
+          - "RuleSpeak: três formas de sentença": sessao-04-regras-formais-com-ia/rulespeak-tres-formas.md
+          - Tabelas de decisão e DMN: sessao-04-regras-formais-com-ia/tabelas-de-decisao-dmn.md
+          - IA como formalizadora: sessao-04-regras-formais-com-ia/ia-como-formalizadora.md
+          - Exemplo arquitetural: sessao-04-regras-formais-com-ia/exemplo-arquitetural.md
+          - Estudo de caso: sessao-04-regras-formais-com-ia/estudo-de-caso.md
+          - Oficina de ferramentas: sessao-04-regras-formais-com-ia/oficina-de-ferramentas.md
+          - Exercícios: sessao-04-regras-formais-com-ia/exercicios.md
+          - Síntese e referências: sessao-04-regras-formais-com-ia/sintese-e-referencias.md
       - S5 — Decomposição: sessao-05-decomposicao/index.md
   - Bloco 3 — Execução:
       - S6 — TDD assistido por IA: sessao-06-tdd-assistido/index.md
