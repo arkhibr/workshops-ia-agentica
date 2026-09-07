@@ -68,9 +68,9 @@ Seu agente de codificação configurado na Sessão 0.
 
 **Como conduzir**
 
-1. Peça ao agente: "Escreva uma função que calcula o frete de um pedido com base no peso total." Guarde a saída completa e literal — não resuma, não edite, não complete de memória o que o agente respondeu.
-2. Agora abra a regra de negócio completa (bloco abaixo) e reescreva o pedido incorporando a regra inteira — contexto de domínio, assinatura-alvo, faixas de peso, isenção condicional, recargo regional. Guarde a saída completa.
-3. Rode os casos de teste abaixo contra as duas saídas.
+**Passo 1 — prompt vago.** Peça ao agente: "Escreva uma função que calcula o frete de um pedido com base no peso total." Guarde a saída completa e literal — não resuma, não edite, não complete de memória o que o agente respondeu.
+
+**Passo 2 — abra a regra e reescreva o pedido.** Abra o bloco abaixo e reescreva o pedido incorporando a regra inteira — contexto de domínio, assinatura-alvo, faixas de peso, isenção condicional, recargo regional. Guarde a saída completa.
 
 ??? note "Regra completa da Vetor para frete — abra só depois de concluir o passo 1"
     Tabela de frete por peso total do pedido:
@@ -86,6 +86,8 @@ Seu agente de codificação configurado na Sessão 0.
 
     - Pedidos com valor de produtos ≥ R$ 800,00 têm frete grátis — **exceto** se o pedido contiver item da categoria "frágil": nesse caso a isenção é negada, e o frete nunca é menor que R$ 50,00, mesmo que a faixa de peso indicasse um valor menor.
     - Entregas para a região Norte recebem recargo de 30% sobre o frete **já calculado** — depois de aplicar a isenção e o piso de item frágil, nunca sobre o frete base isolado.
+
+**Passo 3 — rode os casos de teste.** Rode a tabela abaixo contra as duas saídas.
 
 | # | Peso total | Valor de produtos | Item frágil? | Região | Frete esperado |
 |---|---|---|---|---|---|
