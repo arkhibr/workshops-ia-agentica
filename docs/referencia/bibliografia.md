@@ -2,6 +2,36 @@
 
 Referências que embasam o conteúdo metodológico do workshop. Cada entrada indica a que sessão(ões) serve de base.
 
+## Índice de Referências
+
+- [Spec-Driven Development](#spec-driven-development)
+- [Regras de Negócio](#regras-de-negócio)
+- [Arquitetura de Decisão](#arquitetura-de-decisão)
+- [Testes](#testes)
+  - [xUnit Test Patterns](#meszaros-2007)
+  - [Test-Driven Development](#beck-2002)
+  - [Property-Based Testing](#property-testing)
+  - [Mutation Testing](#mutation-testing)
+- [Depuração Sistemática](#depuração-sistemática)
+- [Economia de Engenharia](#economia-de-engenharia-de-software)
+- [Fundamentos Técnicos](#fundamentos-técnicos-llms-e-agentes)
+  - [Transformer Architecture](#vaswani-2017)
+  - [Few-Shot Learning](#brown-2020)
+  - [Chain-of-Thought Prompting](#wei-2022)
+  - [ReAct](#yao-2023)
+  - [SWE-bench](#jimenez-2024)
+  - [Codex](#chen-2021)
+- [Evidência Empírica](#evidência-empírica-sobre-produtividade-e-risco)
+  - [Copilot Productivity](#peng-2023)
+  - [Experienced Developer Study](#metr-2025)
+  - [Security Assessment](#pearce-2022)
+- [Engenharia de Software na Era dos LLMs](#engenharia-de-software-na-era-dos-llms)
+- [Ambiente Agêntico](#ambiente-agêntico-e-engenharia-de-contexto)
+  - [Agent Harness Engineering](#trivedy-2026)
+  - [Context Engineering](#anthropic-context-engineering-2025)
+  - [Model Context Protocol](#anthropic-mcp-2024)
+  - [AGENTS.md Standard](#agents-md-foundation)
+
 ## Spec-Driven Development
 
 **DELIMARSKY, Den. "Spec-driven development with AI: Get started with a new open source toolkit".** *The GitHub Blog*, 2 set. 2025. <https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/>. Post oficial de lançamento do GitHub Spec Kit — define o problema do vibe coding ("você descreve o objetivo, recebe um bloco de código de volta, e frequentemente... parece certo, mas não funciona direito") e o papel da especificação como "contrato para como seu código deve se comportar".
@@ -28,46 +58,119 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 
 ## Testes
 
-**MESZAROS, Gerard. *xUnit Test Patterns: Refactoring Test Code*. Addison-Wesley, 2007.** Referência canônica de padrões de teste de unidade — base para TDD assistido por IA e para detectar quando o agente erra ao gerar testes.
+### MESZAROS — xUnit Test Patterns (2007)
+**MESZAROS, Gerard. *xUnit Test Patterns: Refactoring Test Code*. Addison-Wesley, 2007.**
+
+Referência canônica em padrões de teste. Cataloga 60+ padrões para escrever testes mantíveis e confiáveis em frameworks xUnit (JUnit, NUnit, etc.). Cobre testes de unidade, integração e aceitação com padrões como Arrange-Act-Assert, Test Fixtures, Mocks, Stubs e Test Data Builders. Fundamenta a cultura xUnit adotada no workshop (C# com xUnit, JavaScript/TypeScript com Jest). Essencial para qualidade de teste: sem padrões aplicados, testes viram débito técnico que desacelera evolução — base para TDD assistido por IA e para detectar quando o agente erra ao gerar testes.
+
 → Sessão 6.
 
-**BECK, Kent. *Test-Driven Development: By Example*. Addison-Wesley, 2002.** O ciclo vermelho-verde-refatoração, adaptado neste workshop para o fluxo assistido por LLM.
+---
+
+### BECK — Test-Driven Development: By Example (2002)
+
+**BECK, Kent. *Test-Driven Development: By Example*. Addison-Wesley, 2002.**
+
+O ciclo vermelho-verde-refatoração, adaptado neste workshop para o fluxo assistido por LLM. Fundamenta a prática de TDD clássico, que neste material é combinado com agentes de codificação.
+
 → Sessão 6.
+
+---
+
+### fast-check e FsCheck — Property-Based Testing
 
 **fast-check** (JavaScript/TypeScript) e **FsCheck** (.NET) — bibliotecas de referência para testes baseados em propriedade.
+
 → Sessão 7.
 
+---
+
+### StrykerJS e Stryker.NET — Mutation Testing
+
 **StrykerJS** (JavaScript/TypeScript) e **Stryker.NET** (.NET) — ferramentas de referência para testes de mutação.
+
 → Sessão 7.
 
 ## Depuração Sistemática
 
-**ZELLER, Andreas. *Why Programs Fail: A Guide to Systematic Debugging*. Morgan Kaufmann, 2005.** Base do protocolo hipótese → investigação → correção → verificação usado na Sessão 9.
+### ZELLER — Why Programs Fail (2005)
+
+**ZELLER, Andreas. *Why Programs Fail: A Guide to Systematic Debugging*. Morgan Kaufmann, 2005.**
+
+Livro clássico sobre depuração sistemática de programas. Apresenta metodologia científica aplicada à localização de erros: reproduzir o defeito consistentemente, formular hipóteses sobre causas, projetar testes para refutá-las e isolar o código responsável. Zeller desenvolve técnicas como delta debugging (automatizar redução de entradas que causam falha), execução reversa e análise de dependência. Fundamental para engenheiros que buscam evitar tentativa-e-erro em depuração, oferecendo processos rigorosos e automatizáveis para diagnóstico — base do protocolo hipótese → investigação → correção → verificação usado na Sessão 9.
+
 → Sessão 9.
+
+---
 
 ## Economia de Engenharia de Software
 
-**BOEHM, Barry W. *Software Engineering Economics*.** Prentice-Hall, 1981. Documentou que o custo de corrigir um defeito cresce a cada fase do desenvolvimento — em sistemas grandes e críticos, um problema descoberto depois da entrega pode custar da ordem de 100 vezes mais do que o mesmo problema pego na fase de requisitos. Pesquisa mais recente questiona o multiplicador exato em times ágeis com integração contínua, mas não a direção do efeito. Fundamenta por que reversibilidade e tempo de vida pesam na escolha entre vibe coding, assistência e SDD.
+### BOEHM — Software Engineering Economics (1981)
+
+**BOEHM, Barry W. *Software Engineering Economics*.** Prentice-Hall, 1981.
+
+Documentou empiricamente que o custo de corrigir um defeito cresce a cada fase do desenvolvimento — em sistemas grandes e críticos, um problema descoberto depois da entrega pode custar da ordem de 100 vezes mais do que o mesmo problema pego na fase de requisitos. Pesquisa mais recente questiona o multiplicador exato em times ágeis com integração contínua, mas não a direção do efeito. Fundamenta por que reversibilidade e tempo de vida pesam na escolha entre vibe coding, assistência e SDD.
+
 → Sessão 1.
 
 ## Fundamentos Técnicos (LLMs e Agentes)
 
-**VASWANI, Ashish et al. *Attention Is All You Need*.** NeurIPS, 2017. <https://proceedings.neurips.cc/paper_files/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html>. Artigo que introduziu a arquitetura Transformer — base técnica de todo LLM usado em ferramentas agênticas de codificação.
+### VASWANI et al. — Attention Is All You Need (2017)
+
+**VASWANI, Ashish et al. *Attention Is All You Need*.** NeurIPS, 2017. <https://arxiv.org/abs/1706.03762>
+
+Apresenta a arquitetura Transformer, substituindo modelos recorrentes e convolucionais complexos por mecanismos de atenção puros. Alcançou desempenho estado-da-arte em tradução automática: 28,4 BLEU em English-to-German e 41,8 BLEU em English-to-French (treinado em apenas 3,5 dias em oito GPUs). A arquitetura oferece melhor paralelização, reduz significativamente o tempo de treinamento e generaliza bem para outras tarefas, como análise sintática. O trabalho fundou a base para todos os modelos de linguagem modernos.
+
 → Sessão 1.
 
-**BROWN, Tom B. et al. *Language Models are Few-Shot Learners*.** NeurIPS, 2020. <https://proceedings.neurips.cc/paper_files/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html>. Artigo de apresentação do GPT-3 — demonstra empiricamente o aprendizado em contexto (*in-context learning*): um modelo executa uma tarefa nova a partir da descrição em linguagem natural e de poucos exemplos, sem ajuste de peso. Mecanismo técnico que torna um prompt capaz de funcionar como programa (Software 3.0).
+---
+
+### BROWN et al. — Language Models are Few-Shot Learners (2020)
+
+**BROWN, Tom B. et al. *Language Models are Few-Shot Learners*.** NeurIPS, 2020. <https://arxiv.org/abs/2005.14165>
+
+Demonstra que aumentar a escala de modelos de linguagem melhora substancialmente o desempenho em aprendizado com poucos exemplos, sem necessidade de ajuste fino. Apresenta o GPT-3, modelo autorregressivo com 175 bilhões de parâmetros, aplicado apenas via interação textual sem atualização de gradientes. Alcança desempenho competitivo em tradução, resposta a perguntas, preenchimento de texto, raciocínio e adaptação de domínio. Gera textos tão realistas que avaliadores humanos têm dificuldade em distinguir de conteúdo humano — mecanismo técnico que torna um prompt capaz de funcionar como programa (Software 3.0).
+
 → Sessão 1.
 
-**WEI, Jason et al. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*.** NeurIPS, 2022. <https://arxiv.org/abs/2201.11903>. Demonstra que pedir ao modelo para expor o raciocínio passo a passo antes da resposta final melhora o desempenho em tarefas de múltiplas etapas — a metade "raciocínio" que o ReAct combina com ação.
+---
+
+### WEI et al. — Chain-of-Thought Prompting (2022)
+
+**WEI, Jason et al. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*.** NeurIPS, 2022. <https://arxiv.org/abs/2201.11903>
+
+Demonstra que solicitar ao modelo que gere uma sequência de passos intermediários de raciocínio — *chain of thought* — melhora significativamente o desempenho em tarefas de raciocínio complexo. A técnica emerge naturalmente em modelos suficientemente grandes quando exemplos de raciocínio são fornecidos como demonstrações no prompt. Experimentos comprovam ganho em tarefas aritméticas, senso comum e raciocínio simbólico. Um modelo de 540B parâmetros com apenas oito exemplos alcança estado-da-arte no benchmark GSM8K, superando até GPT-3 ajustado com verificador — a metade "raciocínio" que o ReAct combina com ação.
+
 → Sessão 1.
 
-**YAO, Shunyu et al. *ReAct: Synergizing Reasoning and Acting in Language Models*.** ICLR, 2023. <https://openreview.net/forum?id=WE_vluYUL-X>. Formaliza o ciclo de raciocínio intercalado com ação verificável — a base técnica que distingue um agente de codificação de um LLM respondendo uma pergunta isolada.
+---
+
+### YAO et al. — ReAct (2023)
+
+**YAO, Shunyu et al. *ReAct: Synergizing Reasoning and Acting in Language Models*.** ICLR, 2023. <https://arxiv.org/abs/2210.03629>
+
+Propõe ReAct, que integra raciocínio e ação em modelos de linguagem, permitindo que gerem simultaneamente pensamento e ações específicas da tarefa. O raciocínio induz e atualiza planos de ação; as ações permitem interface com fontes externas como bases de conhecimento. Reduz alucinação em QA ao integrar APIs de conhecimento e alcança 34% e 10% de melhoria em benchmarks ALFWorld e WebShop em relação a métodos de imitação. As trajetórias de resolução são mais interpretáveis e confiáveis que abordagens sem raciocínio — a base técnica que distingue um agente de codificação de um LLM respondendo uma pergunta isolada.
+
 → Sessão 1.
 
-**JIMENEZ, Carlos E. et al. *SWE-bench: Can Language Models Resolve Real-World GitHub Issues?*.** ICLR, 2024. <https://arxiv.org/abs/2310.06770>. Benchmark que mede se um agente resolve issues reais de repositórios GitHub, produzindo um patch que passa nos testes da comunidade. O melhor resultado do artigo original (Claude 2 com recuperação por palavras-chave) resolveu 1,96% dos casos; em 2026, os melhores agentes resolvem cerca de 97% na versão revisada (SWE-bench Verified) — a evidência quantitativa por trás de "por que agora".
+---
+
+### JIMENEZ et al. — SWE-bench (2024)
+
+**JIMENEZ, Carlos E. et al. *SWE-bench: Can Language Models Resolve Real-World GitHub Issues?*.** ICLR, 2024. <https://arxiv.org/abs/2310.06770>
+
+Apresenta SWE-bench, benchmark contendo 2.294 problemas reais de engenharia de software extraídos do GitHub em 12 repositórios Python populares. Avalia capacidade de modelos em editar bases de código para resolver problemas, exigindo compreensão de múltiplas funções, classes, arquivos e interação com ambientes de execução. Modelos de ponta, incluindo Claude 2, resolvem apenas 1,96% dos problemas no artigo original; em 2026, os melhores agentes resolvem cerca de 97% na versão revisada (SWE-bench Verified) — a evidência quantitativa por trás de "por que agora".
+
 → Sessão 1.
 
-**CHEN, Mark et al. *Evaluating Large Language Models Trained on Code*.** arXiv:2107.03374, 2021. <https://arxiv.org/abs/2107.03374>. Artigo do Codex que introduziu o HumanEval — benchmark de geração de função isolada a partir de enunciado. Contraste com o SWE-bench: mede capacidade de codificação, não de engenharia de software num repositório real.
+---
+
+### CHEN et al. — Codex e HumanEval (2021)
+
+**CHEN, Mark et al. *Evaluating Large Language Models Trained on Code*.** arXiv:2107.03374, 2021. <https://arxiv.org/abs/2107.03374>
+
+Apresenta Codex, versão do GPT ajustada em código do GitHub, com foco em síntese de programas em Python. Introduz HumanEval, novo conjunto de avaliação para medir correção funcional em síntese de código a partir de docstrings. Codex resolve 28,8% de problemas HumanEval (vs. 0% do GPT-3), aumentando para 70,2% com amostragem de 100 tentativas por problema. Analisa limitações com docstrings complexas e vinculação de variáveis. Contraste com o SWE-bench: mede capacidade de codificação, não de engenharia de software num repositório real.
+
 → Sessão 1.
 
 **Datacurve. "DeepSWE".** Leaderboard independente. <https://benchlm.ai/benchmarks/deepswe>. Benchmark de longo horizonte com 113 tarefas de 91 repositórios open source ativos em 5 linguagens, verificadas por programa. Avalia Claude, GPT-5.6 e GLM sob a mesma régua e na mesma data — referência para comparar fabricantes diferentes sem depender do número que cada um escolhe divulgar.
@@ -75,13 +178,32 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 
 ## Evidência Empírica sobre Produtividade e Risco
 
-**PENG, Sida; KALLIAMVAKOU, Eirini; CIHON, Peter; DEMIRER, Mert. *The Impact of AI on Developer Productivity: Evidence from GitHub Copilot*.** arXiv:2302.06590, 2023. <https://arxiv.org/abs/2302.06590>. Experimento randomizado com 70 desenvolvedores profissionais: o grupo com Copilot completou uma tarefa de implementação de servidor HTTP 55,8% mais rápido (71 min contra 161 min). O efeito foi maior para desenvolvedores menos experientes.
+### PENG et al. — Copilot Productivity (2023)
+
+**PENG, Sida; KALLIAMVAKOU, Eirini; CIHON, Peter; DEMIRER, Mert. *The Impact of AI on Developer Productivity: Evidence from GitHub Copilot*.** arXiv:2302.06590, 2023. <https://arxiv.org/abs/2302.06590>
+
+Experimento randomizado com 70 desenvolvedores profissionais que completam uma tarefa de implementação de servidor HTTP. O grupo com Copilot completou a tarefa 55,8% mais rápido (71 minutos contra 161 minutos). O efeito foi maior para desenvolvedores menos experientes, sugerindo que a assistência reduz a curva de aprendizado para tarefas bem delimitadas e novas, onde o contexto é contido e explícito.
+
 → Sessão 1.
 
-**METR. *Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity*.** jul. 2025. <https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/>. Experimento randomizado com 16 desenvolvedores experientes (cerca de 5 anos de trajetória nos próprios projetos) em 246 tarefas reais de manutenção: usar IA tornou a conclusão das tarefas 19% mais lenta, embora os desenvolvedores tenham estimado, depois, que a IA os deixara 20% mais rápidos. Contraponto empírico direto à métrica de produtividade de Peng et al. em tarefas de manutenção complexa versus tarefas novas e delimitadas.
+---
+
+### METR — Experienced Developer Productivity (2025)
+
+**METR. *Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity*.** jul. 2025. <https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/>
+
+Experimento randomizado com 16 desenvolvedores experientes (cerca de 5 anos de trajetória nos próprios projetos) em 246 tarefas reais de manutenção de código aberto. Usar IA tornou a conclusão das tarefas 19% mais lenta. Mais revelador ainda: os próprios desenvolvedores, depois de terminar, estimaram que a IA os havia deixado 20% mais rápidos — o oposto exato do que os dados mediram. Contraponto empírico direto à métrica de produtividade de Peng et al., evidenciando a diferença entre tarefas novas e delimitadas (onde vibe coding ganha) versus manutenção em sistema maduro com contexto implícito.
+
 → Sessão 1.
 
-**PEARCE, Hammond et al. *Asleep at the Keyboard? Assessing the Security of GitHub Copilot's Code Contributions*.** IEEE Symposium on Security and Privacy (S&P), 2022. <https://arxiv.org/abs/2108.09293>. Estudo seminal: 89 cenários cobrindo o CWE Top 25 produziram 1.689 programas, dos quais cerca de 40% continham vulnerabilidade de segurança. Base empírica para o risco "sem rede" do vibe coding.
+---
+
+### PEARCE et al. — Copilot Security (2022)
+
+**PEARCE, Hammond et al. *Asleep at the Keyboard? Assessing the Security of GitHub Copilot's Code Contributions*.** IEEE Symposium on Security and Privacy (S&P), 2022. <https://arxiv.org/abs/2108.09293>
+
+Investiga segurança do GitHub Copilot avaliando com que frequência recomenda código inseguro. Criou 89 cenários sobre vulnerabilidades de alto risco (Top 25 MITRE), gerando 1.689 programas. Resultado preocupante: aproximadamente 40% foram classificados como vulneráveis. Atribui achado ao fato de Copilot ser treinado em código aberto do GitHub, que inclui código bugado e padrões explorados — base empírica para o risco "sem rede" do vibe coding.
+
 → Sessão 1.
 
 ## Engenharia de Software na Era dos LLMs
@@ -112,20 +234,60 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 **ANTHROPIC. "Steering Claude Code".** Anthropic Blog, 2026. <https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more>. Separa os mecanismos que guiam o modelo, como arquivos de contexto, dos que impõem comportamento, como hooks e permissões — a base da regra de que proteção real precisa ser determinística.
 → Sessões 2, 10.
 
-**TRIVEDY, Vivek. "The Anatomy of an Agent Harness".** *LangChain Blog*, 2026. <https://www.langchain.com/blog/the-anatomy-of-an-agent-harness>. Formulação canônica do arnês (*harness*) como tudo o que cerca o modelo e o transforma em agente — "if you're not the model, you're the harness" — com a medição de que a mesma família de modelo muda de faixa no Terminal Bench 2.0 quando só o arnês muda.
+### TRIVEDY — The Anatomy of an Agent Harness (2026)
+
+**TRIVEDY, Vivek. "The Anatomy of an Agent Harness".** *LangChain Blog*, 2026. <https://www.langchain.com/blog/the-anatomy-of-an-agent-harness>
+
+Formulação canônica do arnês (*harness*) como tudo o que cerca o modelo e o transforma em agente — "if you're not the model, you're the harness" — com a medição de que a mesma família de modelo muda de faixa no Terminal Bench 2.0 quando só o arnês muda.
+
 → Sessão 2.
 
-**OSMANI, Addy. "Agent Harness Engineering".** Blog pessoal, 2026. <https://addyosmani.com/blog/agent-harness-engineering/>. Síntese prática do mesmo achado: um modelo mediano dentro de um bom arnês supera um bom modelo dentro de um arnês ruim.
+---
+
+### OSMANI — Agent Harness Engineering (2026)
+
+**OSMANI, Addy. "Agent Harness Engineering".** Blog pessoal, 2026. <https://addyosmani.com/blog/agent-harness-engineering/>
+
+Síntese prática do mesmo achado: um modelo mediano dentro de um bom arnês supera um bom modelo dentro de um arnês ruim.
+
 → Sessão 2.
 
-**VERCEL. "We removed 80% of our agent's tools".** *Vercel Blog*, 2026. <https://vercel.com/blog/we-removed-80-percent-of-our-agents-tools>. Relato de redução de dezesseis ferramentas especializadas para acesso a sistema de arquivos num agente de texto para SQL, com taxa de sucesso subindo de 80% para 100% e 40% menos passos — evidência de que catálogo mínimo de ferramentas é decisão de qualidade.
+---
+
+### VERCEL — Removing 80% of Agent Tools (2026)
+
+**VERCEL. "We removed 80% of our agent's tools".** *Vercel Blog*, 2026. <https://vercel.com/blog/we-removed-80-percent-of-our-agents-tools>
+
+Relato de redução de dezesseis ferramentas especializadas para acesso a sistema de arquivos num agente de texto para SQL, com taxa de sucesso subindo de 80% para 100% e 40% menos passos — evidência de que catálogo mínimo de ferramentas é decisão de qualidade.
+
 → Sessão 2.
 
-**ANTHROPIC. "Effective context engineering for AI agents".** Anthropic Engineering, set. 2025. <https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents>. Define context engineering como a evolução do prompt engineering: cuidar de tudo que chega à janela de contexto numa execução, não só do texto da instrução. Descreve ferramentas como o contrato entre o agente e o ambiente, desenhadas para eficiência de token.
+---
+
+### ANTHROPIC — Effective Context Engineering (2025)
+
+**ANTHROPIC. "Effective context engineering for AI agents".** Anthropic Engineering, set. 2025. <https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents>
+
+Define context engineering como a evolução do prompt engineering: cuidar de tudo que chega à janela de contexto numa execução, não só do texto da instrução. Descreve ferramentas como o contrato entre o agente e o ambiente, desenhadas para eficiência de token.
+
 → Sessão 2.
 
-**ANTHROPIC. "Introducing the Model Context Protocol".** Anthropic News, 25 nov. 2024. <https://www.anthropic.com/news/model-context-protocol>. Anúncio do MCP, protocolo aberto que resolve o problema M×N de integrações entre modelos e ferramentas. Um ano depois, adotado por OpenAI, Google e Microsoft.
+---
+
+### ANTHROPIC — Introducing the Model Context Protocol (2024)
+
+**ANTHROPIC. "Introducing the Model Context Protocol".** Anthropic News, 25 nov. 2024. <https://www.anthropic.com/news/model-context-protocol>
+
+Anúncio do MCP, protocolo aberto que resolve o problema M×N de integrações entre modelos e ferramentas. Um ano depois, adotado por OpenAI, Google e Microsoft.
+
 → Sessão 2.
 
-**Agentic AI Foundation (Linux Foundation). "AGENTS.md".** Padrão aberto, formalizado em ago. 2025 por OpenAI, Google, Cursor, Factory e Sourcegraph. <https://agents.md/>. Arquivo markdown na raiz do repositório, sem esquema obrigatório, que instrui agentes de codificação sobre build, testes, convenções e segurança — mais de 20 mil repositórios adotantes, lido por ferramentas de múltiplos fornecedores concorrentes.
+---
+
+### Agentic AI Foundation — AGENTS.md Standard
+
+**Agentic AI Foundation (Linux Foundation). "AGENTS.md".** Padrão aberto, formalizado em ago. 2025 por OpenAI, Google, Cursor, Factory e Sourcegraph. <https://agents.md/>
+
+Arquivo markdown na raiz do repositório, sem esquema obrigatório, que instrui agentes de codificação sobre build, testes, convenções e segurança — mais de 20 mil repositórios adotantes, lido por ferramentas de múltiplos fornecedores concorrentes.
+
 → Sessão 2.

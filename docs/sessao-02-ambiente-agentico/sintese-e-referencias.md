@@ -41,12 +41,12 @@ Se duas ou mais respostas forem "ainda não", releia [Engenharia de contexto](en
 
 **Síntese de mercado**
 
-- ANTHROPIC. "Effective context engineering for AI agents". Anthropic Engineering, set. 2025.
-- TRIVEDY, Vivek. "The Anatomy of an Agent Harness". LangChain Blog, 2026.
-- OSMANI, Addy. "Agent Harness Engineering". Blog pessoal, 2026.
-- VERCEL. "We removed 80% of our agent's tools". Vercel Blog, 2026.
-- ANTHROPIC. "Introducing the Model Context Protocol". Anthropic News, 25 nov. 2024.
-- Agentic AI Foundation (Linux Foundation). "AGENTS.md". Padrão aberto, formalizado em ago. 2025 por OpenAI, Google, Cursor, Factory e Sourcegraph.
+- [ANTHROPIC. "Effective context engineering for AI agents". Anthropic Engineering, set. 2025.](../referencia/bibliografia.md#anthropic-effective-context-engineering-2025)
+- [TRIVEDY, Vivek. "The Anatomy of an Agent Harness". LangChain Blog, 2026.](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026)
+- [OSMANI, Addy. "Agent Harness Engineering". Blog pessoal, 2026.](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026)
+- [VERCEL. "We removed 80% of our agent's tools". Vercel Blog, 2026.](../referencia/bibliografia.md#vercel-removing-80-of-agent-tools-2026)
+- [ANTHROPIC. "Introducing the Model Context Protocol". Anthropic News, 25 nov. 2024.](../referencia/bibliografia.md#anthropic-introducing-the-model-context-protocol-2024)
+- [Agentic AI Foundation (Linux Foundation). "AGENTS.md". Padrão aberto, formalizado em ago. 2025 por OpenAI, Google, Cursor, Factory e Sourcegraph.](../referencia/bibliografia.md#agentic-ai-foundation-agentsmd-standard)
 
 Citações completas, com URL e resumo, em [../referencia/bibliografia.md](../referencia/bibliografia.md).
 

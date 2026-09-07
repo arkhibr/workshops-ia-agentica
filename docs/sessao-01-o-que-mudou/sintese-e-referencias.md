@@ -32,22 +32,22 @@ Se duas ou mais respostas forem "ainda não", releia [Modos de trabalho com IA](
 
 **Fundamentos técnicos**
 
-- VASWANI, Ashish et al. *Attention Is All You Need*. NeurIPS, 2017.
-- BROWN, Tom B. et al. *Language Models are Few-Shot Learners*. NeurIPS, 2020.
-- WEI, Jason et al. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*. NeurIPS, 2022.
-- YAO, Shunyu et al. *ReAct: Synergizing Reasoning and Acting in Language Models*. ICLR, 2023.
-- JIMENEZ, Carlos E. et al. *SWE-bench: Can Language Models Resolve Real-World GitHub Issues?*. ICLR, 2024.
-- CHEN, Mark et al. *Evaluating Large Language Models Trained on Code*. arXiv, 2021.
+- [VASWANI, Ashish et al. *Attention Is All You Need*. NeurIPS, 2017.](../referencia/bibliografia.md#vaswani-et-al-attention-is-all-you-need-2017)
+- [BROWN, Tom B. et al. *Language Models are Few-Shot Learners*. NeurIPS, 2020.](../referencia/bibliografia.md#brown-et-al-language-models-are-few-shot-learners-2020)
+- [WEI, Jason et al. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*. NeurIPS, 2022.](../referencia/bibliografia.md#wei-et-al-chain-of-thought-prompting-2022)
+- [YAO, Shunyu et al. *ReAct: Synergizing Reasoning and Acting in Language Models*. ICLR, 2023.](../referencia/bibliografia.md#yao-et-al-react-2023)
+- [JIMENEZ, Carlos E. et al. *SWE-bench: Can Language Models Resolve Real-World GitHub Issues?*. ICLR, 2024.](../referencia/bibliografia.md#jimenez-et-al-swe-bench-2024)
+- [CHEN, Mark et al. *Evaluating Large Language Models Trained on Code*. arXiv, 2021.](../referencia/bibliografia.md#chen-et-al-codex-e-humaneval-2021)
 
 **Evidência empírica**
 
-- PENG, Sida et al. *The Impact of AI on Developer Productivity: Evidence from GitHub Copilot*. arXiv, 2023.
-- METR. *Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity*. jul. 2025.
-- PEARCE, Hammond et al. *Asleep at the Keyboard? Assessing the Security of GitHub Copilot's Code Contributions*. IEEE S&P, 2022.
+- [PENG, Sida et al. *The Impact of AI on Developer Productivity: Evidence from GitHub Copilot*. arXiv, 2023.](../referencia/bibliografia.md#peng-et-al-copilot-productivity-2023)
+- [METR. *Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity*. jul. 2025.](../referencia/bibliografia.md#metr-experienced-developer-productivity-2025)
+- [PEARCE, Hammond et al. *Asleep at the Keyboard? Assessing the Security of GitHub Copilot's Code Contributions*. IEEE S&P, 2022.](../referencia/bibliografia.md#pearce-et-al-copilot-security-2022)
 
 **Economia de engenharia de software**
 
-- BOEHM, Barry W. *Software Engineering Economics*. Prentice-Hall, 1981.
+- [BOEHM, Barry W. *Software Engineering Economics*. Prentice-Hall, 1981.](../referencia/bibliografia.md#boehm-software-engineering-economics-1981)
 
 **Placar de modelos**
 
