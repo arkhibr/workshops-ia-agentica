@@ -4,21 +4,39 @@ Tente responder antes de abrir os blocos de resposta nos dois primeiros níveis.
 
 ## Situação compartilhada
 
-Todos os exercícios desta página se referem ao mesmo projeto da [Oficina de ferramentas](oficina-de-ferramentas.md). Se você não fez a oficina, o que está aqui é tudo o que precisa para responder.
+Todos os exercícios desta página se referem ao mesmo projeto do Experimento A da [Oficina de ferramentas](oficina-de-ferramentas.md#experimento-a-o-efeito-de-um-agentsmd-robusto). Se você não fez a oficina, o que está aqui é tudo o que precisa para responder.
 
-A **Vetor** é uma plataforma fictícia de e-commerce B2B que atravessa o workshop. A versão executável dela está em `exemplo/vetor`, dentro do repositório do workshop, e cabe em três arquivos:
+A **Vetor** é uma plataforma fictícia de e-commerce B2B que atravessa o workshop. O projeto da oficina, `oficina-arnes`, criado do zero e sem dependências, tem uma função só: `calcularJurosAtraso(valorPedido, diasAtraso)`, que calcula juros de atraso de pedido (0,1% ao dia sobre o valor, sem juros se não houver atraso, nunca ultrapassando 20% do valor do pedido), mais o teste que comprova isso.
 
-- `src/desconto.js` calcula o desconto de um pedido por faixa de valor: nada até R$ 500,00, 5% até R$ 2.000,00, 10% até R$ 5.000,00 e 15% acima disso, com teto de R$ 1.000,00 por pedido.
-- `test/desconto.test.js` tem seis testes cobrindo as quatro faixas, o teto e a entrada inválida.
-- `package.json` define `npm test` e nenhuma dependência.
+O arquivo de instrução do projeto é este, o mesmo do Experimento A:
 
-Três fatos do projeto que **não dá para deduzir lendo o código**, e que por isso são candidatos naturais a entrar num arquivo de instrução: o comando de teste é `npm test` e não existe compilação; `tipoCliente` chega sempre em minúsculas, `'padrao'` ou `'atacado'`; e `calcularDesconto` recebe `tipoCliente` sem usar, porque a faixa de 20% para atacado acima de R$ 10.000,00 ainda não foi implementada.
+```markdown
+# AGENTS.md
 
-Para clonar:
+## Processo obrigatório: TDD
+Toda função nova segue o ciclo vermelho-verde-refatoração:
+1. Escreva o teste que falha antes de qualquer código de implementação.
+2. Escreva o mínimo de código necessário para o teste passar.
+3. Refatore mantendo os testes verdes.
+Nunca entregue a implementação sem o teste correspondente já escrito primeiro.
+
+## Documentação nativa obrigatória
+Toda função pública recebe documentação no formato nativo da linguagem:
+- JavaScript/TypeScript: bloco JSDoc (`/** ... */`) com `@param` e `@returns`.
+- C#: comentário XML (`/// <summary>`, `<param>`, `<returns>`).
+Comentário de texto solto, fora desse formato, não conta como documentação.
+
+## Comando de teste
+`node --test` roda toda a suíte. Não existe passo de compilação.
+```
+
+Três fatos deste arquivo que **não dá para deduzir lendo o código sozinho**, e que por isso são candidatos naturais a um arquivo de instrução: o comando de teste é `node --test` e não existe compilação; toda função nova segue TDD, teste escrito antes da implementação; e documentação de função pública precisa ser JSDoc (ou comentário XML em C#), comentário solto não conta.
+
+Para criar o projeto do zero:
 
 ```bash
-git clone https://github.com/arkhibr/workshops-ia-agentica.git
-cd workshops-ia-agentica/exemplo/vetor && npm test
+mkdir oficina-arnes && cd oficina-arnes
+git init
 ```
 
 ## Recordar
@@ -30,7 +48,7 @@ Nomeie as quatro peças de um ambiente agêntico descritas nesta sessão.
 <details>
 <summary>Ver resposta</summary>
 
-Arquivo de configuração (AGENTS.md/CLAUDE.md), MCP (acesso a ferramentas externas), isolamento por ramo (worktree) e a aplicação agêntica (Claude Code, Copilot, Cursor).
+Arquivo de configuração (AGENTS.md/CLAUDE.md), MCP (acesso a ferramentas externas), isolamento por ramo (worktree) e a aplicação agêntica (Claude Code, Codex CLI, Gemini CLI).
 </details>
 
 ### 2. A equação do arnês
@@ -67,12 +85,12 @@ A engenharia de prompt cuida do texto da instrução. A engenharia de contexto c
 
 ### 5. O efeito de uma linha genérica de instrução
 
-Um colega abre um `AGENTS.md` no projeto Vetor e escreve uma única linha: "escreva código limpo e siga boas práticas." Explique por que essa linha não muda nenhum comportamento observável do agente, e escreva uma linha que mudaria, usando um dos três fatos da situação compartilhada.
+Um colega abre um `AGENTS.md` no projeto `oficina-arnes` e escreve uma única linha: "escreva código limpo e siga boas práticas." Explique por que essa linha não muda nenhum comportamento observável do agente, e escreva uma linha que mudaria, usando um dos três fatos da situação compartilhada.
 
 <details>
 <summary>Ver resposta</summary>
 
-A linha genérica não informa nada que o agente já não tentasse fazer por padrão, então nenhuma decisão dele muda por causa dela. Uma linha que muda decisão responde uma pergunta concreta que o código não responde. Por exemplo: "o comando de teste é `npm test`; não existe script de compilação" evita que o agente invente um `npm run build` inexistente. Ou: "`tipoCliente` chega em minúsculas, `'padrao'` ou `'atacado'`" evita a comparação com `'Atacado'`.
+A linha genérica não informa nada que o agente já não tentasse fazer por padrão, então nenhuma decisão dele muda por causa dela. Uma linha que muda decisão responde uma pergunta concreta que o código não responde. Por exemplo: "toda função nova segue TDD: escreva o teste antes da implementação" muda a ordem real de trabalho do agente, não só o resultado final. Ou: "documentação de função pública precisa ser JSDoc, comentário solto não conta" evita um comentário de uma linha sem `@param` nem `@returns`.
 </details>
 
 ### 6. Tool ou resource?
@@ -93,7 +111,7 @@ A Vetor quer que o agente consulte o status de entrega de um pedido no sistema d
 
 **Situação**
 
-Você tem o projeto `exemplo/vetor` clonado e o `AGENTS.md` que escreveu no [Experimento A da oficina](oficina-de-ferramentas.md#experimento-a-escreva-o-agentsmd-do-projeto-vetor). Se não fez a oficina, escreva agora um `AGENTS.md` de até quatro linhas usando os três fatos da situação compartilhada.
+Você tem o projeto `oficina-arnes` e o `AGENTS.md` robusto da situação compartilhada acima. Se ainda não fez a oficina, crie o projeto agora (`mkdir oficina-arnes && cd oficina-arnes && git init`), salve o arquivo de instrução, e peça ao agente a função `calcularJurosAtraso` descrita acima antes de continuar.
 
 **Seu papel**
 
@@ -101,28 +119,28 @@ Você decide se esse arquivo está pronto para o time inteiro usar, ou se precis
 
 **Insumos disponíveis**
 
-O projeto `exemplo/vetor` no estado original, que `git checkout -- src/ test/` sempre devolve, o seu `AGENTS.md` e o agente que você já usa.
+O projeto `oficina-arnes`, o `AGENTS.md` da situação compartilhada e o agente que você já usa.
 
 **Como conduzir**
 
-1. Antes de tudo, confira que o arquivo não está mentindo: rode cada comando que ele documenta e confirme que todos existem, como manda [O arquivo de instrução](arquivo-de-instrucao.md#como-saber-se-o-arquivo-ainda-funciona).
-2. **Entrada.** Peça ao agente: *"Implemente a faixa de atacado de 20% acima de R$ 10.000,00 em `calcularDesconto`, com testes."*
-3. **Resposta.** Leia o que ele produziu e confira três pontos contra a situação compartilhada. O valor comparado em `tipoCliente` está em minúsculas? O teto de R$ 1.000,00 continua valendo para a faixa nova? Ele alterou arquivos de `test/` que você não pediu para alterar?
-4. **Verificação.** Rode `npm test`. Os seis testes originais continuam passando, ou a mudança quebrou algum?
+1. Antes de tudo, confira que o arquivo não está mentindo: rode `node --test` e confirme que o comando existe e passa, como manda [O arquivo de instrução](arquivo-de-instrucao.md#como-saber-se-o-arquivo-ainda-funciona).
+2. **Entrada.** Peça ao agente, numa conversa nova: *"Crie a função `calcularMultaCancelamento(valorPedido, diasParaEntrega)`, que cobra 10% do valor do pedido como multa se o cancelamento acontecer com menos de 2 dias para a entrega prevista, e nada caso contrário."*
+3. **Resposta.** Leia o que ele produziu e confira três pontos contra o `AGENTS.md`. Ele escreveu o teste antes da implementação, ou só entregou a implementação pronta? A função tem documentação no formato nativo (JSDoc)? Ele alterou o teste de `calcularJurosAtraso` sem você ter pedido?
+4. **Verificação.** Rode `node --test`. Os testes de `calcularJurosAtraso` continuam passando, e os novos testes de `calcularMultaCancelamento` passam também?
 
 **Entrega esperada**
 
-Um registro de três linhas: o que foi pedido, o que o agente entregou nos três pontos do passo 3, e o resultado de `npm test`.
+Um registro de três linhas: o que foi pedido, o que o agente entregou nos três pontos do passo 3, e o resultado de `node --test`.
 
 **Critérios de avaliação**
 
 | Critério | Peso | O que evidencia atendimento adequado |
 |---|---:|---|
-| O arquivo foi conferido antes de ser usado | 20% | Rodou os comandos documentados, em vez de supor que existiam |
-| Verificação real executada | 40% | Rodou `npm test` de verdade e relatou o resultado, inclusive quando passou |
-| Diagnóstico | 40% | Se algum dos três pontos falhou, aponta se faltou linha no arquivo ou se o agente ignorou uma linha existente |
+| O arquivo foi conferido antes de ser usado | 20% | Rodou `node --test` antes de pedir a nova função, em vez de supor que o comando existia |
+| Verificação real executada | 40% | Rodou `node --test` de verdade depois da entrega e relatou o resultado, inclusive quando passou |
+| Diagnóstico | 40% | Se algum dos três pontos falhou, aponta se foi por faltar linha no arquivo ou por o agente ter ignorado uma linha existente |
 
-**Como verificar antes de entregar:** o registro precisa dizer o que `npm test` respondeu. Se você não rodou, o exercício não está completo.
+**Como verificar antes de entregar:** o registro precisa dizer o que `node --test` respondeu depois da nova função. Se você não rodou, o exercício não está completo.
 
 ## Analisar
 

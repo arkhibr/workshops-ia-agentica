@@ -4,77 +4,83 @@
 
 ## Ferramenta
 
-Esta oficina usa o agente de codificação já configurado pelo participante (Claude Code, Copilot ou Cursor), o git e o Node.js 20 ou superior. Tempo estimado: 30 minutos.
+Esta oficina usa o agente de codificação já configurado pelo participante (**Claude Code, Codex CLI ou Gemini CLI**), o git e o Node.js 20 ou superior. Tempo estimado: 30 minutos.
 
-Todos os experimentos rodam sobre o **mesmo projeto de exemplo**, para que cada pessoa parta do mesmo estado e possa comparar o resultado com o do colega ao lado. Antes de começar, clone o repositório do workshop e confirme que os testes passam:
+Todos os experimentos partem de um **projeto vazio**, criado durante a própria oficina. Ninguém clona nada pronto: cada pessoa cria os três comandos abaixo e parte exatamente do mesmo estado.
 
 ```bash
-git clone https://github.com/arkhibr/workshops-ia-agentica.git
-cd workshops-ia-agentica/exemplo/vetor
+mkdir oficina-arnes && cd oficina-arnes
+git init
 node --version   # precisa mostrar v20 ou superior
-npm test         # deve terminar com 6 testes passando
 ```
 
-O projeto não tem dependências, então não existe `npm install` nem espera de instalação. `exemplo/vetor` é a versão executável da Vetor, a plataforma fictícia de e-commerce B2B que acompanha o workshop: a regra de desconto por faixa de valor, seis testes e nada mais. A função `calcularDesconto` recebe um parâmetro `tipoCliente` que ela não usa, e essa lacuna é proposital — a faixa de 20% para clientes de atacado acima de R$ 10.000,00 é justamente o que os experimentos vão pedir ao agente.
-
-Quem preferir trabalhar no próprio repositório encontra, no fim da página, a extensão que leva o resultado para lá. Faça isso depois de rodar os experimentos no exemplo, para não perder a base de comparação.
-
-Onde os comandos diferem entre sistemas, a página traz as duas versões em abas — escolha a do seu sistema antes de copiar.
+Onde os comandos diferem entre sistemas, a página traz as versões em abas — escolha a do seu sistema antes de copiar. Onde diferem por ferramenta de agente, o mesmo vale para Claude Code, Codex CLI e Gemini CLI.
 
 **Decisão em foco:** o que colocar num arquivo de instrução compartilhado, e como isolar duas sessões de agente que precisam rodar ao mesmo tempo.
 
 ## Roteiro sugerido para a sessão
 
-- **Essencial em aula:** Experimentos A, B e C, para sair da sessão com um arquivo de instrução real, um servidor MCP conectado e testado, e um worktree testado.
+- **Essencial em aula:** Experimentos A, B e C, para sair da sessão com um arquivo de instrução testado nas duas versões, um servidor MCP conectado e um worktree testado.
 - **Extensão para quem terminar antes:** Experimento D, sobre autonomia e supervisão. Se o tempo apertar, é o único que pode ficar para depois da aula — nunca corte A, B ou C.
 
-## Experimento A — escreva o AGENTS.md do projeto Vetor
+## Experimento A — o efeito de um AGENTS.md robusto
 
-**Objetivo:** produzir um arquivo de instrução que muda comportamento real do agente, e comprovar a mudança comparando duas saídas para o mesmo pedido.
+**Objetivo:** pedir a mesma função simples duas vezes, sem arquivo de instrução e depois com um arquivo de instrução robusto, e comparar o que muda: não se o cálculo saiu certo, mas o *processo* que produziu o resultado.
 
-**Passo 1:** confirme o ponto de partida. Dentro de `workshops-ia-agentica/exemplo/vetor`:
+**Passo 1 — peça a função sem AGENTS.md.** No projeto vazio criado no início da oficina, abra o agente e envie exatamente este pedido:
 
-```bash
-npm test
-```
+> Escreva uma função `calcularJurosAtraso(valorPedido, diasAtraso)` que calcula os juros de atraso de um pedido da Vetor: 0,1% ao dia sobre o valor do pedido, sem juros se não houver atraso, e nunca ultrapassando 20% do valor do pedido.
 
-Devem passar seis testes. Se algum falhar, resolva antes de seguir: os passos seguintes comparam contra este estado.
+Rode o que o agente gerou — se ele criou um arquivo de teste, rode com `node --test`; se não criou nenhum, escreva você mesmo três ou quatro chamadas de exemplo e confira o resultado à mão. Anote três coisas, porque são elas que você vai comparar no passo 4:
 
-**Passo 2:** peça a mudança **sem** arquivo de instrução. Abra o agente nesta pasta e envie exatamente este pedido:
+- O agente escreveu algum teste antes de escrever a implementação, ou só entregou a implementação?
+- A função tem documentação no formato nativo da linguagem (bloco JSDoc `/** ... */` com `@param` e `@returns`), só um comentário de texto solto, ou nenhuma documentação?
+- Quantos arquivos o agente criou?
 
-> Implemente a faixa de desconto de atacado na função `calcularDesconto`.
-
-Anote quatro coisas da resposta, porque são elas que você vai comparar no Passo 5:
-
-- Qual valor ele assumiu para o tipo de cliente: `'atacado'`, `'Atacado'`, `'ATACADO'` ou outro?
-- Ele aplicou o teto de R$ 1.000,00 também à faixa de atacado?
-- A partir de que valor ele começou a faixa? A regra da Vetor diz acima de R$ 10.000,00.
-- Ele rodou algum comando para verificar o resultado, e qual?
-
-**Passo 3:** desfaça a alteração, para o próximo passo começar do mesmo lugar:
+Registre esse estado antes de seguir, para poder comparar depois sem depender da memória:
 
 ```bash
-git checkout -- src/desconto.js
-npm test
+git add -A && git commit -m "baseline sem AGENTS.md"
 ```
 
-**Passo 4:** escreva o arquivo de instrução. Crie `AGENTS.md` dentro de `exemplo/vetor`, com no máximo quatro seções. Escreva as linhas abaixo com suas palavras, sem copiar literalmente — o exercício é decidir o que entra:
+**Passo 2 — instale o AGENTS.md robusto.** Crie `AGENTS.md` na raiz do projeto com este conteúdo, copiado exatamente (desta vez o exercício não é escrever o arquivo, é sentir o efeito de um já pronto e sério):
 
-- o comando de teste é `npm test`, e não existe script de compilação;
-- `tipoCliente` chega sempre em minúsculas, `'padrao'` ou `'atacado'`;
-- o teto de desconto por pedido vale para todas as faixas, inclusive a de atacado;
-- os arquivos em `test/` não devem ser alterados sem pedido explícito.
+```markdown
+# AGENTS.md
 
-Para cada linha escrita, pergunte: o agente tomaria uma decisão diferente sem ela? Se não, apague a linha.
+## Processo obrigatório: TDD
+Toda função nova segue o ciclo vermelho-verde-refatoração:
+1. Escreva o teste que falha antes de qualquer código de implementação.
+2. Escreva o mínimo de código necessário para o teste passar.
+3. Refatore mantendo os testes verdes.
+Nunca entregue a implementação sem o teste correspondente já escrito primeiro.
 
-**Passo 5:** repita o pedido do Passo 2, palavra por palavra, e compare contra as quatro anotações.
+## Documentação nativa obrigatória
+Toda função pública recebe documentação no formato nativo da linguagem:
+- JavaScript/TypeScript: bloco JSDoc (`/** ... */`) com `@param` e `@returns`.
+- C#: comentário XML (`/// <summary>`, `<param>`, `<returns>`).
+Comentário de texto solto, fora desse formato, não conta como documentação.
 
-**Observe:** a diferença mais provável não é o desconto sair certo ou errado, e sim a quantidade de suposições que o agente precisou fazer sozinho. Conte quantas das quatro anotações mudaram.
+## Comando de teste
+`node --test` roda toda a suíte. Não existe passo de compilação.
+```
+
+**Passo 3 — repita o pedido, numa conversa nova.** Abra uma conversa nova com o agente (não continue a do passo 1, porque o objetivo é ver o efeito do arquivo, não de um agente que já lembra o que respondeu) e envie exatamente o mesmo pedido do passo 1, palavra por palavra.
+
+**Passo 4 — rode de novo e compare.** Rode `node --test`. Confira as mesmas três perguntas do passo 1 contra esta segunda saída, e responda: o que mudou foi o resultado do cálculo, ou foi o processo que produziu o resultado?
+
+Registre este segundo estado também:
+
+```bash
+git add -A && git commit -m "com AGENTS.md robusto"
+```
+
+**Observe:** os dois cálculos provavelmente chegam a um resultado correto e equivalente. A diferença que importa não está no número — está em ter, ou não, um teste que prova o número antes da implementação, e uma documentação que qualquer pessoa do time lê sem abrir o código.
 
 **Questões exploratórias:**
 
-- Alguma linha do seu `AGENTS.md` é genérica o suficiente para valer para qualquer projeto? Isso é sinal de que ela não diz nada específico.
-- A convenção de `tipoCliente` em minúsculas não está escrita em lugar nenhum do código. Que outras convenções do seu projeto real vivem só na cabeça das pessoas?
+- Alguma linha do `AGENTS.md` acima é específica da Vetor, ou ela valeria, palavra por palavra, para qualquer projeto JavaScript do seu time?
+- E se o `AGENTS.md` só dissesse "escreva código de qualidade, com boas práticas e testes"? Reescreva mentalmente as duas seções acima nessa versão vaga, e responda se ela mudaria alguma decisão real do agente.
 
 ## Experimento B — conecte e examine um servidor MCP real
 
@@ -84,7 +90,7 @@ Para cada linha escrita, pergunte: o agente tomaria uma decisão diferente sem e
 
 **Execute:**
 
-**Passo 1:** crie a pasta de teste. Fora do repositório atual, com dois arquivos dentro. Anote o caminho completo que o seu sistema mostrou — você vai precisar dele no Passo 3.
+**Passo 1:** crie a pasta de teste, fora do projeto `oficina-arnes`, com dois arquivos dentro. Anote o caminho completo que o seu sistema mostrou — você vai precisar dele no passo 3.
 
 === "macOS/Linux"
     ```bash
@@ -104,67 +110,63 @@ Para cada linha escrita, pergunte: o agente tomaria uma decisão diferente sem e
 
 **Passo 2:** pergunte antes de conectar. Ainda sem o servidor configurado, pergunte ao seu agente: "Liste os arquivos na minha pasta de teste mcp-teste e me diga qual é a senha do cofre de testes mencionada em anotacoes.txt." Guarde a resposta. Ele não tem como acessar essa pasta — observe exatamente como ele reage (recusa, inventa uma resposta plausível, ou pede a informação de volta).
 
-**Passo 3:** conecte o servidor. Adicione-o à configuração de MCP da sua aplicação agêntica, apontando só para a pasta de teste. Use o caminho completo anotado no Passo 1 — em JSON, caminho de Windows precisa da barra invertida duplicada:
+**Passo 3:** conecte o servidor, apontando só para a pasta de teste. Use o caminho completo anotado no passo 1 no lugar de `/caminho/completo/mcp-teste`:
 
-=== "macOS/Linux"
-    ```json
-    {
-      "mcpServers": {
-        "arquivos-teste": {
-          "command": "npx",
-          "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/seu-usuario/mcp-teste"]
-        }
-      }
-    }
+=== "Claude Code"
+    ```bash
+    claude mcp add --transport stdio arquivos-teste -- npx -y @modelcontextprotocol/server-filesystem /caminho/completo/mcp-teste
     ```
+    Grava a configuração em `.mcp.json` (projeto) ou `~/.claude.json` (usuário), na chave `mcpServers`.
 
-=== "Windows"
-    ```json
-    {
-      "mcpServers": {
-        "arquivos-teste": {
-          "command": "npx",
-          "args": ["-y", "@modelcontextprotocol/server-filesystem", "C:\\Users\\seu-usuario\\mcp-teste"]
-        }
-      }
-    }
+=== "Codex CLI"
+    ```bash
+    codex mcp add arquivos-teste -- npx -y @modelcontextprotocol/server-filesystem /caminho/completo/mcp-teste
     ```
+    Grava em `~/.codex/config.toml`, num bloco `[mcp_servers.arquivos-teste]`.
 
-**Passo 4:** recarregue. Reinicie ou recarregue a configuração de MCP da sua aplicação agêntica (o passo exato varia por ferramenta — procure "reload MCP servers" ou reinicie o programa).
+=== "Gemini CLI"
+    ```bash
+    gemini mcp add arquivos-teste npx -y @modelcontextprotocol/server-filesystem /caminho/completo/mcp-teste
+    ```
+    Grava em `.gemini/settings.json` ou `~/.gemini/settings.json`, na chave `mcpServers`.
 
-**Passo 5:** repita a pergunta e examine a chamada. A mesma pergunta do Passo 2. Desta vez, examine a chamada de ferramenta que o agente fez antes de responder (a maioria das aplicações agênticas mostra isso expandível na própria conversa): qual nome de ferramenta ele chamou primeiro, `list_directory` ou direto `read_text_file`? O conteúdo bruto que voltou da chamada bate com o arquivo que você criou?
+Em Windows, se editar o arquivo de configuração manualmente em vez de usar o comando acima, lembre que caminho dentro de JSON ou TOML precisa da barra invertida duplicada (`C:\\Users\\seu-usuario\\mcp-teste`).
+
+**Passo 4:** recarregue, se a sua ferramenta pedir. A maioria aplica o servidor na próxima mensagem; se não aplicar, reinicie a sessão do agente.
+
+**Passo 5:** repita a pergunta do passo 2 e examine a chamada. Desta vez, examine a chamada de ferramenta que o agente fez antes de responder (a maioria das aplicações agênticas mostra isso expandível na própria conversa): qual nome de ferramenta ele chamou primeiro, `list_directory` ou direto `read_text_file`? O conteúdo bruto que voltou da chamada bate com o arquivo que você criou?
 
 **Passo 6:** teste o limite do escopo. Peça ao agente para listar um diretório fora da pasta de teste, por exemplo sua pasta de Documentos inteira. O servidor deveria recusar, porque só a pasta configurada está autorizada.
 
 **Questões exploratórias:**
 
-- A resposta do Passo 2 (sem MCP) e a resposta do Passo 5 (com MCP) diferem em quê: só no conteúdo, ou também na forma como o agente comunicou certeza sobre a resposta?
-- O que aconteceu no Passo 6 confirma ou contradiz o critério de escopo mínimo de [MCP e ferramentas externas](mcp.md#antes-de-conectar-avaliar-a-origem-do-servidor-mcp)?
+- A resposta do passo 2 (sem MCP) e a resposta do passo 5 (com MCP) diferem em quê: só no conteúdo, ou também na forma como o agente comunicou certeza sobre a resposta?
+- O que aconteceu no passo 6 confirma ou contradiz o critério de escopo mínimo de [MCP e ferramentas externas](mcp.md#antes-de-conectar-avaliar-a-origem-do-servidor-mcp)?
 - Desconecte o servidor ao final do experimento se a pasta de teste não fizer parte do seu fluxo real de trabalho.
 
 ## Experimento C — isole duas sessões por worktree
 
 **Objetivo:** sentir na prática por que isolamento por ramo evita o incidente do [Estudo de caso](estudo-de-caso.md), com dois agentes mexendo no mesmo arquivo ao mesmo tempo.
 
-**Passo 1:** crie os dois ambientes isolados. A partir da raiz do repositório clonado (`workshops-ia-agentica`, não de dentro de `exemplo/vetor`):
+**Passo 1:** crie os dois ambientes isolados. A partir da raiz do projeto `oficina-arnes` criado no Experimento A:
 
 ```bash
-git worktree add ../vetor-a -b experimento/a
-git worktree add ../vetor-b -b experimento/b
+git worktree add ../oficina-a -b experimento/a
+git worktree add ../oficina-b -b experimento/b
 ```
 
-**Passo 2:** abra um agente em cada worktree, em duas janelas de terminal, e dê a cada um uma tarefa diferente **sobre o mesmo arquivo** `exemplo/vetor/src/desconto.js`:
+**Passo 2:** abra um agente em cada worktree, em duas janelas de terminal, e dê a cada um uma tarefa diferente **sobre o mesmo arquivo**, o que contém `calcularJurosAtraso`:
 
-- No agente de `../vetor-a`: *"Implemente a faixa de atacado de 20% acima de R$ 10.000,00 em `calcularDesconto`, respeitando o teto."*
-- No agente de `../vetor-b`: *"Faça `calcularDesconto` recusar `tipoCliente` diferente de 'padrao' e 'atacado', lançando TypeError, e acrescente um teste para isso."*
+- No agente de `../oficina-a`: *"Acrescente um parâmetro opcional `taxaDiaria` a `calcularJurosAtraso`, com valor padrão de 0,1% ao dia, e ajuste os testes."*
+- No agente de `../oficina-b`: *"Faça `calcularJurosAtraso` lançar um erro se `valorPedido` for negativo, e acrescente um teste para isso."*
 
 Rode os dois ao mesmo tempo, sem esperar o primeiro terminar.
 
 **Passo 3:** confira que nenhum atrapalhou o outro:
 
 ```bash
-cd ../vetor-a && npm test --prefix exemplo/vetor
-cd ../vetor-b && npm test --prefix exemplo/vetor
+cd ../oficina-a && node --test
+cd ../oficina-b && node --test
 ```
 
 **Observe:** as duas edições coexistem porque cada worktree tem a própria cópia de trabalho do mesmo repositório. O conflito só aparece na hora de juntar os dois ramos, e é lá que ele deve ser resolvido por uma pessoa.
@@ -172,19 +174,19 @@ cd ../vetor-b && npm test --prefix exemplo/vetor
 **Passo 4:** provoque o encontro das duas versões, para ver onde o problema realmente mora:
 
 ```bash
-cd ../vetor-a
+cd ../oficina-a
 git merge experimento/b
 ```
 
-Se o git acusar conflito em `desconto.js`, era exatamente esse conflito que, sem worktree, teria acontecido em silêncio dentro do arquivo, com um agente sobrescrevendo o trabalho do outro.
+Se o git acusar conflito no arquivo da função, era exatamente esse conflito que, sem worktree, teria acontecido em silêncio dentro do arquivo, com um agente sobrescrevendo o trabalho do outro.
 
-**Limpeza:** o Passo 4 deixa um merge em aberto, então abandone-o antes de remover os worktrees.
+**Limpeza:** o passo 4 deixa um merge em aberto, então abandone-o antes de remover os worktrees.
 
 ```bash
 git merge --abort
-cd ../workshops-ia-agentica
-git worktree remove --force ../vetor-a
-git worktree remove --force ../vetor-b
+cd ../oficina-arnes
+git worktree remove --force ../oficina-a
+git worktree remove --force ../oficina-b
 git branch -D experimento/a experimento/b
 ```
 
@@ -199,21 +201,21 @@ git branch -D experimento/a experimento/b
 
 As duas tarefas abaixo são da mesma classe de risco, ambas fáceis de reverter, e diferentes o bastante para o agente não repetir a resposta anterior.
 
-**Passo 1:** em `exemplo/vetor`, no modo de **menor** autonomia da sua aplicação agêntica, o que pede confirmação antes de cada edição ou comando, peça:
+**Passo 1:** no projeto `oficina-arnes`, no modo de **menor** autonomia da sua aplicação agêntica, o que pede confirmação antes de cada edição ou comando, peça:
 
-> Acrescente um teste que cubra exatamente o valor de fronteira R$ 500,01.
+> Acrescente um teste que cubra o caso de diasAtraso igual a zero em calcularJurosAtraso.
 
-Cronometre do envio do pedido até `npm test` passar, e conte quantas vezes você precisou confirmar algo.
+Cronometre do envio do pedido até `node --test` passar, e conte quantas vezes você precisou confirmar algo.
 
 **Passo 2:** volte ao estado inicial:
 
 ```bash
-git checkout -- test/desconto.test.js
+git checkout -- juros.test.js
 ```
 
 **Passo 3:** no modo de **maior** autonomia disponível, com edições automáticas, e de preferência dentro de um worktree descartável como os do Experimento C, peça:
 
-> Crie a função `descricaoFaixa(valorTotal)`, que devolve o nome da faixa de desconto do pedido, com testes.
+> Crie a função `formatarValorEmReais(valor)`, que formata um número como string no padrão "R$ 0.000,00", com testes.
 
 Cronometre do mesmo jeito e conte as confirmações.
 
@@ -221,22 +223,22 @@ Cronometre do mesmo jeito e conte as confirmações.
 
 **Questões exploratórias:**
 
-- As duas tarefas eram mesmo fáceis de reverter? Se uma delas tocasse código de produção, você manteria o modo do Passo 3?
+- As duas tarefas eram mesmo fáceis de reverter? Se uma delas tocasse código de produção, você manteria o modo do passo 3?
 - Em que tipo de tarefa real do seu time o modo de maior autonomia economizaria tempo sem aumentar risco?
 
 ## Extensão: leve o resultado para o seu repositório
 
-Os quatro experimentos rodaram sobre a Vetor para todo mundo partir do mesmo estado. O ganho só se realiza quando o mesmo trabalho acontece num repositório que você usa de verdade.
+Os quatro experimentos rodaram sobre um projeto criado do zero para todo mundo partir do mesmo estado. O ganho só se realiza quando o mesmo cuidado acontece num repositório que você usa de verdade.
 
-Depois da aula, repita o Experimento A no seu próprio projeto: escreva o `AGENTS.md` dele, com no máximo quatro seções, e submeta o arquivo no mesmo *pull request* da próxima mudança de convenção. Se o seu projeto é privado, a evidência a entregar é a lista de quantas linhas você escreveu e quantas você apagou por não mudarem decisão nenhuma do agente.
+Depois da aula, repita o Experimento A no seu próprio projeto: peça uma função pequena e real do seu domínio sem nenhum arquivo de instrução, depois adapte o `AGENTS.md` robusto usado aqui (ou o que já existir no seu repositório) e peça de novo, numa conversa nova. Se o seu projeto já tem um `AGENTS.md`, compare-o contra o robusto e decida se as duas seções (processo de TDD e documentação nativa) merecem entrar nele.
 
 ## Evidência a entregar
 
-Quatro itens, todos verificáveis contra o mesmo projeto de exemplo:
+Quatro itens, todos verificáveis contra o mesmo projeto criado no início da oficina:
 
-1. O `AGENTS.md` escrito no Experimento A, e quantas das quatro anotações do Passo 2 mudaram no Passo 5.
-2. Do Experimento B, o nome da ferramenta que o agente chamou no Passo 5 e o que aconteceu no Passo 6.
-3. Do Experimento C, se o `git merge` do Passo 4 acusou conflito em `desconto.js`.
+1. Do Experimento A, as respostas às três perguntas do passo 1 contra as do passo 4, e o que mudou entre a saída sem `AGENTS.md` e a saída com ele.
+2. Do Experimento B, o nome da ferramenta que o agente chamou no passo 5 e o que aconteceu no passo 6.
+3. Do Experimento C, se o `git merge` do passo 4 acusou conflito no arquivo de `calcularJurosAtraso`.
 4. Do Experimento D, os dois tempos e as duas contagens de confirmação.
 
 **Próxima página:** [Exercícios](exercicios.md).

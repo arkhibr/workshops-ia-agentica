@@ -49,6 +49,6 @@ A Vetor, plataforma fictícia de e-commerce B2B introduzida na Sessão 1, tem ho
 
 As sete páginas de teoria têm caixas de destaque embutidas no texto. Pare de verdade nesses pontos, em vez de ler a pergunta e seguir em frente.
 
-Ao chegar na oficina, todos trabalham sobre o mesmo projeto de exemplo, `exemplo/vetor` no repositório do workshop, para que as saídas sejam comparáveis entre as duplas e você consiga conduzir a discussão sobre uma base única. Peça que clonem o repositório antes de a sessão começar. A transposição para o repositório real de cada um está na extensão ao fim da oficina, e é a tarefa que faz o arquivo de instrução sobreviver à aula.
+Ao chegar na oficina, todos criam o mesmo projeto vazio, `oficina-arnes`, com dois comandos (`mkdir` e `git init`), para que as saídas sejam comparáveis entre as duplas sem ninguém precisar clonar nada pronto. A transposição para o repositório real de cada um está na extensão ao fim da oficina, e é a tarefa que faz o arquivo de instrução sobreviver à aula.
 
 **Próxima página:** [O ambiente compartilhado](ambiente-compartilhado.md).

@@ -1,8 +1,12 @@
 """O projeto de exemplo e a regra de que nenhum enunciado depende do repo do aluno.
 
-Oficina e exercícios partem de `exemplo/vetor`, clonável por qualquer pessoa. A
-transposição para o repositório real do participante existe como extensão no fim
-da página, nunca como o caminho principal.
+`exemplo/vetor` continua no repositório, íntegro, para sessões futuras (TDD e
+testes avançados dos Blocos 3). A oficina e os exercícios da Sessão 2 não o
+usam mais: partem de um projeto vazio (`oficina-arnes`), criado do zero com os
+mesmos dois comandos para todo mundo, o que preserva a mesma garantia de
+reprodutibilidade sem exigir clonar nada pronto. A transposição para o
+repositório real do participante existe como extensão no fim da página, nunca
+como o caminho principal.
 """
 
 import json
@@ -47,11 +51,13 @@ class ProjetoDeExemploTest(unittest.TestCase):
 
 
 class EnunciadoReprodutivelTest(unittest.TestCase):
-    def test_a_oficina_comeca_pelo_clone_do_exemplo(self):
+    def test_a_oficina_comeca_por_um_projeto_vazio_reproduzivel(self):
+        """Reprodutibilidade sem clone: todo mundo cria o mesmo projeto vazio."""
         texto = OFICINA.read_text(encoding="utf-8")
 
-        self.assertIn("git clone https://github.com/arkhibr/workshops-ia-agentica.git", texto)
-        self.assertIn("exemplo/vetor", texto)
+        self.assertIn("mkdir oficina-arnes", texto)
+        self.assertIn("git init", texto)
+        self.assertNotIn("git clone", texto)
 
     def test_a_oficina_nao_manda_escolher_um_repositorio_qualquer(self):
         texto = OFICINA.read_text(encoding="utf-8")
@@ -87,8 +93,8 @@ class EnunciadoReprodutivelTest(unittest.TestCase):
         situacao = texto.split("## Recordar", 1)[0]
 
         self.assertIn("## Situação compartilhada", texto)
-        self.assertIn("exemplo/vetor", situacao)
-        self.assertIn("npm test", situacao)
+        self.assertIn("oficina-arnes", situacao)
+        self.assertIn("node --test", situacao)
 
     def test_a_situacao_vem_antes_do_primeiro_nivel_de_bloom(self):
         texto = EXERCICIOS.read_text(encoding="utf-8")
