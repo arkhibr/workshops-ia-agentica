@@ -4,7 +4,7 @@ As quatro peças da página anterior têm um nome coletivo na engenharia. Ele im
 
 ## Tudo o que cerca o modelo
 
-A aplicação agêntica, o arquivo de instrução, o catálogo de ferramentas, o isolamento e o nível de autonomia não são acessórios do modelo. Eles formam o sistema que transforma um modelo em agente, e a engenharia deu um nome a esse sistema: **arnês**, o mesmo termo do equipamento que prende um alpinista à parede. A formulação vem de Vivek Trivedy, em [The Anatomy of an Agent Harness](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness): *"if you're not the model, you're the harness"*. Arnês é todo código, configuração e lógica de execução que não é o modelo. A equação que resume o campo:
+A aplicação agêntica, o arquivo de instrução, o catálogo de ferramentas, o isolamento e o nível de autonomia não são acessórios do modelo. Eles formam o sistema que transforma um modelo em agente, e a engenharia deu um nome a esse sistema: **arnês**, o mesmo termo do equipamento que prende um alpinista à parede. A formulação vem de [Vivek Trivedy, em "The Anatomy of an Agent Harness"](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026): *"if you're not the model, you're the harness"*. Arnês é todo código, configuração e lógica de execução que não é o modelo. A equação que resume o campo:
 
 **agente = modelo + arnês**
 
@@ -25,7 +25,7 @@ Um agente é um processo de muitas etapas, e etapas se compõem por multiplicaç
 | 20 | 99% | 81,8% |
 | 50 | 99% | 60,5% |
 
-A conta é `0,99^n`. Uma taxa de acerto por passo que pareceria ótima num classificador isolado produz uma taxa de fracasso relevante numa trajetória longa. A Anthropic registra o mesmo fenômeno no guia "Building Effective Agents", já citado na Sessão 1: a autonomia dos agentes traz custo maior e **erros que se compõem**.
+A conta é `0,99^n`. Uma taxa de acerto por passo que pareceria ótima num classificador isolado produz uma taxa de fracasso relevante numa trajetória longa. A [Anthropic registra o mesmo fenômeno no guia "Building Effective Agents"](../referencia/bibliografia.md#anthropic-building-effective-agents-2024), já citado na Sessão 1: a autonomia dos agentes traz custo maior e **erros que se compõem**.
 
 O ponto que decide onde investir é este: o modelo não é o lugar onde esse problema se resolve, porque o problema é estrutural do encadeamento. Ele se ataca no arnês, por quatro vias:
 
@@ -41,7 +41,7 @@ A matemática também impõe um limite honesto, que contraria o reflexo de melho
 
 ## Os componentes do arnês
 
-A lista abaixo reúne os componentes que aparecem de forma recorrente nos ensaios de Trivedy e de Addy Osmani e na documentação da Anthropic. A coluna da direita mostra que esta sessão já trata quase todos eles, dispersos entre as páginas; o vocabulário de arnês é o que permite tratá-los como um sistema único e projetá-los juntos.
+A lista abaixo reúne os componentes que aparecem de forma recorrente nos ensaios de [Trivedy](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026) e de [Addy Osmani](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026) e na documentação da Anthropic. A coluna da direita mostra que esta sessão já trata quase todos eles, dispersos entre as páginas; o vocabulário de arnês é o que permite tratá-los como um sistema único e projetá-los juntos.
 
 | Componente | Pergunta que ele responde | Onde esta sessão trata |
 |---|---|---|
@@ -55,13 +55,13 @@ A lista abaixo reúne os componentes que aparecem de forma recorrente nos ensaio
 
 Os dois primeiros itens costumam receber toda a atenção, e são os de menor retorno isolado. O quarto, verificação, é o de maior retorno comprovado, pelo motivo aritmético da seção anterior.
 
-Vale registrar de onde vem esse vocabulário, para não importá-lo sem crítica. Ele nasceu na comunidade de agentes de codificação, que é exatamente o caso deste workshop, onde o arnês é um programa de linha de comando e os componentes têm nomes de arquivo concretos. A Anthropic documenta essa camada em ["Steering Claude Code"](https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more), separando os mecanismos que **guiam** o modelo, como arquivos de contexto, dos que **impõem** comportamento, como *hooks* e permissões. A distinção sustenta uma frase que vale para o resto do workshop: uma proteção real precisa ser determinística. Um arquivo de instrução pede; um *hook* obriga.
+Vale registrar de onde vem esse vocabulário, para não importá-lo sem crítica. Ele nasceu na comunidade de agentes de codificação, que é exatamente o caso deste workshop, onde o arnês é um programa de linha de comando e os componentes têm nomes de arquivo concretos. A [Anthropic documenta essa camada em "Steering Claude Code"](../referencia/bibliografia.md#anthropic-steering-claude-code-2026), separando os mecanismos que **guiam** o modelo, como arquivos de contexto, dos que **impõem** comportamento, como *hooks* e permissões. A distinção sustenta uma frase que vale para o resto do workshop: uma proteção real precisa ser determinística. Um arquivo de instrução pede; um *hook* obriga.
 
 ![Dois desenvolvedores seguem caminhos opostos: à esquerda, o GPT Astra opera num ambiente desorganizado, com erros, ferramentas soltas e baixo desempenho; à direita, o GPT Luna alcança desempenho superior conectado a um arnês organizado de instruções, ferramentas, contexto e verificação.](../assets/images/s2-astra-luna-arnes-performance.png)
 
 ## Estabelecer o arnês rende mais que trocar de modelo
 
-Trivedy relata que a mesma família de modelo sai de fora das trinta primeiras posições para as cinco primeiras do Terminal Bench 2.0 quando apenas o arnês muda, e que um mesmo modelo pontua diferente dentro e fora do arnês de um produto comercial. A posição específica num placar envelhece rápido e não vale decorar; o que dura é a direção da relação. Osmani formula o mesmo achado em [Agent Harness Engineering](https://addyosmani.com/blog/agent-harness-engineering/): um modelo mediano dentro de um bom arnês supera um bom modelo dentro de um arnês ruim.
+[Trivedy](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026) relata que a mesma família de modelo sai de fora das trinta primeiras posições para as cinco primeiras do Terminal Bench 2.0 quando apenas o arnês muda, e que um mesmo modelo pontua diferente dentro e fora do arnês de um produto comercial. A posição específica num placar envelhece rápido e não vale decorar; o que dura é a direção da relação. [Osmani formula o mesmo achado em "Agent Harness Engineering"](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026): um modelo mediano dentro de um bom arnês supera um bom modelo dentro de um arnês ruim.
 
 Isso fecha um ponto aberto na Sessão 1. Em [Avaliação de modelos](../sessao-01-o-que-mudou/avaliacao-de-modelos.md) ficou dito que o número divulgado num *benchmark* depende tanto da forma como o teste foi conduzido quanto do modelo medido, e que a leitura independente do DeepSWE roda cada modelo na melhor configuração disponível do `mini-swe-agent`. O nome dessa configuração é arnês, e é por isso que a nota mede o par, não o modelo sozinho.
 
@@ -69,11 +69,11 @@ A consequência prática é de ordem de gasto. Trocar de modelo é uma decisão 
 
 ## Mais ferramentas não significa menos erro
 
-A intuição diante de um agente que erra é ampliar a capacidade dele. A evidência aponta para o contrário. A Vercel [removeu 80% das ferramentas](https://vercel.com/blog/we-removed-80-percent-of-our-agents-tools) de um agente que traduzia texto para SQL, trocando dezesseis ferramentas especializadas por acesso a um sistema de arquivos com execução de comandos, e relatou a taxa de sucesso subindo de 80% para 100%, com 40% menos *tokens*, 40% menos passos e o tempo médio de resposta caindo de 274 para 77 segundos.
+A intuição diante de um agente que erra é ampliar a capacidade dele. A evidência aponta para o contrário. A [Vercel removeu 80% das ferramentas](../referencia/bibliografia.md#vercel-removing-80-of-agent-tools-2026) de um agente que traduzia texto para SQL, trocando dezesseis ferramentas especializadas por acesso a um sistema de arquivos com execução de comandos, e relatou a taxa de sucesso subindo de 80% para 100%, com 40% menos *tokens*, 40% menos passos e o tempo médio de resposta caindo de 274 para 77 segundos.
 
-A explicação é a mesma do erro composto. Cada ferramenta adicional amplia o espaço de decisão de cada etapa, e ferramentas com fronteiras parecidas criam pontos de decisão ambíguos. A orientação da Anthropic em ["Writing effective tools for agents"](https://www.anthropic.com/engineering/writing-tools-for-agents) formula o critério de um jeito que dá para verificar: se uma pessoa da engenharia não consegue dizer com segurança qual ferramenta usar numa situação, não dá para esperar que o modelo decida melhor. O corolário é consolidar ferramentas por fluxo de trabalho em vez de espelhar cada endpoint da API, e nomeá-las com prefixos que revelem a fronteira.
+A explicação é a mesma do erro composto. Cada ferramenta adicional amplia o espaço de decisão de cada etapa, e ferramentas com fronteiras parecidas criam pontos de decisão ambíguos. A [orientação da Anthropic em "Writing effective tools for agents"](../referencia/bibliografia.md#anthropic-writing-effective-tools-for-agents-2025) formula o critério de um jeito que dá para verificar: se uma pessoa da engenharia não consegue dizer com segurança qual ferramenta usar numa situação, não dá para esperar que o modelo decida melhor. O corolário é consolidar ferramentas por fluxo de trabalho em vez de espelhar cada endpoint da API, e nomeá-las com prefixos que revelem a fronteira.
 
-Existe um custo simétrico que a lição não deve esconder. Descrições de ferramenta ocupam contexto antes de qualquer requisição: a Anthropic relata, em ["Code execution with MCP"](https://www.anthropic.com/engineering/code-execution-with-mcp), um caso em que carregar definições sob demanda, em vez de todas de uma vez, reduziu o consumo de 150 mil para 2 mil *tokens*. Catálogo mínimo é, ao mesmo tempo, decisão de qualidade e decisão de custo.
+Existe um custo simétrico que a lição não deve esconder. Descrições de ferramenta ocupam contexto antes de qualquer requisição: a [Anthropic relata, em "Code execution with MCP"](../referencia/bibliografia.md#anthropic-code-execution-with-mcp-2025), um caso em que carregar definições sob demanda, em vez de todas de uma vez, reduziu o consumo de 150 mil para 2 mil *tokens*. Catálogo mínimo é, ao mesmo tempo, decisão de qualidade e decisão de custo.
 
 Arnês, portanto, não é maximizar capacidade. É otimizar o caminho até o resultado certo, e a operação que mais frequentemente melhora esse caminho é uma remoção.
 

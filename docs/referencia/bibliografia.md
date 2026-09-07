@@ -28,8 +28,16 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
   - [Experienced Developer Study](#metr-experienced-developer-productivity-2025)
   - [Security Assessment](#pearce-et-al-copilot-security-2022)
 - [Engenharia de Software na Era dos LLMs](#engenharia-de-software-na-era-dos-llms)
+  - [Software 2.0](#karpathy-software-20-2017)
+  - [Software Is Changing Again](#karpathy-software-is-changing-again-2025)
+  - [What is Agentic Engineering](#willison-what-is-agentic-engineering-2026)
   - [Controle e Autonomia (4 formas de controle operacional)](#mendes-controle-e-autonomia-modulo-4-agentes)
+  - [Building Effective Agents](#anthropic-building-effective-agents-2024)
 - [Ambiente Agêntico](#ambiente-agentico-e-engenharia-de-contexto)
+  - [DeepSWE Leaderboard](#datacurve-deepswe-leaderboard)
+  - [Writing Effective Tools for Agents](#anthropic-writing-effective-tools-for-agents-2025)
+  - [Code Execution with MCP](#anthropic-code-execution-with-mcp-2025)
+  - [Steering Claude Code](#anthropic-steering-claude-code-2026)
   - [Agent Harness Engineering](#trivedy-the-anatomy-of-an-agent-harness-2026)
   - [Context Engineering](#anthropic-effective-context-engineering-2025)
   - [Model Context Protocol](#anthropic-introducing-the-model-context-protocol-2024)
@@ -176,9 +184,6 @@ Apresenta Codex, versão do GPT ajustada em código do GitHub, com foco em sínt
 
 → Sessão 1.
 
-**Datacurve. "DeepSWE".** Leaderboard independente. <https://benchlm.ai/benchmarks/deepswe>. Benchmark de longo horizonte com 113 tarefas de 91 repositórios open source ativos em 5 linguagens, verificadas por programa. Avalia Claude, GPT-5.6 e GLM sob a mesma régua e na mesma data — referência para comparar fabricantes diferentes sem depender do número que cada um escolhe divulgar.
-→ Sessão 1.
-
 ## Evidência Empírica sobre Produtividade e Risco
 
 ### PENG et al. — Copilot Productivity (2023)
@@ -211,14 +216,35 @@ Investiga segurança do GitHub Copilot avaliando com que frequência recomenda c
 
 ## Engenharia de Software na Era dos LLMs
 
-**KARPATHY, Andrej. "Software 2.0".** Medium, nov. 2017. <https://karpathy.medium.com/software-2-0-a64152b37c35>. Ensaio precursor da tese de Software 3.0: uma rede neural treinada é compilada a partir de dados por um processo de otimização, um tipo de programa fundamentalmente diferente do código explícito escrito à mão.
+### KARPATHY — Software 2.0 (2017)
+
+**KARPATHY, Andrej. "Software 2.0".** Medium, nov. 2017. <https://karpathy.medium.com/software-2-0-a64152b37c35>
+
+Ensaio precursor da tese de Software 3.0: uma rede neural treinada é compilada a partir de dados por um processo de otimização, um tipo de programa fundamentalmente diferente do código explícito escrito à mão.
+
 → Sessão 1.
 
-**KARPATHY, Andrej. *Software Is Changing (Again)*.** Palestra, YC AI Startup School, 17 jun. 2025. Recapitulação: Latent Space, <https://www.latent.space/p/s3>. Formulação dos três paradigmas coexistentes: Software 1.0 (código explícito), Software 2.0 (redes neurais treinadas), Software 3.0 (prompt em linguagem natural como programa executável); e do conceito de *generation-verification loop* ("demo is works.any(), product is works.all()"). Karpathy também cunhou o termo *vibe coding*, em publicação de fevereiro de 2025.
+---
+
+### KARPATHY — Software Is Changing Again (2025)
+
+**KARPATHY, Andrej. *Software Is Changing (Again)*.** Palestra, YC AI Startup School, 17 jun. 2025. Recapitulação: Latent Space, <https://www.latent.space/p/s3>
+
+Formulação dos três paradigmas coexistentes: Software 1.0 (código explícito), Software 2.0 (redes neurais treinadas), Software 3.0 (prompt em linguagem natural como programa executável); e do conceito de *generation-verification loop* ("demo is works.any(), product is works.all()"). Karpathy também cunhou o termo *vibe coding*, em publicação de fevereiro de 2025.
+
 → Sessão 1.
 
-**WILLISON, Simon. "What is agentic engineering?"** — *Agentic Engineering Patterns*. simonwillison.net, mar. 2026. <https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/>. Define engenharia agêntica como "a prática de desenvolver software com o auxílio de agentes de codificação", sustentada por três responsabilidades humanas (especificação do problema, provisão de ferramentas, verificação e iteração), e distingue a prática de "vibe coding", termo que reserva para código de protótipo não revisado.
+---
+
+### WILLISON — What is Agentic Engineering (2026)
+
+**WILLISON, Simon. "What is agentic engineering?"** — *Agentic Engineering Patterns*. simonwillison.net, mar. 2026. <https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/>
+
+Define engenharia agêntica como "a prática de desenvolver software com o auxílio de agentes de codificação", sustentada por três responsabilidades humanas (especificação do problema, provisão de ferramentas, verificação e iteração), e distingue a prática de "vibe coding", termo que reserva para código de protótipo não revisado.
+
 → Sessão 1.
+
+---
 
 ### MENDES — Controle e Autonomia (Módulo 4, Agentes)
 
@@ -228,22 +254,55 @@ Material da disciplina de pós-graduação que fundamenta a distinção entre wo
 
 → Sessão 1.
 
-**ANTHROPIC. "Building Effective Agents".** Anthropic Engineering, dez. 2024. <https://www.anthropic.com/engineering/building-effective-agents>. Guia de referência do mercado para decidir entre workflow (código orquestra o modelo em caminho predefinido) e agente (o modelo decide os próprios passos); recomenda a solução mais simples possível, aumentando autonomia apenas quando o problema exigir. Cataloga cinco padrões de workflow: encadeamento de prompts, roteamento, paralelização, orquestrador-trabalhadores, avaliador-otimizador.
+### ANTHROPIC — Building Effective Agents (2024)
+
+**ANTHROPIC. "Building Effective Agents".** Anthropic Engineering, dez. 2024. <https://www.anthropic.com/engineering/building-effective-agents>
+
+Guia de referência do mercado para decidir entre workflow (código orquestra o modelo em caminho predefinido) e agente (o modelo decide os próprios passos); recomenda a solução mais simples possível, aumentando autonomia apenas quando o problema exigir. Cataloga cinco padrões de workflow: encadeamento de prompts, roteamento, paralelização, orquestrador-trabalhadores, avaliador-otimizador.
+
 → Sessão 1.
 
 ## Ambiente Agêntico e Engenharia de Contexto
 
-**DATACURVE. *DeepSWE Leaderboard*.** Publicado em benchlm.ai. <https://benchlm.ai/benchmarks/deepswe>. Leitura independente de modelos em 113 tarefas de engenharia de software de longo horizonte, tiradas de 91 repositórios de código aberto em 5 linguagens, verificadas por programa. Espelha o placar público do DeepSWE usando, para cada modelo, a melhor configuração disponível do `mini-swe-agent` — o que mede o par modelo mais arnês, e não o modelo isolado.
+### DATACURVE — DeepSWE Leaderboard
+
+**DATACURVE. *DeepSWE Leaderboard*.** Publicado em benchlm.ai. <https://benchlm.ai/benchmarks/deepswe>
+
+Leitura independente de modelos em 113 tarefas de engenharia de software de longo horizonte, tiradas de 91 repositórios de código aberto em 5 linguagens, verificadas por programa. Espelha o placar público do DeepSWE usando, para cada modelo, a melhor configuração disponível do `mini-swe-agent` — o que mede o par modelo mais arnês, e não o modelo isolado.
+
 → Sessões 1, 2.
 
-**ANTHROPIC. "Writing effective tools for agents".** Anthropic Engineering, 2025. <https://www.anthropic.com/engineering/writing-tools-for-agents>. Critério verificável para catálogo de ferramentas: se uma pessoa da engenharia não sabe dizer qual ferramenta usar numa situação, o modelo também não saberá. Recomenda consolidar por fluxo de trabalho em vez de espelhar endpoints.
+---
+
+### ANTHROPIC — Writing Effective Tools for Agents (2025)
+
+**ANTHROPIC. "Writing effective tools for agents".** Anthropic Engineering, 2025. <https://www.anthropic.com/engineering/writing-tools-for-agents>
+
+Critério verificável para catálogo de ferramentas: se uma pessoa da engenharia não sabe dizer qual ferramenta usar numa situação, o modelo também não saberá. Recomenda consolidar por fluxo de trabalho em vez de espelhar endpoints.
+
 → Sessão 2.
 
-**ANTHROPIC. "Code execution with MCP".** Anthropic Engineering, 2025. <https://www.anthropic.com/engineering/code-execution-with-mcp>. Caso em que carregar definições de ferramenta sob demanda, em vez de todas de uma vez, reduziu o consumo de 150 mil para 2 mil tokens.
+---
+
+### ANTHROPIC — Code Execution with MCP (2025)
+
+**ANTHROPIC. "Code execution with MCP".** Anthropic Engineering, 2025. <https://www.anthropic.com/engineering/code-execution-with-mcp>
+
+Caso em que carregar definições de ferramenta sob demanda, em vez de todas de uma vez, reduziu o consumo de 150 mil para 2 mil tokens.
+
 → Sessão 2.
 
-**ANTHROPIC. "Steering Claude Code".** Anthropic Blog, 2026. <https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more>. Separa os mecanismos que guiam o modelo, como arquivos de contexto, dos que impõem comportamento, como hooks e permissões — a base da regra de que proteção real precisa ser determinística.
+---
+
+### ANTHROPIC — Steering Claude Code (2026)
+
+**ANTHROPIC. "Steering Claude Code".** Anthropic Blog, 2026. <https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more>
+
+Separa os mecanismos que guiam o modelo, como arquivos de contexto, dos que impõem comportamento, como hooks e permissões — a base da regra de que proteção real precisa ser determinística.
+
 → Sessões 2, 10.
+
+---
 
 ### TRIVEDY — The Anatomy of an Agent Harness (2026)
 

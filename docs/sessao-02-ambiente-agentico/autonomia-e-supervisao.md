@@ -8,7 +8,7 @@ As quatro peças anteriores decidem o que o agente sabe e a que ele tem acesso. 
 
 A maioria das aplicações agênticas de codificação oferece pelo menos três posições nesse espectro: perguntar antes de cada ação, em que o agente propõe e o humano aprova cada edição ou comando antes de executar; aprovar edições automaticamente mas confirmar comandos com efeito fora do repositório, como rede ou banco de dados; e autonomia ampla dentro de um ambiente isolado, como um worktree descartável, onde o risco de um erro é menor porque o raio de impacto está contido.
 
-Essa régua se conecta direto ao princípio de simplicidade da Sessão 1: a Anthropic recomenda teste extensivo em ambiente controlado, com salvaguardas apropriadas, antes de liberar autonomia total em produção. Autonomia ampla sem isolamento correspondente é exatamente o cenário que o guia desaconselha: o risco de um erro numa etapa se propagar, sem supervisão, pelas etapas seguintes.
+Essa régua se conecta direto ao princípio de simplicidade da Sessão 1: a [Anthropic recomenda](../referencia/bibliografia.md#anthropic-building-effective-agents-2024) teste extensivo em ambiente controlado, com salvaguardas apropriadas, antes de liberar autonomia total em produção. Autonomia ampla sem isolamento correspondente é exatamente o cenário que o guia desaconselha: o risco de um erro numa etapa se propagar, sem supervisão, pelas etapas seguintes.
 
 A aritmética do erro composto, vista em [O arnês do agente](arnes.md#erro-composto-a-aritmetica-da-trajetoria), é o que dá tamanho a esse risco: numa trajetória de vinte etapas, 99% de acerto por etapa deixa a tarefa inteira em 81,8%. É por isso que autonomia ampla pede isolamento e verificação, não confiança no modelo.
 

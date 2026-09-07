@@ -6,7 +6,7 @@ Escolher um modelo para tarefas de engenharia de software exige ler *benchmark* 
 
 Escolher um modelo pelo nome mais falado do momento é o mesmo erro de raiz do vibe coding: aceitar sem verificar. Cinco critérios tornam essa escolha uma decisão, não uma torcida.
 
-**Use um benchmark que meça o trabalho real, não a função isolada.** O HumanEval (Chen et al., 2021) mede se o modelo escreve uma função correta a partir de um enunciado — útil, mas distante do que a Sessão 8 chama de engenharia agêntica. Um benchmark como o DeepSWE mede se o agente resolve uma tarefa real, de longo horizonte, dentro de um repositório existente: localizar a causa, editar os arquivos certos, passar num verificador automático. É o tipo de medida mais próximo do trabalho que um time de engenharia de software faz no dia a dia.
+**Use um benchmark que meça o trabalho real, não a função isolada.** O [HumanEval (Chen et al., 2021)](../referencia/bibliografia.md#chen-et-al-codex-e-humaneval-2021) mede se o modelo escreve uma função correta a partir de um enunciado — útil, mas distante do que a Sessão 8 chama de engenharia agêntica. Um benchmark como o [DeepSWE](../referencia/bibliografia.md#datacurve-deepswe-leaderboard) mede se o agente resolve uma tarefa real, de longo horizonte, dentro de um repositório existente: localizar a causa, editar os arquivos certos, passar num verificador automático. É o tipo de medida mais próximo do trabalho que um time de engenharia de software faz no dia a dia.
 
 **Prefira tarefas verificadas por programa a julgamento humano de "parece bom".** O DeepSWE verifica cada uma das 113 tarefas por execução de programa, não por alguém lendo o diff e achando que ficou razoável. Isso remove subjetividade do resultado: ou o teste passa, ou não passa.
 
@@ -34,8 +34,8 @@ O mesmo material dá o exemplo mais didático de todos: no Terminal-Bench 4.0, a
 | GPT-5.6 Sol | OpenAI | 72,7% |
 | Claude Fable 5 | Anthropic | 69,7% |
 
-Fonte: [benchlm.ai — DeepSWE](https://benchlm.ai/benchmarks/deepswe), atualizado em 1º de setembro de 2026, 28 modelos avaliados, cada um na melhor configuração disponível do `mini-swe-agent`: 113 tarefas de longo horizonte, tiradas de 91 repositórios ativos de código aberto em 5 linguagens, verificadas por programa.
+Fonte: [benchlm.ai — DeepSWE](../referencia/bibliografia.md#datacurve-deepswe-leaderboard), atualizado em 1º de setembro de 2026, 28 modelos avaliados, cada um na melhor configuração disponível do `mini-swe-agent`: 113 tarefas de longo horizonte, tiradas de 91 repositórios ativos de código aberto em 5 linguagens, verificadas por programa.
 
-**Este placar envelhece rápido**: confira o [DeepSWE Leaderboard](https://benchlm.ai/benchmarks/deepswe) atualizado antes de decidir, não confie em número congelado numa página de workshop.
+**Este placar envelhece rápido**: confira o [DeepSWE Leaderboard](../referencia/bibliografia.md#datacurve-deepswe-leaderboard) atualizado antes de decidir, não confie em número congelado numa página de workshop.
 
 **Próxima página:** [Exemplo arquitetural](exemplo-arquitetural.md).

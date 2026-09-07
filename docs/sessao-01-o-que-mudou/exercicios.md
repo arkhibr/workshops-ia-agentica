@@ -21,7 +21,7 @@ Em uma frase, explique o que é aprendizado em contexto (in-context learning) e 
 <details>
 <summary>Ver resposta</summary>
 
-É a capacidade de um modelo executar uma tarefa nova a partir da descrição em linguagem natural e de exemplos no próprio texto de entrada, sem ajuste de peso — demonstrada por Brown et al. (2020). Sem ela, um prompt seria só um pedido; com ela, o prompt vira a própria especificação executada.
+É a capacidade de um modelo executar uma tarefa nova a partir da descrição em linguagem natural e de exemplos no próprio texto de entrada, sem ajuste de peso — demonstrada por [Brown et al. (2020)](../referencia/bibliografia.md#brown-et-al-language-models-are-few-shot-learners-2020). Sem ela, um prompt seria só um pedido; com ela, o prompt vira a própria especificação executada.
 </details>
 
 ## Compreender

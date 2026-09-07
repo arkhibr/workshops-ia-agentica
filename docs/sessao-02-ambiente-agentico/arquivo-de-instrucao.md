@@ -4,7 +4,7 @@ O arquivo de instrução do repositório (AGENTS.md, CLAUDE.md) faz o agente con
 
 ## Um arquivo de instrução, qualquer ferramenta: AGENTS.md
 
-Se MCP resolve como um agente acessa uma ferramenta, falta resolver como um agente aprende as convenções do repositório em que está trabalhando. Em agosto de 2025, OpenAI, Google, Cursor, Factory e Sourcegraph formalizaram juntos o AGENTS.md: um arquivo markdown simples, na raiz do repositório, sem esquema obrigatório, que qualquer agente de codificação lê para saber como construir, testar e alterar o projeto. Diferente do README, que fala com uma pessoa, o AGENTS.md fala com o agente: comandos de compilação e teste, convenções de estilo, regras de segurança, formato de commit.
+Se MCP resolve como um agente acessa uma ferramenta, falta resolver como um agente aprende as convenções do repositório em que está trabalhando. [Em agosto de 2025, OpenAI, Google, Cursor, Factory e Sourcegraph formalizaram juntos o AGENTS.md](../referencia/bibliografia.md#agentic-ai-foundation-agentsmd-standard): um arquivo markdown simples, na raiz do repositório, sem esquema obrigatório, que qualquer agente de codificação lê para saber como construir, testar e alterar o projeto. Diferente do README, que fala com uma pessoa, o AGENTS.md fala com o agente: comandos de compilação e teste, convenções de estilo, regras de segurança, formato de commit.
 
 Um AGENTS.md mínimo, mas real, costuma ter esta forma:
 

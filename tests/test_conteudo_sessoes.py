@@ -45,7 +45,7 @@ class SessaoUmTest(unittest.TestCase):
 
     def test_criterio_de_escolha_do_modo_e_uma_tabela(self):
         modos = (S1 / "modos-de-trabalho.md").read_text(encoding="utf-8")
-        self.assertIn("| Critério |", modos)
+        self.assertRegex(modos, r"\|\s*Critério\s*\|")
 
 
 class SessaoDoisTest(unittest.TestCase):
