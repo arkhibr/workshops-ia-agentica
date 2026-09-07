@@ -5,32 +5,35 @@ Referências que embasam o conteúdo metodológico do workshop. Cada entrada ind
 ## Índice de Referências
 
 - [Spec-Driven Development](#spec-driven-development)
-- [Regras de Negócio](#regras-de-negócio)
-- [Arquitetura de Decisão](#arquitetura-de-decisão)
+- [Regras de Negócio](#regras-de-negocio)
+- [Arquitetura de Decisão](#arquitetura-de-decisao)
 - [Testes](#testes)
-  - [xUnit Test Patterns](#meszaros-2007)
-  - [Test-Driven Development](#beck-2002)
-  - [Property-Based Testing](#property-testing)
-  - [Mutation Testing](#mutation-testing)
-- [Depuração Sistemática](#depuração-sistemática)
+  - [xUnit Test Patterns](#meszaros-xunit-test-patterns-2007)
+  - [Test-Driven Development](#beck-test-driven-development-by-example-2002)
+  - [Property-Based Testing](#fast-check-e-fscheck-property-based-testing)
+  - [Mutation Testing](#strykerjs-e-strykernet-mutation-testing)
+- [Depuração Sistemática](#depuracao-sistematica)
+  - [Why Programs Fail](#zeller-why-programs-fail-2005)
 - [Economia de Engenharia](#economia-de-engenharia-de-software)
-- [Fundamentos Técnicos](#fundamentos-técnicos-llms-e-agentes)
-  - [Transformer Architecture](#vaswani-2017)
-  - [Few-Shot Learning](#brown-2020)
-  - [Chain-of-Thought Prompting](#wei-2022)
-  - [ReAct](#yao-2023)
-  - [SWE-bench](#jimenez-2024)
-  - [Codex](#chen-2021)
-- [Evidência Empírica](#evidência-empírica-sobre-produtividade-e-risco)
-  - [Copilot Productivity](#peng-2023)
-  - [Experienced Developer Study](#metr-2025)
-  - [Security Assessment](#pearce-2022)
+  - [Software Engineering Economics](#boehm-software-engineering-economics-1981)
+- [Fundamentos Técnicos](#fundamentos-tecnicos-llms-e-agentes)
+  - [Transformer Architecture](#vaswani-et-al-attention-is-all-you-need-2017)
+  - [Few-Shot Learning](#brown-et-al-language-models-are-few-shot-learners-2020)
+  - [Chain-of-Thought Prompting](#wei-et-al-chain-of-thought-prompting-2022)
+  - [ReAct](#yao-et-al-react-2023)
+  - [SWE-bench](#jimenez-et-al-swe-bench-2024)
+  - [Codex](#chen-et-al-codex-e-humaneval-2021)
+- [Evidência Empírica](#evidencia-empirica-sobre-produtividade-e-risco)
+  - [Copilot Productivity](#peng-et-al-copilot-productivity-2023)
+  - [Experienced Developer Study](#metr-experienced-developer-productivity-2025)
+  - [Security Assessment](#pearce-et-al-copilot-security-2022)
 - [Engenharia de Software na Era dos LLMs](#engenharia-de-software-na-era-dos-llms)
-- [Ambiente Agêntico](#ambiente-agêntico-e-engenharia-de-contexto)
-  - [Agent Harness Engineering](#trivedy-2026)
-  - [Context Engineering](#anthropic-context-engineering-2025)
-  - [Model Context Protocol](#anthropic-mcp-2024)
-  - [AGENTS.md Standard](#agents-md-foundation)
+  - [Controle e Autonomia (4 formas de controle operacional)](#mendes-controle-e-autonomia-modulo-4-agentes)
+- [Ambiente Agêntico](#ambiente-agentico-e-engenharia-de-contexto)
+  - [Agent Harness Engineering](#trivedy-the-anatomy-of-an-agent-harness-2026)
+  - [Context Engineering](#anthropic-effective-context-engineering-2025)
+  - [Model Context Protocol](#anthropic-introducing-the-model-context-protocol-2024)
+  - [AGENTS.md Standard](#agentic-ai-foundation-agentsmd-standard)
 
 ## Spec-Driven Development
 
@@ -215,6 +218,14 @@ Investiga segurança do GitHub Copilot avaliando com que frequência recomenda c
 → Sessão 1.
 
 **WILLISON, Simon. "What is agentic engineering?"** — *Agentic Engineering Patterns*. simonwillison.net, mar. 2026. <https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/>. Define engenharia agêntica como "a prática de desenvolver software com o auxílio de agentes de codificação", sustentada por três responsabilidades humanas (especificação do problema, provisão de ferramentas, verificação e iteração), e distingue a prática de "vibe coding", termo que reserva para código de protótipo não revisado.
+→ Sessão 1.
+
+### MENDES — Controle e Autonomia (Módulo 4, Agentes)
+
+**MENDES, Marco. "Controle e Autonomia".** *Arquitetura de Soluções com IA Generativa*, Módulo 4 — Agentes. <https://aulas-marco.github.io/arquitetura-solucoes-ia-generativa/modulo-4-agentes/controle-e-autonomia/>
+
+Material da disciplina de pós-graduação que fundamenta a distinção entre workflow e agente usada nesta sessão. Define quatro formas de controle operacional — chatbot, copiloto, fluxo de trabalho determinístico e agente — distinguidas por uma única pergunta: quem escolhe a próxima transição. A categorização separa controle de qualidade ou maturidade: um fluxo de trabalho bem desenhado pode superar um agente mal supervisionado, e um copiloto que chama ferramenta de leitura continua copiloto, não agente. Cataloga também os critérios técnicos que justificam a escolha de um agente: sequências de comprimento variável, feedback de ferramenta verificável, erros conteníveis, conclusão observável e autoridade/orçamento delimitados.
+
 → Sessão 1.
 
 **ANTHROPIC. "Building Effective Agents".** Anthropic Engineering, dez. 2024. <https://www.anthropic.com/engineering/building-effective-agents>. Guia de referência do mercado para decidir entre workflow (código orquestra o modelo em caminho predefinido) e agente (o modelo decide os próprios passos); recomenda a solução mais simples possível, aumentando autonomia apenas quando o problema exigir. Cataloga cinco padrões de workflow: encadeamento de prompts, roteamento, paralelização, orquestrador-trabalhadores, avaliador-otimizador.

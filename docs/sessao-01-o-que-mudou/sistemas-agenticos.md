@@ -18,11 +18,15 @@ Willison define engenharia agêntica como "the practice of developing software w
 
 ## O princípio de simplicidade
 
-A peça básica de qualquer sistema agêntico, segundo o mesmo guia da Anthropic, é o *augmented LLM*: um modelo aumentado com acesso a busca, ferramentas e memória, capaz de decidir sozinho que consulta fazer, qual ferramenta acionar e o que vale a pena reter. Fluxo de trabalho (*workflow*) e agente são duas formas diferentes de organizar esse mesmo bloco básico — a diferença está em quem controla o caminho, o código ou o próprio modelo.
+A peça básica de qualquer sistema agêntico, segundo o mesmo guia da Anthropic, é o *augmented LLM*: um modelo aumentado com acesso a busca, ferramentas e memória, capaz de decidir sozinho que consulta fazer, qual ferramenta acionar e o que vale a pena reter.
 
-A partir desse bloco, a Anthropic, no guia de engenharia "Building Effective Agents" (dezembro de 2024), recomenda encontrar a solução mais simples possível, aumentando a complexidade apenas quando o problema exigir. O guia é explícito sobre o preço dessa escolha: sistemas agênticos trocam latência e custo por desempenho melhor na tarefa, e cabe a quem projeta decidir quando essa troca compensa. Um agente com autonomia plena carrega, além do custo mais alto, o risco de um erro numa etapa inicial se propagar sem supervisão pelas etapas seguintes; por isso o guia recomenda teste extensivo em ambiente controlado, com salvaguardas apropriadas, antes de liberar autonomia total em produção.
+A partir desse bloco básico, quatro formas de controle operacional se distinguem por uma única pergunta: quem escolhe a próxima transição. Um **chatbot** responde por conhecimento paramétrico, contexto fornecido ou busca aumentada — vários turnos de conversa não implicam, por si só, seleção de ferramenta ou efeito sobre um sistema externo. Um **copiloto** apoia uma pessoa numa tarefa (resume, sugere, rascunha, propõe uma ação), mas a autoridade de decisão continua com quem opera a ferramenta; chamar uma ferramenta de leitura não basta para virar agente. Um **fluxo de trabalho determinístico** tem passos, transições, condições e tratamento de erro definidos pela aplicação — o modelo pode classificar ou gerar conteúdo dentro de uma etapa, mas não escolhe qual é a próxima etapa. Só o **agente** é o sistema em que o modelo escolhe pelo menos parte do próximo passo — qual ferramenta, em que ordem, como decompor a tarefa, quando interromper — para perseguir um objetivo dentro de limites definidos ([Mendes, *Controle e Autonomia*](../referencia/bibliografia.md#mendes-controle-e-autonomia-modulo-4-agentes)).
 
-!!! tip "Aplique agora"
+A distinção separa controle de qualidade, não de maturidade: um fluxo de trabalho bem desenhado pode superar um agente mal supervisionado; um agente pode manter conversa; um copiloto pode chamar ferramenta de leitura sem deixar de ser copiloto. A pergunta que importa não é "parece mais avançado?" — é quem escolhe a transição, quem executa o efeito e quem responde pelo resultado.
+
+A partir desse mesmo bloco básico, a Anthropic, no guia de engenharia "Building Effective Agents" (dezembro de 2024), foca a distinção seguinte — entre fluxo de trabalho e agente — e recomenda encontrar a solução mais simples possível, aumentando a complexidade apenas quando o problema exigir. O guia é explícito sobre o preço dessa escolha: sistemas agênticos trocam latência e custo por desempenho melhor na tarefa, e cabe a quem projeta decidir quando essa troca compensa. Um agente com autonomia plena carrega, além do custo mais alto, o risco de um erro numa etapa inicial se propagar sem supervisão pelas etapas seguintes; por isso o guia recomenda teste extensivo em ambiente controlado, com salvaguardas apropriadas, antes de liberar autonomia total em produção.
+
+!!! tip "Aplique agora"  
     Antes de adicionar mais uma etapa autônoma a um agente que seu time já usa, responda: essa etapa resolve um problema real de desempenho que a etapa anterior não resolvia, ou só parece mais sofisticada? Se não houver um problema real por trás, o guia recomenda não adicionar.
 
 O guia também recomenda cautela com frameworks de agente antes de entender bem o problema: eles costumam criar camadas extras de abstração que escondem o prompt e a resposta reais, dificultando a depuração quando algo sai errado. A recomendação é começar direto pela API do modelo — muitos dos padrões abaixo cabem em poucas linhas de código, sem framework nenhum.
@@ -35,7 +39,7 @@ O guia distingue **fluxos de trabalho** (código orquestra o modelo em um caminh
 - **Orquestrador-trabalhadores.** Uma chamada central decompõe a tarefa e distribui pedaços para outras chamadas especializadas.
 - **Avaliador-otimizador.** Uma chamada gera, outra critica o resultado contra um critério definido, e o ciclo repete até passar.
 
-!!! question "Antes de continuar"
+!!! question "Antes de continuar"  
     Pense num agente ou numa automação de IA que seu time usa hoje. Ele decide o próprio caminho a cada execução, ou segue, na prática, uma sequência fixa de passos vestida de "agente"? Isso muda o quanto você revisa o resultado antes de confiar nele?
 
 O mesmo princípio vale para a escolha entre vibe coding, assistência e SDD: comece pelo modo mais simples que a linha da tabela permitir, e suba de nível só quando a tarefa concreta, não a vontade de usar a ferramenta mais avançada, exigir.

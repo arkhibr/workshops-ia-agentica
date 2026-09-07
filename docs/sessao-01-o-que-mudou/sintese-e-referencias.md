@@ -57,6 +57,7 @@ Se duas ou mais respostas forem "ainda não", releia [Modos de trabalho com IA](
 
 - KARPATHY, Andrej. "Software 2.0". Medium, 2017; e *Software Is Changing (Again)*, palestra, 2025.
 - WILLISON, Simon. "What is agentic engineering?". simonwillison.net, 2026.
+- [MENDES, Marco. "Controle e Autonomia". Arquitetura de Soluções com IA Generativa, Módulo 4.](../referencia/bibliografia.md#mendes-controle-e-autonomia-modulo-4-agentes)
 - ANTHROPIC. "Building Effective Agents". Anthropic Engineering, dez. 2024.
 
 Citações completas, com URL e resumo, em [../referencia/bibliografia.md](../referencia/bibliografia.md).
