@@ -52,11 +52,11 @@ Confunde piso (o código roda) com teto (o código está correto e testável) e 
 
 **O que é:** o mesmo problema, resolvido duas vezes pelo agente, com dois níveis de contexto diferentes. A diferença entre as duas saídas mede piso e teto na prática.
 
-**Antes de começar: por que a ordem importa.** Este exercício só mede alguma coisa se o passo 1 for executado sem conhecer a regra completa do passo 2. Ler a regra antes, ou pular direto para o prompt estruturado porque "já sacou o padrão" do Exemplo arquitetural, apaga a distância entre as duas saídas — e essa distância é justamente o que o exercício quer que você veja no seu próprio trabalho. Role a página na ordem, não abra o bloco "Regra completa" abaixo antes de terminar o passo 1, e não peça ajuda a quem já fez o exercício.
+**Antes de começar: por que a ordem importa.** Este exercício só mede alguma coisa se os passos 1 e 2 forem executados sem conhecer a regra completa, revelada só no passo 3. Ler a regra antes, ou pular direto para o prompt estruturado porque "já sacou o padrão" do Exemplo arquitetural, apaga a distância entre o código ingênuo e o código correto — e essa distância é justamente o que o exercício quer que você veja no seu próprio trabalho. Role a página na ordem, não abra o bloco "Regra completa" antes de terminar o passo 2, e não peça ajuda a quem já fez o exercício.
 
 **Situação**
 
-A Vetor (a plataforma fictícia de e-commerce B2B usada nesta sessão) também calcula frete, uma regra diferente da função de desconto vista no [Exemplo arquitetural](exemplo-arquitetural.md) — o exemplo não revela nada sobre como o frete funciona. Você vai gerar essa função do zero, medindo o próprio resultado contra critérios que só serão revelados depois do primeiro prompt.
+A Vetor (a plataforma fictícia de e-commerce B2B usada nesta sessão) também calcula frete, uma regra diferente da função de desconto vista no [Exemplo arquitetural](exemplo-arquitetural.md) — o exemplo não revela nada sobre como o frete funciona. Você vai criar um projeto .NET Console e gerar essa função dentro dele, medindo o próprio resultado contra critérios que só serão revelados depois do primeiro prompt.
 
 **Seu papel**
 
@@ -64,15 +64,23 @@ Você é o desenvolvedor responsável por essa função antes que ela vá para o
 
 **Insumos disponíveis**
 
-Seu agente de codificação configurado na Sessão 0.
+Seu agente de codificação configurado na Sessão 0, e o SDK do .NET instalado — confirme com `dotnet --version` antes de começar.
 
 **Como conduzir**
 
-**Passo 1 — prompt vago.** Peça ao agente: "Escreva uma função que calcula o frete de um pedido com base no peso total." Guarde a saída completa e literal — não resuma, não edite, não complete de memória o que o agente respondeu.
+**Passo 1 — crie o projeto e peça a função vaga.** Rode `dotnet new console -n VetorFrete` e entre na pasta gerada. Dentro desse projeto, peça ao agente: "Escreva uma função que calcula o frete de um pedido com base no peso total." Guarde o código gerado sem editar: é a partir dele que o passo 2 mede o problema.
 
-**Passo 2 — abra a regra e reescreva o pedido.** Abra o bloco abaixo e reescreva o pedido incorporando a regra inteira — contexto de domínio, assinatura-alvo, faixas de peso, isenção condicional, recargo regional. Guarde a saída completa.
+**Passo 2 — rode os casos de teste contra o código gerado.** Sem abrir o bloco "Regra completa" abaixo, escreva no `Program.cs` chamadas que testem os cinco casos da tabela contra a função do passo 1, e rode `dotnet run`. Alguns casos provavelmente nem têm como ser testados, porque a função só recebe o peso: registre isso também, já que um parâmetro que falta é uma forma de regra perdida tão válida quanto um valor calculado errado.
 
-??? note "Regra completa da Vetor para frete — abra só depois de concluir o passo 1"
+| # | Peso total | Valor de produtos | Item frágil? | Região | Frete esperado |
+|---|---|---|---|---|---|
+| 1 | 3 kg | R$ 200,00 | Não | Sudeste | R$ 15,00 |
+| 2 | 3 kg | R$ 900,00 | Não | Sudeste | R$ 0,00 (isenção) |
+| 3 | 3 kg | R$ 900,00 | Sim | Sudeste | R$ 50,00 (isenção negada, piso aplicado) |
+| 4 | 25 kg | R$ 200,00 | Não | Norte | R$ 91,00 (faixa 20–50 kg + recargo) |
+| 5 | 3 kg | R$ 900,00 | Sim | Norte | R$ 65,00 (piso de frágil + recargo, nessa ordem) |
+
+??? note "Regra completa da Vetor para frete — abra só depois de concluir o passo 2"
     Tabela de frete por peso total do pedido:
 
     | Peso total do pedido | Frete base |
@@ -87,32 +95,24 @@ Seu agente de codificação configurado na Sessão 0.
     - Pedidos com valor de produtos ≥ R$ 800,00 têm frete grátis — **exceto** se o pedido contiver item da categoria "frágil": nesse caso a isenção é negada, e o frete nunca é menor que R$ 50,00, mesmo que a faixa de peso indicasse um valor menor.
     - Entregas para a região Norte recebem recargo de 30% sobre o frete **já calculado** — depois de aplicar a isenção e o piso de item frágil, nunca sobre o frete base isolado.
 
-**Passo 3 — rode os casos de teste.** Rode a tabela abaixo contra as duas saídas.
-
-| # | Peso total | Valor de produtos | Item frágil? | Região | Frete esperado |
-|---|---|---|---|---|---|
-| 1 | 3 kg | R$ 200,00 | Não | Sudeste | R$ 15,00 |
-| 2 | 3 kg | R$ 900,00 | Não | Sudeste | R$ 0,00 (isenção) |
-| 3 | 3 kg | R$ 900,00 | Sim | Sudeste | R$ 50,00 (isenção negada, piso aplicado) |
-| 4 | 25 kg | R$ 200,00 | Não | Norte | R$ 91,00 (faixa 20–50 kg + recargo) |
-| 5 | 3 kg | R$ 900,00 | Sim | Norte | R$ 65,00 (piso de frágil + recargo, nessa ordem) |
+**Passo 3 — implemente a regra completa no mesmo projeto.** Abra o bloco acima e peça ao agente, ainda dentro do projeto `VetorFrete`, para reescrever a função incorporando a regra inteira: contexto de domínio, assinatura-alvo, faixas de peso, isenção condicional, recargo regional. Rode os cinco casos de novo com `dotnet run` e confirme que todos passam.
 
 **Entrega esperada**
 
-As duas saídas (passos 1 e 2), sem edição, e uma tabela marcando quais dos cinco casos cada versão passa. Cole a saída bruta do agente, não uma descrição do que ele fez.
+O código gerado no passo 1, a saída de `dotnet run` do passo 2 (incluindo os casos que não puderam ser testados e por quê), o código reescrito no passo 3, e a saída de `dotnet run` confirmando os cinco casos.
 
 **Critérios de avaliação**
 
 | Critério | Peso | O que evidencia atendimento adequado |
 |---|---:|---|
-| Execução dos dois prompts, na ordem, sem espiar a regra antes do passo 1 | 20% | As duas saídas foram geradas e preservadas, sem edição manual, e a saída do passo 1 não usa nenhum termo da regra que só aparece no bloco oculto (ex.: "frágil", "Norte", "30%") |
-| Verificação dos cinco casos | 40% | Cada caso foi de fato testado contra as duas saídas, não estimado |
+| Execução na ordem, sem abrir a regra antes do passo 2 | 20% | O código do passo 1 não usa nenhum termo da regra que só aparece no bloco oculto (ex.: "frágil", "Norte", "30%"), e o `dotnet run` do passo 2 foi de fato executado antes de abrir a regra |
+| Verificação dos cinco casos contra o código do passo 1 | 40% | Cada caso foi de fato rodado ou registrado como impossível de testar, não estimado |
 | Diagnóstico | 40% | Aponta com precisão qual caso revela a diferença e por que — em especial o caso 5, o único em que as duas exceções se cruzam |
 
-**Como verificar antes de entregar:** confira se o caso 5 (o único em que isenção negada, piso e recargo regional se compõem ao mesmo tempo) foi mesmo testado, não só assumido como correto. Se a sua saída do passo 1 já continha a palavra "frágil" ou tratava a região Norte de forma diferente, você provavelmente abriu a regra antes da hora — refaça o passo 1 puro, porque o dado da comparação ficou contaminado.
+**Como verificar antes de entregar:** confira se o caso 5 (o único em que isenção negada, piso e recargo regional se compõem ao mesmo tempo) foi mesmo testado contra o código final, não só assumido como correto. Se o código do passo 1 já continha a palavra "frágil" ou tratava a região Norte de forma diferente, você provavelmente abriu a regra antes da hora — recrie o projeto do zero, porque o dado da comparação ficou contaminado.
 
 !!! tip "Reforço para o facilitador"
-    Peça a duas ou três pessoas para lerem em voz alta, sem preparar, a saída do passo 1. Quem abriu a regra antes da hora tende a produzir uma função "genérica correta demais" para não ter visto nada — vocabulário de domínio (peso, frágil, região) aparecendo sem que a regra tenha sido mostrada é o sinal de alerta.
+    Peça a duas ou três pessoas para mostrarem a tela com o `dotnet run` do passo 2. Quem abriu a regra antes da hora tende a ter um código "genérico correto demais" para não ter visto nada — vocabulário de domínio (peso, frágil, região) aparecendo no passo 1 é o sinal de alerta.
 
 ### 6. Exercício de aplicação: classifique três tarefas reais do seu backlog
 
