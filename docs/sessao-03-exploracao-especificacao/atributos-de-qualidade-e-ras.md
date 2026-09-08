@@ -64,4 +64,32 @@ Um NFR escrito e nunca mais verificado é uma promessa, não um requisito. O sin
 !!! tip "Aplique agora"
     Pegue o cenário de qualidade que você escreveu no exercício anterior. Descreva a função de aptidão correspondente: que teste automatizado provaria, hoje e daqui a seis meses, que o cenário continua verdadeiro? Quem seria avisado se ele parasse de ser?
 
+## Isso vira código assim
+
+O cenário de qualidade da tabela acima (500 pedidos, 95% abaixo de 100ms) vira uma função de aptidão executável, não uma frase revisada de vez em quando:
+
+```javascript
+// test/desconto.fitness.test.js
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+import { calcularDesconto } from '../src/desconto.js';
+
+const LIMIAR_MS = 100;
+const AMOSTRAS = 500;
+
+test('fitness function: percentil 95 abaixo do limiar', () => {
+  const tempos = [];
+  for (let i = 0; i < AMOSTRAS; i += 1) {
+    const inicio = performance.now();
+    calcularDesconto(12000, 'atacado');
+    tempos.push(performance.now() - inicio);
+  }
+  tempos.sort((a, b) => a - b);
+  const p95 = tempos[Math.floor(AMOSTRAS * 0.95)];
+  assert.ok(p95 < LIMIAR_MS, `p95 foi ${p95}ms, limiar é ${LIMIAR_MS}ms`);
+});
+```
+
+Os três elementos declarados nesta página aparecem, literalmente, em três pontos do arquivo: o **limiar** é a constante `LIMIAR_MS`; o **responsável** não está no código, está na configuração da esteira de integração contínua (`CODEOWNERS` apontando quem revisa falha nesse arquivo); a **reação** é o que o `pipeline.yml` faz quando `node --test` retorna falha — normalmente, bloquear o merge. Um NFR escrito só em prosa não tem nenhum desses três; o teste acima tem os três, e roda de novo a cada mudança no código, não só no dia em que foi escrito.
+
 **Próxima página:** [Perguntas que revelam ambiguidade](elicitacao-e-perguntas.md).

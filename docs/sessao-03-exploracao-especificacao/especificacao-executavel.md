@@ -32,4 +32,29 @@ O teste rápido para detectar esse antipadrão: dê a especificação para algu�
 !!! tip "Aplique agora"
     Escreva, em três linhas, a especificação executável para um pedido vago do seu próprio backlog (ou, na falta de um, "adicione um limite de tentativas de login"): a regra, um caso concreto e o caso de fronteira. Compare com o que a [Oficina de ferramentas](oficina-de-ferramentas.md) desta sessão vai pedir.
 
+## Isso vira código assim
+
+"FR-03: calcularDesconto aplica 10% na faixa de R$ 2.000,01 a R$ 5.000,00" já é um requisito funcional, mas ainda não é executável — falta o caso concreto e o caso de fronteira. A versão executável tem os três elementos desta página:
+
+```text
+FR-03: calcularDesconto aplica 10% na faixa de R$ 2.000,01 a R$ 5.000,00.
+  Caso concreto: valorTotal = 3000, tipoCliente = 'padrao' → desconto = 300.
+  Caso de fronteira: valorTotal = 2000 (limite de baixo, exclusivo) → desconto = 100 (faixa de 5%, não 10%).
+```
+
+Cada linha da especificação executável vira, sem reinterpretação, uma linha do arquivo de teste — a mesma correspondência de um para um que caracteriza uma especificação verificável:
+
+```javascript
+// test/desconto.test.js
+it('da 10% na faixa de 2.000,01 a 5.000,00', () => {
+  assert.equal(calcularDesconto(3000, 'padrao'), 300);       // caso concreto de FR-03
+});
+
+it('nao da 10% em 2.000,00 exato', () => {
+  assert.equal(calcularDesconto(2000, 'padrao'), 100);        // caso de fronteira de FR-03
+});
+```
+
+Se a especificação tivesse ficado só em "FR-03: calcularDesconto aplica 10% na faixa de R$ 2.000,01 a R$ 5.000,00", sem os dois casos, um agente gerando o teste teria que inventar os valores de entrada sozinho — e inventar o valor de fronteira é, estatisticamente, o ponto em que ele mais erra, porque não há informação na frase que diga se R$ 2.000,00 exato entra ou fica de fora.
+
 **Próxima página:** [Exemplo arquitetural](exemplo-arquitetural.md).

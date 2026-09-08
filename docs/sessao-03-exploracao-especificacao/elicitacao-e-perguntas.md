@@ -28,4 +28,30 @@ Nem toda pergunta é boa pergunta. "Você tem certeza que quer isso?" não revel
 !!! tip "Aplique agora"
     Pense na próxima vez que alguém do seu time fizer um pedido vago de mudança. Antes de abrir o agente, escreva as perguntas que você faria — não as respostas, só as perguntas — e veja quantas delas caem numa das cinco categorias acima.
 
+## Isso vira código assim
+
+A segunda pergunta da lista ("o que acontece no valor exato da fronteira?") parece teórica até se olhar o código de faixa por valor:
+
+```javascript
+if (valorTotal > 5000) {
+  percentual = 0.15;
+} else if (valorTotal > 2000) {
+  percentual = 0.1;
+} else if (valorTotal > 500) {
+  percentual = 0.05;
+}
+```
+
+Cada `>` foi uma resposta a essa pergunta, já dada: R$ 500,00 exato fica na faixa de baixo, sem desconto, porque o teste que acompanha a função confirma isso, não a leitura do código:
+
+```javascript
+it('nao da desconto ate 500,00', () => {
+  assert.equal(calcularDesconto(500, 'padrao'), 0);
+});
+```
+
+Se a resposta certa fosse "R$ 500,00 exato já entra na faixa de 5%", o código teria `>=` em vez de `>`, e o teste acima teria que mudar para esperar `25`, não `0` — uma diferença de um caractere no operador, que só a pergunta feita antes evita descobrir depois, com um cliente reclamando de um desconto que faltou por um centavo de diferença.
+
+Quando a fronteira nunca foi perguntada, o agente escolhe `>` ou `>=` pela convenção mais comum na linguagem, não pela regra de negócio real — e as duas opções compilam, passam em qualquer teste que não cubra exatamente o valor de corte, e divergem silenciosamente da intenção de quem pediu.
+
 **Próxima página:** [Especificação executável](especificacao-executavel.md).

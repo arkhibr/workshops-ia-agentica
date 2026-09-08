@@ -32,16 +32,16 @@ Confiança: 🟢 confirmada.
 
 No vocabulário do RuleSpeak, numeradas e com evidência:
 
-**RN-001**: O Desconto de um Pedido **must** ser calculado pela Faixa de Desconto correspondente ao Valor Total.
+**RN-001**: O Desconto de um Pedido **deve** ser calculado pela Faixa de Desconto correspondente ao Valor Total.
 Evidência: `src/desconto.js`, linhas 24-28. Confiança: 🟢 confirmada.
 
-**RN-002**: O Desconto de um Pedido **must not** exceder o Teto de Desconto de R$ 1.000,00.
+**RN-002**: O Desconto de um Pedido **não deve** exceder o Teto de Desconto de R$ 1.000,00.
 Evidência: `src/desconto.js`, `Math.min(..., TETO_DESCONTO)`. Confiança: 🟢 confirmada.
 
-**RN-003**: Um Pedido **may** receber a Faixa de Desconto de 20% **only if** o Cliente for do Tipo atacado e o Valor Total for maior que R$ 10.000,00.
+**RN-003**: Um Pedido **pode** receber a Faixa de Desconto de 20% **somente se** o Cliente for do Tipo atacado e o Valor Total for maior que R$ 10.000,00.
 Evidência: especificação da Sessão 3; sem implementação correspondente ainda. Confiança: 🔴 lacuna.
 
-**RN-004**: Um Pedido de Cliente Recorrente **may** receber 5 pontos percentuais adicionais de desconto **only if** o Pedido for de cliente atacado.
+**RN-004**: Um Pedido de Cliente Recorrente **pode** receber 5 pontos percentuais adicionais de desconto **somente se** o Pedido for de cliente atacado.
 Evidência: especificação da Sessão 3, oficina de ferramentas. Confiança: 🟡 inferida (implementada no exercício, ainda sem revisão de negócio).
 
 ## Tabela de decisão DMN

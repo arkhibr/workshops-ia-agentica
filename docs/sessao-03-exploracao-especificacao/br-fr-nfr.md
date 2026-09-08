@@ -31,4 +31,48 @@ O sintoma mais comum: "o sistema deve aplicar desconto de 20% para pedidos de at
 
 A correção não é burocrática, é prática: regra de negócio ganha frase própria, numerada, antes do requisito funcional que a implementa. Isso não é papelada gratuita — é o que permite ao agente saber que "o teto é R$ 1.000,00" é uma restrição que vale para qualquer faixa nova, não um detalhe da faixa de atacado que ele pode reinterpretar.
 
+## Isso vira código assim
+
+As três categorias não ficam só na especificação: cada uma aponta para uma parte diferente do código e do teste.
+
+```text
+BR-02: O desconto de um pedido nunca ultrapassa R$ 1.000,00,
+       qualquer que seja a faixa aplicada.
+FR-02: calcularDesconto aplica Math.min entre o valor calculado
+       e o teto, antes de retornar.
+NFR-01: calcularDesconto responde em menos de 100ms mesmo com
+        500 chamadas concorrentes.
+```
+
+BR-02 não menciona `Math.min` nem `TETO_DESCONTO` — ela valeria mesmo numa planilha. FR-02 já é a tradução dela em comportamento de sistema, e aparece como uma linha específica do código:
+
+```javascript
+export const TETO_DESCONTO = 1000;
+
+export function calcularDesconto(valorTotal, tipoCliente) {
+  // ...
+  return Math.min(valorTotal * percentual, TETO_DESCONTO); // FR-02
+}
+```
+
+NFR-01 não aparece no corpo da função — aparece num teste separado, porque um requisito não funcional se verifica por medição, não por valor de retorno:
+
+```javascript
+// test/desconto.perf.test.js
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+import { calcularDesconto } from '../src/desconto.js';
+
+test('NFR-01: calcula 500 descontos em menos de 100ms', () => {
+  const inicio = performance.now();
+  for (let i = 0; i < 500; i += 1) {
+    calcularDesconto(12000, 'atacado');
+  }
+  const duracaoMs = performance.now() - inicio;
+  assert.ok(duracaoMs < 100, `levou ${duracaoMs}ms`);
+});
+```
+
+Cada categoria tem seu próprio lugar natural: BR na frase de negócio, FR na linha do código de produção, NFR num teste que mede tempo em vez de comparar valor. Pedir a um agente "o sistema deve ser rápido" nunca produziria o teste acima sozinho — produziria, na melhor das hipóteses, um comentário dizendo que o código "foi otimizado".
+
 **Próxima página:** [Atributos de qualidade e requisitos arquiteturalmente significativos](atributos-de-qualidade-e-ras.md).

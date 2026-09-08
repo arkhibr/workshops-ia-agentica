@@ -30,7 +30,7 @@ A Vetor, plataforma fictícia de e-commerce B2B que atravessa o workshop, chega 
 | # | Página | Bloco | Tempo | Resultado esperado |
 |---|---|---|---|---|
 | 1 | [SBVR: vocabulário e regras](sbvr-vocabulario-e-regras.md) | Teoria | 10 min | Distinguir regra estrutural de operativa e nomear os termos do vocabulário de um domínio |
-| 2 | [RuleSpeak: três formas de sentença](rulespeak-tres-formas.md) | Teoria | 10 min | Reescrever uma regra em "must", "must not" ou "may... only", sem ambiguidade |
+| 2 | [RuleSpeak: três formas de sentença](rulespeak-tres-formas.md) | Teoria | 10 min | Reescrever uma regra em "deve", "não deve" ou "pode ... somente se", sem ambiguidade |
 | 3 | [Tabelas de decisão e DMN](tabelas-de-decisao-dmn.md) | Teoria | 10 min | Montar uma tabela de decisão e escolher a política de acerto certa |
 | 4 | [IA como formalizadora](ia-como-formalizadora.md) | Teoria | 7 min | Usar o agente para formalizar uma regra, e verificar se ele preservou a intenção |
 | 5 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 10 min | Ver a regra de desconto da Vetor virar vocabulário, RuleSpeak e tabela de decisão |

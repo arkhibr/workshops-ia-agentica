@@ -4,7 +4,7 @@
 
 1. **Vocabulário vem antes de regra.** "O desconto do pedido" só é uma frase precisa se "pedido" e "desconto" já são termos definidos, não palavras do dia a dia.
 2. **Regra estrutural define; regra operativa rege conduta.** O teste que separa as duas: alguém pode violá-la, ou ela só descreve como o negócio organiza seus conceitos?
-3. **RuleSpeak tem três formas que contam como regra: "must", "must not" e "may ... only".** "Deveria" não é nenhuma das três — é sugestão sem compromisso, não regra de negócio.
+3. **RuleSpeak tem três formas que contam como regra: "deve", "não deve" e "pode ... somente se".** "Deveria" não é nenhuma das três — é sugestão sem compromisso, não regra de negócio.
 4. **Tabela de decisão torna combinação visível.** Quando duas ou mais condições combinam, prosa esconde a combinação que ninguém tratou; tabela expõe a linha que falta.
 5. **Toda tabela de decisão precisa de uma política de acerto declarada.** Sem ela, alguém decide sozinho — geralmente o agente que implementa, tratando a tabela como First por padrão, sem que ninguém tenha pedido isso.
 6. **Um agente formaliza rápido, e isso não é garantia de fidelidade.** Formalização errada pode ler bem e ainda ter mudado o escopo da regra original, porque não existe teste automatizado que verifique se uma frase captura a intenção de outra.
@@ -23,7 +23,7 @@
 ## Autoavaliação
 
 1. Consigo explicar a diferença entre regra estrutural e operativa com um exemplo próprio, não só com o da Vetor?
-2. Sei reescrever uma regra vaga do meu backlog em "must", "must not" ou "may ... only"?
+2. Sei reescrever uma regra vaga do meu backlog em "deve", "não deve" ou "pode ... somente se"?
 3. Diante de uma tabela de decisão com mais de uma dimensão de condição, sei procurar sobreposição antes de aceitar a implementação?
 4. Consigo, na minha própria formalização do exercício-âncora, dizer exatamente o que a retrotradução confirmou ou expôs como divergente?
 

@@ -18,7 +18,7 @@ if (pedido.status === 'PENDENTE' && pedido.criadoEm < agora - 30 * 60000) {
 
 Parafrasear (ruim): "Se o status do pedido é PENDENTE e a diferença entre agora e criadoEm for maior que 30 minutos, cancela o pedido." Isso só reescreve o código em português, sem ganhar nada.
 
-Traduzir (correto): "**RN-004**: Todo Pedido no estado Pendente **must** ser cancelado se permanecer nesse estado por mais de 30 minutos. Evidência: `processarPedidos`, linha 42. Confiança: 🟢 confirmada."
+Traduzir (correto): "**RN-004**: Todo Pedido no estado Pendente **deve** ser cancelado se permanecer nesse estado por mais de 30 minutos. Evidência: `processarPedidos`, linha 42. Confiança: 🟢 confirmada."
 
 A diferença entre as duas é a mesma de todo este material: a primeira ainda pensa em termos de variável e comparação; a segunda já pensa em termos de Pedido, Estado e prazo — os termos que sobrevivem a uma refatoração do código, porque descrevem o negócio, não a implementação atual dele.
 
@@ -26,7 +26,7 @@ A diferença entre as duas é a mesma de todo este material: a primeira ainda pe
 
 A técnica mais confiável para essa checagem chama-se retrotradução: peça para uma segunda pessoa (ou para o próprio agente, numa conversa nova, sem ver a formalização) reescrever a regra formal de volta em prosa comum, sem consultar o original. Se a retrotradução bater com a intenção de quem escreveu a regra em primeiro lugar, a formalização provavelmente preservou o significado. Se a retrotradução disser outra coisa, a formalização mudou o escopo — silenciosamente.
 
-Um exemplo: a prosa original diz "o desconto de atacado nunca ultrapassa o teto". O agente formaliza como RuleSpeak: "o desconto de um Pedido **must not** exceder R$ 1.000,00". A retrotradução, pedida a quem não viu a prosa original, devolve: "nenhum pedido pode ter desconto maior que R$ 1.000,00" — e aqui já apareceu uma diferença: a prosa original falava só do desconto de *atacado*; a retrotradução generalizou para *qualquer* pedido. O agente ampliou o escopo da regra sem avisar, e só a retrotradução expôs isso.
+Um exemplo: a prosa original diz "o desconto de atacado nunca ultrapassa o teto". O agente formaliza como RuleSpeak: "o desconto de um Pedido **não deve** exceder R$ 1.000,00". A retrotradução, pedida a quem não viu a prosa original, devolve: "nenhum pedido pode ter desconto maior que R$ 1.000,00" — e aqui já apareceu uma diferença: a prosa original falava só do desconto de *atacado*; a retrotradução generalizou para *qualquer* pedido. O agente ampliou o escopo da regra sem avisar, e só a retrotradução expôs isso.
 
 !!! question "Antes de continuar"
     Pense numa vez em que você aceitou uma reformulação do agente (de código, de regra, de especificação) sem checar se o significado continuava o mesmo. Como você teria percebido, se tivesse percebido, que algo mudou?

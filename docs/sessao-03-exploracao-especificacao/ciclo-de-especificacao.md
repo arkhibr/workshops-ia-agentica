@@ -29,4 +29,53 @@ Nem todo pedido precisa das quatro etapas por extenso. Um ajuste de uma linha, r
 !!! tip "Aplique agora"
     Pegue um pedido real que está no seu backlog. Você consegue nomear pelo menos uma pergunta cuja resposta mudaria o código gerado? Se não conseguir nenhuma, o ciclo completo é exagero para esse caso — assistência de codificação direta já resolve.
 
+## Isso vira código assim
+
+"Ative o desconto de atacado" chega como uma frase. O código que existe hoje na função de desconto não tem nenhuma noção de tipo de cliente:
+
+```javascript
+// src/desconto.js — antes do ciclo
+export function calcularDesconto(valorTotal, tipoCliente) {
+  let percentual = 0;
+  if (valorTotal > 5000) {
+    percentual = 0.15;
+  } else if (valorTotal > 2000) {
+    percentual = 0.1;
+  } else if (valorTotal > 500) {
+    percentual = 0.05;
+  }
+  return Math.min(valorTotal * percentual, TETO_DESCONTO);
+}
+```
+
+A função já recebe `tipoCliente` como parâmetro e nunca o usa — exatamente o tipo de pista que a etapa **explorar** procura antes de perguntar qualquer coisa. As etapas seguintes produzem, nessa ordem: a pergunta ("a partir de que valor a faixa de atacado começa, e ela substitui ou soma à faixa por volume?"), a proposta curta ("atacado acima de R$ 10.000,00 recebe 20%, em vez da faixa por volume"), e só então a especificação com regra numerada:
+
+```text
+BR-01: Pedido de cliente atacado com valor acima de R$ 10.000,00
+       recebe a faixa de 20%, substituindo a faixa por volume.
+FR-01: calcularDesconto retorna 20% do valor total quando
+       tipoCliente === 'atacado' e valorTotal > 10000.
+```
+
+Só com BR-01 e FR-01 escritos o código muda de forma segura:
+
+```javascript
+export function calcularDesconto(valorTotal, tipoCliente) {
+  if (tipoCliente === 'atacado' && valorTotal > 10000) {
+    return Math.min(valorTotal * 0.2, TETO_DESCONTO);
+  }
+  let percentual = 0;
+  if (valorTotal > 5000) {
+    percentual = 0.15;
+  } else if (valorTotal > 2000) {
+    percentual = 0.1;
+  } else if (valorTotal > 500) {
+    percentual = 0.05;
+  }
+  return Math.min(valorTotal * percentual, TETO_DESCONTO);
+}
+```
+
+Sem o ciclo, um agente vendo só "ative o desconto de atacado" tinha três leituras plausíveis para o `if` acima: substituir a faixa, somar a ela, ou aplicar só acima de outro valor de corte. A regra numerada elimina as três dúvidas de uma vez, antes da primeira linha de código mudar.
+
 **Próxima página:** [BR, FR e NFR](br-fr-nfr.md).

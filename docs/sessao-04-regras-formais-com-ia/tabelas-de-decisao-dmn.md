@@ -4,7 +4,7 @@ Uma regra isolada em RuleSpeak funciona bem quando existe uma condição por vez
 
 ## Por que mais de uma dimensão de condição pede tabela
 
-Um sistema de desconto que combina faixa de valor (quatro possibilidades) com tipo de cliente (duas possibilidades, cada uma com sua própria regra adicional) já tem oito combinações possíveis. Escrever isso em frases soltas de RuleSpeak ("must" para cada combinação) produz oito ou mais sentenças, e não fica óbvio, só de ler, se alguma combinação ficou de fora. Uma tabela de decisão lista as mesmas oito combinações em linhas, com as condições nas colunas de entrada e o resultado na coluna de saída: qualquer combinação ausente aparece como uma linha que falta, não como um silêncio.
+Um sistema de desconto que combina faixa de valor (quatro possibilidades) com tipo de cliente (duas possibilidades, cada uma com sua própria regra adicional) já tem oito combinações possíveis. Escrever isso em frases soltas de RuleSpeak ("deve" para cada combinação) produz oito ou mais sentenças, e não fica óbvio, só de ler, se alguma combinação ficou de fora. Uma tabela de decisão lista as mesmas oito combinações em linhas, com as condições nas colunas de entrada e o resultado na coluna de saída: qualquer combinação ausente aparece como uma linha que falta, não como um silêncio.
 
 [DMN](../referencia/bibliografia.md#decision-model-and-notation-dmn) (*Decision Model and Notation*), padrão da OMG, formaliza essa tabela. Cada linha combina valores das condições de entrada e determina uma saída; a notação inteira só funciona se ficar claro o que fazer quando mais de uma linha poderia se aplicar ao mesmo caso — e é aí que entra a política de acerto.
 

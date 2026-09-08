@@ -25,7 +25,7 @@ Nomeie as três formas de sentença do RuleSpeak que contam como regra de negóc
 <details>
 <summary>Ver resposta</summary>
 
-"Must" (exigência), "must not" (proibição) e "may ... only" (permissão condicional).
+"Deve" (exigência), "não deve" (proibição) e "pode ... somente se" (permissão condicional).
 </details>
 
 ## Compreender
@@ -95,7 +95,7 @@ A formalização do passo 1, a retrotradução do passo 2, a comparação do pas
 
 | Critério | Peso | O que evidencia atendimento adequado |
 |---|---:|---|
-| Formalização completa | 30% | Vocabulário com sinônimos, sentença RuleSpeak na forma correta ("must", "must not" ou "may ... only"), numeração `RN-`/`RD-` com evidência e confiança, e linha de tabela, todos presentes |
+| Formalização completa | 30% | Vocabulário com sinônimos, sentença RuleSpeak na forma correta ("deve", "não deve" ou "pode ... somente se"), numeração `RN-`/`RD-` com evidência e confiança, e linha de tabela, todos presentes |
 | Retrotradução numa conversa separada | 30% | A retrotradução foi pedida sem o contexto original, e a comparação aponta com precisão o que preservou ou mudou |
 | Política de acerto justificada | 40% | A política escolhida resolve o caso de sobreposição do passo 4 com um cálculo numérico explícito, não só uma escolha nomeada |
 
@@ -105,7 +105,7 @@ A formalização do passo 1, a retrotradução do passo 2, a comparação do pas
 
 ### 7. Duas regras, duas formas
 
-Compare a sentença RuleSpeak da regra de cliente recorrente (exercício 6) com a da regra de lançamento (oficina). As duas usam a mesma forma ("must", "must not" ou "may ... only")? Se usam formas diferentes, o que na regra de negócio de cada uma explica a escolha?
+Compare a sentença RuleSpeak da regra de cliente recorrente (exercício 6) com a da regra de lançamento (oficina). As duas usam a mesma forma ("deve", "não deve" ou "pode ... somente se")? Se usam formas diferentes, o que na regra de negócio de cada uma explica a escolha?
 
 ## Avaliar
 
