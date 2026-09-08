@@ -18,6 +18,8 @@ Três elementos, para cada requisito:
 
 Uma especificação sem exemplo concreto deixa a interpretação do valor de fronteira para quem lê depois — e "quem lê depois", quando o pedido vai para um agente, é o próprio agente, decidindo sozinho.
 
+Para um requisito não funcional, o "caso concreto" não é um par entrada/saída simples — é o [cenário de qualidade completo](atributos-de-qualidade-e-ras.md#cenario-de-qualidade-o-template-que-torna-um-nfr-testavel): fonte, estímulo, ambiente, artefato, resposta e medida. Um NFR sem esses seis elementos tem o mesmo problema de um FR sem caso concreto: parece uma especificação, mas não dá para saber se foi cumprido.
+
 !!! question "Antes de continuar"
     Pegue a última especificação que você escreveu. Para o requisito mais importante dela, existe um valor de entrada e um valor de saída esperado escritos, ou só uma descrição do comportamento?
 

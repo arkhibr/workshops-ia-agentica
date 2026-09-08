@@ -66,6 +66,7 @@ nav:
           - Visão geral: sessao-03-exploracao-especificacao/index.md
           - O ciclo de especificação: sessao-03-exploracao-especificacao/ciclo-de-especificacao.md
           - BR, FR e NFR: sessao-03-exploracao-especificacao/br-fr-nfr.md
+          - Atributos de qualidade e RAS: sessao-03-exploracao-especificacao/atributos-de-qualidade-e-ras.md
           - Perguntas que revelam ambiguidade: sessao-03-exploracao-especificacao/elicitacao-e-perguntas.md
           - Especificação executável: sessao-03-exploracao-especificacao/especificacao-executavel.md
           - Exemplo arquitetural: sessao-03-exploracao-especificacao/exemplo-arquitetural.md

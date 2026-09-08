@@ -29,6 +29,26 @@ A escolha entre "must", "must not" e "may... only" não é estilística: cada um
 
 Um efeito prático: regra escrita em RuleSpeak vira caso de teste quase sem tradução. "Must not" sugere um teste que prova a proibição (um caso que tentaria violar e deveria falhar); "may ... only" sugere dois testes, um dentro da condição e um fora dela — exatamente os casos de fronteira que a Sessão 3 tratou como o ponto mais caro de esquecer.
 
+## Numeração, evidência e confiança
+
+Uma regra solta, sem número, se perde entre a especificação e o código: ninguém consegue apontar, seis meses depois, se ela ainda está implementada, se mudou, ou se nunca existiu de fato. Três disciplinas resolvem isso, e valem tanto para regra operativa quanto para as regras de classificação e derivação da página anterior:
+
+- **Numeração por tipo.** Regras operativas (obrigação, proibição, permissão) recebem prefixo `RN` (regra de negócio comportamental); regras de classificação e derivação recebem `RD` (regra definitiva). `RN-001`, `RN-002`, `RD-001` — sequencial, sem reaproveitar número de regra removida.
+- **Evidência obrigatória.** Toda regra formalizada a partir de código existente cita onde mora a evidência: arquivo, função, linha. Uma regra sem evidência não é regra confirmada, é hipótese sobre o que o sistema faz.
+- **Confiança explícita.** 🟢 confirmada (o código ou o time confirma exatamente essa regra); 🟡 inferida (parece ser a regra, mas ninguém do domínio validou ainda); 🔴 lacuna (o domínio espera essa regra, mas não há evidência dela em lugar nenhum). A retrotradução da próxima página é exatamente a técnica que promove uma regra de 🟡 para 🟢, ou revela que ela precisa virar 🔴.
+
+Formato de uma regra completa:
+
+```text
+RN-003: Um Pedido may receber o adicional de recorrência only if
+        o Cliente tiver mais de 5 pedidos aprovados.
+Evidência: src/desconto.js, função calcularDesconto, ainda não implementada
+Confiança: 🔴 lacuna (regra existe na especificação da Sessão 3, sem código correspondente)
+```
+
+!!! question "Antes de continuar"
+    De todas as regras que você já escreveu nesta sessão, quantas você marcaria 🟢, quantas 🟡 e quantas 🔴? Se a maioria for 🟡, o que falta para promovê-las?
+
 ## O antipadrão do "deveria"
 
 "O sistema deveria dar desconto para cliente frequente" não é regra de negócio no vocabulário do RuleSpeak: "deveria" não é "must", não é "must not", não é "may ... only". É uma sugestão sem compromisso, e cada pessoa que a lê decide sozinha se ela vale sempre, às vezes, ou nunca. O RuleSpeak não inventou uma forma para "deveria" de propósito: se uma regra de negócio existe de verdade, ela é exigência, proibição ou permissão condicional — não existe meio-termo declarativo. Quando alguém escreve "deveria", a régua é perguntar: isso é "must", é "may ... only", ou na verdade é só uma preferência que ainda não virou regra?

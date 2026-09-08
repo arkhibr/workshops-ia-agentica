@@ -19,7 +19,7 @@ Esta oficina usa o agente de codificação já configurado pelo participante (Cl
 
 **Antes de começar: por que a ordem importa.** O passo 3 só mede alguma coisa se o passo 2 acontecer numa conversa que não viu o passo 1. Se o mesmo chat que formalizou também retrotraduzir, ele tende a repetir a própria formalização em vez de reconstruir a partir dela — a verificação perde o sentido.
 
-**Passo 1 — formalize.** A regra de lançamento da Sessão 3, em prosa: "primeiro pedido de qualquer cliente (padrão ou atacado), se o valor for menor que R$ 1.000,00, recebe 3 pontos percentuais adicionais de desconto, somados à faixa normal." Peça ao agente para formalizar essa regra em três partes: vocabulário SBVR mínimo (os termos que a regra usa), uma sentença RuleSpeak ("must", "must not" ou "may ... only"), e uma linha de tabela de decisão. Guarde a resposta completa.
+**Passo 1 — formalize.** A regra de lançamento da Sessão 3, em prosa: "primeiro pedido de qualquer cliente (padrão ou atacado), se o valor for menor que R$ 1.000,00, recebe 3 pontos percentuais adicionais de desconto, somados à faixa normal." Peça ao agente para formalizar essa regra em quatro partes: vocabulário SBVR mínimo com coluna de sinônimos a evitar; classificação da regra numa das cinco formas (obrigação "must", proibição "must not", permissão condicional "may ... only", classificação ou derivação); numeração `RN-` ou `RD-` conforme o tipo; e uma linha de tabela de decisão. Peça também que cada regra venha com evidência (de onde ela vem: a especificação da Sessão 3, já que ainda não há código) e confiança (🟢/🟡/🔴). Guarde a resposta completa.
 
 **Passo 2 — retrotraduza, numa conversa nova.** Abra uma conversa nova com o agente, sem colar o resultado do passo 1, e cole só a sentença RuleSpeak e a linha de tabela que ele gerou. Peça: "reescreva esta regra formal em prosa comum, como se explicasse para alguém que nunca viu a versão técnica."
 
@@ -45,7 +45,7 @@ Esta oficina usa o agente de codificação já configurado pelo participante (Cl
 
 Três itens:
 
-1. A formalização do passo 1 (vocabulário, sentença RuleSpeak, linha de tabela) e a retrotradução do passo 2, lado a lado.
+1. A formalização do passo 1 (vocabulário com sinônimos, classificação da regra, numeração RN-/RD- com evidência e confiança, linha de tabela) e a retrotradução do passo 2, lado a lado.
 2. A comparação do passo 3: qual elemento, se algum, mudou de escopo.
 3. A lista de combinações sobrepostas do Experimento B e a política de acerto escolhida, com o motivo.
 

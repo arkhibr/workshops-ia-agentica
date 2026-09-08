@@ -39,7 +39,17 @@ Funcional (FR); não funcional (NFR).
 
 ## Compreender
 
-### 3. Regra disfarçada de requisito funcional
+### 3. RAS ou requisito local?
+
+"O relatório de vendas mostra valores com duas casas decimais" e "o cálculo de desconto responde em menos de 100ms sob pico de 500 pedidos simultâneos" são dois requisitos não funcionais. Qual dos dois é um requisito arquiteturalmente significativo (RAS), e qual dos quatro critérios da página [Atributos de qualidade e RAS](atributos-de-qualidade-e-ras.md#requisito-arquiteturalmente-significativo-ras) o torna significativo?
+
+<details>
+<summary>Ver resposta</summary>
+
+O segundo. Ele atravessa mais de um componente (a função de cálculo e quem a chama sob carga), protege um atributo de qualidade prioritário (desempenho no checkout) e pode forçar decisão estrutural (cache, concorrência). O primeiro fica contido numa função de formatação, sem nenhum desses efeitos.
+</details>
+
+### 4. Regra disfarçada de requisito funcional
 
 Um colega escreve: "o sistema deve aplicar desconto de 20% para atacado acima de R$ 10.000,00, respeitando o teto de R$ 1.000,00." Explique por que essa frase é um antipadrão, mesmo estando correta.
 
@@ -49,7 +59,7 @@ Um colega escreve: "o sistema deve aplicar desconto de 20% para atacado acima de
 Ela mistura três regras de negócio (a existência da faixa, o valor de corte, a prevalência do teto) dentro de um requisito funcional, sem que nenhuma tenha linha própria. Se o valor de corte mudar, alguém precisa reabrir o requisito funcional inteiro para encontrar o número, em vez de mudar uma regra numerada.
 </details>
 
-### 4. Especificação verificável ou não
+### 5. Especificação verificável ou não
 
 "O sistema deve calcular o desconto de forma justa para todos os clientes." Essa frase é uma especificação executável? Justifique pelo critério da página [Especificação executável](especificacao-executavel.md).
 
@@ -61,7 +71,7 @@ Não. Não existe caso de teste que prove ou refute "justa" — não há valor d
 
 ## Aplicar
 
-### 5. Exercício-âncora: especifique, implemente, verifique
+### 6. Exercício-âncora: especifique, implemente, verifique
 
 **O que é:** o mesmo ciclo do Experimento A da oficina, aplicado a um pedido novo, sem o apoio das respostas dadas — desta vez você conduz o ciclo inteiro sozinho.
 
@@ -120,19 +130,23 @@ As perguntas do passo 1, a especificação do passo 3, e o resultado de `node --
 
 ## Analisar
 
-### 6. Comparando as duas especificações
+### 7. Comparando as duas especificações
 
-Compare a especificação que você escreveu no exercício 5 com a do Experimento A da oficina (desconto de cliente recorrente). As duas regras têm a mesma forma de composição com a faixa normal (soma de pontos percentuais) e o mesmo comportamento diante do teto? Aponte uma diferença estrutural entre elas, além dos números.
+Compare a especificação que você escreveu no exercício 6 com a do Experimento A da oficina (desconto de cliente recorrente). As duas regras têm a mesma forma de composição com a faixa normal (soma de pontos percentuais) e o mesmo comportamento diante do teto? Aponte uma diferença estrutural entre elas, além dos números.
+
+### 8. O que a entrevista socrática expôs
+
+Releia o resumo da entrevista socrática do Experimento C da oficina. Escolha o defeito que o agente encontrou e que mais mudou a especificação original. Esse defeito seria visível numa revisão manual rápida, ou só apareceu porque alguém foi obrigado a responder uma pergunta específica sobre ele? O que isso diz sobre a diferença entre revisar uma especificação e ser entrevistado sobre ela?
 
 ## Avaliar
 
-### 7. O incidente do pedido acumulado
+### 9. O incidente do pedido acumulado
 
 Releia o [Estudo de caso](estudo-de-caso.md). Em até 100 palavras, defenda uma posição: toda especificação de regra de negócio envolvendo limite de valor deveria, por padrão, incluir a pergunta "por pedido ou por período acumulado?" Ou isso sobrecarregaria especificações que nunca precisariam dessa distinção? Justifique com um critério, não com preferência pessoal.
 
 ## Criar
 
-### 8. Especifique a regra que falta
+### 10. Especifique a regra que falta
 
 A Vetor quer que clientes atacado com mais de 5 pedidos aprovados **e** que sejam também o primeiro pedido do mês corrente recebam os dois bônus somados (o de cliente recorrente e o de lançamento), mas só até um limite de 25 pontos percentuais totais, mesmo que a soma das faixas ultrapasse isso. Escreva a especificação completa (BR e FR), incluindo pelo menos um caso de teste que force a comparação entre o limite de 25 pontos percentuais e o teto de R$ 1.000,00 — os dois numa mesma composição.
 

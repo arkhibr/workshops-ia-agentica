@@ -31,4 +31,4 @@ O sintoma mais comum: "o sistema deve aplicar desconto de 20% para pedidos de at
 
 A correção não é burocrática, é prática: regra de negócio ganha frase própria, numerada, antes do requisito funcional que a implementa. Isso não é papelada gratuita — é o que permite ao agente saber que "o teto é R$ 1.000,00" é uma restrição que vale para qualquer faixa nova, não um detalhe da faixa de atacado que ele pode reinterpretar.
 
-**Próxima página:** [Perguntas que revelam ambiguidade](elicitacao-e-perguntas.md).
+**Próxima página:** [Atributos de qualidade e requisitos arquiteturalmente significativos](atributos-de-qualidade-e-ras.md).

@@ -6,6 +6,22 @@ Um agente de codificação é rápido para transformar prosa em vocabulário SBV
 
 Nas sessões anteriores, o agente recebia uma especificação e produzia código. Aqui a direção se inverte: o agente recebe prosa ambígua ("o desconto de atacado nunca ultrapassa o teto") e devolve uma regra formal (SBVR, RuleSpeak ou uma linha de tabela DMN). O risco muda de natureza. Um código errado costuma falhar num teste. Uma formalização errada pode *parecer* certa (ler bem, usar os termos certos) e ainda assim ter mudado o escopo da regra original sem que ninguém notasse, porque não existe teste automatizado que verifique se uma frase captura a intenção de outra frase.
 
+## Formalizando a partir do código, não só da prosa
+
+A prosa ambígua não é a única entrada possível: o caso mais comum na prática é código legado, sem especificação nenhuma, em que a regra só existe dentro de um `if`. Formalizar a partir de código pede uma disciplina que formalizar a partir de prosa não exige: **não parafrasear a estrutura do código, traduzir a lógica para o vocabulário do domínio**. Parafrasear repete a variável; traduzir explica a decisão de negócio que a variável representa.
+
+```text
+if (pedido.status === 'PENDENTE' && pedido.criadoEm < agora - 30 * 60000) {
+  cancelarPedido(pedido);
+}
+```
+
+Parafrasear (ruim): "Se o status do pedido é PENDENTE e a diferença entre agora e criadoEm for maior que 30 minutos, cancela o pedido." Isso só reescreve o código em português, sem ganhar nada.
+
+Traduzir (correto): "**RN-004**: Todo Pedido no estado Pendente **must** ser cancelado se permanecer nesse estado por mais de 30 minutos. Evidência: `processarPedidos`, linha 42. Confiança: 🟢 confirmada."
+
+A diferença entre as duas é a mesma de todo este material: a primeira ainda pensa em termos de variável e comparação; a segunda já pensa em termos de Pedido, Estado e prazo — os termos que sobrevivem a uma refatoração do código, porque descrevem o negócio, não a implementação atual dele.
+
 ## Verificação por retrotradução
 
 A técnica mais confiável para essa checagem chama-se retrotradução: peça para uma segunda pessoa (ou para o próprio agente, numa conversa nova, sem ver a formalização) reescrever a regra formal de volta em prosa comum, sem consultar o original. Se a retrotradução bater com a intenção de quem escreveu a regra em primeiro lugar, a formalização provavelmente preservou o significado. Se a retrotradução disser outra coisa, a formalização mudou o escopo — silenciosamente.

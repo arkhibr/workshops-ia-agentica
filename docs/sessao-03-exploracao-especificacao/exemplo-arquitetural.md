@@ -24,8 +24,9 @@ Aplicando o repertório da página [Perguntas que revelam ambiguidade](elicitaca
 | O pedido de exatamente R$ 10.000,00 entra na faixa nova ou na anterior? | Fica na faixa anterior (10% ou 15%, conforme o valor); "acima de" é estrito |
 | O teto de R$ 1.000,00 continua valendo para a faixa de atacado? | Sim, o teto vale para qualquer faixa, sempre valeu |
 | O que acontece se `tipoCliente` vier diferente de `'padrao'` ou `'atacado'`? | Já lança erro hoje; continua assim |
+| A faixa de atacado pode ficar mais lenta que as outras, já que envolve mais um cálculo? | Não — o checkout roda sob pico de tráfego, precisa continuar respondendo rápido para todo tipo de cliente |
 
-Quatro perguntas, quatro respostas — e cada resposta já é uma regra de negócio que precisa entrar na especificação.
+Cinco perguntas, cinco respostas — e cada resposta já é uma regra de negócio ou de qualidade que precisa entrar na especificação.
 
 ## Propor
 
@@ -45,6 +46,19 @@ Com a proposta validada, a especificação sai no padrão BR/FR/NFR:
 
 **FR-02.** Para `tipoCliente` igual a `'atacado'` e `valorTotal` igual ou menor que 10000, o comportamento permanece o das faixas já existentes.
 
+**NFR-01**, como cenário de qualidade completo:
+
+| Elemento | Valor |
+|---|---|
+| Fonte | O checkout da Vetor, sob pico de tráfego |
+| Estímulo | 500 pedidos de cliente atacado chegam no mesmo segundo |
+| Ambiente | Operação normal, sem degradação prévia |
+| Artefato | `calcularDesconto` |
+| Resposta | Calcula o desconto de cada pedido, incluindo a faixa nova, sem enfileirar |
+| Medida | 95% das chamadas respondem em menos de 100ms |
+
+**Função de aptidão correspondente:** um teste de carga na esteira de integração contínua, chamando `calcularDesconto` com `tipoCliente = 'atacado'` e `valorTotal` acima de R$ 10.000,00, com limiar de 100ms no percentil 95, responsável (o time que mantém `desconto.js`) e reação declarada (bloquear o deploy se o limiar for ultrapassado).
+
 **Casos de teste que a especificação precisa cobrir:**
 
 | # | Valor do pedido | Tipo de cliente | Desconto esperado |
@@ -55,6 +69,6 @@ Com a proposta validada, a especificação sai no padrão BR/FR/NFR:
 
 ## Leitura do exemplo
 
-Nenhuma dessas quatro linhas de regra veio de "pensar bem" sobre o problema: vieram de perguntar e registrar a resposta antes de escrever código. Se o time tivesse pedido direto ao agente "ative o desconto de atacado", ele teria adivinhado um valor de corte, uma regra de arredondamento na fronteira e uma posição sobre o teto — as mesmas três decisões que aqui vieram de quem realmente sabia a resposta.
+Nenhuma dessas cinco linhas de regra veio de "pensar bem" sobre o problema: vieram de perguntar e registrar a resposta antes de escrever código. Se o time tivesse pedido direto ao agente "ative o desconto de atacado", ele teria adivinhado um valor de corte, uma regra de arredondamento na fronteira, uma posição sobre o teto e nenhuma exigência de desempenho sob carga — quatro decisões que aqui vieram de quem realmente sabia a resposta, a última delas só porque alguém perguntou por um atributo de qualidade em vez de assumir que "rápido o bastante" já estava implícito.
 
 **Próxima página:** [Estudo de caso](estudo-de-caso.md).

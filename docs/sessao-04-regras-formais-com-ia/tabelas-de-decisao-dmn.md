@@ -8,6 +8,8 @@ Um sistema de desconto que combina faixa de valor (quatro possibilidades) com ti
 
 [DMN](../referencia/bibliografia.md#decision-model-and-notation-dmn) (*Decision Model and Notation*), padrão da OMG, formaliza essa tabela. Cada linha combina valores das condições de entrada e determina uma saída; a notação inteira só funciona se ficar claro o que fazer quando mais de uma linha poderia se aplicar ao mesmo caso — e é aí que entra a política de acerto.
 
+A régua prática: quando uma regra combina **três ou mais condições**, prosa deixa de escalar e tabela vira a forma mais segura de escrever a regra. Duas condições ainda cabem numa frase RuleSpeak razoável; a terceira condição é onde a maioria dos times desiste de escrever por extenso e passa a confiar na memória de quem já mexeu naquele código antes.
+
 ## Política de acerto: o que fazer quando duas linhas combinam
 
 DMN define sete políticas de acerto (*hit policies*). As três que aparecem com mais frequência em regra de negócio:
@@ -42,6 +44,19 @@ Uma tabela de decisão para faixa de valor combinada com tipo de cliente:
 | > R$ 10.000,00 | padrão | 15% |
 
 As faixas de valor não se sobrepõem entre si, mas as duas últimas linhas mostram por que "tipo de cliente" precisa ser coluna, não só a faixa de valor: sem ela, um pedido de R$ 12.000,00 combinaria com as duas últimas linhas ao mesmo tempo. Com a coluna, a política **Unique** se sustenta — nenhuma combinação real de valor e tipo aparece em mais de uma linha.
+
+## Marcando a combinação impossível
+
+Quando uma terceira condição entra (o adicional de cliente recorrente da Sessão 3, que só se aplica a cliente atacado), a tabela precisa de uma linha para toda combinação — inclusive para as que o domínio proíbe de existir:
+
+| Tipo de Cliente | Cliente Recorrente? | Valor do Pedido | Desconto adicional |
+|---|---|---|---|
+| atacado | sim | qualquer | +5 pontos percentuais |
+| atacado | não | qualquer | 0 |
+| padrão | sim | qualquer | — |
+| padrão | não | qualquer | 0 |
+
+A linha "padrão + recorrente" recebe "—", não "0%": zero seria uma resposta válida sobre o valor do desconto; "—" declara que essa combinação não deveria existir no domínio, porque o adicional de recorrência nunca se aplicou a cliente padrão. Se essa combinação aparecer em produção (um cliente padrão marcado como recorrente), o erro não está na tabela, está em outro lugar do sistema que deixou o dado chegar inconsistente até aqui. Distinguir "resultado zero" de "combinação que não deveria acontecer" é o que faz a tabela também funcionar como detector de dado corrompido, não só como calculadora de desconto.
 
 ## O antipadrão da tabela sem política declarada
 

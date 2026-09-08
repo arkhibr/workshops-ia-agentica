@@ -11,6 +11,7 @@ Referências que embasam o conteúdo metodológico do workshop, em ordem alfabé
 - [Anthropic — Introducing the Model Context Protocol (2024)](#anthropic-introducing-the-model-context-protocol-2024)
 - [Anthropic — Steering Claude Code (2026)](#anthropic-steering-claude-code-2026)
 - [Anthropic — Writing Effective Tools for Agents (2025)](#anthropic-writing-effective-tools-for-agents-2025)
+- [Bass, Clements e Kazman — Software Architecture in Practice (2021)](#bass-clements-e-kazman-software-architecture-in-practice-2021)
 - [Beck — Test-Driven Development: By Example (2002)](#beck-test-driven-development-by-example-2002)
 - [Boehm — Software Engineering Economics (1981)](#boehm-software-engineering-economics-1981)
 - [Brown et al. — Language Models are Few-Shot Learners (2020)](#brown-et-al-language-models-are-few-shot-learners-2020)
@@ -19,6 +20,7 @@ Referências que embasam o conteúdo metodológico do workshop, em ordem alfabé
 - [Decision Model and Notation (DMN)](#decision-model-and-notation-dmn)
 - [Delimarsky — Spec-Driven Development with AI (2025)](#delimarsky-spec-driven-development-with-ai-2025)
 - [fast-check e FsCheck — Property-Based Testing](#fast-check-e-fscheck-property-based-testing)
+- [Ford, Parsons, Kua e Sadalage — Building Evolutionary Architectures (2023)](#ford-parsons-kua-e-sadalage-building-evolutionary-architectures-2023)
 - [GitHub Spec Kit](#github-spec-kit)
 - [ISO/IEC/IEEE 29148:2018](#isoiecieee-291482018)
 - [Jimenez et al. — SWE-bench (2024)](#jimenez-et-al-swe-bench-2024)
@@ -116,6 +118,16 @@ Critério verificável para catálogo de ferramentas: se uma pessoa da engenhari
 
 ---
 
+### Bass, Clements e Kazman — Software Architecture in Practice (2021)
+
+**BASS, Len; CLEMENTS, Paul; KAZMAN, Rick. *Software Architecture in Practice*, 4ª ed.** Addison-Wesley (SEI Series in Software Engineering), 2021.
+
+Referência canônica para o vocabulário de requisito arquiteturalmente significativo. Define o cenário de qualidade (*quality attribute scenario*) em seis elementos (fonte do estímulo, estímulo, ambiente, artefato, resposta, medida de resposta), o template que torna um requisito não funcional testável em vez de um adjetivo. Define tática arquitetural como "uma decisão que afeta o controle de uma ou mais respostas de atributo de qualidade", distinta de um padrão arquitetural por não incorporar, sozinha, os *trade-offs* entre características concorrentes.
+
+→ Sessão 3.
+
+---
+
 ### Beck — Test-Driven Development: By Example (2002)
 
 **BECK, Kent. *Test-Driven Development: By Example*. Addison-Wesley, 2002.**
@@ -194,6 +206,16 @@ Post oficial de lançamento do GitHub Spec Kit — define o problema do vibe cod
 
 ---
 
+### Ford, Parsons, Kua e Sadalage — Building Evolutionary Architectures (2023)
+
+**FORD, Neal; PARSONS, Rebecca; KUA, Patrick; SADALAGE, Pramod. *Building Evolutionary Architectures: Automated Software Governance*, 2ª ed.** O'Reilly Media, 2023.
+
+Origem do termo função de aptidão arquitetural (*architectural fitness function*): "uma função de aptidão arquitetural fornece uma avaliação objetiva de integridade de alguma característica arquitetural." A tríade usada neste workshop para documentar uma função de aptidão (limiar, responsável, reação à falha) é uma adaptação pedagógica para fins de verificação prática, não uma citação literal do livro; o texto original classifica funções de aptidão por outros eixos (atômica ou holística, disparada ou contínua, estática ou dinâmica, entre outros).
+
+→ Sessão 3.
+
+---
+
 ### GitHub Spec Kit
 
 **GitHub Spec Kit.** Implementação de referência open source do Spec-Driven Development (SDD) — mais de 90 mil estrelas no GitHub. Define os quatro artefatos canônicos (`constitution.md`, `spec.md`, `plan.md`, `tasks.md`) e os comandos `/specify`, `/plan`, `/tasks`, compatíveis com Claude Code, GitHub Copilot e Cursor. O modelo de especificação (`spec-template.md`) numera cada requisito funcional com prefixo `FR-001`, `FR-002` etc., em frases no padrão "o sistema deve..."; não reserva uma seção separada para requisito não funcional.
@@ -254,7 +276,7 @@ Formulação dos três paradigmas coexistentes: Software 1.0 (código explícito
 
 **MENDES, Marco. "Controle e Autonomia".** *Arquitetura de Soluções com IA Generativa*, Módulo 4 — Agentes. <https://aulas-marco.github.io/arquitetura-solucoes-ia-generativa/modulo-4-agentes/controle-e-autonomia/>
 
-Material da disciplina de pós-graduação que fundamenta a distinção entre workflow e agente usada nesta sessão. Define quatro formas de controle operacional — chatbot, copiloto, fluxo de trabalho determinístico e agente — distinguidas por uma única pergunta: quem escolhe a próxima transição. A categorização separa controle de qualidade ou maturidade: um fluxo de trabalho bem desenhado pode superar um agente mal supervisionado, e um copiloto que chama ferramenta de leitura continua copiloto, não agente. Cataloga também os critérios técnicos que justificam a escolha de um agente: sequências de comprimento variável, feedback de ferramenta verificável, erros conteníveis, conclusão observável e autoridade/orçamento delimitados.
+Material da disciplina de pós-graduação que fundamenta a distinção entre workflow e agente usada nesta sessão. Define quatro formas de controle operacional (chatbot, copiloto, fluxo de trabalho determinístico e agente), distinguidas por uma única pergunta: quem escolhe a próxima transição. A categorização separa controle de qualidade ou maturidade: um fluxo de trabalho bem desenhado pode superar um agente mal supervisionado, e um copiloto que chama ferramenta de leitura continua copiloto, não agente. Cataloga também os critérios técnicos que justificam a escolha de um agente: sequências de comprimento variável, feedback de ferramenta verificável, erros conteníveis, conclusão observável e autoridade/orçamento delimitados.
 
 → Sessão 1.
 
@@ -284,7 +306,7 @@ Experimento randomizado com 16 desenvolvedores experientes (cerca de 5 anos de t
 
 **OMG. *Semantics of Business Vocabulary and Business Rules (SBVR)*, versão 1.5.** Object Management Group, dez. 2019. <https://www.omg.org/spec/SBVR/1.5/About-SBVR/>
 
-Especificação para vocabulário de negócio e regras formais — a base do bloco de especificação em linguagem controlada. Distingue duas categorias de regra: a **regra estrutural** (ou definicional), que usa operadores aléticos ("é necessário que", "é possível que") para dizer como o negócio organiza e define seus próprios conceitos; e a **regra operativa** (ou comportamental), que usa operadores deônticos ("é obrigatório que", "é permitido que") para reger conduta — a única das duas que alguém pode efetivamente violar.
+Especificação para vocabulário de negócio e regras formais — a base do bloco de especificação em linguagem controlada. Distingue duas categorias de regra: a **regra estrutural** (ou definicional), que usa operadores aléticos ("é necessário que", "é possível que") para dizer como o negócio organiza e define seus próprios conceitos; e a **regra operativa** (ou comportamental), que usa operadores deônticos ("é obrigatório que", "é permitido que") para reger conduta: a única das duas que alguém pode efetivamente violar.
 
 → Sessão 4.
 
@@ -324,7 +346,7 @@ Experimento randomizado com 70 desenvolvedores profissionais que completam uma t
 
 **ROSS, Ronald G. (ed.). *Business Rules Manifesto — The Principles of Rule Independence*, versão 2.0.** Business Rules Group, 1 nov. 2003. <https://www.businessrulesgroup.org/brmanifesto/BRManifesto.pdf>
 
-Dez artigos que definem regra de negócio como categoria própria de conhecimento, separada de processo. O Artigo 2 ("Separate From Processes, Not Contained In Them") declara que "regras não são processo nem procedimento" e que "regras se aplicam através de processos e procedimentos — deve existir um corpo coeso de regras, cumprido de forma consistente em toda a atividade de negócio relevante". O Artigo 4 ("Declarative, Not Procedural") exige que toda regra seja expressa em frase declarativa, sem sequenciamento implícito — é essa declaratividade que distingue uma regra de negócio (BR) de um passo de um fluxo.
+Dez artigos que definem regra de negócio como categoria própria de conhecimento, separada de processo. O Artigo 2 ("Separate From Processes, Not Contained In Them") declara que "regras não são processo nem procedimento" e que "regras se aplicam através de processos e procedimentos". Deve existir um corpo coeso de regras, cumprido de forma consistente em toda a atividade de negócio relevante. O Artigo 4 ("Declarative, Not Procedural") exige que toda regra seja expressa em frase declarativa, sem sequenciamento implícito: é essa declaratividade que distingue uma regra de negócio (BR) de um passo de um fluxo.
 
 → Sessão 3, 4.
 
@@ -352,7 +374,7 @@ Notação em linguagem natural controlada para expressar regra de negócio sem a
 
 **TRIVEDY, Vivek. "The Anatomy of an Agent Harness".** *LangChain Blog*, 2026. <https://www.langchain.com/blog/the-anatomy-of-an-agent-harness>
 
-Formulação canônica do arnês (*harness*) como tudo o que cerca o modelo e o transforma em agente — "if you're not the model, you're the harness" — com a medição de que a mesma família de modelo muda de faixa no Terminal Bench 2.0 quando só o arnês muda.
+Formulação canônica do arnês (*harness*) como tudo o que cerca o modelo e o transforma em agente: "if you're not the model, you're the harness". Traz a medição de que a mesma família de modelo muda de faixa no Terminal Bench 2.0 quando só o arnês muda.
 
 → Sessão 2.
 
@@ -382,7 +404,7 @@ Relato de redução de dezesseis ferramentas especializadas para acesso a sistem
 
 **WEI, Jason et al. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*.** NeurIPS, 2022. <https://arxiv.org/abs/2201.11903>
 
-Demonstra que solicitar ao modelo que gere uma sequência de passos intermediários de raciocínio — *chain of thought* — melhora significativamente o desempenho em tarefas de raciocínio complexo. A técnica emerge naturalmente em modelos suficientemente grandes quando exemplos de raciocínio são fornecidos como demonstrações no prompt. Experimentos comprovam ganho em tarefas aritméticas, senso comum e raciocínio simbólico. Um modelo de 540B parâmetros com apenas oito exemplos alcança estado-da-arte no benchmark GSM8K, superando até GPT-3 ajustado com verificador — a metade "raciocínio" que o ReAct combina com ação.
+Demonstra que solicitar ao modelo que gere uma sequência de passos intermediários de raciocínio (*chain of thought*) melhora significativamente o desempenho em tarefas de raciocínio complexo. A técnica emerge naturalmente em modelos suficientemente grandes quando exemplos de raciocínio são fornecidos como demonstrações no prompt. Experimentos comprovam ganho em tarefas aritméticas, senso comum e raciocínio simbólico. Um modelo de 540B parâmetros com apenas oito exemplos alcança estado-da-arte no benchmark GSM8K, superando até GPT-3 ajustado com verificador: a metade "raciocínio" que o ReAct combina com ação.
 
 → Sessão 1.
 
@@ -392,7 +414,7 @@ Demonstra que solicitar ao modelo que gere uma sequência de passos intermediár
 
 **WIEGERS, Karl; BEATTY, Joy. *Software Requirements*, 3ª ed.** Microsoft Press, 2013. <https://www.microsoftpressstore.com/store/software-requirements-9780735679665>
 
-Referência de mercado em engenharia de requisitos. Organiza requisitos em camadas — requisito de negócio, requisito de usuário, requisito funcional (de software) — e trata regra de negócio como categoria própria e anterior a essas camadas: uma regra de negócio não é, em si, um requisito de software, porque também rege operação manual; ela é a origem de onde requisitos funcionais são derivados, não um requisito por si só.
+Referência de mercado em engenharia de requisitos. Organiza requisitos em camadas (requisito de negócio, requisito de usuário, requisito funcional de software) e trata regra de negócio como categoria própria e anterior a essas camadas: uma regra de negócio não é, em si, um requisito de software, porque também rege operação manual; ela é a origem de onde requisitos funcionais são derivados, não um requisito por si só.
 
 → Sessão 3.
 
