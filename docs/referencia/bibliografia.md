@@ -13,6 +13,7 @@ Referências que embasam o conteúdo metodológico do workshop, em ordem alfabé
 - [Anthropic — Writing Effective Tools for Agents (2025)](#anthropic-writing-effective-tools-for-agents-2025)
 - [Bass, Clements e Kazman — Software Architecture in Practice (2021)](#bass-clements-e-kazman-software-architecture-in-practice-2021)
 - [Beck — Test-Driven Development: By Example (2002)](#beck-test-driven-development-by-example-2002)
+- [Böckeler — Understanding Spec-Driven Development (2025)](#bockeler-understanding-spec-driven-development-2025)
 - [Boehm — Software Engineering Economics (1981)](#boehm-software-engineering-economics-1981)
 - [Brown et al. — Language Models are Few-Shot Learners (2020)](#brown-et-al-language-models-are-few-shot-learners-2020)
 - [Chen et al. — Codex e HumanEval (2021)](#chen-et-al-codex-e-humaneval-2021)
@@ -20,8 +21,10 @@ Referências que embasam o conteúdo metodológico do workshop, em ordem alfabé
 - [Decision Model and Notation (DMN)](#decision-model-and-notation-dmn)
 - [Delimarsky — Spec-Driven Development with AI (2025)](#delimarsky-spec-driven-development-with-ai-2025)
 - [fast-check e FsCheck — Property-Based Testing](#fast-check-e-fscheck-property-based-testing)
+- [Fission-AI — OpenSpec](#fission-ai-openspec)
 - [Ford, Parsons, Kua e Sadalage — Building Evolutionary Architectures (2023)](#ford-parsons-kua-e-sadalage-building-evolutionary-architectures-2023)
 - [GitHub Spec Kit](#github-spec-kit)
+- [gszhangwei — OpenSPDD](#gszhangwei-openspdd)
 - [ISO/IEC/IEEE 29148:2018](#isoiecieee-291482018)
 - [Jimenez et al. — SWE-bench (2024)](#jimenez-et-al-swe-bench-2024)
 - [Karpathy — Software 2.0 (2017)](#karpathy-software-20-2017)
@@ -40,10 +43,12 @@ Referências que embasam o conteúdo metodológico do workshop, em ordem alfabé
 - [Trivedy — The Anatomy of an Agent Harness (2026)](#trivedy-the-anatomy-of-an-agent-harness-2026)
 - [Vaswani et al. — Attention Is All You Need (2017)](#vaswani-et-al-attention-is-all-you-need-2017)
 - [Vercel — Removing 80% of Agent Tools (2026)](#vercel-removing-80-of-agent-tools-2026)
+- [Vincent e Prime Radiant — Superpowers (2026)](#vincent-e-prime-radiant-superpowers-2026)
 - [Wei et al. — Chain-of-Thought Prompting (2022)](#wei-et-al-chain-of-thought-prompting-2022)
 - [Wiegers e Beatty — Software Requirements (2013)](#wiegers-e-beatty-software-requirements-2013)
 - [Willison — What is Agentic Engineering (2026)](#willison-what-is-agentic-engineering-2026)
 - [Yao et al. — ReAct (2023)](#yao-et-al-react-2023)
+- [Zhang e Xia — Structured Prompt-Driven Development (2026)](#zhang-e-xia-structured-prompt-driven-development-2026)
 - [Zeller — Why Programs Fail (2005)](#zeller-why-programs-fail-2005)
 
 ---
@@ -138,6 +143,16 @@ O ciclo vermelho-verde-refatoração, adaptado neste workshop para o fluxo assis
 
 ---
 
+### Böckeler — Understanding Spec-Driven Development (2025)
+
+**BÖCKELER, Birgitta. "Understanding Spec-Driven Development: Kiro, spec-kit, and Tessl".** *martinfowler.com*, 15 out. 2025. <https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html>
+
+Comparação de três ferramentas de SDD que estabelece a taxonomia usada na Sessão 8 para distinguir graus de compromisso entre especificação e código: *spec-first* (a especificação orienta a primeira geração e pode ser abandonada depois), *spec-anchored* (especificação e código evoluem juntos, com reconciliação a cada mudança) e *spec-as-source* (a especificação é o artefato primário e o código é projeção regenerável). O argumento central é que ferramentas distintas não são equivalentes só porque todas produzem arquivos Markdown.
+
+→ Sessões 5, 8.
+
+---
+
 ### Boehm — Software Engineering Economics (1981)
 
 **BOEHM, Barry W. *Software Engineering Economics*.** Prentice-Hall, 1981.
@@ -206,6 +221,16 @@ Post oficial de lançamento do GitHub Spec Kit — define o problema do vibe cod
 
 ---
 
+### Fission-AI — OpenSpec
+
+**FISSION-AI. *OpenSpec*.** Repositório de software. <https://github.com/Fission-AI/OpenSpec>
+
+Ferramenta de SDD que organiza o trabalho em torno da mudança, não da funcionalidade: um espaço descreve o comportamento atual do sistema e outro contém uma pasta por mudança proposta, com proposta, especificação-delta, design e tarefas. O arquivamento incorpora o delta à especificação principal e preserva o histórico da mudança. Serve na Sessão 8 como contraste ao Spec Kit, por operar sem uma camada de princípios de projeto acima das mudanças individuais.
+
+→ Sessão 8.
+
+---
+
 ### Ford, Parsons, Kua e Sadalage — Building Evolutionary Architectures (2023)
 
 **FORD, Neal; PARSONS, Rebecca; KUA, Patrick; SADALAGE, Pramod. *Building Evolutionary Architectures: Automated Software Governance*, 2ª ed.** O'Reilly Media, 2023.
@@ -221,6 +246,16 @@ Origem do termo função de aptidão arquitetural (*architectural fitness functi
 **GitHub Spec Kit.** Implementação de referência open source do Spec-Driven Development (SDD) — mais de 90 mil estrelas no GitHub. Define os quatro artefatos canônicos (`constitution.md`, `spec.md`, `plan.md`, `tasks.md`) e os comandos `/specify`, `/plan`, `/tasks`, compatíveis com Claude Code, GitHub Copilot e Cursor. O modelo de especificação (`spec-template.md`) numera cada requisito funcional com prefixo `FR-001`, `FR-002` etc., em frases no padrão "o sistema deve..."; não reserva uma seção separada para requisito não funcional.
 
 → Sessões 3, 5, 8.
+
+---
+
+### gszhangwei — OpenSPDD
+
+**GSZHANGWEI. *OpenSPDD: A SPDD AI coding assistant command template manager*.** Repositório de software. <https://github.com/gszhangwei/open-spdd>
+
+Implementação de referência da comunidade para o método SPDD, com os comandos que materializam o fluxo: analisar requisitos e código existente, produzir o Painel REASONS, gerar a implementação e sincronizar de volta as alterações feitas no código. A distinção que o projeto faz entre plano e Painel é a citada na Sessão 8: um plano diz o que fazer, o Painel especifica como fazer. Projeto de terceiros, não vinculado à Thoughtworks.
+
+→ Sessão 8.
 
 ---
 
@@ -400,6 +435,16 @@ Relato de redução de dezesseis ferramentas especializadas para acesso a sistem
 
 ---
 
+### Vincent e Prime Radiant — Superpowers (2026)
+
+**VINCENT, Jesse; PRIME RADIANT. *Superpowers: An agentic skills framework & software development methodology*.** Repositório de software. <https://github.com/obra/superpowers>
+
+Conjunto de habilidades combináveis para agentes de codificação, acionadas automaticamente conforme a situação, com uma metodologia de execução em volta: levantamento de ideias e aprovação do design antes de qualquer código, cópia isolada do repositório, plano de tarefas pequenas, ciclo vermelho-verde-refatorar obrigatório, revisão em duas etapas e verificação antes de declarar conclusão. Entra na Sessão 8 como o contraponto que mostra que disciplina documental e disciplina operacional são eixos independentes: o projeto não mantém especificação consolidada do domínio e ainda assim é mais exigente que o Spec Kit na execução.
+
+→ Sessão 8.
+
+---
+
 ### Wei et al. — Chain-of-Thought Prompting (2022)
 
 **WEI, Jason et al. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*.** NeurIPS, 2022. <https://arxiv.org/abs/2201.11903>
@@ -437,6 +482,16 @@ Define engenharia agêntica como "a prática de desenvolver software com o auxí
 Propõe ReAct, que integra raciocínio e ação em modelos de linguagem, permitindo que gerem simultaneamente pensamento e ações específicas da tarefa. O raciocínio induz e atualiza planos de ação; as ações permitem interface com fontes externas como bases de conhecimento. Reduz alucinação em QA ao integrar APIs de conhecimento e alcança 34% e 10% de melhoria em benchmarks ALFWorld e WebShop em relação a métodos de imitação. As trajetórias de resolução são mais interpretáveis e confiáveis que abordagens sem raciocínio — a base técnica que distingue um agente de codificação de um LLM respondendo uma pergunta isolada.
 
 → Sessão 1.
+
+---
+
+### Zhang e Xia — Structured Prompt-Driven Development (2026)
+
+**ZHANG, Wei; XIA, Jing Jing. "Structured-Prompt-Driven Development (SPDD)".** *martinfowler.com*, 28 abr. 2026. <https://martinfowler.com/articles/structured-prompt-driven/>
+
+Método desenvolvido por um time de tecnologia interna da Thoughtworks que trata o prompt como artefato de entrega versionado, organizado no Painel REASONS de sete dimensões (Requirements, Entities, Approach, Structure, Operations, Norms, Safeguards). O artigo é também a fonte do diagnóstico usado na Sessão 8 sobre por que escalar geração desloca o gargalo, com a metáfora do motor de Ferrari em estrada ruim: a potência local não determina o horário de chegada. Os autores são explícitos sobre os limites do método, incluindo o custo de experiência sênior antecipada e a variação remanescente entre praticantes que escrevem o mesmo Painel.
+
+→ Sessão 8.
 
 ---
 

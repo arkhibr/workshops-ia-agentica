@@ -55,4 +55,14 @@ O anti-padrão não é usar vibe coding. É usar vibe coding e depois esquecer q
 
 A correção não é proibir vibe coding. É decidir o modo antes de começar, não depois que o protótipo já virou dependência de outras equipes.
 
+### A dívida que não é de código
+
+Quando isso acontece, o que o time acumula não é dívida técnica no sentido usual. Dívida técnica é código que funciona e que alguém sabe como melhorar: existe um caminho conhecido, com custo estimável, entre o que está lá e o que deveria estar.
+
+O que o protótipo promovido a produto acumula é uma **dívida de intenção**. O sistema contém decisões que ninguém consegue distinguir de acidentes de implementação. Aquele desconto que não se aplica a pedidos acima de um valor é regra de negócio acordada com o cliente, restrição técnica de uma integração, ou consequência não intencional da ordem em que as condições foram escritas? Sem a resposta, o time perde a capacidade de mexer com segurança: alterar pode quebrar uma regra que ninguém sabia que existia, e preservar pode congelar um defeito que todos tratam como regra.
+
+A diferença prática é o tipo de trabalho que salda cada uma. Dívida técnica se paga com refatoração, que é trabalho de engenharia. Dívida de intenção se paga com arqueologia e reconstrução de decisão, frequentemente entrevistando pessoas que já saíram da empresa, e às vezes não se paga: a decisão original se perdeu, e o time escolhe de novo, sem saber o que a primeira escolha levava em conta.
+
+A [Sessão 8](../sessao-08-sdd-ciclo-completo/index.md) trata do ciclo que evita essa dívida, mantendo intenção, decisão e evidência ligadas ao código.
+
 **Próxima página:** [Evidência empírica de produtividade](evidencia-empirica.md).

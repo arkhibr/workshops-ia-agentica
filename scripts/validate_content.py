@@ -53,7 +53,7 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
     "sessao-05-decomposicao": ("Decomposição", False, ()),
     "sessao-06-tdd-assistido": ("TDD assistido por IA", False, ()),
     "sessao-07-estrategias-avancadas-teste": ("Estratégias avançadas de teste", False, ()),
-    "sessao-08-sdd-ciclo-completo": ("SDD ciclo completo", False, ()),
+    "sessao-08-sdd-ciclo-completo": ("SDD ciclo completo", True, ()),
     "sessao-09-depuracao-sistematica": ("Depuração sistemática", False, ()),
     "sessao-10-esteira-completa": ("Esteira completa", False, ()),
 }

@@ -89,7 +89,18 @@ nav:
   - Bloco 3 — Execução:
       - S6 — TDD assistido por IA: sessao-06-tdd-assistido/index.md
       - S7 — Estratégias avançadas de teste: sessao-07-estrategias-avancadas-teste/index.md
-      - S8 — SDD ciclo completo: sessao-08-sdd-ciclo-completo/index.md
+      - S8 — SDD ciclo completo:
+          - Visão geral: sessao-08-sdd-ciclo-completo/index.md
+          - "O ciclo e os quatro artefatos": sessao-08-sdd-ciclo-completo/ciclo-e-artefatos.md
+          - "Quatro abordagens para o mesmo padrão": sessao-08-sdd-ciclo-completo/abordagens-sdd.md
+          - "Escolher a abordagem e a profundidade": sessao-08-sdd-ciclo-completo/escolher-a-abordagem.md
+          - "Manter os artefatos vivos": sessao-08-sdd-ciclo-completo/artefatos-vivos.md
+          - "Quando o SDD falha": sessao-08-sdd-ciclo-completo/quando-sdd-falha.md
+          - "Exemplo arquitetural": sessao-08-sdd-ciclo-completo/exemplo-arquitetural.md
+          - "Estudo de caso": sessao-08-sdd-ciclo-completo/estudo-de-caso.md
+          - "Oficina de ferramentas": sessao-08-sdd-ciclo-completo/oficina-de-ferramentas.md
+          - "Exercícios": sessao-08-sdd-ciclo-completo/exercicios.md
+          - "Síntese e referências": sessao-08-sdd-ciclo-completo/sintese-e-referencias.md
   - Bloco 4 — Qualidade e Integração:
       - S9 — Depuração sistemática: sessao-09-depuracao-sistematica/index.md
       - S10 — Esteira completa: sessao-10-esteira-completa/index.md
