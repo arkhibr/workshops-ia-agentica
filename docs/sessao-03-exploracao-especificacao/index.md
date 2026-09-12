@@ -31,15 +31,17 @@ A Vetor, plataforma fictícia de e-commerce B2B introduzida na Sessão 1, tem um
 | # | Página | Bloco | Tempo | Resultado esperado |
 |---|---|---|---|---|
 | 1 | [O ciclo de especificação](ciclo-de-especificacao.md) | Teoria | 6 min | As quatro etapas do ciclo e por que pular direto para código custa mais caro depois |
-| 2 | [BR, FR e NFR](br-fr-nfr.md) | Teoria | 8 min | Classificar um requisito pelas três categorias e reconhecer quando confundem |
-| 3 | [Atributos de qualidade e RAS](atributos-de-qualidade-e-ras.md) | Teoria | 9 min | Catálogo de atributos de qualidade, cenário de qualidade e função de aptidão arquitetural |
+| 2 | [BR, FR e NFR](br-fr-nfr.md) | Teoria | 7 min | Classificar um requisito pelas três categorias e reconhecer quando confundem |
+| 3 | [Atributos de qualidade e RAS](atributos-de-qualidade-e-ras.md) | Teoria | 8 min | Catálogo de atributos de qualidade, cenário de qualidade e função de aptidão arquitetural |
 | 4 | [Perguntas que revelam ambiguidade](elicitacao-e-perguntas.md) | Teoria | 6 min | Um repertório de perguntas que expõe requisito implícito antes da implementação |
-| 5 | [Especificação executável](especificacao-executavel.md) | Teoria | 8 min | O critério que separa especificação seguível de resumo do pedido |
-| 6 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 10 min | Ver, com a Vetor, o ciclo inteiro do pedido vago à especificação completa |
-| 7 | [Estudo de caso](estudo-de-caso.md) | Discussão em grupo | 13 min | Julgar de quem é a responsabilidade quando a especificação "tecnicamente" cobria o pedido |
+| 5 | [O método da entrevista socrática](entrevista-socratica.md) | Teoria | 7 min | As quatro fases, o contrato de uma pergunta por vez e o ledger epistemológico |
+| 6 | [Especificação executável](especificacao-executavel.md) | Teoria | 7 min | O critério que separa especificação seguível de resumo do pedido |
+| 7 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 9 min | Ver, com a Vetor, o ciclo inteiro do pedido vago à especificação completa |
+| 8 | [Estudo de caso](estudo-de-caso.md) | Discussão em grupo | 11 min | Julgar de quem é a responsabilidade quando a especificação "tecnicamente" cobria o pedido |
 | — | Intervalo | — | 5 min | — |
-| 8 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 30 min | Conduzir o ciclo completo, com entrevista socrática sobre uma especificação ruim, e fechar a lacuna de atacado da Vetor de verdade |
-| 9 | [Exercícios](exercicios.md) | Prática avaliada | 20 min | Exercício-âncora: especificação escrita, implementada e verificada por teste |
+| 9 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 18 min | Conduzir o ciclo completo e fechar a lacuna de atacado da Vetor de verdade |
+| 10 | [Oficina dedicada — entrevista socrática](oficina-entrevista-socratica.md) | Prática guiada | 16 min | Ser entrevistado pelo agente e sair com o dossiê, o ledger e as perguntas abertas |
+| 11 | [Exercícios](exercicios.md) | Prática avaliada | 15 min | Exercício-âncora: especificação escrita, implementada e verificada por teste |
 | — | [Síntese e referências](sintese-e-referencias.md) | Fechamento | 5 min | Checklist, autoavaliação e fontes completas |
 | | | | **120 min** | |
 

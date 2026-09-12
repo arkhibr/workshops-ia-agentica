@@ -19,8 +19,10 @@ node --test       # deve terminar com 6 testes passando
 
 ## Roteiro sugerido para a sessão
 
-- **Essencial em aula:** Experimento A (ciclo completo) e Experimento C (entrevista socrática sobre uma especificação ruim).
+- **Essencial em aula:** Experimento A, o ciclo completo do pedido vago à implementação verificada.
 - **Extensão para quem terminar antes:** Experimento B, sobre cenário de qualidade e função de aptidão.
+
+A entrevista socrática tem página própria, a [oficina dedicada](oficina-entrevista-socratica.md), logo em seguida.
 
 ## Experimento A — feche um pedido vago com especificação
 
@@ -76,53 +78,12 @@ Rode `node --test` e confira também que os seis testes originais continuam pass
 - O cenário que você escreveu seria o mesmo se a função fosse chamada uma vez por pedido, ou mil vezes por segundo no checkout? O que muda no estímulo e na medida?
 - Sua função de aptidão tem responsável e reação declarados, ou só o teste técnico? Quem seria avisado se ela falhasse na esteira, daqui a seis meses?
 
-## Experimento C — entrevista socrática sobre uma especificação ruim
-
-**Objetivo:** usar o próprio agente como entrevistador socrático para expor os defeitos de uma especificação ruim, um de cada vez — sem que o agente corrija por você.
-
-**A especificação ruim**, recebida de um gerente comercial da Vetor:
-
-> "Precisamos de um painel de relatórios de desconto pro time comercial. Ele deve ter um botão de exportar pra Excel, mostrar um gráfico de pizza com os descontos aplicados no mês, e ser bem intuitivo e moderno. Como os gerentes vão usar isso todo dia, o relatório precisa carregar rápido. Todo desconto aplicado aparece lá. Entrega até sexta, com testes completos e cobertura de 100%."
-
-**Passo 1 — instale o entrevistador.** Cole este texto para o seu agente, numa conversa nova:
-
-```text
-Você é um entrevistador socrático de requisitos. Vou colar uma especificação
-com problemas. Leia a especificação inteira antes de fazer qualquer
-pergunta. Depois, procure defeitos nesta ordem de prioridade: solução
-apresentada como requisito; requisito sem valor identificável (para quem,
-por quê); critério subjetivo ou não testável; requisito não funcional sem
-medida numérica; regra sem exceção definida; hipótese tratada como certeza,
-sem evidência; contradição entre escopo, prazo e qualidade.
-
-Regra de conduta: cada defeito vira UMA pergunta, nunca uma correção sua.
-Uma pergunta por mensagem, nunca duas. Espere minha resposta antes da
-próxima pergunta. Não sugira a resposta certa — meu trabalho é responder, o
-seu é perguntar. Quando eu disser "fechar entrevista", produza um resumo
-com os defeitos encontrados, a resposta que dei para cada um, e a
-especificação reescrita incorporando minhas respostas.
-```
-
-**Passo 2 — cole a especificação ruim** (acima) e responda as perguntas do agente, uma de cada vez, como se você fosse quem escreveu o pedido original.
-
-**Passo 3 — feche a entrevista.** Depois de pelo menos cinco perguntas respondidas, diga "fechar entrevista" e leia o resumo e a especificação reescrita.
-
-**Passo 4 — confira contra a lista.** Quantas das sete classes de defeito da lista do passo 1 o agente encontrou sozinho? Alguma passou despercebida?
-
-**Questões exploratórias:**
-
-- O agente tentou corrigir a especificação sozinho em algum momento, em vez de só perguntar? Isso violou o contrato que você deu a ele?
-- Das perguntas que o agente fez, qual foi a mais desconfortável de responder — e o que esse desconforto revela sobre o que a especificação original escondia?
-- Compare a especificação reescrita do passo 3 com o formato BR/FR/NFR do Experimento A. Alguma regra de negócio ficou implícita na versão reescrita, do mesmo jeito que ficava na original?
-
 ## Evidência a entregar
 
-Cinco itens, verificáveis contra o mesmo projeto de exemplo:
+Três itens, verificáveis contra o mesmo projeto de exemplo:
 
 1. As perguntas do passo 1 do Experimento A, escritas antes de abrir as respostas.
 2. A especificação BR/FR escrita no passo 3 do Experimento A, e o resultado de `node --test` no passo 5 — os seis testes originais e os casos novos.
 3. O cenário de qualidade do Experimento B (os seis elementos) e a função de aptidão correspondente.
-4. O resumo da entrevista socrática do Experimento C e a especificação reescrita.
-5. A conferência do passo 4 do Experimento C: quantas classes de defeito o agente encontrou sozinho.
 
-**Próxima página:** [Exercícios](exercicios.md).
+**Próxima página:** [Oficina dedicada — entrevista socrática](oficina-entrevista-socratica.md).

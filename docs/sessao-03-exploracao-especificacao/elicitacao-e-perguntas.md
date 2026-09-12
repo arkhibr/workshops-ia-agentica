@@ -54,4 +54,4 @@ Se a resposta certa fosse "R$ 500,00 exato já entra na faixa de 5%", o código 
 
 Quando a fronteira nunca foi perguntada, o agente escolhe `>` ou `>=` pela convenção mais comum na linguagem, não pela regra de negócio real — e as duas opções compilam, passam em qualquer teste que não cubra exatamente o valor de corte, e divergem silenciosamente da intenção de quem pediu.
 
-**Próxima página:** [Especificação executável](especificacao-executavel.md).
+**Próxima página:** [O método da entrevista socrática](entrevista-socratica.md).
