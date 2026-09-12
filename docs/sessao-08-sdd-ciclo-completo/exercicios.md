@@ -76,7 +76,7 @@ Certo no eixo documental: ele não mantém constitution nem especificação cons
 
 ### 7. Exercício-âncora: especifique, planeje, implemente e verifique
 
-**O que é:** o ciclo completo sobre a faixa de atacado, a partir do estado real de `exemplo/vetor`, terminando com a suíte verde e a decisão registrada.
+**O que é:** o ciclo completo sobre a faixa de atacado, a partir do projeto montado na oficina, terminando com a suíte verde e a decisão registrada.
 
 **Antes de começar: por que a ordem importa.** O passo 2 só tem valor se acontecer antes do passo 4. Escrever a especificação depois de ver o código gerado produz um documento que descreve o que saiu, não um contrato que orienta o que deveria sair.
 
@@ -90,7 +90,7 @@ Você conduz o ciclo e decide, com registro, o que acontece com o teto no atacad
 
 **Insumos disponíveis**
 
-O projeto `exemplo/vetor` clonado, o agente que você já usa, e as cinco páginas de teoria desta sessão.
+O projeto `oficina-sdd` montado na oficina, o agente que você já usa, e as cinco páginas de teoria desta sessão.
 
 **Como conduzir**
 
@@ -114,7 +114,7 @@ A classificação com motivo, a especificação com dois requisitos e a regra do
 | Falha observada antes da implementação | 25% | A mensagem de falha guardada mostra o valor errado esperado pela regra nova, não erro de sintaxe nem teste que já passava |
 | Verificação em dois eixos separados | 20% | Existem duas leituras distintas registradas, uma de aderência e uma de qualidade, não um parecer único |
 
-**Como verificar antes de entregar:** rode `npm test` e confirme que os seis testes originais continuam passando. Uma implementação que quebra o comportamento do cliente padrão para acomodar o atacado falha no critério de aderência, mesmo que o requisito novo esteja atendido.
+**Como verificar antes de entregar:** rode `npm test` e confirme que os três testes originais continuam passando. Uma implementação que quebra o comportamento do cliente padrão para acomodar o atacado falha no critério de aderência, mesmo que o requisito novo esteja atendido.
 
 ## Analisar
 

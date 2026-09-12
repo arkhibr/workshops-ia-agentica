@@ -48,6 +48,6 @@ A Vetor, plataforma fictícia de e-commerce B2B que atravessa o workshop, tem um
 
 As cinco páginas de teoria somam 38 minutos. É o bloco mais conceitual do Bloco 3, e o risco de condução é transformá-lo em apresentação de ferramenta. A página das quatro abordagens existe justamente para impedir isso: o participante precisa sair sabendo que o Spec Kit é uma implementação de um padrão, não o padrão.
 
-Na oficina, todos partem de `exemplo/vetor`, o mesmo projeto das sessões anteriores. O Spec Kit é instalado no clone local, não no repositório de trabalho de cada um. A transposição para o repositório real do participante entra como extensão no fim da oficina, nunca como caminho principal.
+Na oficina, todos partem de um projeto vazio, montado durante a própria sessão a partir dos blocos de código da página. Ninguém clona nada pronto, e o Spec Kit é instalado nesse projeto descartável, nunca no repositório de trabalho de cada um. A transposição para o repositório real do participante entra como extensão no fim da oficina, nunca como caminho principal.
 
 **Próxima página:** [O ciclo e os quatro artefatos](ciclo-e-artefatos.md).

@@ -2,7 +2,7 @@
 
 Esta demonstração percorre o ciclo completo na Vetor, plataforma fictícia de e-commerce B2B usada no workshop, fechando a lacuna da faixa de atacado. O instrutor conduz, e o participante observa onde cada artefato toma uma decisão que o anterior não tinha como tomar.
 
-O estado inicial é o de `exemplo/vetor`: a função `calcularDesconto` recebe `tipoCliente` e não usa esse parâmetro em lugar nenhum. Existe um teto de desconto de R$ 1.000,00 por pedido. As faixas atuais são 0% até R$ 500,00, 5% de R$ 500,01 a R$ 2.000,00, 10% de R$ 2.000,01 a R$ 5.000,00 e 15% acima de R$ 5.000,00.
+O estado inicial é o mesmo que a oficina monta do zero: a função `calcularDesconto` recebe `tipoCliente` e não usa esse parâmetro em lugar nenhum. Existe um teto de desconto de R$ 1.000,00 por pedido. As faixas atuais são 0% até R$ 500,00, 5% de R$ 500,01 a R$ 2.000,00, 10% de R$ 2.000,01 a R$ 5.000,00 e 15% acima de R$ 5.000,00.
 
 O pedido que chega é o de sempre: "ativa o desconto de atacado, 20% acima de dez mil".
 
