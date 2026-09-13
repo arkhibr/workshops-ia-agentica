@@ -129,7 +129,7 @@ Compare a especificação que você escreveu no exercício 6 com a do Experiment
 
 ### 8. O que a entrevista socrática expôs
 
-Releia o dossiê da [oficina dedicada](oficina-entrevista-socratica.md). Escolha a afirmação que o ledger classificou como `[PRESSUPOSTO]` e que teria o maior impacto se estivesse errada. Esse pressuposto seria visível numa revisão manual rápida da especificação original, ou só apareceu porque alguém foi obrigado a responder uma pergunta específica sobre ele? O que isso diz sobre a diferença entre revisar uma especificação e ser entrevistado sobre ela?
+Releia o dossiê do [Experimento C da oficina](oficina-de-ferramentas.md#experimento-c). Escolha a afirmação que o registro de proveniência classificou como `[PRESSUPOSTO]` e que teria o maior impacto se estivesse errada. Esse pressuposto seria visível numa revisão manual rápida da especificação original, ou só apareceu porque alguém foi obrigado a responder uma pergunta específica sobre ele? O que isso diz sobre a diferença entre revisar uma especificação e ser entrevistado sobre ela?
 
 ## Avaliar
 

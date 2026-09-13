@@ -52,7 +52,7 @@ Dentro de uma fase, a próxima pergunta não é a próxima da lista. É a que at
 
 A cada quatro respostas substantivas, ou ao trocar de fase, o entrevistador troca o espelhamento por uma **síntese curta** que separa três colunas: o que está confirmado, o que é suposto, e onde há conflito. A síntese termina com a única pergunta daquela mensagem, que pode ser o pedido de confirmação do entendimento.
 
-## O ledger epistemológico
+## O registro de proveniência
 
 Nem toda afirmação numa entrevista tem o mesmo peso, e tratar todas como fato é como o pressuposto de alguém vira requisito do sistema. O método classifica cada afirmação relevante pela proveniência:
 
@@ -74,7 +74,7 @@ A regra que mais protege a especificação: **opinião de stakeholder nunca vira
 
 ## O dossiê
 
-Uma entrevista que termina sem documento produz entendimento na cabeça de quem participou e nada para quem não estava lá. O dossiê registra contexto, as três canônicas, o ledger completo, os termos que foram quantificados (com o antes e o depois), os riscos examinados, as perspectivas consideradas e as perguntas que ficaram abertas com o nome de quem deve respondê-las.
+Uma entrevista que termina sem documento produz entendimento na cabeça de quem participou e nada para quem não estava lá. O dossiê registra contexto, as três canônicas, o registro de proveniência completo, os termos que foram quantificados (com o antes e o depois), os riscos examinados, as perspectivas consideradas e as perguntas que ficaram abertas com o nome de quem deve respondê-las.
 
 As perguntas abertas são a parte mais subestimada. Uma entrevista honesta quase sempre termina com questões que o entrevistado não tinha autoridade para decidir, e registrá-las com dono é o que impede que a especificação seguinte as resolva por omissão.
 

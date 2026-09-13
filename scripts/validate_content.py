@@ -67,12 +67,7 @@ PAGINAS_FIXAS = (
     "exercicios.md",
     "sintese-e-referencias.md",
 )
-# Oficinas extras de uma sessão. Não são páginas fixas (nem toda sessão tem uma),
-# mas também não são teoria: carregam prática guiada e por isso usam o caso
-# aplicado, como as demais páginas de aplicação.
-OFICINAS_EXTRAS = ("oficina-entrevista-socratica.md",)
-
-NAO_TEMATICA = frozenset(PAGINAS_FIXAS) | frozenset(OFICINAS_EXTRAS)
+NAO_TEMATICA = frozenset(PAGINAS_FIXAS)
 
 # Páginas que encerram a sessão e por isso não carregam transição de saída.
 SEM_TRANSICAO = frozenset({"exercicios.md", "sintese-e-referencias.md"})

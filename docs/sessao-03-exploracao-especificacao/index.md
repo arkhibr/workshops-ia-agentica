@@ -34,14 +34,13 @@ A Vetor, plataforma fictícia de e-commerce B2B introduzida na Sessão 1, tem um
 | 2 | [BR, FR e NFR](br-fr-nfr.md) | Teoria | 7 min | Classificar um requisito pelas três categorias e reconhecer quando confundem |
 | 3 | [Atributos de qualidade e RAS](atributos-de-qualidade-e-ras.md) | Teoria | 8 min | Catálogo de atributos de qualidade, cenário de qualidade e função de aptidão arquitetural |
 | 4 | [Perguntas que revelam ambiguidade](elicitacao-e-perguntas.md) | Teoria | 6 min | Um repertório de perguntas que expõe requisito implícito antes da implementação |
-| 5 | [Entrevista socrática](entrevista-socratica.md) | Teoria | 7 min | As cinco fases, o contrato de uma pergunta por vez e o ledger epistemológico |
+| 5 | [Entrevista socrática](entrevista-socratica.md) | Teoria | 7 min | As cinco fases, o contrato de uma pergunta por vez e o registro de proveniência |
 | 6 | [Especificação executável](especificacao-executavel.md) | Teoria | 7 min | O critério que separa especificação seguível de resumo do pedido |
 | 7 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 9 min | Ver, com a Vetor, o ciclo inteiro aplicado a um pedido vago até a especificação completa |
-| 8 | [Estudo de caso](estudo-de-caso.md) | Discussão em grupo | 11 min | Julgar de quem é a responsabilidade quando a especificação "tecnicamente" cobria o pedido |
+| 8 | [Estudo de caso](estudo-de-caso.md) | Discussão em grupo | 13 min | Julgar de quem é a responsabilidade quando a especificação "tecnicamente" cobria o pedido |
 | — | Intervalo | — | 5 min | — |
-| 9 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 18 min | Conduzir o ciclo completo e fechar a lacuna de atacado da Vetor de verdade |
-| 10 | [Oficina de entrevista socrática](oficina-entrevista-socratica.md) | Prática guiada | 16 min | Ser entrevistado pelo agente e sair com o dossiê, o ledger e as perguntas abertas |
-| 11 | [Exercícios](exercicios.md) | Prática avaliada | 15 min | Exercício-âncora: especificação escrita, implementada e verificada por teste |
+| 9 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 30 min | Conduzir o ciclo completo, e ser entrevistado pelo agente sobre uma especificação ruim |
+| 10 | [Exercícios](exercicios.md) | Prática avaliada | 17 min | Exercício-âncora: especificação escrita, implementada e verificada por teste |
 | — | [Síntese e referências](sintese-e-referencias.md) | Fechamento | 5 min | Checklist, autoavaliação e fontes completas |
 | | | | **120 min** | |
 
