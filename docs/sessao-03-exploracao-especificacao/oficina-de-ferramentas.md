@@ -8,16 +8,86 @@ O trajeto desta oficina vai de um pedido vago da Vetor, a plataforma fictícia d
 
 Esta oficina usa o agente de codificação já configurado pelo participante (Claude Code, Codex CLI ou Gemini CLI), o git e o Node.js 20 ou superior. Tempo estimado: 18 minutos.
 
-Todos os experimentos rodam sobre o projeto de exemplo da Vetor, para que cada pessoa parta do mesmo estado. Antes de começar, clone o repositório e confirme que os testes passam:
-
-```bash
-git clone https://github.com/arkhibr/workshops-ia-agentica.git
-cd workshops-ia-agentica/exemplo/vetor
-node --version   # precisa mostrar v20 ou superior
-node --test       # deve terminar com 6 testes passando
-```
+Todos os experimentos partem de um **projeto vazio**, montado durante a própria oficina. Ninguém clona nada pronto: cada pessoa cria os arquivos abaixo e parte exatamente do mesmo estado.
 
 **Decisão em foco:** transformar um pedido vago numa especificação BR/FR/NFR verificável, antes de acionar o agente para implementar.
+
+## Preparação
+
+**Passo 1. Crie o projeto.**
+
+```bash
+mkdir oficina-especificacao && cd oficina-especificacao
+git init
+node --version   # precisa mostrar v20 ou superior
+```
+
+**Passo 2. Crie a regra de desconto.** Salve como `src/desconto.js`:
+
+```javascript
+export const TETO_DESCONTO = 1000;
+
+export function calcularDesconto(valorTotal, tipoCliente) {
+  if (typeof valorTotal !== 'number' || Number.isNaN(valorTotal) || valorTotal < 0) {
+    throw new TypeError('valorTotal deve ser um numero nao negativo');
+  }
+
+  let percentual = 0;
+  if (valorTotal > 5000) percentual = 0.15;
+  else if (valorTotal > 2000) percentual = 0.1;
+  else if (valorTotal > 500) percentual = 0.05;
+
+  return Math.min(valorTotal * percentual, TETO_DESCONTO);
+}
+```
+
+O parâmetro `tipoCliente` é recebido e nunca usado. A faixa de atacado nunca foi implementada, e essa é a lacuna que a sessão trabalha.
+
+**Passo 3. Crie os testes.** Salve como `test/desconto.test.js`:
+
+```javascript
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
+
+import { calcularDesconto, TETO_DESCONTO } from '../src/desconto.js';
+
+describe('calcularDesconto', () => {
+  it('nao da desconto ate 500,00', () => {
+    assert.equal(calcularDesconto(500, 'padrao'), 0);
+  });
+
+  it('da 5% na faixa de 500,01 a 2.000,00', () => {
+    assert.equal(calcularDesconto(1000, 'padrao'), 50);
+  });
+
+  it('da 10% na faixa de 2.000,01 a 5.000,00', () => {
+    assert.equal(calcularDesconto(3000, 'padrao'), 300);
+  });
+
+  it('da 15% acima de 5.000,00', () => {
+    assert.equal(calcularDesconto(6000, 'padrao'), 900);
+  });
+
+  it('respeita o teto de desconto por pedido', () => {
+    assert.equal(calcularDesconto(100000, 'padrao'), TETO_DESCONTO);
+  });
+
+  it('recusa valor negativo', () => {
+    assert.throws(() => calcularDesconto(-1, 'padrao'), TypeError);
+  });
+});
+```
+
+**Passo 4. Confirme o estado inicial.**
+
+```bash
+npm init -y
+npm pkg set type=module
+npm pkg set scripts.test="node --test"
+npm test
+```
+
+Os seis testes precisam passar antes de você continuar.
 
 ## Roteiro sugerido para a sessão
 
@@ -26,11 +96,11 @@ node --test       # deve terminar com 6 testes passando
 
 A entrevista socrática tem página própria, a [oficina de entrevista socrática](oficina-entrevista-socratica.md), logo em seguida.
 
-## Experimento A — feche um pedido vago com especificação
+## Experimento A
 
 **Objetivo:** conduzir o ciclo explorar → perguntar → propor → especificar sobre um pedido novo da Vetor, e comprovar que a especificação escrita é o que o agente de fato implementa.
 
-**Antes de começar: por que a ordem importa.** O bloco de respostas abaixo simula quem pediu a mudança. Ele só cumpre a função de mostrar o efeito das perguntas se você escrever suas próprias perguntas antes de abri-lo. Abrir antes esvazia o experimento.
+**Antes de começar: a ordem importa.** O bloco de respostas abaixo simula quem pediu a mudança. Ele só cumpre a função de mostrar o efeito das perguntas se você escrever suas próprias perguntas antes de abri-lo. Abrir antes esvazia o experimento.
 
 **Passo 1 — o pedido.** É este, e nada além disso:
 
@@ -49,7 +119,7 @@ Escreva, sem abrir o bloco abaixo, de três a cinco perguntas que você faria an
 
 **Passo 3 — proponha e especifique.** Escreva a proposta em três frases, depois a especificação em BR/FR, seguindo o formato de [Exemplo arquitetural](exemplo-arquitetural.md). `calcularDesconto` vai precisar de um terceiro parâmetro, `pedidosAprovados`, opcional, com valor padrão que preserve o comportamento dos seis testes já existentes.
 
-**Passo 4 — peça a implementação.** Cole sua especificação para o agente e peça a implementação, com testes, dentro de `exemplo/vetor`.
+**Passo 4 — peça a implementação.** Cole sua especificação para o agente e peça a implementação, com testes, dentro do projeto que você montou.
 
 **Passo 5 — rode os casos abaixo contra o resultado.**
 
@@ -69,7 +139,7 @@ Rode `node --test` e confira também que os seis testes originais continuam pass
 - Alguma das suas perguntas do passo 1 não apareceu entre as respostas do passo 2? O que você teria feito sem essa resposta?
 - Se você tivesse pedido direto ao agente "dá pra dar um desconto extra pros clientes que compram muito", sem o ciclo completo, qual das cinco respostas do passo 2 ele teria decidido sozinho?
 
-## Experimento B — cenário de qualidade e função de aptidão
+## Experimento B
 
 **Objetivo:** escrever um NFR como cenário de qualidade completo, e transformá-lo numa função de aptidão que continua rodando depois da aula.
 

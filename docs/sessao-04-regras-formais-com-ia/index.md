@@ -45,6 +45,6 @@ A Vetor, plataforma fictícia de e-commerce B2B que atravessa o workshop, chega 
 
 As quatro páginas de teoria têm caixas de destaque embutidas no texto. Pare de verdade nesses pontos, em vez de ler a pergunta e seguir em frente.
 
-Ao chegar na oficina, todos clonam `exemplo/vetor`, o mesmo projeto usado nas Sessões 1 e 3. Peça que clonem o repositório antes de a sessão começar.
+A oficina desta sessão é inteiramente sobre formalização de regra e não exige projeto executável. Quem quiser conferir o código, monta o projeto como na oficina da Sessão 3.
 
 **Próxima página:** [SBVR: vocabulário e regras](sbvr-vocabulario-e-regras.md).

@@ -49,6 +49,6 @@ A Vetor, plataforma fictícia de e-commerce B2B introduzida na Sessão 1, tem um
 
 As seis páginas de teoria têm caixas de destaque embutidas no texto. Pare de verdade nesses pontos, em vez de ler a pergunta e seguir em frente.
 
-Ao chegar na oficina, todos clonam `exemplo/vetor`, o mesmo projeto usado na Sessão 1. A demonstração da Sessão 1 apenas mostrou a lacuna de atacado. Aqui ela é fechada de verdade, com teste escrito e passando. Peça que clonem o repositório antes de a sessão começar.
+Ao chegar na oficina, todos montam o projeto do zero a partir dos blocos de código da página, o que leva poucos minutos e garante que todos partam do mesmo estado. A demonstração da Sessão 1 apenas mostrou a lacuna de atacado. Aqui ela é fechada de verdade, com teste escrito e passando.
 
 **Próxima página:** [O ciclo de especificação](ciclo-de-especificacao.md).

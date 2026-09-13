@@ -7,7 +7,7 @@
 3. **BR, FR e NFR respondem perguntas diferentes.** Regra de negócio existiria sem o sistema. Requisito funcional só existe em relação a ele. Requisito não funcional é o critério de qualidade sob o qual o funcional acontece.
 4. **Regra de negócio disfarçada de requisito funcional é o antipadrão mais comum.** Quando a regra muda, ninguém encontra o número certo para trocar, porque ele nunca teve linha própria.
 5. **Nem toda pergunta vale o mesmo.** Uma boa pergunta de elicitação muda o código que o agente vai gerar. Se as duas respostas possíveis produzem o mesmo resultado, a pergunta era decorativa.
-6. **Especificação executável tem caso concreto, não só descrição.** O teste: alguém que nunca ouviu falar do domínio consegue escrever os casos de teste sem perguntar mais nada?
+6. **Especificação executável traz valor de entrada e resultado esperado.** O teste: alguém que nunca ouviu falar do domínio consegue escrever os casos de teste sem perguntar mais nada?
 7. **Uma especificação pode estar certa e ainda produzir o sistema errado.** O [Estudo de caso](estudo-de-caso.md) mostrou isso: a falha estava na pergunta que nunca foi feita, com BR e FR perfeitamente fiéis um ao outro.
 8. **O ciclo completo nem sempre compensa.** Mudança pequena, reversível, sem regra nova: resolve-se perguntando de cabeça. O ciclo formal se paga quando a regra é nova ou mais de uma pessoa vai manter o código depois.
 9. **A régua de decisão desta sessão prepara a próxima.** A Sessão 4 formaliza a regra de negócio em si — vocabulário controlado, três formas de sentença, tabela de decisão — usando o mesmo material que esta sessão aprendeu a extrair de um pedido vago.

@@ -4,16 +4,9 @@ Tente responder antes de abrir os blocos de resposta nos dois primeiros níveis.
 
 ## Situação compartilhada
 
-Todos os exercícios desta página se referem ao mesmo projeto da [Oficina de ferramentas](oficina-de-ferramentas.md): `exemplo/vetor`, a versão executável da Vetor.
+Todos os exercícios desta página se referem ao mesmo projeto da [Oficina de ferramentas](oficina-de-ferramentas.md), `oficina-especificacao`, montado lá a partir dos blocos de código da página.
 
 Depois da oficina, `calcularDesconto(valorTotal, tipoCliente, pedidosAprovados)` tem três parâmetros: as faixas de valor originais da Sessão 1 (0% até R$ 500,00, 5% até R$ 2.000,00, 10% até R$ 5.000,00 e 15% acima disso), o teto de R$ 1.000,00 por pedido, e um adicional de 5 pontos percentuais para clientes atacado com mais de 5 pedidos aprovados. Se você não fez a oficina, o que está aqui é tudo o que precisa para responder.
-
-Para clonar:
-
-```bash
-git clone https://github.com/arkhibr/workshops-ia-agentica.git
-cd workshops-ia-agentica/exemplo/vetor && node --test
-```
 
 ## Recordar
 
@@ -89,7 +82,7 @@ Você é responsável por transformar esse pedido numa especificação que o age
 
 **Insumos disponíveis**
 
-O projeto `exemplo/vetor` no estado deixado pela oficina (ou clonado agora, se você não fez a oficina) e o agente que você já usa.
+O projeto `oficina-especificacao` no estado deixado pela oficina, e o agente que você já usa. Se você não fez a oficina, a descrição da situação compartilhada acima é suficiente para responder no papel.
 
 **Como conduzir**
 

@@ -4,7 +4,7 @@ Tente responder antes de abrir os blocos de resposta nos dois primeiros níveis.
 
 ## Situação compartilhada
 
-Todos os exercícios desta página se referem ao mesmo projeto do Experimento A da [Oficina de ferramentas](oficina-de-ferramentas.md#experimento-a-o-efeito-de-um-agentsmd-robusto). Se você não fez a oficina, o que está aqui é tudo o que precisa para responder.
+Todos os exercícios desta página se referem ao mesmo projeto do Experimento A da [Oficina de ferramentas](oficina-de-ferramentas.md#experimento-a). Se você não fez a oficina, o que está aqui é tudo o que precisa para responder.
 
 A **Vetor** é uma plataforma fictícia de e-commerce B2B que atravessa o workshop. O projeto da oficina, `oficina-arnes`, criado do zero e sem dependências, tem uma função só: `calcularJurosAtraso(valorPedido, diasAtraso)`, que calcula juros de atraso de pedido (0,1% ao dia sobre o valor, sem juros se não houver atraso, nunca ultrapassando 20% do valor do pedido), mais o teste que comprova isso.
 

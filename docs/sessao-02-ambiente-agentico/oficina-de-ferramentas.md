@@ -25,7 +25,7 @@ Onde os comandos diferem entre sistemas, a página traz as versões em abas — 
 - **Essencial em aula:** Experimentos A, B e C, para sair da sessão com um arquivo de instrução testado nas duas versões, um servidor MCP conectado e um worktree testado.
 - **Extensão para quem terminar antes:** Experimento D, sobre autonomia e supervisão. Se o tempo apertar, é o único que pode ficar para depois da aula. Nunca corte A, B ou C.
 
-## Experimento A — o efeito de um AGENTS.md robusto
+## Experimento A
 
 **Objetivo:** pedir a mesma função simples duas vezes, sem arquivo de instrução e depois com um arquivo de instrução robusto, e comparar o *processo* que produziu cada resultado, em vez do valor que o cálculo devolveu.
 
@@ -84,7 +84,7 @@ git add -A && git commit -m "com AGENTS.md robusto"
 - Alguma linha do `AGENTS.md` acima é específica da Vetor, ou ela valeria, palavra por palavra, para qualquer projeto JavaScript do seu time?
 - E se o `AGENTS.md` só dissesse "escreva código de qualidade, com boas práticas e testes"? Reescreva mentalmente as duas seções acima nessa versão vaga, e responda se ela mudaria alguma decisão real do agente.
 
-## Experimento B — conecte e examine um servidor MCP real
+## Experimento B
 
 **Objetivo:** conectar um servidor MCP real, sem precisar de conta nem de credencial, e examinar exatamente qual ferramenta o agente chamou e o que voltou dessa chamada, em vez de só o resumo final que o modelo escreve para você.
 
@@ -146,7 +146,7 @@ Em Windows, se editar o arquivo de configuração manualmente em vez de usar o c
 - O que aconteceu no passo 6 confirma ou contradiz o critério de escopo mínimo de [MCP e ferramentas externas](mcp.md#avaliar-a-origem-do-servidor-mcp)?
 - Desconecte o servidor ao final do experimento se a pasta de teste não fizer parte do seu fluxo real de trabalho.
 
-## Experimento C — isole duas sessões por worktree
+## Experimento C
 
 **Objetivo:** sentir na prática por que isolamento por ramo evita o incidente do [Estudo de caso](estudo-de-caso.md), com dois agentes mexendo no mesmo arquivo ao mesmo tempo.
 
@@ -197,7 +197,7 @@ git branch -D experimento/a experimento/b
 - Em que situação do seu time de verdade esse isolamento evitaria um problema como o do Estudo de caso?
 - Isolar por worktree substitui a necessidade de comunicação entre quem mexe em partes relacionadas do sistema, ou reduz um tipo específico de risco?
 
-## Experimento D — compare dois níveis de autonomia
+## Experimento D
 
 **Objetivo:** medir a diferença de tempo e de supervisão entre dois modos de permissão da mesma aplicação agêntica, aplicando o critério de [Autonomia e supervisão](autonomia-e-supervisao.md#quanto-de-autonomia-liberar).
 

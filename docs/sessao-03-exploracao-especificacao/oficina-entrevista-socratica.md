@@ -66,7 +66,7 @@ Os experimentos A e B usam este pedido, recebido de um gerente comercial da Veto
 
 Antes de colar, marque no papel quantos defeitos você enxerga sozinho, numa leitura. O número serve de linha de base para o passo final.
 
-## Experimento A — validação de uma especificação existente
+## Experimento A
 
 **Objetivo:** ser entrevistado sobre uma especificação ruim e observar o que a disciplina expõe.
 
@@ -88,7 +88,7 @@ Antes de colar, marque no papel quantos defeitos você enxerga sozinho, numa lei
 - Alguma opinião do gerente virou `[FATO]` no ledger sem fonte? "Os gerentes vão usar todo dia" tem evidência ou é pressuposto?
 - Qual pergunta foi mais desconfortável de responder, e o que esse desconforto revela sobre o que o pedido original escondia?
 
-## Experimento B — o mesmo pedido, sem o contrato
+## Experimento B
 
 **Objetivo:** isolar o efeito da disciplina, separando o que veio do método e o que veio só de o agente ser competente.
 
@@ -105,7 +105,7 @@ Antes de colar, marque no papel quantos defeitos você enxerga sozinho, numa lei
 - A análise direta foi mais rápida. Em que tipo de tarefa essa velocidade compensa a perda, e em que tipo não compensa?
 - Se você fosse implementar a partir de cada uma das duas saídas, qual decisão de negócio você ainda teria que tomar sozinho em cada caso?
 
-## Experimento C — roteiro para entrevistar uma pessoa
+## Experimento C
 
 **Objetivo:** usar o agente no modo que gera roteiro, para quando a entrevista é com um humano e não com o modelo.
 

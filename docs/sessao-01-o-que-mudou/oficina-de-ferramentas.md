@@ -15,7 +15,7 @@ Esta oficina usa o agente de codificação já configurado pelo participante (Cl
 - **Essencial em aula:** Experimento A (autodiagnóstico) e Experimento B (contexto explícito), para sentir a diferença antes do exercício-âncora.
 - **Exploração em dupla:** Experimento C, para nomear onde o julgamento humano entrou.
 
-## Experimento A: autodiagnóstico
+## Experimento A
 
 **Objetivo:** ter um retrato honesto do próprio uso de IA hoje, sem julgamento.
 
@@ -28,7 +28,7 @@ Esta oficina usa o agente de codificação já configurado pelo participante (Cl
 
 **Observe:** guarde as respostas. O Bloco 5 (exercícios) e a Sessão 9 (depuração sistemática) revisitam exatamente estas mesmas perguntas para medir o que mudou.
 
-## Experimento B: contexto explícito
+## Experimento B
 
 **Objetivo:** sentir, num caso com regras de negócio reais, o que "contexto explícito" muda antes de aplicar no exercício-âncora.
 
@@ -79,7 +79,7 @@ Exemplos:
 
 Guarde as duas saídas: o Experimento C usa exatamente elas.
 
-## Experimento C: onde entrou o julgamento
+## Experimento C
 
 **Objetivo:** localizar, nas próprias saídas do Experimento B, onde cada seta de [A tese do Software 3.0](software-3-0.md#o-que-sobe-piso-teto-julgamento) apareceu.
 

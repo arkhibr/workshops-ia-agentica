@@ -13,7 +13,7 @@ Esta oficina usa o agente de codificação já configurado pelo participante (Cl
 - **Essencial em aula:** Experimento A, formalização e verificação por retrotradução.
 - **Extensão para quem terminar antes:** Experimento B, sobreposição de tabela.
 
-## Experimento A — formalize e verifique por retrotradução
+## Experimento A
 
 **Objetivo:** pedir ao agente para formalizar uma regra ainda em prosa, e depois checar, numa conversa separada, se a formalização preservou o escopo original.
 
@@ -30,7 +30,7 @@ Esta oficina usa o agente de codificação já configurado pelo participante (Cl
 - Se algum elemento se perdeu, ele desapareceu na formalização (passo 1) ou na retrotradução (passo 2)? Como você distingue as duas possibilidades?
 - O que teria acontecido se você tivesse pulado direto para implementar a partir da formalização do passo 1, sem o passo 2? O erro apareceria num teste, ou só em produção?
 
-## Experimento B — monte a tabela combinada e declare a política
+## Experimento B
 
 **Objetivo:** combinar a regra de lançamento com a tabela de faixa e tipo de cliente do [Exemplo arquitetural](exemplo-arquitetural.md), e decidir a política de acerto antes que o agente decida por conta própria.
 
