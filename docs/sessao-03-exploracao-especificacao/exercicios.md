@@ -6,7 +6,7 @@ Tente responder antes de abrir os blocos de resposta nos dois primeiros níveis.
 
 Todos os exercícios desta página se referem ao mesmo projeto da [Oficina de ferramentas](oficina-de-ferramentas.md): `exemplo/vetor`, a versão executável da Vetor.
 
-Depois da oficina, `calcularDesconto(valorTotal, tipoCliente, pedidosAprovados)` tem três parâmetros: as faixas de valor originais da Sessão 1 (até R$ 500,00: 0%; até R$ 2.000,00: 5%; até R$ 5.000,00: 10%; acima disso: 15%), o teto de R$ 1.000,00 por pedido, e um adicional de 5 pontos percentuais para clientes atacado com mais de 5 pedidos aprovados. Se você não fez a oficina, o que está aqui é tudo o que precisa para responder.
+Depois da oficina, `calcularDesconto(valorTotal, tipoCliente, pedidosAprovados)` tem três parâmetros: as faixas de valor originais da Sessão 1 (0% até R$ 500,00, 5% até R$ 2.000,00, 10% até R$ 5.000,00 e 15% acima disso), o teto de R$ 1.000,00 por pedido, e um adicional de 5 pontos percentuais para clientes atacado com mais de 5 pedidos aprovados. Se você não fez a oficina, o que está aqui é tudo o que precisa para responder.
 
 Para clonar:
 
@@ -29,12 +29,12 @@ Explorar, perguntar, propor, especificar.
 
 ### 2. As três categorias
 
-Complete: uma regra de negócio existiria mesmo sem o sistema; um requisito ______ descreve o que o sistema precisa fazer; um requisito ______ descreve o critério de qualidade sob o qual ele faz isso.
+Complete: uma regra de negócio existiria mesmo sem o sistema. Um requisito ______ descreve o que o sistema precisa fazer. Um requisito ______ descreve o critério de qualidade sob o qual ele faz isso.
 
 <details>
 <summary>Ver resposta</summary>
 
-Funcional (FR); não funcional (NFR).
+Funcional (FR). Não funcional (NFR).
 </details>
 
 ## Compreender
@@ -66,16 +66,16 @@ Ela mistura três regras de negócio (a existência da faixa, o valor de corte, 
 <details>
 <summary>Ver resposta</summary>
 
-Não. Não existe caso de teste que prove ou refute "justa" — não há valor de entrada nem saída esperada. Falta o que a página chama de caso concreto e, se houver faixa ou teto, o caso de fronteira.
+Não. Não existe caso de teste que prove ou refute "justa", porque não há valor de entrada nem saída esperada. Falta o que a página chama de caso concreto e, se houver faixa ou teto, o caso de fronteira.
 </details>
 
 ## Aplicar
 
 ### 6. Exercício-âncora: especifique, implemente, verifique
 
-**O que é:** o mesmo ciclo do Experimento A da oficina, aplicado a um pedido novo, sem o apoio das respostas dadas — desta vez você conduz o ciclo inteiro sozinho.
+**O que é:** o mesmo ciclo do Experimento A da oficina, aplicado a um pedido novo, sem o apoio das respostas dadas. Desta vez você conduz o ciclo inteiro sozinho.
 
-**Antes de começar: por que a ordem importa.** As respostas de quem pediu ficam num bloco recolhível, revelado só depois do passo 1. Abrir antes apaga a distância entre o que você perguntaria sozinho e o que a resposta revela — e essa distância é o que este exercício mede.
+**Antes de começar: por que a ordem importa.** As respostas de quem pediu ficam num bloco recolhível, revelado só depois do passo 1. Abrir antes apaga a distância entre o que você perguntaria sozinho e o que a resposta revela, e essa distância é o que este exercício mede.
 
 **Situação**
 
@@ -98,8 +98,8 @@ O projeto `exemplo/vetor` no estado deixado pela oficina (ou clonado agora, se v
 **Passo 2 — respostas.** Abra o bloco e compare.
 
 ??? note "Respostas de quem pediu — abra só depois do passo 1"
-    - O que conta como "primeiro pedido"? Cliente com `pedidosAprovados` igual a zero — vale para cliente padrão e atacado, sem distinção de tipo.
-    - O que conta como "baixinho"? Valor do pedido menor que R$ 1.000,00 — pedidos grandes de cliente novo não se qualificam.
+    - O que conta como "primeiro pedido"? Cliente com `pedidosAprovados` igual a zero, e vale para cliente padrão e atacado, sem distinção de tipo.
+    - O que conta como "baixinho"? Valor do pedido menor que R$ 1.000,00. Pedidos grandes de cliente novo não se qualificam.
     - Quanto é o desconto a mais? 3 pontos percentuais, somados à faixa normal.
     - O teto de R$ 1.000,00 continua valendo? Sim, sempre.
 
@@ -110,9 +110,9 @@ O projeto `exemplo/vetor` no estado deixado pela oficina (ou clonado agora, se v
 | # | Valor do pedido | Tipo de cliente | Pedidos aprovados | Desconto esperado |
 |---|---|---|---|---|
 | 1 | R$ 800,00 | padrão | 0 | R$ 64,00 (5% + 3% = 8%) |
-| 2 | R$ 1.500,00 | padrão | 0 | R$ 75,00 (5%, sem bônus — valor não é "baixinho") |
+| 2 | R$ 1.500,00 | padrão | 0 | R$ 75,00 (5%, sem bônus, valor não é "baixinho") |
 | 3 | R$ 800,00 | atacado | 0 | R$ 64,00 (o bônus não distingue tipo de cliente) |
-| 4 | R$ 400,00 | padrão | 3 | R$ 0,00 (faixa de 0%, sem bônus — não é primeiro pedido) |
+| 4 | R$ 400,00 | padrão | 3 | R$ 0,00 (faixa de 0%, sem bônus, não é primeiro pedido) |
 
 **Entrega esperada**
 
@@ -126,7 +126,7 @@ As perguntas do passo 1, a especificação do passo 3, e o resultado de `node --
 | Especificação no padrão BR/FR | 40% | A regra de negócio e o requisito funcional estão separados, com valores concretos, não uma frase genérica |
 | Verificação real executada | 40% | Rodou `node --test` de verdade contra os quatro casos novos e os seis originais, relatando o resultado |
 
-**Como verificar antes de entregar:** confira se o caso 2 (valor grande, sem bônus) e o caso 4 (não é primeiro pedido, sem bônus) foram mesmo testados — são os dois casos que provam que o bônus tem fronteira, não que ele nunca deveria existir.
+**Como verificar antes de entregar:** confira se o caso 2 (valor grande, sem bônus) e o caso 4 (não é primeiro pedido, sem bônus) foram mesmo testados. São os dois casos que provam que o bônus tem fronteira, em vez de nunca se aplicar.
 
 ## Analisar
 
@@ -148,6 +148,6 @@ Releia o [Estudo de caso](estudo-de-caso.md). Em até 100 palavras, defenda uma 
 
 ### 10. Especifique a regra que falta
 
-A Vetor quer que clientes atacado com mais de 5 pedidos aprovados **e** que sejam também o primeiro pedido do mês corrente recebam os dois bônus somados (o de cliente recorrente e o de lançamento), mas só até um limite de 25 pontos percentuais totais, mesmo que a soma das faixas ultrapasse isso. Escreva a especificação completa (BR e FR), incluindo pelo menos um caso de teste que force a comparação entre o limite de 25 pontos percentuais e o teto de R$ 1.000,00 — os dois numa mesma composição.
+A Vetor quer que clientes atacado com mais de 5 pedidos aprovados **e** que sejam também o primeiro pedido do mês corrente recebam os dois bônus somados (o de cliente recorrente e o de lançamento), mas só até um limite de 25 pontos percentuais totais, mesmo que a soma das faixas ultrapasse isso. Escreva a especificação completa (BR e FR), incluindo pelo menos um caso de teste que force a comparação entre o limite de 25 pontos percentuais e o teto de R$ 1.000,00, os dois numa mesma composição.
 
 Concluída a prática, faça a [síntese e autoavaliação](sintese-e-referencias.md).

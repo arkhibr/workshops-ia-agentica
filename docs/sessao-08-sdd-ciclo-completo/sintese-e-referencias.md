@@ -4,10 +4,10 @@
 
 1. **A especificação é o artefato que gera a implementação**, e o código é uma das implementações possíveis daquela intenção, condicionada por arquitetura e momento.
 2. **A constitution diz o que nenhuma mudança pode violar**, enquanto a especificação diz o que esta mudança deve fazer. Um princípio que não rejeita nenhuma mudança plausível é decoração.
-3. **A separação entre o quê e o como não é formalidade.** Manter tecnologia fora da especificação permite comparar arquiteturas sem reescrever o problema e trocar a implementação preservando os critérios.
-4. **Fatia vertical entrega evidência, fatia horizontal acumula trabalho.** Depois de quatro de cinco tarefas horizontais, ninguém consegue demonstrar nada.
+3. **A separação entre o quê e o como tem função prática.** Manter tecnologia fora da especificação permite comparar arquiteturas sem reescrever o problema e trocar a implementação preservando os critérios.
+4. **A fatia vertical entrega evidência a cada passo.** A horizontal acumula trabalho sem trajetória verificável: depois de quatro de cinco tarefas horizontais, ninguém consegue demonstrar nada.
 5. **A verificação tem dois eixos independentes.** Aderência à especificação e qualidade da implementação respondem perguntas diferentes, e força num eixo não compensa fraqueza no outro.
-6. **Spec Kit é uma implementação do padrão, não o padrão.** OpenSpec organiza por mudança, SPDD comprime tudo num prompt estruturado, Superpowers disciplina a execução sem manter especificação principal.
+6. **O Spec Kit é uma implementação entre várias do padrão.** OpenSpec organiza por mudança, SPDD comprime tudo num prompt estruturado, Superpowers disciplina a execução sem manter especificação principal.
 7. **Documentação e rigor operacional são eixos diferentes.** Chamar uma abordagem de leve ou pesada sem dizer em qual eixo esconde onde o custo aparece.
 8. **Profundidade proporcional ao risco.** Classificar pelo maior risco, não pelo tamanho da diferença. Uma linha que altera autorização carrega mais risco que duzentos arquivos que mudam formato.
 9. **A cadeia coerente prova que a implementação corresponde à intenção registrada.** Ela não prova que a intenção registrada corresponde à necessidade real, e essa segunda verificação precisa de dono.

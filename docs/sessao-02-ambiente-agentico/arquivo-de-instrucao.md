@@ -2,7 +2,7 @@
 
 O arquivo de instrução do repositório (AGENTS.md, CLAUDE.md) faz o agente conhecer as convenções do projeto sem alguém repeti-las a cada sessão. O que colocar nele, como estruturá-lo, e como saber que ele ainda funciona.
 
-## Um arquivo de instrução, qualquer ferramenta: AGENTS.md
+## O padrão AGENTS.md
 
 Se MCP resolve como um agente acessa uma ferramenta, falta resolver como um agente aprende as convenções do repositório em que está trabalhando. [Em agosto de 2025, OpenAI, Google, Cursor, Factory e Sourcegraph formalizaram juntos o AGENTS.md](../referencia/bibliografia.md#agentic-ai-foundation-agentsmd-standard): um arquivo markdown simples, na raiz do repositório, sem esquema obrigatório, que qualquer agente de codificação lê para saber como construir, testar e alterar o projeto. Diferente do README, que fala com uma pessoa, o AGENTS.md fala com o agente: comandos de compilação e teste, convenções de estilo, regras de segurança, formato de commit.
 
@@ -19,15 +19,15 @@ Um AGENTS.md mínimo, mas real, costuma ter esta forma:
 - Aspas simples, sem ponto e vírgula
 ```
 
-Cada linha responde uma pergunta que o agente teria de adivinhar sem o arquivo. Nenhuma linha é uma boa intenção genérica.
+Cada linha responde uma pergunta que o agente teria de adivinhar sem o arquivo.
 
-Em um monorepo, com vários pacotes ou serviços no mesmo repositório, o padrão permite mais de um AGENTS.md: cada pasta pode ter o próprio arquivo, e o agente lê o mais próximo do diretório em que está trabalhando. O arquivo da raiz vale como regra geral; o arquivo de um pacote específico sobrepõe a regra geral quando os dois conflitam. O próprio repositório da OpenAI usa esse padrão, com mais de 80 arquivos AGENTS.md espalhados pelos pacotes, cada um documentando só o que aquele pacote precisa.
+Em um monorepo, com vários pacotes ou serviços no mesmo repositório, o padrão permite mais de um AGENTS.md: cada pasta pode ter o próprio arquivo, e o agente lê o mais próximo do diretório em que está trabalhando. O arquivo da raiz vale como regra geral, e o arquivo de um pacote específico sobrepõe a regra geral quando os dois conflitam. O próprio repositório da OpenAI usa esse padrão, com mais de 80 arquivos AGENTS.md espalhados pelos pacotes, cada um documentando só o que aquele pacote precisa.
 
 O padrão hoje é mantido pela Agentic AI Foundation, um projeto da Linux Foundation — não pertence a um único fornecedor. Mais de 20 mil repositórios já adotaram o formato, e ferramentas de fornecedores concorrentes (GitHub Copilot, Codex, Cursor, Gemini) leem o mesmo arquivo. O `CLAUDE.md` que este próprio workshop usa para configurar convenções do repositório cumpre esse mesmo papel, num formato específico do Claude Code.
 
 ## O que colocar (e o que não colocar) no arquivo de instrução
 
-Um AGENTS.md ou CLAUDE.md útil não é uma lista de boas intenções. Ele responde perguntas concretas que o agente precisa saber antes de agir: qual comando compila o projeto, qual comando roda os testes, que convenção de nomenclatura o time usa, o que nunca deve ser commitado. Um arquivo que só diz "escreva código limpo e siga boas práticas" não muda nenhum comportamento observável do agente, porque não dá nenhuma informação que ele não teria por padrão.
+Um AGENTS.md ou CLAUDE.md útil responde perguntas concretas que o agente precisa saber antes de agir: qual comando compila o projeto, qual comando roda os testes, que convenção de nomenclatura o time usa, o que nunca deve ser commitado. Um arquivo que só diz "escreva código limpo e siga boas práticas" não muda nenhum comportamento observável do agente, porque não dá nenhuma informação que ele não teria por padrão.
 
 O anti-padrão simétrico é o arquivo enciclopédico: documentar cada decisão arquitetural histórica do projeto num único arquivo que o agente precisa processar em toda execução consome espaço de contexto sem, na maioria das tarefas, mudar o comportamento. A régua prática vem direto da definição de engenharia de contexto vista em [Engenharia de contexto](engenharia-de-contexto.md): cada linha do arquivo de instrução deveria mudar alguma decisão que o agente tomaria de outro jeito.
 
@@ -43,17 +43,17 @@ Uma linha útil, sobre o mesmo tema:
 - Funções com mais de 40 linhas precisam ser quebradas antes do merge (regra do ESLint `max-lines-per-function`, já configurada no projeto).
 ```
 
-A segunda linha dá um número, uma ferramenta e uma consequência. A primeira não dá nenhuma informação que um agente não teria por padrão.
+A segunda linha dá um número, uma ferramenta e uma consequência verificável.
 
-## Um arquivo ou vários: a decisão de estrutura
+## Um arquivo ou vários
 
-Repositório único, um serviço: um AGENTS.md na raiz basta. Monorepo com mais de um pacote ou serviço, cada um com convenção própria de compilação ou teste: vale um arquivo na raiz só com o que é comum a todos (segurança, formato de commit), e um arquivo por pacote só com o que aquele pacote tem de específico — o mecanismo de precedência do padrão, visto em [O arquivo de instrução](arquivo-de-instrucao.md#um-arquivo-de-instrucao-qualquer-ferramenta-agentsmd), garante que o agente lê o arquivo mais próximo primeiro. A régua para decidir se compensa abrir um segundo arquivo é a mesma da seção anterior: existe uma linha que só faz sentido para aquele pacote, e que confundiria se aparecesse no arquivo de outro pacote? Se sim, separe. Se as diferenças são poucas, um arquivo único com uma seção por pacote resolve sem multiplicar arquivo para manter.
+Repositório único, um serviço: um AGENTS.md na raiz basta. Monorepo com mais de um pacote ou serviço, cada um com convenção própria de compilação ou teste: vale um arquivo na raiz só com o que é comum a todos (segurança, formato de commit), e um arquivo por pacote só com o que aquele pacote tem de específico. O mecanismo de precedência do padrão, visto em [O padrão AGENTS.md](arquivo-de-instrucao.md#o-padrao-agentsmd), garante que o agente lê o arquivo mais próximo primeiro. A régua para decidir se compensa abrir um segundo arquivo é a mesma da seção anterior: existe uma linha que só faz sentido para aquele pacote, e que confundiria se aparecesse no arquivo de outro pacote? Se sim, separe. Se as diferenças são poucas, um arquivo único com uma seção por pacote resolve sem multiplicar arquivo para manter.
 
 ## Anti-padrão: arquivo de instrução que ninguém mantém
 
-O arquivo de instrução decai do mesmo jeito que qualquer documentação: escrito com cuidado na primeira semana, e nunca mais atualizado depois que uma convenção muda. O sintoma é sempre o mesmo — o agente sugere um comando de compilação que não existe mais, ou uma convenção de nomenclatura que o time abandonou há dois meses, e ninguém percebe até o terceiro ou quarto prompt confuso na mesma sessão.
+O arquivo de instrução decai do mesmo jeito que qualquer documentação: escrito com cuidado na primeira semana, e nunca mais atualizado depois que uma convenção muda. O sintoma costuma ser o mesmo. O agente sugere um comando de compilação que não existe mais, ou uma convenção de nomenclatura que o time abandonou há dois meses, e ninguém percebe até o terceiro ou quarto prompt confuso na mesma sessão.
 
-A correção não é escrever um arquivo mais completo. É tratar o arquivo de instrução como parte do código: revisado no mesmo pull request que muda a convenção que ele documenta, não numa tarefa de documentação separada que sempre fica para depois.
+A correção está em tratar o arquivo de instrução como parte do código: revisado no mesmo pull request que muda a convenção que ele documenta, em vez de numa tarefa de documentação separada que sempre fica para depois. Escrever um arquivo mais completo não adianta.
 
 ## Como saber se o arquivo ainda funciona
 
@@ -66,6 +66,6 @@ npm run dev    # idem
 npm test       # idem
 ```
 
-Se um comando falhar, ou não existir mais, o arquivo está desatualizado, mesmo tendo sido revisado num PR recente para outro motivo. Times maiores automatizam essa checagem como um passo da esteira de CI, que roda os comandos documentados contra o projeto real e falha a compilação se algum deles não existir mais — uma forma de o arquivo de instrução ser verificado por máquina, não só por revisão humana esporádica.
+Se um comando falhar, ou não existir mais, o arquivo está desatualizado, mesmo tendo sido revisado num PR recente para outro motivo. Times maiores automatizam essa checagem como um passo da esteira de CI, que roda os comandos documentados contra o projeto real e falha a compilação se algum deles não existir mais. Assim o arquivo de instrução passa a ser verificado por máquina, e não só por revisão humana esporádica.
 
 **Próxima página:** [Isolamento por ramo](isolamento-por-ramo.md).

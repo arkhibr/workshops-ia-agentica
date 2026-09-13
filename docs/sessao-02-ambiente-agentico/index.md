@@ -1,4 +1,4 @@
-# S2 — O ambiente agêntico: ferramentas e fluxo
+# S2 — O ambiente agêntico
 
 **Bloco:** 1 — Fundamentos
 
@@ -22,7 +22,7 @@ Ao final desta sessão, o participante deve ser capaz de:
 4. **Isolar** o trabalho de um agente por ramo, evitando que duas sessões pisem no mesmo contexto.
 5. **Diagnosticar** uma falha do agente pela peça do arnês que provavelmente a causou, antes de considerar a troca de modelo.
 
-## O caso que nos acompanha: Vetor
+## A Vetor
 
 A Vetor, plataforma fictícia de e-commerce B2B introduzida na Sessão 1, tem hoje quatro desenvolvedores usando quatro agentes configurados de quatro jeitos diferentes — nenhum arquivo de instrução compartilhado, nenhuma ferramenta conectada em comum, nenhum isolamento quando duas pessoas usam o agente ao mesmo tempo. Esta sessão organiza isso.
 

@@ -4,7 +4,7 @@ Um conjunto de artefatos de especificação produz valor enquanto descreve o sis
 
 ## Que descoberta atualiza qual artefato
 
-Durante a implementação aparecem informações que não existiam no início. A regra não é evitar que isso aconteça, é direcionar cada descoberta ao artefato certo:
+Durante a implementação aparecem informações que não existiam no início. Isso é esperado. O que importa é direcionar cada descoberta ao artefato certo:
 
 | Mudança descoberta | Atualizar |
 |---|---|
@@ -40,18 +40,18 @@ Texto aprovado por uma pessoa não pode ser sobrescrito porque um modelo produzi
 
 A regra prática é que toda alteração em artefato aprovado apareça como diferença revisável, do mesmo jeito que uma alteração em código. Se o agente propõe reescrever a especificação, a saída dele é uma proposta de mudança, não um novo estado do arquivo.
 
-## Sincronização não é aprendizagem
+## Onde a correção precisa ficar gravada
 
 Um mal-entendido comum atribui ao modelo uma capacidade que ele não tem. Quando o time corrige uma decisão durante a revisão, o modelo não "absorve" aquela correção para as próximas sessões. Ele não aprende com o seu projeto entre uma conversa e outra.
 
 Isso tem consequência direta no fluxo de trabalho: a correção precisa entrar no artefato versionado, senão ela vale só para a sessão em que foi feita. Um time que corrige o agente por conversa, repetidamente, está pagando o mesmo custo de explicação toda semana, e culpando o modelo por "não aprender" quando o problema é que ninguém escreveu a decisão em lugar nenhum.
 
-O [SPDD](abordagens-sdd.md#spdd-o-prompt-estruturado-como-contrato) torna isso explícito ao exigir que a correção altere o prompt estruturado antes do código. Mesmo sem adotar aquele método, o princípio vale: uma decisão corrigida pertence ao artefato versionado.
+O [SPDD](abordagens-sdd.md#spdd) torna isso explícito ao exigir que a correção altere o prompt estruturado antes do código. Mesmo sem adotar aquele método, o princípio vale: uma decisão corrigida pertence ao artefato versionado.
 
 !!! tip "Aplique agora"
     Procure no seu projeto uma regra de negócio que só existe no código. Escreva, em duas linhas, o requisito e o caso de fronteira dela. Esse é o menor artefato vivo possível, e já resolve a pergunta "por que isto existe?".
 
-## O ciclo não termina em produção
+## Depois da entrega
 
 Um artefato vivo continua recebendo informação depois da entrega. Métrica de uso, incidente e reclamação de usuário são evidências de que uma premissa da especificação pode estar errada.
 

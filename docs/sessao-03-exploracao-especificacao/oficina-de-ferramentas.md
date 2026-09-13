@@ -1,10 +1,12 @@
-# Oficina de ferramentas — do pedido vago à especificação testada
+# Oficina de ferramentas
 
 **Objetivo Bloom:** Aplicar.
 
+O trajeto desta oficina vai de um pedido vago da Vetor, a plataforma fictícia de e-commerce B2B usada no workshop, até uma especificação testada, com o agente implementando exatamente o que a especificação diz.
+
 ## Ferramenta
 
-Esta oficina usa o agente de codificação já configurado pelo participante (Claude Code, Codex CLI ou Gemini CLI), o git e o Node.js 20 ou superior. Tempo estimado: 30 minutos.
+Esta oficina usa o agente de codificação já configurado pelo participante (Claude Code, Codex CLI ou Gemini CLI), o git e o Node.js 20 ou superior. Tempo estimado: 18 minutos.
 
 Todos os experimentos rodam sobre o projeto de exemplo da Vetor, para que cada pessoa parta do mesmo estado. Antes de começar, clone o repositório e confirme que os testes passam:
 
@@ -22,7 +24,7 @@ node --test       # deve terminar com 6 testes passando
 - **Essencial em aula:** Experimento A, o ciclo completo do pedido vago à implementação verificada.
 - **Extensão para quem terminar antes:** Experimento B, sobre cenário de qualidade e função de aptidão.
 
-A entrevista socrática tem página própria, a [oficina dedicada](oficina-entrevista-socratica.md), logo em seguida.
+A entrevista socrática tem página própria, a [oficina de entrevista socrática](oficina-entrevista-socratica.md), logo em seguida.
 
 ## Experimento A — feche um pedido vago com especificação
 
@@ -42,7 +44,7 @@ Escreva, sem abrir o bloco abaixo, de três a cinco perguntas que você faria an
     - O que conta como "compra muito"? Cliente do tipo atacado com mais de 5 pedidos aprovados nos últimos 12 meses.
     - Esse desconto extra é cumulativo com a faixa normal, ou substitui? Cumulativo: soma-se à faixa normal, em pontos percentuais.
     - O desconto extra é de quantos pontos percentuais? 5 pontos percentuais.
-    - O teto de R$ 1.000,00 por pedido continua valendo com o desconto extra somado? Sim, sempre — nenhuma regra nova revoga o teto.
+    - O teto de R$ 1.000,00 por pedido continua valendo com o desconto extra somado? Sim, sempre. Nenhuma regra nova revoga o teto.
     - Esse desconto vale para cliente padrão também? Não, só para atacado.
 
 **Passo 3 — proponha e especifique.** Escreva a proposta em três frases, depois a especificação em BR/FR, seguindo o formato de [Exemplo arquitetural](exemplo-arquitetural.md). `calcularDesconto` vai precisar de um terceiro parâmetro, `pedidosAprovados`, opcional, com valor padrão que preserve o comportamento dos seis testes já existentes.
@@ -60,18 +62,18 @@ Escreva, sem abrir o bloco abaixo, de três a cinco perguntas que você faria an
 
 Rode `node --test` e confira também que os seis testes originais continuam passando.
 
-**Observe:** o caso 3 é o único em que a faixa normal, o adicional de recorrência e o teto se cruzam ao mesmo tempo. Se ele falhar, é sinal de que a especificação não deixou claro que o teto se aplica depois de somar os dois percentuais, não antes.
+**Observe:** o caso 3 é o único em que a faixa normal, o adicional de recorrência e o teto se cruzam ao mesmo tempo. Se ele falhar, é sinal de que a especificação não deixou claro que o teto se aplica sobre a soma já feita dos dois percentuais.
 
 **Questões exploratórias:**
 
 - Alguma das suas perguntas do passo 1 não apareceu entre as respostas do passo 2? O que você teria feito sem essa resposta?
-- Se você tivesse pedido direto ao agente "dá pra dar um desconto extra pros clientes que compram muito", sem o ciclo completo, qual das quatro respostas do passo 2 ele teria decidido sozinho?
+- Se você tivesse pedido direto ao agente "dá pra dar um desconto extra pros clientes que compram muito", sem o ciclo completo, qual das cinco respostas do passo 2 ele teria decidido sozinho?
 
 ## Experimento B — cenário de qualidade e função de aptidão
 
 **Objetivo:** escrever um NFR como cenário de qualidade completo, e transformá-lo numa função de aptidão que continua rodando depois da aula.
 
-**Execute:** a Vetor pede que `calcularDesconto` "continue rápida mesmo com muito tráfego". Escreva o cenário de qualidade completo (fonte, estímulo, ambiente, artefato, resposta, medida), seguindo o template de [Atributos de qualidade e RAS](atributos-de-qualidade-e-ras.md#cenario-de-qualidade-o-template-que-torna-um-nfr-testavel). Depois, peça ao agente uma função de aptidão simples: um teste em Node que chama `calcularDesconto` mil vezes com `console.time`/`console.timeEnd` ao redor, com o limiar da sua medida como condição de falha (`assert` ou `throw` se o tempo médio ultrapassar o limiar).
+**Execute:** a Vetor pede que `calcularDesconto` "continue rápida mesmo com muito tráfego". Escreva o cenário de qualidade completo (fonte, estímulo, ambiente, artefato, resposta, medida), seguindo o template de [Atributos de qualidade e RAS](atributos-de-qualidade-e-ras.md#cenario-de-qualidade). Depois, peça ao agente uma função de aptidão simples: um teste em Node que chama `calcularDesconto` mil vezes com `console.time`/`console.timeEnd` ao redor, com o limiar da sua medida como condição de falha (`assert` ou `throw` se o tempo médio ultrapassar o limiar).
 
 **Questões exploratórias:**
 
@@ -83,7 +85,7 @@ Rode `node --test` e confira também que os seis testes originais continuam pass
 Três itens, verificáveis contra o mesmo projeto de exemplo:
 
 1. As perguntas do passo 1 do Experimento A, escritas antes de abrir as respostas.
-2. A especificação BR/FR escrita no passo 3 do Experimento A, e o resultado de `node --test` no passo 5 — os seis testes originais e os casos novos.
+2. A especificação BR/FR escrita no passo 3 do Experimento A, e o resultado de `node --test` no passo 5, com os seis testes originais e os casos novos.
 3. O cenário de qualidade do Experimento B (os seis elementos) e a função de aptidão correspondente.
 
-**Próxima página:** [Oficina dedicada — entrevista socrática](oficina-entrevista-socratica.md).
+**Próxima página:** [Oficina de entrevista socrática](oficina-entrevista-socratica.md).

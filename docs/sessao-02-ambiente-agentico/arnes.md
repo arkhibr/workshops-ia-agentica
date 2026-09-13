@@ -8,12 +8,12 @@ A aplicação agêntica, o arquivo de instrução, o catálogo de ferramentas, o
 
 **agente = modelo + arnês**
 
-Comparando com a página anterior: das quatro peças do ambiente agêntico, o modelo é uma; as outras três são o arnês.
+Comparando com a página anterior: das quatro peças do ambiente agêntico, o modelo é uma. As outras três são o arnês.
 
 !!! warning "Um cuidado de vocabulário"
     O termo em inglês é *harness*, e você vai reencontrá-lo nas Sessões 6 e 7 com outro sentido, o de *test harness*: a estrutura que prepara, executa e verifica uma suíte de testes. São conceitos diferentes. Neste material, **arnês** em português é sempre o do agente, e *harness* em inglês fica reservado ao de teste.
 
-## Erro composto: a aritmética da trajetória
+## A aritmética do erro composto
 
 Esta é a razão técnica pela qual o arnês existe, e ela é menos intuitiva do que parece.
 
@@ -41,7 +41,7 @@ A matemática também impõe um limite honesto, que contraria o reflexo de melho
 
 ## Os componentes do arnês
 
-A lista abaixo reúne os componentes que aparecem de forma recorrente nos ensaios de [Trivedy](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026) e de [Addy Osmani](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026) e na documentação da Anthropic. A coluna da direita mostra que esta sessão já trata quase todos eles, dispersos entre as páginas; o vocabulário de arnês é o que permite tratá-los como um sistema único e projetá-los juntos.
+A lista abaixo reúne os componentes que aparecem de forma recorrente nos ensaios de [Trivedy](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026) e de [Addy Osmani](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026) e na documentação da Anthropic. A coluna da direita mostra que esta sessão já trata quase todos eles, dispersos entre as páginas. O vocabulário de arnês é o que permite tratá-los como um sistema único e projetá-los juntos.
 
 | Componente | Pergunta que ele responde | Onde esta sessão trata |
 |---|---|---|
@@ -55,13 +55,13 @@ A lista abaixo reúne os componentes que aparecem de forma recorrente nos ensaio
 
 Os dois primeiros itens costumam receber toda a atenção, e são os de menor retorno isolado. O quarto, verificação, é o de maior retorno comprovado, pelo motivo aritmético da seção anterior.
 
-Vale registrar de onde vem esse vocabulário, para não importá-lo sem crítica. Ele nasceu na comunidade de agentes de codificação, que é exatamente o caso deste workshop, onde o arnês é um programa de linha de comando e os componentes têm nomes de arquivo concretos. A [Anthropic documenta essa camada em "Steering Claude Code"](../referencia/bibliografia.md#anthropic-steering-claude-code-2026), separando os mecanismos que **guiam** o modelo, como arquivos de contexto, dos que **impõem** comportamento, como *hooks* e permissões. A distinção sustenta uma frase que vale para o resto do workshop: uma proteção real precisa ser determinística. Um arquivo de instrução pede; um *hook* obriga.
+Vale registrar de onde vem esse vocabulário, para não importá-lo sem crítica. Ele nasceu na comunidade de agentes de codificação, que é exatamente o caso deste workshop, onde o arnês é um programa de linha de comando e os componentes têm nomes de arquivo concretos. A [Anthropic documenta essa camada em "Steering Claude Code"](../referencia/bibliografia.md#anthropic-steering-claude-code-2026), separando os mecanismos que **guiam** o modelo, como arquivos de contexto, dos que **impõem** comportamento, como *hooks* e permissões. A distinção sustenta uma regra que vale para o resto do workshop: uma proteção real precisa ser determinística. O arquivo de instrução pede um comportamento ao modelo, e o *hook* o impõe na camada de execução.
 
-![Dois desenvolvedores seguem caminhos opostos: à esquerda, o GPT Astra opera num ambiente desorganizado, com erros, ferramentas soltas e baixo desempenho; à direita, o GPT Luna alcança desempenho superior conectado a um arnês organizado de instruções, ferramentas, contexto e verificação.](../assets/images/s2-astra-luna-arnes-performance.png)
+![Dois desenvolvedores seguem caminhos opostos. À esquerda, o GPT Astra opera num ambiente desorganizado, com erros, ferramentas soltas e baixo desempenho. À direita, o GPT Luna alcança desempenho superior conectado a um arnês organizado de instruções, ferramentas, contexto e verificação.](../assets/images/s2-astra-luna-arnes-performance.png)
 
 ## Estabelecer o arnês rende mais que trocar de modelo
 
-[Trivedy](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026) relata que a mesma família de modelo sai de fora das trinta primeiras posições para as cinco primeiras do Terminal Bench 2.0 quando apenas o arnês muda, e que um mesmo modelo pontua diferente dentro e fora do arnês de um produto comercial. A posição específica num placar envelhece rápido e não vale decorar; o que dura é a direção da relação. [Osmani formula o mesmo achado em "Agent Harness Engineering"](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026): um modelo mediano dentro de um bom arnês supera um bom modelo dentro de um arnês ruim.
+[Trivedy](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026) relata que a mesma família de modelo sai de fora das trinta primeiras posições para as cinco primeiras do Terminal Bench 2.0 quando apenas o arnês muda, e que um mesmo modelo pontua diferente dentro e fora do arnês de um produto comercial. A posição específica num placar envelhece rápido e não vale decorar. O que dura é a direção da relação. [Osmani formula o mesmo achado em "Agent Harness Engineering"](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026): um modelo mediano dentro de um bom arnês supera um bom modelo dentro de um arnês ruim.
 
 Isso fecha um ponto aberto na Sessão 1. Em [Avaliação de modelos](../sessao-01-o-que-mudou/avaliacao-de-modelos.md) ficou dito que o número divulgado num *benchmark* depende tanto da forma como o teste foi conduzido quanto do modelo medido, e que a leitura independente do DeepSWE roda cada modelo na melhor configuração disponível do `mini-swe-agent`. O nome dessa configuração é arnês, e é por isso que a nota mede o par, não o modelo sozinho.
 
@@ -75,7 +75,7 @@ A explicação é a mesma do erro composto. Cada ferramenta adicional amplia o e
 
 Existe um custo simétrico que a lição não deve esconder. Descrições de ferramenta ocupam contexto antes de qualquer requisição: a [Anthropic relata, em "Code execution with MCP"](../referencia/bibliografia.md#anthropic-code-execution-with-mcp-2025), um caso em que carregar definições sob demanda, em vez de todas de uma vez, reduziu o consumo de 150 mil para 2 mil *tokens*. Catálogo mínimo é, ao mesmo tempo, decisão de qualidade e decisão de custo.
 
-Arnês, portanto, não é maximizar capacidade. É otimizar o caminho até o resultado certo, e a operação que mais frequentemente melhora esse caminho é uma remoção.
+Projetar um arnês é otimizar o caminho até o resultado certo, e a operação que mais frequentemente melhora esse caminho é uma remoção.
 
 ## Diagnosticar pelo tipo de falha
 
@@ -98,7 +98,7 @@ Quatro perguntas organizam o trabalho de melhoria. Onde este agente falha mais, 
 
 ## O arnês é onde mora a autoridade
 
-Há uma leitura arquitetural que o vocabulário de arnês torna nítida, e ela fecha a página. Tudo o que decide **se** uma ação acontece vive no arnês, não no modelo. O catálogo apresentado ao modelo é interface de descoberta; a permissão é avaliada por quem executa; a aprovação vincula uma pessoa a um objeto e a um prazo; o *hook* interrompe num ponto definido pelo projeto. Quando alguém diz que "o agente decidiu pedir confirmação", ou o arnês define esse ponto explicitamente, ou não existe ponto nenhum e o que houve foi coincidência.
+Há uma leitura arquitetural que o vocabulário de arnês torna nítida. Tudo o que decide **se** uma ação acontece vive no arnês, fora do modelo. O catálogo apresentado ao modelo é interface de descoberta. A permissão é avaliada por quem executa. A aprovação vincula uma pessoa a um objeto e a um prazo. O *hook* interrompe num ponto definido pelo projeto. Quando alguém diz que "o agente decidiu pedir confirmação", ou o arnês define esse ponto explicitamente, ou não existe ponto nenhum e o que houve foi coincidência.
 
 Isso também delimita o que um bom arnês não faz. Ele reduz a probabilidade de erro e limita o raio de impacto. Ele não torna segura uma ação irreversível, não substitui a aceitação de risco por alguém com nome, e não produz autorização.
 

@@ -2,20 +2,20 @@
 
 ## Quatorze ideias essenciais
 
-1. **Um ambiente agêntico tem quatro peças: aplicação agêntica, arquivo de configuração, MCP e isolamento por ramo.** Só a primeira depende de qual ferramenta o time escolhe; as outras três são agnósticas.
-2. **O conjunto que cerca o modelo tem nome: arnês.** A equação é agente = modelo + arnês, e das quatro peças do ambiente agêntico, três são arnês. Reconstruir o arnês costuma render mais que trocar de modelo, e a troca de modelo é a última decisão da fila, não a primeira.
-3. **Cada tipo de falha do agente aponta para uma peça diferente do arnês.** Convenção violada indica arquivo de instrução; ferramenta errada indica catálogo; erro que atravessa várias etapas indica ausência de verificação. Mexer na peça errada gasta tempo sem mover o resultado.
+1. **Um ambiente agêntico tem quatro peças: aplicação agêntica, arquivo de configuração, MCP e isolamento por ramo.** Só a primeira depende de qual ferramenta o time escolhe, e as outras três são agnósticas.
+2. **O conjunto que cerca o modelo tem nome: arnês.** A equação é agente = modelo + arnês, e das quatro peças do ambiente agêntico, três são arnês. Reconstruir o arnês costuma render mais que trocar de modelo, e a troca de modelo é a última decisão da fila.
+3. **Cada tipo de falha do agente aponta para uma peça diferente do arnês.** Convenção violada indica arquivo de instrução. Ferramenta errada indica catálogo. Erro que atravessa várias etapas indica ausência de verificação. Mexer na peça errada gasta tempo sem mover o resultado.
 4. **A engenharia de contexto é mais ampla que a engenharia de prompt.** Cuida de tudo que chega à janela de contexto numa execução, não só do texto da instrução.
 5. **A janela de contexto degrada de forma gradual, não abrupta, conforme cresce.** A degradação de contexto (*context rot*) é o motivo técnico por trás de recuperação just-in-time, compactação e sub-agentes com contexto isolado.
 6. **Ferramentas são o contrato entre o agente e o ambiente.** Uma ferramenta mal desenhada consome espaço de contexto que poderia ir para informação relevante.
 7. **O MCP transforma M×N integrações numa soma.** Cada modelo e cada ferramenta implementam o protocolo uma vez, em vez de cada par precisar da própria integração. As três primitivas do protocolo (*tools*, *resources*, *prompts*) ajudam a decidir que tipo de acesso pedir depois de decidir conectar.
 8. **O AGENTS.md é um padrão aberto, não de um fornecedor.** Mantido pela [Agentic AI Foundation (Linux Foundation)](../referencia/bibliografia.md#agentic-ai-foundation-agentsmd-standard), lido por agentes de múltiplos fornecedores concorrentes, com suporte nativo a mais de um arquivo por monorepo.
-9. **Uma linha de arquivo de instrução só vale a pena se muda uma decisão real do agente.** "Escreva código limpo" não muda nada; "o comando de teste é X" muda.
+9. **Uma linha de arquivo de instrução só vale a pena se muda uma decisão real do agente.** "Escreva código limpo" não muda nada. "O comando de teste é X" muda.
 10. **Conectar um servidor MCP exige avaliar origem, escopo e auditabilidade antes de autorizar.** Servidor de terceiro não é proibido, mas pede mais cautela do que servidor mantido pelo próprio fornecedor da ferramenta.
 11. **Isolamento por ramo resolve conflito de sistema de arquivos, não de comunicação entre pessoas.** As duas coisas são problemas diferentes, mesmo quando aparecem juntas no mesmo incidente.
 12. **Arquivo de instrução decai como qualquer documentação.** A correção é revisá-lo no mesmo PR que muda a convenção que ele documenta, e verificar de vez em quando, manualmente ou pela esteira de CI, se os comandos documentados ainda existem.
-13. **Isolar por ramo tem custo de ambiente, não só de git.** Cada worktree precisa da própria instalação de dependências; sem automatizar esse passo, a fricção de esperar a instalação desestimula o hábito exatamente nos casos em que ele mais evitaria um conflito.
-14. **Autonomia é uma propriedade do ambiente, não do modelo.** O mesmo modelo pode operar sob supervisão apertada ou com autonomia ampla, dependendo de como a aplicação agêntica foi configurada; a decisão certa depende de reversibilidade da ação e do raio de impacto contido pelo isolamento.
+13. **Isolar por ramo tem custo de ambiente, não só de git.** Cada worktree precisa da própria instalação de dependências. Sem automatizar esse passo, a fricção de esperar a instalação desestimula o hábito exatamente nos casos em que ele mais evitaria um conflito.
+14. **Autonomia é uma propriedade do ambiente, não do modelo.** O mesmo modelo pode operar sob supervisão apertada ou com autonomia ampla, dependendo de como a aplicação agêntica foi configurada. A decisão certa depende de reversibilidade da ação e do raio de impacto contido pelo isolamento.
 
 ## Checklist antes de encerrar a sessão
 
@@ -43,4 +43,4 @@ Todas as fontes citadas nesta sessão, com URL e resumo, estão reunidas na [bib
 
 ## Conexão com a próxima sessão
 
-A Sessão 3 assume que o time já tem um ambiente compartilhado configurado e reconhece a diferença entre um arquivo de instrução que muda comportamento e um que só declara boas intenções. Ela avança para a exploração e especificação de requisitos: transformar um pedido vago em um contrato humano-agente no padrão BR/FR/NFR — o mesmo cuidado de "cada linha precisa mudar uma decisão", visto aqui para o arquivo de instrução, reaparece lá para a especificação inteira.
+A Sessão 3 assume que o time já tem um ambiente compartilhado configurado e reconhece a diferença entre um arquivo de instrução que muda comportamento e um que só declara boas intenções. Ela avança para a exploração e especificação de requisitos: transformar um pedido vago em um contrato humano-agente no padrão BR/FR/NFR. O mesmo cuidado de "cada linha precisa mudar uma decisão", visto aqui para o arquivo de instrução, reaparece lá para a especificação inteira.

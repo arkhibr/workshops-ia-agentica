@@ -31,11 +31,11 @@ Há tarefas em que o contrato completo tem retorno baixo:
 - exploração cujo objetivo é descobrir se uma abordagem é viável.
 - correção emergencial durante incidente ativo, onde restaurar o serviço vem antes.
 
-Nesses casos, use um contrato menor: problema, limite, teste e evidência. O incidente merece nota à parte: restaurar primeiro é a decisão certa, e a dívida de intenção é fechada depois, com teste de regressão e atualização dos artefatos, não esquecida porque a crise passou.
+Nesses casos, use um contrato menor: problema, limite, teste e evidência. O incidente merece nota à parte: restaurar primeiro é a decisão certa, e a dívida de intenção é fechada depois, com teste de regressão e atualização dos artefatos. Ter passado a crise não cancela essa dívida.
 
-Existe também o caso em que nenhuma quantidade de especificação ajuda. Quando nem a área de negócio consegue definir a regra e as fronteiras, um documento detalhado apenas confere aparência de precisão a premissas frágeis. O trabalho ali é de descoberta, não de formalização.
+Existe também o caso em que nenhuma quantidade de especificação ajuda. Quando nem a área de negócio consegue definir a regra e as fronteiras, um documento detalhado apenas confere aparência de precisão a premissas frágeis. O trabalho ali é de descoberta.
 
-## Medir adoção sem medir burocracia
+## Indicadores de adoção
 
 Contar especificações criadas incentiva produção de arquivos. As perguntas úteis observam efeito:
 
@@ -56,15 +56,15 @@ Adotar o método na organização inteira antes de aprender com mudanças reais 
 
 Um piloto útil compara classes semelhantes de tarefa e observa a cadeia inteira de entrega, não o tempo até a primeira geração de código. Começa com poucas mudanças representativas, declara quais etapas são obrigatórias e registra as exceções quando alguma é pulada.
 
-Ao final, o time deve conseguir responder a quatro perguntas: qual artefato foi de fato consultado por alguém, qual portão mudou uma decisão, qual etapa não agregou valor, e quem mantém o processo quando a ferramenta mudar de versão. Se nenhum artefato foi consultado e nenhum portão mudou decisão alguma, o piloto produziu documentação, não método.
+Ao final, o time deve conseguir responder a quatro perguntas: qual artefato foi de fato consultado por alguém, qual portão mudou uma decisão, qual etapa não agregou valor, e quem mantém o processo quando a ferramenta mudar de versão. Se nenhum artefato foi consultado e nenhum portão mudou decisão alguma, o piloto produziu documentação e nada além disso.
 
 !!! tip "Aplique agora"
     Escolha um dos seis indicadores da tabela acima e descubra se o seu time conseguiria medi-lo hoje, com os dados que já existem. O que não é mensurável com o instrumental atual não serve como critério de adoção.
 
 ## O que permanece humano
 
-O método desloca trabalho, não elimina responsabilidade. Continuam sendo decisões de pessoas escolher quais problemas merecem investimento, ouvir usuários e reconhecer conflito de interesse, aceitar risco e suas consequências, decidir trade-offs arquiteturais, julgar se a evidência apresentada é suficiente e responder pelos efeitos em produção.
+O método desloca trabalho sem transferir responsabilidade. Continuam sendo decisões de pessoas escolher quais problemas merecem investimento, ouvir usuários e reconhecer conflito de interesse, aceitar risco e suas consequências, decidir trade-offs arquiteturais, julgar se a evidência apresentada é suficiente e responder pelos efeitos em produção.
 
-Agentes ampliam pesquisa, comparação, consistência, geração e revisão, e são particularmente úteis para manter relações entre muitos artefatos. Mas não têm mandato organizacional. A especificação não é central porque foi escrita em linguagem natural, é central porque pessoas autorizadas a adotaram como contrato e mantêm mecanismos para testá-la.
+Agentes ampliam pesquisa, comparação, consistência, geração e revisão, e sustentam bem as relações entre muitos artefatos. Mas não têm mandato organizacional. A especificação é central porque pessoas autorizadas a adotaram como contrato e mantêm mecanismos para testá-la. Estar escrita em linguagem natural não tem parte nisso.
 
 **Próxima página:** [Exemplo arquitetural](exemplo-arquitetural.md).

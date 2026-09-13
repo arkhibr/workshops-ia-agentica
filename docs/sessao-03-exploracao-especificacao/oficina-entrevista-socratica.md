@@ -1,4 +1,4 @@
-# Oficina dedicada — entrevista socrática com o agente
+# Oficina de entrevista socrática
 
 **Objetivo Bloom:** Aplicar.
 
@@ -74,7 +74,7 @@ Antes de colar, marque no papel quantos defeitos você enxerga sozinho, numa lei
 
 **Passo 2 — entregue a especificação e responda.** Cole o pedido do gerente e responda cada pergunta como se você fosse quem escreveu o pedido original. Improvise quando não souber, do mesmo jeito que um stakeholder real improvisaria, mas mantenha coerência entre as respostas.
 
-**Passo 3 — conte as interrogações.** A cada mensagem do agente, confira se veio uma única interrogação. Anote quantas mensagens violaram o contrato. Essa contagem é um dado do experimento, não um detalhe.
+**Passo 3 — conte as interrogações.** A cada mensagem do agente, confira se veio uma única interrogação. Anote quantas mensagens violaram o contrato. Essa contagem é um dado do experimento.
 
 **Passo 4 — force um adjetivo vago.** Em alguma resposta, use de propósito uma das palavras da regra: diga que o painel precisa ser "simples" ou que o carregamento tem que ser "rápido". A próxima pergunta do agente deveria ser de quantificação. Anote se foi.
 
@@ -109,18 +109,18 @@ Antes de colar, marque no papel quantos defeitos você enxerga sozinho, numa lei
 
 **Objetivo:** usar o agente no modo que gera roteiro, para quando a entrevista é com um humano e não com o modelo.
 
-Nem toda entrevista acontece com o agente. Quando quem tem a resposta é uma pessoa do negócio, o agente serve para preparar o roteiro, não para conduzir.
+Nem toda entrevista acontece com o agente. Quando quem tem a resposta é uma pessoa do negócio, o agente serve para preparar o roteiro da conversa que você vai conduzir.
 
 **Passo 1 — peça o roteiro.** Numa conversa nova, descreva em duas frases uma funcionalidade real do seu backlog e peça: "gere um roteiro de entrevista socrática que eu vou conduzir com o dono do produto, com a pergunta de abertura, as ramificações conforme o tipo de resposta que eu receber, e o sinal de que cada fase terminou".
 
-**Passo 2 — avalie o roteiro pelas fases.** O roteiro cobre as quatro fases, ou só a de exploração? Tem pergunta de pressuposto e de evidência, ou só de esclarecimento?
+**Passo 2 — avalie o roteiro pelas fases.** O roteiro cobre as cinco fases, ou só a de exploração? Tem pergunta de pressuposto e de evidência, ou só de esclarecimento?
 
 **Passo 3 — teste a ramificação.** Escolha a pergunta de abertura e imagine duas respostas opostas que o dono do produto poderia dar. O roteiro prevê caminhos diferentes para as duas, ou segue igual de qualquer jeito? Roteiro que não ramifica é questionário.
 
 **Questões exploratórias:**
 
 - Qual pergunta do roteiro você não teria coragem de fazer ao dono do produto? O que isso diz sobre a pergunta, ou sobre a relação?
-- O roteiro pressupõe alguma resposta? Uma pergunta que já embute a resposta esperada não é socrática, é confirmação.
+- O roteiro pressupõe alguma resposta? Uma pergunta que já embute a resposta esperada só serve para confirmar o que você já achava.
 
 ## Evidência a entregar
 

@@ -1,6 +1,6 @@
-# Exemplo arquitetural: o ambiente da Vetor
+# Exemplo arquitetural
 
-Este exemplo é uma demonstração conduzida pelo instrutor, não um exercício. O objetivo é ver, do zero, as três peças compartilhadas de um ambiente agêntico sendo montadas para um repositório real.
+Esta página monta, do zero, o ambiente agêntico da Vetor. É uma demonstração conduzida pelo instrutor, e serve para ver as três peças compartilhadas de um ambiente agêntico sendo instaladas num repositório real, uma de cada vez.
 
 **A Vetor**, usada como caso em toda esta sessão, é uma plataforma fictícia de e-commerce B2B que atende clientes padrão e atacado. Hoje, os quatro desenvolvedores do time usam agentes configurados de formas diferentes: dois têm um `CLAUDE.md` pessoal e desatualizado, um não tem arquivo nenhum, e nenhum deles conecta o agente ao rastreador de tarefas da empresa. Há três semanas, esse ambiente ad hoc já custou um bug em produção: um agente comparou o tipo de cliente com `"Atacado"` (maiúsculo, o jeito como aparece na tela) em vez de `"atacado"` (o valor real gravado no banco), e a faixa de desconto de 20% nunca disparou para um lote inteiro de pedidos.
 
@@ -68,7 +68,7 @@ git worktree add ../vetor-fix-frete -b fix/VET-482-frete-zona-rural
 git worktree add ../vetor-relatorio -b feature/VET-490-filtro-status
 ```
 
-A VET-482 é uma correção pequena, num cálculo isolado, fácil de reverter: Ana deixa o agente rodar no modo de maior autonomia dentro do próprio worktree, sem confirmar cada edição. A VET-490 mexe no relatório de vendas usado pela diretoria toda semana; Bruno mantém o modo de confirmar antes de cada edição, mesmo isolado no próprio worktree — o critério de [Autonomia e supervisão](autonomia-e-supervisao.md#quanto-de-autonomia-liberar) (reversibilidade da tarefa) decide o nível de autonomia, não o fato de estar isolado ou não.
+A VET-482 é uma correção pequena, num cálculo isolado, fácil de reverter: Ana deixa o agente rodar no modo de maior autonomia dentro do próprio worktree, sem confirmar cada edição. A VET-490 mexe no relatório de vendas usado pela diretoria toda semana, então Bruno mantém o modo de confirmar antes de cada edição, mesmo isolado no próprio worktree. Quem decide o nível de autonomia é o critério de reversibilidade de [Quanto de autonomia liberar](autonomia-e-supervisao.md#quanto-de-autonomia-liberar), e o isolamento entra como redutor do raio de impacto.
 
 Cada agente roda no próprio diretório, na própria branch, sem risco de um sobrescrever a edição do outro enquanto os dois trabalham ao mesmo tempo.
 
@@ -78,15 +78,15 @@ Cada agente roda no próprio diretório, na própria branch, sem risco de um sob
 
 Isoladas, as três peças parecem três ferramentas separadas. Juntas, mudam o formato inteiro de uma tarefa. Veja a VET-482 do início ao fim:
 
-1. Ana pergunta "quais tarefas estão atribuídas a mim agora" — o agente chama o MCP e devolve a VET-482, com título e prioridade, sem Ana abrir o navegador.
-2. Ana pede "cria um worktree e começa a VET-482" — o agente sugere o comando de worktree do Passo 3, numa branch nomeada a partir do próprio ID da tarefa.
-3. Dentro do worktree, Ana pede a correção do cálculo de frete. O agente já sabe, pelo `AGENTS.md`, que tipo de cliente é `"padrao"` ou `"atacado"` em minúsculo, e que todo commit passa por `npm run lint` antes — duas regras que ninguém precisou repetir no prompt.
+1. Ana pergunta "quais tarefas estão atribuídas a mim agora". O agente chama o MCP e devolve a VET-482, com título e prioridade, sem Ana abrir o navegador.
+2. Ana pede "cria um worktree e começa a VET-482". O agente sugere o comando de worktree do Passo 3, numa branch nomeada a partir do próprio ID da tarefa.
+3. Dentro do worktree, Ana pede a correção do cálculo de frete. O agente já sabe, pelo `AGENTS.md`, que tipo de cliente é `"padrao"` ou `"atacado"` em minúsculo, e que todo commit passa por `npm run lint` antes. São duas regras que ninguém precisou repetir no prompt.
 4. Como a tarefa é pequena e está isolada no próprio worktree, Ana aprovou autonomia ampla para essa sessão: o agente edita, roda os testes e só avisa Ana quando termina, em vez de confirmar edição por edição.
 
-Nenhum desses quatro passos exigiu uma ferramenta de IA específica: o rastreador poderia ser outro, o worktree é git puro, o `AGENTS.md` é lido por qualquer agente compatível com o padrão. O que mudou foi o ambiente ao redor do agente, não o agente em si.
+Nenhum desses quatro passos exigiu uma ferramenta de IA específica: o rastreador poderia ser outro, o worktree é git puro, o `AGENTS.md` é lido por qualquer agente compatível com o padrão. O que mudou foi o ambiente ao redor do agente.
 
 ## Leitura do exemplo
 
-O `AGENTS.md` evitou uma repetição do bug de comparação de string. O MCP tirou um passo manual (copiar e colar) do meio do fluxo. O worktree isolou o raio de impacto de dois trabalhos paralelos, e essa mesma isolação foi o que permitiu a Ana usar mais autonomia sem aumentar o risco real. Nenhuma das quatro peças resolve sozinha o problema descrito no início da página: juntas, formam o ambiente que faz isso.
+O `AGENTS.md` evitou uma repetição do bug de comparação de string. O MCP tirou um passo manual (copiar e colar) do meio do fluxo. O worktree isolou o raio de impacto de dois trabalhos paralelos, e essa mesma isolação foi o que permitiu a Ana usar mais autonomia sem aumentar o risco real. Nenhuma das quatro peças resolve sozinha o problema descrito no início da página. É a combinação delas que forma o ambiente.
 
 **Próxima página:** [Estudo de caso](estudo-de-caso.md).

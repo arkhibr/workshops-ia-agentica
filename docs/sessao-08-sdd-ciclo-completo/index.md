@@ -1,4 +1,4 @@
-# S8 — SDD: ciclo completo
+# S8 — SDD ciclo completo
 
 **Bloco:** 3 — Execução
 
@@ -31,10 +31,10 @@ A Vetor, plataforma fictícia de e-commerce B2B que atravessa o workshop, tem um
 
 | # | Página | Bloco | Tempo | Resultado esperado |
 |---|---|---|---|---|
-| 1 | [O ciclo e os quatro artefatos](ciclo-e-artefatos.md) | Teoria | 8 min | O que cada artefato decide e por que a ordem entre eles não é burocracia |
-| 2 | [Quatro abordagens para o mesmo padrão](abordagens-sdd.md) | Teoria | 9 min | Spec Kit, OpenSpec, SPDD e Superpowers, e o que cada um preserva |
+| 1 | [O ciclo e os quatro artefatos](ciclo-e-artefatos.md) | Teoria | 8 min | O que cada artefato decide e o custo de inverter a ordem entre eles |
+| 2 | [Abordagens de SDD](abordagens-sdd.md) | Teoria | 9 min | Spec Kit, OpenSpec, SPDD e Superpowers, e o que cada um preserva |
 | 3 | [Escolher a abordagem e a profundidade](escolher-a-abordagem.md) | Teoria | 7 min | Dez critérios de comparação e a régua de profundidade proporcional ao risco |
-| 4 | [Manter os artefatos vivos](artefatos-vivos.md) | Teoria | 7 min | Que mudança atualiza qual artefato, e por que regenerar às cegas destrói decisão |
+| 4 | [Manter os artefatos vivos](artefatos-vivos.md) | Teoria | 7 min | Que mudança atualiza qual artefato, e o que regenerar às cegas destrói |
 | 5 | [Quando o SDD falha](quando-sdd-falha.md) | Teoria | 7 min | Os antipadrões, os casos em que o método não compensa e o que medir num piloto |
 | 6 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 12 min | Ver o ciclo inteiro na Vetor, da constitution ao teste verde |
 | 7 | [Estudo de caso](estudo-de-caso.md) | Discussão em grupo | 12 min | Julgar um ciclo que produziu todos os artefatos e ainda assim entregou errado |
@@ -46,7 +46,7 @@ A Vetor, plataforma fictícia de e-commerce B2B que atravessa o workshop, tem um
 
 ## Como conduzir
 
-As cinco páginas de teoria somam 38 minutos. É o bloco mais conceitual do Bloco 3, e o risco de condução é transformá-lo em apresentação de ferramenta. A página das quatro abordagens existe justamente para impedir isso: o participante precisa sair sabendo que o Spec Kit é uma implementação de um padrão, não o padrão.
+As cinco páginas de teoria somam 38 minutos. É o bloco mais conceitual do Bloco 3, e o risco de condução é transformá-lo em apresentação de ferramenta. A página de abordagens existe para impedir isso: o participante precisa sair sabendo que o Spec Kit é uma implementação entre várias de um padrão mais geral.
 
 Na oficina, todos partem de um projeto vazio, montado durante a própria sessão a partir dos blocos de código da página. Ninguém clona nada pronto, e o Spec Kit é instalado nesse projeto descartável, nunca no repositório de trabalho de cada um. A transposição para o repositório real do participante entra como extensão no fim da oficina, nunca como caminho principal.
 

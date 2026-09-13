@@ -1,8 +1,8 @@
-# Exemplo arquitetural: do pedido vago à especificação da Vetor
+# Exemplo arquitetural
 
-Este exemplo é uma demonstração conduzida pelo instrutor, não um exercício. O objetivo é ver o ciclo inteiro (explorar, perguntar, propor, especificar) funcionando sobre um pedido real, antes de os participantes conduzirem o próprio ciclo na oficina.
+Esta é uma demonstração conduzida pelo instrutor. O objetivo é acompanhar o ciclo inteiro (explorar, perguntar, propor, especificar) sobre um pedido vago real, do jeito que ele chega até a especificação completa da Vetor, antes de os participantes conduzirem o próprio ciclo na oficina.
 
-**A Vetor**, usada como caso em toda esta sessão, é uma plataforma fictícia de e-commerce B2B que atende dois tipos de cliente: padrão e atacado. Desde a Sessão 1, sua função `calcularDesconto` recebe um parâmetro `tipoCliente` que não usa — a faixa de atacado nunca foi implementada.
+**A Vetor**, usada como caso em toda esta sessão, é uma plataforma fictícia de e-commerce B2B que atende dois tipos de cliente: padrão e atacado. Desde a Sessão 1, sua função `calcularDesconto` recebe um parâmetro `tipoCliente` que não usa, e a faixa de atacado nunca foi implementada.
 
 ## O pedido, como ele chega de verdade
 
@@ -12,7 +12,7 @@ Isso é tudo que o time recebeu. Nenhuma faixa, nenhum valor, nenhuma menção a
 
 ## Explorar
 
-Antes de perguntar qualquer coisa, o código já revela parte da resposta: `calcularDesconto(valorTotal, tipoCliente)` já aceita `tipoCliente`, e a Sessão 1 documentou que a intenção sempre foi uma faixa de 20% acima de R$ 10.000,00. Isso não é a especificação — é o ponto de partida que evita perguntar algo que já está no código.
+Antes de perguntar qualquer coisa, o código já revela parte da resposta: `calcularDesconto(valorTotal, tipoCliente)` já aceita `tipoCliente`, e a Sessão 1 documentou que a intenção sempre foi uma faixa de 20% acima de R$ 10.000,00. Isso ainda não é a especificação. É o ponto de partida que evita perguntar algo que já está no código.
 
 ## Perguntar
 
@@ -21,18 +21,18 @@ Aplicando o repertório da página [Perguntas que revelam ambiguidade](elicitaca
 | Pergunta | Resposta de quem pediu |
 |---|---|
 | A partir de que valor a faixa de atacado começa? | Acima de R$ 10.000,00 |
-| O pedido de exatamente R$ 10.000,00 entra na faixa nova ou na anterior? | Fica na faixa anterior (10% ou 15%, conforme o valor); "acima de" é estrito |
+| O pedido de exatamente R$ 10.000,00 entra na faixa nova ou na anterior? | Fica na faixa anterior (10% ou 15%, conforme o valor). "Acima de" é estrito |
 | O teto de R$ 1.000,00 continua valendo para a faixa de atacado? | Sim, o teto vale para qualquer faixa, sempre valeu |
-| O que acontece se `tipoCliente` vier diferente de `'padrao'` ou `'atacado'`? | Já lança erro hoje; continua assim |
-| A faixa de atacado pode ficar mais lenta que as outras, já que envolve mais um cálculo? | Não — o checkout roda sob pico de tráfego, precisa continuar respondendo rápido para todo tipo de cliente |
+| O que acontece se `tipoCliente` vier diferente de `'padrao'` ou `'atacado'`? | Já lança erro hoje, e continua assim |
+| A faixa de atacado pode ficar mais lenta que as outras, já que envolve mais um cálculo? | Não. O checkout roda sob pico de tráfego e precisa continuar respondendo rápido para todo tipo de cliente |
 
-Cinco perguntas, cinco respostas — e cada resposta já é uma regra de negócio ou de qualidade que precisa entrar na especificação.
+Cinco perguntas, cinco respostas, e cada resposta já é uma regra de negócio ou de qualidade que precisa entrar na especificação.
 
 ## Propor
 
 > Proposta: implementar a faixa de 20% de desconto para clientes atacado, com pedidos acima de R$ 10.000,00 (exclusive), respeitando o teto de R$ 1.000,00 já existente. Nenhuma outra faixa muda.
 
-Três frases, devolvidas para quem pediu antes de especificar em detalhe — o ponto mais barato para descobrir se a proposta pegou o problema certo.
+Três frases, devolvidas para quem pediu antes de especificar em detalhe, no ponto mais barato para descobrir se a proposta pegou o problema certo.
 
 ## Especificar
 
@@ -69,6 +69,6 @@ Com a proposta validada, a especificação sai no padrão BR/FR/NFR:
 
 ## Leitura do exemplo
 
-Nenhuma dessas cinco linhas de regra veio de "pensar bem" sobre o problema: vieram de perguntar e registrar a resposta antes de escrever código. Se o time tivesse pedido direto ao agente "ative o desconto de atacado", ele teria adivinhado um valor de corte, uma regra de arredondamento na fronteira, uma posição sobre o teto e nenhuma exigência de desempenho sob carga — quatro decisões que aqui vieram de quem realmente sabia a resposta, a última delas só porque alguém perguntou por um atributo de qualidade em vez de assumir que "rápido o bastante" já estava implícito.
+Nenhuma dessas cinco linhas de regra veio de "pensar bem" sobre o problema: vieram de perguntar e registrar a resposta antes de escrever código. Se o time tivesse pedido direto ao agente "ative o desconto de atacado", ele teria adivinhado um valor de corte, uma regra de arredondamento na fronteira, uma posição sobre o teto e nenhuma exigência de desempenho sob carga. São quatro decisões que aqui vieram de quem realmente sabia a resposta, e a última delas só porque alguém perguntou por um atributo de qualidade em vez de assumir que "rápido o bastante" já estava implícito.
 
 **Próxima página:** [Estudo de caso](estudo-de-caso.md).

@@ -1,6 +1,6 @@
-# Estudo de caso: a especificação que estava certa
+# Estudo de caso
 
-Discussão em grupo, sem resposta certa preparada. O objetivo é o grupo chegar a um critério, não a uma opinião, sobre de quem é a responsabilidade quando uma especificação tecnicamente completa ainda produz o sistema errado.
+Discussão em grupo, sem resposta certa preparada. O caso é o de uma especificação que estava tecnicamente certa e ainda assim produziu o sistema errado. O objetivo é o grupo chegar a um critério explícito sobre de quem é a responsabilidade nesse tipo de falha.
 
 ## O incidente
 
@@ -8,15 +8,15 @@ A Vetor, a plataforma fictícia de e-commerce B2B usada nesta sessão, precisava
 
 **BR-01.** Pedidos de clientes atacado com valor acima de R$ 50.000,00 exigem aprovação manual antes do processamento.
 
-**FR-01.** `processarPedido(pedido)` verifica se `pedido.tipoCliente === 'atacado'` e `pedido.valor > 50000`; se sim, marca `pedido.status = 'aguardando_aprovacao'` em vez de prosseguir.
+**FR-01.** `processarPedido(pedido)` verifica se `pedido.tipoCliente === 'atacado'` e `pedido.valor > 50000`. Se for o caso, marca `pedido.status = 'aguardando_aprovacao'` em vez de prosseguir.
 
 **Caso de teste:** pedido de R$ 60.000,00 de cliente atacado → status `'aguardando_aprovacao'`. Passou.
 
-O agente implementou exatamente isso, o teste passou, o código foi para produção. Duas semanas depois, um cliente atacado fez três pedidos de R$ 20.000,00 no mesmo dia, somando R$ 60.000,00 — nenhum deles individualmente passou de R$ 50.000,00, nenhum foi para aprovação manual, e o time só descobriu quando o financeiro notou o volume acumulado no fechamento do mês.
+O agente implementou exatamente isso, o teste passou, o código foi para produção. Duas semanas depois, um cliente atacado fez três pedidos de R$ 20.000,00 no mesmo dia, somando R$ 60.000,00. Nenhum deles individualmente passou de R$ 50.000,00, nenhum foi para aprovação manual, e o time só descobriu quando o financeiro notou o volume acumulado no fechamento do mês.
 
-## Onde a especificação estava, e não estava, errada
+## O que a especificação cobria
 
-A especificação cumpriu exatamente o que dizia: por pedido, não por cliente, não por período. O teste que existia comprovava isso. Nada na revisão de código apontaria erro, porque não havia erro em relação ao que foi escrito — o `FR-01` implementa `BR-01` com fidelidade perfeita.
+A especificação cumpriu exatamente o que dizia, e o que ela dizia era por pedido isolado, sem nenhuma menção a cliente ou a período. O teste que existia comprovava isso. Nada na revisão de código apontaria erro, porque não havia erro em relação ao que foi escrito. O `FR-01` implementa `BR-01` com fidelidade perfeita.
 
 O problema é anterior à especificação: ninguém perguntou, na etapa de explorar e perguntar, se o limite de R$ 50.000,00 era por pedido isolado ou por cliente acumulado num período. As duas leituras são plausíveis para a frase original "pedidos... acima de R$ 50.000,00 exigem aprovação manual", e a especificação escolheu uma sem que ninguém tivesse decidido conscientemente entre as duas.
 
@@ -28,6 +28,6 @@ O problema é anterior à especificação: ninguém perguntou, na etapa de explo
 - Esse incidente aconteceria do mesmo jeito se o pedido tivesse sido implementado por vibe coding, sem especificação nenhuma? A especificação formal preveniu esse erro, ou só deu a ele uma aparência de rigor que não tinha?
 
 !!! question "Antes de continuar"
-    Sem consultar o restante do grupo, escreva sua posição em uma frase: a falha está na especificação, na elicitação que a precedeu, ou em nenhuma das duas — é um risco que nenhum processo elimina de vez?
+    Sem consultar o restante do grupo, escreva sua posição em uma frase: a falha está na especificação, na elicitação que a precedeu, ou em nenhuma das duas, por ser um risco que nenhum processo elimina de vez?
 
 **Próxima página:** [Oficina de ferramentas](oficina-de-ferramentas.md).

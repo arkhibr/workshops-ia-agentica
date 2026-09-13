@@ -30,7 +30,11 @@ Comentário de texto solto, fora desse formato, não conta como documentação.
 `node --test` roda toda a suíte. Não existe passo de compilação.
 ```
 
-Três fatos deste arquivo que **não dá para deduzir lendo o código sozinho**, e que por isso são candidatos naturais a um arquivo de instrução: o comando de teste é `node --test` e não existe compilação; toda função nova segue TDD, teste escrito antes da implementação; e documentação de função pública precisa ser JSDoc (ou comentário XML em C#), comentário solto não conta.
+Três fatos deste arquivo **não dá para deduzir lendo o código sozinho**, e por isso são candidatos naturais a um arquivo de instrução:
+
+- O comando de teste é `node --test`, e não existe passo de compilação.
+- Toda função nova segue TDD, com o teste escrito antes da implementação.
+- Documentação de função pública precisa ser JSDoc (ou comentário XML em C#), e comentário solto não conta.
 
 Para criar o projeto do zero:
 
@@ -80,7 +84,7 @@ Explique a diferença entre as duas práticas, sem usar a palavra "melhor" para 
 <details>
 <summary>Ver resposta</summary>
 
-A engenharia de prompt cuida do texto da instrução. A engenharia de contexto cuida de tudo que chega à janela de contexto numa execução: instruções, histórico, resultado de ferramentas, arquivos lidos. A segunda é mais ampla que a primeira, e não uma substituta.
+A engenharia de prompt cuida do texto da instrução. A engenharia de contexto cuida de tudo que chega à janela de contexto numa execução: instruções, histórico, resultado de ferramentas, arquivos lidos. A segunda é mais ampla que a primeira, sem substituí-la.
 </details>
 
 ### 5. O efeito de uma linha genérica de instrução
@@ -150,7 +154,7 @@ No passo 3 do exercício anterior, ou alguma coisa saiu diferente do esperado, o
 
 ### 9. Avaliando dois servidores MCP
 
-Compare dois servidores que dão ao agente acesso ao sistema de arquivos. O primeiro é o `@modelcontextprotocol/server-filesystem` do Experimento B, mantido pelo próprio projeto do MCP e configurado para uma única pasta. O segundo é um servidor hipotético de mesma função, publicado por um terceiro desconhecido, de código fechado, que pede acesso à sua pasta pessoal inteira. Aplique os três critérios de [MCP e ferramentas externas](mcp.md#antes-de-conectar-avaliar-a-origem-do-servidor-mcp) e diga em qual dos três a distância entre os dois é maior.
+Compare dois servidores que dão ao agente acesso ao sistema de arquivos. O primeiro é o `@modelcontextprotocol/server-filesystem` do Experimento B, mantido pelo próprio projeto do MCP e configurado para uma única pasta. O segundo é um servidor hipotético de mesma função, publicado por um terceiro desconhecido, de código fechado, que pede acesso à sua pasta pessoal inteira. Aplique os três critérios de [MCP e ferramentas externas](mcp.md#avaliar-a-origem-do-servidor-mcp) e diga em qual dos três a distância entre os dois é maior.
 
 ### 10. O que o seu arquivo tem que o exemplo não tem
 

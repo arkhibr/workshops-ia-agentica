@@ -2,22 +2,22 @@
 
 Um ambiente agêntico combina quatro peças, e o time em que cada desenvolvedor monta a própria combinação perde a reprodutibilidade do resultado. Quais são as quatro peças, e quando vale configurá-las em conjunto.
 
-## Do ambiente individual ao ambiente compartilhado
+## O que forma um ambiente agêntico
 
 Um ambiente agêntico é a combinação de quatro peças: o modelo, a aplicação agêntica que orquestra a conversa com ele (Claude Code, Codex CLI, Copilot, Cursor), o arquivo de configuração que carrega convenções do repositório, e o conjunto de ferramentas que o agente pode acionar. Quando cada desenvolvedor monta essa combinação à própria maneira, o time herda exatamente o sintoma "ad hoc" descrito na Sessão 1: nenhum vocabulário compartilhado sobre o que configurar, e o resultado de um prompt na máquina de alguém não se repete na do colega.
 
-A correção não é escolher uma ferramenta única para todo o time. É compartilhar as três peças que independem da ferramenta escolhida: o arquivo de configuração, o protocolo de acesso a ferramentas externas, e a disciplina de isolamento de contexto.
+A correção está em compartilhar as três peças que independem da ferramenta escolhida: o arquivo de configuração, o protocolo de acesso a ferramentas externas, e a disciplina de isolamento de contexto. Padronizar a aplicação agêntica para o time inteiro é outra decisão, e não resolve esse sintoma.
 
-![Quatro módulos formam o ambiente agêntico: modelo, aplicação agêntica, instruções e ferramentas. A aplicação orquestra os demais; modelo e aplicação podem ser escolhas locais, enquanto instruções e ferramentas formam o contrato compartilhado pelo time.](../assets/images/s2-anatomia-ambiente-agentico.png)
+![Quatro módulos formam o ambiente agêntico: modelo, aplicação agêntica, instruções e ferramentas. A aplicação orquestra os demais. Modelo e aplicação podem ser escolhas locais, enquanto instruções e ferramentas formam o contrato compartilhado pelo time.](../assets/images/s2-anatomia-ambiente-agentico.png)
 
 ## As quatro peças, lado a lado
 
 | Peça | O que resolve | Compartilhado entre ferramentas? |
 |---|---|---|
-| Arquivo de configuração (AGENTS.md / CLAUDE.md) | O agente conhece as convenções do repositório | Sim — mesmo arquivo, qualquer agente que o leia |
-| MCP | O agente acessa uma ferramenta externa sem integração específica | Sim — protocolo aberto, adotado por múltiplos fornecedores |
-| Isolamento por ramo (worktree) | Duas sessões não corrompem o trabalho uma da outra | Sim — é uma prática de git, não de uma ferramenta de IA específica |
-| Aplicação agêntica (Claude Code, Copilot, Cursor) | Orquestra a conversa entre humano, modelo e ferramentas | Não — cada equipe escolhe a própria, o método é agnóstico |
+| Arquivo de configuração (AGENTS.md / CLAUDE.md) | O agente conhece as convenções do repositório | Sim. Mesmo arquivo, qualquer agente que o leia |
+| MCP | O agente acessa uma ferramenta externa sem integração específica | Sim. Protocolo aberto, adotado por múltiplos fornecedores |
+| Isolamento por ramo (worktree) | Duas sessões não corrompem o trabalho uma da outra | Sim. É uma prática de git, que independe da ferramenta de IA |
+| Aplicação agêntica (Claude Code, Copilot, Cursor) | Orquestra a conversa entre humano, modelo e ferramentas | Não. Cada equipe escolhe a própria, o método é agnóstico |
 
 ![Arquitetura em três camadas: instruções com precedência de AGENTS.md, acesso externo por clientes e servidores MCP, e isolamento de dois worktrees ligados ao mesmo repositório Git. O método permanece o mesmo em qualquer aplicação agêntica.](../assets/images/s2-ambiente-compartilhado.png)
 

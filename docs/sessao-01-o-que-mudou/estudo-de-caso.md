@@ -1,10 +1,12 @@
-# Estudo de caso: a proibição total
+# Estudo de caso
+
+Um tech lead propõe proibir vibe coding em todo tipo de tarefa depois de dois incidentes em produção. O dilema não tem resposta prescrita, e as perguntas abaixo servem para conduzir a discussão.
 
 **Tempo:** 15 min · **Formato:** 8 min em grupos de 3–4 pessoas, 7 min de plenária.
 
 ## Situação
 
-A Vetor, plataforma fictícia de e-commerce B2B usada como caso desta sessão, acabou de ter dois incidentes causados por código gerado sem revisão. O tech lead do time propõe em reunião: "a partir de hoje, proibido vibe coding no time. Toda linha gerada por IA passa por especificação completa, com plano e tarefas revisados antes de qualquer código." A proposta vale para tudo — desde a correção de um script interno de uma linha até uma nova rota de pagamento.
+A Vetor, plataforma fictícia de e-commerce B2B usada como caso desta sessão, acabou de ter dois incidentes causados por código gerado sem revisão. O tech lead do time propõe em reunião: "a partir de hoje, proibido vibe coding no time. Toda linha gerada por IA passa por especificação completa, com plano e tarefas revisados antes de qualquer código." A proposta vale para tudo, desde a correção de um script interno de uma linha até uma nova rota de pagamento.
 
 Parte do time apoia, cansada de código quebrado sem explicação. Outra parte teme que a burocracia mate exatamente a velocidade que trouxe a IA para o time em primeiro lugar.
 

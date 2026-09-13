@@ -40,7 +40,7 @@ Aderência à especificação: requisitos, critérios e limites foram respeitado
 
 ## Compreender
 
-### 4. Por que a constitution vem antes
+### 4. A constitution antes da especificação
 
 Explique, em duas frases, por que faz diferença declarar os princípios do projeto antes da especificação de uma funcionalidade, em vez de revisá-los no final.
 
@@ -78,7 +78,7 @@ Certo no eixo documental: ele não mantém constitution nem especificação cons
 
 **O que é:** o ciclo completo sobre a faixa de atacado, a partir do projeto montado na oficina, terminando com a suíte verde e a decisão registrada.
 
-**Antes de começar: por que a ordem importa.** O passo 2 só tem valor se acontecer antes do passo 4. Escrever a especificação depois de ver o código gerado produz um documento que descreve o que saiu, não um contrato que orienta o que deveria sair.
+**Antes de começar: a ordem importa.** O passo 2 só tem valor se acontecer antes do passo 4. Escrever a especificação depois de ver o código gerado produz um documento que descreve o que saiu, não um contrato que orienta o que deveria sair.
 
 **Situação**
 

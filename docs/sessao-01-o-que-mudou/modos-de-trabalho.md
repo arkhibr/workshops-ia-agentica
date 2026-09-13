@@ -1,8 +1,8 @@
 # Modos de trabalho com IA
 
-Times que adotam IA no desenvolvimento costumam operar em três modos ao mesmo tempo, sem nomear nenhum deles. O que distingue os três, de onde veio o mais recente, e o critério para escolher um por tarefa.
+Times que adotam IA no desenvolvimento costumam operar em três modos ao mesmo tempo, sem nomear nenhum deles. Esta página dá nome aos três, situa de onde veio o mais recente e fecha com o critério para escolher um por tarefa.
 
-## Três modos de trabalho que a maioria dos times mistura num só
+## Os três modos
 
 Três modos de trabalho com IA se destacam na prática atual de desenvolvimento de software:
 
@@ -26,7 +26,7 @@ O próprio [Karpathy](../referencia/bibliografia.md#karpathy-software-is-changin
 
 ## Quando cada modo se justifica
 
-Os três modos acima não são degraus de maturidade que todo código precisa subir. São famílias de risco: a pergunta não é "qual modo é melhor", é "qual risco esta tarefa específica carrega".
+Os três modos acima não são degraus de maturidade que todo código precisa subir. São famílias de risco. A pergunta certa diante de uma tarefa é qual risco ela carrega, e a resposta muda de tarefa para tarefa dentro do mesmo time.
 
 | Critério                             | Favorece *vibe coding*     | Favorece assistência de codificação | Favorece SDD                                       |
 | ------------------------------------ | -------------------------- | ----------------------------------- | -------------------------------------------------- |
@@ -41,21 +41,21 @@ Os três modos acima não são degraus de maturidade que todo código precisa su
 A pergunta que resume a tabela: se esse código quebrar em produção, alguém vai conseguir reconstruir por que ele foi escrito daquele jeito? Vibe coding não deixa rastro para responder. Assistência de codificação deixa o código e o ticket. SDD deixa a especificação inteira.
 
 !!! tip "Aplique agora"  
-    Pense numa tarefa real do seu backlog desta semana. Percorra as cinco linhas da tabela e classifique-a: ela puxa para vibe coding, assistência ou SDD? Compare com a pessoa ao lado — vocês chegaram no mesmo modo para tarefas parecidas?
+    Pense numa tarefa real do seu backlog desta semana. Percorra as cinco linhas da tabela e classifique-a: ela puxa para vibe coding, assistência ou SDD? Compare com a pessoa ao lado. Vocês chegaram no mesmo modo para tarefas parecidas?
 
 ## O peso econômico de reversibilidade e tempo de vida
 
-[Boehm, em *Software Engineering Economics* (1981)](../referencia/bibliografia.md#boehm-software-engineering-economics-1981), documentou algo que antecede qualquer LLM: o custo de corrigir um defeito cresce a cada fase do desenvolvimento. Em sistemas pequenos, o crescimento é suave; em sistemas grandes e críticos, um problema descoberto depois da entrega pode custar da ordem de 100 vezes mais para corrigir do que o mesmo problema pego na fase de requisitos. A proporção exata varia por contexto (pesquisa mais recente questiona se o multiplicador de Boehm ainda vale em times ágeis com integração contínua), mas a direção não mudou em quatro décadas: quanto mais tarde uma ambiguidade aparece, mais caro fica resolvê-la.
+[Boehm, em *Software Engineering Economics* (1981)](../referencia/bibliografia.md#boehm-software-engineering-economics-1981), documentou algo que antecede qualquer LLM: o custo de corrigir um defeito cresce a cada fase do desenvolvimento. Em sistemas pequenos, o crescimento é suave. Em sistemas grandes e críticos, um problema descoberto depois da entrega pode custar da ordem de 100 vezes mais para corrigir do que o mesmo problema pego na fase de requisitos. A proporção exata varia por contexto (pesquisa mais recente questiona se o multiplicador de Boehm ainda vale em times ágeis com integração contínua), mas a direção não mudou em quatro décadas: quanto mais tarde uma ambiguidade aparece, mais caro fica resolvê-la.
 
 É essa lógica que sustenta as duas primeiras linhas da tabela. Vibe coding empurra toda ambiguidade para depois, para quando o código já está em produção. SDD força a ambiguidade a aparecer antes, na especificação, onde ela ainda é barata de corrigir.
 
 ## Anti-padrão: *vibe coding* tratado como produto
 
-O anti-padrão não é usar vibe coding. É usar vibe coding e depois esquecer que foi usado. Os sintomas aparecem sempre na mesma ordem: o protótipo funciona na demonstração, alguém decide "já está pronto, só falta subir", ninguém escreve a especificação que existia apenas na cabeça de quem conversou com o agente, e o próximo bug custa uma investigação inteira porque não há teste, não há decisão registrada e não há ninguém que lembre por que aquele caso de borda foi ignorado.
+Usar vibe coding é legítimo. O anti-padrão aparece quando o time usa e depois esquece que usou. Os sintomas seguem sempre a mesma ordem: o protótipo funciona na demonstração, alguém decide "já está pronto, só falta subir", ninguém escreve a especificação que existia apenas na cabeça de quem conversou com o agente, e o próximo bug custa uma investigação inteira porque não há teste, não há decisão registrada e não há ninguém que lembre por que aquele caso de borda foi ignorado.
 
-A correção não é proibir vibe coding. É decidir o modo antes de começar, não depois que o protótipo já virou dependência de outras equipes.
+A correção é decidir o modo antes de começar, enquanto o protótipo ainda não virou dependência de outras equipes. Proibir vibe coding resolve menos do que essa decisão.
 
-### A dívida que não é de código
+### Dívida de intenção
 
 Quando isso acontece, o que o time acumula não é dívida técnica no sentido usual. Dívida técnica é código que funciona e que alguém sabe como melhorar: existe um caminho conhecido, com custo estimável, entre o que está lá e o que deveria estar.
 

@@ -1,4 +1,6 @@
-# Oficina de ferramentas — diagnóstico e contexto explícito
+# Oficina de ferramentas
+
+Três experimentos levam o participante do diagnóstico do próprio uso de IA até o efeito do contexto explícito num pedido de código.
 
 **Objetivo Bloom:** Compreender e Aplicar.
 
@@ -13,7 +15,7 @@ Esta oficina usa o agente de codificação já configurado pelo participante (Cl
 - **Essencial em aula:** Experimento A (autodiagnóstico) e Experimento B (contexto explícito), para sentir a diferença antes do exercício-âncora.
 - **Exploração em dupla:** Experimento C, para nomear onde o julgamento humano entrou.
 
-## Experimento A — autodiagnóstico
+## Experimento A: autodiagnóstico
 
 **Objetivo:** ter um retrato honesto do próprio uso de IA hoje, sem julgamento.
 
@@ -26,26 +28,26 @@ Esta oficina usa o agente de codificação já configurado pelo participante (Cl
 
 **Observe:** guarde as respostas. O Bloco 5 (exercícios) e a Sessão 9 (depuração sistemática) revisitam exatamente estas mesmas perguntas para medir o que mudou.
 
-## Experimento B — contexto explícito
+## Experimento B: contexto explícito
 
 **Objetivo:** sentir, num caso com regras de negócio reais, o que "contexto explícito" muda antes de aplicar no exercício-âncora.
 
-**Cenário:** validar se um cupom de desconto pode ser aplicado a um pedido de e-commerce. As quatro regras abaixo só devem ser usadas na parte 2 — leia a parte 1 e execute-a antes de olhar a lista de regras.
+**Cenário:** validar se um cupom de desconto pode ser aplicado a um pedido de e-commerce. As quatro regras abaixo só devem ser usadas na parte 2. Leia a parte 1 e execute-a antes de olhar a lista de regras.
 
 Regras:
 
 - O cupom só vale dentro do prazo de validade (data de início e data de fim).
 - O pedido precisa atingir o valor mínimo de R$ 150,00 para o cupom valer.
-- Cada cliente só pode usar um cupom específico uma vez; um segundo uso do mesmo código é inválido.
+- Cada cliente só pode usar um cupom específico uma vez. Um segundo uso do mesmo código é inválido.
 - Cupom da categoria "frete grátis" não se acumula com cupom da categoria "percentual" no mesmo pedido.
 
-**Execute — parte 1.** Peça ao agente, exatamente assim:
+**Execute, parte 1.** Peça ao agente, exatamente assim:
 
 ```text
 Escreva uma função que valida se um cupom de desconto pode ser aplicado a um pedido.
 ```
 
-**Execute — parte 2.** Peça de novo, agora com contexto:
+**Execute, parte 2.** Peça de novo, agora com contexto:
 
 ```text
 Escreva uma função validarCupom(cupom: Cupom, pedido: Pedido, cliente: Cliente): ResultadoValidacao
@@ -77,7 +79,7 @@ Exemplos:
 
 Guarde as duas saídas: o Experimento C usa exatamente elas.
 
-## Experimento C — onde entrou o julgamento
+## Experimento C: onde entrou o julgamento
 
 **Objetivo:** localizar, nas próprias saídas do Experimento B, onde cada seta de [A tese do Software 3.0](software-3-0.md#o-que-sobe-piso-teto-julgamento) apareceu.
 

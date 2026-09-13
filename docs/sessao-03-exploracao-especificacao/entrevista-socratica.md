@@ -1,6 +1,6 @@
-# O método da entrevista socrática
+# Entrevista socrática
 
-A página anterior trouxe o repertório: quais perguntas quase sempre valem a pena. Esta trata do resto do problema, que é como conduzir a conversa. O mesmo conjunto de perguntas, despejado de uma vez num formulário, produz respostas rasas. Feito uma pergunta por vez, com a seguinte escolhida em função da anterior, expõe o que ninguém tinha percebido que precisava dizer.
+A entrevista socrática é o método que transforma um pedido vago em requisito explícito por meio de perguntas encadeadas, uma por vez. O repertório de perguntas que quase sempre valem a pena está na página anterior. O que sobra é como conduzir a conversa. O mesmo conjunto de perguntas, despejado de uma vez num formulário, produz respostas rasas. Feito uma pergunta por vez, com a seguinte escolhida em função da anterior, expõe o que ninguém tinha percebido que precisava dizer.
 
 ## A regra que sustenta o método
 
@@ -14,7 +14,7 @@ O contrato de conduta tem três partes, e a primeira é a que mais se viola:
 2. **Sem sugerir a resposta.** A pergunta não vem acompanhada da opção que o entrevistador acha certa. Quando o entrevistado trava, o recurso é oferecer duas a quatro alternativas de múltipla escolha, não apontar a preferida.
 3. **Solução fica para depois.** Pedido de solução técnica no meio da entrevista vira anotação, e a conversa continua na pergunta pendente.
 
-## As quatro fases
+## As cinco fases
 
 Cada fase tem um objetivo e um critério de saída observável. Pular fases é o que transforma a entrevista em transcrição.
 
@@ -35,7 +35,7 @@ A terceira é a que mais falha. "O time comercial vai gostar" não é critério 
 
 ## Seis categorias de pergunta
 
-Uma entrevista que só usa a primeira categoria é formulário, não diálogo. O método pede que o entrevistador percorra as seis:
+Uma entrevista que só usa a primeira categoria vira formulário. O método pede que o entrevistador percorra as seis:
 
 1. **Esclarecimento.** "O que 'flexível' significa aqui, em comportamento observável?"
 2. **Pressupostos.** "O que precisa ser verdade sobre o gestor para essa tela fazer sentido?"
@@ -72,7 +72,7 @@ A regra que mais protege a especificação: **opinião de stakeholder nunca vira
 !!! tip "Aplique agora"
     Classifique com as marcas acima as três últimas afirmações que você ouviu sobre um requisito em andamento. Se todas viraram `[FATO]`, releia o critério: quantas têm fonte identificável?
 
-## O dossiê, e por que a entrevista precisa de saída escrita
+## O dossiê
 
 Uma entrevista que termina sem documento produz entendimento na cabeça de quem participou e nada para quem não estava lá. O dossiê registra contexto, as três canônicas, o ledger completo, os termos que foram quantificados (com o antes e o depois), os riscos examinados, as perspectivas consideradas e as perguntas que ficaram abertas com o nome de quem deve respondê-las.
 

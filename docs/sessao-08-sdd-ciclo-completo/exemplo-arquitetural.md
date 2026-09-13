@@ -6,7 +6,7 @@ O estado inicial é o mesmo que a oficina monta do zero: a função `calcularDes
 
 O pedido que chega é o de sempre: "ativa o desconto de atacado, 20% acima de dez mil".
 
-## Constitution: o que já vale antes deste pedido
+## Constitution
 
 A Vetor tem três princípios versionados. Repare que cada um nomeia quem barra o quê:
 
@@ -27,9 +27,9 @@ Versão 1.1 · dono: arquitetura
    migração e decisão registrada do dono do produto.
 ```
 
-O terceiro princípio já elimina uma saída que o agente costuma propor sozinho: trocar a assinatura da função para receber um objeto de configuração. Não está proibido, está condicionado a um plano e uma decisão registrada.
+O terceiro princípio já elimina uma saída que o agente costuma propor sozinho: trocar a assinatura da função para receber um objeto de configuração. A troca continua permitida, condicionada a um plano de migração e a uma decisão registrada.
 
-## Specify: o que o usuário passa a poder fazer
+## Specify
 
 A especificação descreve o comportamento, sem decidir estrutura interna:
 
@@ -50,7 +50,7 @@ Caso concreto: valorTotal = 12000, tipoCliente = 'padrao' → faixa de 15%.
 
 O caso concreto de FR-001 diz `desconto = 2400`. Essa linha é a razão de a próxima etapa existir.
 
-## Clarify: a ambiguidade que muda a solução
+## Clarify
 
 O teto de R$ 1.000,00 já existe e vale para todos os pedidos. Vinte por cento de R$ 12.000,00 são R$ 2.400,00. O pedido original não disse nada sobre isso, e há três respostas possíveis, todas defensáveis:
 
@@ -69,7 +69,7 @@ Decisão de 12/09/2026, dono do produto. Motivo: o teto foi criado para
 limitar risco no varejo, e o contrato de atacado já tem limite por volume.
 ```
 
-## Plan: como a arquitetura realiza isso
+## Plan
 
 O plano registra as decisões técnicas e o que foi descartado:
 
@@ -89,7 +89,7 @@ num if adicional.
 
 A segunda decisão é a que um agente sem plano dificilmente tomaria. A saída mais direta seria um `if (tipoCliente !== 'atacado')` em volta do `Math.min`, que funciona e espalha a regra por mais um ponto do código.
 
-## Tasks: fatias verticais
+## Tasks
 
 ```markdown
 - [ ] T1. Tabela de faixas para 'padrao' reproduzindo o comportamento atual,
@@ -102,7 +102,7 @@ A segunda decisão é a que um agente sem plano dificilmente tomaria. A saída m
 
 T1 não entrega comportamento novo, e ainda assim é a primeira: ela troca a estrutura mantendo o comportamento observável, o que torna T2 uma adição pequena e verificável. É refatoração antes da funcionalidade, e o critério de pronto é a suíte antiga continuar verde.
 
-## Implement: o teste que falha primeiro
+## Implement
 
 O princípio 2 da constitution exige observar a falha antes de escrever a implementação:
 
@@ -115,7 +115,7 @@ it('da 20% no atacado acima de 10.000, sem teto', () => {
 
 Rodar e ver falhar com `2400 !== 1000` é a evidência de que o teste alcança a regra certa: o valor retornado é o teto antigo, exatamente o comportamento que BR-004 mudou. Uma falha com `2400 !== 1800` indicaria que a faixa foi aplicada errado, e uma falha de sintaxe indicaria que o teste não chegou a exercitar nada.
 
-## Verify: os dois eixos
+## Verify
 
 A revisão de **aderência** confere FR-001, FR-002 e BR-004 contra o código, e pergunta se alguma decisão de produto foi tomada durante a implementação sem passar pela especificação.
 
@@ -125,7 +125,7 @@ Um "passa" na segunda não compensa uma falha na primeira. Um código elegante q
 
 ## Leitura do exemplo
 
-O ponto de maior valor do ciclo inteiro não foi nenhum artefato, foi a pergunta da etapa de clarificação. O conflito entre o teto de R$ 1.000,00 e os 20% de R$ 12.000,00 estava presente desde o pedido original, invisível, e qualquer fluxo que fosse direto do pedido ao código teria resolvido esse conflito por acidente.
+A pergunta da etapa de clarificação valeu mais do que qualquer artefato produzido no ciclo. O conflito entre o teto de R$ 1.000,00 e os 20% de R$ 12.000,00 estava presente desde o pedido original, invisível, e qualquer fluxo que fosse direto do pedido ao código teria resolvido esse conflito por acidente.
 
 Um agente competente teria produzido código que passa em testes que ele mesmo escreveu, com o teto aplicado, e ninguém teria motivo para desconfiar. A regra financeira do negócio teria sido decidida pela ordem das linhas na função.
 

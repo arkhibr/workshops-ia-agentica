@@ -16,7 +16,7 @@ O requisito FR-009 dizia: "o sistema deve aplicar a taxa de refrigeração sobre
 
 A regra de negócio real, que consta na tabela de preços acordada com o cliente e nunca foi lida por ninguém do time, aplica a taxa de refrigeração sobre o valor base **mais** o adicional interestadual.
 
-## Onde o processo estava, e não estava, errado
+## O ponto de falha
 
 Nenhuma etapa foi pulada. Nenhum artefato está desatualizado. O rastro de FR-009 até o teste está íntegro e navegável nos dois sentidos. A revisão de aderência fez exatamente o que deveria: conferiu o código contra a especificação, e eles correspondem.
 

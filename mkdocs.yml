@@ -94,7 +94,7 @@ nav:
       - S8 — SDD ciclo completo:
           - Visão geral: sessao-08-sdd-ciclo-completo/index.md
           - "O ciclo e os quatro artefatos": sessao-08-sdd-ciclo-completo/ciclo-e-artefatos.md
-          - "Quatro abordagens para o mesmo padrão": sessao-08-sdd-ciclo-completo/abordagens-sdd.md
+          - "Abordagens de SDD": sessao-08-sdd-ciclo-completo/abordagens-sdd.md
           - "Escolher a abordagem e a profundidade": sessao-08-sdd-ciclo-completo/escolher-a-abordagem.md
           - "Manter os artefatos vivos": sessao-08-sdd-ciclo-completo/artefatos-vivos.md
           - "Quando o SDD falha": sessao-08-sdd-ciclo-completo/quando-sdd-falha.md

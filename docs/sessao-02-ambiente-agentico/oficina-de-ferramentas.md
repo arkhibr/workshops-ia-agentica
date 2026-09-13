@@ -1,6 +1,8 @@
-# Oficina de ferramentas — montando o ambiente compartilhado
+# Oficina de ferramentas
 
 **Objetivo Bloom:** Compreender e Aplicar.
+
+Nos próximos 30 minutos cada participante monta o ambiente compartilhado da sessão na própria máquina: arquivo de instrução, servidor MCP conectado e isolamento por ramo.
 
 ## Ferramenta
 
@@ -21,17 +23,17 @@ Onde os comandos diferem entre sistemas, a página traz as versões em abas — 
 ## Roteiro sugerido para a sessão
 
 - **Essencial em aula:** Experimentos A, B e C, para sair da sessão com um arquivo de instrução testado nas duas versões, um servidor MCP conectado e um worktree testado.
-- **Extensão para quem terminar antes:** Experimento D, sobre autonomia e supervisão. Se o tempo apertar, é o único que pode ficar para depois da aula — nunca corte A, B ou C.
+- **Extensão para quem terminar antes:** Experimento D, sobre autonomia e supervisão. Se o tempo apertar, é o único que pode ficar para depois da aula. Nunca corte A, B ou C.
 
 ## Experimento A — o efeito de um AGENTS.md robusto
 
-**Objetivo:** pedir a mesma função simples duas vezes, sem arquivo de instrução e depois com um arquivo de instrução robusto, e comparar o que muda: não se o cálculo saiu certo, mas o *processo* que produziu o resultado.
+**Objetivo:** pedir a mesma função simples duas vezes, sem arquivo de instrução e depois com um arquivo de instrução robusto, e comparar o *processo* que produziu cada resultado, em vez do valor que o cálculo devolveu.
 
 **Passo 1 — peça a função sem AGENTS.md.** No projeto vazio criado no início da oficina, abra o agente e envie exatamente este pedido:
 
 > Escreva uma função `calcularJurosAtraso(valorPedido, diasAtraso)` que calcula os juros de atraso de um pedido da Vetor: 0,1% ao dia sobre o valor do pedido, sem juros se não houver atraso, e nunca ultrapassando 20% do valor do pedido.
 
-Rode o que o agente gerou — se ele criou um arquivo de teste, rode com `node --test`; se não criou nenhum, escreva você mesmo três ou quatro chamadas de exemplo e confira o resultado à mão. Anote três coisas, porque são elas que você vai comparar no passo 4:
+Rode o que o agente gerou. Se ele criou um arquivo de teste, rode com `node --test`. Se não criou nenhum, escreva você mesmo três ou quatro chamadas de exemplo e confira o resultado à mão. Anote três coisas, porque são elas que você vai comparar no passo 4:
 
 - O agente escreveu algum teste antes de escrever a implementação, ou só entregou a implementação?
 - A função tem documentação no formato nativo da linguagem (bloco JSDoc `/** ... */` com `@param` e `@returns`), só um comentário de texto solto, ou nenhuma documentação?
@@ -75,7 +77,7 @@ Registre este segundo estado também:
 git add -A && git commit -m "com AGENTS.md robusto"
 ```
 
-**Observe:** os dois cálculos provavelmente chegam a um resultado correto e equivalente. A diferença que importa não está no número — está em ter, ou não, um teste que prova o número antes da implementação, e uma documentação que qualquer pessoa do time lê sem abrir o código.
+**Observe:** os dois cálculos provavelmente chegam a um resultado correto e equivalente. A diferença que importa está em ter um teste que prova o número antes da implementação, e uma documentação que qualquer pessoa do time lê sem abrir o código.
 
 **Questões exploratórias:**
 
@@ -84,9 +86,9 @@ git add -A && git commit -m "com AGENTS.md robusto"
 
 ## Experimento B — conecte e examine um servidor MCP real
 
-**Objetivo:** conectar um servidor MCP real, sem precisar de conta nem de credencial, e examinar exatamente qual ferramenta o agente chamou e o que voltou dessa chamada — não só o resumo final que o modelo escreve para você.
+**Objetivo:** conectar um servidor MCP real, sem precisar de conta nem de credencial, e examinar exatamente qual ferramenta o agente chamou e o que voltou dessa chamada, em vez de só o resumo final que o modelo escreve para você.
 
-**Ferramenta usada:** o servidor de referência `@modelcontextprotocol/server-filesystem`, mantido pelo próprio projeto do MCP. Ele expõe operações de leitura e escrita de arquivo (`read_text_file`, `list_directory`, `search_files`, `write_file`, entre outras) restritas a uma ou mais pastas que você escolhe — o mesmo princípio de escopo mínimo visto em [MCP e ferramentas externas](mcp.md#antes-de-conectar-avaliar-a-origem-do-servidor-mcp).
+**Ferramenta usada:** o servidor de referência `@modelcontextprotocol/server-filesystem`, mantido pelo próprio projeto do MCP. Ele expõe operações de leitura e escrita de arquivo (`read_text_file`, `list_directory`, `search_files`, `write_file`, entre outras) restritas a uma ou mais pastas que você escolhe — o mesmo princípio de escopo mínimo visto em [MCP e ferramentas externas](mcp.md#avaliar-a-origem-do-servidor-mcp).
 
 **Execute:**
 
@@ -132,7 +134,7 @@ git add -A && git commit -m "com AGENTS.md robusto"
 
 Em Windows, se editar o arquivo de configuração manualmente em vez de usar o comando acima, lembre que caminho dentro de JSON ou TOML precisa da barra invertida duplicada (`C:\\Users\\seu-usuario\\mcp-teste`).
 
-**Passo 4:** recarregue, se a sua ferramenta pedir. A maioria aplica o servidor na próxima mensagem; se não aplicar, reinicie a sessão do agente.
+**Passo 4:** recarregue, se a sua ferramenta pedir. A maioria aplica o servidor na próxima mensagem. Se não aplicar, reinicie a sessão do agente.
 
 **Passo 5:** repita a pergunta do passo 2 e examine a chamada. Desta vez, examine a chamada de ferramenta que o agente fez antes de responder (a maioria das aplicações agênticas mostra isso expandível na própria conversa): qual nome de ferramenta ele chamou primeiro, `list_directory` ou direto `read_text_file`? O conteúdo bruto que voltou da chamada bate com o arquivo que você criou?
 
@@ -141,7 +143,7 @@ Em Windows, se editar o arquivo de configuração manualmente em vez de usar o c
 **Questões exploratórias:**
 
 - A resposta do passo 2 (sem MCP) e a resposta do passo 5 (com MCP) diferem em quê: só no conteúdo, ou também na forma como o agente comunicou certeza sobre a resposta?
-- O que aconteceu no passo 6 confirma ou contradiz o critério de escopo mínimo de [MCP e ferramentas externas](mcp.md#antes-de-conectar-avaliar-a-origem-do-servidor-mcp)?
+- O que aconteceu no passo 6 confirma ou contradiz o critério de escopo mínimo de [MCP e ferramentas externas](mcp.md#avaliar-a-origem-do-servidor-mcp)?
 - Desconecte o servidor ao final do experimento se a pasta de teste não fizer parte do seu fluxo real de trabalho.
 
 ## Experimento C — isole duas sessões por worktree
@@ -226,7 +228,7 @@ Cronometre do mesmo jeito e conte as confirmações.
 - As duas tarefas eram mesmo fáceis de reverter? Se uma delas tocasse código de produção, você manteria o modo do passo 3?
 - Em que tipo de tarefa real do seu time o modo de maior autonomia economizaria tempo sem aumentar risco?
 
-## Extensão: leve o resultado para o seu repositório
+## Extensão para o seu repositório
 
 Os quatro experimentos rodaram sobre um projeto criado do zero para todo mundo partir do mesmo estado. O ganho só se realiza quando o mesmo cuidado acontece num repositório que você usa de verdade.
 
