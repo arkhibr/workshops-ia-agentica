@@ -2,11 +2,12 @@
 
 `exemplo/vetor` continua no repositório, íntegro, para sessões futuras (TDD e
 testes avançados dos Blocos 3). A oficina e os exercícios da Sessão 2 não o
-usam mais: partem de um projeto vazio (`oficina-arnes`), criado do zero com os
-mesmos dois comandos para todo mundo, o que preserva a mesma garantia de
-reprodutibilidade sem exigir clonar nada pronto. A transposição para o
-repositório real do participante existe como extensão no fim da página, nunca
-como o caminho principal.
+usam mais: partem de uma pasta vazia (`oficina-arnes`), criada do zero com os
+mesmos dois comandos para todo mundo, mais o CSV de 24 pedidos publicado na
+própria página. O entregável da Sessão 2 é uma planilha, e não código, porque
+parte da turma não escreve código. A transposição para o repositório real do
+participante existe como extensão no fim da página, nunca como o caminho
+principal.
 """
 
 import json
@@ -89,12 +90,14 @@ class EnunciadoReprodutivelTest(unittest.TestCase):
                 )
 
     def test_os_exercicios_declaram_a_situacao_compartilhada(self):
+        """Quem não fez a oficina precisa do caso inteiro antes do primeiro exercício."""
         texto = EXERCICIOS.read_text(encoding="utf-8")
         situacao = texto.split("## Recordar", 1)[0]
 
         self.assertIn("## Situação compartilhada", texto)
         self.assertIn("oficina-arnes", situacao)
-        self.assertIn("node --test", situacao)
+        self.assertIn("pedidos-setembro.xlsx", situacao)
+        self.assertIn("AGENTS.md", situacao)
 
     def test_a_situacao_vem_antes_do_primeiro_nivel_de_bloom(self):
         texto = EXERCICIOS.read_text(encoding="utf-8")

@@ -4,39 +4,58 @@ Tente responder antes de abrir os blocos de resposta nos dois primeiros níveis.
 
 ## Situação compartilhada
 
-Todos os exercícios desta página se referem ao mesmo projeto do Experimento A da [Oficina de ferramentas](oficina-de-ferramentas.md#experimento-a). Se você não fez a oficina, o que está aqui é tudo o que precisa para responder.
+Todos os exercícios desta página se referem ao mesmo caso da [Oficina de ferramentas](oficina-de-ferramentas.md#o-caso-fechamento-de-descontos-da-vetor). Se você não fez a oficina, o que está aqui é tudo o que precisa para responder.
 
-A **Vetor** é uma plataforma fictícia de e-commerce B2B que atravessa o workshop. O projeto da oficina, `oficina-arnes`, criado do zero e sem dependências, tem uma função só: `calcularJurosAtraso(valorPedido, diasAtraso)`, que calcula juros de atraso de pedido (0,1% ao dia sobre o valor, sem juros se não houver atraso, nunca ultrapassando 20% do valor do pedido), mais o teste que comprova isso.
+A **Vetor** é uma plataforma fictícia de e-commerce B2B que atravessa o workshop, com clientes de dois tipos: padrão e atacado. A pasta da oficina, `oficina-arnes`, criada do zero, tem uma pasta de trabalho do Excel, `pedidos-setembro.xlsx`, com 24 pedidos de setembro de 2026, dos quais 3 estão cancelados e 21 entram no fechamento. O fechamento correto soma **R$ 39.762,00**.
 
-O arquivo de instrução do projeto é este, o mesmo do Experimento A:
+O arquivo de instrução do projeto é este, o mesmo da oficina:
 
 ```markdown
 # AGENTS.md
 
-## Processo obrigatório: TDD
-Toda função nova segue o ciclo vermelho-verde-refatoração:
-1. Escreva o teste que falha antes de qualquer código de implementação.
-2. Escreva o mínimo de código necessário para o teste passar.
-3. Refatore mantendo os testes verdes.
-Nunca entregue a implementação sem o teste correspondente já escrito primeiro.
+## O que este projeto entrega
+O fechamento mensal de descontos da Vetor. O entregável é sempre uma pasta de
+trabalho do Excel (`.xlsx`), nunca um relatório em texto na conversa.
 
-## Documentação nativa obrigatória
-Toda função pública recebe documentação no formato nativo da linguagem:
-- JavaScript/TypeScript: bloco JSDoc (`/** ... */`) com `@param` e `@returns`.
-- C#: comentário XML (`/// <summary>`, `<param>`, `<returns>`).
-Comentário de texto solto, fora desse formato, não conta como documentação.
+## Stack permitido
+Scripts auxiliares em JavaScript, com Node.js 20 e a biblioteca `exceljs`.
+Este projeto não usa Python em nenhuma hipótese.
 
-## Comando de teste
-`node --test` roda toda a suíte. Não existe passo de compilação.
+## Regras de desconto de setembro de 2026
+- Cliente padrão: 6% a partir de 30 unidades no pedido.
+- Cliente atacado: 12% a partir de 50 unidades, e 18% a partir de 200 unidades.
+- Uma faixa só por pedido, sempre a de maior quantidade atingida. Desconto não acumula.
+- O desconto incide sobre o valor bruto, que é quantidade vezes valor unitário.
+- O valor final é arredondado para baixo, em múltiplos de R$ 0,50.
+- Pedido com status `cancelado` fica fora do fechamento.
+
+## Formato da pasta de trabalho
+Três abas, nesta ordem: `Pedidos` (os dados de origem, sem alteração),
+`Fechamento` (uma linha por pedido elegível, com valor bruto, faixa aplicada,
+desconto e valor final) e `Resumo` (uma linha por cliente, com o total final).
+
+## Aba Conferência obrigatória
+Toda entrega inclui uma quarta aba, `Conferência`, com estes seis números,
+calculados a partir da aba `Pedidos`:
+- linhas lidas
+- pedidos cancelados
+- pedidos elegíveis
+- pedidos com data fora do mês de fechamento
+- pedidos com valor unitário negativo
+- soma da coluna de valor final da aba `Fechamento`
+
+Se qualquer uma das duas contagens de anomalia for maior que zero, liste na
+conversa os pedidos envolvidos e pare antes de declarar o fechamento pronto.
 ```
 
-Três fatos deste arquivo **não dá para deduzir lendo o código sozinho**, e por isso são candidatos naturais a um arquivo de instrução:
+Quatro fatos deste arquivo **não dá para deduzir olhando a planilha de pedidos**, e por isso são candidatos naturais a um arquivo de instrução:
 
-- O comando de teste é `node --test`, e não existe passo de compilação.
-- Toda função nova segue TDD, com o teste escrito antes da implementação.
-- Documentação de função pública precisa ser JSDoc (ou comentário XML em C#), e comentário solto não conta.
+- As faixas de desconto e o arredondamento para baixo em múltiplos de R$ 0,50.
+- Que pedido cancelado fica fora do fechamento.
+- Que o projeto resolve em JavaScript com `exceljs`, e nunca em Python.
+- Que nenhuma entrega é considerada pronta sem a aba `Conferência` conferida.
 
-Para criar o projeto do zero:
+Para montar o caso do zero, salve o CSV publicado na [oficina](oficina-de-ferramentas.md#o-caso-fechamento-de-descontos-da-vetor) dentro de uma pasta nova:
 
 ```bash
 mkdir oficina-arnes && cd oficina-arnes
@@ -89,12 +108,12 @@ A engenharia de prompt cuida do texto da instrução. A engenharia de contexto c
 
 ### 5. O efeito de uma linha genérica de instrução
 
-Um colega abre um `AGENTS.md` no projeto `oficina-arnes` e escreve uma única linha: "escreva código limpo e siga boas práticas." Explique por que essa linha não muda nenhum comportamento observável do agente, e escreva uma linha que mudaria, usando um dos três fatos da situação compartilhada.
+Um colega abre um `AGENTS.md` na pasta `oficina-arnes` e escreve uma única linha: "gere planilhas de qualidade e siga boas práticas de negócio." Explique por que essa linha não muda nenhum comportamento observável do agente, e escreva uma linha que mudaria, usando um dos quatro fatos da situação compartilhada.
 
 <details>
 <summary>Ver resposta</summary>
 
-A linha genérica não informa nada que o agente já não tentasse fazer por padrão, então nenhuma decisão dele muda por causa dela. Uma linha que muda decisão responde uma pergunta concreta que o código não responde. Por exemplo: "toda função nova segue TDD: escreva o teste antes da implementação" muda a ordem real de trabalho do agente, não só o resultado final. Ou: "documentação de função pública precisa ser JSDoc, comentário solto não conta" evita um comentário de uma linha sem `@param` nem `@returns`.
+A linha genérica não informa nada que o agente já não tentasse fazer por padrão, então nenhuma decisão dele muda por causa dela. Uma linha que muda decisão responde uma pergunta cuja resposta só existe dentro da Vetor. Por exemplo: "cliente atacado recebe 12% a partir de 50 unidades e 18% a partir de 200" decide um número que o agente chutaria de outro jeito. Ou: "o valor final é arredondado para baixo em múltiplos de R$ 0,50", que nenhum prior de mercado adivinha.
 </details>
 
 ### 6. Tool ou resource?
@@ -115,36 +134,38 @@ A Vetor quer que o agente consulte o status de entrega de um pedido no sistema d
 
 **Situação**
 
-Você tem o projeto `oficina-arnes` e o `AGENTS.md` robusto da situação compartilhada acima. Se ainda não fez a oficina, crie o projeto agora (`mkdir oficina-arnes && cd oficina-arnes && git init`), salve o arquivo de instrução, e peça ao agente a função `calcularJurosAtraso` descrita acima antes de continuar.
+A Vetor mudou duas regras a partir de outubro. Cliente atacado passa a ter uma quarta faixa, de 22% a partir de 500 unidades. E pedido com valor unitário negativo, que é estorno, deixa de entrar no fechamento. Você tem a pasta `oficina-arnes`, a planilha de pedidos e o `AGENTS.md` da situação compartilhada.
 
 **Seu papel**
 
-Você decide se esse arquivo está pronto para o time inteiro usar, ou se precisa de mais uma rodada.
+Você decide se esse arquivo de instrução está pronto para o time inteiro usar, ou se precisa de mais uma rodada.
 
 **Insumos disponíveis**
 
-O projeto `oficina-arnes`, o `AGENTS.md` da situação compartilhada e o agente que você já usa.
+A pasta `oficina-arnes`, a planilha `pedidos-setembro.xlsx`, o `AGENTS.md` da situação compartilhada e o agente que você já usa.
 
 **Como conduzir**
 
-1. Antes de tudo, confira que o arquivo não está mentindo: rode `node --test` e confirme que o comando existe e passa, como manda [O arquivo de instrução](arquivo-de-instrucao.md#como-saber-se-o-arquivo-ainda-funciona).
-2. **Entrada.** Peça ao agente, numa conversa nova: *"Crie a função `calcularMultaCancelamento(valorPedido, diasParaEntrega)`, que cobra 10% do valor do pedido como multa se o cancelamento acontecer com menos de 2 dias para a entrega prevista, e nada caso contrário."*
-3. **Resposta.** Leia o que ele produziu e confira três pontos contra o `AGENTS.md`. Ele escreveu o teste antes da implementação, ou só entregou a implementação pronta? A função tem documentação no formato nativo (JSDoc)? Ele alterou o teste de `calcularJurosAtraso` sem você ter pedido?
-4. **Verificação.** Rode `node --test`. Os testes de `calcularJurosAtraso` continuam passando, e os novos testes de `calcularMultaCancelamento` passam também?
+1. Antes de tudo, confira que o arquivo não está mentindo: rode o fechamento uma vez com as regras atuais e confirme que o total bate com os R$ 39.762,00 da situação compartilhada, como manda [O arquivo de instrução](arquivo-de-instrucao.md#como-saber-se-o-arquivo-ainda-funciona). Um arquivo que descreve uma regra que o resultado não reproduz está mentindo, e tudo depois disso mede outra coisa.
+2. **Entrada.** Edite o `AGENTS.md` para refletir as duas regras novas, e peça ao agente, numa conversa nova: *"Refaça o fechamento com as regras atuais do AGENTS.md."*
+3. **Resposta.** Confira três pontos contra o arquivo de instrução. Ele aplicou a faixa nova onde ela cabia? Ele tirou do fechamento o pedido de valor negativo? Ele alterou a aba `Pedidos`, que o arquivo manda preservar sem alteração?
+4. **Verificação.** Abra a aba `Conferência`. O total final correto depois das duas mudanças é **R$ 43.362,00**, sobre 20 pedidos elegíveis. Se a sua planilha mostrar outro número, decida se o erro está na regra que você escreveu ou no que o agente fez com ela.
 
 **Entrega esperada**
 
-Um registro de três linhas: o que foi pedido, o que o agente entregou nos três pontos do passo 3, e o resultado de `node --test`.
+Um registro de três linhas: o que foi pedido, o que o agente entregou nos três pontos do passo 3, e o total final que apareceu na aba `Conferência`.
 
 **Critérios de avaliação**
 
 | Critério | Peso | O que evidencia atendimento adequado |
 |---|---:|---|
-| O arquivo foi conferido antes de ser usado | 20% | Rodou `node --test` antes de pedir a nova função, em vez de supor que o comando existia |
-| Verificação real executada | 40% | Rodou `node --test` de verdade depois da entrega e relatou o resultado, inclusive quando passou |
-| Diagnóstico | 40% | Se algum dos três pontos falhou, aponta se foi por faltar linha no arquivo ou por o agente ter ignorado uma linha existente |
+| O arquivo foi conferido antes de ser usado | 20% | Rodou o fechamento com as regras antigas e confirmou os R$ 39.762,00 antes de mudar qualquer coisa |
+| Verificação real executada | 40% | Comparou o total da aba `Conferência` contra o número esperado e relatou o resultado, inclusive quando bateu |
+| Diagnóstico | 40% | Se algum dos três pontos falhou, aponta se foi por faltar precisão na linha que você escreveu ou por o agente ter ignorado uma linha existente |
 
-**Como verificar antes de entregar:** o registro precisa dizer o que `node --test` respondeu depois da nova função. Se você não rodou, o exercício não está completo.
+**Como verificar antes de entregar:** o registro precisa dizer que número apareceu na aba `Conferência`. Se você não abriu a planilha, o exercício não está completo.
+
+**Por que a faixa de 500 unidades não muda nenhum valor:** nenhum dos 24 pedidos chega a 500 unidades. A regra nova está correta e é inócua neste conjunto de dados, o que é exatamente o tipo de mudança que passa despercebida numa revisão feita só por leitura.
 
 ## Analisar
 
@@ -154,7 +175,7 @@ No passo 3 do exercício anterior, ou alguma coisa saiu diferente do esperado, o
 
 ### 9. Avaliando dois servidores MCP
 
-Compare dois servidores que dão ao agente acesso ao sistema de arquivos. O primeiro é o `@modelcontextprotocol/server-filesystem` do Experimento B, mantido pelo próprio projeto do MCP e configurado para uma única pasta. O segundo é um servidor hipotético de mesma função, publicado por um terceiro desconhecido, de código fechado, que pede acesso à sua pasta pessoal inteira. Aplique os três critérios de [MCP e ferramentas externas](mcp.md#avaliar-a-origem-do-servidor-mcp) e diga em qual dos três a distância entre os dois é maior.
+Compare dois servidores que dão ao agente acesso ao sistema de arquivos. O primeiro é o `@modelcontextprotocol/server-filesystem` da camada 3 da oficina, mantido pelo próprio projeto do MCP e configurado para uma única pasta. O segundo é um servidor hipotético de mesma função, publicado por um terceiro desconhecido, de código fechado, que pede acesso à sua pasta pessoal inteira. Aplique os três critérios de [MCP e ferramentas externas](mcp.md#avaliar-a-origem-do-servidor-mcp) e diga em qual dos três a distância entre os dois é maior.
 
 ### 10. O que o seu arquivo tem que o exemplo não tem
 
