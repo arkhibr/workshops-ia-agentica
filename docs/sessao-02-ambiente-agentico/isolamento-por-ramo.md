@@ -24,6 +24,6 @@ Cada comando cria um diretório de trabalho novo, numa branch nova, apontando pa
 
 Cada worktree é um diretório de trabalho completo, mas não duplica automaticamente tudo que um projeto precisa para rodar. O histórico do git é compartilhado entre todos os worktrees do mesmo repositório, mas a pasta de dependências instaladas fica em cada um. Um `npm install` rodado num worktree não aparece no outro. Cada worktree novo precisa da própria instalação, ou de um link simbólico para uma pasta de dependências compartilhada fora do controle do git.
 
-Isso muda a conta de quando vale isolar por ramo. Se criar um worktree custa alguns minutos de instalação antes de começar a tarefa de verdade, ninguém cria, justamente nos casos em que o worktree mais evitaria um incidente como o do [Estudo de caso](estudo-de-caso.md). Times que isolam por ramo com frequência automatizam esse passo num script simples, que cria o worktree e já deixa o ambiente pronto para o agente trabalhar.
+Isso muda a conta de quando vale isolar por ramo. Se criar um worktree custa alguns minutos de instalação antes de começar a tarefa, ninguém cria, justamente nos casos em que o worktree mais evitaria um incidente como o do [Estudo de caso](estudo-de-caso.md). Times que isolam por ramo com frequência automatizam esse passo num script simples, que cria o worktree e já deixa o ambiente pronto para o agente trabalhar.
 
 **Próxima página:** [Autonomia e supervisão](autonomia-e-supervisao.md).

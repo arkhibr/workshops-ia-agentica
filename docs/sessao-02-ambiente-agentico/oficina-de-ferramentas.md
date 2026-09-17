@@ -2,9 +2,9 @@
 
 **Objetivo Bloom:** Compreender e Aplicar.
 
-Nos próximos 45 minutos você vai fazer o mesmo pedido a um agente cinco vezes seguidas. O pedido não muda nenhuma palavra. O que muda é o que existe em volta do modelo a cada rodada: na primeira, nada. Depois os dados. Depois as regras escritas. Depois o acesso aos arquivos. Depois a obrigação de conferir o próprio trabalho.
+Neste exercício nós vamos explorar o conceito de arnês. Você vai trabalhar sobre um mesmo conjunto de comandos enviados à IA, acrescentando níveis sucessivos de rede de proteção para melhorar o resultado a cada rodada.
 
-O agente entrega uma planilha do Excel em toda rodada, e você compara as cinco. Não precisa ler nem escrever código para fazer esta oficina. Conferir é abrir o arquivo e olhar os números.
+O agente devolve uma planilha do Excel em toda rodada, e conferir é abrir o arquivo e olhar os números. Quem não escreve código faz a oficina inteira.
 
 **Decisão em foco:** que peça do arnês é responsável por cada erro que o agente comete num fechamento mensal, e em que ordem vale a pena acrescentá-las.
 
@@ -23,8 +23,8 @@ node --version   # precisa mostrar v20 ou superior
 ## Roteiro sugerido para a sessão
 
 - **Essencial em aula:** gerar a planilha do caso e fazer as cinco rodadas, na ordem em que aparecem. Use o mesmo pedido nas cinco, senão não dá para comparar nada.
-- **Exploração em dupla:** ao fim da última rodada, compare o seu placar com o de quem está do lado. Quando duas pessoas com o mesmo arnês chegam a resultados diferentes, esse é o achado mais interessante do dia.
-- **Extensão para depois da aula:** a seção final, com isolamento por ramo, autonomia e a transposição para um repositório de verdade.
+- **Exploração em dupla:** ao fim da última rodada, compare o seu placar com o de quem está do lado. Duas pessoas com o mesmo arnês e resultados diferentes indicam uma variável que o placar não captura. Registre qual.
+- **Extensão para depois da aula:** a seção final, com isolamento por ramo, autonomia e a transposição para um repositório real.
 
 ## O que é arnês
 
@@ -32,7 +32,7 @@ Quando você pede alguma coisa a um agente, o modelo é só uma peça do que res
 
 **agente = modelo + arnês**
 
-Isso muda a ordem em que você ataca um problema com agente. Trocar de modelo é caro e aparece na fatura. Mexer no arnês é barato e ninguém vê. Trivedy conta que a mesma família de modelo sai de fora das trinta primeiras posições para as cinco primeiras do Terminal Bench 2.0 sem trocar o modelo, só o arnês. [Addy Osmani](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026) diz o mesmo com outras palavras: um modelo mediano num bom arnês entrega mais que um bom modelo num arnês ruim.
+Isso muda a ordem das decisões. Trocar de modelo tem custo direto e visível no orçamento. Configurar o arnês tem custo de tempo e não aparece em nenhuma linha de custo. Trivedy relata que a mesma família de modelo sai de fora das trinta primeiras posições para as cinco primeiras do Terminal Bench 2.0 sem trocar o modelo, só o arnês. [Addy Osmani](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026) diz o mesmo com outras palavras: um modelo mediano num bom arnês entrega mais que um bom modelo num arnês ruim.
 
 O arnês tem sete peças, e você mexe em quatro delas hoje:
 
@@ -52,7 +52,7 @@ As duas primeiras levam quase toda a atenção e são as que menos rendem sozinh
 
 O agente executa uma tarefa em muitas etapas, e as chances de cada etapa se multiplicam. Se ele acerta 99% das etapas, uma tarefa de 10 etapas sai inteira certa em 90,4% das vezes. Uma de 50 etapas, em 60,5%. A conta é `0,99` elevado ao número de etapas.
 
-Repare onde isso deixa você. Trocar o modelo não resolve, porque o problema vem do encadeamento, e não da qualidade de cada resposta isolada. O que resolve fica em volta: dar ao agente como conferir o próprio trabalho, parar a tarefa em pontos definidos, deixar cada etapa menos ambígua e manter limpa a janela de contexto. Cada rodada desta oficina acrescenta uma dessas coisas, para você ver quanto ela vale sozinha.
+Trocar o modelo não altera essa conta, porque o resultado depende do encadeamento e não da qualidade de cada resposta isolada. Quatro intervenções alteram: dar ao agente como conferir o próprio trabalho, parar a tarefa em pontos definidos, reduzir a ambiguidade de cada etapa e manter limpa a janela de contexto. Cada rodada desta oficina acrescenta uma delas, isolada, para medir o efeito de cada uma.
 
 ## O caso: fechamento de descontos da Vetor
 
@@ -140,11 +140,11 @@ Isolamento e autonomia ficam para a extensão depois da aula. Memória fica de f
 
 ### Como julgar cada rodada
 
-Repare que as regras de desconto da Vetor são arbitrárias. Nenhum padrão de mercado manda cortar o desconto em R$ 1.000,00 por pedido, nem dar uma faixa extra de 20% ao atacado acima de R$ 10.000,00. O agente não tem como acertar isso antes de alguém escrever a regra para ele, e um modelo mais capaz só chuta com mais convicção. Foi por isso que escolhi este caso para a oficina.
+As regras de desconto da Vetor são arbitrárias. Nenhum padrão de mercado define teto de R$ 1.000,00 por pedido, nem faixa de 20% para atacado acima de R$ 10.000,00. O agente não tem como derivar esses valores antes de alguém escrevê-los, e um modelo mais capaz produz um chute mais fluente com a mesma taxa de acerto. O caso foi escolhido por essa propriedade.
 
-Tome cuidado com um erro de avaliação aqui. Se você julgar as saídas por qual parece melhor, a rodada sem arnês nenhum costuma ganhar, porque um agente sem regra escreve mais: inventa faixas, acrescenta colunas e devolve um relatório mais completo que o correto. Compare sempre contra o [gabarito](#gabarito), no fim desta página.
+Um erro de avaliação é frequente aqui. Julgadas por aparência, as saídas da rodada sem arnês costumam ganhar, porque um agente sem regra produz mais conteúdo: inventa faixas, acrescenta colunas e entrega um relatório mais extenso que o correto. Compare contra o [gabarito](#gabarito), no fim desta página.
 
-Faixa que o agente inventou conta como erro, mesmo quando é defensável e mesmo quando um analista humano teria suposto a mesma coisa. Em fechamento, desconto que ninguém aprovou sai do caixa.
+Faixa que o agente inventou conta como erro, mesmo quando é defensável e mesmo quando um analista humano teria suposto a mesma coisa. Num fechamento, um desconto não aprovado reduz a receita do período.
 
 Faça cada rodada duas vezes, em conversas separadas. A segunda custa colar o mesmo pedido de novo, e é ela que mostra se o resultado se repete. Preencha uma linha do placar por rodada, logo depois de conferir:
 
@@ -172,7 +172,7 @@ Confira a resposta. Ela deve estar certa, completa e imediata.
 
 **Passo 3:** confira contra o [gabarito](#gabarito) e preencha a linha 0 do placar. Anote também em que ponto o agente avisou que estava supondo, se é que avisou.
 
-**Observe:** você mandou as duas perguntas para o mesmo modelo, no mesmo minuto, sem arnês nenhum. A primeira saiu perfeita porque a resposta está publicada em milhares de lugares. A segunda saiu inventada porque a resposta só existe dentro da Vetor. Guarde essa diferença, porque ela é que diz quando vale a pena montar arnês e quando não vale.
+**Observe:** você mandou as duas perguntas para o mesmo modelo, no mesmo minuto, sem arnês nenhum. A primeira saiu perfeita porque a resposta está publicada em milhares de lugares. A segunda saiu inventada porque a resposta só existe dentro da Vetor. Essa diferença define quando montar arnês compensa.
 
 **Questões exploratórias:**
 
@@ -191,7 +191,7 @@ Confira a resposta. Ela deve estar certa, completa e imediata.
 
 **Passo 3:** rode uma segunda vez, em outra conversa nova, e compare as duas saídas entre si.
 
-**Observe:** os clientes e os valores brutos passam a ser os reais, porque agora eles estão no arquivo. As faixas de desconto continuam vindo de lugar nenhum. O total sai com aparência impecável e erra por milhares de reais.
+**Observe:** os clientes e os valores brutos passam a ser os reais, porque agora estão no arquivo. As faixas de desconto continuam vindo de lugar nenhum. O total tem o formato correto e o valor errado.
 
 **Questões exploratórias:**
 
@@ -243,7 +243,7 @@ Abra a aba `Regras` e confira as cinco faixas e a linha do teto. Quem cuida do n
 
 **Passo 4:** rode uma segunda vez, em outra conversa nova. Compare o formato das duas saídas, e não apenas os números.
 
-**Observe:** três coisas costumam mudar de uma vez. As faixas ficam certas, os pedidos cancelados saem do fechamento e o agente para de escolher a linguagem por conta própria. Fique de olho no pedido VT-1006, de valor bruto exatamente R$ 10.000,00: a faixa de 20% do atacado vale **acima** desse valor, então esse pedido fica em 15%, e o teto de R$ 1.000,00 corta o resultado. É o erro mais comum mesmo com a regra escrita.
+**Observe:** três coisas costumam mudar de uma vez. As faixas ficam certas, os pedidos cancelados saem do fechamento e o agente para de escolher a linguagem por conta própria. Confira primeiro o pedido VT-1006, de valor bruto exatamente R$ 10.000,00. A faixa de 20% do atacado vale **acima** desse valor, então o pedido fica em 15%, e o teto de R$ 1.000,00 corta o resultado. É a divergência mais frequente mesmo com a regra escrita.
 
 **Questões exploratórias:**
 
@@ -300,7 +300,7 @@ Em Windows, se editar o arquivo de configuração à mão em vez de usar o coman
 
 **Passo 6:** confira contra o [gabarito](#gabarito) e preencha a linha 3 do placar.
 
-**Passo 7:** desconecte o servidor se esta pasta não fizer parte do seu trabalho de verdade.
+**Passo 7:** desconecte o servidor se esta pasta não fizer parte do seu trabalho real.
 
 **Observe:** o total provavelmente não muda muito nesta rodada. O que melhora é a repetição entre as duas execuções, porque o agente para de depender do que você lembrou de colar na conversa. E a recusa do passo 5 mostra que o limite da pasta é real, e não uma promessa no arquivo de instrução.
 
@@ -311,7 +311,7 @@ Em Windows, se editar o arquivo de configuração à mão em vez de usar o coman
 
 ### Rodada 4 — verificação
 
-**Peça do arnês: verificação.** É dar ao agente um jeito de conferir o próprio trabalho antes de dizer que terminou. Pela conta do começo da página, é a peça que mais rende das sete, e a que quase ninguém configura.
+**Peça do arnês: verificação.** É dar ao agente um jeito de conferir o próprio trabalho antes de dizer que terminou. Pela conta do começo da página, é a peça de maior retorno das sete.
 
 **Objetivo:** parar de ser você a conferir o resultado à mão.
 
@@ -372,7 +372,7 @@ Isolamento e autonomia saem para a extensão depois da aula, porque as duas pede
 
 Memória fica fora da oficina e fora da sessão. Cada rodada começa em conversa nova justamente para isso: o placar precisa medir o arnês que você montou, e não o que o agente lembrou da tentativa anterior.
 
-Sobra uma peça que nem aparece na tabela das sete. A aba `Conferência` da rodada 4 pede um comportamento ao modelo, e pedido é coisa que dá para ignorar. Alguns agentes ignoram. Quem impõe de verdade é *hook* e permissão, na camada de execução, como separa a [distinção entre guiar e impor](arnes.md#os-componentes-do-arnes). Se o agente pulou a conferência em alguma rodada, foi essa peça que faltou.
+Falta uma peça que não está na tabela das sete. A aba `Conferência` da rodada 4 pede um comportamento ao modelo, e o modelo pode ignorar o pedido. Alguns agentes ignoram. Quem impõe de verdade é *hook* e permissão, na camada de execução, como separa a [distinção entre guiar e impor](arnes.md#os-componentes-do-arnes). Se o agente pulou a conferência em alguma rodada, foi essa peça que faltou.
 
 ## Extensão para o seu repositório
 
@@ -396,7 +396,7 @@ git branch -D experimento/a experimento/b
 
 **Autonomia.** Repita a rodada 4 no modo de menor autonomia da sua aplicação agêntica, contando quantas confirmações você precisou dar, e depois no modo de maior autonomia, dentro de um worktree descartável. Compare os dois tempos e responda se alguma edição saiu diferente do que você esperava.
 
-**O seu projeto.** Escolha uma rotina de planilha que exista de verdade no seu time, uma conciliação ou um relatório mensal. Escreva o `AGENTS.md` dela com as regras que hoje só existem na cabeça de alguém, e acrescente a seção de conferência com os números de controle que você usaria para saber que o resultado está certo. Essa é a tarefa que faz o arquivo de instrução sobreviver à aula.
+**O seu projeto.** Escolha uma rotina de planilha real do seu time, uma conciliação ou um relatório mensal. Escreva o `AGENTS.md` dela com as regras que hoje só existem na cabeça de alguém, e acrescente a seção de conferência com os números de controle que você usaria para saber que o resultado está certo. Essa é a tarefa que faz o arquivo de instrução sobreviver à aula.
 
 ## Evidência a entregar
 
@@ -409,7 +409,7 @@ git branch -D experimento/a experimento/b
 
 ## Gabarito
 
-Estes são os números do fechamento correto. Consulte esta seção depois de cada rodada, na hora de conferir, e não antes: quem lê os números certos primeiro deixa de reparar no que o agente inventou.
+Estes são os números do fechamento correto. Consulte esta seção depois de cada rodada, na hora de conferir. Ler os números corretos antes de rodar compromete a comparação, porque a expectativa se forma a partir deles.
 
 ??? note "Abrir para conferir"
 

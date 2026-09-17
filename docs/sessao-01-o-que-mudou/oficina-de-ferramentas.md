@@ -1,6 +1,6 @@
 # Oficina de ferramentas
 
-Você vai fazer três experimentos, começando por um diagnóstico do seu próprio uso de IA e terminando no efeito que o contexto explícito tem num pedido de código.
+Neste exercício nós vamos explorar o efeito do contexto explícito num pedido de código. Você vai trabalhar sobre o mesmo problema duas vezes, com dois níveis de contexto, e comparar as saídas.
 
 **Objetivo Bloom:** Compreender e Aplicar.
 

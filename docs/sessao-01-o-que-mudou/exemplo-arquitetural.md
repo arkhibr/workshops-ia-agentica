@@ -37,7 +37,7 @@ Essa versão acerta a regra inteira porque a regra inteira estava no pedido. Que
 | Pedido de R$ 8.000 (padrão) | provavelmente aplica 15% sem teto: R$ 1.200,00 | R$ 1.000,00 (teto aplicado) |
 | Pedido de R$ 12.000 (atacado) | não reconhece o conceito de atacado | R$ 1.000,00 (20% estouraria o teto) |
 
-Repare onde a diferença aparece: nos dois casos que dependem de conhecimento de negócio, o teto e o tipo de cliente. Nenhum modelo adivinha uma regra que ninguém escreveu.
+A diferença aparece nos dois casos que dependem de conhecimento de negócio: o teto e o tipo de cliente. Nenhum modelo deriva uma regra que ninguém escreveu.
 
 ## Leitura do exemplo
 

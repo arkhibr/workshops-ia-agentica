@@ -156,7 +156,7 @@ As três tarefas em uma linha cada, a tabela preenchida para a tarefa escolhida,
 
 | Critério | Peso | O que evidencia atendimento adequado |
 |---|---:|---|
-| As três tarefas são reais e distintas em risco | 20% | Vieram do backlog de verdade e não são três variações da mesma coisa |
+| As três tarefas são reais e distintas em risco | 20% | Vieram do backlog atual e cobrem riscos diferentes entre si |
 | A classificação usa os cinco critérios | 40% | Cada linha da tabela foi respondida para a tarefa escolhida, inclusive as que puxam para lados opostos |
 | A decisão é justificada pelos critérios | 20% | As duas frases citam as linhas que pesaram, e não preferência pessoal ou hábito |
 | A divergência foi examinada | 20% | Nomeia o critério em que a dupla discordou e por quê, ou registra que a leitura foi idêntica nos cinco |
@@ -206,7 +206,7 @@ Você já gerou, no exercício 5, duas versões da função de frete: uma a part
 <details>
 <summary>O que evidencia um bom resultado</summary>
 
-O agente identificou o caso 3 (isenção negada por item frágil) sem que isso fosse mencionado no prompt. O caso 5, que exige perceber a interação entre duas exceções, é o mais difícil de todos. Não encontrá-lo sozinho também é um resultado válido para discutir. Um ciclo de autocrítica pega bem uma regra esquecida, e pega mal um erro de composição entre duas regras corretas. Por isso a verificação por teste automatizado continua necessária mesmo com um passo de revisão a mais.
+O agente identificou o caso 3 (isenção negada por item frágil) sem que isso fosse mencionado no prompt. O caso 5 exige perceber a interação entre duas exceções. Não encontrá-lo sozinho também é um resultado válido para discutir. Um ciclo de autocrítica pega bem uma regra esquecida, e pega mal um erro de composição entre duas regras corretas. Por isso a verificação por teste automatizado continua necessária mesmo com um passo de revisão a mais.
 </details>
 
 Concluída a prática, faça a [síntese e autoavaliação](sintese-e-referencias.md).

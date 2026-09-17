@@ -14,7 +14,7 @@ Na reunião de retrospectiva, uma pessoa sugere: "vamos exigir que todo mundo us
 
 ## Como usar este estudo de caso
 
-Não existe resposta única aqui. Pratique o critério da tabela de [O ambiente compartilhado](ambiente-compartilhado.md#quando-vale-configurar-um-ambiente-compartilhado) num caso ambíguo de verdade.
+Não existe resposta única aqui. Pratique o critério da tabela de [O ambiente compartilhado](ambiente-compartilhado.md#quando-vale-configurar-um-ambiente-compartilhado) num caso ambíguo.
 
 ## Perguntas para orientar a análise
 

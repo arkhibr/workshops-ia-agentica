@@ -24,7 +24,7 @@ O time da Vetor escreve, em conjunto, um único `AGENTS.md` na raiz do repositó
 - Nunca imprimir a chave de API do gateway de pagamento em log
 ```
 
-Repare no que ficou de fora. Nada de arquitetura histórica, nada de boa intenção genérica como "escreva código limpo". Cada linha do arquivo muda um comportamento que o agente teria de outro jeito sem ela.
+O arquivo não traz arquitetura histórica nem instrução genérica como "escreva código limpo". Cada linha muda um comportamento que o agente teria de outro jeito sem ela.
 
 Para testar, repita a tarefa que causou o bug. **Antes** de o arquivo existir, um desenvolvedor pede: "escreva a validação que decide se um pedido é elegível para a faixa de desconto de atacado." Uma saída típica escreve `if (cliente.tipo === "Atacado")`, porque nada no prompt disse qual valor está gravado no banco. **Depois** de o arquivo existir, o mesmo pedido produz `if (cliente.tipo === "atacado")`. O agente leu a convenção antes de escrever a primeira linha, e ninguém precisou repeti-la no prompt.
 

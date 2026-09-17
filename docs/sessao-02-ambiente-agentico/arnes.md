@@ -27,7 +27,7 @@ Um agente é um processo de muitas etapas, e etapas se compõem por multiplicaç
 
 A conta é `0,99^n`. Uma taxa de acerto por passo que pareceria ótima num classificador isolado produz fracasso frequente numa trajetória longa. A [Anthropic registra o mesmo fenômeno no guia "Building Effective Agents"](../referencia/bibliografia.md#anthropic-building-effective-agents-2024), já citado na Sessão 1: a autonomia dos agentes traz custo maior e **erros que se compõem**.
 
-Repare onde isso deixa você. Trocar de modelo não resolve, porque o problema vem do encadeamento das etapas. Ataque o arnês, por quatro vias:
+Trocar de modelo não altera essa conta, porque o resultado depende do encadeamento das etapas. As quatro vias que alteram estão no arnês:
 
 - **Verificação.** Dar ao agente uma forma de conferir o próprio trabalho antes de avançar, o que corta a propagação na origem.
 - **Pontos de parada.** Interromper a trajetória em fronteiras definidas, para que um erro não atravesse dez etapas antes de aparecer.

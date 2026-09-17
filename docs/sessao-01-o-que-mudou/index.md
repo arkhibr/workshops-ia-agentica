@@ -44,10 +44,10 @@ A **Vetor** é uma plataforma fictícia de e-commerce B2B usada como fio conduto
 
 ## Como conduzir
 
-As cinco páginas de teoria têm caixas de destaque ("Antes de continuar", "Aplique agora") embutidas no texto. Pare de verdade nelas e espere a turma responder, em vez de ler a pergunta e seguir em frente. Os 30 minutos de teoria da sessão contam com essas paradas.
+As cinco páginas de teoria têm caixas de destaque ("Antes de continuar", "Aplique agora") embutidas no texto. Pare nelas e espere a turma responder, em vez de ler a pergunta e seguir em frente. Os 30 minutos de teoria da sessão contam com essas paradas.
 
 Ao chegar num exercício, não resolva no lugar do participante. Cada um precisa ver, no próprio prompt, onde a ambiguidade custou uma regra de negócio.
 
-O exercício 6, de classificação de tarefas reais, ocupa os 20 minutos que antecedem o intervalo e é a única atividade da sessão que toca o backlog de verdade de cada participante. Ninguém precisa mostrar código: as tarefas são descritas em uma linha. O estudo de caso sai do relógio da aula e fica como leitura depois dela.
+O exercício 6, de classificação de tarefas reais, ocupa os 20 minutos que antecedem o intervalo e é a única atividade da sessão que toca o backlog real de cada participante. Ninguém precisa mostrar código: as tarefas são descritas em uma linha. O estudo de caso sai do relógio da aula e fica como leitura depois dela.
 
 **Próxima página:** [Modos de trabalho com IA](modos-de-trabalho.md).
