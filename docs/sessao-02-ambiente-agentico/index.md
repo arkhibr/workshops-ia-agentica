@@ -6,7 +6,7 @@
 
 ## Problema
 
-Cada desenvolvedor configura o próprio agente à própria maneira: arquivo de instrução diferente (quando existe um), ferramentas conectadas diferentes, nenhum isolamento entre o trabalho de um agente e o resto do repositório. O que funciona na máquina de um raramente se repete na do colega ao lado.
+Cada desenvolvedor configura o próprio agente do próprio jeito: arquivo de instrução diferente, quando existe um, ferramentas conectadas diferentes, e nenhum isolamento entre o trabalho de um agente e o resto do repositório. O que funciona na máquina de um raramente se repete na do colega ao lado.
 
 ## Como usar este material
 
@@ -24,7 +24,7 @@ Ao final desta sessão, o participante deve ser capaz de:
 
 ## A Vetor
 
-A Vetor, plataforma fictícia de e-commerce B2B introduzida na Sessão 1, tem hoje quatro desenvolvedores usando quatro agentes configurados de quatro jeitos diferentes — nenhum arquivo de instrução compartilhado, nenhuma ferramenta conectada em comum, nenhum isolamento quando duas pessoas usam o agente ao mesmo tempo. Esta sessão organiza isso.
+A Vetor é uma empresa fictícia de e-commerce B2B, usada nos exemplos deste workshop e apresentada na Sessão 1. Hoje ela tem quatro desenvolvedores usando quatro agentes configurados de quatro jeitos. Nenhum arquivo de instrução em comum, nenhuma ferramenta conectada em comum, e nenhum isolamento quando duas pessoas usam o agente ao mesmo tempo. Esta sessão organiza isso.
 
 ## Roteiro da sessão (2h, das 10h às 12h)
 
@@ -49,6 +49,6 @@ A Vetor, plataforma fictícia de e-commerce B2B introduzida na Sessão 1, tem ho
 
 As sete páginas de teoria têm caixas de destaque embutidas no texto. Pare de verdade nesses pontos, em vez de ler a pergunta e seguir em frente.
 
-Ao chegar na oficina, todos criam a mesma pasta vazia, `oficina-arnes`, com dois comandos (`mkdir` e `git init`), e salvam nela o mesmo arquivo de 22 pedidos. Daí em diante o mesmo pedido de fechamento é executado cinco vezes, com uma peça de arnês a mais a cada rodada, e medido contra um gabarito numérico publicado na página. O entregável é sempre uma planilha, então quem não escreve código executa a oficina inteira. A transposição para um repositório real está na extensão ao fim da página, e é a tarefa que faz o arquivo de instrução sobreviver à aula.
+Na oficina, todos criam a mesma pasta vazia, `oficina-arnes`, com dois comandos (`mkdir` e `git init`), e salvam nela o mesmo arquivo de 22 pedidos. Daí em diante cada participante faz o mesmo pedido de fechamento cinco vezes, acrescentando uma peça de arnês por rodada e conferindo contra um gabarito publicado na página. Como o entregável é sempre uma planilha, quem não escreve código faz a oficina inteira. A transposição para um repositório real fica na extensão ao fim da página, e é ela que faz o arquivo de instrução sobreviver à aula.
 
 **Próxima página:** [O ambiente compartilhado](ambiente-compartilhado.md).

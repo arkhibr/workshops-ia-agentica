@@ -1,12 +1,12 @@
 # O ambiente compartilhado
 
-Um ambiente agêntico combina quatro peças, e o time em que cada desenvolvedor monta a própria combinação perde a reprodutibilidade do resultado. Quais são as quatro peças, e quando vale configurá-las em conjunto.
+Um ambiente agêntico combina quatro peças. Quando cada desenvolvedor monta a combinação do próprio jeito, o que funciona numa máquina para de funcionar na do colega. Esta página mostra quais são as quatro peças e quando vale configurá-las em conjunto.
 
 ## O que forma um ambiente agêntico
 
-Um ambiente agêntico é a combinação de quatro peças: o modelo, a aplicação agêntica que orquestra a conversa com ele (Claude Code, Codex CLI, Copilot, Cursor), o arquivo de configuração que carrega convenções do repositório, e o conjunto de ferramentas que o agente pode acionar. Quando cada desenvolvedor monta essa combinação à própria maneira, o time herda exatamente o sintoma "ad hoc" descrito na Sessão 1: nenhum vocabulário compartilhado sobre o que configurar, e o resultado de um prompt na máquina de alguém não se repete na do colega.
+Um ambiente agêntico é a combinação de quatro peças: o modelo, a aplicação agêntica que orquestra a conversa com ele (Claude Code, Codex CLI, Copilot, Cursor), o arquivo de configuração que carrega convenções do repositório, e o conjunto de ferramentas que o agente pode acionar. Quando cada desenvolvedor monta essa combinação do próprio jeito, o time cai no sintoma "ad hoc" descrito na Sessão 1: ninguém tem vocabulário comum para dizer o que configurar, e o resultado de um prompt numa máquina não se repete na do colega.
 
-A correção está em compartilhar as três peças que independem da ferramenta escolhida: o arquivo de configuração, o protocolo de acesso a ferramentas externas, e a disciplina de isolamento de contexto. Padronizar a aplicação agêntica para o time inteiro é outra decisão, e não resolve esse sintoma.
+Para corrigir isso, compartilhe as três peças que independem da ferramenta escolhida: o arquivo de configuração, o protocolo de acesso a ferramentas externas e a disciplina de isolamento de contexto. Padronizar a aplicação agêntica para o time inteiro é uma decisão separada, que resolve outro problema.
 
 ![Quatro módulos formam o ambiente agêntico: modelo, aplicação agêntica, instruções e ferramentas. A aplicação orquestra os demais. Modelo e aplicação podem ser escolhas locais, enquanto instruções e ferramentas formam o contrato compartilhado pelo time.](../assets/images/s2-anatomia-ambiente-agentico.png)
 
@@ -35,11 +35,11 @@ Montar um arquivo de instrução, conectar uma ferramenta via MCP e isolar conte
 | Frequência de uso do agente | esporádica | diária, múltiplas sessões em paralelo |
 | Ferramentas externas necessárias | nenhuma, só leitura/escrita de arquivo | acesso a banco de dados, API interna, rastreador de tarefas |
 
-Um repositório pessoal, de uso esporádico, não precisa de MCP nem de isolamento por worktree — um arquivo de instrução simples já resolve a maior parte do ganho. Um time de vários desenvolvedores usando agente todo dia num sistema de produção está do lado direito da tabela inteira.
+Num repositório pessoal, de uso esporádico, um arquivo de instrução simples já entrega a maior parte do ganho, sem MCP e sem worktree. Um time de vários desenvolvedores usando agente todo dia num sistema de produção cai do lado direito nas quatro linhas da tabela.
 
 ![Quatro réguas avaliam tamanho do time, vida do repositório, frequência de uso do agente e necessidade de ferramentas externas. A combinação de duas condições conduz do ambiente mínimo ao compartilhado e ao completo.](../assets/images/s2-regua-investimento.png)
 
-O cálculo é o mesmo por trás de qualquer decisão de investir tempo em preparação antes de começar: o custo de configurar aparece agora, de uma vez, e o ganho aparece depois, espalhado por cada sessão futura de agente. Numa tarefa esporádica, esse ganho futuro não paga o custo presente. No repositório que o time usa todo dia, paga rápido: a segunda sessão de agente já reaproveita o mesmo arquivo de instrução, a mesma conexão MCP e o mesmo hábito de isolar por ramo, sem reconfigurar nada.
+A conta é a mesma de qualquer investimento em preparação. Você paga o custo de configurar agora, de uma vez, e recebe o ganho depois, espalhado por cada sessão futura de agente. Numa tarefa esporádica esse ganho futuro não cobre o custo presente. Num repositório que o time usa todo dia, cobre rápido: já na segunda sessão o agente reaproveita o mesmo arquivo de instrução, a mesma conexão MCP e o mesmo hábito de isolar por ramo, sem reconfigurar nada.
 
 !!! tip "Aplique agora"
     Classifique o repositório em que você mais usa IA hoje contra as quatro linhas da tabela. Ele pede o ambiente completo, ou um arquivo de instrução simples já resolveria a maior parte do problema?

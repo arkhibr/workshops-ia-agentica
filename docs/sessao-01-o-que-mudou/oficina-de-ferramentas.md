@@ -1,12 +1,12 @@
 # Oficina de ferramentas
 
-Três experimentos levam o participante do diagnóstico do próprio uso de IA até o efeito do contexto explícito num pedido de código.
+Você vai fazer três experimentos, começando por um diagnóstico do seu próprio uso de IA e terminando no efeito que o contexto explícito tem num pedido de código.
 
 **Objetivo Bloom:** Compreender e Aplicar.
 
 ## Ferramenta
 
-Esta oficina usa o agente de codificação já configurado pelo participante (Claude Code, Copilot, Cursor ou equivalente) e não exige nenhuma instalação nova. Tempo estimado: 30 minutos.
+Você vai usar o agente de codificação que já configurou (Claude Code, Copilot, Cursor ou equivalente). Nada de novo para instalar. Tempo estimado: 30 minutos.
 
 **Decisão em foco:** quando um pedido em linguagem natural precisa de contexto explícito para não perder regra de negócio, e quando o time está aceitando código sem entender o que ele faz.
 
@@ -26,13 +26,13 @@ Esta oficina usa o agente de codificação já configurado pelo participante (Cl
 3. Classifique seu uso de IA hoje: ad hoc, inconsistente, ou já tem rede de testes e revisão?
 4. Da última vez que um código gerado por IA quebrou, você investigou sistematicamente ou foi tentativa e erro?
 
-**Observe:** guarde as respostas. O Bloco 5 (exercícios) e a Sessão 9 (depuração sistemática) revisitam exatamente estas mesmas perguntas para medir o que mudou.
+**Observe:** guarde as respostas. Os exercícios desta sessão e a Sessão 9, sobre depuração sistemática, voltam a estas mesmas perguntas para medir o que mudou.
 
 ## Experimento B
 
-**Objetivo:** sentir, num caso com regras de negócio reais, o que "contexto explícito" muda antes de aplicar no exercício-âncora.
+**Objetivo:** ver, num caso com regras de negócio reais, o que o contexto explícito muda, antes de aplicar isso no exercício-âncora.
 
-**Cenário:** validar se um cupom de desconto pode ser aplicado a um pedido de e-commerce. As quatro regras abaixo só devem ser usadas na parte 2. Leia a parte 1 e execute-a antes de olhar a lista de regras.
+**Cenário:** validar se um cupom de desconto pode ser aplicado a um pedido de e-commerce. Use as quatro regras abaixo só na parte 2. Execute a parte 1 antes de olhar a lista.
 
 Regras:
 
@@ -81,7 +81,7 @@ Guarde as duas saídas: o Experimento C usa exatamente elas.
 
 ## Experimento C
 
-**Objetivo:** localizar, nas próprias saídas do Experimento B, onde cada seta de [A tese do Software 3.0](software-3-0.md#o-que-sobe-piso-teto-julgamento) apareceu.
+**Objetivo:** achar, nas suas duas saídas do Experimento B, onde cada uma das três setas de [A tese do Software 3.0](software-3-0.md#o-que-sobe-piso-teto-julgamento) apareceu.
 
 **Execute:** em dupla, para cada seta, aponte um trecho concreto das duas saídas do Experimento B:
 
@@ -96,6 +96,6 @@ Guarde as duas saídas: o Experimento C usa exatamente elas.
 
 ## Evidência a entregar
 
-As respostas do Experimento A, as duas saídas do Experimento B e as três respostas do Experimento C. Sem essa evidência, o exercício-âncora da próxima página perde a comparação com um caso menor e mais simples.
+As respostas do Experimento A, as duas saídas do Experimento B e as três respostas do Experimento C. Guarde tudo: o exercício-âncora da próxima página compara o caso de lá com este, que é menor e mais simples.
 
 **Próxima página:** [Exercícios](exercicios.md).

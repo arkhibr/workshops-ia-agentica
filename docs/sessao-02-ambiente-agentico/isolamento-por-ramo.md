@@ -1,12 +1,12 @@
 # Isolamento por ramo
 
-Duas sessões de agente no mesmo diretório de trabalho disputam os mesmos arquivos, e o resultado aparece como trabalho que some. O que o `git worktree` isola, e o cuidado que ele exige.
+Duas sessões de agente no mesmo diretório de trabalho disputam os mesmos arquivos, e o resultado aparece como trabalho que some. Aqui você vê o que o `git worktree` isola e o cuidado que ele exige.
 
 ## O que o worktree isola
 
-A última peça é operacional: o que acontece quando duas pessoas, ou a mesma pessoa em duas tarefas, usam um agente ao mesmo tempo no mesmo repositório. Sem isolamento, os dois agentes leem e escrevem no mesmo diretório de trabalho — um pode sobrescrever a edição do outro, ou um terminar de ler arquivos que o outro está no meio de alterar.
+A última peça do ambiente é operacional. Pense no que acontece quando duas pessoas, ou a mesma pessoa em duas tarefas, usam um agente ao mesmo tempo no mesmo repositório. Sem isolamento, os dois agentes leem e escrevem no mesmo diretório de trabalho. Um sobrescreve a edição do outro, ou lê pela metade um arquivo que o outro está alterando.
 
-O git worktree resolve isso na camada de sistema de arquivos, não de configuração de agente: cada worktree é um diretório de trabalho separado, apontando para o mesmo repositório, cada um numa branch diferente. Um agente trabalhando num worktree não vê, e não pode corromper, o que outro agente está fazendo no worktree paralelo. Isso separa dois problemas que costumam ser confundidos: contexto de conversa (o que o agente lembra) e estado do sistema de arquivos (o que existe em disco). O segundo pode ser isolado mesmo quando o primeiro continua específico de cada sessão.
+O git worktree resolve isso na camada de sistema de arquivos, sem depender de nenhuma configuração do agente. Cada worktree é um diretório de trabalho separado, apontando para o mesmo repositório, cada um numa branch diferente. Um agente trabalhando num worktree não vê, e não pode corromper, o que outro agente está fazendo no worktree paralelo. Isso separa dois problemas que as pessoas costumam confundir: o contexto da conversa, que é o que o agente lembra, e o estado do sistema de arquivos, que é o que existe em disco. Você consegue isolar o segundo mesmo quando o primeiro continua específico de cada sessão.
 
 Na prática, isolar duas sessões é um comando de git, repetido uma vez por tarefa:
 
@@ -24,6 +24,6 @@ Cada comando cria um diretório de trabalho novo, numa branch nova, apontando pa
 
 Cada worktree é um diretório de trabalho completo, mas não duplica automaticamente tudo que um projeto precisa para rodar. O histórico do git é compartilhado entre todos os worktrees do mesmo repositório, mas a pasta de dependências instaladas fica em cada um. Um `npm install` rodado num worktree não aparece no outro. Cada worktree novo precisa da própria instalação, ou de um link simbólico para uma pasta de dependências compartilhada fora do controle do git.
 
-Isso muda o cálculo de quando vale isolar por ramo: se criar um worktree novo significa esperar alguns minutos de instalação antes de começar a tarefa de verdade, a fricção desestimula o hábito exatamente nos casos em que ele mais evitaria um incidente como o do [Estudo de caso](estudo-de-caso.md). Times que isolam por ramo com frequência costumam automatizar esse passo num script simples, que cria o worktree e já deixa o ambiente pronto para o agente trabalhar.
+Isso muda a conta de quando vale isolar por ramo. Se criar um worktree custa alguns minutos de instalação antes de começar a tarefa de verdade, ninguém cria, justamente nos casos em que o worktree mais evitaria um incidente como o do [Estudo de caso](estudo-de-caso.md). Times que isolam por ramo com frequência automatizam esse passo num script simples, que cria o worktree e já deixa o ambiente pronto para o agente trabalhar.
 
 **Próxima página:** [Autonomia e supervisão](autonomia-e-supervisao.md).

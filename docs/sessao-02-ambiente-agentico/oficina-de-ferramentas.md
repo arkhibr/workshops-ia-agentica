@@ -58,11 +58,58 @@ Você mexe em quatro delas hoje. Leia a lista inteira antes de começar, porque 
 
 As duas primeiras levam quase toda a atenção e são as que menos rendem sozinhas. A quarta, verificação, é a que mais rende, pelo motivo da conta acima. A discussão completa, com o diagnóstico por tipo de falha, está em [O arnês do agente](arnes.md).
 
+## O caso: fechamento de descontos da Vetor
+
+A **Vetor** é uma empresa fictícia de e-commerce B2B, usada nos exemplos deste workshop. Ela classifica cada cliente como padrão ou atacado, e dá desconto por faixa de valor do pedido. Estas são as regras:
+
+- O valor bruto do pedido é a quantidade vezes o valor unitário.
+- Até R$ 500,00 de valor bruto, nenhum desconto.
+- De R$ 500,01 a R$ 2.000,00, 5%.
+- De R$ 2.000,01 a R$ 5.000,00, 10%.
+- Acima de R$ 5.000,00, 15%.
+- Cliente atacado tem uma faixa a mais: 20% acima de R$ 10.000,00.
+- O desconto nunca passa de **R$ 1.000,00** por pedido, em nenhuma faixa.
+- Pedido com status `cancelado` fica fora do fechamento.
+
+**Leia essas regras, mas não passe nenhuma delas ao agente ainda.** Elas existem só dentro da Vetor, e nenhuma está publicada em lugar nenhum. O agente só recebe esse texto na rodada 2. Até lá, ele trabalha sem saber que essas faixas existem, e é isso que você vai observar.
+
+Nas cinco rodadas você faz este pedido, sem mudar uma palavra:
+
+> Faça o fechamento de descontos de setembro de 2026 da Vetor e me entregue uma pasta de trabalho do Excel com o valor final por pedido e um resumo por cliente.
+
+**Passo 1 — salve os dados do caso.** Copie o bloco abaixo para um editor de texto e salve como `pedidos-setembro.csv` dentro da pasta `oficina-arnes`, em UTF-8. São 22 pedidos de setembro de 2026.
+
+```text
+pedido,cliente,tipo,quantidade,valor_unitario,data,status
+VT-1001,Metalúrgica Andrade,atacado,150,82.40,2026-09-02,confirmado
+VT-1002,Papelaria Sul,padrão,12,34.90,2026-09-02,confirmado
+VT-1003,Construtora Lemos,atacado,200,15.75,2026-09-03,confirmado
+VT-1004,Óptica Vieira,padrão,30,118.00,2026-09-04,confirmado
+VT-1005,Farmácia Tavares,padrão,5,219.90,2026-09-05,cancelado
+VT-1006,Metalúrgica Andrade,atacado,100,100.00,2026-09-08,confirmado
+VT-1007,Papelaria Sul,padrão,30,34.90,2026-09-09,confirmado
+VT-1008,Construtora Lemos,atacado,120,15.75,2026-09-10,confirmado
+VT-1010,Farmácia Tavares,padrão,44,27.30,2026-09-12,confirmado
+VT-1011,Metalúrgica Andrade,atacado,210,9.80,2026-09-15,confirmado
+VT-1012,Papelaria Sul,padrão,60,34.90,2026-09-15,cancelado
+VT-1013,Construtora Lemos,atacado,75,41.20,2026-09-16,confirmado
+VT-1014,Óptica Vieira,padrão,8,890.00,2026-09-17,confirmado
+VT-1015,Farmácia Tavares,padrão,132,12.45,2026-09-18,confirmado
+VT-1016,Metalúrgica Andrade,atacado,18,82.40,2026-09-19,confirmado
+VT-1017,Papelaria Sul,padrão,95,7.60,2026-09-22,confirmado
+VT-1018,Construtora Lemos,atacado,700,15.75,2026-09-23,confirmado
+VT-1019,Óptica Vieira,padrão,22,118.00,2026-09-24,cancelado
+VT-1020,Farmácia Tavares,padrão,68,27.30,2026-09-25,confirmado
+VT-1021,Metalúrgica Andrade,atacado,510,20.00,2026-09-26,confirmado
+VT-1022,Papelaria Sul,padrão,40,12.50,2026-09-29,confirmado
+VT-1023,Construtora Lemos,atacado,55,41.20,2026-09-30,confirmado
+```
+
 ## Como conferir cada rodada
 
-As faixas de desconto da Vetor são arbitrárias. Nenhum padrão de mercado manda dar 12% acima de 50 unidades, nem arredondar para baixo em múltiplos de R$ 0,50. O agente não tem como acertar isso antes de alguém escrever a regra para ele, e um modelo mais capaz só chuta com mais convicção. Foi por isso que escolhi este caso.
+Repare que as regras de desconto da Vetor são arbitrárias. Nenhum padrão de mercado manda cortar o desconto em R$ 1.000,00 por pedido, nem dar uma faixa extra de 20% ao atacado acima de R$ 10.000,00. O agente não tem como acertar isso antes de alguém escrever a regra para ele, e um modelo mais capaz só chuta com mais convicção. Foi por isso que escolhi este caso para a oficina.
 
-Tome cuidado com um erro de avaliação aqui. Se você julgar as saídas por qual parece melhor, a rodada sem arnês nenhum costuma ganhar, porque um agente sem regra escreve mais: inventa faixas, acrescenta colunas e devolve um relatório mais completo que o correto. Compare sempre contra o gabarito, que está logo abaixo.
+Tome cuidado com um erro de avaliação aqui. Se você julgar as saídas por qual parece melhor, a rodada sem arnês nenhum costuma ganhar, porque um agente sem regra escreve mais: inventa faixas, acrescenta colunas e devolve um relatório mais completo que o correto. Compare sempre contra o [gabarito](#gabarito), no fim desta página.
 
 Duas regras para preencher o placar.
 
@@ -77,80 +124,6 @@ Faça cada rodada duas vezes, em conversas separadas. A segunda custa colar o me
 | 2 — instrução | | | | | |
 | 3 — ferramenta | | | | | |
 | 4 — verificação | | | | | |
-
-## O caso: fechamento de descontos da Vetor
-
-A **Vetor** é uma empresa fictícia de e-commerce B2B, usada nos exemplos deste workshop. Ela classifica cada cliente como padrão ou atacado, e cada tipo tem faixas de desconto próprias.
-
-Nas cinco rodadas você faz este pedido, sem mudar uma palavra:
-
-> Faça o fechamento de descontos de setembro de 2026 da Vetor e me entregue uma pasta de trabalho do Excel com o valor final por pedido e um resumo por cliente.
-
-**Passo 1 — salve os dados do caso.** Copie o bloco abaixo para um editor de texto e salve como `pedidos-setembro.csv` dentro da pasta `oficina-arnes`, em UTF-8. São 22 pedidos de setembro de 2026.
-
-```text
-pedido,cliente,tipo,quantidade,valor_unitario,data,status
-VT-1001,Metalúrgica Andrade,atacado,60,82.40,2026-09-02,confirmado
-VT-1002,Papelaria Sul,padrão,12,34.90,2026-09-02,confirmado
-VT-1003,Construtora Lemos,atacado,200,15.75,2026-09-03,confirmado
-VT-1004,Óptica Vieira,padrão,30,118.00,2026-09-04,confirmado
-VT-1005,Farmácia Tavares,padrão,5,219.90,2026-09-05,cancelado
-VT-1006,Metalúrgica Andrade,atacado,49,82.40,2026-09-08,confirmado
-VT-1007,Papelaria Sul,padrão,29,34.90,2026-09-09,confirmado
-VT-1008,Construtora Lemos,atacado,120,15.75,2026-09-10,confirmado
-VT-1010,Farmácia Tavares,padrão,44,27.30,2026-09-12,confirmado
-VT-1011,Metalúrgica Andrade,atacado,210,9.80,2026-09-15,confirmado
-VT-1012,Papelaria Sul,padrão,60,34.90,2026-09-15,cancelado
-VT-1013,Construtora Lemos,atacado,75,41.20,2026-09-16,confirmado
-VT-1014,Óptica Vieira,padrão,3,890.00,2026-09-17,confirmado
-VT-1015,Farmácia Tavares,padrão,130,12.45,2026-09-18,confirmado
-VT-1016,Metalúrgica Andrade,atacado,18,82.40,2026-09-19,confirmado
-VT-1017,Papelaria Sul,padrão,95,7.60,2026-09-22,confirmado
-VT-1018,Construtora Lemos,atacado,340,15.75,2026-09-23,confirmado
-VT-1019,Óptica Vieira,padrão,22,118.00,2026-09-24,cancelado
-VT-1020,Farmácia Tavares,padrão,67,27.30,2026-09-25,confirmado
-VT-1021,Metalúrgica Andrade,atacado,199,9.80,2026-09-26,confirmado
-VT-1022,Papelaria Sul,padrão,40,34.90,2026-09-29,confirmado
-VT-1023,Construtora Lemos,atacado,55,41.20,2026-09-30,confirmado
-```
-
-### O gabarito
-
-O gabarito fica fechado. Abra depois de cada rodada, na hora de conferir, e não antes. Quem lê os números certos primeiro deixa de reparar no que o agente inventou.
-
-??? note "Abrir só na hora de conferir uma rodada"
-
-    **Nunca cole esta tabela no pedido ao agente.** Ela é a sua conferência. Dentro do prompt, ela vira mais uma peça de contexto e acaba com a comparação entre as rodadas.
-
-    | Número de controle | Valor correto |
-    |---|---|
-    | Linhas lidas | 22 |
-    | Pedidos cancelados | 3 |
-    | Pedidos elegíveis | 19 |
-    | Clientes no resumo | 5 |
-    | Total bruto | R$ 44.631,70 |
-    | Total de desconto | R$ 4.216,57 |
-    | **Total final** | **R$ 40.412,00** |
-
-    Resumo por cliente:
-
-    | Cliente | Total final |
-    |---|---|
-    | Construtora Lemos | R$ 13.350,00 |
-    | Metalúrgica Andrade | R$ 13.274,50 |
-    | Óptica Vieira | R$ 5.997,50 |
-    | Farmácia Tavares | R$ 4.369,00 |
-    | Papelaria Sul | R$ 3.421,00 |
-
-    O total final sai idêntico independentemente de o agente arredondar o desconto intermediário para cima, para baixo ou ao mais próximo, porque o arredondamento final em múltiplos de R$ 0,50 absorve a diferença. Se o total divergir, o erro está na regra que o agente aplicou.
-
-    **Conferência rápida das faixas.** Em vez de verificar as 19 linhas, olhe três células da aba de fechamento:
-
-    | Pedido | Faixa correta | Por quê |
-    |---|---|---|
-    | VT-1003 | 18% | atacado com exatamente 200 unidades atinge a faixa superior |
-    | VT-1021 | 12% | atacado com 199 unidades fica na faixa anterior |
-    | VT-1006 | 0% | atacado com 49 unidades não atinge faixa nenhuma |
 
 ## Pilar 1 — gerar a pasta de trabalho do caso
 
@@ -202,7 +175,7 @@ Confira a resposta. Ela deve estar certa, completa e imediata.
 
 **Passo 2 — a tarefa que depende da Vetor.** Na mesma conversa, sem anexar nada, faça o pedido do fechamento. O agente não tem o arquivo de pedidos nem as regras de desconto.
 
-**Passo 3:** confira contra o gabarito e preencha a linha 0 do placar. Anote também em que ponto o agente avisou que estava supondo, se é que avisou.
+**Passo 3:** confira contra o [gabarito](#gabarito) e preencha a linha 0 do placar. Anote também em que ponto o agente avisou que estava supondo, se é que avisou.
 
 **Observe:** você mandou as duas perguntas para o mesmo modelo, no mesmo minuto, sem arnês nenhum. A primeira saiu perfeita porque a resposta está publicada em milhares de lugares. A segunda saiu inventada porque a resposta só existe dentro da Vetor. Guarde essa diferença, porque ela é que diz quando vale a pena montar arnês e quando não vale.
 
@@ -219,7 +192,7 @@ Confira a resposta. Ela deve estar certa, completa e imediata.
 
 **Passo 1:** numa conversa nova, na pasta `oficina-arnes`, com `pedidos-setembro.xlsx` presente, faça o mesmo pedido do fechamento. Deixe o agente encontrar o arquivo sozinho.
 
-**Passo 2:** abra o resultado e confira contra o gabarito. Depois preencha a linha 1 do placar.
+**Passo 2:** abra o resultado e confira contra o [gabarito](#gabarito). Depois preencha a linha 1 do placar.
 
 **Passo 3:** rode uma segunda vez, em outra conversa nova, e compare as duas saídas entre si.
 
@@ -249,12 +222,14 @@ trabalho do Excel (`.xlsx`), nunca um relatório em texto na conversa.
 Scripts auxiliares em JavaScript, com Node.js 20 e a biblioteca `exceljs`.
 Este projeto não usa Python em nenhuma hipótese.
 
-## Regras de desconto de setembro de 2026
-- Cliente padrão: 6% a partir de 30 unidades no pedido.
-- Cliente atacado: 12% a partir de 50 unidades, e 18% a partir de 200 unidades.
-- Uma faixa só por pedido, sempre a de maior quantidade atingida. Desconto não acumula.
-- O desconto incide sobre o valor bruto, que é quantidade vezes valor unitário.
-- O valor final é arredondado para baixo, em múltiplos de R$ 0,50.
+## Regras de desconto da Vetor
+- O valor bruto do pedido é a quantidade vezes o valor unitário.
+- Até R$ 500,00 de valor bruto, nenhum desconto.
+- De R$ 500,01 a R$ 2.000,00, 5%.
+- De R$ 2.000,01 a R$ 5.000,00, 10%.
+- Acima de R$ 5.000,00, 15%.
+- Cliente atacado tem uma faixa a mais: 20% acima de R$ 10.000,00.
+- O desconto nunca passa de R$ 1.000,00 por pedido, em nenhuma faixa.
 - Pedido com status `cancelado` fica fora do fechamento.
 
 ## Formato da pasta de trabalho
@@ -269,7 +244,7 @@ desconto e valor final) e `Resumo` (uma linha por cliente, com o total final).
 
 Abra a aba `Regras` e confira as quatro linhas. Quem cuida do negócio na Vetor audita a regra aqui, sem abrir arquivo de texto nenhum.
 
-**Passo 3:** numa conversa nova, faça o pedido do fechamento. Confira contra o gabarito, começando pelas três células da conferência rápida de faixas, e preencha a linha 2 do placar.
+**Passo 3:** numa conversa nova, faça o pedido do fechamento. Confira contra o [gabarito](#gabarito), começando pelas três células da conferência rápida de faixas, e preencha a linha 2 do placar.
 
 **Passo 4:** rode uma segunda vez, em outra conversa nova. Compare o formato das duas saídas, e não apenas os números.
 
@@ -328,7 +303,7 @@ Em Windows, se editar o arquivo de configuração à mão em vez de usar o coman
 
 **Passo 5:** teste o limite do escopo. Peça ao agente para listar a sua pasta de Documentos inteira. O servidor deve recusar, porque só `oficina-arnes` está autorizada.
 
-**Passo 6:** confira contra o gabarito e preencha a linha 3 do placar.
+**Passo 6:** confira contra o [gabarito](#gabarito) e preencha a linha 3 do placar.
 
 **Observe:** o total provavelmente não muda muito nesta rodada. O que melhora é a repetição entre as duas execuções, porque o agente para de depender do que você lembrou de colar na conversa. E a recusa do passo 5 mostra que o limite da pasta é real, e não uma promessa no arquivo de instrução.
 
@@ -343,7 +318,7 @@ Em Windows, se editar o arquivo de configuração à mão em vez de usar o coman
 
 **Objetivo:** parar de ser você a conferir o resultado à mão.
 
-Nas quatro rodadas anteriores quem conferiu o fechamento foi você, comparando o total contra o gabarito. Setembro de 2026 é o único mês da Vetor que tem gabarito. Em outubro não vai ter, nem em novembro. A pergunta vira outra: como você confia num número que ninguém conferiu?
+Nas quatro rodadas anteriores quem conferiu o fechamento foi você, comparando o total contra o [gabarito](#gabarito). Setembro de 2026 é o único mês da Vetor que tem gabarito. Em outubro não vai ter, nem em novembro. A pergunta vira outra: como você confia num número que ninguém conferiu?
 
 **Passo 1:** acrescente esta seção ao fim do `AGENTS.md`:
 
@@ -364,13 +339,13 @@ diga onde está a diferença.
 
 **Passo 2:** numa conversa nova, faça o pedido do fechamento pela última vez.
 
-**Passo 3:** leia os cinco números que o agente reportou na conversa, antes de abrir a planilha. Só depois abra o arquivo e confira contra o gabarito.
+**Passo 3:** leia os cinco números que o agente reportou na conversa, antes de abrir a planilha. Só depois abra o arquivo e confira contra o [gabarito](#gabarito).
 
 **Passo 4:** preencha a linha 4 do placar.
 
 **Observe:** o total provavelmente já estava certo na rodada 3. O que muda aqui é quem descobre isso, e em que momento. Uma conferência que o próprio agente faz e relata continua funcionando em outubro e em novembro, sem ninguém de fora refazendo a conta. Lembre da conta do começo da página: numa tarefa longa, o erro precisa ser pego na etapa em que ele nasce, senão ele atravessa todas as seguintes.
 
-**Passo 5, para ver a conferência trabalhar:** abra o CSV, troque a quantidade do pedido VT-1013 de 75 para 45 e peça o fechamento de novo. A faixa de atacado de 12% deixa de valer para esse pedido. O total correto passa a ser R$ 39.547,00, e o agente relata o novo número sem você ter calculado nada. Desfaça a alteração depois.
+**Passo 5, para ver a conferência trabalhar:** abra o CSV, troque a quantidade do pedido VT-1013 de 75 para 45 e peça o fechamento de novo. O valor bruto cai de R$ 3.090,00 para R$ 1.854,00, e o pedido desce da faixa de 10% para a de 5%. O total correto passa a ser R$ 67.648,74, e o agente relata o novo número sem você ter calculado nada. Desfaça a alteração depois.
 
 **Questões exploratórias:**
 
@@ -387,7 +362,7 @@ Agora use o placar para diagnosticar. Cada resposta negativa aponta para uma pe�
 | As faixas de desconto mudaram entre duas rodadas | instrução de sistema | tornar a regra explícita, com o número e a fronteira |
 | O agente usou clientes que não existem no arquivo | gestão de contexto | garantir que o dado entra na janela, em vez de ser lembrado |
 | Ele pediu que você colasse o conteúdo da planilha | ferramentas | dar acesso de leitura escopado à pasta |
-| Você só soube que o total estava certo porque tinha o gabarito | verificação | exigir números de controle recalculados da fonte e relatados |
+| Você só soube que o total estava certo porque tinha o gabarito à mão | verificação | exigir números de controle recalculados da fonte e relatados |
 | Ele leu a regra e mesmo assim não aplicou | *hooks* e permissões | impor o limite na camada de execução |
 
 A última linha é a que esta oficina não resolve, e a seção seguinte explica por quê.
@@ -423,6 +398,44 @@ git branch -D experimento/a experimento/b
 **Autonomia.** Repita a rodada 4 no modo de menor autonomia da sua aplicação agêntica, contando quantas confirmações você precisou dar, e depois no modo de maior autonomia, dentro de um worktree descartável. Compare os dois tempos e responda se alguma edição saiu diferente do que você esperava.
 
 **O seu projeto.** Escolha uma rotina de planilha que exista de verdade no seu time, uma conciliação ou um relatório mensal. Escreva o `AGENTS.md` dela com as regras que hoje só existem na cabeça de alguém, e acrescente a seção de conferência com os números de controle que você usaria para saber que o resultado está certo. Essa é a tarefa que faz o arquivo de instrução sobreviver à aula.
+
+## Gabarito
+
+Estes são os números do fechamento correto. Consulte esta seção depois de cada rodada, na hora de conferir, e não antes: quem lê os números certos primeiro deixa de reparar no que o agente inventou.
+
+??? note "Abrir para conferir"
+
+    **Nunca cole esta tabela no pedido ao agente.** Ela é a sua conferência. Dentro do prompt, ela vira mais uma peça de contexto e acaba com a comparação entre as rodadas.
+
+    | Número de controle | Valor correto |
+    |---|---|
+    | Linhas lidas | 22 |
+    | Pedidos cancelados | 3 |
+    | Pedidos elegíveis | 19 |
+    | Clientes no resumo | 5 |
+    | Total bruto | R$ 75.571,00 |
+    | Total de desconto | R$ 6.902,56 |
+    | **Total final** | **R$ 68.668,44** |
+
+    Resumo por cliente:
+
+    | Cliente | Total final |
+    |---|---|
+    | Metalúrgica Andrade | R$ 32.821,24 |
+    | Construtora Lemos | R$ 19.475,90 |
+    | Óptica Vieira | R$ 9.306,00 |
+    | Farmácia Tavares | R$ 4.465,95 |
+    | Papelaria Sul | R$ 2.599,35 |
+
+    Os 22 pedidos foram escolhidos para que todo desconto caia num número exato de centavos, então não existe arredondamento no meio do caminho e o total só tem um valor certo. Se o total divergir, o erro está na regra que o agente aplicou.
+
+    **Conferência rápida das faixas.** Em vez de verificar as 19 linhas, olhe três células da aba de fechamento:
+
+    | Pedido | Desconto correto | Por quê |
+    |---|---|---|
+    | VT-1022 | R$ 0,00 | bruto de exatamente R$ 500,00, e a faixa de 5% só começa acima disso |
+    | VT-1006 | R$ 1.000,00 | atacado com bruto de exatamente R$ 10.000,00 fica em 15%, porque a faixa de 20% é acima de R$ 10.000,00. Os 15% dariam R$ 1.500,00, e o teto corta em R$ 1.000,00 |
+    | VT-1014 | R$ 1.000,00 | cliente padrão, 15% sobre R$ 7.120,00 daria R$ 1.068,00, e o teto corta |
 
 ## Evidência a entregar
 

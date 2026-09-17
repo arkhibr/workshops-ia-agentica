@@ -21,7 +21,7 @@ Em uma frase, explique o que é aprendizado em contexto (in-context learning) e 
 <details>
 <summary>Ver resposta</summary>
 
-É a capacidade de um modelo executar uma tarefa nova a partir da descrição em linguagem natural e de exemplos no próprio texto de entrada, sem ajuste de peso, demonstrada por [Brown et al. (2020)](../referencia/bibliografia.md#brown-et-al-language-models-are-few-shot-learners-2020). Sem ela, um prompt seria só um pedido. Com ela, o prompt vira a própria especificação executada.
+É a capacidade de um modelo executar uma tarefa nova a partir da descrição em linguagem natural e de exemplos no próprio texto de entrada, sem ajuste de peso, demonstrada por [Brown et al. (2020)](../referencia/bibliografia.md#brown-et-al-language-models-are-few-shot-learners-2020). É ela que transforma o prompt de pedido informal em especificação que o modelo executa.
 </details>
 
 ## Compreender
@@ -52,7 +52,7 @@ Confunde piso (o código roda) com teto (o código está correto e testável) e 
 
 **O que é:** o mesmo problema, resolvido duas vezes pelo agente, com dois níveis de contexto diferentes. A diferença entre as duas saídas mede piso e teto na prática.
 
-**Execute os passos na ordem.** Este exercício só mede alguma coisa se os passos 1 e 2 forem executados sem conhecer a regra completa, revelada só no passo 3. Ler a regra antes, ou pular direto para o prompt estruturado porque "já sacou o padrão" do Exemplo arquitetural, apaga a distância entre o código ingênuo e o código correto. Essa distância é justamente o que o exercício quer que você veja no seu próprio trabalho. Role a página na ordem, não abra o bloco "Regra completa" antes de terminar o passo 2, e não peça ajuda a quem já fez o exercício.
+**Execute os passos na ordem.** Este exercício só mede alguma coisa se você executar os passos 1 e 2 sem conhecer a regra completa, que aparece no passo 3. Ler a regra antes, ou pular direto para o prompt estruturado porque "já sacou o padrão" do Exemplo arquitetural, apaga a distância entre o código ingênuo e o código correto. Essa distância é justamente o que o exercício quer que você veja no seu próprio trabalho. Role a página na ordem, não abra o bloco "Regra completa" antes de terminar o passo 2, e não peça ajuda a quem já fez o exercício.
 
 **Situação**
 
@@ -70,7 +70,7 @@ Seu agente de codificação configurado na Sessão 0, e o SDK do .NET instalado.
 
 **Passo 1: crie o projeto e peça a função vaga.** Rode `dotnet new console -n VetorFrete` e entre na pasta gerada. Dentro desse projeto, peça ao agente: "Escreva uma função que calcula o frete de um pedido com base no peso total." Guarde o código gerado sem editar: é a partir dele que o passo 2 mede o problema.
 
-**Passo 2: rode os casos de teste contra o código gerado.** Sem abrir o bloco "Regra completa" abaixo, escreva no `Program.cs` chamadas que testem os cinco casos da tabela contra a função do passo 1, e rode `dotnet run`. Alguns casos provavelmente nem têm como ser testados, porque a função só recebe o peso: registre isso também, já que um parâmetro que falta é uma forma de regra perdida tão válida quanto um valor calculado errado.
+**Passo 2: rode os casos de teste contra o código gerado.** Sem abrir o bloco "Regra completa" abaixo, escreva no `Program.cs` chamadas que testem os cinco casos da tabela contra a função do passo 1, e rode `dotnet run`. Alguns casos provavelmente nem têm como ser testados, porque a função só recebe o peso. Registre isso também: um parâmetro que falta significa uma regra perdida, do mesmo jeito que um valor calculado errado.
 
 | # | Peso total | Valor de produtos | Item frágil? | Região | Frete esperado |
 |---|---|---|---|---|---|
@@ -90,7 +90,7 @@ Seu agente de codificação configurado na Sessão 0, e o SDK do .NET instalado.
     | De 20,01 a 50 kg | R$ 70,00 |
     | Acima de 50 kg | R$ 120,00 |
 
-    Duas exceções que **interagem** entre si, não duas regras isoladas:
+    Duas exceções que **interagem** entre si:
 
     - Pedidos com valor de produtos ≥ R$ 800,00 têm frete grátis, **exceto** se o pedido contiver item da categoria "frágil": nesse caso a isenção é negada, e o frete nunca é menor que R$ 50,00, mesmo que a faixa de peso indicasse um valor menor.
     - Entregas para a região Norte recebem recargo de 30% sobre o frete **já calculado**, depois de aplicar a isenção e o piso de item frágil, nunca sobre o frete base isolado.
@@ -106,21 +106,21 @@ O código gerado no passo 1, a saída de `dotnet run` do passo 2 (incluindo os c
 | Critério | Peso | O que evidencia atendimento adequado |
 |---|---:|---|
 | Execução na ordem, sem abrir a regra antes do passo 2 | 20% | O código do passo 1 não usa nenhum termo da regra que só aparece no bloco oculto (ex.: "frágil", "Norte", "30%"), e o `dotnet run` do passo 2 foi de fato executado antes de abrir a regra |
-| Verificação dos cinco casos contra o código do passo 1 | 40% | Cada caso foi de fato rodado ou registrado como impossível de testar, não estimado |
+| Verificação dos cinco casos contra o código do passo 1 | 40% | Cada caso aparece com a saída real de `dotnet run`, ou com o registro de por que não deu para testá-lo |
 | Diagnóstico | 40% | Aponta com precisão qual caso revela a diferença e por qual motivo, em especial o caso 5, o único em que as duas exceções se cruzam |
 
-**Como verificar antes de entregar:** confira se o caso 5 (o único em que isenção negada, piso e recargo regional se compõem ao mesmo tempo) foi mesmo testado contra o código final, não só assumido como correto. Se o código do passo 1 já continha a palavra "frágil" ou tratava a região Norte de forma diferente, você provavelmente abriu a regra antes da hora. Recrie o projeto do zero, porque o dado da comparação ficou contaminado.
+**Como verificar antes de entregar:** confira se o caso 5, o único em que isenção negada, piso e recargo regional se compõem ao mesmo tempo, foi mesmo rodado contra o código final. Se o código do passo 1 já continha a palavra "frágil" ou tratava a região Norte de forma diferente, você provavelmente abriu a regra antes da hora. Recrie o projeto do zero, porque o dado da comparação ficou contaminado.
 
 !!! tip "Reforço para o facilitador"
     Peça a duas ou três pessoas para mostrarem a tela com o `dotnet run` do passo 2. Quem abriu a regra antes da hora tende a ter um código "genérico correto demais" para não ter visto nada. Vocabulário de domínio (peso, frágil, região) aparecendo no passo 1 é o sinal de alerta.
 
 ### 6. Classifique três tarefas reais do seu backlog
 
-**O que é:** a atividade de 20 minutos em que a tabela de critérios sai do slide e encosta no trabalho que você tem para fazer nesta semana. Vale para qualquer repositório, inclusive privado, porque nada aqui exige mostrar código.
+**O que é:** uma atividade de 20 minutos aplicando a tabela de critérios às tarefas que você tem para fazer esta semana. Vale para qualquer repositório, inclusive privado, porque nada aqui exige mostrar código.
 
 **Situação**
 
-Você tem um backlog real, com tarefas de tamanhos e riscos diferentes. A tabela de cinco critérios de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica) diz qual modo cada tarefa pede. O que este exercício mede é se você consegue aplicar a tabela quando a resposta não é óbvia.
+Você tem um backlog real, com tarefas de tamanhos e riscos diferentes. A tabela de cinco critérios de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica) diz qual modo cada tarefa pede. Aqui você vai aplicar essa tabela a um caso em que a resposta não salta aos olhos.
 
 **Seu papel**
 
@@ -146,7 +146,7 @@ Seu próprio backlog, a tabela de cinco critérios e um colega de dupla. Nenhum 
 
 **Etapa 3: defesa em dupla (6 min).** Troque a classificação com um colega. Cada um defende a decisão do outro contra os cinco critérios, procurando a linha em que discordaria. O objetivo é achar o critério que não é autoevidente.
 
-**Etapa 4: divergências (2 min, plenário).** Só as discordâncias vão para o plenário. Elas mostram onde a tabela precisa de julgamento e onde ela decide sozinha.
+**Etapa 4: divergências (2 min, plenário).** Leve ao plenário só as discordâncias. Cada uma marca um ponto em que a tabela sozinha não basta e alguém precisa julgar.
 
 **Entrega esperada**
 
@@ -164,13 +164,13 @@ As três tarefas em uma linha cada, a tabela preenchida para a tarefa escolhida,
 **Como verificar antes de entregar:** se todas as cinco linhas apontaram para o mesmo modo, você provavelmente escolheu a tarefa fácil. Troque pela que estava em segundo lugar na sua lista de incerteza.
 
 !!! tip "Depois da aula"
-    Rode a tarefa no modo que você decidiu e compare: o resultado confirmou a classificação, ou revelou que ela pedia mais cuidado do que você achava? Essa comparação é a que faz o critério grudar.
+    Rode a tarefa no modo que você decidiu e compare: o resultado confirmou a classificação, ou revelou que ela pedia mais cuidado do que você achava? Faça essa comparação, porque é com ela que o critério passa a ser seu.
 
 ## Analisar
 
 ### 7. Dois tipos de lacuna de contexto
 
-O [Exemplo arquitetural](exemplo-arquitetural.md) (desconto) e o exercício-âncora (exercício 5, frete) perdem regra de negócio por motivos diferentes. No desconto, o prompt vago esquece uma faixa e ignora um teto: falta uma informação isolada, fácil de apontar depois. No frete, mesmo um prompt que trate isenção de valor e recargo regional corretamente, cada regra por si, ainda erra o caso 5 ao tratar as duas regras como independentes. A lacuna está na forma como elas se combinam, não em nenhuma delas isolada.
+O [Exemplo arquitetural](exemplo-arquitetural.md) (desconto) e o exercício-âncora (exercício 5, frete) perdem regra de negócio por motivos diferentes. No desconto, o prompt vago esquece uma faixa e ignora um teto: falta uma informação isolada, fácil de apontar depois. No frete, mesmo um prompt que trate isenção de valor e recargo regional corretamente, cada regra por si, ainda erra o caso 5 ao tratar as duas regras como independentes. A lacuna está na forma como as duas regras se combinam.
 
 Compare as duas lacunas: qual delas você acha que uma revisão de código manual pegaria mais fácil, só de ler a função? E qual delas só um teste automatizado (rodando o caso 5 de verdade) pegaria com confiança? Justifique.
 
@@ -178,13 +178,13 @@ Compare as duas lacunas: qual delas você acha que uma revisão de código manua
 
 ### 8. A proibição total
 
-Releia o [Estudo de caso](estudo-de-caso.md). Em até 100 palavras, defenda uma posição: a Vetor deveria proibir vibe coding para todo tipo de tarefa, incluindo scripts internos de uso único? Justifique com o critério de reversibilidade e tempo de vida, não com preferência pessoal.
+Releia o [Estudo de caso](estudo-de-caso.md). Em até 100 palavras, defenda uma posição: a Vetor deveria proibir vibe coding para todo tipo de tarefa, incluindo scripts internos de uso único? Justifique pelos critérios de reversibilidade e tempo de vida.
 
 ## Criar
 
 ### 9. Checklist de time
 
-Escreva um checklist de no máximo cinco itens que qualquer prompt de geração de código na Vetor deveria atender antes de ser aceito em produção. Cada item precisa ser verificável por outra pessoa, não uma intenção vaga como "ser claro".
+Escreva um checklist de no máximo cinco itens que qualquer prompt de geração de código na Vetor deveria atender antes de ser aceito em produção. Outra pessoa precisa conseguir verificar cada item olhando o prompt. "Ser claro" não passa nesse teste.
 
 ### 10. Um ciclo avaliador-otimizador para a função de frete
 
@@ -206,7 +206,7 @@ Você já gerou, no exercício 5, duas versões da função de frete: uma a part
 <details>
 <summary>O que evidencia um bom resultado</summary>
 
-O agente identificou o caso 3 (isenção negada por item frágil) sem que isso fosse mencionado no prompt. O caso 5, que exige perceber a interação entre duas exceções, é o mais difícil de todos. Não encontrá-lo sozinho também é um resultado válido para discutir: ciclo de autocrítica captura omissão melhor do que captura erro de composição entre regras, e é por isso que a verificação por teste automatizado continua necessária mesmo com um passo de revisão a mais.
+O agente identificou o caso 3 (isenção negada por item frágil) sem que isso fosse mencionado no prompt. O caso 5, que exige perceber a interação entre duas exceções, é o mais difícil de todos. Não encontrá-lo sozinho também é um resultado válido para discutir. Um ciclo de autocrítica pega bem uma regra esquecida, e pega mal um erro de composição entre duas regras corretas. Por isso a verificação por teste automatizado continua necessária mesmo com um passo de revisão a mais.
 </details>
 
 Concluída a prática, faça a [síntese e autoavaliação](sintese-e-referencias.md).

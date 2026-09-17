@@ -1,10 +1,10 @@
 # O arnês do agente
 
-As quatro peças da página anterior têm um nome coletivo na engenharia. Ele importa porque muda a ordem das decisões: estabelecer o que cerca o modelo costuma render mais do que trocar de modelo.
+As quatro peças da página anterior têm um nome coletivo na engenharia. Esse nome muda a ordem em que você toma as decisões, porque montar o que cerca o modelo costuma render mais do que trocar de modelo.
 
 ## Tudo o que cerca o modelo
 
-A aplicação agêntica, o arquivo de instrução, o catálogo de ferramentas, o isolamento e o nível de autonomia não são acessórios do modelo. Eles formam o sistema que transforma um modelo em agente, e a engenharia deu um nome a esse sistema: **arnês**, o mesmo termo do equipamento que prende um alpinista à parede. A formulação vem de [Vivek Trivedy, em "The Anatomy of an Agent Harness"](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026): *"if you're not the model, you're the harness"*. Arnês é todo código, configuração e lógica de execução que não é o modelo. A equação que resume o campo:
+A aplicação agêntica, o arquivo de instrução, o catálogo de ferramentas, o isolamento e o nível de autonomia formam o sistema que transforma um modelo em agente. A engenharia deu um nome a esse sistema: **arnês**, o mesmo termo do equipamento que prende um alpinista à parede. A formulação vem de [Vivek Trivedy, em "The Anatomy of an Agent Harness"](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026): *"if you're not the model, you're the harness"*. Arnês é todo código, configuração e lógica de execução que não é o modelo. A equação que resume o campo:
 
 **agente = modelo + arnês**
 
@@ -25,9 +25,9 @@ Um agente é um processo de muitas etapas, e etapas se compõem por multiplicaç
 | 20 | 99% | 81,8% |
 | 50 | 99% | 60,5% |
 
-A conta é `0,99^n`. Uma taxa de acerto por passo que pareceria ótima num classificador isolado produz uma taxa de fracasso relevante numa trajetória longa. A [Anthropic registra o mesmo fenômeno no guia "Building Effective Agents"](../referencia/bibliografia.md#anthropic-building-effective-agents-2024), já citado na Sessão 1: a autonomia dos agentes traz custo maior e **erros que se compõem**.
+A conta é `0,99^n`. Uma taxa de acerto por passo que pareceria ótima num classificador isolado produz fracasso frequente numa trajetória longa. A [Anthropic registra o mesmo fenômeno no guia "Building Effective Agents"](../referencia/bibliografia.md#anthropic-building-effective-agents-2024), já citado na Sessão 1: a autonomia dos agentes traz custo maior e **erros que se compõem**.
 
-O ponto que decide onde investir é este: o modelo não é o lugar onde esse problema se resolve, porque o problema é estrutural do encadeamento. Ele se ataca no arnês, por quatro vias:
+Repare onde isso deixa você. Trocar de modelo não resolve, porque o problema vem do encadeamento das etapas. Ataque o arnês, por quatro vias:
 
 - **Verificação.** Dar ao agente uma forma de conferir o próprio trabalho antes de avançar, o que corta a propagação na origem.
 - **Pontos de parada.** Interromper a trajetória em fronteiras definidas, para que um erro não atravesse dez etapas antes de aparecer.
@@ -41,7 +41,7 @@ A matemática também impõe um limite honesto, que contraria o reflexo de melho
 
 ## Os componentes do arnês
 
-A lista abaixo reúne os componentes que aparecem de forma recorrente nos ensaios de [Trivedy](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026) e de [Addy Osmani](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026) e na documentação da Anthropic. A coluna da direita mostra que esta sessão já trata quase todos eles, dispersos entre as páginas. O vocabulário de arnês é o que permite tratá-los como um sistema único e projetá-los juntos.
+A lista abaixo reúne os componentes que aparecem de forma recorrente nos ensaios de [Trivedy](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026) e de [Addy Osmani](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026) e na documentação da Anthropic. A coluna da direita mostra que esta sessão já trata quase todos, espalhados entre as páginas. Com o vocabulário de arnês você passa a tratá-los como um sistema único e a projetá-los juntos.
 
 | Componente | Pergunta que ele responde | Onde esta sessão trata |
 |---|---|---|
@@ -61,17 +61,17 @@ Vale registrar de onde vem esse vocabulário, para não importá-lo sem crítica
 
 ## Estabelecer o arnês rende mais que trocar de modelo
 
-[Trivedy](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026) relata que a mesma família de modelo sai de fora das trinta primeiras posições para as cinco primeiras do Terminal Bench 2.0 quando apenas o arnês muda, e que um mesmo modelo pontua diferente dentro e fora do arnês de um produto comercial. A posição específica num placar envelhece rápido e não vale decorar. O que dura é a direção da relação. [Osmani formula o mesmo achado em "Agent Harness Engineering"](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026): um modelo mediano dentro de um bom arnês supera um bom modelo dentro de um arnês ruim.
+[Trivedy](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026) relata que a mesma família de modelo sai de fora das trinta primeiras posições para as cinco primeiras do Terminal Bench 2.0 quando apenas o arnês muda, e que um mesmo modelo pontua diferente dentro e fora do arnês de um produto comercial. A posição num placar envelhece rápido e não vale decorar. O que dura é a direção da relação. [Osmani formula o mesmo achado em "Agent Harness Engineering"](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026): um modelo mediano dentro de um bom arnês supera um bom modelo dentro de um arnês ruim.
 
-Isso fecha um ponto aberto na Sessão 1. Em [Avaliação de modelos](../sessao-01-o-que-mudou/avaliacao-de-modelos.md) ficou dito que o número divulgado num *benchmark* depende tanto da forma como o teste foi conduzido quanto do modelo medido, e que a leitura independente do DeepSWE roda cada modelo na melhor configuração disponível do `mini-swe-agent`. O nome dessa configuração é arnês, e é por isso que a nota mede o par, não o modelo sozinho.
+Isso fecha um ponto aberto na Sessão 1. Em [Avaliação de modelos](../sessao-01-o-que-mudou/avaliacao-de-modelos.md) ficou dito que o número divulgado num *benchmark* depende tanto da forma como o teste foi conduzido quanto do modelo medido, e que a leitura independente do DeepSWE roda cada modelo na melhor configuração disponível do `mini-swe-agent`. Essa configuração se chama arnês, e é por isso que a nota mede o desempenho do par.
 
 A consequência prática é de ordem de gasto. Trocar de modelo é uma decisão cara e visível, que costuma vir primeiro na conversa. Estabelecer o arnês é barato e invisível, e frequentemente move mais o resultado.
 
 ## Mais ferramentas não significa menos erro
 
-A intuição diante de um agente que erra é ampliar a capacidade dele. A evidência aponta para o contrário. A [Vercel removeu 80% das ferramentas](../referencia/bibliografia.md#vercel-removing-80-of-agent-tools-2026) de um agente que traduzia texto para SQL, trocando dezesseis ferramentas especializadas por acesso a um sistema de arquivos com execução de comandos, e relatou a taxa de sucesso subindo de 80% para 100%, com 40% menos *tokens*, 40% menos passos e o tempo médio de resposta caindo de 274 para 77 segundos.
+Diante de um agente que erra, a vontade é ampliar a capacidade dele. A evidência aponta para o lado oposto. A [Vercel removeu 80% das ferramentas](../referencia/bibliografia.md#vercel-removing-80-of-agent-tools-2026) de um agente que traduzia texto para SQL, trocando dezesseis ferramentas especializadas por acesso a um sistema de arquivos com execução de comandos, e relatou a taxa de sucesso subindo de 80% para 100%, com 40% menos *tokens*, 40% menos passos e o tempo médio de resposta caindo de 274 para 77 segundos.
 
-A explicação é a mesma do erro composto. Cada ferramenta adicional amplia o espaço de decisão de cada etapa, e ferramentas com fronteiras parecidas criam pontos de decisão ambíguos. A [orientação da Anthropic em "Writing effective tools for agents"](../referencia/bibliografia.md#anthropic-writing-effective-tools-for-agents-2025) formula o critério de um jeito que dá para verificar: se uma pessoa da engenharia não consegue dizer com segurança qual ferramenta usar numa situação, não dá para esperar que o modelo decida melhor. O corolário é consolidar ferramentas por fluxo de trabalho em vez de espelhar cada endpoint da API, e nomeá-las com prefixos que revelem a fronteira.
+A explicação é a mesma do erro composto. Cada ferramenta adicional amplia o espaço de decisão de cada etapa, e ferramentas com fronteiras parecidas criam pontos de decisão ambíguos. A [orientação da Anthropic em "Writing effective tools for agents"](../referencia/bibliografia.md#anthropic-writing-effective-tools-for-agents-2025) formula o critério de um jeito que dá para verificar: se uma pessoa da engenharia não consegue dizer com segurança qual ferramenta usar numa situação, o modelo também não vai conseguir. Daí a recomendação: consolide ferramentas por fluxo de trabalho, em vez de espelhar cada endpoint da API, e use prefixos de nome que deixem a fronteira clara.
 
 Existe um custo simétrico que a lição não deve esconder. Descrições de ferramenta ocupam contexto antes de qualquer requisição: a [Anthropic relata, em "Code execution with MCP"](../referencia/bibliografia.md#anthropic-code-execution-with-mcp-2025), um caso em que carregar definições sob demanda, em vez de todas de uma vez, reduziu o consumo de 150 mil para 2 mil *tokens*. Catálogo mínimo é, ao mesmo tempo, decisão de qualidade e decisão de custo.
 
@@ -98,11 +98,11 @@ Quatro perguntas organizam o trabalho de melhoria. Onde este agente falha mais, 
 
 ## O arnês é onde mora a autoridade
 
-Há uma leitura arquitetural que o vocabulário de arnês torna nítida. Tudo o que decide **se** uma ação acontece vive no arnês, fora do modelo. O catálogo apresentado ao modelo é interface de descoberta. A permissão é avaliada por quem executa. A aprovação vincula uma pessoa a um objeto e a um prazo. O *hook* interrompe num ponto definido pelo projeto. Quando alguém diz que "o agente decidiu pedir confirmação", ou o arnês define esse ponto explicitamente, ou não existe ponto nenhum e o que houve foi coincidência.
+O vocabulário de arnês deixa nítida uma leitura arquitetural. Tudo que decide **se** uma ação acontece vive no arnês, fora do modelo. O catálogo apresentado ao modelo é interface de descoberta. A permissão é avaliada por quem executa. A aprovação vincula uma pessoa a um objeto e a um prazo. O *hook* interrompe num ponto definido pelo projeto. Quando alguém diz que "o agente decidiu pedir confirmação", ou o arnês define esse ponto explicitamente, ou não existe ponto nenhum e o que houve foi coincidência.
 
-Isso também delimita o que um bom arnês não faz. Ele reduz a probabilidade de erro e limita o raio de impacto. Ele não torna segura uma ação irreversível, não substitui a aceitação de risco por alguém com nome, e não produz autorização.
+Vale saber até onde um bom arnês chega. Ele reduz a probabilidade de erro e limita o raio de impacto. Fora isso, uma ação irreversível continua perigosa, alguém com nome continua tendo que aceitar o risco, e a autorização continua vindo de uma pessoa.
 
 !!! tip "Aplique agora"
-    Pense na última vez em que um agente errou de um jeito que irritou você. Classifique aquele erro numa linha da tabela de diagnóstico. A intervenção sugerida já existe no seu ambiente, ou é justamente o que está faltando?
+    Pense na última vez em que um agente errou de um jeito que irritou você. Classifique aquele erro numa linha da tabela de diagnóstico. A intervenção sugerida já existe no seu ambiente, ou é exatamente ela que está faltando?
 
 **Próxima página:** [Engenharia de contexto](engenharia-de-contexto.md).

@@ -6,7 +6,7 @@
 
 ## Problema
 
-A equipe usa IA como completador de código glorificado e não sabe o que está perdendo ao não ir além disso.
+A equipe usa IA como um completador de código mais esperto, e ninguém sabe dizer o que está ficando na mesa.
 
 ## Como usar este material
 
@@ -23,14 +23,14 @@ Ao final desta sessão, o participante deve ser capaz de:
 
 ## A Vetor
 
-A **Vetor** é uma plataforma fictícia de e-commerce B2B usada como fio condutor nas dez sessões do workshop. A equipe de desenvolvimento da Vetor atende dois perfis de cliente (padrão e atacado) e mantém o código em C#, JavaScript e TypeScript, as mesmas linguagens que a FUNDEP usa. Cada sessão avança um pouco o código da Vetor. Esta primeira usa uma regra de desconto por volume de pedido para tornar concretos os conceitos de vibe coding, contexto explícito e engenharia agêntica.
+A **Vetor** é uma plataforma fictícia de e-commerce B2B usada como fio condutor nas dez sessões do workshop. A equipe de desenvolvimento da Vetor atende dois perfis de cliente (padrão e atacado) e mantém o código em C#, JavaScript e TypeScript, as mesmas linguagens que a FUNDEP usa. Cada sessão avança um pouco o código da Vetor. Esta primeira usa a regra de desconto por faixa de valor do pedido para tornar concretos os conceitos de vibe coding, contexto explícito e engenharia agêntica.
 
 ## Roteiro da sessão (2h, das 10h às 12h)
 
 | # | Página | Bloco | Tempo | Resultado esperado |
 |---|---|---|---|---|
 | 1 | [Modos de trabalho com IA](modos-de-trabalho.md) | Teoria | 9 min | Vocabulário dos três modos e critério para escolher um por tarefa |
-| 2 | [Evidência empírica de produtividade](evidencia-empirica.md) | Teoria | 4 min | O contraste entre os dois estudos e a régua que sai dele |
+| 2 | [Evidência empírica de produtividade](evidencia-empirica.md) | Teoria | 4 min | O contraste entre os dois estudos e o critério que sai dele |
 | 3 | [A tese do Software 3.0](software-3-0.md) | Teoria | 7 min | O prompt como artefato que governa o sistema, mais piso, teto e julgamento |
 | 4 | [Sistemas agênticos e simplicidade](sistemas-agenticos.md) | Teoria | 7 min | Fronteira entre fluxo de trabalho e agente, e a recomendação de simplicidade |
 | 5 | [Avaliação de modelos](avaliacao-de-modelos.md) | Teoria | 3 min | Cinco critérios para ler um benchmark antes de escolher um modelo |
@@ -44,9 +44,9 @@ A **Vetor** é uma plataforma fictícia de e-commerce B2B usada como fio conduto
 
 ## Como conduzir
 
-As cinco páginas de teoria têm caixas de destaque ("Pare e pergunte", "Aplique agora") embutidas no texto, e elas não são decoração. É nelas que os 30 minutos alocados ao bloco de teoria se realizam de fato: pare de verdade e espere a turma responder, em vez de ler a pergunta e seguir em frente.
+As cinco páginas de teoria têm caixas de destaque ("Antes de continuar", "Aplique agora") embutidas no texto. Pare de verdade nelas e espere a turma responder, em vez de ler a pergunta e seguir em frente. Os 30 minutos de teoria da sessão contam com essas paradas.
 
-Ao chegar num exercício, resista à tentação de resolver no lugar do participante: o valor está em cada um sentir, no próprio prompt, onde a ambiguidade custou uma regra de negócio.
+Ao chegar num exercício, não resolva no lugar do participante. Cada um precisa ver, no próprio prompt, onde a ambiguidade custou uma regra de negócio.
 
 O exercício 6, de classificação de tarefas reais, ocupa os 20 minutos que antecedem o intervalo e é a única atividade da sessão que toca o backlog de verdade de cada participante. Ninguém precisa mostrar código: as tarefas são descritas em uma linha. O estudo de caso sai do relógio da aula e fica como leitura depois dela.
 

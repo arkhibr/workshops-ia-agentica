@@ -1,6 +1,6 @@
 # MCP e ferramentas externas
 
-O Model Context Protocol (MCP) é o padrão aberto que dá ao agente acesso a uma ferramenta externa sem exigir uma integração específica por par ferramenta-agente. O problema que ele resolve, suas três primitivas, e os critérios para conectar um servidor.
+O Model Context Protocol (MCP) é o padrão aberto que dá ao agente acesso a uma ferramenta externa sem exigir uma integração feita sob medida para cada par ferramenta-agente. Esta página cobre o problema que ele resolve, as três primitivas dele e os critérios para você decidir se conecta um servidor.
 
 ## O problema M×N e o Model Context Protocol
 
@@ -8,13 +8,13 @@ Antes de novembro de 2024, conectar um agente a uma ferramenta externa (um banco
 
 A [Anthropic abriu o código do Model Context Protocol (MCP)](../referencia/bibliografia.md#anthropic-introducing-the-model-context-protocol-2024) para resolver exatamente essa conta: um protocolo aberto no qual cada modelo implementa o MCP uma vez, e cada ferramenta ou serviço implementa o MCP uma vez. A multiplicação vira soma. Um ano depois do lançamento, o protocolo já tinha adoção de OpenAI, Google e Microsoft, tornando-se o padrão de fato para conectar agentes a sistemas externos. A adoção veio do problema de manutenção que todo fornecedor já tinha, sem imposição de nenhuma empresa.
 
-O protocolo formaliza essa integração numa arquitetura cliente-servidor: a aplicação agêntica mantém um cliente MCP para cada servidor a que se conecta, e cada servidor expõe suas capacidades por três primitivas independentes. *Tools* são funções que o próprio modelo decide quando chamar, como consultar um rastreador de tarefas. *Resources* são dados que a aplicação injeta no contexto por conta própria, como o conteúdo de um arquivo específico. *Prompts* são modelos de instrução prontos, escolhidos por quem usa a ferramenta, não pelo modelo. Um servidor não precisa expor as três. A maioria expõe só *tools*.
+O protocolo formaliza essa integração numa arquitetura cliente-servidor: a aplicação agêntica mantém um cliente MCP para cada servidor a que se conecta, e cada servidor expõe suas capacidades por três primitivas independentes. *Tools* são funções que o próprio modelo decide quando chamar, como consultar um rastreador de tarefas. *Resources* são dados que a aplicação injeta no contexto por conta própria, como o conteúdo de um arquivo específico. *Prompts* são modelos de instrução prontos, e quem escolhe usar um deles é a pessoa, e nunca o modelo. Um servidor não precisa expor as três. A maioria expõe só *tools*.
 
-O protocolo também define como a aplicação agêntica fala com cada servidor. Um servidor local, que roda como processo na mesma máquina do agente, se comunica por *stdio* (entrada e saída padrão do processo). Um servidor remoto, acessado pela rede e compartilhado por várias pessoas ao mesmo tempo, usa HTTP com *streaming*. A escolha de transporte não muda o que o servidor expõe, só como a aplicação agêntica conversa com ele. Servidor de uso individual costuma rodar em *stdio*, e servidor de uso compartilhado pelo time inteiro tende a rodar como serviço HTTP.
+O protocolo também define como a aplicação agêntica fala com cada servidor. Um servidor local, que roda como processo na mesma máquina do agente, se comunica por *stdio* (entrada e saída padrão do processo). Um servidor remoto, acessado pela rede e compartilhado por várias pessoas ao mesmo tempo, usa HTTP com *streaming*. A escolha de transporte muda só a forma como a aplicação agêntica conversa com o servidor, e o que ele expõe continua igual. Servidor de uso individual costuma rodar em *stdio*, e servidor de uso compartilhado pelo time inteiro tende a rodar como serviço HTTP.
 
 ![À esquerda, três modelos e quatro ferramentas exigem doze integrações específicas. À direita, o MCP reduz a estrutura a sete conexões simples e organiza tools, resources e prompts, com transporte local por stdio ou remoto por HTTP.](../assets/images/s2-mcp-mxn-mmaisn.png)
 
-Na prática, conectar um servidor MCP a uma aplicação agêntica como o Claude Code ou o Cursor é uma questão de configuração, não de código novo:
+Na prática, você conecta um servidor MCP ao Claude Code ou ao Cursor escrevendo configuração, sem escrever código:
 
 ```json
 {
@@ -38,16 +38,16 @@ Conectar uma ferramenta via MCP tem sentido quando o agente precisa de informaç
 
 A pergunta que resume a decisão: essa informação muda independentemente do código, num sistema que o agente não teria como acessar de outra forma? Se sim, MCP. Se a informação já está versionada no repositório, um MCP é complexidade desnecessária.
 
-As três primitivas do protocolo, vistas em [MCP e ferramentas externas](mcp.md#o-problema-mn-e-o-model-context-protocol), ajudam a decidir que tipo de acesso pedir, não só se vale conectar. Se o agente precisa decidir sozinho quando buscar a informação, ela deveria chegar como *tool*. Se a informação é sempre necessária, e não depende de decisão do agente, faz mais sentido a aplicação injetar como *resource*, sem gastar uma chamada de ferramenta para buscar algo que já era certo que ia ser usado.
+As três primitivas do protocolo, descritas em [O problema M×N e o Model Context Protocol](#o-problema-mn-e-o-model-context-protocol), também ajudam a escolher o tipo de acesso. Se o agente precisa decidir sozinho o momento de buscar a informação, ela chega como *tool*. Se a informação é sempre necessária, e a decisão de buscá-la não é do agente, a aplicação injeta como *resource* e economiza uma chamada de ferramenta.
 
-Existe um segundo motivo para conectar menos do que a vontade pede. Cada ferramenta a mais amplia o espaço de decisão de cada etapa do agente, e o catálogo consome janela de contexto antes de qualquer pedido, então catálogo mínimo é decisão de qualidade e de custo ao mesmo tempo. A evidência que sustenta isso, incluindo o caso da Vercel, está em [O arnês do agente](arnes.md#mais-ferramentas-nao-significa-menos-erro).
+Existe um segundo motivo para conectar menos do que a vontade pede. Cada ferramenta a mais amplia o espaço de decisão de cada etapa do agente, e o catálogo inteiro ocupa janela de contexto antes de qualquer pedido. Manter o catálogo mínimo melhora a qualidade e reduz o custo ao mesmo tempo. A evidência que sustenta isso, incluindo o caso da Vercel, está em [O arnês do agente](arnes.md#mais-ferramentas-nao-significa-menos-erro).
 
 !!! tip "Aplique agora"
-    Antes de conectar o próximo servidor MCP no seu ambiente, confira a origem: é mantido pelo fornecedor oficial da ferramenta, ou por um terceiro sem relação com quem construiu o sistema que ele acessa? Servidor de terceiro não é proibido, mas pede leitura do código, se for aberto, e o menor escopo de permissão que a tarefa permitir.
+    Antes de conectar o próximo servidor MCP no seu ambiente, confira a origem: é mantido pelo fornecedor oficial da ferramenta, ou por um terceiro sem relação com quem construiu o sistema que ele acessa? Você pode usar servidor de terceiro, desde que leia o código, se ele for aberto, e conceda o menor escopo de permissão que a tarefa permitir.
 
 ## Avaliar a origem do servidor MCP
 
-Um servidor MCP roda como um processo à parte, com acesso ao que você autorizar: um banco de dados, um sistema de arquivos, uma API interna. Três critérios reduzem o risco de conectar algo que expõe mais do que deveria:
+Um servidor MCP roda como um processo à parte, com acesso ao que você autorizar: um banco de dados, um sistema de arquivos, uma API interna. Use três critérios para não conectar algo que expõe mais do que deveria:
 
 - **Origem.** Servidor mantido pelo próprio fornecedor da ferramenta (o rastreador de tarefas, o banco de dados) tem manutenção e segurança verificadas por quem construiu o sistema de origem. Servidor de terceiro, sem essa relação, pede mais cautela antes de conectar.
 - **Escopo.** Peça o menor conjunto de permissões que a tarefa exige. Um servidor de banco de dados com acesso só de leitura remove uma categoria inteira de risco, mesmo quando o acesso de escrita está disponível.

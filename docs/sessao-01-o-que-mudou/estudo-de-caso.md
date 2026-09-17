@@ -1,18 +1,18 @@
 # Estudo de caso
 
-Um tech lead propõe proibir vibe coding em todo tipo de tarefa depois de dois incidentes em produção. O dilema não tem resposta prescrita, e as perguntas abaixo servem para conduzir a discussão.
+Um tech lead propõe proibir vibe coding em todo tipo de tarefa depois de dois incidentes em produção. O dilema não tem resposta pronta. Use as perguntas abaixo para conduzir a discussão.
 
 **Tempo:** 15 min · **Formato:** 8 min em grupos de 3–4 pessoas, 7 min de plenária.
 
 ## Situação
 
-A Vetor, plataforma fictícia de e-commerce B2B usada como caso desta sessão, acabou de ter dois incidentes causados por código gerado sem revisão. O tech lead do time propõe em reunião: "a partir de hoje, proibido vibe coding no time. Toda linha gerada por IA passa por especificação completa, com plano e tarefas revisados antes de qualquer código." A proposta vale para tudo, desde a correção de um script interno de uma linha até uma nova rota de pagamento.
+A Vetor, empresa fictícia de e-commerce B2B usada nos exemplos deste workshop, acabou de ter dois incidentes causados por código gerado sem revisão. O tech lead do time propõe em reunião: "a partir de hoje, proibido vibe coding no time. Toda linha gerada por IA passa por especificação completa, com plano e tarefas revisados antes de qualquer código." A proposta vale para tudo, desde a correção de um script interno de uma linha até uma nova rota de pagamento.
 
 Parte do time apoia, cansada de código quebrado sem explicação. Outra parte teme que a burocracia mate exatamente a velocidade que trouxe a IA para o time em primeiro lugar.
 
 ## Como usar este estudo de caso
 
-Não existe uma resposta única aqui. O objetivo é praticar o critério da tabela de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica) num caso ambíguo de verdade, antes de aplicá-lo num código real na oficina.
+Não existe resposta única aqui. Pratique o critério da tabela de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica) num caso ambíguo de verdade, antes de aplicá-lo a um código real na oficina.
 
 ## Perguntas para orientar a análise
 
@@ -23,6 +23,6 @@ Não existe uma resposta única aqui. O objetivo é praticar o critério da tabe
 
 ## Depois da discussão
 
-Compare a posição que o grupo chegou com a tabela de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica). A esteira completa de engenharia agêntica (Sessão 10) volta a esse mesmo dilema com uma ferramenta mais precisa: decisões arquiteturais registradas em ADR, permitindo que a proporcionalidade fique explícita em vez de depender de memória ou de regra geral.
+Compare a posição que o grupo chegou com a tabela de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica). A Sessão 10, sobre a esteira completa de engenharia agêntica, volta a esse dilema com uma ferramenta mais precisa: decisões arquiteturais registradas em ADR. Com elas, a proporcionalidade fica escrita, em vez de depender da memória de alguém ou de uma regra geral.
 
 **Próxima página:** [Oficina de ferramentas](oficina-de-ferramentas.md).

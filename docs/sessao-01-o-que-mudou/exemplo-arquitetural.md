@@ -1,8 +1,8 @@
 # Exemplo arquitetural
 
-Esta página acompanha a regra de desconto da Vetor numa demonstração conduzida pelo instrutor, não num exercício. O objetivo é ver, antes de praticar, exatamente onde um prompt vago perde regra de negócio.
+O instrutor conduz esta demonstração, e ninguém executa nada ainda. Você vai ver, antes de praticar, onde exatamente um prompt vago perde uma regra de negócio.
 
-**A Vetor**, usada como caso em toda esta sessão, é uma plataforma fictícia de e-commerce B2B que atende dois tipos de cliente: padrão e atacado.
+A **Vetor** é uma empresa fictícia de e-commerce B2B, usada nos exemplos deste workshop. Ela atende dois tipos de cliente, padrão e atacado.
 
 ## A regra de negócio completa
 
@@ -21,13 +21,13 @@ Duas exceções que um pedido vago dificilmente cobre: o desconto nunca ultrapas
 
 > Escreva uma função que calcula o desconto de um pedido baseado no valor total.
 
-Uma saída típica desse prompt inventa suas próprias faixas (porque nenhuma foi especificada), ignora o teto de R$ 1.000,00 e não sabe que existe um tipo de cliente "atacado" porque essa informação nunca apareceu no pedido. O código compila e roda, mas resolve um desconto genérico, diferente da regra real da Vetor.
+Uma saída típica desse prompt inventa as próprias faixas, porque nenhuma foi especificada. Ela ignora o teto de R$ 1.000,00 e nem sabe que existe um tipo de cliente chamado atacado, já que essa informação nunca apareceu no pedido. O código compila e roda, e calcula um desconto genérico que não é o da Vetor.
 
 ## Prompt estruturado
 
 > Escreva uma função `calcularDesconto(valorPedido: decimal, tipoCliente: "padrao" | "atacado"): decimal` que recebe o valor de um pedido e o tipo de cliente e devolve o valor do desconto em reais, seguindo a tabela de faixas [tabela colada aqui], respeitando um teto de R$ 1.000,00, e aplicando a faixa adicional de 20% acima de R$ 10.000,00 apenas para clientes atacado.
 
-Essa versão captura a regra inteira porque a regra inteira estava no prompt. A vitória é de quem escreveu o pedido.
+Essa versão acerta a regra inteira porque a regra inteira estava no pedido. Quem produziu o resultado foi quem escreveu o prompt.
 
 ## Onde a diferença aparece
 
@@ -37,10 +37,10 @@ Essa versão captura a regra inteira porque a regra inteira estava no prompt. A 
 | Pedido de R$ 8.000 (padrão) | provavelmente aplica 15% sem teto: R$ 1.200,00 | R$ 1.000,00 (teto aplicado) |
 | Pedido de R$ 12.000 (atacado) | não reconhece o conceito de atacado | R$ 1.000,00 (20% estouraria o teto) |
 
-Os casos que mais revelam a diferença são exatamente os que dependem de conhecimento de negócio que só existe fora do senso comum: teto e tipo de cliente. Nenhum modelo adivinha uma regra que ninguém escreveu.
+Repare onde a diferença aparece: nos dois casos que dependem de conhecimento de negócio, o teto e o tipo de cliente. Nenhum modelo adivinha uma regra que ninguém escreveu.
 
 ## Leitura do exemplo
 
-O ganho veio de alguém ter feito, antes de escrever o prompt, o trabalho de reunir a regra de negócio inteira. Esse trabalho é exatamente o que a Sessão 3 (Exploração e especificação) e a Sessão 4 (Regras formais com IA) tratam com profundidade. Aqui ele aparece em miniatura.
+O ganho veio de alguém reunir a regra de negócio inteira antes de escrever o prompt. É esse trabalho que a Sessão 3, de exploração e especificação, e a Sessão 4, de regras formais com IA, tratam a fundo. Aqui você viu uma versão em miniatura dele.
 
 **Próxima página:** [Estudo de caso](estudo-de-caso.md).
