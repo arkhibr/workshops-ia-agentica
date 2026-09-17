@@ -6,7 +6,7 @@ Tente responder antes de abrir os blocos de resposta nos dois primeiros níveis.
 
 Todos os exercícios desta página se referem ao mesmo caso da [Oficina de ferramentas](oficina-de-ferramentas.md#o-caso-fechamento-de-descontos-da-vetor). Se você não fez a oficina, o que está aqui é tudo o que precisa para responder.
 
-A **Vetor** é uma plataforma fictícia de e-commerce B2B que atravessa o workshop, com clientes de dois tipos: padrão e atacado. A pasta da oficina, `oficina-arnes`, criada do zero, tem uma pasta de trabalho do Excel, `pedidos-setembro.xlsx`, com 24 pedidos de setembro de 2026, dos quais 3 estão cancelados e 21 entram no fechamento. O fechamento correto soma **R$ 39.762,00**.
+A **Vetor** é uma plataforma fictícia de e-commerce B2B que atravessa o workshop, com clientes de dois tipos: padrão e atacado. A pasta da oficina, `oficina-arnes`, criada do zero, tem uma pasta de trabalho do Excel, `pedidos-setembro.xlsx`, com 22 pedidos de setembro de 2026, dos quais 3 estão cancelados e 19 entram no fechamento. O fechamento correto soma **R$ 40.412,00**.
 
 O arquivo de instrução do projeto é este, o mesmo da oficina:
 
@@ -134,7 +134,7 @@ A Vetor quer que o agente consulte o status de entrega de um pedido no sistema d
 
 **Situação**
 
-A Vetor mudou duas regras a partir de outubro. Cliente atacado passa a ter uma quarta faixa, de 22% a partir de 500 unidades. E pedido com valor unitário negativo, que é estorno, deixa de entrar no fechamento. Você tem a pasta `oficina-arnes`, a planilha de pedidos e o `AGENTS.md` da situação compartilhada.
+A Vetor mudou a faixa de cliente padrão a partir de outubro: o desconto sobe de 6% para 8%, e passa a valer a partir de 25 unidades no pedido, em vez de 30. As faixas de atacado continuam iguais. Você tem a pasta `oficina-arnes`, a planilha de pedidos e o `AGENTS.md` da situação compartilhada.
 
 **Seu papel**
 
@@ -146,10 +146,10 @@ A pasta `oficina-arnes`, a planilha `pedidos-setembro.xlsx`, o `AGENTS.md` da si
 
 **Como conduzir**
 
-1. Antes de tudo, confira que o arquivo não está mentindo: rode o fechamento uma vez com as regras atuais e confirme que o total bate com os R$ 39.762,00 da situação compartilhada, como manda [O arquivo de instrução](arquivo-de-instrucao.md#como-saber-se-o-arquivo-ainda-funciona). Um arquivo que descreve uma regra que o resultado não reproduz está mentindo, e tudo depois disso mede outra coisa.
+1. Antes de tudo, confira que o arquivo não está mentindo: rode o fechamento uma vez com as regras atuais e confirme que o total bate com os R$ 40.412,00 da situação compartilhada, como manda [O arquivo de instrução](arquivo-de-instrucao.md#como-saber-se-o-arquivo-ainda-funciona). Um arquivo que descreve uma regra que o resultado não reproduz está mentindo, e tudo depois disso mede outra coisa.
 2. **Entrada.** Edite o `AGENTS.md` para refletir as duas regras novas, e peça ao agente, numa conversa nova: *"Refaça o fechamento com as regras atuais do AGENTS.md."*
-3. **Resposta.** Confira três pontos contra o arquivo de instrução. Ele aplicou a faixa nova onde ela cabia? Ele tirou do fechamento o pedido de valor negativo? Ele alterou a aba `Pedidos`, que o arquivo manda preservar sem alteração?
-4. **Verificação.** Abra a aba `Conferência`. O total final correto depois das duas mudanças é **R$ 43.362,00**, sobre 20 pedidos elegíveis. Se a sua planilha mostrar outro número, decida se o erro está na regra que você escreveu ou no que o agente fez com ela.
+3. **Resposta.** Confira três pontos contra o arquivo de instrução. Ele aplicou 8% onde antes aplicava 6%? Ele desceu a fronteira para 25 unidades, alcançando o pedido VT-1007, de 29 unidades, que antes ficava de fora? Ele alterou a aba `Pedidos`, que o arquivo manda preservar sem alteração?
+4. **Verificação.** Abra a aba `Conferência`. O total final correto depois da mudança é **R$ 40.125,00**, sobre os mesmos 19 pedidos elegíveis. Se a sua planilha mostrar outro número, decida se o erro está na regra que você escreveu ou no que o agente fez com ela.
 
 **Entrega esperada**
 
@@ -159,13 +159,13 @@ Um registro de três linhas: o que foi pedido, o que o agente entregou nos três
 
 | Critério | Peso | O que evidencia atendimento adequado |
 |---|---:|---|
-| O arquivo foi conferido antes de ser usado | 20% | Rodou o fechamento com as regras antigas e confirmou os R$ 39.762,00 antes de mudar qualquer coisa |
+| O arquivo foi conferido antes de ser usado | 20% | Rodou o fechamento com as regras antigas e confirmou os R$ 40.412,00 antes de mudar qualquer coisa |
 | Verificação real executada | 40% | Comparou o total da aba `Conferência` contra o número esperado e relatou o resultado, inclusive quando bateu |
 | Diagnóstico | 40% | Se algum dos três pontos falhou, aponta se foi por faltar precisão na linha que você escreveu ou por o agente ter ignorado uma linha existente |
 
 **Como verificar antes de entregar:** o registro precisa dizer que número apareceu na aba `Conferência`. Se você não abriu a planilha, o exercício não está completo.
 
-**Por que a faixa de 500 unidades não muda nenhum valor:** nenhum dos 24 pedidos chega a 500 unidades. A regra nova está correta e é inócua neste conjunto de dados, o que é exatamente o tipo de mudança que passa despercebida numa revisão feita só por leitura.
+**Onde olhar primeiro:** o total cai R$ 287,00 em relação a setembro, porque o desconto maior alcança mais pedidos. Três clientes mudam de valor e dois ficam idênticos, já que Construtora Lemos e Metalúrgica Andrade só têm pedidos de atacado.
 
 ## Analisar
 

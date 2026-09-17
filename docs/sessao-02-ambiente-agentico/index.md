@@ -49,6 +49,6 @@ A Vetor, plataforma fictícia de e-commerce B2B introduzida na Sessão 1, tem ho
 
 As sete páginas de teoria têm caixas de destaque embutidas no texto. Pare de verdade nesses pontos, em vez de ler a pergunta e seguir em frente.
 
-Ao chegar na oficina, todos criam a mesma pasta vazia, `oficina-arnes`, com dois comandos (`mkdir` e `git init`), e salvam nela o mesmo arquivo de 24 pedidos. Daí em diante o mesmo pedido de fechamento é executado cinco vezes, com uma peça de arnês a mais a cada rodada, e medido contra um gabarito numérico publicado na página. O entregável é sempre uma planilha, então quem não escreve código executa a oficina inteira. A transposição para um repositório real está na extensão ao fim da página, e é a tarefa que faz o arquivo de instrução sobreviver à aula.
+Ao chegar na oficina, todos criam a mesma pasta vazia, `oficina-arnes`, com dois comandos (`mkdir` e `git init`), e salvam nela o mesmo arquivo de 22 pedidos. Daí em diante o mesmo pedido de fechamento é executado cinco vezes, com uma peça de arnês a mais a cada rodada, e medido contra um gabarito numérico publicado na página. O entregável é sempre uma planilha, então quem não escreve código executa a oficina inteira. A transposição para um repositório real está na extensão ao fim da página, e é a tarefa que faz o arquivo de instrução sobreviver à aula.
 
 **Próxima página:** [O ambiente compartilhado](ambiente-compartilhado.md).

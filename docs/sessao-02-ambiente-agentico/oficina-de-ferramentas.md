@@ -58,17 +58,21 @@ Esta oficina exercita quatro das peças que aparecem de forma recorrente nos ens
 
 As duas primeiras peças costumam receber toda a atenção, e são as de menor retorno isolado. A quarta, verificação, é a de maior retorno comprovado, pelo motivo aritmético da seção anterior. Quem quiser a discussão completa, com o diagnóstico por tipo de falha e a distinção entre guiar e impor, encontra em [O arnês do agente](arnes.md).
 
-## A régua, fixada antes da primeira rodada
+## Como cada rodada é julgada
 
-A Sessão 1 mostrou um agente sem nenhum contexto produzindo código tão bom quanto o de um pedido caprichado. Aquilo não foi acidente. Quando a tarefa é conhecida do mundo inteiro, o modelo já sabe a resposta e nenhuma peça de arnês acrescenta informação. A oficina de hoje escolhe de propósito uma tarefa do tipo oposto: a resposta certa depende de regras que só existem dentro da Vetor.
+Na Sessão 1, o agente que recebeu o pedido cru escreveu um validador de cupom tão bom quanto o do pedido com as quatro regras redigidas à mão. Validação de cupom aparece milhares de vezes no treino do modelo, e prazo de validade, valor mínimo, uso único e não acumulação são exatamente as regras que ele enumera sozinho. O pedido detalhado não acrescentou informação nenhuma.
 
-Três decisões de medição, valendo para as cinco rodadas:
+O fechamento da Vetor foi escolhido por não ter essa propriedade. As faixas de desconto são arbitrárias, arredondar para baixo em múltiplos de R$ 0,50 não é convenção de mercado, e nada disso está publicado em lugar nenhum. Um modelo mais capaz chuta com mais fluência, e continua chutando.
 
-1. **O critério está fixado antes de rodar.** O placar abaixo é preenchido logo depois de cada camada, sem voltar atrás para reinterpretar uma rodada anterior à luz da seguinte.
-2. **Inventar conta como erro.** Uma faixa de desconto que ninguém pediu é dinheiro a menos no caixa da Vetor, então ela entra no placar como falha, e não como iniciativa.
-3. **Duas rodadas por camada, em conversas novas.** Um acerto isolado pode ser sorte. Reprodutibilidade é o que o arnês compra, e ela só aparece na segunda rodada.
+Por isso a rodada não é julgada por aparência. Com o critério "qual saída parece melhor", a rodada sem arnês ganha com frequência, porque um agente sem regra escreve mais: inventa faixas que ninguém pediu e devolve um relatório mais completo que o correto. O julgamento aqui é contra o gabarito, que fica fechado até a hora de conferir.
 
-| Camada | Abriu no Excel? | Stack do time? | Faixas certas? | Armadilhas pegas (0–4) | Duas rodadas iguais? |
+Duas consequências práticas.
+
+Faixa inventada entra no placar como erro, mesmo quando é defensável e mesmo quando um analista humano teria suposto a mesma coisa. Em fechamento, desconto que ninguém aprovou sai do caixa.
+
+Cada camada roda duas vezes, sempre em conversa nova. A segunda rodada custa colar o mesmo pedido de novo, e é ela que mostra se o resultado se repete.
+
+| Camada | Abriu no Excel? | Stack do time? | Faixas certas? | Total bate com o gabarito? | Duas rodadas iguais? |
 |---|---|---|---|---|---|
 | 0 — modelo sozinho | | | | | |
 | 1 — dados | | | | | |
@@ -82,7 +86,7 @@ A **Vetor** é uma plataforma fictícia de e-commerce B2B que atravessa o worksh
 
 > Faça o fechamento de descontos de setembro de 2026 da Vetor e me entregue uma pasta de trabalho do Excel com o valor final por pedido e um resumo por cliente.
 
-**Passo 1 — salve os dados do caso.** Copie o bloco abaixo para um editor de texto e salve como `pedidos-setembro.csv` dentro da pasta `oficina-arnes`, em UTF-8. São 24 pedidos.
+**Passo 1 — salve os dados do caso.** Copie o bloco abaixo para um editor de texto e salve como `pedidos-setembro.csv` dentro da pasta `oficina-arnes`, em UTF-8. São 22 pedidos de setembro de 2026.
 
 ```text
 pedido,cliente,tipo,quantidade,valor_unitario,data,status
@@ -94,7 +98,6 @@ VT-1005,Farmácia Tavares,padrão,5,219.90,2026-09-05,cancelado
 VT-1006,Metalúrgica Andrade,atacado,49,82.40,2026-09-08,confirmado
 VT-1007,Papelaria Sul,padrão,29,34.90,2026-09-09,confirmado
 VT-1008,Construtora Lemos,atacado,120,15.75,2026-09-10,confirmado
-VT-1009,Óptica Vieira,padrão,8,-450.00,2026-09-11,confirmado
 VT-1010,Farmácia Tavares,padrão,44,27.30,2026-09-12,confirmado
 VT-1011,Metalúrgica Andrade,atacado,210,9.80,2026-09-15,confirmado
 VT-1012,Papelaria Sul,padrão,60,34.90,2026-09-15,cancelado
@@ -109,17 +112,7 @@ VT-1020,Farmácia Tavares,padrão,67,27.30,2026-09-25,confirmado
 VT-1021,Metalúrgica Andrade,atacado,199,9.80,2026-09-26,confirmado
 VT-1022,Papelaria Sul,padrão,40,34.90,2026-09-29,confirmado
 VT-1023,Construtora Lemos,atacado,55,41.20,2026-09-30,confirmado
-VT-1024,Óptica Vieira,padrão,25,118.00,2026-10-02,confirmado
 ```
-
-**As quatro armadilhas.** Elas estão plantadas nas 24 linhas, e nenhuma delas é avisada ao agente em nenhuma camada. É a contagem de quantas cada camada captura que forma a coluna central do placar.
-
-| # | Armadilha | Onde está |
-|---|---|---|
-| 1 | Três pedidos com `status` cancelado, que ficam fora do fechamento | VT-1005, VT-1012, VT-1019 |
-| 2 | Um pedido na fronteira exata de faixa, com 200 unidades, e o vizinho com 199 | VT-1003 e VT-1021 |
-| 3 | Um estorno com valor unitário negativo | VT-1009 |
-| 4 | Um pedido de outubro no meio do arquivo de setembro | VT-1024 |
 
 ### O gabarito
 
@@ -131,13 +124,13 @@ Ele fica fechado de propósito. O que se fixa antes de rodar é a régua, ou sej
 
     | Número de controle | Valor correto |
     |---|---|
-    | Linhas lidas | 24 |
+    | Linhas lidas | 22 |
     | Pedidos cancelados | 3 |
-    | Pedidos elegíveis | 21 |
+    | Pedidos elegíveis | 19 |
     | Clientes no resumo | 5 |
-    | Total bruto | R$ 43.981,70 |
+    | Total bruto | R$ 44.631,70 |
     | Total de desconto | R$ 4.216,57 |
-    | **Total final** | **R$ 39.762,00** |
+    | **Total final** | **R$ 40.412,00** |
 
     Resumo por cliente:
 
@@ -145,13 +138,13 @@ Ele fica fechado de propósito. O que se fixa antes de rodar é a régua, ou sej
     |---|---|
     | Construtora Lemos | R$ 13.350,00 |
     | Metalúrgica Andrade | R$ 13.274,50 |
-    | Óptica Vieira | R$ 5.347,50 |
+    | Óptica Vieira | R$ 5.997,50 |
     | Farmácia Tavares | R$ 4.369,00 |
     | Papelaria Sul | R$ 3.421,00 |
 
-    O total final sai idêntico independentemente de o agente arredondar o desconto intermediário para cima, para baixo ou ao mais próximo, porque o arredondamento final em múltiplos de R$ 0,50 absorve a diferença. Uma divergência no total é erro de regra, e nunca de implementação.
+    O total final sai idêntico independentemente de o agente arredondar o desconto intermediário para cima, para baixo ou ao mais próximo, porque o arredondamento final em múltiplos de R$ 0,50 absorve a diferença. Se o total divergir, o erro está na regra que o agente aplicou.
 
-    **Conferência rápida das faixas.** Em vez de verificar as 21 linhas, olhe três células da aba de fechamento:
+    **Conferência rápida das faixas.** Em vez de verificar as 19 linhas, olhe três células da aba de fechamento:
 
     | Pedido | Faixa correta | Por quê |
     |---|---|---|
@@ -230,7 +223,7 @@ Confira a resposta. Ela deve estar certa, completa e imediata.
 
 **Passo 3:** rode uma segunda vez, em outra conversa nova, e compare as duas saídas entre si.
 
-**Observe:** os clientes e os valores brutos passam a ser os reais, porque agora eles estão no arquivo. As faixas de desconto continuam vindo de lugar nenhum. É comum a camada 1 pegar zero ou uma armadilha, e produzir um total confiante que erra por milhares de reais.
+**Observe:** os clientes e os valores brutos passam a ser os reais, porque agora eles estão no arquivo. As faixas de desconto continuam vindo de lugar nenhum. O total sai com aparência impecável e erra por milhares de reais.
 
 **Questões exploratórias:**
 
@@ -346,38 +339,42 @@ Em Windows, se editar o arquivo de configuração à mão em vez de usar o coman
 
 ### Camada 4 — verificação
 
-**Peça do arnês: verificação.** É dar ao agente uma forma de conferir o próprio trabalho antes de declará-lo pronto, o que corta a propagação de erro na origem. Pela aritmética do erro composto, é a peça de maior retorno das sete, e a que menos atenção costuma receber. O que a torna diferente das outras três é o alcance: ela encontra o erro que ninguém previu na hora de escrever as regras.
+**Peça do arnês: verificação.** É dar ao agente uma forma de conferir o próprio trabalho antes de declará-lo pronto, o que corta a propagação de erro na origem. Pela aritmética do erro composto, é a peça de maior retorno das sete, e a que menos atenção costuma receber.
 
-**Objetivo:** capturar as duas armadilhas que nenhuma regra previu, que é o retorno que [O arnês do agente](arnes.md#os-componentes-do-arnes) atribui à verificação.
+**Objetivo:** sair da posição de quem confere o resultado à mão.
+
+Nas quatro rodadas anteriores, quem verificou o fechamento foi você, comparando o total contra o gabarito. Setembro de 2026 é o único mês da Vetor que tem gabarito. Em outubro não vai ter, e a pergunta passa a ser como confiar num número que ninguém conferiu.
 
 **Passo 1:** acrescente esta seção ao fim do `AGENTS.md`:
 
 ```markdown
 ## Aba Conferência obrigatória
-Toda entrega inclui uma quarta aba, `Conferência`, com estes seis números,
-calculados a partir da aba `Pedidos`:
+Toda entrega inclui uma quarta aba, `Conferência`, com estes cinco números,
+recalculados a partir da aba `Pedidos` e sem copiar nada da aba `Fechamento`:
 - linhas lidas
 - pedidos cancelados
 - pedidos elegíveis
-- pedidos com data fora do mês de fechamento
-- pedidos com valor unitário negativo
+- clientes distintos entre os pedidos elegíveis
 - soma da coluna de valor final da aba `Fechamento`
 
-Se qualquer uma das duas contagens de anomalia for maior que zero, liste na
-conversa os pedidos envolvidos e pare antes de declarar o fechamento pronto.
+Reporte os cinco números na conversa antes de declarar o fechamento pronto.
+Se a soma da aba `Conferência` divergir do total da aba `Resumo`, pare e
+diga onde está a diferença.
 ```
 
 **Passo 2:** numa conversa nova, faça o pedido do fechamento pela última vez.
 
-**Passo 3:** abra a aba `Conferência` e compare os seis números com o gabarito. O agente parou e listou VT-1009 e VT-1024, ou entregou o fechamento como se estivesse tudo normal?
+**Passo 3:** leia os cinco números que o agente reportou na conversa, antes de abrir a planilha. Só depois abra o arquivo e confira contra o gabarito.
 
-**Passo 4:** preencha a linha 4 do placar e olhe a coluna de armadilhas de cima a baixo.
+**Passo 4:** preencha a linha 4 do placar.
 
-**Observe:** as duas anomalias estavam no arquivo desde a camada 0 e atravessaram três camadas em silêncio. Nenhuma regra do `AGENTS.md` falava delas, porque ninguém escreve instrução para o caso que não previu. O que as encontra é a obrigação de conferir e relatar, que custa seis linhas de texto.
+**Observe:** o total provavelmente já estava certo na camada 3. O que muda aqui é quem descobre isso, e quando. Uma conferência que o agente executa e relata funciona em outubro, novembro e dezembro, sem alguém do lado de fora refazendo a conta. É esse alcance que a aritmética do erro composto cobra, porque numa trajetória longa o erro precisa ser interrompido na etapa em que nasce.
+
+**Passo 5, para ver a conferência trabalhar:** abra o CSV, troque a quantidade do pedido VT-1013 de 75 para 45 e peça o fechamento de novo. A faixa de atacado de 12% deixa de valer para esse pedido. O total correto passa a ser R$ 39.547,00, e o agente relata o novo número sem você ter calculado nada. Desfaça a alteração depois.
 
 **Questões exploratórias:**
 
-- Das cinco linhas do placar, qual camada trouxe o maior salto na coluna de armadilhas? Isso bate com a ordem em que um time normalmente investe?
+- O agente recalculou os cinco números a partir da aba `Pedidos`, ou copiou o que já tinha escrito na aba `Fechamento`? Como você sabe?
 - A aba `Conferência` é uma proteção determinística, ou um pedido que o modelo pode ignorar? Compare com a distinção entre guiar e impor de [O arnês do agente](arnes.md#os-componentes-do-arnes).
 
 ### Ler o placar
@@ -390,7 +387,7 @@ Com as cinco linhas preenchidas, o placar deixa de ser registro e vira diagnóst
 | As faixas de desconto mudaram entre duas rodadas | instrução de sistema | tornar a regra explícita, com o número e a fronteira |
 | O agente usou clientes que não existem no arquivo | gestão de contexto | garantir que o dado entra na janela, em vez de ser lembrado |
 | Ele pediu que você colasse o conteúdo da planilha | ferramentas | dar acesso de leitura escopado à pasta |
-| As anomalias passaram em silêncio | verificação | exigir números de controle recalculados da fonte |
+| Você só soube que o total estava certo porque tinha o gabarito | verificação | exigir números de controle recalculados da fonte e relatados |
 | Ele leu a regra e mesmo assim não aplicou | *hooks* e permissões | impor o limite na camada de execução |
 
 A última linha é a que esta oficina não resolve, e a seção seguinte explica por quê.
@@ -399,7 +396,7 @@ A última linha é a que esta oficina não resolve, e a seção seguinte explica
 
 Duas peças da tabela de componentes ficaram fora das cinco camadas, e as duas merecem nome antes de a sessão terminar.
 
-A aba `Conferência` da camada 4 pede um comportamento ao modelo. Ela guia, sem impor. Um agente pode ignorá-la, e alguns ignoram. A imposição determinística mora em *hook* e em permissão, na camada de execução, como separa a [distinção entre guiar e impor](arnes.md#os-componentes-do-arnes). Se o seu agente pular a conferência em alguma rodada, é essa peça que está faltando.
+A aba `Conferência` da camada 4 pede um comportamento ao modelo, e pedido é coisa que dá para ignorar. Alguns agentes ignoram. A imposição determinística mora em *hook* e em permissão, na camada de execução, como separa a [distinção entre guiar e impor](arnes.md#os-componentes-do-arnes). Se o seu agente pular a conferência em alguma rodada, é essa peça que está faltando.
 
 Memória fica fora da oficina, como já fica fora da sessão. Cada rodada começa em conversa nova de propósito, para que o placar meça o arnês montado e não o que o agente lembrou da tentativa anterior.
 
@@ -432,7 +429,8 @@ git branch -D experimento/a experimento/b
 1. O placar preenchido, com as cinco linhas e as cinco colunas.
 2. Do Pilar 1, a linguagem em que o agente resolveu a conversão para `.xlsx`, antes de qualquer arquivo de instrução existir.
 3. Da camada 0, a diferença entre a resposta do passo 1 e a do passo 2, e se o agente sinalizou que estava supondo.
-4. Da camada 3, o nome da ferramenta chamada no passo 4 e o que aconteceu no passo 5.
-5. Da camada 4, os seis números da aba `Conferência` e se o agente parou antes de declarar o fechamento pronto.
+4. Da camada 2, se o agente citou o `AGENTS.md`, a aba `Regras` ou nenhum dos dois ao justificar as faixas.
+5. Da camada 3, o nome da ferramenta chamada no passo 4 e o que aconteceu no passo 5.
+6. Da camada 4, os cinco números que o agente reportou na conversa e se eles batiam com a planilha.
 
 **Próxima página:** [Exercícios](exercicios.md).
