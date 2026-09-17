@@ -6,6 +6,8 @@ Nos próximos 45 minutos você vai fazer o mesmo pedido a um agente cinco vezes 
 
 O agente entrega uma planilha do Excel em toda rodada, e você compara as cinco. Não precisa ler nem escrever código para fazer esta oficina. Conferir é abrir o arquivo e olhar os números.
 
+**Decisão em foco:** que peça do arnês é responsável por cada erro que o agente comete num fechamento mensal, e em que ordem vale a pena acrescentá-las.
+
 ## Ferramenta
 
 Você vai precisar do agente que já usa (**Claude Code, Codex CLI ou Gemini CLI**), do Node.js 20 ou superior e de um programa de planilha (Excel, LibreOffice Calc ou Google Sheets). Tempo estimado: 45 minutos.
@@ -18,13 +20,9 @@ git init
 node --version   # precisa mostrar v20 ou superior
 ```
 
-Quando o comando muda de um sistema para outro, a página traz as duas versões em abas. Escolha a sua antes de copiar. O mesmo vale quando o comando muda de uma ferramenta de agente para outra.
-
-**Decisão em foco:** que peça do arnês é responsável por cada erro que o agente comete num fechamento mensal, e em que ordem vale a pena acrescentá-las.
-
 ## Roteiro sugerido para a sessão
 
-- **Essencial em aula:** o Pilar 1 e as cinco rodadas do Pilar 2, na ordem. Use o mesmo pedido nas cinco, senão não dá para comparar nada.
+- **Essencial em aula:** gerar a planilha do caso e fazer as cinco rodadas, na ordem em que aparecem. Use o mesmo pedido nas cinco, senão não dá para comparar nada.
 - **Exploração em dupla:** ao fim da última rodada, compare o seu placar com o de quem está do lado. Quando duas pessoas com o mesmo arnês chegam a resultados diferentes, esse é o achado mais interessante do dia.
 - **Extensão para depois da aula:** a seção final, com isolamento por ramo, autonomia e a transposição para um repositório de verdade.
 
@@ -36,27 +34,25 @@ Quando você pede alguma coisa a um agente, o modelo é só uma peça do que res
 
 Isso muda a ordem em que você ataca um problema com agente. Trocar de modelo é caro e aparece na fatura. Mexer no arnês é barato e ninguém vê. Trivedy conta que a mesma família de modelo sai de fora das trinta primeiras posições para as cinco primeiras do Terminal Bench 2.0 sem trocar o modelo, só o arnês. [Addy Osmani](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026) diz o mesmo com outras palavras: um modelo mediano num bom arnês entrega mais que um bom modelo num arnês ruim.
 
+O arnês tem sete peças, e você mexe em quatro delas hoje:
+
+| Peça | Pergunta que ela responde |
+|---|---|
+| Instrução de sistema | Que convenções e limites governam toda tarefa? |
+| Ferramentas | O que o agente pode fazer, e com que contrato? |
+| Gestão de contexto | O que entra na janela agora, e o que é descartado? |
+| Verificação | Como o agente confere o que fez antes de avançar? |
+| Isolamento | Onde o agente roda sem alcançar o trabalho de outra pessoa? |
+| Autonomia | Que ações ele executa sem pedir aprovação? |
+| Memória | O que persiste entre execuções, com que autorização? |
+
+As duas primeiras levam quase toda a atenção e são as que menos rendem sozinhas. A quarta, verificação, é a que mais rende, pelo motivo da próxima seção. A discussão completa, com o diagnóstico por tipo de falha, está em [O arnês do agente](arnes.md).
+
 ### Por que a oficina é feita em rodadas
 
 O agente executa uma tarefa em muitas etapas, e as chances de cada etapa se multiplicam. Se ele acerta 99% das etapas, uma tarefa de 10 etapas sai inteira certa em 90,4% das vezes. Uma de 50 etapas, em 60,5%. A conta é `0,99` elevado ao número de etapas.
 
 Repare onde isso deixa você. Trocar o modelo não resolve, porque o problema vem do encadeamento, e não da qualidade de cada resposta isolada. O que resolve fica em volta: dar ao agente como conferir o próprio trabalho, parar a tarefa em pontos definidos, deixar cada etapa menos ambígua e manter limpa a janela de contexto. Cada rodada desta oficina acrescenta uma dessas coisas, para você ver quanto ela vale sozinha.
-
-### As sete peças do arnês
-
-Você mexe em quatro delas hoje. Leia a lista inteira antes de começar, porque é ela que transforma "o agente errou" numa pergunta que dá para responder.
-
-| Peça | Pergunta que ela responde | Nesta oficina |
-|---|---|---|
-| Instrução de sistema | Que convenções e limites governam toda tarefa? | Rodada 2 |
-| Ferramentas | O que o agente pode fazer, e com que contrato? | Pilar 1 e rodada 3 |
-| Gestão de contexto | O que entra na janela agora, e o que é descartado? | Rodada 1 |
-| Verificação | Como o agente confere o que fez antes de avançar? | Rodada 4 |
-| Isolamento | Onde o agente roda sem alcançar o trabalho de outra pessoa? | Extensão |
-| Autonomia | Que ações ele executa sem pedir aprovação? | Extensão |
-| Memória | O que persiste entre execuções, com que autorização? | Fora da oficina |
-
-As duas primeiras levam quase toda a atenção e são as que menos rendem sozinhas. A quarta, verificação, é a que mais rende, pelo motivo da conta acima. A discussão completa, com o diagnóstico por tipo de falha, está em [O arnês do agente](arnes.md).
 
 ## O caso: fechamento de descontos da Vetor
 
@@ -71,13 +67,9 @@ A **Vetor** é uma empresa fictícia de e-commerce B2B, usada nos exemplos deste
 - O desconto nunca passa de **R$ 1.000,00** por pedido, em nenhuma faixa.
 - Pedido com status `cancelado` fica fora do fechamento.
 
-**Leia essas regras, mas não passe nenhuma delas ao agente ainda.** Elas existem só dentro da Vetor, e nenhuma está publicada em lugar nenhum. O agente só recebe esse texto na rodada 2. Até lá, ele trabalha sem saber que essas faixas existem, e é isso que você vai observar.
+Você precisa dessas regras para conferir os resultados. O agente só recebe o texto delas na rodada 2. Até lá ele trabalha sem saber que elas existem.
 
-Nas cinco rodadas você faz este pedido, sem mudar uma palavra:
-
-> Faça o fechamento de descontos de setembro de 2026 da Vetor e me entregue uma pasta de trabalho do Excel com o valor final por pedido e um resumo por cliente.
-
-**Passo 1 — salve os dados do caso.** Copie o bloco abaixo para um editor de texto e salve como `pedidos-setembro.csv` dentro da pasta `oficina-arnes`, em UTF-8. São 22 pedidos de setembro de 2026.
+Os dados do caso são estes 22 pedidos de setembro de 2026:
 
 ```text
 pedido,cliente,tipo,quantidade,valor_unitario,data,status
@@ -105,39 +97,21 @@ VT-1022,Papelaria Sul,padrão,40,12.50,2026-09-29,confirmado
 VT-1023,Construtora Lemos,atacado,55,41.20,2026-09-30,confirmado
 ```
 
-## Como conferir cada rodada
-
-Repare que as regras de desconto da Vetor são arbitrárias. Nenhum padrão de mercado manda cortar o desconto em R$ 1.000,00 por pedido, nem dar uma faixa extra de 20% ao atacado acima de R$ 10.000,00. O agente não tem como acertar isso antes de alguém escrever a regra para ele, e um modelo mais capaz só chuta com mais convicção. Foi por isso que escolhi este caso para a oficina.
-
-Tome cuidado com um erro de avaliação aqui. Se você julgar as saídas por qual parece melhor, a rodada sem arnês nenhum costuma ganhar, porque um agente sem regra escreve mais: inventa faixas, acrescenta colunas e devolve um relatório mais completo que o correto. Compare sempre contra o [gabarito](#gabarito), no fim desta página.
-
-Duas regras para preencher o placar.
-
-Faixa que o agente inventou conta como erro, mesmo quando é defensável e mesmo quando um analista humano teria suposto a mesma coisa. Em fechamento, desconto que ninguém aprovou sai do caixa.
-
-Faça cada rodada duas vezes, em conversas separadas. A segunda custa colar o mesmo pedido de novo, e é ela que mostra se o resultado se repete.
-
-| Rodada | Abriu no Excel? | Stack do time? | Faixas certas? | Total bate com o gabarito? | As duas iguais? |
-|---|---|---|---|---|---|
-| 0 — modelo sozinho | | | | | |
-| 1 — dados | | | | | |
-| 2 — instrução | | | | | |
-| 3 — ferramenta | | | | | |
-| 4 — verificação | | | | | |
-
-## Pilar 1 — gerar a pasta de trabalho do caso
+## Pilar 1 — gerar a planilha do caso
 
 **Peça do arnês: ferramentas.** Ferramenta é uma coisa que o agente pode fazer além de escrever texto, com um contrato declarado: um nome, os parâmetros que ela aceita e o que ela devolve. Rodar um comando no terminal é uma ferramenta. Gravar um arquivo é outra. Você vai precisar das duas aqui, porque um arquivo do Excel é um conjunto de documentos XML dentro de um zip, e nenhum modelo escreve isso digitando na conversa.
 
 **Objetivo:** montar a planilha que as cinco rodadas vão usar, e descobrir logo se o seu agente consegue gravar um arquivo.
 
-**Passo 1:** com a pasta `oficina-arnes` aberta no agente e o CSV salvo dentro dela, peça:
+**Passo 1:** copie o bloco de 22 pedidos acima para um editor de texto e salve como `pedidos-setembro.csv` dentro da pasta `oficina-arnes`, em UTF-8.
+
+**Passo 2:** abra o agente nessa pasta e peça:
 
 > Converta `pedidos-setembro.csv` numa pasta de trabalho do Excel chamada `pedidos-setembro.xlsx`, com uma única aba chamada `Pedidos`, preservando as 22 linhas e os nomes de coluna exatamente como estão. Não calcule nada.
 
-**Passo 2:** abra `pedidos-setembro.xlsx` no seu programa de planilha e confira três coisas: o arquivo abre sem aviso de formato inválido, a aba se chama `Pedidos`, e as 22 linhas estão lá com os acentos corretos.
+**Passo 3:** abra `pedidos-setembro.xlsx` no seu programa de planilha e confira três coisas: o arquivo abre sem aviso de formato inválido, a aba se chama `Pedidos`, e as 22 linhas estão lá com os acentos corretos.
 
-**Passo 3:** olhe como o agente resolveu. Ele instalou alguma biblioteca? Escreveu um script? Em que linguagem? Anote a resposta, porque a rodada 2 vai mudar exatamente isso.
+**Passo 4:** olhe como o agente resolveu. Ele instalou alguma biblioteca? Escreveu um script? Em que linguagem? Anote a resposta, porque a rodada 2 vai mudar exatamente isso.
 
 **Observe:** um agente sem permissão de executar comando não entrega `.xlsx` nenhum. Ele devolve um CSV renomeado, ou um texto explicando como você mesmo poderia fazer. Repare que isso não tem nada a ver com as regras de desconto, que ainda nem apareceram. É só ferramenta.
 
@@ -148,18 +122,39 @@ Faça cada rodada duas vezes, em conversas separadas. A segunda custa colar o me
 
 ## Pilar 2 — uma peça de arnês por rodada
 
-As cinco rodadas usam o mesmo pedido em negrito da seção do caso. A única coisa que muda entre elas é o que existe em volta do modelo. Cada passo da oficina acrescenta uma peça, e cada peça decide uma pergunta diferente:
+Nas cinco rodadas a seguir você faz sempre este pedido, sem mudar uma palavra:
 
-| Passo | Peça do arnês que entra | O que ela decide |
+> Faça o fechamento de descontos de setembro de 2026 da Vetor e me entregue uma pasta de trabalho do Excel com o valor final por pedido e um resumo por cliente.
+
+O que muda de uma rodada para outra é só o que existe em volta do modelo:
+
+| Rodada | Peça do arnês que entra | O que ela decide |
 |---|---|---|
-| Pilar 1 | Ferramentas (execução) | Se o agente consegue gravar o arquivo |
-| Rodada 0 | Nenhuma | O que o modelo resolve sozinho |
-| Rodada 1 | Gestão de contexto | Quais fatos entram na janela |
-| Rodada 2 | Instrução de sistema | Qual política ele aplica aos fatos |
-| Rodada 3 | Ferramentas (alcance e escopo) | O que ele alcança sem depender de você |
-| Rodada 4 | Verificação | O que ele confere antes de dizer que terminou |
+| 0 | Nenhuma | O que o modelo resolve sozinho |
+| 1 | Gestão de contexto | Quais fatos entram na janela |
+| 2 | Instrução de sistema | Qual política ele aplica aos fatos |
+| 3 | Ferramentas (alcance e escopo) | O que ele alcança sem depender de você |
+| 4 | Verificação | O que ele confere antes de dizer que terminou |
 
-A coluna do meio usa os nomes da tabela de [componentes do arnês](arnes.md#os-componentes-do-arnes). Duas peças de lá ficam fora desta oficina de propósito, e a seção que fecha o Pilar 2 explica por quê.
+Isolamento e autonomia ficam para a extensão depois da aula. Memória fica de fora, e a seção [O que a oficina deixa em aberto](#o-que-a-oficina-deixa-em-aberto) explica por quê.
+
+### Como julgar cada rodada
+
+Repare que as regras de desconto da Vetor são arbitrárias. Nenhum padrão de mercado manda cortar o desconto em R$ 1.000,00 por pedido, nem dar uma faixa extra de 20% ao atacado acima de R$ 10.000,00. O agente não tem como acertar isso antes de alguém escrever a regra para ele, e um modelo mais capaz só chuta com mais convicção. Foi por isso que escolhi este caso para a oficina.
+
+Tome cuidado com um erro de avaliação aqui. Se você julgar as saídas por qual parece melhor, a rodada sem arnês nenhum costuma ganhar, porque um agente sem regra escreve mais: inventa faixas, acrescenta colunas e devolve um relatório mais completo que o correto. Compare sempre contra o [gabarito](#gabarito), no fim desta página.
+
+Faixa que o agente inventou conta como erro, mesmo quando é defensável e mesmo quando um analista humano teria suposto a mesma coisa. Em fechamento, desconto que ninguém aprovou sai do caixa.
+
+Faça cada rodada duas vezes, em conversas separadas. A segunda custa colar o mesmo pedido de novo, e é ela que mostra se o resultado se repete. Preencha uma linha do placar por rodada, logo depois de conferir:
+
+| Rodada | Abriu no Excel? | Stack do time? | Faixas certas? | Total bate com o gabarito? | As duas iguais? |
+|---|---|---|---|---|---|
+| 0 — modelo sozinho | | | | | |
+| 1 — dados | | | | | |
+| 2 — instrução | | | | | |
+| 3 — ferramenta | | | | | |
+| 4 — verificação | | | | | |
 
 ### Rodada 0 — o modelo sozinho
 
@@ -190,7 +185,7 @@ Confira a resposta. Ela deve estar certa, completa e imediata.
 
 **Objetivo:** ver o que muda quando o agente recebe os dados e continua sem as regras.
 
-**Passo 1:** numa conversa nova, na pasta `oficina-arnes`, com `pedidos-setembro.xlsx` presente, faça o mesmo pedido do fechamento. Deixe o agente encontrar o arquivo sozinho.
+**Passo 1:** numa conversa nova, na pasta `oficina-arnes`, com `pedidos-setembro.xlsx` presente, faça o pedido do fechamento. Deixe o agente encontrar o arquivo sozinho.
 
 **Passo 2:** abra o resultado e confira contra o [gabarito](#gabarito). Depois preencha a linha 1 do placar.
 
@@ -200,7 +195,7 @@ Confira a resposta. Ela deve estar certa, completa e imediata.
 
 **Questões exploratórias:**
 
-- As duas rodadas aplicaram as mesmas faixas? Se aplicaram faixas diferentes, o que isso diz sobre entregar esse fechamento para um cliente?
+- As duas execuções aplicaram as mesmas faixas? Se aplicaram faixas diferentes, o que isso diz sobre entregar esse fechamento para um cliente?
 - Qual linha da tabela de [diagnóstico por tipo de falha](arnes.md#diagnosticar-pelo-tipo-de-falha) descreve o erro que você viu aqui?
 
 ### Rodada 2 — instrução
@@ -209,7 +204,7 @@ Confira a resposta. Ela deve estar certa, completa e imediata.
 
 **Objetivo:** escrever as regras da Vetor em dois lugares e ver qual deles o agente usa.
 
-**Passo 1 — o arquivo de instrução.** Crie `AGENTS.md` na raiz de `oficina-arnes` com este conteúdo:
+**Passo 1:** crie `AGENTS.md` na raiz de `oficina-arnes` com este conteúdo:
 
 ```markdown
 # AGENTS.md
@@ -238,17 +233,17 @@ Três abas, nesta ordem: `Pedidos` (os dados de origem, sem alteração),
 desconto e valor final) e `Resumo` (uma linha por cliente, com o total final).
 ```
 
-**Passo 2 — as mesmas regras dentro da planilha.** Peça ao agente:
+**Passo 2:** peça ao agente que escreva as mesmas faixas dentro da planilha:
 
-> Acrescente a `pedidos-setembro.xlsx` uma aba chamada `Regras`, com uma linha por faixa de desconto: tipo de cliente, quantidade mínima e percentual. Use as faixas descritas no `AGENTS.md`. Não altere a aba `Pedidos`.
+> Acrescente a `pedidos-setembro.xlsx` uma aba chamada `Regras`, com uma linha por faixa de desconto: tipo de cliente, valor bruto mínimo, valor bruto máximo e percentual. Acrescente também uma linha para o teto de desconto por pedido. Use as regras do `AGENTS.md`. Não altere a aba `Pedidos`.
 
-Abra a aba `Regras` e confira as quatro linhas. Quem cuida do negócio na Vetor audita a regra aqui, sem abrir arquivo de texto nenhum.
+Abra a aba `Regras` e confira as cinco faixas e a linha do teto. Quem cuida do negócio na Vetor audita a regra aqui, sem abrir arquivo de texto nenhum.
 
 **Passo 3:** numa conversa nova, faça o pedido do fechamento. Confira contra o [gabarito](#gabarito), começando pelas três células da conferência rápida de faixas, e preencha a linha 2 do placar.
 
 **Passo 4:** rode uma segunda vez, em outra conversa nova. Compare o formato das duas saídas, e não apenas os números.
 
-**Observe:** três coisas costumam mudar de uma vez. As faixas ficam certas, os pedidos cancelados saem do fechamento e o agente para de escolher a linguagem por conta própria. Fique de olho no pedido de 200 unidades, que continua sendo o erro mais comum mesmo com a regra escrita. "A partir de" também pode ser lido como "acima de", e aí 200 unidades cai na faixa de baixo.
+**Observe:** três coisas costumam mudar de uma vez. As faixas ficam certas, os pedidos cancelados saem do fechamento e o agente para de escolher a linguagem por conta própria. Fique de olho no pedido VT-1006, de valor bruto exatamente R$ 10.000,00: a faixa de 20% do atacado vale **acima** desse valor, então esse pedido fica em 15%, e o teto de R$ 1.000,00 corta o resultado. É o erro mais comum mesmo com a regra escrita.
 
 **Questões exploratórias:**
 
@@ -263,7 +258,7 @@ Abra a aba `Regras` e confira as quatro linhas. Quem cuida do negócio na Vetor 
 
 **Ferramenta usada:** o servidor de referência `@modelcontextprotocol/server-filesystem`, mantido pelo próprio projeto do MCP. Ele expõe operações de leitura e escrita restritas às pastas que você autorizar, o mesmo princípio de escopo mínimo de [MCP e ferramentas externas](mcp.md#avaliar-a-origem-do-servidor-mcp).
 
-**Passo 1:** descubra o caminho completo da pasta `oficina-arnes`.
+**Passo 1:** descubra o caminho completo da pasta `oficina-arnes`. O comando muda de um sistema para outro, então escolha a aba do seu antes de copiar.
 
 === "macOS/Linux"
     ```bash
@@ -275,7 +270,7 @@ Abra a aba `Regras` e confira as quatro linhas. Quem cuida do negócio na Vetor 
     Resolve-Path .   # ex.: C:\Users\seu-usuario\oficina-arnes
     ```
 
-**Passo 2:** conecte o servidor apontando só para essa pasta, trocando `/caminho/completo/oficina-arnes` pelo caminho que apareceu.
+**Passo 2:** conecte o servidor apontando só para essa pasta, trocando `/caminho/completo/oficina-arnes` pelo caminho que apareceu. Aqui a aba muda por ferramenta de agente.
 
 === "Claude Code"
     ```bash
@@ -305,12 +300,14 @@ Em Windows, se editar o arquivo de configuração à mão em vez de usar o coman
 
 **Passo 6:** confira contra o [gabarito](#gabarito) e preencha a linha 3 do placar.
 
+**Passo 7:** desconecte o servidor se esta pasta não fizer parte do seu trabalho de verdade.
+
 **Observe:** o total provavelmente não muda muito nesta rodada. O que melhora é a repetição entre as duas execuções, porque o agente para de depender do que você lembrou de colar na conversa. E a recusa do passo 5 mostra que o limite da pasta é real, e não uma promessa no arquivo de instrução.
 
 **Questões exploratórias:**
 
 - O que aconteceu no passo 5 confirma ou contradiz o critério de escopo mínimo de [MCP e ferramentas externas](mcp.md#avaliar-a-origem-do-servidor-mcp)?
-- Desconecte o servidor ao fim da oficina se esta pasta não fizer parte do seu fluxo real de trabalho.
+- O escopo que você autorizou é o menor que a tarefa aceitava, ou sobrou permissão?
 
 ### Rodada 4 — verificação
 
@@ -337,43 +334,45 @@ Se a soma da aba `Conferência` divergir do total da aba `Resumo`, pare e
 diga onde está a diferença.
 ```
 
-**Passo 2:** numa conversa nova, faça o pedido do fechamento pela última vez.
+**Passo 2:** numa conversa nova, faça o pedido do fechamento.
 
 **Passo 3:** leia os cinco números que o agente reportou na conversa, antes de abrir a planilha. Só depois abra o arquivo e confira contra o [gabarito](#gabarito).
 
 **Passo 4:** preencha a linha 4 do placar.
 
-**Observe:** o total provavelmente já estava certo na rodada 3. O que muda aqui é quem descobre isso, e em que momento. Uma conferência que o próprio agente faz e relata continua funcionando em outubro e em novembro, sem ninguém de fora refazendo a conta. Lembre da conta do começo da página: numa tarefa longa, o erro precisa ser pego na etapa em que ele nasce, senão ele atravessa todas as seguintes.
+**Passo 5:** veja a conferência trabalhar num dado que mudou. Abra o CSV, troque a quantidade do pedido VT-1013 de 75 para 45 e peça o fechamento de novo. O valor bruto cai de R$ 3.090,00 para R$ 1.854,00, e o pedido desce da faixa de 10% para a de 5%. O total correto passa a ser R$ 67.648,74, e o agente relata o novo número sem você ter calculado nada. Desfaça a alteração depois.
 
-**Passo 5, para ver a conferência trabalhar:** abra o CSV, troque a quantidade do pedido VT-1013 de 75 para 45 e peça o fechamento de novo. O valor bruto cai de R$ 3.090,00 para R$ 1.854,00, e o pedido desce da faixa de 10% para a de 5%. O total correto passa a ser R$ 67.648,74, e o agente relata o novo número sem você ter calculado nada. Desfaça a alteração depois.
+**Observe:** o total provavelmente já estava certo na rodada 3. O que muda aqui é quem descobre isso, e em que momento. Uma conferência que o próprio agente faz e relata continua funcionando em outubro e em novembro, sem ninguém de fora refazendo a conta. Lembre da conta do começo da página: numa tarefa longa, o erro precisa ser pego na etapa em que ele nasce, senão ele atravessa todas as seguintes.
 
 **Questões exploratórias:**
 
 - O agente recalculou os cinco números a partir da aba `Pedidos`, ou copiou o que já tinha escrito na aba `Fechamento`? Como você sabe?
 - A aba `Conferência` é uma proteção determinística, ou um pedido que o modelo pode ignorar? Compare com a distinção entre guiar e impor de [O arnês do agente](arnes.md#os-componentes-do-arnes).
 
-### Ler o placar
+## Ler o placar
 
-Agora use o placar para diagnosticar. Cada resposta negativa aponta para uma peça do arnês, e a tabela abaixo diz qual. A Sessão 9 retoma esse mesmo raciocínio na depuração de agentes.
+Com as cinco linhas preenchidas, use o placar para diagnosticar. Cada resposta negativa aponta para uma peça do arnês, e a tabela abaixo diz qual. A Sessão 9 retoma esse mesmo raciocínio na depuração de agentes.
 
 | O que você observou | Peça provável | Primeira intervenção |
 |---|---|---|
 | O `.xlsx` nunca saiu, ou saiu corrompido | ferramentas | conferir permissão de execução e escrita do agente |
-| As faixas de desconto mudaram entre duas rodadas | instrução de sistema | tornar a regra explícita, com o número e a fronteira |
+| As faixas de desconto mudaram entre duas execuções | instrução de sistema | tornar a regra explícita, com o número e a fronteira |
 | O agente usou clientes que não existem no arquivo | gestão de contexto | garantir que o dado entra na janela, em vez de ser lembrado |
-| Ele pediu que você colasse o conteúdo da planilha | ferramentas | dar acesso de leitura escopado à pasta |
+| Ele pediu que você colasse o conteúdo da planilha | ferramentas | dar acesso de leitura restrito à pasta |
 | Você só soube que o total estava certo porque tinha o gabarito à mão | verificação | exigir números de controle recalculados da fonte e relatados |
 | Ele leu a regra e mesmo assim não aplicou | *hooks* e permissões | impor o limite na camada de execução |
 
-A última linha é a que esta oficina não resolve, e a seção seguinte explica por quê.
+A última linha é a que esta oficina não resolve.
 
-### O que a oficina deixa em aberto
+## O que a oficina deixa em aberto
 
-Duas peças da tabela de componentes ficaram de fora das cinco rodadas. Vale saber quais são antes de encerrar.
+Três das sete peças ficaram fora das cinco rodadas. Vale saber quais são antes de encerrar.
 
-A aba `Conferência` da rodada 4 pede um comportamento ao modelo, e pedido é coisa que dá para ignorar. Alguns agentes ignoram. Quem impõe de verdade é *hook* e permissão, na camada de execução, como separa a [distinção entre guiar e impor](arnes.md#os-componentes-do-arnes). Se o agente pulou a conferência em alguma rodada, foi essa peça que faltou.
+Isolamento e autonomia saem para a extensão depois da aula, porque as duas pedem mais de um agente rodando ao mesmo tempo.
 
 Memória fica fora da oficina e fora da sessão. Cada rodada começa em conversa nova justamente para isso: o placar precisa medir o arnês que você montou, e não o que o agente lembrou da tentativa anterior.
+
+Sobra uma peça que nem aparece na tabela das sete. A aba `Conferência` da rodada 4 pede um comportamento ao modelo, e pedido é coisa que dá para ignorar. Alguns agentes ignoram. Quem impõe de verdade é *hook* e permissão, na camada de execução, como separa a [distinção entre guiar e impor](arnes.md#os-componentes-do-arnes). Se o agente pulou a conferência em alguma rodada, foi essa peça que faltou.
 
 ## Extensão para o seu repositório
 
@@ -386,7 +385,7 @@ git worktree add ../oficina-a -b experimento/a
 git worktree add ../oficina-b -b experimento/b
 ```
 
-Num deles, peça para acrescentar uma faixa de 22% acima de 500 unidades para atacado. No outro, peça para incluir os pedidos cancelados no resumo com valor zero. As duas edições convivem, porque cada worktree tem a própria cópia de trabalho. O conflito só aparece na hora de juntar os dois ramos, e é lá que uma pessoa resolve. Ao terminar:
+Num deles, peça para acrescentar uma faixa de 22% para atacado acima de R$ 20.000,00. No outro, peça para incluir os pedidos cancelados no resumo com valor zero. As duas edições convivem, porque cada worktree tem a própria cópia de trabalho. O conflito só aparece na hora de juntar os dois ramos, e é lá que uma pessoa resolve. Ao terminar:
 
 ```bash
 cd ../oficina-arnes
@@ -398,6 +397,15 @@ git branch -D experimento/a experimento/b
 **Autonomia.** Repita a rodada 4 no modo de menor autonomia da sua aplicação agêntica, contando quantas confirmações você precisou dar, e depois no modo de maior autonomia, dentro de um worktree descartável. Compare os dois tempos e responda se alguma edição saiu diferente do que você esperava.
 
 **O seu projeto.** Escolha uma rotina de planilha que exista de verdade no seu time, uma conciliação ou um relatório mensal. Escreva o `AGENTS.md` dela com as regras que hoje só existem na cabeça de alguém, e acrescente a seção de conferência com os números de controle que você usaria para saber que o resultado está certo. Essa é a tarefa que faz o arquivo de instrução sobreviver à aula.
+
+## Evidência a entregar
+
+1. O placar preenchido, com as cinco linhas e as cinco colunas.
+2. Do Pilar 1, a linguagem em que o agente resolveu a conversão para `.xlsx`, antes de qualquer arquivo de instrução existir.
+3. Da rodada 0, a diferença entre a resposta do passo 1 e a do passo 2, e se o agente sinalizou que estava supondo.
+4. Da rodada 2, se o agente citou o `AGENTS.md`, a aba `Regras` ou nenhum dos dois ao justificar as faixas.
+5. Da rodada 3, o nome da ferramenta chamada no passo 4 e o que aconteceu no passo 5.
+6. Da rodada 4, os cinco números que o agente reportou na conversa e se eles batiam com a planilha.
 
 ## Gabarito
 
@@ -436,14 +444,5 @@ Estes são os números do fechamento correto. Consulte esta seção depois de ca
     | VT-1022 | R$ 0,00 | bruto de exatamente R$ 500,00, e a faixa de 5% só começa acima disso |
     | VT-1006 | R$ 1.000,00 | atacado com bruto de exatamente R$ 10.000,00 fica em 15%, porque a faixa de 20% é acima de R$ 10.000,00. Os 15% dariam R$ 1.500,00, e o teto corta em R$ 1.000,00 |
     | VT-1014 | R$ 1.000,00 | cliente padrão, 15% sobre R$ 7.120,00 daria R$ 1.068,00, e o teto corta |
-
-## Evidência a entregar
-
-1. O placar preenchido, com as cinco linhas e as cinco colunas.
-2. Do Pilar 1, a linguagem em que o agente resolveu a conversão para `.xlsx`, antes de qualquer arquivo de instrução existir.
-3. Da rodada 0, a diferença entre a resposta do passo 1 e a do passo 2, e se o agente sinalizou que estava supondo.
-4. Da rodada 2, se o agente citou o `AGENTS.md`, a aba `Regras` ou nenhum dos dois ao justificar as faixas.
-5. Da rodada 3, o nome da ferramenta chamada no passo 4 e o que aconteceu no passo 5.
-6. Da rodada 4, os cinco números que o agente reportou na conversa e se eles batiam com a planilha.
 
 **Próxima página:** [Exercícios](exercicios.md).
