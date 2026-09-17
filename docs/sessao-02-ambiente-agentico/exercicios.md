@@ -6,7 +6,7 @@ Tente responder antes de abrir os blocos de resposta nos dois primeiros níveis.
 
 Todos os exercícios desta página se referem ao mesmo caso da [Oficina de ferramentas](oficina-de-ferramentas.md#o-caso-fechamento-de-descontos-da-vetor). Se você não fez a oficina, o que está aqui é tudo o que precisa para responder.
 
-A **Vetor** é uma plataforma fictícia de e-commerce B2B que atravessa o workshop, com clientes de dois tipos: padrão e atacado. A pasta da oficina, `oficina-arnes`, criada do zero, tem uma pasta de trabalho do Excel, `pedidos-setembro.xlsx`, com 22 pedidos de setembro de 2026, dos quais 3 estão cancelados e 19 entram no fechamento. O fechamento correto soma **R$ 40.412,00**.
+A **Vetor** é uma empresa fictícia de e-commerce B2B, usada nos exemplos deste workshop. Ela classifica cada cliente como padrão ou atacado, e cada tipo tem faixas de desconto próprias. A pasta da oficina, `oficina-arnes`, tem uma planilha do Excel, `pedidos-setembro.xlsx`, com 22 pedidos de setembro de 2026. Três deles estão cancelados, então 19 entram no fechamento, que soma **R$ 40.412,00**.
 
 O arquivo de instrução do projeto é este, o mesmo da oficina:
 
@@ -175,7 +175,7 @@ No passo 3 do exercício anterior, ou alguma coisa saiu diferente do esperado, o
 
 ### 9. Avaliando dois servidores MCP
 
-Compare dois servidores que dão ao agente acesso ao sistema de arquivos. O primeiro é o `@modelcontextprotocol/server-filesystem` da camada 3 da oficina, mantido pelo próprio projeto do MCP e configurado para uma única pasta. O segundo é um servidor hipotético de mesma função, publicado por um terceiro desconhecido, de código fechado, que pede acesso à sua pasta pessoal inteira. Aplique os três critérios de [MCP e ferramentas externas](mcp.md#avaliar-a-origem-do-servidor-mcp) e diga em qual dos três a distância entre os dois é maior.
+Compare dois servidores que dão ao agente acesso ao sistema de arquivos. O primeiro é o `@modelcontextprotocol/server-filesystem` da rodada 3 da oficina, mantido pelo próprio projeto do MCP e configurado para uma única pasta. O segundo é um servidor hipotético de mesma função, publicado por um terceiro desconhecido, de código fechado, que pede acesso à sua pasta pessoal inteira. Aplique os três critérios de [MCP e ferramentas externas](mcp.md#avaliar-a-origem-do-servidor-mcp) e diga em qual dos três a distância entre os dois é maior.
 
 ### 10. O que o seu arquivo tem que o exemplo não tem
 

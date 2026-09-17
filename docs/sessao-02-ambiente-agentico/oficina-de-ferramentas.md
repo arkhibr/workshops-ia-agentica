@@ -2,15 +2,15 @@
 
 **Objetivo Bloom:** Compreender e Aplicar.
 
-Nos próximos 45 minutos cada participante executa o mesmo pedido cinco vezes, acrescentando uma peça de arnês por vez, e mede o que cada peça muda no resultado. O entregável de toda rodada é uma pasta de trabalho do Excel. Ninguém precisa ler nem escrever código para participar: a conferência é abrir o arquivo e comparar números.
+Nos próximos 45 minutos você vai fazer o mesmo pedido a um agente cinco vezes seguidas. O pedido não muda nenhuma palavra. O que muda é o que existe em volta do modelo a cada rodada: na primeira, nada. Depois os dados. Depois as regras escritas. Depois o acesso aos arquivos. Depois a obrigação de conferir o próprio trabalho.
 
-A oficina tem dois pilares. O primeiro gera o caso, uma planilha de pedidos da Vetor. O segundo aplica as camadas de arnês sobre esse mesmo caso, uma de cada vez.
+O agente entrega uma planilha do Excel em toda rodada, e você compara as cinco. Não precisa ler nem escrever código para fazer esta oficina. Conferir é abrir o arquivo e olhar os números.
 
 ## Ferramenta
 
-Esta oficina usa o agente de codificação já configurado pelo participante (**Claude Code, Codex CLI ou Gemini CLI**), o Node.js 20 ou superior e um programa de planilha (Excel, LibreOffice Calc ou Google Sheets). Tempo estimado: 45 minutos.
+Você vai precisar do agente que já usa (**Claude Code, Codex CLI ou Gemini CLI**), do Node.js 20 ou superior e de um programa de planilha (Excel, LibreOffice Calc ou Google Sheets). Tempo estimado: 45 minutos.
 
-Todos os experimentos partem de uma **pasta vazia**, criada durante a própria oficina. Ninguém clona nada pronto:
+Comece por uma pasta vazia, criada agora. Ninguém clona nada pronto:
 
 ```bash
 mkdir oficina-arnes && cd oficina-arnes
@@ -18,61 +18,59 @@ git init
 node --version   # precisa mostrar v20 ou superior
 ```
 
-Onde os comandos diferem entre sistemas, a página traz as versões em abas. Escolha a do seu sistema antes de copiar. Onde diferem por ferramenta de agente, o mesmo vale para Claude Code, Codex CLI e Gemini CLI.
+Quando o comando muda de um sistema para outro, a página traz as duas versões em abas. Escolha a sua antes de copiar. O mesmo vale quando o comando muda de uma ferramenta de agente para outra.
 
 **Decisão em foco:** que peça do arnês é responsável por cada erro que o agente comete num fechamento mensal, e em que ordem vale a pena acrescentá-las.
 
 ## Roteiro sugerido para a sessão
 
-- **Essencial em aula:** o Pilar 1 e as camadas 0 a 4 do Pilar 2, na ordem. A curva só é visível se as cinco rodadas usarem o mesmo pedido e forem medidas com a mesma régua.
-- **Exploração em dupla:** a comparação das linhas do placar entre as duas pessoas ao fim da camada 4. Saídas diferentes para o mesmo arnês são o dado mais interessante da oficina.
+- **Essencial em aula:** o Pilar 1 e as cinco rodadas do Pilar 2, na ordem. Use o mesmo pedido nas cinco, senão não dá para comparar nada.
+- **Exploração em dupla:** ao fim da última rodada, compare o seu placar com o de quem está do lado. Quando duas pessoas com o mesmo arnês chegam a resultados diferentes, esse é o achado mais interessante do dia.
 - **Extensão para depois da aula:** a seção final, com isolamento por ramo, autonomia e a transposição para um repositório de verdade.
 
-## O arnês, o suficiente para executar esta oficina
+## O que é arnês
 
-O modelo é uma peça só do que você usa quando pede alguma coisa a um agente. A aplicação de linha de comando, o arquivo de instrução, as ferramentas conectadas, o isolamento entre sessões e o nível de permissão formam o resto. A engenharia deu um nome coletivo a esse resto: **arnês**, o mesmo termo do equipamento que prende um alpinista à parede. A formulação é de [Vivek Trivedy](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026), em "The Anatomy of an Agent Harness": *"if you're not the model, you're the harness"*. Arnês é todo código, configuração e lógica de execução que não é o modelo. Daí a equação que organiza a oficina inteira:
+Quando você pede alguma coisa a um agente, o modelo é só uma peça do que responde. Em volta dele estão a aplicação de linha de comando, o arquivo de instrução, as ferramentas conectadas, o isolamento entre sessões e o nível de permissão. Esse conjunto tem nome: **arnês**. [Vivek Trivedy](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026) resume assim: *"if you're not the model, you're the harness"*. Arnês é todo código, configuração e lógica de execução que não é o modelo.
 
 **agente = modelo + arnês**
 
-A ordem das decisões muda por causa dela. Trocar de modelo é a decisão cara e visível, e costuma vir primeiro na conversa. Montar o arnês é barato e quase invisível, e frequentemente move mais o resultado. Trivedy relata a mesma família de modelo saindo de fora das trinta primeiras posições para as cinco primeiras do Terminal Bench 2.0 quando só o arnês muda. [Addy Osmani](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026) formula o mesmo achado de outro jeito: um modelo mediano dentro de um bom arnês supera um bom modelo dentro de um arnês ruim.
+Isso muda a ordem em que você ataca um problema com agente. Trocar de modelo é caro e aparece na fatura. Mexer no arnês é barato e ninguém vê. Trivedy conta que a mesma família de modelo sai de fora das trinta primeiras posições para as cinco primeiras do Terminal Bench 2.0 sem trocar o modelo, só o arnês. [Addy Osmani](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026) diz o mesmo com outras palavras: um modelo mediano num bom arnês entrega mais que um bom modelo num arnês ruim.
 
-### Por que a oficina é feita em camadas
+### Por que a oficina é feita em rodadas
 
-Um agente é um processo de muitas etapas, e etapas se compõem por multiplicação. Com 99% de confiabilidade por etapa, um número que soaria excelente em qualquer outro contexto, uma trajetória de 10 passos sai inteira certa em 90,4% das vezes. Uma de 50 passos, em 60,5%. A conta é `0,99` elevado ao número de etapas.
+O agente executa uma tarefa em muitas etapas, e as chances de cada etapa se multiplicam. Se ele acerta 99% das etapas, uma tarefa de 10 etapas sai inteira certa em 90,4% das vezes. Uma de 50 etapas, em 60,5%. A conta é `0,99` elevado ao número de etapas.
 
-O que isso decide é onde investir. O problema é estrutural do encadeamento, então ele não se resolve trocando o modelo. Ele se ataca no que cerca o modelo, por quatro vias: dar ao agente como conferir o próprio trabalho, parar a trajetória em fronteiras definidas, reduzir a ambiguidade de cada etapa e manter a janela de contexto limpa. As cinco camadas do Pilar 2 são essas vias, acrescentadas uma por vez para que dê para ver o que cada uma move.
+Repare onde isso deixa você. Trocar o modelo não resolve, porque o problema vem do encadeamento, e não da qualidade de cada resposta isolada. O que resolve fica em volta: dar ao agente como conferir o próprio trabalho, parar a tarefa em pontos definidos, deixar cada etapa menos ambígua e manter limpa a janela de contexto. Cada rodada desta oficina acrescenta uma dessas coisas, para você ver quanto ela vale sozinha.
 
-### Um vocabulário de sete peças
+### As sete peças do arnês
 
-Esta oficina exercita quatro das peças que aparecem de forma recorrente nos ensaios de Trivedy e de Osmani. Vale ler a lista inteira antes de começar, porque a utilidade dela é transformar "o agente errou" numa hipótese endereçável.
+Você mexe em quatro delas hoje. Leia a lista inteira antes de começar, porque é ela que transforma "o agente errou" numa pergunta que dá para responder.
 
 | Peça | Pergunta que ela responde | Nesta oficina |
 |---|---|---|
-| Instrução de sistema | Que convenções e limites governam toda tarefa? | Camada 2 |
-| Ferramentas | O que o agente pode fazer, e com que contrato? | Pilar 1 e camada 3 |
-| Gestão de contexto | O que entra na janela agora, e o que é descartado? | Camada 1 |
-| Verificação | Como o agente confere o que fez antes de avançar? | Camada 4 |
+| Instrução de sistema | Que convenções e limites governam toda tarefa? | Rodada 2 |
+| Ferramentas | O que o agente pode fazer, e com que contrato? | Pilar 1 e rodada 3 |
+| Gestão de contexto | O que entra na janela agora, e o que é descartado? | Rodada 1 |
+| Verificação | Como o agente confere o que fez antes de avançar? | Rodada 4 |
 | Isolamento | Onde o agente roda sem alcançar o trabalho de outra pessoa? | Extensão |
 | Autonomia | Que ações ele executa sem pedir aprovação? | Extensão |
 | Memória | O que persiste entre execuções, com que autorização? | Fora da oficina |
 
-As duas primeiras peças costumam receber toda a atenção, e são as de menor retorno isolado. A quarta, verificação, é a de maior retorno comprovado, pelo motivo aritmético da seção anterior. Quem quiser a discussão completa, com o diagnóstico por tipo de falha e a distinção entre guiar e impor, encontra em [O arnês do agente](arnes.md).
+As duas primeiras levam quase toda a atenção e são as que menos rendem sozinhas. A quarta, verificação, é a que mais rende, pelo motivo da conta acima. A discussão completa, com o diagnóstico por tipo de falha, está em [O arnês do agente](arnes.md).
 
-## Como cada rodada é julgada
+## Como conferir cada rodada
 
-Na Sessão 1, o agente que recebeu o pedido cru escreveu um validador de cupom tão bom quanto o do pedido com as quatro regras redigidas à mão. Validação de cupom aparece milhares de vezes no treino do modelo, e prazo de validade, valor mínimo, uso único e não acumulação são exatamente as regras que ele enumera sozinho. O pedido detalhado não acrescentou informação nenhuma.
+As faixas de desconto da Vetor são arbitrárias. Nenhum padrão de mercado manda dar 12% acima de 50 unidades, nem arredondar para baixo em múltiplos de R$ 0,50. O agente não tem como acertar isso antes de alguém escrever a regra para ele, e um modelo mais capaz só chuta com mais convicção. Foi por isso que escolhi este caso.
 
-O fechamento da Vetor foi escolhido por não ter essa propriedade. As faixas de desconto são arbitrárias, arredondar para baixo em múltiplos de R$ 0,50 não é convenção de mercado, e nada disso está publicado em lugar nenhum. Um modelo mais capaz chuta com mais fluência, e continua chutando.
+Tome cuidado com um erro de avaliação aqui. Se você julgar as saídas por qual parece melhor, a rodada sem arnês nenhum costuma ganhar, porque um agente sem regra escreve mais: inventa faixas, acrescenta colunas e devolve um relatório mais completo que o correto. Compare sempre contra o gabarito, que está logo abaixo.
 
-Por isso a rodada não é julgada por aparência. Com o critério "qual saída parece melhor", a rodada sem arnês ganha com frequência, porque um agente sem regra escreve mais: inventa faixas que ninguém pediu e devolve um relatório mais completo que o correto. O julgamento aqui é contra o gabarito, que fica fechado até a hora de conferir.
+Duas regras para preencher o placar.
 
-Duas consequências práticas.
+Faixa que o agente inventou conta como erro, mesmo quando é defensável e mesmo quando um analista humano teria suposto a mesma coisa. Em fechamento, desconto que ninguém aprovou sai do caixa.
 
-Faixa inventada entra no placar como erro, mesmo quando é defensável e mesmo quando um analista humano teria suposto a mesma coisa. Em fechamento, desconto que ninguém aprovou sai do caixa.
+Faça cada rodada duas vezes, em conversas separadas. A segunda custa colar o mesmo pedido de novo, e é ela que mostra se o resultado se repete.
 
-Cada camada roda duas vezes, sempre em conversa nova. A segunda rodada custa colar o mesmo pedido de novo, e é ela que mostra se o resultado se repete.
-
-| Camada | Abriu no Excel? | Stack do time? | Faixas certas? | Total bate com o gabarito? | Duas rodadas iguais? |
+| Rodada | Abriu no Excel? | Stack do time? | Faixas certas? | Total bate com o gabarito? | As duas iguais? |
 |---|---|---|---|---|---|
 | 0 — modelo sozinho | | | | | |
 | 1 — dados | | | | | |
@@ -82,7 +80,9 @@ Cada camada roda duas vezes, sempre em conversa nova. A segunda rodada custa col
 
 ## O caso: fechamento de descontos da Vetor
 
-A **Vetor** é uma plataforma fictícia de e-commerce B2B que atravessa o workshop, com clientes de dois tipos: padrão e atacado. O pedido ao agente é sempre este, palavra por palavra, nas cinco camadas:
+A **Vetor** é uma empresa fictícia de e-commerce B2B, usada nos exemplos deste workshop. Ela classifica cada cliente como padrão ou atacado, e cada tipo tem faixas de desconto próprias.
+
+Nas cinco rodadas você faz este pedido, sem mudar uma palavra:
 
 > Faça o fechamento de descontos de setembro de 2026 da Vetor e me entregue uma pasta de trabalho do Excel com o valor final por pedido e um resumo por cliente.
 
@@ -116,11 +116,11 @@ VT-1023,Construtora Lemos,atacado,55,41.20,2026-09-30,confirmado
 
 ### O gabarito
 
-Ele fica fechado de propósito. O que se fixa antes de rodar é a régua, ou seja, as colunas do placar e o que conta como erro. O número certo se abre na hora de conferir cada camada, para que a sua expectativa sobre o que o agente vai fazer se forme antes de você ver a resposta.
+O gabarito fica fechado. Abra depois de cada rodada, na hora de conferir, e não antes. Quem lê os números certos primeiro deixa de reparar no que o agente inventou.
 
-??? note "Abrir só na hora de conferir uma camada"
+??? note "Abrir só na hora de conferir uma rodada"
 
-    **Nunca cole esta tabela no pedido.** Ela é a régua de quem conduz o experimento. Colada no prompt, ela vira mais uma peça de contexto e destrói a comparação entre as camadas.
+    **Nunca cole esta tabela no pedido ao agente.** Ela é a sua conferência. Dentro do prompt, ela vira mais uma peça de contexto e acaba com a comparação entre as rodadas.
 
     | Número de controle | Valor correto |
     |---|---|
@@ -154,45 +154,45 @@ Ele fica fechado de propósito. O que se fixa antes de rodar é a régua, ou sej
 
 ## Pilar 1 — gerar a pasta de trabalho do caso
 
-**Peça do arnês: ferramentas.** Uma ferramenta é uma capacidade que o arnês oferece ao modelo com um contrato declarado, ou seja, um nome, os parâmetros que ela aceita e o que ela devolve. Sem ferramenta de execução, o modelo produz texto e nada além disso. Um arquivo do Excel é um conjunto de documentos XML dentro de um zip, então produzi-lo exige rodar um programa e gravar bytes no disco. Este passo mede uma coisa só: se o arnês que você já tem alcança o disco.
+**Peça do arnês: ferramentas.** Ferramenta é uma coisa que o agente pode fazer além de escrever texto, com um contrato declarado: um nome, os parâmetros que ela aceita e o que ela devolve. Rodar um comando no terminal é uma ferramenta. Gravar um arquivo é outra. Você vai precisar das duas aqui, porque um arquivo do Excel é um conjunto de documentos XML dentro de um zip, e nenhum modelo escreve isso digitando na conversa.
 
-**Objetivo:** produzir o artefato sobre o qual as cinco camadas vão trabalhar, e observar de saída que escrever um arquivo binário depende de o agente ter ferramenta para isso.
+**Objetivo:** montar a planilha que as cinco rodadas vão usar, e descobrir logo se o seu agente consegue gravar um arquivo.
 
 **Passo 1:** com a pasta `oficina-arnes` aberta no agente e o CSV salvo dentro dela, peça:
 
-> Converta `pedidos-setembro.csv` numa pasta de trabalho do Excel chamada `pedidos-setembro.xlsx`, com uma única aba chamada `Pedidos`, preservando as 24 linhas e os nomes de coluna exatamente como estão. Não calcule nada.
+> Converta `pedidos-setembro.csv` numa pasta de trabalho do Excel chamada `pedidos-setembro.xlsx`, com uma única aba chamada `Pedidos`, preservando as 22 linhas e os nomes de coluna exatamente como estão. Não calcule nada.
 
-**Passo 2:** abra `pedidos-setembro.xlsx` no seu programa de planilha e confira três coisas: o arquivo abre sem aviso de formato inválido, a aba se chama `Pedidos`, e as 24 linhas estão lá com os acentos corretos.
+**Passo 2:** abra `pedidos-setembro.xlsx` no seu programa de planilha e confira três coisas: o arquivo abre sem aviso de formato inválido, a aba se chama `Pedidos`, e as 22 linhas estão lá com os acentos corretos.
 
-**Passo 3:** olhe como o agente resolveu. Ele instalou alguma biblioteca? Escreveu um script? Em que linguagem? Anote a resposta, porque a camada 2 vai mudar exatamente isso.
+**Passo 3:** olhe como o agente resolveu. Ele instalou alguma biblioteca? Escreveu um script? Em que linguagem? Anote a resposta, porque a rodada 2 vai mudar exatamente isso.
 
-**Observe:** um agente sem permissão de executar comando não produz `.xlsx` nenhum, porque o formato é um pacote binário. Ele devolve um CSV renomeado, ou um texto explicando como você mesmo poderia fazer. Essa é a primeira lição de arnês da oficina, e ela acontece antes de qualquer regra de negócio entrar em cena.
+**Observe:** um agente sem permissão de executar comando não entrega `.xlsx` nenhum. Ele devolve um CSV renomeado, ou um texto explicando como você mesmo poderia fazer. Repare que isso não tem nada a ver com as regras de desconto, que ainda nem apareceram. É só ferramenta.
 
 **Questões exploratórias:**
 
 - A escolha de linguagem do agente foi a mesma da pessoa ao lado? Se não, o que decidiu a escolha dele?
 - Se o `.xlsx` tivesse saído corrompido, você descobriria por qual verificação?
 
-## Pilar 2 — as camadas de arnês
+## Pilar 2 — uma peça de arnês por rodada
 
 As cinco rodadas usam o mesmo pedido em negrito da seção do caso. A única coisa que muda entre elas é o que existe em volta do modelo. Cada passo da oficina acrescenta uma peça, e cada peça decide uma pergunta diferente:
 
 | Passo | Peça do arnês que entra | O que ela decide |
 |---|---|---|
-| Pilar 1 | Ferramentas (execução) | Se o agente consegue produzir o artefato |
-| Camada 0 | Nenhuma | O que o modelo resolve sozinho |
-| Camada 1 | Gestão de contexto | Quais fatos entram na janela |
-| Camada 2 | Instrução de sistema | Qual política ele aplica aos fatos |
-| Camada 3 | Ferramentas (alcance e escopo) | O que ele alcança sem depender de você |
-| Camada 4 | Verificação | O que ele confere antes de dizer que terminou |
+| Pilar 1 | Ferramentas (execução) | Se o agente consegue gravar o arquivo |
+| Rodada 0 | Nenhuma | O que o modelo resolve sozinho |
+| Rodada 1 | Gestão de contexto | Quais fatos entram na janela |
+| Rodada 2 | Instrução de sistema | Qual política ele aplica aos fatos |
+| Rodada 3 | Ferramentas (alcance e escopo) | O que ele alcança sem depender de você |
+| Rodada 4 | Verificação | O que ele confere antes de dizer que terminou |
 
 A coluna do meio usa os nomes da tabela de [componentes do arnês](arnes.md#os-componentes-do-arnes). Duas peças de lá ficam fora desta oficina de propósito, e a seção que fecha o Pilar 2 explica por quê.
 
-### Camada 0 — o modelo sozinho
+### Rodada 0 — o modelo sozinho
 
-**Peça do arnês: nenhuma.** É a linha de base contra a qual as outras quatro são medidas. O passo também separa duas classes de tarefa que costumam ser confundidas. Onde a resposta certa é pública, o modelo já a carrega e nenhuma peça de arnês acrescenta informação. Onde a resposta certa vive dentro de uma empresa, o modelo não tem de onde tirá-la, e é só aí que o gasto com as camadas seguintes se justifica.
+**Peça do arnês: nenhuma.** Esta é a rodada contra a qual você vai comparar as outras quatro. Ela também serve para separar duas situações que as pessoas confundem. Quando a resposta certa está publicada na internet, o modelo já a conhece e nenhum arnês acrescenta nada. Quando a resposta certa só existe dentro de uma empresa, o modelo não tem de onde tirá-la, e é aí que vale gastar tempo com as rodadas seguintes.
 
-**Objetivo:** estabelecer a linha de base e, no mesmo passo, separar o que o modelo já sabe do que depende do contexto da Vetor.
+**Objetivo:** ver o que o modelo faz sem nenhuma ajuda, em duas tarefas de tipos diferentes.
 
 **Passo 1 — a tarefa de conhecimento comum.** Numa conversa nova, sem anexar arquivo nenhum, peça:
 
@@ -204,18 +204,18 @@ Confira a resposta. Ela deve estar certa, completa e imediata.
 
 **Passo 3:** confira contra o gabarito e preencha a linha 0 do placar. Anote também em que ponto o agente avisou que estava supondo, se é que avisou.
 
-**Observe:** as duas tarefas foram para o mesmo modelo, no mesmo minuto, com o mesmo arnês (nenhum). A primeira saiu perfeita porque a resposta certa está publicada em milhares de lugares. A segunda saiu inventada porque a resposta certa só existe dentro da Vetor. Essa é a fronteira que decide quando vale a pena investir em arnês, e ela vale para o resto do workshop.
+**Observe:** você mandou as duas perguntas para o mesmo modelo, no mesmo minuto, sem arnês nenhum. A primeira saiu perfeita porque a resposta está publicada em milhares de lugares. A segunda saiu inventada porque a resposta só existe dentro da Vetor. Guarde essa diferença, porque ela é que diz quando vale a pena montar arnês e quando não vale.
 
 **Questões exploratórias:**
 
 - O agente sinalizou que estava chutando as faixas de desconto, ou apresentou os números com a mesma segurança da resposta do passo 1?
 - Um modelo mais capaz melhoraria a resposta do passo 2? Em que direção ele ficaria mais perigoso?
 
-### Camada 1 — dados
+### Rodada 1 — dados
 
-**Peça do arnês: gestão de contexto.** Janela de contexto é tudo que chega ao modelo numa execução, somando a instrução, o histórico da conversa, o conteúdo dos arquivos lidos e o resultado das chamadas de ferramenta. Gerir contexto é decidir o que entra nela agora e o que fica de fora. Aqui entra o arquivo de pedidos, e mais nada. Fato e política são insumos separados, então fornecer um deles conserta só a metade correspondente do resultado.
+**Peça do arnês: gestão de contexto.** Janela de contexto é tudo que chega ao modelo numa execução: a instrução, o histórico da conversa, o conteúdo dos arquivos que ele leu e o resultado das ferramentas que ele chamou. Gerir contexto é escolher o que entra aí e o que fica de fora. Nesta rodada entra o arquivo de pedidos, e mais nada. Você vai dar a ele os dados sem dar as regras, e o resultado mostra que uma coisa não substitui a outra.
 
-**Objetivo:** ver o que muda quando o agente ganha o fato e continua sem a política.
+**Objetivo:** ver o que muda quando o agente recebe os dados e continua sem as regras.
 
 **Passo 1:** numa conversa nova, na pasta `oficina-arnes`, com `pedidos-setembro.xlsx` presente, faça o mesmo pedido do fechamento. Deixe o agente encontrar o arquivo sozinho.
 
@@ -230,11 +230,11 @@ Confira a resposta. Ela deve estar certa, completa e imediata.
 - As duas rodadas aplicaram as mesmas faixas? Se aplicaram faixas diferentes, o que isso diz sobre entregar esse fechamento para um cliente?
 - Qual linha da tabela de [diagnóstico por tipo de falha](arnes.md#diagnosticar-pelo-tipo-de-falha) descreve o erro que você viu aqui?
 
-### Camada 2 — instrução
+### Rodada 2 — instrução
 
-**Peça do arnês: instrução de sistema.** É o texto que governa toda tarefa do projeto, lido pelo agente antes de qualquer pedido, e que responde o que o código e os dados não respondem sozinhos. Aqui ela entra por dois veículos ao mesmo tempo. O `AGENTS.md` fica na raiz e é o que o agente lê. A aba `Regras` fica dentro da própria planilha, onde quem cuida do negócio audita a faixa sem abrir arquivo de texto nenhum. Os dois guiam o modelo, sem obrigá-lo, o que é exatamente o que a camada permite observar.
+**Peça do arnês: instrução de sistema.** É um texto que o agente lê antes de cada pedido, e que vale para todas as tarefas do projeto. Ele existe para responder o que os dados sozinhos não respondem. Aqui você escreve as regras em dois lugares ao mesmo tempo. O `AGENTS.md` fica na raiz da pasta, e é o que o agente lê. A aba `Regras` fica dentro da planilha, onde quem cuida do negócio consegue conferir a faixa sem abrir arquivo de texto. Nenhum dos dois obriga o agente a nada, os dois só pedem, e é isso que você vai observar.
 
-**Objetivo:** dar ao agente as regras que só existem dentro da empresa, por dois caminhos ao mesmo tempo, e ver qual deles ele usa.
+**Objetivo:** escrever as regras da Vetor em dois lugares e ver qual deles o agente usa.
 
 **Passo 1 — o arquivo de instrução.** Crie `AGENTS.md` na raiz de `oficina-arnes` com este conteúdo:
 
@@ -273,18 +273,18 @@ Abra a aba `Regras` e confira as quatro linhas. Quem cuida do negócio na Vetor 
 
 **Passo 4:** rode uma segunda vez, em outra conversa nova. Compare o formato das duas saídas, e não apenas os números.
 
-**Observe:** três coisas costumam mudar de uma vez. As faixas ficam certas, os cancelados saem do fechamento e a linguagem do script deixa de ser escolha do agente. A fronteira de 200 unidades continua sendo o erro mais frequente mesmo com a regra escrita, porque "a partir de" admite leitura estrita.
+**Observe:** três coisas costumam mudar de uma vez. As faixas ficam certas, os pedidos cancelados saem do fechamento e o agente para de escolher a linguagem por conta própria. Fique de olho no pedido de 200 unidades, que continua sendo o erro mais comum mesmo com a regra escrita. "A partir de" também pode ser lido como "acima de", e aí 200 unidades cai na faixa de baixo.
 
 **Questões exploratórias:**
 
 - O agente citou o `AGENTS.md`, a aba `Regras`, ou nenhum dos dois ao justificar as faixas? Se as duas fontes discordassem, qual delas você esperaria que prevalecesse?
 - Que linha do `AGENTS.md` acima é específica da Vetor, e que linha valeria para qualquer projeto de planilha do seu time?
 
-### Camada 3 — ferramenta
+### Rodada 3 — ferramenta
 
-**Peça do arnês: ferramentas outra vez, agora pelo alcance e pelo limite.** O Model Context Protocol é um padrão aberto que faz cada agente e cada ferramenta implementarem uma interface comum uma única vez, em vez de uma integração específica por par. Conectar um servidor MCP acrescenta ao catálogo do agente um conjunto de operações declaradas, cada uma com escopo definido por quem configurou. O ganho tem duas faces, e as duas são medidas neste mesmo passo: o que o agente passa a alcançar sozinho, e onde ele é impedido.
+**Peça do arnês: ferramentas de novo, agora com alcance e limite.** O Model Context Protocol é um padrão aberto. Cada agente e cada ferramenta implementam a mesma interface uma vez só, em vez de uma integração feita sob medida para cada par. Quando você conecta um servidor MCP, o agente ganha um conjunto de operações novas, e você decide a que pastas elas se aplicam. Nesta rodada você mede as duas pontas disso: o que o agente passa a alcançar sozinho e onde ele é barrado.
 
-**Objetivo:** dar ao agente acesso explícito e escopado aos arquivos do caso, e examinar a chamada de ferramenta em vez do resumo que o modelo escreve depois.
+**Objetivo:** dar ao agente acesso aos arquivos do caso, restrito a uma pasta, e olhar a chamada de ferramenta em vez de só ler o resumo que ele escreve depois.
 
 **Ferramenta usada:** o servidor de referência `@modelcontextprotocol/server-filesystem`, mantido pelo próprio projeto do MCP. Ele expõe operações de leitura e escrita restritas às pastas que você autorizar, o mesmo princípio de escopo mínimo de [MCP e ferramentas externas](mcp.md#avaliar-a-origem-do-servidor-mcp).
 
@@ -330,20 +330,20 @@ Em Windows, se editar o arquivo de configuração à mão em vez de usar o coman
 
 **Passo 6:** confira contra o gabarito e preencha a linha 3 do placar.
 
-**Observe:** a correção do total tende a mexer pouco nesta camada, e a reprodutibilidade tende a subir, porque o agente para de depender do que você lembrou de colar na conversa. O ganho aqui é de alcance e de limite, e os dois aparecem no mesmo experimento.
+**Observe:** o total provavelmente não muda muito nesta rodada. O que melhora é a repetição entre as duas execuções, porque o agente para de depender do que você lembrou de colar na conversa. E a recusa do passo 5 mostra que o limite da pasta é real, e não uma promessa no arquivo de instrução.
 
 **Questões exploratórias:**
 
 - O que aconteceu no passo 5 confirma ou contradiz o critério de escopo mínimo de [MCP e ferramentas externas](mcp.md#avaliar-a-origem-do-servidor-mcp)?
 - Desconecte o servidor ao fim da oficina se esta pasta não fizer parte do seu fluxo real de trabalho.
 
-### Camada 4 — verificação
+### Rodada 4 — verificação
 
-**Peça do arnês: verificação.** É dar ao agente uma forma de conferir o próprio trabalho antes de declará-lo pronto, o que corta a propagação de erro na origem. Pela aritmética do erro composto, é a peça de maior retorno das sete, e a que menos atenção costuma receber.
+**Peça do arnês: verificação.** É dar ao agente um jeito de conferir o próprio trabalho antes de dizer que terminou. Pela conta do começo da página, é a peça que mais rende das sete, e a que quase ninguém configura.
 
-**Objetivo:** sair da posição de quem confere o resultado à mão.
+**Objetivo:** parar de ser você a conferir o resultado à mão.
 
-Nas quatro rodadas anteriores, quem verificou o fechamento foi você, comparando o total contra o gabarito. Setembro de 2026 é o único mês da Vetor que tem gabarito. Em outubro não vai ter, e a pergunta passa a ser como confiar num número que ninguém conferiu.
+Nas quatro rodadas anteriores quem conferiu o fechamento foi você, comparando o total contra o gabarito. Setembro de 2026 é o único mês da Vetor que tem gabarito. Em outubro não vai ter, nem em novembro. A pergunta vira outra: como você confia num número que ninguém conferiu?
 
 **Passo 1:** acrescente esta seção ao fim do `AGENTS.md`:
 
@@ -368,7 +368,7 @@ diga onde está a diferença.
 
 **Passo 4:** preencha a linha 4 do placar.
 
-**Observe:** o total provavelmente já estava certo na camada 3. O que muda aqui é quem descobre isso, e quando. Uma conferência que o agente executa e relata funciona em outubro, novembro e dezembro, sem alguém do lado de fora refazendo a conta. É esse alcance que a aritmética do erro composto cobra, porque numa trajetória longa o erro precisa ser interrompido na etapa em que nasce.
+**Observe:** o total provavelmente já estava certo na rodada 3. O que muda aqui é quem descobre isso, e em que momento. Uma conferência que o próprio agente faz e relata continua funcionando em outubro e em novembro, sem ninguém de fora refazendo a conta. Lembre da conta do começo da página: numa tarefa longa, o erro precisa ser pego na etapa em que ele nasce, senão ele atravessa todas as seguintes.
 
 **Passo 5, para ver a conferência trabalhar:** abra o CSV, troque a quantidade do pedido VT-1013 de 75 para 45 e peça o fechamento de novo. A faixa de atacado de 12% deixa de valer para esse pedido. O total correto passa a ser R$ 39.547,00, e o agente relata o novo número sem você ter calculado nada. Desfaça a alteração depois.
 
@@ -379,7 +379,7 @@ diga onde está a diferença.
 
 ### Ler o placar
 
-Com as cinco linhas preenchidas, o placar deixa de ser registro e vira diagnóstico. Cada coluna que ficou vermelha aponta para uma peça, e é essa tradução que a Sessão 9 vai retomar na depuração de agentes.
+Agora use o placar para diagnosticar. Cada resposta negativa aponta para uma peça do arnês, e a tabela abaixo diz qual. A Sessão 9 retoma esse mesmo raciocínio na depuração de agentes.
 
 | O que você observou | Peça provável | Primeira intervenção |
 |---|---|---|
@@ -394,15 +394,15 @@ A última linha é a que esta oficina não resolve, e a seção seguinte explica
 
 ### O que a oficina deixa em aberto
 
-Duas peças da tabela de componentes ficaram fora das cinco camadas, e as duas merecem nome antes de a sessão terminar.
+Duas peças da tabela de componentes ficaram de fora das cinco rodadas. Vale saber quais são antes de encerrar.
 
-A aba `Conferência` da camada 4 pede um comportamento ao modelo, e pedido é coisa que dá para ignorar. Alguns agentes ignoram. A imposição determinística mora em *hook* e em permissão, na camada de execução, como separa a [distinção entre guiar e impor](arnes.md#os-componentes-do-arnes). Se o seu agente pular a conferência em alguma rodada, é essa peça que está faltando.
+A aba `Conferência` da rodada 4 pede um comportamento ao modelo, e pedido é coisa que dá para ignorar. Alguns agentes ignoram. Quem impõe de verdade é *hook* e permissão, na camada de execução, como separa a [distinção entre guiar e impor](arnes.md#os-componentes-do-arnes). Se o agente pulou a conferência em alguma rodada, foi essa peça que faltou.
 
-Memória fica fora da oficina, como já fica fora da sessão. Cada rodada começa em conversa nova de propósito, para que o placar meça o arnês montado e não o que o agente lembrou da tentativa anterior.
+Memória fica fora da oficina e fora da sessão. Cada rodada começa em conversa nova justamente para isso: o placar precisa medir o arnês que você montou, e não o que o agente lembrou da tentativa anterior.
 
 ## Extensão para o seu repositório
 
-As cinco camadas rodaram sobre um caso criado do zero para todo mundo partir do mesmo estado. Três desdobramentos, para depois da aula.
+As cinco rodadas usaram um caso criado do zero, para todo mundo partir do mesmo estado. Três coisas para fazer depois da aula.
 
 **Isolamento por ramo.** A partir da raiz de `oficina-arnes`, crie dois ambientes isolados e dê a cada agente uma tarefa diferente sobre o mesmo arquivo, ao mesmo tempo:
 
@@ -411,7 +411,7 @@ git worktree add ../oficina-a -b experimento/a
 git worktree add ../oficina-b -b experimento/b
 ```
 
-Num, peça para acrescentar uma faixa de 22% acima de 500 unidades para atacado. No outro, peça para incluir os pedidos cancelados no resumo com valor zero. As duas edições coexistem porque cada worktree tem a própria cópia de trabalho. O conflito aparece na hora de juntar, que é onde uma pessoa deve resolvê-lo. Ao terminar:
+Num deles, peça para acrescentar uma faixa de 22% acima de 500 unidades para atacado. No outro, peça para incluir os pedidos cancelados no resumo com valor zero. As duas edições convivem, porque cada worktree tem a própria cópia de trabalho. O conflito só aparece na hora de juntar os dois ramos, e é lá que uma pessoa resolve. Ao terminar:
 
 ```bash
 cd ../oficina-arnes
@@ -420,17 +420,17 @@ git worktree remove --force ../oficina-b
 git branch -D experimento/a experimento/b
 ```
 
-**Autonomia.** Repita a camada 4 no modo de menor autonomia da sua aplicação agêntica, contando quantas confirmações você precisou dar, e depois no modo de maior autonomia, dentro de um worktree descartável. Compare os dois tempos e responda se alguma edição saiu diferente do que você esperava.
+**Autonomia.** Repita a rodada 4 no modo de menor autonomia da sua aplicação agêntica, contando quantas confirmações você precisou dar, e depois no modo de maior autonomia, dentro de um worktree descartável. Compare os dois tempos e responda se alguma edição saiu diferente do que você esperava.
 
-**O seu projeto.** Escolha uma rotina de planilha que exista de verdade no seu time, uma conciliação ou um relatório mensal, e escreva o `AGENTS.md` dela com as regras que hoje só existem na cabeça de alguém. Depois acrescente a seção de conferência, com os números de controle que você usaria para saber que o resultado está certo. É essa tarefa que faz o arquivo de instrução sobreviver à aula.
+**O seu projeto.** Escolha uma rotina de planilha que exista de verdade no seu time, uma conciliação ou um relatório mensal. Escreva o `AGENTS.md` dela com as regras que hoje só existem na cabeça de alguém, e acrescente a seção de conferência com os números de controle que você usaria para saber que o resultado está certo. Essa é a tarefa que faz o arquivo de instrução sobreviver à aula.
 
 ## Evidência a entregar
 
 1. O placar preenchido, com as cinco linhas e as cinco colunas.
 2. Do Pilar 1, a linguagem em que o agente resolveu a conversão para `.xlsx`, antes de qualquer arquivo de instrução existir.
-3. Da camada 0, a diferença entre a resposta do passo 1 e a do passo 2, e se o agente sinalizou que estava supondo.
-4. Da camada 2, se o agente citou o `AGENTS.md`, a aba `Regras` ou nenhum dos dois ao justificar as faixas.
-5. Da camada 3, o nome da ferramenta chamada no passo 4 e o que aconteceu no passo 5.
-6. Da camada 4, os cinco números que o agente reportou na conversa e se eles batiam com a planilha.
+3. Da rodada 0, a diferença entre a resposta do passo 1 e a do passo 2, e se o agente sinalizou que estava supondo.
+4. Da rodada 2, se o agente citou o `AGENTS.md`, a aba `Regras` ou nenhum dos dois ao justificar as faixas.
+5. Da rodada 3, o nome da ferramenta chamada no passo 4 e o que aconteceu no passo 5.
+6. Da rodada 4, os cinco números que o agente reportou na conversa e se eles batiam com a planilha.
 
 **Próxima página:** [Exercícios](exercicios.md).
