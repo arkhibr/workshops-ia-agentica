@@ -1,12 +1,12 @@
 # Sistemas agênticos e simplicidade
 
-Nem toda automação construída sobre um modelo de linguagem é um sistema agêntico. E mesmo um sistema agêntico de verdade raramente precisa de toda a autonomia que ele consegue exercer. Esta página mostra onde fica essa fronteira e por que a recomendação prática é começar simples.
+Nem toda automação construída sobre um modelo de linguagem é um sistema agêntico. E mesmo um sistema agêntico completo raramente precisa de toda a autonomia que ele consegue exercer. Esta página mostra onde fica essa fronteira e por que a recomendação prática é começar simples.
 
 ## O que torna um sistema agêntico
 
 Antes de intercalar ação, um agente precisa raciocinar de forma explícita. [Wei et al. (2022)](../referencia/bibliografia.md#wei-et-al-chain-of-thought-prompting-2022) mostraram que pedir ao modelo para expor o raciocínio passo a passo antes de responder, a técnica de cadeia de pensamento, melhora sensivelmente o desempenho em tarefas com múltiplas etapas de lógica. [Yao et al.](../referencia/bibliografia.md#yao-et-al-react-2023) deram o passo seguinte, no artigo que introduziu o framework ReAct (2023): ligaram esse raciocínio explícito a ações reais e verificáveis, e formalizaram o ciclo que intercala raciocínio e ação: o agente lê o resultado de uma ferramenta, decide o próximo passo e age de novo.
 
-Um chat comum recebe um pedido como "corrija os testes que estão falhando" e devolve uma sugestão de texto. Um agente lê a saída real do executor de testes, decide qual arquivo abrir com base nela, edita o arquivo, roda os testes de novo, lê a nova saída e só para quando o resultado bate, ou quando decide que precisa perguntar algo a quem o acionou. Esse ciclo de raciocínio e ação separa Claude Code ou Codex de um chat comum, e pesa mais nessa separação do que o tamanho do modelo. É ele que torna possível a engenharia agêntica.
+Um chat comum recebe um pedido como "corrija os testes que estão falhando" e devolve uma sugestão de texto. Um agente lê a saída real do executor de testes, decide qual arquivo abrir com base nela, edita o arquivo, roda os testes de novo, lê a nova saída e só para quando o resultado bate, ou quando decide que precisa perguntar algo a quem o acionou. Esse ciclo de raciocínio e ação separa Claude Code ou Codex de um chat comum, pesa mais nessa separação do que o tamanho do modelo, e é a condição técnica da engenharia agêntica.
 
 [Willison](../referencia/bibliografia.md#willison-what-is-agentic-engineering-2026) define engenharia agêntica como "the practice of developing software with the assistance of coding agents" (Claude Code, Codex, Gemini CLI), sustentada por três responsabilidades que continuam humanas mesmo com o código escrito por um agente:
 

@@ -80,7 +80,7 @@ Os Experimentos C e D usam este pedido, recebido de um gerente comercial da Veto
 
 > "Precisamos de um painel de relatórios de desconto pro time comercial. Ele deve ter um botão de exportar pra Excel, mostrar um gráfico de pizza com os descontos aplicados no mês, e ser bem intuitivo e moderno. Como os gerentes vão usar isso todo dia, o relatório precisa carregar rápido. Todo desconto aplicado aparece lá. Entrega até sexta, com testes completos e cobertura de 100%."
 
-Antes de colar, marque no papel quantos defeitos você enxerga sozinho, numa leitura. O número serve de linha de base para o passo final.
+Antes de colar, registre por escrito quantos defeitos você enxerga sozinho, numa leitura. O número serve de linha de base para o passo final.
 
 ## Experimento C
 
@@ -96,7 +96,7 @@ Antes de colar, marque no papel quantos defeitos você enxerga sozinho, numa lei
 
 **Passo 5 — feche e leia o dossiê.** Depois de pelo menos seis respostas, escreva "fechar entrevista". Leia o dossiê e confira três coisas: as três canônicas estão respondidas de forma testável, o registro de proveniência tem pelo menos um `[PRESSUPOSTO]`, e alguma pergunta ficou aberta com dono.
 
-**Passo 6 — compare com a sua linha de base.** Quantos defeitos você tinha marcado no papel antes de começar? Quantos o dossiê registrou? A diferença é o que a entrevista comprou.
+**Passo 6 — compare com a sua linha de base.** Quantos defeitos você havia registrado por escrito antes de começar? Quantos o dossiê registrou? A diferença é o que a entrevista comprou.
 
 **Questões exploratórias:**
 

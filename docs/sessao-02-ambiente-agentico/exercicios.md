@@ -195,6 +195,6 @@ No [Estudo de caso](estudo-de-caso.md) desta sessão, dois desenvolvedores da Ve
 
 A Vetor vai ganhar um segundo módulo, de cálculo de frete, com estas características: fica em `src/frete.js`, usa a mesma convenção de valores em reais, depende de uma tabela de CEP que muda toda semana num sistema externo, e nunca deve arredondar valor para cima.
 
-Escreva o `AGENTS.md` desse módulo, com no máximo cinco linhas. Cada linha precisa responder uma pergunta que o agente teria de verdade, e pelo menos uma delas precisa resolver se a tabela de CEP entra no arquivo de instrução ou pede um servidor MCP.
+Escreva o `AGENTS.md` desse módulo, com no máximo cinco linhas. Cada linha precisa responder uma pergunta que o agente faria de fato, e pelo menos uma delas precisa resolver se a tabela de CEP entra no arquivo de instrução ou pede um servidor MCP.
 
 Concluída a prática, faça a [síntese e autoavaliação](sintese-e-referencias.md).

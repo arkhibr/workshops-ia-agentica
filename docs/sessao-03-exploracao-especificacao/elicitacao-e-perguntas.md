@@ -19,9 +19,9 @@ As perguntas não têm todas o mesmo rendimento, e perguntar "o que você quer?"
 
 ## O preço de descobrir depois
 
-Cada uma dessas perguntas custa uma frase e alguns segundos de quem já sabe a resposta. Descobrir a mesma informação depois de o código estar escrito custa uma investigação: alguém precisa notar que o comportamento está errado, reproduzir o caso, e só então voltar à pergunta que deveria ter sido feita antes. A [Sessão 9](../sessao-09-depuracao-sistematica/index.md) trata desse protocolo de investigação em profundidade. A régua desta sessão é simples: toda pergunta que evita uma investigação futura vale o tempo de ser feita agora.
+Cada uma dessas perguntas custa uma frase e alguns segundos de quem já sabe a resposta. Descobrir a mesma informação depois de o código estar escrito custa uma investigação: alguém precisa notar que o comportamento está errado, reproduzir o caso, e só então voltar à pergunta que deveria ter sido feita antes. A [Sessão 9](../sessao-09-depuracao-sistematica/index.md) trata desse protocolo de investigação em profundidade. O critério desta sessão é único: toda pergunta que evita uma investigação futura vale o tempo de ser feita agora.
 
-## O antipadrão da pergunta que não muda nada
+## Pergunta sem efeito no resultado
 
 Nem toda pergunta é boa pergunta. "Você tem certeza que quer isso?" não revela ambiguidade nenhuma. Só transfere a decisão de volta para quem já tinha decidido, sem acrescentar informação nova. O teste de uma boa pergunta de elicitação é objetivo: a resposta, seja qual for, muda alguma linha do código que o agente vai gerar? Se as duas respostas possíveis produzem exatamente o mesmo comportamento, a pergunta era decorativa, e o tempo gasto nela poderia ter ido para uma das cinco categorias acima.
 

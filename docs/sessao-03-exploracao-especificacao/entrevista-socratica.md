@@ -1,8 +1,8 @@
 # Entrevista socrática
 
-A entrevista socrática é o método que transforma um pedido vago em requisito explícito por meio de perguntas encadeadas, uma por vez. O repertório de perguntas que quase sempre valem a pena está na página anterior, e o que esta página trata é a condução da conversa. O mesmo conjunto de perguntas, apresentado de uma vez em formulário, produz respostas superficiais, porque quem responde não é levado a examinar a própria resposta anterior. Conduzido uma pergunta por vez, com a seguinte escolhida em função da anterior, o método expõe o que ninguém havia percebido que precisava ser declarado.
+A entrevista socrática é o método que transforma um pedido vago em requisito explícito por meio de perguntas encadeadas, uma por vez. O repertório de perguntas que quase sempre valem a pena está na página anterior, e o que esta página trata é a condução da conversa. O mesmo conjunto de perguntas, apresentado integralmente em formulário, produz respostas superficiais, porque quem responde não é levado a examinar a própria resposta anterior. Conduzido uma pergunta por vez, com a seguinte escolhida em função da anterior, o método expõe o que ninguém havia percebido que precisava ser declarado.
 
-## A regra que sustenta o método
+## Uma pergunta por mensagem
 
 O entrevistador socrático **só pergunta**. Quem formula requisitos, pressupostos e conclusões é o entrevistado. O valor da entrevista está no que o analista descobre ao ser obrigado a explicitar o que estava implícito, e responder por ele destrói exatamente esse valor.
 

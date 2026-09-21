@@ -17,7 +17,7 @@ Uma conversa nova com o agente que você já usa, em interface de chat. Tempo es
 **Decisão em foco:** transformar um pedido vago numa especificação BR/FR verificável, e comprovar que
 ela diz o que você quis dizer, antes que alguém a implemente.
 
-## A regra que já existe
+## Regra de desconto em vigor
 
 A Vetor calcula desconto por faixa de valor do pedido, com um teto por pedido. A regra em vigor é
 esta, e é tudo o que você precisa saber para conduzir a oficina.
@@ -44,8 +44,8 @@ Ele só cumpre a função de mostrar o efeito das perguntas se você escrever as
 
 > "Dá pra dar um desconto extra pros clientes que compram muito com a gente?"
 
-Escreva, sem abrir o bloco abaixo, de três a cinco perguntas que você faria antes de especificar
-qualquer coisa. Use o repertório de [Perguntas que revelam ambiguidade](elicitacao-e-perguntas.md)
+Escreva, sem abrir o bloco abaixo, de três a cinco perguntas que você faria antes de redigir a
+especificação. Use o repertório de [Perguntas que revelam ambiguidade](elicitacao-e-perguntas.md)
 como referência.
 
 **Passo 2 — as respostas.** Abra o bloco e compare com as perguntas que você escreveu.
@@ -98,7 +98,7 @@ percentuais, ela deixa essa decisão para quem implementar.
 - Se você tivesse encaminhado o pedido original direto para o time, sem o ciclo completo, qual das
   cinco respostas do passo 2 alguém teria decidido sozinho?
 
-## Extensão: o cenário de qualidade
+## Extensão do cenário de qualidade
 
 Para quem terminar antes. A Vetor pede que o cálculo de desconto "continue rápido mesmo com muito
 tráfego". Escreva o cenário de qualidade completo, com os seis campos de

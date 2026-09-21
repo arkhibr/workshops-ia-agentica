@@ -39,7 +39,7 @@ A Vetor, plataforma fictícia de e-commerce B2B que atravessa o workshop, tem um
 | 6 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 12 min | Ver o ciclo inteiro na Vetor, da constitution ao teste verde |
 | 7 | [Estudo de caso](estudo-de-caso.md) | Discussão em grupo | 12 min | Julgar um ciclo que produziu todos os artefatos e ainda assim entregou errado |
 | — | Intervalo | — | 5 min | — |
-| 8 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 30 min | Rodar o ciclo Spec Kit de verdade sobre a Vetor, com os quatro artefatos versionados |
+| 8 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 30 min | Rodar o ciclo Spec Kit completo sobre a Vetor, com os quatro artefatos versionados |
 | 9 | [Exercícios](exercicios.md) | Prática avaliada | 18 min | Exercício-âncora: a faixa de atacado especificada, planejada, implementada e verificada |
 | — | [Síntese e referências](sintese-e-referencias.md) | Fechamento | 5 min | Checklist, autoavaliação e fontes completas |
 | | | | **120 min** | |

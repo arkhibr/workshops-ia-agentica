@@ -30,7 +30,7 @@ Um agente pode preencher todos os modelos de uma ferramenta e ainda produzir uma
 
 Duas conclusões dessa tabela merecem atenção, porque contrariam a intuição.
 
-A primeira é que **documentação e rigor operacional são eixos diferentes**. O Spec Kit pode ser pesado em documento e leve em exigência de execução. O Superpowers é o inverso. Dizer que uma abordagem é "leve" ou "pesada" sem dizer em qual eixo esconde onde o custo aparece de verdade.
+A primeira é que **documentação e rigor operacional são eixos diferentes**. O Spec Kit pode ser pesado em documento e leve em exigência de execução. O Superpowers é o inverso. Dizer que uma abordagem é "leve" ou "pesada" sem nomear o eixo omite onde o custo efetivamente aparece.
 
 A segunda é que as abordagens podem ser combinadas. Uma organização pode usar a constitution do Spec Kit para princípios transversais, o delta do OpenSpec para manter o comportamento do domínio legível, e a disciplina de teste e verificação do Superpowers na execução. Combinar dessa forma exige reconhecer que são camadas distintas e evitar que dois artefatos disputem a mesma decisão. Instalar as três ferramentas juntas resolve pouco.
 

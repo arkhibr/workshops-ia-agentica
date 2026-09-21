@@ -8,7 +8,7 @@ Um pedido chega quase sempre incompleto. A cabeça de quem pediu já resolveu me
 
 O ciclo tem quatro etapas, nessa ordem:
 
-- **Explorar.** Antes de perguntar qualquer coisa, olhe o que já existe: código, teste, documentação, conversa anterior. Um parâmetro que a função já recebe e nunca usa, um campo que o banco já guarda e a tela não mostra. Isso é pista de intenção não implementada, e ainda não vale como requisito.
+- **Explorar.** Antes da primeira pergunta, examine o que já existe: código, teste, documentação, conversa anterior. Um parâmetro que a função já recebe e nunca usa, um campo que o banco já guarda e a tela não mostra. Isso é pista de intenção não implementada, e ainda não vale como requisito.
 - **Perguntar.** Levante as perguntas cuja resposta muda o comportamento do sistema. A página seguinte trata só disso.
 - **Propor.** Depois de reunir as respostas, escreva uma proposta curta — três ou quatro frases — e devolva para quem pediu, antes de especificar tudo em detalhe. É o ponto mais barato para descobrir que a proposta pegou o problema errado.
 - **Especificar.** Só agora, com a proposta validada, escreva a especificação completa: regra de negócio (BR), requisito funcional (FR) e requisito não funcional (NFR), no padrão da próxima página.
@@ -20,9 +20,9 @@ O ciclo tem quatro etapas, nessa ordem:
 
 [Boehm](../referencia/bibliografia.md#boehm-software-engineering-economics-1981) documentou, décadas antes de qualquer LLM, que o custo de corrigir uma ambiguidade cresce a cada fase do desenvolvimento. A Sessão 1 já usou esse dado na escolha entre vibe coding, assistência e SDD. O ciclo de especificação aplica a mesma lógica dentro de uma única tarefa: a etapa de explorar e perguntar é a fase mais barata para corrigir uma ambiguidade, porque ainda não existe código escrito que dependa dela. Pular para a implementação empurra o mesmo custo para a fase em que corrigir já significa reescrever.
 
-A pressa de "só implementar logo" tem uma armadilha específica com agentes de codificação: o agente não vai parar para perguntar, a menos que seja instruído a fazer isso. Ele completa a lacuna com a suposição mais provável estatisticamente, que para aquele negócio costuma ser a errada. O resultado compila, passa nos testes que já existiam, e resolve um problema ligeiramente diferente do que foi pedido. A Sessão 1 chamou esse padrão de piso alto e teto baixo.
+A pressa de implementar sem especificar produz um efeito específico com agentes de codificação: o agente não vai parar para perguntar, a menos que seja instruído a fazer isso. Ele completa a lacuna com a suposição mais provável estatisticamente, que para aquele negócio costuma ser a errada. O resultado compila, passa nos testes que já existiam, e resolve um problema ligeiramente diferente do que foi pedido. A Sessão 1 chamou esse padrão de piso alto e teto baixo.
 
-## Quando o ciclo compensa e quando é exagero
+## Critério de aplicação do ciclo
 
 Nem todo pedido precisa das quatro etapas por extenso. Um ajuste de uma linha, reversível, sem regra de negócio nova, resolve-se explorando e perguntando de cabeça, sem formalizar proposta nem especificação. O mesmo critério de [reversibilidade e tempo de vida](../sessao-01-o-que-mudou/modos-de-trabalho.md#quando-cada-modo-se-justifica) da Sessão 1 decide isso. O ciclo completo se paga quando a regra de negócio é nova, quando mais de uma pessoa vai manter o código depois, ou quando o pedido já revelou, na primeira leitura, mais de uma interpretação possível. "Ative o desconto de atacado" é desse tipo: não diz onde a faixa começa nem se o teto de R$ 1.000,00 continua valendo.
 
@@ -31,14 +31,14 @@ Nem todo pedido precisa das quatro etapas por extenso. Um ajuste de uma linha, r
 
 ## Para o time de negócio
 
-"Ative o desconto de atacado" chega como uma frase dita numa reunião, e o artefato que ela produz do
-seu lado é o item de backlog. A etapa de **explorar** é a leitura do que já existe antes de escrever
-qualquer coisa nesse item: qual é a regra de desconto em vigor hoje, quem a definiu, e se alguma
-faixa já foi prometida a cliente sem estar registrada em lugar nenhum.
+Um pedido como "ative o desconto de atacado" é formulado em reunião e produz, fora do código, um item
+de backlog. A etapa de **explorar** consiste na leitura do que já existe antes da primeira linha
+escrita nesse item: a regra de desconto em vigor, a pessoa que a definiu, e a eventual existência de
+faixa prometida a cliente sem registro em nenhum documento.
 
 A etapa de **perguntar** transforma a frase em decisões tomadas por quem tem autoridade para tomá-las.
-A conversa com a área demandante produz um registro com quatro colunas, e é ele que impede que a
-decisão volte a ser discutida daqui a três meses.
+A conversa com a área demandante produz um registro com quatro colunas, e esse registro impede que a
+decisão volte a ser discutida três meses depois.
 
 | Pergunta | Resposta | Quem decidiu | Data |
 |---|---|---|---|
@@ -75,7 +75,7 @@ export function calcularDesconto(valorTotal, tipoCliente) {
 }
 ```
 
-A função já recebe `tipoCliente` como parâmetro e nunca o usa, exatamente o tipo de pista que a etapa **explorar** procura antes de perguntar qualquer coisa. As etapas seguintes produzem, nessa ordem: a pergunta ("a partir de que valor a faixa de atacado começa, e ela substitui ou soma à faixa por volume?"), a proposta curta ("atacado acima de R$ 10.000,00 recebe 20%, em vez da faixa por volume"), e só então a especificação com regra numerada:
+A função já recebe `tipoCliente` como parâmetro e nunca o usa, exatamente o tipo de pista que a etapa **explorar** procura antes da primeira pergunta. As etapas seguintes produzem, nessa ordem: a pergunta ("a partir de que valor a faixa de atacado começa, e ela substitui ou soma à faixa por volume?"), a proposta curta ("atacado acima de R$ 10.000,00 recebe 20%, em vez da faixa por volume"), e só então a especificação com regra numerada:
 
 ```text
 BR-01: Pedido de cliente atacado com valor acima de R$ 10.000,00
@@ -103,6 +103,6 @@ export function calcularDesconto(valorTotal, tipoCliente) {
 }
 ```
 
-Sem o ciclo, um agente vendo só "ative o desconto de atacado" tinha três leituras plausíveis para o `if` acima: substituir a faixa, somar a ela, ou aplicar só acima de outro valor de corte. A regra numerada elimina as três dúvidas de uma vez, antes da primeira linha de código mudar.
+Sem o ciclo, um agente vendo só "ative o desconto de atacado" tinha três leituras plausíveis para o `if` acima: substituir a faixa, somar a ela, ou aplicar só acima de outro valor de corte. A regra numerada elimina as três dúvidas simultaneamente, antes da primeira linha de código mudar.
 
 **Próxima página:** [BR, FR e NFR](br-fr-nfr.md).

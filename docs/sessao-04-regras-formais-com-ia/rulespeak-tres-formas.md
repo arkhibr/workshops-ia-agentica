@@ -34,7 +34,7 @@ Um efeito prático: regra escrita em RuleSpeak vira caso de teste quase sem trad
 Uma regra solta, sem número, se perde entre a especificação e o código: ninguém consegue apontar, seis meses depois, se ela ainda está implementada, se mudou, ou se nunca existiu de fato. Três disciplinas resolvem isso, e valem tanto para regra operativa quanto para as regras de classificação e derivação da página anterior:
 
 - **Numeração por tipo.** Regras operativas (exigência, proibição, permissão) recebem prefixo `RN` (regra de negócio comportamental); regras de classificação e derivação recebem `RD` (regra definitiva). `RN-001`, `RN-002`, `RD-001`: sequencial, sem reaproveitar número de regra removida.
-- **Evidência obrigatória.** Toda regra formalizada a partir de código existente cita onde mora a evidência: arquivo, função, linha. Uma regra sem evidência não é regra confirmada, é hipótese sobre o que o sistema faz.
+- **Evidência obrigatória.** Toda regra formalizada a partir de código existente cita a localização da evidência: arquivo, função, linha. Uma regra sem evidência permanece como hipótese sobre o comportamento do sistema, e não como regra confirmada.
 - **Confiança explícita.** 🟢 confirmada (o código ou o time confirma exatamente essa regra); 🟡 inferida (parece ser a regra, mas ninguém do domínio validou ainda); 🔴 lacuna (o domínio espera essa regra, mas não há evidência dela em lugar nenhum). A retrotradução da próxima página é exatamente a técnica que promove uma regra de 🟡 para 🟢, ou revela que ela precisa virar 🔴.
 
 Formato de uma regra completa:
@@ -51,7 +51,7 @@ Confiança: 🔴 lacuna (regra existe na especificação da Sessão 3, sem códi
 
 ## O antipadrão do "deveria"
 
-"O sistema deveria dar desconto para cliente frequente" não é regra de negócio no vocabulário do RuleSpeak: "deveria" não é "deve", não é "não deve", não é "pode ... somente se". É uma sugestão sem compromisso, e cada pessoa que a lê decide sozinha se ela vale sempre, às vezes, ou nunca. O RuleSpeak não inventou uma forma para "deveria" de propósito: se uma regra de negócio existe de verdade, ela é exigência, proibição ou permissão condicional, não existe meio-termo declarativo. Quando alguém escreve "deveria", a régua é perguntar: isso é "deve", é "pode ... somente se", ou na verdade é só uma preferência que ainda não virou regra?
+"O sistema deveria dar desconto para cliente frequente" não é regra de negócio no vocabulário do RuleSpeak: "deveria" não é "deve", não é "não deve", não é "pode ... somente se". É uma sugestão sem compromisso, e cada pessoa que a lê decide sozinha se ela vale sempre, às vezes, ou nunca. O RuleSpeak não inventou uma forma para "deveria" de propósito: se uma regra de negócio existe de fato, ela é exigência, proibição ou permissão condicional, não existe meio-termo declarativo. Quando alguém escreve "deveria", a régua é perguntar: isso é "deve", é "pode ... somente se", ou na verdade é só uma preferência que ainda não virou regra?
 
 !!! tip "Aplique agora"
     Encontre, no seu próprio backlog ou numa conversa recente do time, uma frase com "deveria" sobre uma regra de negócio. Reescreva-a como "deve", "não deve" ou "pode ... somente se": o que a reescrita força você a decidir que a frase original deixava em aberto?

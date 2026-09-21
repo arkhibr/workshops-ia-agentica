@@ -14,7 +14,7 @@ Três elementos, para cada requisito:
 
 - **A regra ou o requisito em si**, na forma declarativa (BR) ou funcional (FR) da página anterior.
 - **Pelo menos um caso concreto** que ilustra a regra em ação: um valor de entrada e o resultado esperado, não uma descrição do comportamento em abstrato.
-- **O caso de fronteira**, sempre que a regra tiver faixa, teto ou condição, porque é aí que a ambiguidade mora, como um teto de desconto ou uma faixa de valor por volume costumam revelar.
+- **O caso de fronteira**, sempre que a regra tiver faixa, teto ou condição, porque é nesse ponto que as duas leituras possíveis divergem, como um teto de desconto ou uma faixa de valor por volume costumam revelar.
 
 Uma especificação sem exemplo concreto deixa a interpretação do valor de fronteira para quem lê depois. E "quem lê depois", quando o pedido vai para um agente, é o próprio agente, decidindo sozinho.
 
@@ -23,7 +23,7 @@ Para um requisito não funcional, o "caso concreto" é o [cenário de qualidade 
 !!! question "Antes de continuar"
     Pegue a última especificação que você escreveu. Para o requisito mais importante dela, existe um valor de entrada e um valor de saída esperado escritos, ou só uma descrição do comportamento?
 
-## O antipadrão da especificação que é só o pedido reescrito
+## Especificação sem informação nova
 
 O sintoma é fácil de reconhecer: a especificação tem a mesma quantidade de informação que o pedido original, só que organizada em tópicos e com títulos em negrito. "Ative o desconto de atacado" é reescrito como "**Requisito:** ativar o desconto de atacado", sem nenhum valor concreto, sem faixa, sem teto, sem caso de fronteira. O trabalho de explorar e perguntar da primeira página desta sessão não aconteceu, e o texto recebeu apenas a formatação de uma especificação.
 
@@ -34,8 +34,8 @@ O teste rápido para detectar esse antipadrão: dê a especificação para algu�
 
 ## Para o time de negócio
 
-Do seu lado, a especificação executável é o critério de aceitação do item de backlog, e ele só está
-pronto quando alguém consegue conferir o resultado sem perguntar nada a quem escreveu. O critério
+Fora do código, a especificação executável assume a forma do critério de aceitação do item de backlog,
+e ele só está pronto quando alguém consegue conferir o resultado sem perguntar nada a quem o escreveu. O critério
 mínimo tem os mesmos três elementos desta página, escritos em linguagem de negócio.
 
 A regra vem primeiro, numerada, na forma que valeria mesmo sem sistema. Depois vem pelo menos um caso

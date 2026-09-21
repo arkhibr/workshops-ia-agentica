@@ -57,7 +57,7 @@ Escrever um NFR verificável não garante que ele continue verdadeiro depois que
 
 Para o cenário de desempenho acima, a função de aptidão poderia ser um teste de carga que roda na esteira de integração contínua, com limiar de 100ms no percentil 95, responsável definido (o time que mantém o cálculo de desconto) e reação declarada (bloquear o deploy se o limiar for ultrapassado).
 
-## O antipadrão do NFR sem função de aptidão
+## NFR sem função de aptidão
 
 Um NFR escrito e nunca mais verificado é só uma promessa. O sintoma: alguém escreve "o sistema deve responder em menos de 100ms" na especificação, o código passa no teste manual do dia em que foi escrito, e ninguém percebe quando uma mudança seis meses depois faz a resposta subir para 400ms. Não existe verificação automatizada rodando a cada mudança, só a memória de que "isso já foi rápido uma vez". A função de aptidão é o que transforma o NFR de uma frase na especificação em uma condição que continua sendo cobrada do sistema a cada mudança.
 

@@ -21,7 +21,7 @@ Em uma frase, explique o que é aprendizado em contexto (in-context learning) e 
 <details>
 <summary>Ver resposta</summary>
 
-É a capacidade de um modelo executar uma tarefa nova a partir da descrição em linguagem natural e de exemplos no próprio texto de entrada, sem ajuste de peso, demonstrada por [Brown et al. (2020)](../referencia/bibliografia.md#brown-et-al-language-models-are-few-shot-learners-2020). É ela que transforma o prompt de pedido informal em especificação que o modelo executa.
+É a capacidade de um modelo executar uma tarefa nova a partir da descrição em linguagem natural e de exemplos no próprio texto de entrada, sem ajuste de peso, demonstrada por [Brown et al. (2020)](../referencia/bibliografia.md#brown-et-al-language-models-are-few-shot-learners-2020). Essa capacidade transforma o prompt de pedido informal em especificação que o modelo executa.
 </details>
 
 ## Compreender
@@ -172,7 +172,7 @@ As três tarefas em uma linha cada, a tabela preenchida para a tarefa escolhida,
 
 O [Exemplo arquitetural](exemplo-arquitetural.md) (desconto) e o exercício-âncora (exercício 5, frete) perdem regra de negócio por motivos diferentes. No desconto, o prompt vago esquece uma faixa e ignora um teto: falta uma informação isolada, fácil de apontar depois. No frete, mesmo um prompt que trate isenção de valor e recargo regional corretamente, cada regra por si, ainda erra o caso 5 ao tratar as duas regras como independentes. A lacuna está na forma como as duas regras se combinam.
 
-Compare as duas lacunas: qual delas você acha que uma revisão de código manual pegaria mais fácil, só de ler a função? E qual delas só um teste automatizado (rodando o caso 5 de verdade) pegaria com confiança? Justifique.
+Compare as duas lacunas: qual delas uma revisão de código manual detectaria com mais facilidade, apenas pela leitura da função? E qual delas só um teste automatizado, executando o caso 5, detectaria com confiança? Justifique.
 
 ## Avaliar
 

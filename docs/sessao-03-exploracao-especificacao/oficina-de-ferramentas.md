@@ -110,7 +110,7 @@ Os seis testes precisam passar antes de você continuar.
 
 > "Dá pra dar um desconto extra pros clientes que compram muito com a gente?"
 
-Escreva, sem abrir o bloco abaixo, de três a cinco perguntas que você faria antes de especificar qualquer coisa. Use o repertório de [Perguntas que revelam ambiguidade](elicitacao-e-perguntas.md) como referência.
+Escreva, sem abrir o bloco abaixo, de três a cinco perguntas que você faria antes de redigir a especificação. Use o repertório de [Perguntas que revelam ambiguidade](elicitacao-e-perguntas.md) como referência.
 
 **Passo 2 — as respostas.** Abra o bloco e compare com as perguntas que você escreveu.
 

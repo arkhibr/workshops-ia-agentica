@@ -8,12 +8,9 @@ Neste exercício nós vamos explorar o efeito do contexto explícito num pedido 
 
 Você vai usar o agente de codificação que já configurou (Claude Code, Copilot, Cursor ou equivalente). Nada de novo para instalar. Tempo estimado: 30 minutos.
 
+Faça os três experimentos individualmente, na ordem em que aparecem.
+
 **Decisão em foco:** quando um pedido em linguagem natural precisa de contexto explícito para não perder regra de negócio, e quando o time está aceitando código sem entender o que ele faz.
-
-## Roteiro sugerido para a sessão
-
-- **Essencial em aula:** Experimento A (autodiagnóstico) e Experimento B (contexto explícito), para sentir a diferença antes do exercício-âncora.
-- **Exploração em dupla:** Experimento C, para nomear onde o julgamento humano entrou.
 
 ## Experimento A
 
@@ -21,7 +18,7 @@ Você vai usar o agente de codificação que já configurou (Claude Code, Copilo
 
 **Execute:** responda por escrito, individualmente:
 
-1. Qual foi o último prompt que você escreveu para gerar ou alterar código de verdade? Reconstitua de memória.
+1. Qual foi o último prompt que você escreveu para gerar ou alterar código em trabalho real? Reconstitua de memória.
 2. Esse prompt tinha contexto (linguagem, formato esperado, regra de negócio, casos de borda) ou pedia só o resultado final?
 3. Classifique seu uso de IA hoje: ad hoc, inconsistente, ou já tem rede de testes e revisão?
 4. Da última vez que um código gerado por IA quebrou, você investigou sistematicamente ou foi tentativa e erro?
@@ -83,7 +80,7 @@ Guarde as duas saídas: o Experimento C usa exatamente elas.
 
 **Objetivo:** achar, nas suas duas saídas do Experimento B, onde cada uma das três setas de [A tese do Software 3.0](software-3-0.md#o-que-sobe-piso-teto-julgamento) apareceu.
 
-**Execute:** em dupla, para cada seta, aponte um trecho concreto das duas saídas do Experimento B:
+**Execute:** para cada seta, aponte um trecho concreto das duas saídas do Experimento B:
 
 1. **Piso subiu para todos:** o que as duas saídas resolveram igualmente bem, sem esforço adicional?
 2. **Teto subiu com disciplina:** o que só a segunda saída resolveu, e que exigiu saber de antemão quais regras de negócio existiam?

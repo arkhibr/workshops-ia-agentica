@@ -4,7 +4,7 @@
 
 ## Os três paradigmas
 
-Todo LLM que você usa hoje numa ferramenta agêntica de codificação roda sobre a arquitetura Transformer, descrita por [Vaswani et al. em 2017](../referencia/bibliografia.md#vaswani-et-al-attention-is-all-you-need-2017). É ela que torna prática a aprendizagem em contexto, e foi sobre essa base que Karpathy montou a tese, apresentada na YC AI Startup School em 17 de junho de 2025.
+Todo LLM que você usa hoje numa ferramenta agêntica de codificação roda sobre a arquitetura Transformer, descrita por [Vaswani et al. em 2017](../referencia/bibliografia.md#vaswani-et-al-attention-is-all-you-need-2017). Essa arquitetura torna prática a aprendizagem em contexto, e Karpathy montou a tese sobre essa base, apresentada na YC AI Startup School em 17 de junho de 2025.
 
 Karpathy já vinha nessa linha desde antes. Em 2017, no mesmo ano do artigo de Vaswani et al., ele publicou o ensaio ["Software 2.0"](../referencia/bibliografia.md#karpathy-software-20-2017), onde defende que uma rede neural treinada é um programa de outro tipo: ninguém a escreve à mão em Python ou C++, porque ela é compilada a partir de dados por um processo de otimização. Software 3.0 dá mais um passo na mesma direção. A programação teve um paradigma dominante por vez ao longo da história, e agora tem três convivendo:
 

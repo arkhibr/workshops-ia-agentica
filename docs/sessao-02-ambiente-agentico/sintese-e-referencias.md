@@ -6,14 +6,14 @@
 2. **O conjunto que cerca o modelo tem nome: arnês.** A equação é agente = modelo + arnês, e das quatro peças do ambiente agêntico, três são arnês. Reconstruir o arnês costuma render mais que trocar de modelo, e a troca de modelo é a última decisão da fila.
 3. **Cada tipo de falha do agente aponta para uma peça diferente do arnês.** Convenção violada indica arquivo de instrução. Ferramenta errada indica catálogo. Erro que atravessa várias etapas indica ausência de verificação. Mexer na peça errada gasta tempo sem mover o resultado.
 4. **A engenharia de contexto é mais ampla que a engenharia de prompt.** Ela cuida de tudo que chega à janela numa execução: o texto da instrução, o histórico, os arquivos lidos e o retorno das ferramentas.
-5. **A janela de contexto degrada aos poucos conforme cresce, sem um ponto de corte visível.** A degradação de contexto (*context rot*) é o motivo técnico por trás de recuperação just-in-time, compactação e sub-agentes com contexto isolado.
+5. **A janela de contexto degrada gradualmente conforme cresce, sem um ponto de corte visível.** A degradação de contexto (*context rot*) é o motivo técnico por trás de recuperação just-in-time, compactação e sub-agentes com contexto isolado.
 6. **Ferramentas são o contrato entre o agente e o ambiente.** Uma ferramenta mal desenhada consome espaço de contexto que poderia ir para informação relevante.
 7. **O MCP transforma M×N integrações numa soma.** Cada modelo e cada ferramenta implementam o protocolo uma vez, em vez de cada par precisar da própria integração. As três primitivas do protocolo (*tools*, *resources*, *prompts*) ajudam a decidir que tipo de acesso pedir depois de decidir conectar.
 8. **O AGENTS.md é um padrão aberto.** Mantido pela [Agentic AI Foundation (Linux Foundation)](../referencia/bibliografia.md#agentic-ai-foundation-agentsmd-standard), lido por agentes de múltiplos fornecedores concorrentes, com suporte nativo a mais de um arquivo por monorepo.
 9. **Uma linha de arquivo de instrução só vale a pena se muda uma decisão real do agente.** "Escreva código limpo" não muda nada. "O comando de teste é X" muda.
 10. **Conectar um servidor MCP exige avaliar origem, escopo e auditabilidade antes de autorizar.** Servidor de terceiro pede mais cautela que servidor mantido pelo próprio fornecedor da ferramenta.
 11. **Isolamento por ramo resolve conflito de sistema de arquivos.** Conflito de comunicação entre pessoas é outro problema, mesmo quando os dois aparecem juntos no mesmo incidente.
-12. **Arquivo de instrução decai como qualquer documentação.** A correção é revisá-lo no mesmo PR que muda a convenção que ele documenta, e verificar de vez em quando, manualmente ou pela esteira de CI, se os comandos documentados ainda existem.
+12. **Arquivo de instrução decai como qualquer documentação.** A correção é revisá-lo no mesmo PR que muda a convenção que ele documenta, e verificar periodicamente, manualmente ou pela esteira de CI, se os comandos documentados ainda existem.
 13. **Isolar por ramo custa mais que um comando de git.** Cada worktree precisa da própria instalação de dependências. Sem automatizar esse passo, a fricção de esperar a instalação desestimula o hábito exatamente nos casos em que ele mais evitaria um conflito.
 14. **Autonomia é uma propriedade do ambiente.** O mesmo modelo pode operar sob supervisão apertada ou com autonomia ampla, dependendo de como a aplicação agêntica foi configurada. A decisão certa depende de reversibilidade da ação e do raio de impacto contido pelo isolamento.
 
@@ -21,7 +21,7 @@
 
 - [ ] O grupo consegue nomear as quatro peças de um ambiente agêntico e qual delas é agnóstica de ferramenta.
 - [ ] Cada participante consegue classificar um erro real de agente numa linha da tabela de diagnóstico do arnês.
-- [ ] Cada participante saiu com um `AGENTS.md`/`CLAUDE.md` real, escrito para um repositório que usa de verdade.
+- [ ] Cada participante saiu com um `AGENTS.md`/`CLAUDE.md` real, escrito para um repositório em uso real.
 - [ ] O grupo discutiu o Estudo de caso e chegou a um critério (não a uma opinião) para quando isolamento por ramo é obrigatório.
 - [ ] Ninguém saiu achando que MCP é uma ferramenta específica — é um protocolo que qualquer ferramenta pode implementar.
 - [ ] O grupo sabe nomear os três critérios (origem, escopo, auditabilidade) para avaliar um servidor MCP antes de conectar.

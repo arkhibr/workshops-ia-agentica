@@ -4,7 +4,7 @@ Esta é uma demonstração conduzida pelo instrutor. O objetivo é acompanhar o 
 
 **A Vetor**, usada como caso em toda esta sessão, é uma plataforma fictícia de e-commerce B2B que atende dois tipos de cliente: padrão e atacado. Desde a Sessão 1, sua função `calcularDesconto` recebe um parâmetro `tipoCliente` que não usa, e a faixa de atacado nunca foi implementada.
 
-## O pedido, como ele chega de verdade
+## O pedido original
 
 > "Ative o desconto de atacado que a gente conversou semana passada."
 
@@ -12,7 +12,7 @@ Isso é tudo que o time recebeu. Nenhuma faixa, nenhum valor, nenhuma menção a
 
 ## Explorar
 
-Antes de perguntar qualquer coisa, o código já revela parte da resposta: `calcularDesconto(valorTotal, tipoCliente)` já aceita `tipoCliente`, e a Sessão 1 documentou que a intenção sempre foi uma faixa de 20% acima de R$ 10.000,00. Isso ainda não é a especificação. Esse levantamento é o ponto de partida, e evita perguntar algo cuja resposta já está registrada no código.
+Antes da primeira pergunta, o código já revela parte da resposta: `calcularDesconto(valorTotal, tipoCliente)` já aceita `tipoCliente`, e a Sessão 1 documentou que a intenção sempre foi uma faixa de 20% acima de R$ 10.000,00. Isso ainda não é a especificação. Esse levantamento é o ponto de partida, e evita perguntar algo cuja resposta já está registrada no código.
 
 ## Perguntar
 

@@ -88,7 +88,7 @@ Você é responsável por transformar esse pedido numa especificação que o age
 
 **Insumos disponíveis**
 
-O projeto `oficina-especificacao` no estado deixado pela oficina, e o agente que você já usa. Se você não fez a oficina, a descrição da situação compartilhada acima é suficiente para responder no papel.
+O projeto `oficina-especificacao` no estado deixado pela oficina, e o agente que você já usa. Se você não fez a oficina, a descrição da situação compartilhada acima é suficiente para responder por escrito.
 
 **Como conduzir**
 
@@ -123,7 +123,7 @@ As perguntas do passo 1, a especificação do passo 3, e o resultado de `node --
 |---|---:|---|
 | Perguntas antes da resposta | 20% | As perguntas do passo 1 foram escritas e preservadas antes de abrir o bloco de respostas |
 | Especificação no padrão BR/FR | 40% | A regra de negócio e o requisito funcional estão separados, com valores concretos, não uma frase genérica |
-| Verificação real executada | 40% | Rodou `node --test` de verdade contra os quatro casos novos e os seis originais, relatando o resultado |
+| Verificação real executada | 40% | Executou `node --test` contra os quatro casos novos e os seis originais, relatando o resultado |
 
 **Como verificar antes de entregar:** confira se o caso 2 (valor grande, sem bônus) e o caso 4 (não é primeiro pedido, sem bônus) foram mesmo testados. São os dois casos que provam que o bônus tem fronteira, em vez de nunca se aplicar.
 
@@ -190,7 +190,7 @@ As perguntas do passo 1, a especificação do passo 3, a prosa devolvida no pass
 |---|---:|---|
 | Perguntas antes da resposta | 20% | As perguntas do passo 1 foram escritas e preservadas antes de abrir o bloco de respostas |
 | Especificação no padrão BR/FR | 40% | A regra de negócio e o requisito funcional estão separados, com valores concretos, não uma frase genérica |
-| Retrotradução executada e divergência registrada | 40% | A conversa nova foi conduzida de verdade, e o resultado traz a divergência encontrada ou a afirmação explícita de que não houve nenhuma |
+| Retrotradução executada e divergência registrada | 40% | A conversa nova foi efetivamente conduzida, e o resultado traz a divergência encontrada ou a afirmação explícita de que não houve nenhuma |
 
 **Como verificar antes de entregar:** confira se o caso 2, de valor grande, e o caso 4, que não é primeiro pedido, foram mesmo conferidos. São os dois casos que provam que o bônus tem fronteira, em vez de nunca se aplicar.
 

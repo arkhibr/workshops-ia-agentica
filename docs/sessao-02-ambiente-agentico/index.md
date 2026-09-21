@@ -49,6 +49,6 @@ A Vetor é uma empresa fictícia de e-commerce B2B, usada nos exemplos deste wor
 
 As sete páginas de teoria têm caixas de destaque embutidas no texto. Pare nesses pontos e espere a turma responder, em vez de ler a pergunta e seguir em frente.
 
-Na oficina, todos criam a mesma pasta vazia, `oficina-arnes`, com dois comandos (`mkdir` e `git init`), e salvam nela o mesmo arquivo de 22 pedidos. Daí em diante cada participante faz o mesmo pedido de fechamento cinco vezes, acrescentando uma peça de arnês por rodada e conferindo contra um gabarito publicado na página. Como o entregável é sempre uma planilha, quem não escreve código faz a oficina inteira. A transposição para um repositório real fica na extensão ao fim da página, e é ela que faz o arquivo de instrução sobreviver à aula.
+Na oficina, todos criam a mesma pasta vazia, `oficina-arnes`, com dois comandos (`mkdir` e `git init`), e salvam nela o mesmo arquivo de 22 pedidos. Daí em diante cada participante faz o mesmo pedido de fechamento cinco vezes, acrescentando uma peça de arnês por rodada e conferindo contra um gabarito publicado na página. A transposição para um repositório real fica na extensão ao fim da página, e é o que mantém o arquivo de instrução em uso depois da aula.
 
 **Próxima página:** [O ambiente compartilhado](ambiente-compartilhado.md).

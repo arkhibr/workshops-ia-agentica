@@ -4,7 +4,7 @@
 
 ## Problema
 
-O desenvolvedor aceita código gerado sem entender de verdade — e quando algo quebra, não sabe por onde começar a investigar.
+O desenvolvedor aceita código gerado sem compreendê-lo, e e quando algo quebra, não sabe por onde começar a investigar.
 
 ## Intenção metodológica
 

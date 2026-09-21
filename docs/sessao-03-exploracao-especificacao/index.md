@@ -6,7 +6,7 @@
 
 ## Problema
 
-Um pedido vago ao agente ("ative o desconto de atacado") produz código que compila, passa nos testes que já existiam e ainda assim resolve o problema errado. A regra de negócio inteira nunca chegou a ser escrita em lugar nenhum, só existia na cabeça de quem pediu.
+Um pedido vago ao agente ("ative o desconto de atacado") produz código que compila, passa nos testes que já existiam e ainda assim resolve o problema errado. A regra de negócio inteira não chegou a ser escrita em nenhum documento, e permanecia apenas com quem fez o pedido.
 
 ## Como usar este material
 
@@ -28,7 +28,7 @@ Ao final desta sessão, o participante deve ser capaz de:
 4. **Formular** perguntas de elicitação que expõem ambiguidade antes que ela vire código.
 5. **Escrever** uma especificação que um agente segue sem precisar decidir sozinho o que o pedido queria dizer.
 
-## O caso que nos acompanha: Vetor
+## O caso Vetor
 
 A Vetor, plataforma fictícia de e-commerce B2B introduzida na Sessão 1, tem uma lacuna conhecida: a função `calcularDesconto` recebe um `tipoCliente` que não usa, e a faixa de 20% para clientes de atacado acima de R$ 10.000,00 nunca foi implementada. Esta sessão fecha essa lacuna pelo caminho longo. O pedido chega vago, e o trabalho aqui é transformá-lo numa especificação antes de qualquer linha de código.
 
@@ -56,8 +56,8 @@ O conteúdo soma 115 minutos, e o intervalo consome os 5 restantes.
 
 ## Como conduzir
 
-As seis páginas de teoria têm caixas de destaque embutidas no texto. Pare de verdade nesses pontos, em vez de ler a pergunta e seguir em frente.
+As seis páginas de teoria têm caixas de destaque embutidas no texto. Pare nesses pontos, em lugar de ler a pergunta e seguir em frente.
 
-Ao chegar na oficina, a trilha técnica monta o projeto do zero a partir dos blocos de código da página, o que leva poucos minutos e garante que todos partam do mesmo estado. A demonstração da Sessão 1 apenas mostrou a lacuna de atacado. Aqui ela é fechada de verdade, com teste escrito e passando. A trilha de negócio parte da regra descrita em texto na própria página da oficina dela, e fecha a mesma lacuna com especificação escrita e conferida por retrotradução.
+Ao chegar na oficina, a trilha técnica monta o projeto do zero a partir dos blocos de código da página, o que leva poucos minutos e garante que todos partam do mesmo estado. A demonstração da Sessão 1 apenas mostrou a lacuna de atacado. Aqui ela é fechada com teste escrito e passando. A trilha de negócio parte da regra descrita em texto na própria página da oficina dela, e fecha a mesma lacuna com especificação escrita e conferida por retrotradução.
 
 **Próxima página:** [O ciclo de especificação](ciclo-de-especificacao.md).

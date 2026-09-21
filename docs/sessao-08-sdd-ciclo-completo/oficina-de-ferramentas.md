@@ -95,7 +95,7 @@ specify init . --integration claude
 
 Troque `claude` pela sua ferramenta (`copilot`, `codex`, `cursor`). Se o diretório não estiver vazio, acrescente `--force`.
 
-**Saída esperada.** Um painel "Next Steps" listando os comandos instalados, seguido de um painel "Enhancement Skills" com os opcionais. Leia essa lista com atenção: **é ela que diz o nome exato dos comandos na sua versão**.
+**Saída esperada.** Um painel "Next Steps" listando os comandos instalados, seguido de um painel "Enhancement Skills" com os opcionais. Leia essa lista com atenção, porque **ela traz o nome exato dos comandos na sua versão**.
 
 **Consideração.** O nome dos comandos varia por versão e por integração. A versão 1.0.1 com integração `claude` instala habilidades com hífen (`/speckit-constitution`), enquanto a documentação no GitHub usa ponto (`/speckit.constitution`). Use o que o painel imprimiu, não o que está escrito aqui ou no README. Se digitar o separador errado, o agente responde como se fosse texto comum e o ciclo não começa.
 

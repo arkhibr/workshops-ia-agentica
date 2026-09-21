@@ -16,7 +16,7 @@ Três perguntas diferentes escondidas numa especificação mal escrita: qual é 
 | FR | O que o sistema precisa fazer? | Não | Calcular o desconto a partir de valor e tipo de cliente |
 | NFR | Sob que critério de qualidade? | Não | Responder em menos de 100ms, sob qualquer carga |
 
-## O que a distinção muda na prática
+## Efeito prático da distinção
 
 [Wiegers e Beatty](../referencia/bibliografia.md#wiegers-e-beatty-software-requirements-2013) tratam regra de negócio como categoria anterior aos requisitos de software, em vez de um requisito em si. Uma regra de negócio também vale para operação manual, fora de qualquer sistema, e é dela que os requisitos funcionais derivam. Essa ordem importa para quem escreve um pedido a um agente, porque a regra de negócio é a fonte de verdade da qual o requisito funcional deriva como tradução em comportamento de sistema, e o requisito não funcional entra depois dos dois, como restrição de qualidade sobre esse comportamento.
 
@@ -25,16 +25,16 @@ Confundir as três produz sintomas previsíveis. Uma regra de negócio escrita c
 !!! question "Antes de continuar"
     Releia a última especificação que você escreveu ou recebeu. Alguma frase que parecia requisito funcional era, na verdade, regra de negócio disfarçada, algo que valeria mesmo sem o sistema existir?
 
-## O antipadrão do requisito funcional que esconde uma regra
+## Regra embutida em requisito funcional
 
 O sintoma mais comum é uma frase só, funcional na forma, carregando três regras de negócio dentro dela: "o sistema deve aplicar desconto de 20% para pedidos de atacado acima de R$ 10.000,00, respeitando o teto de R$ 1.000,00". As três regras são a existência da faixa de atacado, o valor de corte e a prevalência do teto. Quando a regra de negócio muda, e o corte passa para R$ 8.000,00, alguém precisa reabrir a especificação funcional inteira para encontrar o número certo a trocar, porque a regra nunca teve linha própria.
 
-A correção é prática. Regra de negócio ganha frase própria, numerada, antes do requisito funcional que a implementa. É isso que permite ao agente tratar "o teto é R$ 1.000,00" como restrição válida para qualquer faixa nova, em vez de detalhe da faixa de atacado que ele pode reinterpretar.
+A regra de negócio recebe frase própria e numerada, escrita antes do requisito funcional que a implementa, o que permite ao agente tratar o teto de R$ 1.000,00 como restrição válida para qualquer faixa nova, e não como detalhe da faixa de atacado. A separação custa duas linhas a mais na especificação, e se paga quando o número tem dono fora da equipe de desenvolvimento ou quando mais de uma faixa depende dele. Uma regra estável há anos, que ninguém de fora do time pode alterar, não precisa de linha própria.
 
 ## Para o time de negócio
 
-As três categorias moram em artefatos diferentes do seu lado, e confundi-las faz com que uma decisão
-comercial seja registrada como detalhe técnico dentro de um item de backlog.
+Cada uma das três categorias é registrada em um artefato distinto fora do código, e confundi-las faz com
+que uma decisão comercial seja registrada como detalhe técnico dentro de um item de backlog.
 
 | Categoria | Onde ela vive | Quem aprova mudança | O que acontece se ela mudar |
 |---|---|---|---|

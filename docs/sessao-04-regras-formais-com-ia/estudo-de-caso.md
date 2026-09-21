@@ -29,6 +29,6 @@ A tabela, linha por linha, estava correta: cada linha isolada descrevia exatamen
 - O agente decidiu, sozinho, tratar a tabela como First. Isso é um erro do agente, ou é exatamente o comportamento esperado quando ninguém formaliza uma política de acerto — o agente preencheu uma lacuna que era responsabilidade de alguém preencher antes?
 
 !!! question "Antes de continuar"
-    Sem consultar o restante do grupo, escreva sua posição em uma frase: toda tabela de decisão com mais de uma dimensão de condição deveria, por padrão, ter a política de acerto revisada por uma segunda pessoa antes de ir para implementação? Ou isso sobrecarregaria regras que nunca colidiriam de verdade?
+    Sem consultar o restante do grupo, escreva sua posição em uma frase: toda tabela de decisão com mais de uma dimensão de condição deveria, por padrão, ter a política de acerto revisada por uma segunda pessoa antes de ir para implementação? Ou isso sobrecarregaria regras que jamais colidiriam?
 
 **Próxima página:** [Oficina de ferramentas](oficina-de-ferramentas.md).

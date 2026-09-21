@@ -14,7 +14,7 @@ A Vetor, a plataforma fictícia de e-commerce B2B usada nesta sessão, precisava
 
 O agente implementou exatamente isso, o teste passou, o código foi para produção. Duas semanas depois, um cliente atacado fez três pedidos de R$ 20.000,00 no mesmo dia, somando R$ 60.000,00. Nenhum deles individualmente passou de R$ 50.000,00, nenhum foi para aprovação manual, e o time só descobriu quando o financeiro notou o volume acumulado no fechamento do mês.
 
-## O que a especificação cobria
+## Cobertura da especificação escrita
 
 A especificação cumpriu exatamente o que dizia, e o que ela dizia era por pedido isolado, sem nenhuma menção a cliente ou a período. O teste que existia comprovava isso. Nada na revisão de código apontaria erro, porque não havia erro em relação ao que foi escrito. O `FR-01` implementa `BR-01` com fidelidade perfeita.
 

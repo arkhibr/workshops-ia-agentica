@@ -4,7 +4,7 @@
 
 Neste exercício nós vamos explorar o conceito de arnês. Você vai trabalhar sobre um mesmo conjunto de comandos enviados à IA, acrescentando níveis sucessivos de rede de proteção para melhorar o resultado a cada rodada.
 
-O agente devolve uma planilha do Excel em toda rodada, e conferir é abrir o arquivo e olhar os números. Quem não escreve código faz a oficina inteira.
+O agente devolve uma planilha do Excel em toda rodada, e conferir é abrir o arquivo e olhar os números.
 
 **Decisão em foco:** que peça do arnês é responsável por cada erro que o agente comete num fechamento mensal, e em que ordem vale a pena acrescentá-las.
 
@@ -20,11 +20,7 @@ git init
 node --version   # precisa mostrar v20 ou superior
 ```
 
-## Roteiro sugerido para a sessão
-
-- **Essencial em aula:** gerar a planilha do caso e fazer as cinco rodadas, na ordem em que aparecem. Use o mesmo pedido nas cinco, senão não dá para comparar nada.
-- **Exploração em dupla:** ao fim da última rodada, compare o seu placar com o de quem está do lado. Duas pessoas com o mesmo arnês e resultados diferentes indicam uma variável que o placar não captura. Registre qual.
-- **Extensão para depois da aula:** a seção final, com isolamento por ramo, autonomia e a transposição para um repositório real.
+Faça os exercícios individualmente, na ordem em que aparecem, e use o mesmo pedido em todas as rodadas.
 
 ## O que é arnês
 
@@ -99,7 +95,7 @@ VT-1023,Construtora Lemos,atacado,55,41.20,2026-09-30,confirmado
 
 ## Pilar 1 — gerar a planilha do caso
 
-**Peça do arnês: ferramentas.** Ferramenta é uma coisa que o agente pode fazer além de escrever texto, com um contrato declarado: um nome, os parâmetros que ela aceita e o que ela devolve. Rodar um comando no terminal é uma ferramenta. Gravar um arquivo é outra. Você vai precisar das duas aqui, porque um arquivo do Excel é um conjunto de documentos XML dentro de um zip, e nenhum modelo escreve isso digitando na conversa.
+**Peça do arnês: ferramentas.** Ferramenta é uma ação que o agente pode executar além de escrever texto, com um contrato declarado: um nome, os parâmetros que ela aceita e o que ela devolve. Rodar um comando no terminal é uma ferramenta. Gravar um arquivo é outra. Você vai precisar das duas aqui, porque um arquivo do Excel é um conjunto de documentos XML dentro de um zip, e nenhum modelo escreve isso digitando na conversa.
 
 **Objetivo:** montar a planilha que as cinco rodadas vão usar, e descobrir logo se o seu agente consegue gravar um arquivo.
 
@@ -117,7 +113,7 @@ VT-1023,Construtora Lemos,atacado,55,41.20,2026-09-30,confirmado
 
 **Questões exploratórias:**
 
-- A escolha de linguagem do agente foi a mesma da pessoa ao lado? Se não, o que decidiu a escolha dele?
+- O agente escolheu a linguagem sozinho. O que decidiu essa escolha, já que nada no projeto a determinava?
 - Se o `.xlsx` tivesse saído corrompido, você descobriria por qual verificação?
 
 ## Pilar 2 — uma peça de arnês por rodada
@@ -146,7 +142,7 @@ Um erro de avaliação é frequente aqui. Julgadas por aparência, as saídas da
 
 Faixa que o agente inventou conta como erro, mesmo quando é defensável e mesmo quando um analista humano teria suposto a mesma coisa. Num fechamento, um desconto não aprovado reduz a receita do período.
 
-Faça cada rodada duas vezes, em conversas separadas. A segunda custa colar o mesmo pedido de novo, e é ela que mostra se o resultado se repete. Preencha uma linha do placar por rodada, logo depois de conferir:
+Faça cada rodada duas vezes, em conversas separadas. A segunda custa colar o mesmo pedido de novo, e mostra se o resultado se repete. Preencha uma linha do placar por rodada, logo depois de conferir:
 
 | Rodada | Abriu no Excel? | Stack do time? | Faixas certas? | Total bate com o gabarito? | As duas iguais? |
 |---|---|---|---|---|---|
@@ -158,7 +154,7 @@ Faça cada rodada duas vezes, em conversas separadas. A segunda custa colar o me
 
 ### Rodada 0 — o modelo sozinho
 
-**Peça do arnês: nenhuma.** Esta é a rodada contra a qual você vai comparar as outras quatro. Ela também serve para separar duas situações que as pessoas confundem. Quando a resposta certa está publicada na internet, o modelo já a conhece e nenhum arnês acrescenta nada. Quando a resposta certa só existe dentro de uma empresa, o modelo não tem de onde tirá-la, e é aí que vale gastar tempo com as rodadas seguintes.
+**Peça do arnês: nenhuma.** Esta é a rodada contra a qual você vai comparar as outras quatro. Ela também serve para separar duas situações que as pessoas confundem. Quando a resposta certa está publicada na internet, o modelo já a conhece e nenhum arnês acrescenta nada. Quando a resposta certa só existe dentro de uma empresa, o modelo não tem de onde obtê-la, e as rodadas seguintes passam a compensar o tempo investido.
 
 **Objetivo:** ver o que o modelo faz sem nenhuma ajuda, em duas tarefas de tipos diferentes.
 
@@ -191,7 +187,7 @@ Confira a resposta. Ela deve estar certa, completa e imediata.
 
 **Passo 3:** rode uma segunda vez, em outra conversa nova, e compare as duas saídas entre si.
 
-**Observe:** os clientes e os valores brutos passam a ser os reais, porque agora estão no arquivo. As faixas de desconto continuam vindo de lugar nenhum. O total tem o formato correto e o valor errado.
+**Observe:** os clientes e os valores brutos passam a ser os reais, porque agora estão no arquivo. As faixas de desconto continuam sem origem declarada. O total tem o formato correto e o valor errado.
 
 **Questões exploratórias:**
 
@@ -200,7 +196,7 @@ Confira a resposta. Ela deve estar certa, completa e imediata.
 
 ### Rodada 2 — instrução
 
-**Peça do arnês: instrução de sistema.** É um texto que o agente lê antes de cada pedido, e que vale para todas as tarefas do projeto. Ele existe para responder o que os dados sozinhos não respondem. Aqui você escreve as regras em dois lugares ao mesmo tempo. O `AGENTS.md` fica na raiz da pasta, e é o que o agente lê. A aba `Regras` fica dentro da planilha, onde quem cuida do negócio consegue conferir a faixa sem abrir arquivo de texto. Nenhum dos dois obriga o agente a nada, os dois só pedem, e é isso que você vai observar.
+**Peça do arnês: instrução de sistema.** É um texto que o agente lê antes de cada pedido, e que vale para todas as tarefas do projeto. Ele existe para responder o que os dados sozinhos não respondem. Aqui você escreve as regras em dois lugares ao mesmo tempo. O `AGENTS.md` fica na raiz da pasta, e é o que o agente lê. A aba `Regras` fica dentro da planilha, onde quem cuida do negócio consegue conferir a faixa sem abrir arquivo de texto. Nenhum dos dois obriga o agente a nada, e essa ausência de obrigação é o que a rodada observa.
 
 **Objetivo:** escrever as regras da Vetor em dois lugares e ver qual deles o agente usa.
 
@@ -372,11 +368,11 @@ Isolamento e autonomia saem para a extensão depois da aula, porque as duas pede
 
 Memória fica fora da oficina e fora da sessão. Cada rodada começa em conversa nova justamente para isso: o placar precisa medir o arnês que você montou, e não o que o agente lembrou da tentativa anterior.
 
-Falta uma peça que não está na tabela das sete. A aba `Conferência` da rodada 4 pede um comportamento ao modelo, e o modelo pode ignorar o pedido. Alguns agentes ignoram. Quem impõe de verdade é *hook* e permissão, na camada de execução, como separa a [distinção entre guiar e impor](arnes.md#os-componentes-do-arnes). Se o agente pulou a conferência em alguma rodada, foi essa peça que faltou.
+Falta uma peça que não está na tabela das sete. A aba `Conferência` da rodada 4 pede um comportamento ao modelo, e o modelo pode ignorar o pedido. Alguns agentes ignoram. A imposição efetiva vem de *hook* e permissão, na camada de execução, como separa a [distinção entre guiar e impor](arnes.md#os-componentes-do-arnes). Se o agente pulou a conferência em alguma rodada, foi essa peça que faltou.
 
 ## Extensão para o seu repositório
 
-As cinco rodadas usaram um caso criado do zero, para todo mundo partir do mesmo estado. Três coisas para fazer depois da aula.
+As cinco rodadas usaram um caso criado do zero, para que todos partissem do mesmo estado. Três coisas para fazer depois da aula.
 
 **Isolamento por ramo.** A partir da raiz de `oficina-arnes`, crie dois ambientes isolados e dê a cada agente uma tarefa diferente sobre o mesmo arquivo, ao mesmo tempo:
 
@@ -409,7 +405,7 @@ git branch -D experimento/a experimento/b
 
 ## Gabarito
 
-Estes são os números do fechamento correto. Consulte esta seção depois de cada rodada, na hora de conferir. Ler os números corretos antes de rodar compromete a comparação, porque a expectativa se forma a partir deles.
+Estes são os números do fechamento correto. Consulte esta seção depois de cada rodada, no momento de conferir. Ler os números corretos antes de rodar compromete a comparação, porque a expectativa se forma a partir deles.
 
 ??? note "Abrir para conferir"
 

@@ -89,7 +89,7 @@ A utilidade de decompor o arnês em peças é transformar "o agente errou" numa 
 | Perdeu o fio numa tarefa longa | gestão de contexto | recortar o contexto por etapa e resumir o estado |
 | Duas sessões se atrapalharam no mesmo diretório | isolamento | um ramo de trabalho por tarefa |
 | Produziu efeito difícil de reverter sem ninguém aprovar | autonomia | baixar o nível de permissão para aquele tipo de ação |
-| Ignorou a convenção documentada na hora de executar | *hooks* | impor o limite na camada de execução |
+| Ignorou a convenção documentada no momento de executar | *hooks* | impor o limite na camada de execução |
 | O erro atravessou várias etapas antes de aparecer | verificação | dar ao agente um comando de verificação a cada etapa |
 
 A última linha é a de maior retorno, e a Sessão 9 volta a ela: a depuração sistemática de um agente começa por perguntar em que etapa a verificação faltou.

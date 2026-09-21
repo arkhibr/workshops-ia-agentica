@@ -1,6 +1,6 @@
 # O ciclo e os quatro artefatos
 
-Desenvolvimento guiado por especificação, ou SDD (*Spec-Driven Development*), inverte uma hierarquia antiga. Por décadas a especificação foi andaime: escrita, aprovada e descartada assim que o código, o "trabalho de verdade", começava. O SDD trata a especificação como o artefato que gera a implementação, e o código como uma das implementações possíveis daquela intenção. Esta página percorre os quatro artefatos canônicos e o que cada um decide.
+Desenvolvimento guiado por especificação, ou SDD (*Spec-Driven Development*), inverte uma hierarquia antiga. Por décadas a especificação foi tratada como etapa preparatória: escrita, aprovada e descartada assim que a implementação começava. O SDD trata a especificação como o artefato que gera a implementação, e o código como uma das implementações possíveis daquela intenção. Esta página percorre os quatro artefatos canônicos e o que cada um decide.
 
 ## A ordem entre os artefatos
 

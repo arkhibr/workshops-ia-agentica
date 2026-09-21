@@ -43,7 +43,7 @@ A Vetor, plataforma fictícia de e-commerce B2B que atravessa o workshop, chega 
 
 ## Como conduzir
 
-As quatro páginas de teoria têm caixas de destaque embutidas no texto. Pare de verdade nesses pontos, em vez de ler a pergunta e seguir em frente.
+As quatro páginas de teoria têm caixas de destaque embutidas no texto. Pare nesses pontos, em lugar de ler a pergunta e seguir em frente.
 
 A oficina desta sessão é inteiramente sobre formalização de regra e não exige projeto executável. Quem quiser conferir o código, monta o projeto como na oficina da Sessão 3.
 
