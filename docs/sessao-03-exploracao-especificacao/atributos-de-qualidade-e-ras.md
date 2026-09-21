@@ -118,6 +118,8 @@ test('fitness function: percentil 95 abaixo do limiar', () => {
 });
 ```
 
+O teste acima mede a latência de 500 chamadas executadas em sequência, e o cenário declara pico de 500 pedidos simultâneos. A função de aptidão é, portanto, uma aproximação do cenário, e não a sua reprodução. Ela detecta degradação do custo por chamada, que é a causa mais comum de violação do limiar, e não detecta contenção por concorrência, que exigiria medição com múltiplos processos ou instrumentação no servidor. A diferença entre o que o cenário declara e o que a função de aptidão mede precisa estar escrita junto do teste, porque uma função de aptidão verde não é prova de que o cenário foi cumprido.
+
 Os três elementos declarados nesta página aparecem em pontos distintos:
 
 - O **limiar** é a constante `LIMIAR_MS`.
