@@ -1,6 +1,6 @@
 # Atributos de qualidade e RAS
 
-"O sistema deve ser rápido" é um adjetivo esperando virar requisito não funcional. Esta página dá o vocabulário para nomear o atributo de qualidade certo, o critério para saber quando ele importa o bastante para virar decisão de arquitetura (o que abrevia como RAS, requisito arquiteturalmente significativo), e a forma de escrever um NFR que continua sendo verificado depois que todo mundo esqueceu de tê-lo escrito.
+"O sistema deve ser rápido" é um adjetivo, e um requisito não funcional exige mais do que isso. Esta página apresenta o vocabulário para nomear o atributo de qualidade em questão, o critério que determina quando esse atributo exige uma decisão de arquitetura, abreviado como RAS ou requisito arquiteturalmente significativo, e a forma de escrever um requisito não funcional que permanece sob verificação depois da entrega.
 
 ## Catálogo de atributos de qualidade
 
@@ -23,7 +23,7 @@ Um NFR solto começa quase sempre com um adjetivo: rápido, seguro, escalável, 
 
 ## Requisito arquiteturalmente significativo (RAS)
 
-Nem todo requisito não funcional exige uma decisão de arquitetura. Um requisito vira **arquiteturalmente significativo** quando atende a pelo menos um destes critérios:
+Nem todo requisito não funcional exige uma decisão de arquitetura. Um requisito é **arquiteturalmente significativo** quando atende a pelo menos um destes critérios:
 
 - Atravessa mais de um componente do sistema, em vez de ficar contido numa única função.
 - Protege um atributo de qualidade que o negócio já declarou prioritário.
@@ -64,9 +64,37 @@ Um NFR escrito e nunca mais verificado é só uma promessa. O sintoma: alguém e
 !!! tip "Aplique agora"
     Pegue o cenário de qualidade que você escreveu no exercício anterior. Descreva a função de aptidão correspondente: que teste automatizado provaria, hoje e daqui a seis meses, que o cenário continua verdadeiro? Quem seria avisado se ele parasse de ser?
 
-## Isso vira código assim
+## Para o time de negócio
 
-O cenário de qualidade da tabela acima (500 pedidos, 95% abaixo de 100ms) vira uma função de aptidão executável, em vez de uma frase revisada de vez em quando:
+Um requisito não funcional só é acordo quando alguém consegue dizer, olhando um número, se ele foi
+cumprido ou não. "O cálculo de desconto precisa ser rápido" não é acordo, porque duas pessoas honestas
+discordam sobre o que é rápido sem estarem erradas. O cenário de qualidade resolve isso preenchendo
+seis campos, e ele cabe inteiro no item de backlog.
+
+| Campo | Preenchimento |
+|---|---|
+| Fonte | Pedidos entrando pelo canal de vendas |
+| Estímulo | Pico de 500 pedidos simultâneos |
+| Ambiente | Operação normal, em horário comercial |
+| Artefato | Cálculo de desconto do fechamento de pedido |
+| Resposta | O desconto é calculado e devolvido ao fluxo de fechamento |
+| Medida | 95% das chamadas abaixo de 100 milissegundos |
+
+Preencher os seis campos não basta. Um requisito não funcional continua verdadeiro apenas enquanto
+alguém verifica que ele continua verdadeiro, e por isso o acordo precisa declarar mais duas coisas
+antes de ser aceito: quem é avisado quando a medida deixa de ser cumprida, e o que acontece a partir
+desse aviso. Sem essas duas respostas o número permanece como intenção registrada, que ninguém confere
+depois da entrega.
+
+O critério que distingue um requisito arquiteturalmente significativo dos demais é prático. Se a
+medida atravessa mais de uma parte do produto, protege algo que a área demandante considera
+prioritário, ou pode obrigar a uma decisão estrutural cara, ela precisa ser discutida antes do
+trabalho começar. Se ela fica contida numa única tela e não muda nada além dela, cabe como detalhe do
+próprio item.
+
+## Para o time de desenvolvimento
+
+O cenário de qualidade da tabela acima (500 pedidos, 95% abaixo de 100ms) é implementado como função de aptidão executável, em lugar de uma frase revisada de tempos em tempos:
 
 ```javascript
 // test/desconto.fitness.test.js

@@ -12,6 +12,12 @@ Um pedido vago ao agente ("ative o desconto de atacado") produz código que comp
 
 Estas páginas não são leitura prévia. O instrutor conduz a exploração dos conceitos ao vivo, intercalada com a prática, e cada bloco de teoria tem uma atividade correspondente logo em seguida. Chegar sem ter lido nada é a expectativa normal.
 
+## As duas trilhas desta sessão
+
+A sessão é conduzida para uma turma única, com duas trilhas na parte prática. A **trilha técnica** é de quem implementa em código, usa terminal, git e Node.js 20 ou superior, e verifica a especificação executando testes. A **trilha de negócio** é de quem escreve a demanda e conversa com a área cliente, trabalha numa interface de chat, e verifica a mesma especificação por retrotradução e conferência de casos.
+
+A teoria é comum às duas. Cada página de teoria fecha com dois blocos de audiência, "Para o time de desenvolvimento" e "Para o time de negócio", e cada participante lê o da própria trilha. Na parte prática as páginas são distintas: a [Oficina de ferramentas](oficina-de-ferramentas.md) é da trilha técnica e a [Oficina de negócio](oficina-de-negocio.md) é da trilha de negócio. A [Oficina de entrevista socrática](oficina-de-entrevista.md) atende as duas, porque não usa código, com duplas formadas dentro de cada trilha.
+
 ## Objetivos de aprendizagem
 
 Ao final desta sessão, o participante deve ser capaz de:
@@ -28,26 +34,30 @@ A Vetor, plataforma fictícia de e-commerce B2B introduzida na Sessão 1, tem um
 
 ## Roteiro da sessão (2h, das 10h às 12h)
 
-| # | Página | Bloco | Tempo | Resultado esperado |
-|---|---|---|---|---|
-| 1 | [O ciclo de especificação](ciclo-de-especificacao.md) | Teoria | 6 min | As quatro etapas do ciclo e o custo de pular direto para o código |
-| 2 | [BR, FR e NFR](br-fr-nfr.md) | Teoria | 7 min | Classificar um requisito pelas três categorias e reconhecer quando confundem |
-| 3 | [Atributos de qualidade e RAS](atributos-de-qualidade-e-ras.md) | Teoria | 8 min | Catálogo de atributos de qualidade, cenário de qualidade e função de aptidão arquitetural |
-| 4 | [Perguntas que revelam ambiguidade](elicitacao-e-perguntas.md) | Teoria | 6 min | Um repertório de perguntas que expõe requisito implícito antes da implementação |
-| 5 | [Entrevista socrática](entrevista-socratica.md) | Teoria | 7 min | As cinco fases, o contrato de uma pergunta por vez e o registro de proveniência |
-| 6 | [Especificação executável](especificacao-executavel.md) | Teoria | 7 min | O critério que separa especificação seguível de resumo do pedido |
-| 7 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 9 min | Ver, com a Vetor, o ciclo inteiro aplicado a um pedido vago até a especificação completa |
-| 8 | [Estudo de caso](estudo-de-caso.md) | Discussão em grupo | 13 min | Julgar de quem é a responsabilidade quando a especificação "tecnicamente" cobria o pedido |
-| — | Intervalo | — | 5 min | — |
-| 9 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 30 min | Conduzir o ciclo completo, e ser entrevistado pelo agente sobre uma especificação ruim |
-| 10 | [Exercícios](exercicios.md) | Prática avaliada | 17 min | Exercício-âncora: especificação escrita, implementada e verificada por teste |
-| — | [Síntese e referências](sintese-e-referencias.md) | Fechamento | 5 min | Checklist, autoavaliação e fontes completas |
-| | | | **120 min** | |
+Oito blocos, e nenhum bloco mistura tipos de atividade. Onde a trilha muda o material, a tabela traz uma linha por trilha.
+
+| Horário | Min | Bloco | Tipo | Trilha | Página |
+|---|---:|---|---|---|---|
+| 10:00–10:06 | 6 | O ciclo de especificação | Teoria | Comum | [O ciclo de especificação](ciclo-de-especificacao.md) |
+| 10:06–10:20 | 14 | Categorias de requisito | Teoria | Comum | [BR, FR e NFR](br-fr-nfr.md) e [Atributos de qualidade e RAS](atributos-de-qualidade-e-ras.md) |
+| 10:20–10:32 | 12 | Elicitação e entrevista socrática | Teoria | Comum | [Perguntas que revelam ambiguidade](elicitacao-e-perguntas.md) e [Entrevista socrática](entrevista-socratica.md) |
+| 10:32–10:37 | 5 | Especificação executável | Teoria | Comum | [Especificação executável](especificacao-executavel.md) |
+| 10:37–10:48 | 11 | Demonstração do ciclo completo | Demonstração | Comum | [Exemplo arquitetural](exemplo-arquitetural.md) |
+| 10:48–11:00 | 12 | Estudo de caso | Discussão | Grupos dentro de cada trilha | [Estudo de caso](estudo-de-caso.md) |
+| 11:00–11:05 | 5 | Intervalo | Sem material | Todos | Nenhuma |
+| 11:05–11:20 | 15 | Oficina do ciclo de especificação | Prática guiada | Técnica | [Oficina de ferramentas](oficina-de-ferramentas.md) |
+| 11:05–11:20 | 15 | Oficina do ciclo de especificação | Prática guiada | Negócio | [Oficina de negócio](oficina-de-negocio.md) |
+| 11:20–11:30 | 10 | Oficina de entrevista socrática | Prática guiada | Duplas dentro de cada trilha | [Oficina de entrevista socrática](oficina-de-entrevista.md) |
+| 11:30–11:55 | 25 | Exercícios | Prática avaliada | Técnica | [Exercícios](exercicios.md), exercício-âncora 6 |
+| 11:30–11:55 | 25 | Exercícios | Prática avaliada | Negócio | [Exercícios](exercicios.md), exercício-âncora 6N |
+| 11:55–12:00 | 5 | Síntese e autoavaliação | Fechamento | Comum | [Síntese e referências](sintese-e-referencias.md) |
+
+O conteúdo soma 115 minutos, e o intervalo consome os 5 restantes.
 
 ## Como conduzir
 
 As seis páginas de teoria têm caixas de destaque embutidas no texto. Pare de verdade nesses pontos, em vez de ler a pergunta e seguir em frente.
 
-Ao chegar na oficina, todos montam o projeto do zero a partir dos blocos de código da página, o que leva poucos minutos e garante que todos partam do mesmo estado. A demonstração da Sessão 1 apenas mostrou a lacuna de atacado. Aqui ela é fechada de verdade, com teste escrito e passando.
+Ao chegar na oficina, a trilha técnica monta o projeto do zero a partir dos blocos de código da página, o que leva poucos minutos e garante que todos partam do mesmo estado. A demonstração da Sessão 1 apenas mostrou a lacuna de atacado. Aqui ela é fechada de verdade, com teste escrito e passando. A trilha de negócio parte da regra descrita em texto na própria página da oficina dela, e fecha a mesma lacuna com especificação escrita e conferida por retrotradução.
 
 **Próxima página:** [O ciclo de especificação](ciclo-de-especificacao.md).

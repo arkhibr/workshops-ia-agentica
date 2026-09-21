@@ -30,4 +30,4 @@ O problema é anterior à especificação: ninguém perguntou, na etapa de explo
 !!! question "Antes de continuar"
     Sem consultar o restante do grupo, escreva sua posição em uma frase: a falha está na especificação, na elicitação que a precedeu, ou em nenhuma das duas, por ser um risco que nenhum processo elimina de vez?
 
-**Próxima página:** [Oficina de ferramentas](oficina-de-ferramentas.md).
+**Próxima página:** a oficina da sua trilha, [Oficina de ferramentas](oficina-de-ferramentas.md) na trilha técnica ou [Oficina de negócio](oficina-de-negocio.md) na trilha de negócio.

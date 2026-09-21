@@ -68,7 +68,19 @@ class EstruturaTest(unittest.TestCase):
             with self.subTest(slug=slug):
                 indice = (DOCS / slug / "index.md").read_text(encoding="utf-8")
                 self.assertIn("Roteiro da sessão (2h, das 10h às 12h)", indice)
-                self.assertIn("| — | Intervalo | — | 5 min | — |", indice)
+                linha_intervalo = [
+                    linha
+                    for linha in indice.splitlines()
+                    if linha.startswith("|") and "Intervalo" in linha
+                ]
+                self.assertEqual(1, len(linha_intervalo), "o roteiro precisa de uma linha de intervalo")
+                linha = linha_intervalo[0]
+                com_horario = "11:00" in linha and "| 5 |" in linha
+                sem_horario = "| 5 min |" in linha
+                self.assertTrue(
+                    com_horario or sem_horario,
+                    f"intervalo de 5 min não declarado na linha: {linha}",
+                )
 
 
 if __name__ == "__main__":

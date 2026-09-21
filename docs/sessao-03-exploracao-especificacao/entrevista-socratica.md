@@ -1,22 +1,22 @@
 # Entrevista socrática
 
-A entrevista socrática é o método que transforma um pedido vago em requisito explícito por meio de perguntas encadeadas, uma por vez. O repertório de perguntas que quase sempre valem a pena está na página anterior. O que sobra é como conduzir a conversa. O mesmo conjunto de perguntas, despejado de uma vez num formulário, produz respostas rasas. Feito uma pergunta por vez, com a seguinte escolhida em função da anterior, expõe o que ninguém tinha percebido que precisava dizer.
+A entrevista socrática é o método que transforma um pedido vago em requisito explícito por meio de perguntas encadeadas, uma por vez. O repertório de perguntas que quase sempre valem a pena está na página anterior, e o que esta página trata é a condução da conversa. O mesmo conjunto de perguntas, apresentado de uma vez em formulário, produz respostas superficiais, porque quem responde não é levado a examinar a própria resposta anterior. Conduzido uma pergunta por vez, com a seguinte escolhida em função da anterior, o método expõe o que ninguém havia percebido que precisava ser declarado.
 
 ## A regra que sustenta o método
 
 O entrevistador socrático **só pergunta**. Quem formula requisitos, pressupostos e conclusões é o entrevistado. O valor da entrevista está no que o analista descobre ao ser obrigado a explicitar o que estava implícito, e responder por ele destrói exatamente esse valor.
 
-Isso vale em especial quando o entrevistador é um agente. Um modelo de linguagem tende a ser prestativo: recebe uma especificação ruim e oferece a versão corrigida, porque é o que parece ajudar. O resultado é uma especificação melhor escrita e um analista que continua sem saber por que ela estava errada. Na próxima funcionalidade, o mesmo defeito volta.
+Isso vale em especial quando o entrevistador é um agente. Um modelo de linguagem tende a ser prestativo: recebe uma especificação ruim e oferece a versão corrigida, porque é o que parece ajudar. O resultado é uma especificação melhor escrita e um analista que continua sem saber por que ela estava errada. O mesmo defeito reaparece na funcionalidade seguinte, porque a causa dele permanece sem tratamento.
 
 O contrato de conduta tem três partes, e a primeira é a que mais se viola:
 
 1. **Uma pergunta por mensagem.** Uma única interrogação, sempre. Duas perguntas curtas e relacionadas continuam sendo duas, e sub-pergunta entre parênteses conta.
 2. **Sem sugerir a resposta.** A pergunta não vem acompanhada da opção que o entrevistador acha certa. Quando o entrevistado trava, o recurso é oferecer duas a quatro alternativas de múltipla escolha, não apontar a preferida.
-3. **Solução fica para depois.** Pedido de solução técnica no meio da entrevista vira anotação, e a conversa continua na pergunta pendente.
+3. **Solução fica para depois.** Pedido de solução técnica no meio da entrevista é registrado como anotação, e a conversa continua na pergunta pendente.
 
 ## As cinco fases
 
-Cada fase tem um objetivo e um critério de saída observável. Pular fases é o que transforma a entrevista em transcrição.
+Cada fase tem um objetivo e um critério de saída observável. Quando uma fase é pulada, a entrevista produz um registro do que foi dito sem produzir as decisões que a fase seguinte exigiria.
 
 | Fase | Objetivo | Sai quando |
 |---|---|---|
@@ -35,7 +35,7 @@ A terceira é a que mais falha. "O time comercial vai gostar" não é critério 
 
 ## Seis categorias de pergunta
 
-Uma entrevista que só usa a primeira categoria vira formulário. O método pede que o entrevistador percorra as seis:
+Uma entrevista que usa apenas a primeira categoria produz um formulário. O método pede que o entrevistador percorra as seis:
 
 1. **Esclarecimento.** "O que 'flexível' significa aqui, em comportamento observável?"
 2. **Pressupostos.** "O que precisa ser verdade sobre o gestor para essa tela fazer sentido?"
@@ -44,7 +44,7 @@ Uma entrevista que só usa a primeira categoria vira formulário. O método pede
 5. **Perspectivas alternativas.** "Como o vendedor da ponta descreveria esse mesmo problema?"
 6. **Meta-pensamento.** "Das respostas até aqui, qual te surpreendeu?"
 
-Há uma regra automática ligada à primeira categoria. **Adjetivo vago detectado, próxima pergunta é de quantificação.** Rápido, flexível, robusto, escalável, intuitivo, seguro, simples e moderno são gatilhos: a resposta precisa virar número, comportamento observável ou exemplo concreto antes que a conversa siga.
+Há uma regra automática ligada à primeira categoria. **Adjetivo vago detectado, próxima pergunta é de quantificação.** Rápido, flexível, robusto, escalável, intuitivo, seguro, simples e moderno são gatilhos: a resposta precisa ser convertida em número, comportamento observável ou exemplo concreto antes que a conversa siga.
 
 ## Escolher a próxima pergunta
 
@@ -54,7 +54,7 @@ A cada quatro respostas substantivas, ou ao trocar de fase, o entrevistador troc
 
 ## O registro de proveniência
 
-Nem toda afirmação numa entrevista tem o mesmo peso, e tratar todas como fato é como o pressuposto de alguém vira requisito do sistema. O método classifica cada afirmação relevante pela proveniência:
+Nem toda afirmação numa entrevista tem o mesmo peso, e tratar todas como fato é o caminho pelo qual o pressuposto de uma pessoa é incorporado ao sistema como requisito. O método classifica cada afirmação relevante pela proveniência:
 
 | Marca | Significado |
 |---|---|
@@ -67,7 +67,7 @@ Nem toda afirmação numa entrevista tem o mesmo peso, e tratar todas como fato 
 | `[ABERTA]` | questão sem resposta, com dono |
 | `[CONFLITO]` | afirmações incompatíveis aguardando decisão |
 
-A regra que mais protege a especificação: **opinião de stakeholder nunca vira `[FATO]` automaticamente**. Sem fonte identificável, é `[PRESSUPOSTO]`, por mais confiante que a pessoa esteja. "Os gerentes usam isso todo dia" dito pelo gerente comercial é pressuposto até alguém olhar o registro de acesso.
+A regra que mais protege a especificação: **opinião de stakeholder nunca é classificada como `[FATO]` automaticamente**. Sem fonte identificável, é `[PRESSUPOSTO]`, por mais confiante que a pessoa esteja. "Os gerentes usam isso todo dia" dito pelo gerente comercial é pressuposto até alguém olhar o registro de acesso.
 
 !!! tip "Aplique agora"
     Classifique com as marcas acima as três últimas afirmações que você ouviu sobre um requisito em andamento. Se todas viraram `[FATO]`, releia o critério: quantas têm fonte identificável?

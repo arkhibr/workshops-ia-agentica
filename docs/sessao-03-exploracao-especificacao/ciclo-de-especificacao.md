@@ -29,7 +29,34 @@ Nem todo pedido precisa das quatro etapas por extenso. Um ajuste de uma linha, r
 !!! tip "Aplique agora"
     Pegue um pedido real que está no seu backlog. Você consegue nomear pelo menos uma pergunta cuja resposta mudaria o código gerado? Se não conseguir nenhuma, o ciclo completo é exagero para esse caso. Assistência de codificação direta já resolve.
 
-## Isso vira código assim
+## Para o time de negócio
+
+"Ative o desconto de atacado" chega como uma frase dita numa reunião, e o artefato que ela produz do
+seu lado é o item de backlog. A etapa de **explorar** é a leitura do que já existe antes de escrever
+qualquer coisa nesse item: qual é a regra de desconto em vigor hoje, quem a definiu, e se alguma
+faixa já foi prometida a cliente sem estar registrada em lugar nenhum.
+
+A etapa de **perguntar** transforma a frase em decisões tomadas por quem tem autoridade para tomá-las.
+A conversa com a área demandante produz um registro com quatro colunas, e é ele que impede que a
+decisão volte a ser discutida daqui a três meses.
+
+| Pergunta | Resposta | Quem decidiu | Data |
+|---|---|---|---|
+| A partir de que valor começa a faixa de atacado? | Acima de R$ 10.000,00 | Gerência comercial | 21/09/2026 |
+| A faixa de atacado substitui a faixa por volume ou soma a ela? | Substitui | Gerência comercial | 21/09/2026 |
+| O teto de R$ 1.000,00 por pedido continua valendo? | Sim, sempre | Financeiro | 21/09/2026 |
+
+A etapa de **propor** cabe em três frases no próprio item, e serve para que a área demandante confirme
+o entendimento antes que qualquer pessoa comece a trabalhar. A etapa de **especificar** substitui o
+título do item por uma regra numerada e um critério de aceitação, na forma que a página de
+especificação executável desta sessão detalha.
+
+O sinal de que o ciclo não aconteceu é um item de backlog cujo texto tem a mesma informação da frase
+original, com o acréscimo de um título e de dois marcadores. Nenhum número novo entrou, nenhuma
+decisão foi registrada, e a primeira pessoa que ler o item vai ter que fazer as três perguntas da
+tabela acima por conta própria.
+
+## Para o time de desenvolvimento
 
 "Ative o desconto de atacado" chega como uma frase. O código que existe hoje na função de desconto não tem nenhuma noção de tipo de cliente:
 

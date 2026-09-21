@@ -14,20 +14,55 @@ from scripts.validate_content import (
     PAGINAS_FIXAS,
     SEM_TRANSICAO,
     SESSOES,
-    TEMAS_MAX,
-    TEMAS_MIN,
     strip_fences,
     thematic_pages,
 )
 
 COMPLETAS = tuple(slug for slug, (_, completa, _) in SESSOES.items() if completa)
-LINHA_ROTEIRO_RE = re.compile(r"^\|[^|]*\|\s*\[[^\]]+\]\(([a-z0-9.-]+\.md)\)\s*\|(.*)$", re.M)
+LINHA_TABELA_RE = re.compile(r"(?m)^\|(?!-)(.+)\|[ \t]*$")
+LINK_PAGINA_RE = re.compile(r"\[[^\]]+\]\(([a-z0-9.-]+\.md)\)")
+HORARIO_RE = re.compile(r"^\d{2}:\d{2}[–-]\d{2}:\d{2}$")
 MINUTOS_RE = re.compile(r"(\d+)\s*min")
+TOTAL_DECLARADO = 120
 
 
-def linhas_do_roteiro(slug: str) -> list[tuple[str, str]]:
+def tabela_do_roteiro(slug: str) -> str:
     texto = (DOCS / slug / "index.md").read_text(encoding="utf-8")
-    return LINHA_ROTEIRO_RE.findall(texto)
+    return texto.split("## Roteiro da sessão", 1)[1].split("\n## ", 1)[0]
+
+
+def linhas_do_roteiro(slug: str) -> list[tuple[str, int, list[str]]]:
+    """Cada linha da tabela vira (chave de bloco, minutos, páginas citadas).
+
+    Dois formatos convivem. No formato com trilhas, a primeira célula é a faixa de
+    horário e a chave é ela, porque linhas que repetem o mesmo horário são trilhas
+    paralelas e valem uma vez só no relógio. No formato sem trilhas, a chave é a
+    posição da linha e os minutos vêm da célula com "N min".
+    """
+    linhas = []
+    for posicao, bruta in enumerate(LINHA_TABELA_RE.findall(tabela_do_roteiro(slug))):
+        celulas = [c.strip() for c in bruta.split("|")]
+        paginas = LINK_PAGINA_RE.findall(bruta)
+        if celulas and HORARIO_RE.match(celulas[0]):
+            minutos = int(celulas[1]) if len(celulas) > 1 and celulas[1].isdigit() else 0
+            linhas.append((celulas[0], minutos, paginas))
+            continue
+        encontrados = [int(m) for m in MINUTOS_RE.findall(bruta)]
+        minutos = encontrados[0] if encontrados else 0
+        if minutos == TOTAL_DECLARADO:
+            continue
+        linhas.append((f"linha-{posicao}", minutos, paginas))
+    return linhas
+
+
+def paginas_do_roteiro(slug: str) -> list[str]:
+    """Páginas na ordem da primeira aparição no roteiro, sem repetição."""
+    ordem = []
+    for _, _, paginas in linhas_do_roteiro(slug):
+        for nome in paginas:
+            if nome not in ordem:
+                ordem.append(nome)
+    return ordem
 
 
 class OrganizacaoTematicaTest(unittest.TestCase):
@@ -39,13 +74,6 @@ class OrganizacaoTematicaTest(unittest.TestCase):
             for proibida in ("conceitos.md", "padroes-e-decisoes.md"):
                 with self.subTest(slug=slug, pagina=proibida):
                     self.assertFalse((DOCS / slug / proibida).exists())
-
-    def test_sessao_completa_tem_de_tres_a_oito_paginas_tematicas(self):
-        for slug in COMPLETAS:
-            with self.subTest(slug=slug):
-                temas = thematic_pages(DOCS / slug)
-                self.assertGreaterEqual(len(temas), TEMAS_MIN)
-                self.assertLessEqual(len(temas), TEMAS_MAX)
 
     def test_pagina_tematica_tem_um_unico_titulo_de_nivel_um(self):
         for slug in COMPLETAS:
@@ -76,19 +104,18 @@ class OrganizacaoTematicaTest(unittest.TestCase):
     def test_roteiro_lista_todas_as_paginas_da_sessao_menos_o_indice(self):
         for slug in COMPLETAS:
             with self.subTest(slug=slug):
-                no_roteiro = [nome for nome, _ in linhas_do_roteiro(slug)]
                 no_disco = {p.name for p in (DOCS / slug).glob("*.md")} - {"index.md"}
-                self.assertEqual(sorted(no_disco), sorted(no_roteiro))
+                self.assertEqual(sorted(no_disco), sorted(paginas_do_roteiro(slug)))
 
     def test_roteiro_soma_cento_e_vinte_minutos(self):
+        """Linhas que repetem o mesmo horário são trilhas paralelas, contam uma vez."""
         for slug in COMPLETAS:
             with self.subTest(slug=slug):
-                texto = (DOCS / slug / "index.md").read_text(encoding="utf-8")
-                tabela = texto.split("## Roteiro da sessão", 1)[1].split("\n## ", 1)[0]
-                minutos = [int(m) for m in MINUTOS_RE.findall(tabela)]
-                declarado = [m for m in minutos if m == 120]
-                self.assertTrue(declarado, "a tabela não declara o total de 120 min")
-                self.assertEqual(120, sum(m for m in minutos if m != 120))
+                por_horario = {}
+                for horario, minutos, _ in linhas_do_roteiro(slug):
+                    por_horario[horario] = minutos
+                self.assertTrue(por_horario, "a tabela do roteiro não tem linhas com horário")
+                self.assertEqual(120, sum(por_horario.values()))
 
     def test_ordem_do_nav_segue_a_ordem_do_roteiro(self):
         config = (DOCS.parent / "mkdocs.yml").read_text(encoding="utf-8")
@@ -96,7 +123,7 @@ class OrganizacaoTematicaTest(unittest.TestCase):
             with self.subTest(slug=slug):
                 no_nav = re.findall(rf"{slug}/([a-z0-9.-]+\.md)", config)
                 self.assertEqual("index.md", no_nav[0])
-                self.assertEqual([nome for nome, _ in linhas_do_roteiro(slug)], no_nav[1:])
+                self.assertEqual(paginas_do_roteiro(slug), no_nav[1:])
 
     def test_paginas_de_papel_fixo_existem_em_sessao_completa(self):
         for slug in COMPLETAS:

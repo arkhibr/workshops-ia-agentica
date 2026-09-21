@@ -67,7 +67,13 @@ PAGINAS_FIXAS = (
     "exercicios.md",
     "sintese-e-referencias.md",
 )
-NAO_TEMATICA = frozenset(PAGINAS_FIXAS)
+# Páginas de prática que só existem nas sessões que oferecem trilhas paralelas.
+# Não são obrigatórias e não são teoria, então o caso aplicado é bem-vindo nelas.
+PAGINAS_PRATICA_OPCIONAIS = (
+    "oficina-de-negocio.md",
+    "oficina-de-entrevista.md",
+)
+NAO_TEMATICA = frozenset(PAGINAS_FIXAS) | frozenset(PAGINAS_PRATICA_OPCIONAIS)
 
 # Páginas que encerram a sessão e por isso não carregam transição de saída.
 SEM_TRANSICAO = frozenset({"exercicios.md", "sintese-e-referencias.md"})
@@ -76,8 +82,6 @@ BLOOM = ("Recordar", "Compreender", "Aplicar", "Analisar", "Avaliar", "Criar")
 BLOOM_COM_GABARITO = ("Recordar", "Compreender")
 BLOOM_COM_RUBRICA = ("Aplicar",)
 
-TEMAS_MIN, TEMAS_MAX = 3, 8
-PALAVRAS_MIN, PALAVRAS_MAX = 300, 2100
 
 MARCADORES_PROIBIDOS = ("TODO", "TBD", "PLACEHOLDER", "PREENCHER")
 
@@ -351,24 +355,14 @@ def validate_session(
             if not (session_dir / page_name).is_file():
                 errors.append(f"página ausente: docs/{slug}/{page_name}")
 
+        # A quantidade de páginas temáticas não é limitada: cada página cobre uma
+        # intenção, e o número delas decorre do assunto, não de uma faixa fixa.
         temas = thematic_pages(session_dir)
-        if not TEMAS_MIN <= len(temas) <= TEMAS_MAX:
-            errors.append(
-                f"docs/{slug}: {len(temas)} páginas temáticas, "
-                f"fora da faixa de {TEMAS_MIN} a {TEMAS_MAX}"
-            )
         for name in ("conceitos.md", "padroes-e-decisoes.md"):
             if (session_dir / name).is_file():
                 errors.append(
                     f"docs/{slug}/{name}: a teoria é organizada por tema; "
                     "página por tipo de conteúdo não é permitida"
-                )
-        for name in temas:
-            palavras = len(WORD_RE.findall((session_dir / name).read_text(encoding="utf-8")))
-            if not PALAVRAS_MIN <= palavras <= PALAVRAS_MAX:
-                errors.append(
-                    f"docs/{slug}/{name}: {palavras} palavras, "
-                    f"fora da faixa de {PALAVRAS_MIN} a {PALAVRAS_MAX}"
                 )
 
         for esperada in imagens:

@@ -1,6 +1,6 @@
 # BR, FR e NFR
 
-Três perguntas diferentes escondidas numa especificação mal escrita: qual é a regra que o negócio impõe, o que o sistema precisa fazer, e sob que restrição de qualidade ele precisa fazer isso. Confundir as três produz uma especificação que parece completa e deixa buracos.
+Três perguntas diferentes escondidas numa especificação mal escrita: qual é a regra que o negócio impõe, o que o sistema precisa fazer, e sob que restrição de qualidade ele precisa fazer isso. Confundir as três produz uma especificação de aparência completa, com decisões de negócio ausentes do texto escrito.
 
 ## As três categorias
 
@@ -18,7 +18,7 @@ Três perguntas diferentes escondidas numa especificação mal escrita: qual é 
 
 ## O que a distinção muda na prática
 
-[Wiegers e Beatty](../referencia/bibliografia.md#wiegers-e-beatty-software-requirements-2013) tratam regra de negócio como categoria anterior aos requisitos de software, em vez de um requisito em si. Uma regra de negócio também vale para operação manual, fora de qualquer sistema, e é dela que os requisitos funcionais derivam. Essa ordem importa para quem escreve um pedido a um agente. BR vem primeiro, porque é a fonte de verdade. FR vem depois, como tradução da regra em comportamento de sistema. NFR fica por último, como restrição de qualidade sobre esse comportamento.
+[Wiegers e Beatty](../referencia/bibliografia.md#wiegers-e-beatty-software-requirements-2013) tratam regra de negócio como categoria anterior aos requisitos de software, em vez de um requisito em si. Uma regra de negócio também vale para operação manual, fora de qualquer sistema, e é dela que os requisitos funcionais derivam. Essa ordem importa para quem escreve um pedido a um agente, porque a regra de negócio é a fonte de verdade da qual o requisito funcional deriva como tradução em comportamento de sistema, e o requisito não funcional entra depois dos dois, como restrição de qualidade sobre esse comportamento.
 
 Confundir as três produz sintomas previsíveis. Uma regra de negócio escrita como requisito funcional ("o sistema deve limitar o desconto a R$ 1.000,00") esconde que o limite é uma decisão de negócio, e não uma escolha de implementação. Se o negócio mudar o teto amanhã, ninguém vai procurar essa mudança na especificação funcional. Um requisito não funcional escrito como regra de negócio ("o sistema deve ser rápido") não diz nada verificável, porque "rápido" é uma medida de engenharia que só significa alguma coisa com um número junto.
 
@@ -31,7 +31,29 @@ O sintoma mais comum é uma frase só, funcional na forma, carregando três regr
 
 A correção é prática. Regra de negócio ganha frase própria, numerada, antes do requisito funcional que a implementa. É isso que permite ao agente tratar "o teto é R$ 1.000,00" como restrição válida para qualquer faixa nova, em vez de detalhe da faixa de atacado que ele pode reinterpretar.
 
-## Isso vira código assim
+## Para o time de negócio
+
+As três categorias moram em artefatos diferentes do seu lado, e confundi-las faz com que uma decisão
+comercial seja registrada como detalhe técnico dentro de um item de backlog.
+
+| Categoria | Onde ela vive | Quem aprova mudança | O que acontece se ela mudar |
+|---|---|---|---|
+| Regra de negócio | Política comercial escrita, numerada e datada | Área demandante | O número muda num lugar só, e todo item que a referencia continua válido |
+| Requisito funcional | Item de backlog, com critério de aceitação | Produto, com a área demandante | O item é reescrito, e a regra permanece como está |
+| Requisito não funcional | Acordo de nível de serviço do produto | Produto, com quem opera o sistema | A medida é renegociada, com prazo e responsável |
+
+O teste que separa a regra de negócio do requisito funcional é perguntar se a frase continuaria
+verdadeira caso o trabalho fosse feito numa planilha, sem sistema nenhum. "O desconto de um pedido
+nunca ultrapassa R$ 1.000,00" continuaria. "A tela de fechamento exibe o desconto aplicado antes da
+confirmação" não continuaria, porque depende da existência da tela.
+
+O antipadrão aparece quando a regra chega ao time embutida na descrição do item, sem número próprio.
+A frase "o sistema deve aplicar desconto de 20% para atacado acima de R$ 10.000,00, respeitando o teto
+de R$ 1.000,00" carrega três regras distintas, e nenhuma delas tem identificador. Quando a gerência
+comercial decidir mudar o valor de corte, alguém vai precisar abrir os itens de backlog um a um para
+descobrir onde o número está escrito.
+
+## Para o time de desenvolvimento
 
 As três categorias não param na especificação. Cada uma aponta para uma parte diferente do código e do teste.
 
@@ -73,6 +95,6 @@ test('NFR-01: calcula 500 descontos em menos de 100ms', () => {
 });
 ```
 
-Cada categoria tem seu próprio lugar natural: BR na frase de negócio, FR na linha do código de produção, NFR num teste que mede tempo em vez de comparar valor. Pedir a um agente "o sistema deve ser rápido" nunca produziria o teste acima sozinho. Na melhor das hipóteses produziria um comentário dizendo que o código "foi otimizado".
+Cada categoria tem seu próprio lugar natural: BR na frase de negócio, FR na linha do código de produção, NFR num teste que mede tempo em vez de comparar valor. Um pedido como "o sistema deve ser rápido" não contém o limiar, a quantidade de amostras nem o critério de falha, que são os três dados de que o teste acima depende.
 
 **Próxima página:** [Atributos de qualidade e RAS](atributos-de-qualidade-e-ras.md).

@@ -12,7 +12,7 @@ Isso é tudo que o time recebeu. Nenhuma faixa, nenhum valor, nenhuma menção a
 
 ## Explorar
 
-Antes de perguntar qualquer coisa, o código já revela parte da resposta: `calcularDesconto(valorTotal, tipoCliente)` já aceita `tipoCliente`, e a Sessão 1 documentou que a intenção sempre foi uma faixa de 20% acima de R$ 10.000,00. Isso ainda não é a especificação. É o ponto de partida que evita perguntar algo que já está no código.
+Antes de perguntar qualquer coisa, o código já revela parte da resposta: `calcularDesconto(valorTotal, tipoCliente)` já aceita `tipoCliente`, e a Sessão 1 documentou que a intenção sempre foi uma faixa de 20% acima de R$ 10.000,00. Isso ainda não é a especificação. Esse levantamento é o ponto de partida, e evita perguntar algo cuja resposta já está registrada no código.
 
 ## Perguntar
 
@@ -70,5 +70,24 @@ Com a proposta validada, a especificação sai no padrão BR/FR/NFR:
 ## Leitura do exemplo
 
 Nenhuma dessas cinco linhas de regra veio de "pensar bem" sobre o problema: vieram de perguntar e registrar a resposta antes de escrever código. Se o time tivesse pedido direto ao agente "ative o desconto de atacado", ele teria adivinhado um valor de corte, uma regra de arredondamento na fronteira, uma posição sobre o teto e nenhuma exigência de desempenho sob carga. São quatro decisões que aqui vieram de quem realmente sabia a resposta, e a última delas só porque alguém perguntou por um atributo de qualidade em vez de assumir que "rápido o bastante" já estava implícito.
+
+## Retrotradução da especificação
+
+A especificação acima foi escrita por quem conduziu a conversa, e quem escreve enxerga nela a intenção
+que tinha na cabeça, não apenas o que o texto diz. A retrotradução separa as duas coisas. Ela consiste
+em abrir uma conversa nova com o agente, sem nenhum histórico desta sessão, colar somente as regras e
+os requisitos, e pedir a descrição em prosa do comportamento que eles produzem, sem julgamento e sem
+sugestão de melhoria.
+
+O que volta é a leitura de quem só tem o texto. A conferência é comparar essa leitura com a intenção
+original, e toda diferença encontrada é ambiguidade que o agente de implementação encontraria também.
+Três divergências aparecem com frequência nesta especificação: a faixa de atacado substituir ou somar
+à faixa por volume, o valor de R$ 10.000,00 exatos entrar ou ficar de fora, e o teto incidir sobre o
+percentual final ou sobre cada faixa isoladamente.
+
+A retrotradução é a única verificação disponível para quem não vai executar código, e ela funciona
+igualmente bem para quem vai. Um caso de teste prova que a implementação corresponde à especificação.
+A retrotradução prova que a especificação corresponde à intenção, que é uma pergunta anterior e que
+nenhum teste responde.
 
 **Próxima página:** [Estudo de caso](estudo-de-caso.md).

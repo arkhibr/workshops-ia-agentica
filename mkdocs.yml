@@ -72,7 +72,9 @@ nav:
           - Especificação executável: sessao-03-exploracao-especificacao/especificacao-executavel.md
           - Exemplo arquitetural: sessao-03-exploracao-especificacao/exemplo-arquitetural.md
           - Estudo de caso: sessao-03-exploracao-especificacao/estudo-de-caso.md
-          - Oficina de ferramentas: sessao-03-exploracao-especificacao/oficina-de-ferramentas.md
+          - "Oficina de ferramentas (trilha técnica)": sessao-03-exploracao-especificacao/oficina-de-ferramentas.md
+          - "Oficina de negócio (trilha de negócio)": sessao-03-exploracao-especificacao/oficina-de-negocio.md
+          - "Oficina de entrevista socrática (as duas trilhas)": sessao-03-exploracao-especificacao/oficina-de-entrevista.md
           - Exercícios: sessao-03-exploracao-especificacao/exercicios.md
           - Síntese e referências: sessao-03-exploracao-especificacao/sintese-e-referencias.md
       - S4 — Regras formais com IA:

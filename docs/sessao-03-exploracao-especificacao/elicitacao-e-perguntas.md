@@ -1,6 +1,6 @@
 # Perguntas que revelam ambiguidade
 
-Nem toda pergunta vale o mesmo. Perguntar "o que você quer?" devolve a mesma frase vaga que já foi dita. Um repertório pequeno de perguntas, feitas na ordem certa, expõe a regra de negócio que ninguém tinha percebido que precisava dizer.
+As perguntas não têm todas o mesmo rendimento, e perguntar "o que você quer?" devolve a mesma frase vaga que já foi dita. Um repertório pequeno de perguntas, feitas na ordem adequada, expõe a regra de negócio que ninguém havia percebido que precisava ser declarada.
 
 ## Cinco perguntas que quase sempre valem a pena
 
@@ -28,7 +28,30 @@ Nem toda pergunta é boa pergunta. "Você tem certeza que quer isso?" não revel
 !!! tip "Aplique agora"
     Pense na próxima vez que alguém do seu time fizer um pedido vago de mudança. Antes de abrir o agente, escreva as perguntas que você faria — não as respostas, só as perguntas — e veja quantas delas caem numa das cinco categorias acima.
 
-## Isso vira código assim
+## Para o time de negócio
+
+A pergunta sobre o valor exato da fronteira parece preciosismo até alguém precisar responder a um
+cliente que ficou de fora de um desconto por um centavo. A regra de faixas em vigor diz que pedidos
+acima de R$ 500,00 recebem 5%, e alguém precisou decidir, em algum momento, o que acontece com um
+pedido de exatamente R$ 500,00.
+
+| Pergunta de fronteira | Resposta registrada | Consequência para o cliente |
+|---|---|---|
+| R$ 500,00 exato entra na faixa de 5%? | Não, a faixa começa acima desse valor | Pedido de R$ 500,00 não recebe desconto |
+| R$ 10.000,00 exato entra na faixa de atacado? | Não, a faixa começa acima desse valor | Pedido de R$ 10.000,00 segue a faixa por volume |
+
+Quando a pergunta não é feita, ela é respondida assim mesmo, por quem estiver escrevendo o código
+naquele dia, com base na convenção mais comum da ferramenta que estiver usando. A decisão comercial
+passa a existir sem que a área comercial tenha participado dela, e só aparece quando um cliente
+reclama.
+
+O teste que separa a pergunta útil da decorativa é direto: a resposta muda alguma coisa no que vai ser
+entregue? "Vocês preferem que eu use uma tabela ou uma lista para organizar as faixas?" não muda o
+valor que o cliente recebe. "O desconto de atacado soma à faixa por volume ou substitui ela?" muda o
+valor de todo pedido acima de R$ 10.000,00, e por isso precisa de resposta antes de qualquer trabalho
+começar.
+
+## Para o time de desenvolvimento
 
 A segunda pergunta da lista ("o que acontece no valor exato da fronteira?") parece teórica até se olhar o código de faixa por valor:
 

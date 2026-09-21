@@ -2,7 +2,7 @@
 
 ## Nove ideias essenciais
 
-1. **O ciclo é explorar, perguntar, propor, especificar, nessa ordem.** Pular uma etapa não elimina o trabalho, só empurra o custo dela para a fase em que corrigir já significa reescrever.
+1. **O ciclo é explorar, perguntar, propor, especificar, nessa ordem.** Pular uma etapa transfere o custo dela para a fase em que corrigir já significa reescrever.
 2. **Um pedido vago não é descuido de quem pediu.** A cabeça de quem pediu já resolveu a ambiguidade sem perceber. O trabalho de perguntar é externalizar essa resolução antes que o agente a externalize errado.
 3. **BR, FR e NFR respondem perguntas diferentes.** Regra de negócio existiria sem o sistema. Requisito funcional só existe em relação a ele. Requisito não funcional é o critério de qualidade sob o qual o funcional acontece.
 4. **Regra de negócio disfarçada de requisito funcional é o antipadrão mais comum.** Quando a regra muda, ninguém encontra o número certo para trocar, porque ele nunca teve linha própria.
