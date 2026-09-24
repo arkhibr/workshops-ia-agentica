@@ -76,14 +76,16 @@ PAGINAS_PRATICA_OPCIONAIS = (
     "oficina-de-entrevista.md",
 )
 
-# Exceção documentada em 24/09/2026: a Sessão 3 abandonou o par papel-fixo /
-# página-temática. Ela organiza o conteúdo por tema (Intervenção socrática,
-# Decomposição de requisitos), cada tema com sua própria progressão de
-# profundidade (conceitos, exemplo de aplicação de IA, exercício geral,
-# exercício especialista). Só a visão geral e a síntese continuam obrigatórias
-# por nome; o resto é livre, conforme a organização conceitual do autor.
+# Exceção documentada em 24/09/2026 (Sessão 3) e estendida em 24/09/2026
+# (Sessão 4): estas sessões abandonaram o par papel-fixo / página-temática.
+# Cada uma organiza o conteúdo por tema (dois temas por sessão), cada tema com
+# sua própria progressão de profundidade (conceitos, exemplo de aplicação de
+# IA, exercício geral, exercício especialista). Só a visão geral e a síntese
+# continuam obrigatórias por nome; o resto é livre, conforme a organização
+# conceitual do autor.
 PAGINAS_FIXAS_POR_SESSAO: dict[str, tuple[str, ...]] = {
     "sessao-03-exploracao-especificacao": ("index.md", "sintese-e-referencias.md"),
+    "sessao-04-regras-formais-com-ia": ("index.md", "sintese-e-referencias.md"),
 }
 
 # Sessões cujo esquema abandona o confinamento clássico do caso aplicado

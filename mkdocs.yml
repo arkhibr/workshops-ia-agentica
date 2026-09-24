@@ -75,14 +75,14 @@ nav:
           - Síntese e referências: sessao-03-exploracao-especificacao/sintese-e-referencias.md
       - S4 — Regras formais com IA:
           - Visão geral: sessao-04-regras-formais-com-ia/index.md
-          - "SBVR: vocabulário e regras": sessao-04-regras-formais-com-ia/sbvr-vocabulario-e-regras.md
-          - "RuleSpeak: três formas de sentença": sessao-04-regras-formais-com-ia/rulespeak-tres-formas.md
-          - Tabelas de decisão e DMN: sessao-04-regras-formais-com-ia/tabelas-de-decisao-dmn.md
-          - IA como formalizadora: sessao-04-regras-formais-com-ia/ia-como-formalizadora.md
-          - Exemplo arquitetural: sessao-04-regras-formais-com-ia/exemplo-arquitetural.md
-          - Estudo de caso: sessao-04-regras-formais-com-ia/estudo-de-caso.md
-          - Oficina de ferramentas: sessao-04-regras-formais-com-ia/oficina-de-ferramentas.md
-          - Exercícios: sessao-04-regras-formais-com-ia/exercicios.md
+          - "Tema 1 — Conceitos: Vocabulário e sentenças de regra": sessao-04-regras-formais-com-ia/vocabulario-e-sentencas-conceitos.md
+          - "Tema 1 — Exemplo de aplicação de IA": sessao-04-regras-formais-com-ia/vocabulario-e-sentencas-exemplo-de-aplicacao-de-ia.md
+          - "Tema 1 — Exercício de IA (Geral)": sessao-04-regras-formais-com-ia/vocabulario-e-sentencas-exercicio-geral.md
+          - "Tema 1 — Exercício de IA (Especialista)": sessao-04-regras-formais-com-ia/vocabulario-e-sentencas-exercicio-especialista.md
+          - "Tema 2 — Conceitos: Tabelas de decisão e IA formalizadora": sessao-04-regras-formais-com-ia/tabelas-de-decisao-conceitos.md
+          - "Tema 2 — Exemplo de aplicação de IA": sessao-04-regras-formais-com-ia/tabelas-de-decisao-exemplo-de-aplicacao-de-ia.md
+          - "Tema 2 — Exercício de IA (Geral)": sessao-04-regras-formais-com-ia/tabelas-de-decisao-exercicio-geral.md
+          - "Tema 2 — Exercício de IA (Especialista)": sessao-04-regras-formais-com-ia/tabelas-de-decisao-exercicio-especialista.md
           - Síntese e referências: sessao-04-regras-formais-com-ia/sintese-e-referencias.md
       - S5 — Decomposição: sessao-05-decomposicao/index.md
   - Bloco 3 — Execução:

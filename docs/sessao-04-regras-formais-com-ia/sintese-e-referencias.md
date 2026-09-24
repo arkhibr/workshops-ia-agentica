@@ -2,35 +2,35 @@
 
 ## Nove ideias essenciais
 
-1. **Vocabulário vem antes de regra.** "O desconto do pedido" só é uma frase precisa se "pedido" e "desconto" já são termos definidos, não palavras do dia a dia.
-2. **Regra estrutural define; regra operativa rege conduta.** O teste que separa as duas: alguém pode violá-la, ou ela só descreve como o negócio organiza seus conceitos?
-3. **RuleSpeak tem três formas que contam como regra: "deve", "não deve" e "pode ... somente se".** "Deveria" não é nenhuma das três — é sugestão sem compromisso, não regra de negócio.
-4. **Tabela de decisão torna combinação visível.** Quando duas ou mais condições combinam, prosa esconde a combinação que ninguém tratou; tabela expõe a linha que falta.
-5. **Toda tabela de decisão precisa de uma política de acerto declarada.** Sem ela, alguém decide sozinho — geralmente o agente que implementa, tratando a tabela como First por padrão, sem que ninguém tenha pedido isso.
-6. **Um agente formaliza rápido, e isso não é garantia de fidelidade.** Formalização errada pode ler bem e ainda ter mudado o escopo da regra original, porque não existe teste automatizado que verifique se uma frase captura a intenção de outra.
-7. **Retrotradução é a verificação mais barata.** Peça para reescrever a regra formal de volta em prosa, numa conversa que não viu a formalização, e compare com a intenção original.
-8. **O [Estudo de caso](estudo-de-caso.md) mostrou o custo de pular a política de acerto.** Cada linha da tabela estava certa isoladamente; a falha foi não decidir o que fazer quando duas se aplicam ao mesmo pedido.
-9. **A régua desta sessão prepara a Sessão 5.** Regra formalizada, com vocabulário e tabela de decisão, é o insumo que a decomposição em planos executáveis vai fatiar em tarefas — sem essa formalização, o plano herdaria a mesma ambiguidade que esta sessão eliminou.
+1. **SBVR separa vocabulário de regra.** Só depois de os termos estarem definidos, com sinônimos a evitar registrados, uma regra pode ser escrita sem ambiguidade.
+2. **Regra estrutural não se viola; regra operativa, sim.** Classificação e derivação usam operador alético e definem o que algo é. Regra operativa usa operador deôntico e rege conduta.
+3. **RuleSpeak tem só três formas que contam como regra:** "deve", "não deve" e "pode ... somente se". "Deveria" não é regra, é preferência sem compromisso.
+4. **Toda regra formalizada carrega numeração, evidência e confiança.** Sem isso, ela se perde entre a especificação e o código, e ninguém aponta, meses depois, se ainda está implementada.
+5. **Um artefato sem especificação escrita ainda tem regras — só que escondidas.** Código legado e planilha com fórmula escondem regra de negócio do mesmo jeito que prosa ambígua, e a engenharia reversa extrai a mesma disciplina de qualquer um dos três.
+6. **Tabela de decisão torna combinação ausente visível.** Três ou mais condições combinando é o limiar em que prosa deixa de escalar.
+7. **Política de acerto não declarada é a falha mais cara, não a linha errada.** O incidente da linha que ninguém viu sobrepor mostrou isso: cada linha estava certa, e a ausência de uma decisão sobre sobreposição produziu um resultado que ninguém escolheu.
+8. **O agente formaliza, não decide.** Ele erra sozinho de três formas típicas: generaliza o escopo, inventa a política de acerto, confunde estrutural com operativa.
+9. **Retrotradução é a verificação que expõe os três erros acima.** Uma formalização que "parece certa" não é o mesmo que uma formalização que preservou a intenção, e só a retrotradução, numa conversa separada, distingue as duas.
 
 ## Checklist antes de encerrar a sessão
 
-- [ ] O grupo consegue distinguir regra estrutural de operativa usando o teste de violação, não só decorando os nomes.
-- [ ] Cada participante reescreve uma regra vaga do próprio backlog numa das três formas do RuleSpeak.
-- [ ] O grupo discutiu o Estudo de caso e chegou a um critério (não a uma opinião) sobre quando revisar sobreposição de tabela é obrigatório.
-- [ ] Cada participante formalizou uma regra com o agente e verificou por retrotradução, numa conversa separada, se o escopo se manteve.
-- [ ] Ninguém saiu achando que uma formalização "que parece profissional" é o mesmo que uma formalização verificada.
+- [ ] O grupo consegue distinguir regra estrutural de operativa pelo teste de violação, sem hesitar.
+- [ ] Cada participante formalizou pelo menos uma regra a partir de um artefato sem especificação escrita (código ou planilha), com vocabulário, numeração, evidência e confiança.
+- [ ] Cada participante rodou uma retrotradução numa conversa separada, e comparou o resultado com a intenção original.
+- [ ] O grupo discutiu o incidente da sobreposição e chegou a um critério, não a uma opinião, sobre quando a política de acerto exige revisão obrigatória.
+- [ ] Ninguém saiu achando que uma formalização "que parece profissional" dispensa a checagem por retrotradução.
 
 ## Autoavaliação
 
-1. Consigo explicar a diferença entre regra estrutural e operativa com um exemplo próprio, não só com o da Vetor?
-2. Sei reescrever uma regra vaga do meu backlog em "deve", "não deve" ou "pode ... somente se"?
-3. Diante de uma tabela de decisão com mais de uma dimensão de condição, sei procurar sobreposição antes de aceitar a implementação?
-4. Consigo, na minha própria formalização do exercício-âncora, dizer exatamente o que a retrotradução confirmou ou expôs como divergente?
+1. Consigo distinguir, numa regra que recebi, se ela é estrutural (classificação ou derivação) ou operativa, pelo teste de violação?
+2. Sei escolher, entre "deve", "não deve" e "pode ... somente se", a forma certa para uma regra do meu domínio?
+3. Consigo extrair regras de negócio de um código legado ou de uma planilha sem especificação, sem parafrasear a estrutura do artefato?
+4. Diante de uma tabela de decisão com mais de uma dimensão, sei declarar a política de acerto antes de alguém implementar?
 
-Se duas ou mais respostas forem "ainda não", releia [SBVR: vocabulário e regras](sbvr-vocabulario-e-regras.md) e [RuleSpeak: três formas de sentença](rulespeak-tres-formas.md) antes da Sessão 5.
+Se duas ou mais respostas forem "ainda não", releia [Vocabulário e sentenças de regra](vocabulario-e-sentencas-conceitos.md) e [Tabelas de decisão e IA como formalizadora](tabelas-de-decisao-conceitos.md) antes da Sessão 5.
 
 Todas as fontes citadas nesta sessão, com URL e resumo, estão reunidas na [bibliografia do curso](../referencia/bibliografia.md).
 
 ## Conexão com a próxima sessão
 
-A Sessão 5 assume que o time já sabe formalizar uma regra de negócio em vocabulário controlado e verificar a formalização por retrotradução. Ela avança para a decomposição: transformar a especificação BR/FR/NFR e a regra formalizada num plano executável, fatiado em tarefas que um agente consegue atacar uma de cada vez — o mesmo cuidado de "nada fica implícito", visto aqui para a regra, reaparece lá para o plano inteiro.
+A Sessão 5 assume que o time já sabe formalizar uma regra de negócio em vocabulário controlado, com evidência e confiança declaradas. Ela aprofunda a decomposição: como fatiar uma regra ou uma funcionalidade formalizada em tarefas executáveis por um agente, uma de cada vez, sem perder a rastreabilidade até a regra que a originou.
