@@ -9,7 +9,7 @@ from pathlib import Path
 import re
 import unittest
 
-from scripts.validate_content import DOCS, SESSOES, teaching_text
+from scripts.validate_content import DOCS, SESSOES, SESSOES_SEM_CONFINAMENTO_DE_CASO, teaching_text
 
 S1 = DOCS / "sessao-01-o-que-mudou"
 S2 = DOCS / "sessao-02-ambiente-agentico"
@@ -72,22 +72,33 @@ class SessaoDoisTest(unittest.TestCase):
 
 
 class CasoAplicadoTest(unittest.TestCase):
-    """A Vetor entra nas páginas aplicadas, nunca na teoria."""
+    """A Vetor entra nas páginas aplicadas, nunca na teoria.
+
+    Exceção documentada em 24/09/2026: sessões em SESSOES_SEM_CONFINAMENTO_DE_CASO
+    abandonaram o par papel-fixo/página-temática (ver SESSOES_SEM_CONFINAMENTO_DE_CASO
+    em scripts/validate_content.py) e organizam o conteúdo por tema, sem uma única
+    página de exemplo. Nelas o caso Vetor corre pela sessão inteira, por desenho.
+    """
 
     def test_a_vetor_nao_aparece_nas_paginas_tematicas(self):
         for slug, (_, completa, _) in SESSOES.items():
-            if not completa:
+            if not completa or slug in SESSOES_SEM_CONFINAMENTO_DE_CASO:
                 continue
             with self.subTest(slug=slug):
                 self.assertNotIn("Vetor", teaching_text(DOCS / slug))
 
     def test_a_vetor_aparece_no_exemplo_arquitetural_de_cada_sessao_completa(self):
         for slug, (_, completa, _) in SESSOES.items():
-            if not completa:
+            if not completa or slug in SESSOES_SEM_CONFINAMENTO_DE_CASO:
                 continue
             with self.subTest(slug=slug):
                 exemplo = (DOCS / slug / "exemplo-arquitetural.md").read_text(encoding="utf-8")
                 self.assertIn("Vetor", exemplo)
+
+    def test_a_vetor_aparece_em_algum_lugar_das_sessoes_sem_confinamento(self):
+        for slug in SESSOES_SEM_CONFINAMENTO_DE_CASO:
+            with self.subTest(slug=slug):
+                self.assertIn("Vetor", teaching_text(DOCS / slug))
 
 
 class BibliografiaTest(unittest.TestCase):

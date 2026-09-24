@@ -11,9 +11,9 @@ import unittest
 
 from scripts.validate_content import (
     DOCS,
-    PAGINAS_FIXAS,
     SEM_TRANSICAO,
     SESSOES,
+    paginas_fixas,
     strip_fences,
     thematic_pages,
 )
@@ -127,7 +127,7 @@ class OrganizacaoTematicaTest(unittest.TestCase):
 
     def test_paginas_de_papel_fixo_existem_em_sessao_completa(self):
         for slug in COMPLETAS:
-            for nome in PAGINAS_FIXAS:
+            for nome in paginas_fixas(slug):
                 with self.subTest(slug=slug, pagina=nome):
                     self.assertTrue((DOCS / slug / nome).is_file())
 

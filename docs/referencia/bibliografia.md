@@ -35,6 +35,7 @@ Referências que embasam o conteúdo metodológico do workshop, em ordem alfabé
 - [METR — Experienced Developer Productivity (2025)](#metr-experienced-developer-productivity-2025)
 - [OMG — Semantics of Business Vocabulary and Business Rules](#omg-semantics-of-business-vocabulary-and-business-rules)
 - [Osmani — Agent Harness Engineering (2026)](#osmani-agent-harness-engineering-2026)
+- [Paul e Elder — The Thinker's Guide to Socratic Questioning (2019)](#paul-e-elder-the-thinkers-guide-to-socratic-questioning-2019)
 - [Pearce et al. — Copilot Security (2022)](#pearce-et-al-copilot-security-2022)
 - [Peng et al. — Copilot Productivity (2023)](#peng-et-al-copilot-productivity-2023)
 - [Ross (ed.) — Business Rules Manifesto (2003)](#ross-ed-business-rules-manifesto-2003)
@@ -354,6 +355,16 @@ Especificação para vocabulário de negócio e regras formais — a base do blo
 Síntese prática do mesmo achado: um modelo mediano dentro de um bom arnês supera um bom modelo dentro de um arnês ruim.
 
 → Sessão 2.
+
+---
+
+### Paul e Elder — The Thinker's Guide to Socratic Questioning (2019)
+
+**PAUL, Richard; ELDER, Linda. *The Thinker's Guide to Socratic Questioning*.** Foundation for Critical Thinking Press, 2019.
+
+Define o questionamento socrático como a forma disciplinada de pensamento crítico aplicada em diálogo, e não como técnica de retórica: uma pergunta bem colocada expõe a estrutura lógica de um pensamento (o que ele pressupõe, que evidência sustenta, que implicação segue) em vez de aceitar a primeira formulação como definitiva. Classifica as perguntas em seis categorias — esclarecimento, pressupostos, evidências e razões, implicações e consequências, pontos de vista alternativos, e perguntas sobre a própria pergunta —, adotadas neste workshop como as seis categorias da entrevista socrática. O argumento central é que perguntar bem adia o fechamento em uma única leitura, e por isso mantém mais de uma interpretação viva por mais tempo do que a convergência prematura permitiria.
+
+→ Sessão 3.
 
 ---
 

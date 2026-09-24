@@ -58,7 +58,8 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
     "sessao-10-esteira-completa": ("Esteira completa", False, ()),
 }
 
-# As seis páginas de papel fixo. Tudo o mais numa sessão é página temática de teoria.
+# As seis páginas de papel fixo do esquema clássico. Tudo o mais numa sessão
+# clássica é página temática de teoria.
 PAGINAS_FIXAS = (
     "index.md",
     "exemplo-arquitetural.md",
@@ -67,13 +68,37 @@ PAGINAS_FIXAS = (
     "exercicios.md",
     "sintese-e-referencias.md",
 )
-# Páginas de prática que só existem nas sessões que oferecem trilhas paralelas.
-# Não são obrigatórias e não são teoria, então o caso aplicado é bem-vindo nelas.
+# Páginas de prática que só existem nas sessões clássicas que oferecem trilhas
+# paralelas. Não são obrigatórias e não são teoria, então o caso aplicado é
+# bem-vindo nelas.
 PAGINAS_PRATICA_OPCIONAIS = (
     "oficina-de-negocio.md",
     "oficina-de-entrevista.md",
 )
-NAO_TEMATICA = frozenset(PAGINAS_FIXAS) | frozenset(PAGINAS_PRATICA_OPCIONAIS)
+
+# Exceção documentada em 24/09/2026: a Sessão 3 abandonou o par papel-fixo /
+# página-temática. Ela organiza o conteúdo por tema (Intervenção socrática,
+# Decomposição de requisitos), cada tema com sua própria progressão de
+# profundidade (conceitos, exemplo de aplicação de IA, exercício geral,
+# exercício especialista). Só a visão geral e a síntese continuam obrigatórias
+# por nome; o resto é livre, conforme a organização conceitual do autor.
+PAGINAS_FIXAS_POR_SESSAO: dict[str, tuple[str, ...]] = {
+    "sessao-03-exploracao-especificacao": ("index.md", "sintese-e-referencias.md"),
+}
+
+# Sessões cujo esquema abandona o confinamento clássico do caso aplicado
+# (Vetor) à página exemplo-arquitetural.md. Nelas o caso corre por toda a
+# sessão, por desenho, porque não existe mais uma única página de exemplo.
+SESSOES_SEM_CONFINAMENTO_DE_CASO = frozenset(PAGINAS_FIXAS_POR_SESSAO)
+
+
+def paginas_fixas(slug: str) -> tuple[str, ...]:
+    """Páginas de nome obrigatório da sessão, com exceção documentada por slug."""
+    return PAGINAS_FIXAS_POR_SESSAO.get(slug, PAGINAS_FIXAS)
+
+
+def nao_tematica(slug: str) -> frozenset[str]:
+    return frozenset(paginas_fixas(slug)) | frozenset(PAGINAS_PRATICA_OPCIONAIS)
 
 # Páginas que encerram a sessão e por isso não carregam transição de saída.
 SEM_TRANSICAO = frozenset({"exercicios.md", "sintese-e-referencias.md"})
@@ -110,10 +135,11 @@ class Counts:
 
 def thematic_pages(session_dir: Path) -> tuple[str, ...]:
     """Nomes das páginas temáticas de uma sessão, em ordem de arquivo."""
+    excluidas = nao_tematica(session_dir.name)
     return tuple(
         path.name
         for path in sorted(session_dir.glob("*.md"))
-        if path.name not in NAO_TEMATICA
+        if path.name not in excluidas
     )
 
 
@@ -125,10 +151,11 @@ def teaching_text(session_dir: Path) -> str:
     página". Testes de conteúdo devem usar este auxiliar em vez de abrir um
     arquivo específico.
     """
+    excluidas = nao_tematica(session_dir.name)
     return "\n\n".join(
         path.read_text(encoding="utf-8")
         for path in sorted(session_dir.glob("*.md"))
-        if path.name not in NAO_TEMATICA
+        if path.name not in excluidas
     )
 
 
@@ -351,7 +378,7 @@ def validate_session(
         return
 
     if completa:
-        for page_name in PAGINAS_FIXAS:
+        for page_name in paginas_fixas(slug):
             if not (session_dir / page_name).is_file():
                 errors.append(f"página ausente: docs/{slug}/{page_name}")
 
