@@ -110,9 +110,9 @@ Os seis testes precisam passar antes de você continuar.
 
 > "Dá pra dar um desconto extra pros clientes que compram muito com a gente?"
 
-Escreva, sem abrir o bloco abaixo, de três a cinco perguntas que você faria antes de redigir a especificação. Use o repertório de [Perguntas que revelam ambiguidade](elicitacao-e-perguntas.md) como referência.
+Escreva, sem abrir o bloco abaixo, de três a cinco perguntas que você faria antes de redigir a especificação. Aplique o pensamento da [Entrevista socrática](entrevista-socratica.md): formule uma pergunta de cada vez, sem a resposta embutida na formulação, e deixe a resposta que você imagina para cada pergunta guiar a pergunta seguinte, sem despejar a lista inteira de uma vez, direto do pedido original. Distribua as perguntas por pelo menos duas das seis categorias do método — esclarecimento, pressupostos, evidências, implicações, perspectivas alternativas, meta-pensamento. Use o repertório de [Perguntas que revelam ambiguidade](elicitacao-e-perguntas.md) como fonte de categorias.
 
-**Passo 2 — as respostas.** Abra o bloco e compare com as perguntas que você escreveu.
+**Passo 2 — as respostas.** Abra o bloco e compare com as perguntas que você escreveu. A [Oficina de entrevista socrática](oficina-de-entrevista.md), logo em seguida, aplica o mesmo método numa conversa real com o agente como entrevistador, sobre a especificação ruim do painel de relatórios, um caso diferente do desconto trabalhado aqui.
 
 ??? note "Respostas de quem pediu — abra só depois de escrever suas próprias perguntas"
     - O que conta como "compra muito"? Cliente do tipo atacado com mais de 5 pedidos aprovados nos últimos 12 meses.
