@@ -13,6 +13,7 @@ from scripts.validate_content import DOCS, SESSOES, SESSOES_SEM_CONFINAMENTO_DE_
 
 S1 = DOCS / "sessao-01-o-que-mudou"
 S2 = DOCS / "sessao-02-ambiente-agentico"
+S4 = DOCS / "sessao-04-regras-formais-com-ia"
 BIBLIOGRAFIA = DOCS / "referencia" / "bibliografia.md"
 
 
@@ -69,6 +70,59 @@ class SessaoDoisTest(unittest.TestCase):
         oficina = (S2 / "oficina-de-ferramentas.md").read_text(encoding="utf-8")
         self.assertIn('=== "macOS/Linux"', oficina)
         self.assertIn('=== "Windows', oficina)
+
+
+class SessaoQuatroTest(unittest.TestCase):
+    def setUp(self):
+        self.teoria = teaching_text(S4)
+
+    def test_vocabulario_da_sessao_esta_coberto(self):
+        for termo in (
+            "conceitos",
+            "fatos",
+            "regra estrutural",
+            "regra operativa",
+            "IRPF",
+            "hipotético",
+            "TDD",
+            "SQL",
+            "precedência",
+            "evidência",
+            "confiança",
+        ):
+            with self.subTest(termo=termo):
+                self.assertIn(termo, self.teoria)
+        self.assertNotIn("TDDD", self.teoria)
+
+    def test_nova_arquitetura_de_paginas_existe(self):
+        for nome in (
+            "regras-formais-conceitos.md",
+            "regras-formais-exemplo-irpf.md",
+            "regras-formais-exercicio-geral.md",
+            "regras-formais-exercicio-especialista.md",
+            "arqueologia-de-regras-sql.md",
+        ):
+            with self.subTest(pagina=nome):
+                self.assertTrue((S4 / nome).is_file())
+
+    def test_exemplo_irpf_declara_limites_didaticos(self):
+        exemplo = (S4 / "regras-formais-exemplo-irpf.md").read_text(encoding="utf-8")
+        self.assertIn("valores hipotéticos", exemplo)
+        self.assertIn("não é orientação tributária", exemplo)
+
+    def test_exercicios_nao_inventam_resposta_para_lacuna(self):
+        for nome in (
+            "regras-formais-exercicio-geral.md",
+            "regras-formais-exercicio-especialista.md",
+        ):
+            with self.subTest(pagina=nome):
+                texto = (S4 / nome).read_text(encoding="utf-8")
+                self.assertIn("não invente", texto)
+
+    def test_arqueologia_exige_teste_de_precedencia(self):
+        arqueologia = (S4 / "arqueologia-de-regras-sql.md").read_text(encoding="utf-8")
+        self.assertIn("teste de precedência", arqueologia)
+        self.assertIn("dados ausentes", arqueologia)
 
 
 class CasoAplicadoTest(unittest.TestCase):
