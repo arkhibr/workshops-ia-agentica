@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker></defs>
+<rect width="1600" height="800" fill="#ffffff"/>
+<text x="60" y="70" font-size="36" font-weight="bold" fill="#12302b">Fluxo do exercício tributário: da fonte pública ao TDD</text>
+<text x="60" y="150" font-size="22" font-weight="bold" fill="#00695c">Exercício geral: mapa de regras do cashback</text>
+<text x="60" y="500" font-size="22" font-weight="bold" fill="#00695c">Exercício especialista: casos de teste em TDD</text>
+<rect x="60" y="170" width="260" height="170" rx="14" fill="#f4f6f5" stroke="#5f7a75" stroke-width="3"/>
+<text x="190" y="204" font-size="17" fill="#2f4f4a" text-anchor="middle">Entrada</text>
+<text x="190" y="238" font-size="24" font-weight="bold" fill="#12302b" text-anchor="middle">Fonte pública</text>
+<text x="190" y="270" font-size="18" fill="#2f4f4a" text-anchor="middle">LC 214/2025</text>
+<text x="190" y="294" font-size="18" fill="#2f4f4a" text-anchor="middle">texto compilado</text>
+<rect x="360" y="170" width="260" height="170" rx="14" fill="#e0f2f1" stroke="#00897b" stroke-width="3"/>
+<text x="490" y="204" font-size="17" fill="#2f4f4a" text-anchor="middle">Passo 1</text>
+<text x="490" y="238" font-size="24" font-weight="bold" fill="#12302b" text-anchor="middle">Marcação inicial</text>
+<text x="490" y="270" font-size="18" fill="#2f4f4a" text-anchor="middle">linha de base</text>
+<text x="490" y="294" font-size="18" fill="#2f4f4a" text-anchor="middle">antes do agente</text>
+<rect x="418.0" y="306" width="144" height="26" rx="13" fill="#00695c"/>
+<text x="490" y="325" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">participante</text>
+<rect x="660" y="170" width="260" height="170" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+<text x="790" y="204" font-size="17" fill="#2f4f4a" text-anchor="middle">Passo 2</text>
+<text x="790" y="238" font-size="24" font-weight="bold" fill="#12302b" text-anchor="middle">Mapa de regras</text>
+<text x="790" y="270" font-size="18" fill="#2f4f4a" text-anchor="middle">RC · RD · RN</text>
+<text x="790" y="294" font-size="18" fill="#2f4f4a" text-anchor="middle">evidência e LACUNA</text>
+<rect x="748.0" y="306" width="84" height="26" rx="13" fill="#2e7d32"/>
+<text x="790" y="325" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">agente</text>
+<rect x="960" y="170" width="260" height="170" rx="14" fill="#e0f2f1" stroke="#00897b" stroke-width="3"/>
+<text x="1090" y="204" font-size="17" fill="#2f4f4a" text-anchor="middle">Passo 3</text>
+<text x="1090" y="238" font-size="24" font-weight="bold" fill="#12302b" text-anchor="middle">Revisão por camada</text>
+<text x="1090" y="270" font-size="18" fill="#2f4f4a" text-anchor="middle">perguntas</text>
+<text x="1090" y="294" font-size="18" fill="#2f4f4a" text-anchor="middle">de controle</text>
+<rect x="1018.0" y="306" width="144" height="26" rx="13" fill="#00695c"/>
+<text x="1090" y="325" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">participante</text>
+<rect x="1260" y="170" width="260" height="170" rx="14" fill="#e0f2f1" stroke="#00897b" stroke-width="3"/>
+<text x="1390" y="204" font-size="17" fill="#2f4f4a" text-anchor="middle">Passo 4</text>
+<text x="1390" y="238" font-size="24" font-weight="bold" fill="#12302b" text-anchor="middle">Tabela de decisão</text>
+<text x="1390" y="270" font-size="18" fill="#2f4f4a" text-anchor="middle">política de acerto</text>
+<text x="1390" y="294" font-size="18" fill="#2f4f4a" text-anchor="middle">e precedência</text>
+<rect x="1318.0" y="306" width="144" height="26" rx="13" fill="#00695c"/>
+<text x="1390" y="325" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">participante</text>
+<rect x="60" y="520" width="260" height="170" rx="14" fill="#e0f2f1" stroke="#00897b" stroke-width="3"/>
+<text x="190" y="554" font-size="17" fill="#2f4f4a" text-anchor="middle">Passo 1</text>
+<text x="190" y="588" font-size="24" font-weight="bold" fill="#12302b" text-anchor="middle">Regras testáveis</text>
+<text x="190" y="620" font-size="18" fill="#2f4f4a" text-anchor="middle">saída</text>
+<text x="190" y="644" font-size="18" fill="#2f4f4a" text-anchor="middle">observável</text>
+<rect x="118.0" y="656" width="144" height="26" rx="13" fill="#00695c"/>
+<text x="190" y="675" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">participante</text>
+<rect x="360" y="520" width="260" height="170" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+<text x="490" y="554" font-size="17" fill="#2f4f4a" text-anchor="middle">Passo 2</text>
+<text x="490" y="588" font-size="24" font-weight="bold" fill="#12302b" text-anchor="middle">Matriz de testes</text>
+<text x="490" y="620" font-size="18" fill="#2f4f4a" text-anchor="middle">ID da regra</text>
+<text x="490" y="644" font-size="18" fill="#2f4f4a" text-anchor="middle">e evidência legal</text>
+<rect x="448.0" y="656" width="84" height="26" rx="13" fill="#2e7d32"/>
+<text x="490" y="675" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">agente</text>
+<rect x="660" y="520" width="260" height="170" rx="14" fill="#e0f2f1" stroke="#00897b" stroke-width="3"/>
+<text x="790" y="554" font-size="17" fill="#2f4f4a" text-anchor="middle">Passo 3</text>
+<text x="790" y="588" font-size="24" font-weight="bold" fill="#12302b" text-anchor="middle">Crítica da matriz</text>
+<text x="790" y="620" font-size="18" fill="#2f4f4a" text-anchor="middle">quatro defeitos</text>
+<text x="790" y="644" font-size="18" fill="#2f4f4a" text-anchor="middle">frequentes</text>
+<rect x="718.0" y="656" width="144" height="26" rx="13" fill="#00695c"/>
+<text x="790" y="675" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">participante</text>
+<rect x="960" y="520" width="260" height="170" rx="14" fill="#004d40" stroke="#004d40" stroke-width="3"/>
+<text x="1090" y="554" font-size="17" fill="#e0f2f1" text-anchor="middle">Passo 4</text>
+<text x="1090" y="588" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">Ciclo TDD</text>
+<text x="1090" y="620" font-size="18" fill="#e0f2f1" text-anchor="middle">vermelho, verde</text>
+<text x="1090" y="644" font-size="18" fill="#e0f2f1" text-anchor="middle">e refatorar</text>
+<rect x="1018.0" y="656" width="144" height="26" rx="13" fill="#00897b"/>
+<text x="1090" y="675" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">participante</text>
+<rect x="1260" y="520" width="260" height="170" rx="14" fill="#ffffff" stroke="#5f7a75" stroke-width="3" stroke-dasharray="4 5"/>
+<text x="1390" y="554" font-size="17" fill="#2f4f4a" text-anchor="middle">Pendência</text>
+<text x="1390" y="588" font-size="24" font-weight="bold" fill="#12302b" text-anchor="middle">test.todo</text>
+<text x="1390" y="620" font-size="18" fill="#2f4f4a" text-anchor="middle">caso INDETERMINADO</text>
+<text x="1390" y="644" font-size="18" fill="#2f4f4a" text-anchor="middle">com a pergunta</text>
+<g stroke="#00695c" stroke-width="4" fill="none">
+<line x1="322" y1="255" x2="356" y2="255" marker-end="url(#seta)"/>
+<line x1="322" y1="605" x2="356" y2="605" marker-end="url(#seta)"/>
+<line x1="622" y1="255" x2="656" y2="255" marker-end="url(#seta)"/>
+<line x1="622" y1="605" x2="656" y2="605" marker-end="url(#seta)"/>
+<line x1="922" y1="255" x2="956" y2="255" marker-end="url(#seta)"/>
+<line x1="922" y1="605" x2="956" y2="605" marker-end="url(#seta)"/>
+<line x1="1222" y1="255" x2="1256" y2="255" marker-end="url(#seta)"/>
+<line x1="1222" y1="605" x2="1256" y2="605" marker-end="url(#seta)"/>
+<path d="M1390,342 L1390,420 L30,420 L30,605 L54,605" marker-end="url(#seta)"/>
+</g>
+<rect x="660" y="404" width="280" height="32" rx="16" fill="#ffffff"/>
+<text x="800" y="427" font-size="19" font-weight="bold" fill="#00695c" text-anchor="middle">mapa revisado é a entrada</text>
+</svg>

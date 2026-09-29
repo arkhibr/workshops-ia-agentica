@@ -29,6 +29,7 @@ Referências que embasam o conteúdo metodológico do workshop, em ordem alfabé
 - [Jimenez et al. — SWE-bench (2024)](#jimenez-et-al-swe-bench-2024)
 - [Karpathy — Software 2.0 (2017)](#karpathy-software-20-2017)
 - [Karpathy — Software Is Changing Again (2025)](#karpathy-software-is-changing-again-2025)
+- [Lei Complementar 214/2025 — IBS, CBS e Imposto Seletivo](#lei-complementar-2142025-ibs-cbs-e-imposto-seletivo)
 - [MADR — Markdown Architectural Decision Records v4](#madr-markdown-architectural-decision-records-v4)
 - [Mendes — Controle e Autonomia (Módulo 4, Agentes)](#mendes-controle-e-autonomia-modulo-4-agentes)
 - [Meszaros — xUnit Test Patterns (2007)](#meszaros-xunit-test-patterns-2007)
@@ -300,6 +301,16 @@ Formulação dos três paradigmas coexistentes: Software 1.0 (código explícito
 
 ---
 
+### Lei Complementar 214/2025 — IBS, CBS e Imposto Seletivo
+
+**BRASIL. *Lei Complementar nº 214, de 16 de janeiro de 2025: texto compilado*.** Presidência da República, com alterações posteriores, inclusive da Lei Complementar nº 227/2026. <https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214compilado.htm>. Acesso em: 29 set. 2026.
+
+Institui IBS, CBS e Imposto Seletivo. Os arts. 112, 113, 116, 117, 118 e 124, recorte usado na Sessão 4, disciplinam a devolução personalizada para pessoas físicas de famílias de baixa renda: instituição da devolução (art. 112), destinatário e critérios cumulativos (art. 113), momento da devolução (art. 116), consumo considerado e ressalva do Imposto Seletivo (art. 117, com redação da LC 227/2026), percentuais e limite de ampliação por lei específica (art. 118) e definição de devolução geral e devolução específica (art. 124). É a única fonte legal do exercício de mapa de regras e testes da Sessão 4.
+
+→ Sessão 4.
+
+---
+
 ### MADR — Markdown Architectural Decision Records v4
 
 **MADR (Markdown Architectural Decision Records) v4.** Template leve para registro de decisões arquiteturais — contexto, opções consideradas, decisão, consequências.
@@ -342,7 +353,7 @@ Experimento randomizado com 16 desenvolvedores experientes (cerca de 5 anos de t
 
 **OMG. *Semantics of Business Vocabulary and Business Rules (SBVR)*, versão 1.5.** Object Management Group, dez. 2019. <https://www.omg.org/spec/SBVR/1.5/About-SBVR/>
 
-Especificação para vocabulário de negócio e regras formais — a base do bloco de especificação em linguagem controlada. Distingue duas categorias de regra: a **regra estrutural** (ou definicional), que usa operadores aléticos ("é necessário que", "é possível que") para dizer como o negócio organiza e define seus próprios conceitos; e a **regra operativa** (ou comportamental), que usa operadores deônticos ("é obrigatório que", "é permitido que") para reger conduta: a única das duas que alguém pode efetivamente violar.
+Especificação para vocabulário de negócio e regras formais, usada como base do bloco de especificação em linguagem controlada. Distingue duas categorias de regra. A **regra estrutural** (ou definicional) usa operadores aléticos ("é necessário que", "é possível que") para dizer como o negócio organiza e define seus próprios conceitos. A **regra operativa** (ou comportamental) usa operadores deônticos ("é obrigatório que", "é permitido que") para reger conduta e é a única das duas que alguém pode efetivamente violar.
 
 → Sessão 4.
 
@@ -394,7 +405,7 @@ Experimento randomizado com 70 desenvolvedores profissionais que completam uma t
 
 Dez artigos que definem regra de negócio como categoria própria de conhecimento, separada de processo. O Artigo 2 ("Separate From Processes, Not Contained In Them") declara que "regras não são processo nem procedimento" e que "regras se aplicam através de processos e procedimentos". Deve existir um corpo coeso de regras, cumprido de forma consistente em toda a atividade de negócio relevante. O Artigo 4 ("Declarative, Not Procedural") exige que toda regra seja expressa em frase declarativa, sem sequenciamento implícito: é essa declaratividade que distingue uma regra de negócio (BR) de um passo de um fluxo.
 
-→ Sessão 3, 4.
+→ Sessão 3.
 
 ---
 
@@ -402,7 +413,7 @@ Dez artigos que definem regra de negócio como categoria própria de conheciment
 
 **ROSS, Ronald G. *RuleSpeak Sentence Forms*, versão 2.2.** Business Rule Solutions, LLC. Desenvolvido a partir de 1996. <https://www.rulespeak.com/en/>
 
-Notação em linguagem natural controlada para expressar regra de negócio sem ambiguidade. O documento normativo organiza cinco formas de sentença em torno de duas palavras-chave de regra e duas de conselho: **"must"** (algo é exigido), **"must not"** (algo é proibido), **"may ... only"** (permissão condicional — ainda uma regra de negócio, com exceção explícita) e, como *statements of advice* e não regra propriamente dita, **"may"** isolado e **"need not"**. O próprio documento afirma que o RuleSpeak foi "uma das três notações de referência usadas na criação do SBVR, e é consistente com esse padrão".
+Notação em linguagem natural controlada para expressar regra de negócio sem ambiguidade. O documento normativo organiza cinco formas de sentença em torno de duas palavras-chave de regra e duas de conselho: **"must"** (algo é exigido), **"must not"** (algo é proibido), **"may ... only"** (permissão condicional, que continua sendo regra de negócio, com exceção explícita) e, como *statements of advice*, que o documento classifica à parte das regras, **"may"** isolado e **"need not"**. O próprio documento afirma que o RuleSpeak foi "uma das três notações de referência usadas na criação do SBVR, e é consistente com esse padrão".
 
 → Sessão 4.
 

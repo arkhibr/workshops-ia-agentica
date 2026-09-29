@@ -9,10 +9,16 @@ from pathlib import Path
 import re
 import unittest
 
-from scripts.validate_content import DOCS, SESSOES, SESSOES_SEM_CONFINAMENTO_DE_CASO, teaching_text
+from scripts.validate_content import (
+    DOCS,
+    SESSOES,
+    SESSOES_SEM_CONFINAMENTO_DE_CASO,
+    teaching_text,
+)
 
 S1 = DOCS / "sessao-01-o-que-mudou"
 S2 = DOCS / "sessao-02-ambiente-agentico"
+S4 = DOCS / "sessao-04-regras-formais-com-ia"
 BIBLIOGRAFIA = DOCS / "referencia" / "bibliografia.md"
 
 
@@ -71,13 +77,116 @@ class SessaoDoisTest(unittest.TestCase):
         self.assertIn('=== "Windows', oficina)
 
 
+class SessaoQuatroTest(unittest.TestCase):
+    def setUp(self):
+        self.teoria = teaching_text(S4)
+
+    def test_vocabulario_da_sessao_esta_coberto(self):
+        for termo in (
+            "conceitos",
+            "fatos",
+            "regra estrutural",
+            "regra operativa",
+            "IRPF",
+            "hipotético",
+            "TDD",
+            "SQL",
+            "precedência",
+            "evidência",
+            "confiança",
+        ):
+            with self.subTest(termo=termo):
+                self.assertIn(termo, self.teoria)
+        self.assertNotIn("TDDD", self.teoria)
+
+    def test_nova_arquitetura_de_paginas_existe(self):
+        for nome in (
+            "regras-formais-conceitos.md",
+            "regras-formais-exemplo-irpf.md",
+            "regras-formais-exercicio-geral.md",
+            "regras-formais-exercicio-especialista.md",
+            "arqueologia-de-regras-sql.md",
+        ):
+            with self.subTest(pagina=nome):
+                self.assertTrue((S4 / nome).is_file())
+
+    def test_exemplo_irpf_declara_limites_didaticos(self):
+        exemplo = (S4 / "regras-formais-exemplo-irpf.md").read_text(encoding="utf-8")
+        self.assertIn("valores hipotéticos", exemplo)
+        self.assertIn("não é orientação tributária", exemplo)
+
+    def test_exercicios_nao_inventam_resposta_para_lacuna(self):
+        for nome in (
+            "regras-formais-exercicio-geral.md",
+            "regras-formais-exercicio-especialista.md",
+        ):
+            with self.subTest(pagina=nome):
+                texto = (S4 / nome).read_text(encoding="utf-8")
+                self.assertIn("não invente", texto)
+
+    def test_arqueologia_exige_teste_de_precedencia(self):
+        arqueologia = (S4 / "arqueologia-de-regras-sql.md").read_text(encoding="utf-8")
+        self.assertIn("teste de precedência", arqueologia)
+        self.assertIn("dados ausentes", arqueologia)
+        self.assertIn("intervalo exato de linhas", arqueologia)
+
+    def test_arqueologia_separa_evidencia_e_validacao_de_dominio(self):
+        arqueologia = (S4 / "arqueologia-de-regras-sql.md").read_text(encoding="utf-8")
+        self.assertIn("### 2. Captura de evidência", arqueologia)
+        self.assertIn("### 4. Validação de domínio", arqueologia)
+
+    def test_exercicios_citam_a_fonte_legal_com_data_de_acesso(self):
+        planalto = "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214compilado.htm"
+        for nome in (
+            "regras-formais-exercicio-geral.md",
+            "regras-formais-exercicio-especialista.md",
+        ):
+            with self.subTest(pagina=nome):
+                texto = (S4 / nome).read_text(encoding="utf-8")
+                self.assertIn(planalto, texto)
+                self.assertIn("29 de setembro de 2026", texto)
+                self.assertIn("117", texto)
+                self.assertNotIn("reforma-tributaria-do-consumo/marcos", texto)
+
+    def test_exercicios_marcam_lacuna_e_caso_indeterminado(self):
+        geral = (S4 / "regras-formais-exercicio-geral.md").read_text(encoding="utf-8")
+        especialista = (S4 / "regras-formais-exercicio-especialista.md").read_text(encoding="utf-8")
+        self.assertIn("LACUNA", geral)
+        self.assertIn("menor fragmento", geral)
+        self.assertIn("INDETERMINADO", especialista)
+        self.assertIn("| Precedência |", especialista)
+        self.assertIn("node --test", especialista)
+
+    def test_devolucao_especifica_mantem_o_sentido_do_art_124(self):
+        """Art. 124, II: "específica" é a diferença acima dos percentuais do art. 118."""
+        for nome in (
+            "regras-formais-conceitos.md",
+            "regras-formais-exercicio-especialista.md",
+            "assets/calculo-beneficio.sql",
+        ):
+            with self.subTest(arquivo=nome):
+                texto = (S4 / nome).read_text(encoding="utf-8")
+                self.assertNotIn("percentual específico", texto)
+                self.assertNotIn("percentuais específicos", texto)
+                self.assertNotIn("DEVOLUCAO_ESPECIFICA", texto)
+
+    def test_exemplo_irpf_nao_classifica_calculo_como_regra_operativa(self):
+        exemplo = (S4 / "regras-formais-exemplo-irpf.md").read_text(encoding="utf-8")
+        self.assertNotIn("A apuração deve excluir", exemplo)
+        self.assertNotIn("RN-03", exemplo)
+        self.assertIn("O contribuinte", exemplo)
+
+
 class CasoAplicadoTest(unittest.TestCase):
-    """A Vetor entra nas páginas aplicadas, nunca na teoria.
+    """Quando a Vetor aparece, ela fica nas páginas aplicadas, nunca na teoria.
+
+    O caso Vetor é opcional desde 29/09/2026: cada sessão o usa quando ele é o
+    melhor exemplo disponível, e nenhum teste exige a presença dele.
 
     Exceção documentada em 24/09/2026: sessões em SESSOES_SEM_CONFINAMENTO_DE_CASO
     abandonaram o par papel-fixo/página-temática (ver SESSOES_SEM_CONFINAMENTO_DE_CASO
     em scripts/validate_content.py) e organizam o conteúdo por tema, sem uma única
-    página de exemplo. Nelas o caso Vetor corre pela sessão inteira, por desenho.
+    página de exemplo. Nelas o caso aplicado corre pela sessão inteira, por desenho.
     """
 
     def test_a_vetor_nao_aparece_nas_paginas_tematicas(self):
@@ -86,19 +195,6 @@ class CasoAplicadoTest(unittest.TestCase):
                 continue
             with self.subTest(slug=slug):
                 self.assertNotIn("Vetor", teaching_text(DOCS / slug))
-
-    def test_a_vetor_aparece_no_exemplo_arquitetural_de_cada_sessao_completa(self):
-        for slug, (_, completa, _) in SESSOES.items():
-            if not completa or slug in SESSOES_SEM_CONFINAMENTO_DE_CASO:
-                continue
-            with self.subTest(slug=slug):
-                exemplo = (DOCS / slug / "exemplo-arquitetural.md").read_text(encoding="utf-8")
-                self.assertIn("Vetor", exemplo)
-
-    def test_a_vetor_aparece_em_algum_lugar_das_sessoes_sem_confinamento(self):
-        for slug in SESSOES_SEM_CONFINAMENTO_DE_CASO:
-            with self.subTest(slug=slug):
-                self.assertIn("Vetor", teaching_text(DOCS / slug))
 
 
 class BibliografiaTest(unittest.TestCase):

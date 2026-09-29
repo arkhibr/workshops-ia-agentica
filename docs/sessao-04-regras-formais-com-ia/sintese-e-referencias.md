@@ -1,36 +1,50 @@
 # Síntese e referências
 
-## Nove ideias essenciais
+A sessão percorreu duas direções: da política escrita para o modelo formal e do código existente para as regras que ele implementa. Nos dois casos, o produto é um mapa rastreável em que cada regra aponta para o artigo ou a linha de código que a sustenta.
 
-1. **SBVR separa vocabulário de regra.** Só depois de os termos estarem definidos, com sinônimos a evitar registrados, uma regra pode ser escrita sem ambiguidade.
-2. **Regra estrutural não se viola; regra operativa, sim.** Classificação e derivação usam operador alético e definem o que algo é. Regra operativa usa operador deôntico e rege conduta.
-3. **RuleSpeak tem só três formas que contam como regra:** "deve", "não deve" e "pode ... somente se". "Deveria" não é regra, é preferência sem compromisso.
-4. **Toda regra formalizada carrega numeração, evidência e confiança.** Sem isso, ela se perde entre a especificação e o código, e ninguém aponta, meses depois, se ainda está implementada.
-5. **Um artefato sem especificação escrita ainda tem regras — só que escondidas.** Código legado e planilha com fórmula escondem regra de negócio do mesmo jeito que prosa ambígua, e a engenharia reversa extrai a mesma disciplina de qualquer um dos três.
-6. **Tabela de decisão torna combinação ausente visível.** Três ou mais condições combinando é o limiar em que prosa deixa de escalar.
-7. **Política de acerto não declarada é a falha mais cara, não a linha errada.** O incidente da linha que ninguém viu sobrepor mostrou isso: cada linha estava certa, e a ausência de uma decisão sobre sobreposição produziu um resultado que ninguém escolheu.
-8. **O agente formaliza, não decide.** Ele erra sozinho de três formas típicas: generaliza o escopo, inventa a política de acerto, confunde estrutural com operativa.
-9. **Retrotradução é a verificação que expõe os três erros acima.** Uma formalização que "parece certa" não é o mesmo que uma formalização que preservou a intenção, e só a retrotradução, numa conversa separada, distingue as duas.
+## Ideias essenciais
 
-## Checklist antes de encerrar a sessão
+1. **Conceitos vêm antes das regras.** Um termo indefinido transfere a ambiguidade para todas as sentenças que o usam e para todos os testes derivados delas.
+2. **Fatos ligam conceitos.** A leitura inversa de cada tipo de fato expõe a cardinalidade, a direção e os pressupostos que a prosa costuma deixar implícitos.
+3. **Regra estrutural organiza o domínio.** Classificação e derivação definem o que as coisas são e como os valores se calculam, e nenhum ator as cumpre ou as descumpre.
+4. **Regra operativa rege conduta.** Obrigação, proibição e permissão condicionada têm um ator identificável, que pode cumpri-las ou violá-las.
+5. **Atomicidade torna a regra verificável.** Uma sentença com vários efeitos normativos precisa ser decomposta até que cada regra tenha um único efeito e um único ID.
+6. **Tabela de decisão revela combinação e precedência.** A política de acerto, seja Unique, First ou Priority, faz parte da regra e precisa estar declarada na tabela.
+7. **Lacuna é resultado válido.** Um agente disciplinado registra o rótulo LACUNA e formula a pergunta que o especialista do domínio precisa responder.
+8. **TDD começa na regra.** Cada caso de teste conserva o ID e a evidência da sentença que lhe deu origem, e os casos indeterminados entram como pendentes.
+9. **Código é evidência de comportamento implantado.** A arqueologia registra o que o SQL faz, e a intenção do negócio só entra no catálogo depois da validação de domínio.
 
-- [ ] O grupo consegue distinguir regra estrutural de operativa pelo teste de violação, sem hesitar.
-- [ ] Cada participante formalizou pelo menos uma regra a partir de um artefato sem especificação escrita (código ou planilha), com vocabulário, numeração, evidência e confiança.
-- [ ] Cada participante rodou uma retrotradução numa conversa separada, e comparou o resultado com a intenção original.
-- [ ] O grupo discutiu o incidente da sobreposição e chegou a um critério, não a uma opinião, sobre quando a política de acerto exige revisão obrigatória.
-- [ ] Ninguém saiu achando que uma formalização "que parece profissional" dispensa a checagem por retrotradução.
+## Checklist do mapa de regras
+
+- [ ] Conceitos têm definições e sinônimos arriscados.
+- [ ] Fatos relacionam os conceitos sem misturar consequência normativa.
+- [ ] Classificações e derivações estão separadas.
+- [ ] Obrigações, proibições e permissões usam sentenças atômicas.
+- [ ] Exceções e precedência aparecem explicitamente.
+- [ ] Cada regra possui ID, evidência, confiança e questão em aberto.
+- [ ] A tabela declara política de acerto.
+- [ ] Casos de teste apontam para a regra de origem.
+- [ ] Lacunas permanecem sem resposta inventada.
 
 ## Autoavaliação
 
-1. Consigo distinguir, numa regra que recebi, se ela é estrutural (classificação ou derivação) ou operativa, pelo teste de violação?
-2. Sei escolher, entre "deve", "não deve" e "pode ... somente se", a forma certa para uma regra do meu domínio?
-3. Consigo extrair regras de negócio de um código legado ou de uma planilha sem especificação, sem parafrasear a estrutura do artefato?
-4. Diante de uma tabela de decisão com mais de uma dimensão, sei declarar a política de acerto antes de alguém implementar?
+1. Consigo distinguir conceito, fato e regra numa frase densa?
+2. Sei explicar por que uma derivação não é regra operativa?
+3. Consigo transformar uma exceção distante em precedência explícita?
+4. Sei recusar um resultado esperado quando a fonte não o determina?
+5. Consigo citar as linhas de SQL que sustentam uma regra recuperada?
 
-Se duas ou mais respostas forem "ainda não", releia [Vocabulário e sentenças de regra](vocabulario-e-sentencas-conceitos.md) e [Tabelas de decisão e IA como formalizadora](tabelas-de-decisao-conceitos.md) antes da Sessão 5.
+Se duas respostas forem “ainda não”, refaça o ninho de IRPF usando o prompt-base e compare sua decomposição com as seis etapas do exemplo.
 
-Todas as fontes citadas nesta sessão, com URL e resumo, estão reunidas na [bibliografia do curso](../referencia/bibliografia.md).
+## Fundamentação
+
+- **[OMG — SBVR 1.5](../referencia/bibliografia.md#omg-semantics-of-business-vocabulary-and-business-rules).** Vocabulário, tipos de fato, regras estruturais e regras operativas.
+- **[OMG — DMN 1.5](../referencia/bibliografia.md#decision-model-and-notation-dmn).** Tabelas de decisão e políticas de acerto Unique, First e Priority.
+- **[Ronald G. Ross — RuleSpeak](../referencia/bibliografia.md#ross-rulespeak).** Formas controladas para sentenças de regra.
+- **[Lei Complementar nº 214/2025, texto compilado](../referencia/bibliografia.md#lei-complementar-2142025-ibs-cbs-e-imposto-seletivo).** Arts. 112, 113, 116, 117 e 118 sobre destinatário, consumo considerado, momento e percentuais da devolução personalizada de IBS e CBS, e art. 124 sobre devolução geral e devolução específica, com as alterações da Lei Complementar nº 227/2026, acesso em 29 de setembro de 2026.
+
+As referências completas e seus links estão na [bibliografia do curso](../referencia/bibliografia.md).
 
 ## Conexão com a próxima sessão
 
-A Sessão 5 assume que o time já sabe formalizar uma regra de negócio em vocabulário controlado, com evidência e confiança declaradas. Ela aprofunda a decomposição: como fatiar uma regra ou uma funcionalidade formalizada em tarefas executáveis por um agente, uma de cada vez, sem perder a rastreabilidade até a regra que a originou.
+A Sessão 5 recebe o mapa produzido aqui, com regras atômicas identificadas por ID, e decompõe a entrega em tarefas que preservem a rastreabilidade até cada regra de origem.

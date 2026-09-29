@@ -21,10 +21,6 @@ Ao final desta sessão, o participante deve ser capaz de:
 3. **Aplicar** contexto explícito a um pedido de código e comparar o resultado com um pedido intuitivo.
 4. **Reconhecer**, na própria prática, onde o piso, o teto e o julgamento humano agem.
 
-## A Vetor
-
-A **Vetor** é uma plataforma fictícia de e-commerce B2B usada como fio condutor nas dez sessões do workshop. A equipe de desenvolvimento da Vetor atende dois perfis de cliente (padrão e atacado) e mantém o código em C#, JavaScript e TypeScript, as mesmas linguagens que a FUNDEP usa. Cada sessão avança um pouco o código da Vetor. Esta primeira usa a regra de desconto por faixa de valor do pedido para tornar concretos os conceitos de vibe coding, contexto explícito e engenharia agêntica.
-
 ## Roteiro da sessão (2h, das 10h às 12h)
 
 | # | Página | Bloco | Tempo | Resultado esperado |
@@ -34,7 +30,7 @@ A **Vetor** é uma plataforma fictícia de e-commerce B2B usada como fio conduto
 | 3 | [A tese do Software 3.0](software-3-0.md) | Teoria | 7 min | O prompt como artefato que governa o sistema, mais piso, teto e julgamento |
 | 4 | [Sistemas agênticos e simplicidade](sistemas-agenticos.md) | Teoria | 7 min | Fronteira entre fluxo de trabalho e agente, e a recomendação de simplicidade |
 | 5 | [Avaliação de modelos](avaliacao-de-modelos.md) | Teoria | 3 min | Cinco critérios para ler um benchmark antes de escolher um modelo |
-| 6 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 10 min | Ver, com a Vetor, onde um prompt vago perde regra de negócio |
+| 6 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 10 min | Ver, com a Vetor, plataforma fictícia de e-commerce B2B, onde um prompt vago perde regra de negócio |
 | 7 | [Estudo de caso](estudo-de-caso.md) | Leitura depois da aula | depois da aula | Critério objetivo para quando SDD se justifica |
 | — | Intervalo | — | 5 min | — |
 | 8 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 35 min | Três experimentos práticos com o próprio agente do participante |

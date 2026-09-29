@@ -19,9 +19,13 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 IMAGES = DOCS / "assets" / "images"
+# Documentos internos de planejamento: excluídos do site por `exclude_docs` no
+# mkdocs.yml e, pelo mesmo motivo, fora do nav e das checagens de página publicada.
+INTERNOS = DOCS / "superpowers"
 
 # `completa` distingue a sessão já desenvolvida da que ainda é esqueleto.
-# Ao construir uma sessão nova, vire a chave e declare as imagens esperadas.
+# Ao construir uma sessão nova, vire a chave e declare as imagens esperadas:
+# nome simples para docs/assets/images/, ou caminho relativo à pasta da sessão.
 SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
     "sessao-01-o-que-mudou": (
         "O que mudou",
@@ -49,7 +53,16 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
         ),
     ),
     "sessao-03-exploracao-especificacao": ("Exploração e especificação", True, ()),
-    "sessao-04-regras-formais-com-ia": ("Regras formais com IA", True, ()),
+    "sessao-04-regras-formais-com-ia": (
+        "Regras formais com IA",
+        True,
+        (
+            "assets/mapa-de-regras.png",
+            "assets/ninho-irpf.png",
+            "assets/fluxo-regra-tributaria.png",
+            "assets/arqueologia-sql.png",
+        ),
+    ),
     "sessao-05-decomposicao": ("Decomposição", False, ()),
     "sessao-06-tdd-assistido": ("TDD assistido por IA", False, ()),
     "sessao-07-estrategias-avancadas-teste": ("Estratégias avançadas de teste", False, ()),
@@ -395,8 +408,13 @@ def validate_session(
                 )
 
         for esperada in imagens:
-            if not (IMAGES / esperada).is_file():
-                errors.append(f"imagem declarada e ausente: docs/assets/images/{esperada}")
+            # Nome simples fica em docs/assets/images/; caminho com barra é
+            # relativo à pasta da sessão, como os ativos próprios da Sessão 4.
+            destino = session_dir / esperada if "/" in esperada else IMAGES / esperada
+            if not destino.is_file():
+                errors.append(
+                    f"imagem declarada e ausente: {destino.relative_to(ROOT).as_posix()}"
+                )
 
     for path in sorted(session_dir.glob("*.md")):
         text = path.read_text(encoding="utf-8")
@@ -425,6 +443,8 @@ def validate_shared_pages(
     for path in sorted(DOCS.rglob("*.md")):
         if any(session_dir in path.parents for session_dir in session_dirs):
             continue
+        if INTERNOS in path.parents:
+            continue
         text = path.read_text(encoding="utf-8")
         for marcador in MARCADORES_PROIBIDOS:
             if re.search(rf"\b{marcador}\b", text):
@@ -437,6 +457,8 @@ def validate_nav(errors: list[str]) -> None:
     config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
     declaradas = set(re.findall(r"([\w./-]+\.md)", config))
     for path in sorted(DOCS.rglob("*.md")):
+        if INTERNOS in path.parents:
+            continue
         relativa = path.relative_to(DOCS).as_posix()
         if relativa not in declaradas:
             errors.append(f"docs/{relativa}: página fora do nav do mkdocs.yml")

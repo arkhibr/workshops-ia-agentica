@@ -10,7 +10,7 @@
 6. **Especificação executável traz valor de entrada e resultado esperado.** O teste: alguém que nunca ouviu falar do domínio consegue escrever os casos de conferência sem perguntar mais nada?
 7. **Uma especificação pode estar certa e ainda produzir o sistema errado.** O incidente do pedido acumulado, na página de decomposição de requisitos, mostrou isso: a falha estava na pergunta que nunca foi feita, com BR e FR perfeitamente fiéis um ao outro.
 8. **O ciclo completo nem sempre compensa.** Mudança pequena, reversível, sem regra nova: resolve-se perguntando de cabeça. O ciclo formal se paga quando a regra é nova ou mais de uma pessoa vai manter o código depois.
-9. **O critério de decisão desta sessão prepara a próxima.** A Sessão 4 formaliza a regra de negócio em si — vocabulário controlado, três formas de sentença, tabela de decisão — usando o mesmo material que esta sessão aprendeu a extrair de um pedido vago.
+9. **O critério de decisão desta sessão prepara a próxima.** A Sessão 4 parte da separação entre regra de negócio e requisito funcional feita aqui e formaliza a regra com o vocabulário controlado do SBVR, as sentenças do RuleSpeak e tabelas de decisão, aplicados a um exemplo didático de IRPF com valores hipotéticos, a exercícios sobre o cashback do IBS e da CBS que terminam em casos de teste escritos em TDD e à recuperação de regras implícitas numa consulta SQL.
 
 ## Checklist antes de encerrar a sessão
 
@@ -33,4 +33,4 @@ Todas as fontes citadas nesta sessão, com URL e resumo, estão reunidas na [bib
 
 ## Conexão com a próxima sessão
 
-A Sessão 4 assume que o time já sabe separar regra de negócio de requisito funcional e já pratica o hábito de perguntar antes de especificar. Ela aprofunda exatamente a regra de negócio: como formalizá-la em vocabulário controlado (SBVR), em frases sem ambiguidade (RuleSpeak) e em tabela de decisão (DMN) — com a IA atuando como formalizadora, sem autoridade para decidir a regra.
+A Sessão 4 assume que o time já sabe separar regra de negócio de requisito funcional e já pratica o hábito de perguntar antes de especificar. Ela aprofunda a regra de negócio com vocabulário controlado (SBVR), sentenças sem ambiguidade (RuleSpeak) e tabelas de decisão com política de acerto (DMN), aplicados a um exemplo didático de IRPF com valores hipotéticos e a dois exercícios sobre o cashback do IBS e da CBS da Lei Complementar nº 214/2025, o segundo deles concluído com casos de teste escritos em TDD. A sessão termina com a arqueologia de regras em SQL, na qual o agente recupera as regras implícitas de uma consulta existente e cita as linhas que sustentam cada uma, sem autoridade para decidir qual regra vale.

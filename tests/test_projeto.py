@@ -34,6 +34,8 @@ class EstruturaTest(unittest.TestCase):
 
         for caminho in sorted(DOCS.rglob("*.md")):
             relativo = caminho.relative_to(DOCS).as_posix()
+            if relativo.startswith("superpowers/"):
+                continue
             with self.subTest(pagina=relativo):
                 self.assertIn(relativo, declaradas)
 
