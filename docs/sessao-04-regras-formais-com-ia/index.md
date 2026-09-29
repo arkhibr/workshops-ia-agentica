@@ -14,7 +14,7 @@ Estas páginas apoiam uma sessão conduzida ao vivo, sem leitura prévia obrigat
 
 ## Os dois temas e o contrato de saída
 
-**Tema 1 — Regras formais com IA.** O grupo usa o SBVR (*Semantics of Business Vocabulary and Business Rules*, padrão da OMG para vocabulário e regras de negócio), parte de prosa, separa conceitos e fatos, classifica regras estruturais e operativas, atomiza sentenças e organiza combinações em tabelas de decisão, que dispõem em linhas as condições e o resultado de cada combinação. A demonstração usa um exemplo fictício de IRPF. Os exercícios usam o cashback do IBS e da CBS, previsto nos arts. 112 a 118 da Lei Complementar nº 214/2025.
+**Tema 1 — Regras formais com IA.** O grupo usa o SBVR (*Semantics of Business Vocabulary and Business Rules*, padrão da OMG para vocabulário e regras de negócio), parte de prosa, separa conceitos e fatos, classifica regras estruturais e operativas, atomiza sentenças e organiza combinações em tabelas de decisão, que dispõem em linhas as condições e o resultado de cada combinação. A demonstração usa um exemplo fictício de IRPF. Os exercícios usam o cashback do IBS e da CBS, previsto nos arts. 112, 113, 116, 117, 118 e 124 da Lei Complementar nº 214/2025.
 
 **Tema 2 — Arqueologia de regras.** A arqueologia de regras recupera decisões de negócio já incorporadas a um sistema. O grupo parte de SQL, trata cada condição como evidência de comportamento implementado e recupera um catálogo SBVR com casos de teste. Neste tema todos os participantes examinam o mesmo artefato, sem divisão entre trilhas Geral e Especialista.
 

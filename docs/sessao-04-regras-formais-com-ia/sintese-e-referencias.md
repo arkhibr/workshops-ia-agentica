@@ -38,10 +38,10 @@ Se duas respostas forem “ainda não”, refaça o ninho de IRPF usando o promp
 
 ## Fundamentação
 
-- **OMG — SBVR 1.5.** Vocabulário, tipos de fato, regras estruturais e regras operativas.
-- **OMG — DMN 1.5.** Tabelas de decisão e políticas de acerto.
-- **Ronald G. Ross — RuleSpeak.** Formas controladas para sentenças de regra.
-- **Lei Complementar nº 214/2025, texto compilado.** Arts. 112 a 118 sobre destinatário, consumo considerado, momento e percentuais da devolução personalizada de IBS e CBS, e art. 124 sobre devolução geral e devolução específica, com as alterações da Lei Complementar nº 227/2026, acesso em 29 de setembro de 2026.
+- **[OMG — SBVR 1.5](../referencia/bibliografia.md#omg-semantics-of-business-vocabulary-and-business-rules).** Vocabulário, tipos de fato, regras estruturais e regras operativas.
+- **[OMG — DMN 1.5](../referencia/bibliografia.md#decision-model-and-notation-dmn).** Tabelas de decisão e políticas de acerto Unique, First e Priority.
+- **[Ronald G. Ross — RuleSpeak](../referencia/bibliografia.md#ross-rulespeak).** Formas controladas para sentenças de regra.
+- **[Lei Complementar nº 214/2025, texto compilado](../referencia/bibliografia.md#lei-complementar-2142025-ibs-cbs-e-imposto-seletivo).** Arts. 112, 113, 116, 117 e 118 sobre destinatário, consumo considerado, momento e percentuais da devolução personalizada de IBS e CBS, e art. 124 sobre devolução geral e devolução específica, com as alterações da Lei Complementar nº 227/2026, acesso em 29 de setembro de 2026.
 
 As referências completas e seus links estão na [bibliografia do curso](../referencia/bibliografia.md).
 

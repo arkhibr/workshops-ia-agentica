@@ -1,10 +1,10 @@
 # Exercício de IA — Especialista: casos de teste em TDD
 
-Este exercício parte do mapa de regras do cashback do IBS e da CBS produzido no exercício geral, formalizado a partir dos arts. 112, 113, 116, 117 e 118 do [texto compilado da Lei Complementar nº 214/2025](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214compilado.htm), consultado em 29 de setembro de 2026. O objetivo é converter regras verificadas em casos de teste antes de qualquer implementação, seguindo TDD (*Test-Driven Development*, prática em que o teste é escrito e visto falhando antes do código que o satisfaz).
+Este exercício parte do mapa de regras do cashback do IBS e da CBS produzido no exercício geral, formalizado a partir dos arts. 112, 113, 116, 117, 118 e 124 do [texto compilado da Lei Complementar nº 214/2025](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214compilado.htm), consultado em 29 de setembro de 2026. O objetivo é converter regras verificadas em casos de teste antes de qualquer implementação, seguindo TDD (*Test-Driven Development*, prática em que o teste é escrito e visto falhando antes do código que o satisfaz).
 
 ## Entrada obrigatória
 
-Use o mapa com conceitos, fatos, regras estruturais, regras operativas, exceções, conflitos, lacunas, evidência e confiança. Se o mapa ainda chama de regra operativa uma derivação de percentual ou uma classificação de pessoa, corrija o tipo e o prefixo do ID antes do Passo 1, porque cada teste herda o ID da regra de origem.
+Use o mapa com conceitos, fatos, regras estruturais, regras operativas, exceções, conflitos, lacunas, evidência e confiança. Se o mapa ainda chama de regra operativa uma derivação de percentual ou uma classificação de pessoa, corrija o tipo e o prefixo do ID antes do Passo 1, porque cada teste herda o ID da regra de origem. O prefixo segue a convenção da sessão: RC identifica regra estrutural de classificação, RD identifica regra estrutural de derivação, RN identifica regra operativa e T identifica caso de teste.
 
 ![Fluxo em duas faixas. Na faixa do exercício geral, a fonte pública (LC 214/2025, texto compilado) segue para a marcação inicial feita pelo participante, o mapa de regras gerado pelo agente com RC, RD, RN, evidência e LACUNA, a revisão por camada e a tabela de decisão com política de acerto e precedência. O mapa revisado é a entrada da faixa do exercício especialista, que segue por regras testáveis, matriz de testes gerada pelo agente, crítica da matriz e ciclo TDD de vermelho, verde e refatorar, e termina em test.todo para cada caso INDETERMINADO.](assets/fluxo-regra-tributaria.png)
 
@@ -27,8 +27,8 @@ Dependência de regulamento continua como dependência na matriz. Quando a fonte
 
 ```text
 Você receberá um mapa de regras formalizado a partir dos arts. 112, 113,
-116, 117 e 118 da LC 214/2025 compilada. Proponha casos de teste antes de
-qualquer implementação, seguindo TDD.
+116, 117, 118 e 124 da LC 214/2025 compilada. Proponha casos de teste antes
+de qualquer implementação, seguindo TDD.
 
 Para cada caso, devolva:
 - ID do teste;
@@ -81,7 +81,7 @@ O ciclo usa JavaScript com o executor de testes nativo do Node.js (`node:test`),
 
 **Passo 4.1:** crie a pasta do exercício com os comandos abaixo, que funcionam no PowerShell do Windows, no macOS e no Linux.
 
-```bash
+```shell
 mkdir cashback-tdd
 cd cashback-tdd
 mkdir src
@@ -130,7 +130,7 @@ test.todo("T-90 renda per capita ausente: a ausência impede a classificação o
 
 **Passo 4.4:** rode a suíte e confirme que T-01 falha com a mensagem “ainda não foi implementada” e que T-90 aparece como `todo`.
 
-```bash
+```shell
 node --test
 ```
 

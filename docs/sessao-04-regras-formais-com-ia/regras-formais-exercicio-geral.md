@@ -86,7 +86,7 @@ necessária na seção I.
 | Fatos | A ligação entre documento fiscal, CPF e membro da unidade familiar foi representada? |
 | Classificação | Os quatro critérios cumulativos da pessoa destinatária aparecem juntos? |
 | Derivação | Percentual do tributo foi separado do valor monetário devolvido? |
-| Operação | A concessão no momento da cobrança recebeu um ator, ou ficou como LACUNA porque os artigos do recorte não o nomeiam? |
+| Operação | O mapa registrou como regra operativa a obrigação do agente financeiro de transferir os valores às famílias destinatárias em até 10 dias após a disponibilização (art. 116, §§3º e 4º), e só marcou como LACUNA o ator da concessão no momento da cobrança depois de confirmar que o recorte não o nomeia? |
 | Exceção | Itens sujeitos ao Imposto Seletivo ficaram fora do consumo considerado? |
 | Categorias | O botijão ficou com os percentuais da frase [4] e com o momento definido em regulamento da frase [5]? |
 | Limite de ampliação | A exceção da frase [6] impede ampliar o percentual da CBS das categorias da frase [4]? |

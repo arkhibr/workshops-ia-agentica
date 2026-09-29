@@ -305,7 +305,7 @@ Formulação dos três paradigmas coexistentes: Software 1.0 (código explícito
 
 **BRASIL. *Lei Complementar nº 214, de 16 de janeiro de 2025: texto compilado*.** Presidência da República, com alterações posteriores, inclusive da Lei Complementar nº 227/2026. <https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214compilado.htm>. Acesso em: 29 set. 2026.
 
-Institui IBS, CBS e Imposto Seletivo. Os arts. 112 a 124 disciplinam a devolução personalizada para pessoas físicas de famílias de baixa renda: destinatário e critérios cumulativos (art. 113), momento da devolução (art. 116), consumo considerado e ressalva do Imposto Seletivo (art. 117, com redação da LC 227/2026), percentuais e limite de ampliação por lei específica (art. 118) e definição de devolução geral e devolução específica (art. 124). É a única fonte legal do exercício de mapa de regras e testes da Sessão 4.
+Institui IBS, CBS e Imposto Seletivo. Os arts. 112, 113, 116, 117, 118 e 124, recorte usado na Sessão 4, disciplinam a devolução personalizada para pessoas físicas de famílias de baixa renda: instituição da devolução (art. 112), destinatário e critérios cumulativos (art. 113), momento da devolução (art. 116), consumo considerado e ressalva do Imposto Seletivo (art. 117, com redação da LC 227/2026), percentuais e limite de ampliação por lei específica (art. 118) e definição de devolução geral e devolução específica (art. 124). É a única fonte legal do exercício de mapa de regras e testes da Sessão 4.
 
 → Sessão 4.
 
