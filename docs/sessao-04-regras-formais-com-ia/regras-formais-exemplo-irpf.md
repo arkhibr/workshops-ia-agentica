@@ -9,7 +9,7 @@ Esta demonstração usa o cálculo do Imposto de Renda da Pessoa Física (IRPF) 
 
 > Para calcular o imposto mensal, considere os rendimentos recebidos no mês, mas retire os valores isentos e também as deduções aceitas, sendo que dependente vale R$ 200 por pessoa e despesas de saúde entram pelo valor comprovado, com o total das deduções, tirando saúde, limitado a R$ 1.000. Se depois disso a base ficar até R$ 2.500 não há imposto, e passando disso até R$ 4.000 cobra-se 10% só do que passou de R$ 2.500, e acima de R$ 4.000 cobra-se R$ 150 mais 20% do excedente, e o imposto devido no mês é o calculado menos o que já foi retido, sem gerar imposto negativo, e quem tiver moléstia grave não paga sobre proventos de aposentadoria desde que exista laudo válido no mês.
 
-O parágrafo mistura definições, fórmula, faixas, teto, exceção documental e compensação. Pedir a um agente que “transforme isso em regra” sem contrato de saída costuma produzir uma paráfrase do parágrafo, sem identificadores, evidência ou tipo de regra que um teste consiga verificar.
+O parágrafo mistura definições, fórmula, faixas, teto, exceção documental e compensação. Um pedido para que o agente “transforme isso em regra”, sem contrato de saída, deixa o formato da resposta a critério do modelo e admite como resposta uma paráfrase do parágrafo, sem identificadores, evidência ou tipo de regra que um teste consiga verificar.
 
 ![À esquerda, o ninho de regras aparece como um único bloco de texto com trechos de cores diferentes. Uma seta de decomposição leva a oito cartões: 8 conceitos e 6 tipos de fato (Passo 1), 2 classificações RC e 6 derivações RD (Passo 2), 2 regras operativas RN candidatas (Passo 3), precedência em 6 etapas inferidas (Passo 4), 3 faixas F na tabela de decisão (Passo 5) e 1 lacuna de arredondamento (Passo 6). Os cartões convergem para 5 casos de fronteira.](assets/ninho-irpf.png)
 
@@ -72,13 +72,13 @@ Se o especialista responder que a política só limita o cálculo, RN-01 sai do 
 5. aplicar a faixa por RD-05
 6. compensar o imposto retido e limitar o resultado a zero por RD-06
 
-Essa ordem foi inferida das dependências entre valores. Sua confiança permanece média até validação pelo especialista do domínio.
+Essa ordem foi inferida das dependências entre valores, e sua confiança permanece média até a validação pelo especialista do domínio.
 
 ## Passo 5 — tabela de decisão
 
 A **tabela de decisão** de RD-05 organiza as faixas em linhas, cada uma com uma condição sobre a base e o imposto bruto correspondente.
 
-**Política de acerto: Unique.** Os intervalos são mutuamente exclusivos.
+**Política de acerto: Unique.** As faixas F1, F2 e F3 são mutuamente exclusivas, e cada base de cálculo satisfaz a condição de exatamente uma linha.
 
 | Regra | Base de cálculo | Imposto bruto |
 |---|---:|---:|

@@ -12,7 +12,7 @@ Uma política pode estar correta em cada frase e falhar no conjunto. Condições
 
 Estas páginas apoiam uma sessão conduzida ao vivo, sem leitura prévia obrigatória, em que o instrutor alterna explicação, demonstração e prática, e cada exercício termina com um artefato revisável.
 
-## Dois temas, um contrato de saída
+## Os dois temas e o contrato de saída
 
 **Tema 1 — Regras formais com IA.** O grupo usa o SBVR (*Semantics of Business Vocabulary and Business Rules*, padrão da OMG para vocabulário e regras de negócio), parte de prosa, separa conceitos e fatos, classifica regras estruturais e operativas, atomiza sentenças e organiza combinações em tabelas de decisão, que dispõem em linhas as condições e o resultado de cada combinação. A demonstração usa um exemplo fictício de IRPF. Os exercícios usam o cashback do IBS e da CBS, previsto nos arts. 112 a 118 da Lei Complementar nº 214/2025.
 

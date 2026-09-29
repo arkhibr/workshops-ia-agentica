@@ -47,4 +47,4 @@ As referências completas e seus links estão na [bibliografia do curso](../refe
 
 ## Conexão com a próxima sessão
 
-A Sessão 5 recebe regras menores, identificadas e testáveis. O próximo passo é decompor a entrega em tarefas que preservem a rastreabilidade até o mapa produzido aqui.
+A Sessão 5 recebe o mapa produzido aqui, com regras atômicas identificadas por ID, e decompõe a entrega em tarefas que preservem a rastreabilidade até cada regra de origem.

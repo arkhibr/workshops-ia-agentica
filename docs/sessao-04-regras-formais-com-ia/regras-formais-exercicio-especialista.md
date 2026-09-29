@@ -55,7 +55,7 @@ INDETERMINADO e formule a pergunta que desbloqueia o teste.
 
 ## Passo 3 — critique a matriz
 
-Procure quatro defeitos frequentes:
+Procure na matriz os quatro defeitos abaixo:
 
 1. **teste sem regra de origem**, que perde a rastreabilidade até o artigo
 2. **teste com dados demais**, que esconde qual entrada mudou o resultado

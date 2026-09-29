@@ -9,7 +9,13 @@ from pathlib import Path
 import re
 import unittest
 
-from scripts.validate_content import DOCS, SESSOES, SESSOES_SEM_CONFINAMENTO_DE_CASO, teaching_text
+from scripts.validate_content import (
+    DOCS,
+    SESSOES,
+    SESSOES_SEM_CASO_VETOR,
+    SESSOES_SEM_CONFINAMENTO_DE_CASO,
+    teaching_text,
+)
 
 S1 = DOCS / "sessao-01-o-que-mudou"
 S2 = DOCS / "sessao-02-ambiente-agentico"
@@ -190,7 +196,7 @@ class CasoAplicadoTest(unittest.TestCase):
 
     def test_a_vetor_aparece_no_exemplo_arquitetural_de_cada_sessao_completa(self):
         for slug, (_, completa, _) in SESSOES.items():
-            if not completa or slug in SESSOES_SEM_CONFINAMENTO_DE_CASO:
+            if not completa or slug in SESSOES_SEM_CONFINAMENTO_DE_CASO | SESSOES_SEM_CASO_VETOR:
                 continue
             with self.subTest(slug=slug):
                 exemplo = (DOCS / slug / "exemplo-arquitetural.md").read_text(encoding="utf-8")

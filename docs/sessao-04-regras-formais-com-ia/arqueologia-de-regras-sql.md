@@ -81,7 +81,7 @@ para explicar um número mágico. Não proponha refatoração nesta etapa.
 
 ## Casos que não podem faltar
 
-Peça ao agente uma matriz com ID do teste, regra de origem, entradas, saída observada, evidência e dúvida de domínio. Inclua:
+Peça ao agente uma matriz com ID do teste, regra de origem, entradas, saída observada, evidência e dúvida de domínio, incluindo ao menos os casos abaixo:
 
 - CPF irregular com aquisição elegível (linha 6)
 - renda ausente, pois `COALESCE` a transforma em zero (linhas 4, 7 e 16)

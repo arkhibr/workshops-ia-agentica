@@ -353,7 +353,7 @@ Experimento randomizado com 16 desenvolvedores experientes (cerca de 5 anos de t
 
 **OMG. *Semantics of Business Vocabulary and Business Rules (SBVR)*, versão 1.5.** Object Management Group, dez. 2019. <https://www.omg.org/spec/SBVR/1.5/About-SBVR/>
 
-Especificação para vocabulário de negócio e regras formais — a base do bloco de especificação em linguagem controlada. Distingue duas categorias de regra: a **regra estrutural** (ou definicional), que usa operadores aléticos ("é necessário que", "é possível que") para dizer como o negócio organiza e define seus próprios conceitos; e a **regra operativa** (ou comportamental), que usa operadores deônticos ("é obrigatório que", "é permitido que") para reger conduta: a única das duas que alguém pode efetivamente violar.
+Especificação para vocabulário de negócio e regras formais, usada como base do bloco de especificação em linguagem controlada. Distingue duas categorias de regra. A **regra estrutural** (ou definicional) usa operadores aléticos ("é necessário que", "é possível que") para dizer como o negócio organiza e define seus próprios conceitos. A **regra operativa** (ou comportamental) usa operadores deônticos ("é obrigatório que", "é permitido que") para reger conduta e é a única das duas que alguém pode efetivamente violar.
 
 → Sessão 4.
 
@@ -413,7 +413,7 @@ Dez artigos que definem regra de negócio como categoria própria de conheciment
 
 **ROSS, Ronald G. *RuleSpeak Sentence Forms*, versão 2.2.** Business Rule Solutions, LLC. Desenvolvido a partir de 1996. <https://www.rulespeak.com/en/>
 
-Notação em linguagem natural controlada para expressar regra de negócio sem ambiguidade. O documento normativo organiza cinco formas de sentença em torno de duas palavras-chave de regra e duas de conselho: **"must"** (algo é exigido), **"must not"** (algo é proibido), **"may ... only"** (permissão condicional — ainda uma regra de negócio, com exceção explícita) e, como *statements of advice* e não regra propriamente dita, **"may"** isolado e **"need not"**. O próprio documento afirma que o RuleSpeak foi "uma das três notações de referência usadas na criação do SBVR, e é consistente com esse padrão".
+Notação em linguagem natural controlada para expressar regra de negócio sem ambiguidade. O documento normativo organiza cinco formas de sentença em torno de duas palavras-chave de regra e duas de conselho: **"must"** (algo é exigido), **"must not"** (algo é proibido), **"may ... only"** (permissão condicional, que continua sendo regra de negócio, com exceção explícita) e, como *statements of advice*, que o documento classifica à parte das regras, **"may"** isolado e **"need not"**. O próprio documento afirma que o RuleSpeak foi "uma das três notações de referência usadas na criação do SBVR, e é consistente com esse padrão".
 
 → Sessão 4.
 

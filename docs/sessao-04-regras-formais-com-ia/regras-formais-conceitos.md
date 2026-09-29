@@ -53,7 +53,7 @@ O teste prático é perguntar se existe infração. Uma fórmula pode produzir v
 
 ## Regras operativas: obrigação, proibição e permissão
 
-Uma **regra operativa** rege a conduta de um ator identificável e pode ser violada. Nesta sessão, as sentenças controladas seguem as formas do [RuleSpeak](../referencia/bibliografia.md#ross-rulespeak):
+Uma **regra operativa** rege a conduta de um ator identificável e pode ser violada, e nesta sessão as sentenças controladas que a expressam seguem as formas do [RuleSpeak](../referencia/bibliografia.md#ross-rulespeak):
 
 - **deve** para obrigação
 - **não deve** para proibição

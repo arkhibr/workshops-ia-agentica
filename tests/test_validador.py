@@ -1,8 +1,12 @@
 """Testa o próprio validador: cada checagem precisa ser capaz de reprovar."""
 
+from collections import Counter
 from pathlib import Path
 import tempfile
 import unittest
+from unittest import mock
+
+import scripts.validate_content as validador
 
 from scripts.validate_content import (
     Counts,
@@ -13,6 +17,7 @@ from scripts.validate_content import (
     validate_exercises,
     validate_multiplatform,
     validate_references,
+    validate_session,
 )
 
 
@@ -180,6 +185,48 @@ class MultiplataformaTest(unittest.TestCase):
         errors = self.validar('O agente escreve `tipo === "Atacado"` sem saber a convenção.\n')
 
         self.assertEqual([], errors)
+
+
+class ImagemDeclaradaTest(unittest.TestCase):
+    """Imagem declarada com barra resolve na pasta da sessão, sem barra em docs/assets/images/."""
+
+    SLUG = "sessao-99-teste"
+
+    def setUp(self):
+        self.temporario = tempfile.TemporaryDirectory(dir=ROOT)
+        self.raiz = Path(self.temporario.name)
+        self.docs = self.raiz / "docs"
+        (self.docs / self.SLUG / "assets").mkdir(parents=True)
+        (self.docs / "assets" / "images").mkdir(parents=True)
+
+    def tearDown(self):
+        self.temporario.cleanup()
+
+    def validar(self, imagens):
+        errors = []
+        sessoes = {self.SLUG: ("Teste", True, imagens)}
+        with mock.patch.multiple(
+            validador,
+            ROOT=self.raiz,
+            DOCS=self.docs,
+            IMAGES=self.docs / "assets" / "images",
+            SESSOES=sessoes,
+        ):
+            validate_session(self.SLUG, errors, Counts(), Counter())
+        return [erro for erro in errors if "imagem declarada" in erro]
+
+    def test_caminho_com_barra_presente_na_pasta_da_sessao_e_aceito(self):
+        (self.docs / self.SLUG / "assets" / "figura.png").write_bytes(b"png")
+
+        self.assertEqual([], self.validar(("assets/figura.png",)))
+
+    def test_caminho_com_barra_resolve_na_sessao_e_nao_em_assets_images(self):
+        (self.docs / "assets" / "images" / "figura.png").write_bytes(b"png")
+
+        erros = self.validar(("assets/figura.png",))
+
+        self.assertEqual(1, len(erros), erros)
+        self.assertIn(f"docs/{self.SLUG}/assets/figura.png", erros[0])
 
 
 class SlugTest(unittest.TestCase):
