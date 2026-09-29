@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 660" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker></defs>
+<rect width="1600" height="660" fill="#ffffff"/>
+<text x="50" y="70" font-size="36" font-weight="bold" fill="#12302b">Arqueologia de regras: seis movimentos</text>
+<rect x="50" y="170" width="190" height="270" rx="12" fill="#263b37"/>
+<text x="145.0" y="204" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">Código-fonte</text>
+<text x="145.0" y="230" font-size="14" fill="#b2dfdb" text-anchor="middle">construções que decidem</text>
+<text x="72" y="266" font-size="14" fill="#ffffff" font-family="Menlo, Courier, monospace">COALESCE</text>
+<text x="72" y="290" font-size="14" fill="#ffffff" font-family="Menlo, Courier, monospace">CASE</text>
+<text x="72" y="314" font-size="14" fill="#ffffff" font-family="Menlo, Courier, monospace">WHEN ... limite</text>
+<text x="72" y="338" font-size="14" fill="#ffffff" font-family="Menlo, Courier, monospace">ELSE</text>
+<rect x="58" y="345" width="174" height="23" rx="4" fill="#00897b"/>
+<text x="72" y="362" font-size="14" fill="#ffffff" font-family="Menlo, Courier, monospace">INNER JOIN</text>
+<text x="72" y="386" font-size="14" fill="#ffffff" font-family="Menlo, Courier, monospace">LEFT JOIN</text>
+<text x="72" y="410" font-size="14" fill="#ffffff" font-family="Menlo, Courier, monospace">WHERE</text>
+<rect x="266" y="170" width="190" height="270" rx="12" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+<circle cx="361.0" cy="204" r="20" fill="#2e7d32"/><text x="361.0" y="212" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<text x="361.0" y="260" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle">Inventário</text>
+<text x="361.0" y="328" font-size="17" fill="#2f4f4a" text-anchor="middle">tabelas, colunas,</text>
+<text x="361.0" y="352" font-size="17" fill="#2f4f4a" text-anchor="middle">literais e</text>
+<text x="361.0" y="376" font-size="17" fill="#2f4f4a" text-anchor="middle">resultados</text>
+<rect x="482" y="170" width="190" height="270" rx="12" fill="#e0f2f1" stroke="#00897b" stroke-width="3"/>
+<circle cx="577.0" cy="204" r="20" fill="#00695c"/><text x="577.0" y="212" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<text x="577.0" y="260" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle">Captura de</text>
+<text x="577.0" y="286" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle">evidência</text>
+<text x="577.0" y="328" font-size="17" fill="#2f4f4a" text-anchor="middle">arquivo, linhas</text>
+<text x="577.0" y="352" font-size="17" fill="#2f4f4a" text-anchor="middle">e trecho literal</text>
+<text x="577.0" y="376" font-size="17" fill="#2f4f4a" text-anchor="middle">arquivo:linha</text>
+<rect x="698" y="170" width="190" height="270" rx="12" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+<circle cx="793.0" cy="204" r="20" fill="#2e7d32"/><text x="793.0" y="212" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<text x="793.0" y="260" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle">Hipóteses</text>
+<text x="793.0" y="286" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle">de regra</text>
+<text x="793.0" y="328" font-size="17" fill="#2f4f4a" text-anchor="middle">JOIN, WHERE e</text>
+<text x="793.0" y="352" font-size="17" fill="#2f4f4a" text-anchor="middle">ordem do CASE</text>
+<text x="793.0" y="376" font-size="17" fill="#2f4f4a" text-anchor="middle">com confiança</text>
+<rect x="914" y="170" width="190" height="270" rx="12" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<circle cx="1009.0" cy="204" r="20" fill="#00695c"/><text x="1009.0" y="212" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+<text x="1009.0" y="260" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle">Validação</text>
+<text x="1009.0" y="286" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle">de domínio</text>
+<text x="1009.0" y="328" font-size="17" fill="#2f4f4a" text-anchor="middle">perguntas fechadas</text>
+<text x="1009.0" y="352" font-size="17" fill="#2f4f4a" text-anchor="middle">ao especialista</text>
+<text x="1009.0" y="376" font-size="17" fill="#2f4f4a" text-anchor="middle">confirma, refuta</text>
+<text x="1009.0" y="400" font-size="17" fill="#2f4f4a" text-anchor="middle">ou mantém aberta</text>
+<rect x="1130" y="170" width="190" height="270" rx="12" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+<circle cx="1225.0" cy="204" r="20" fill="#2e7d32"/><text x="1225.0" y="212" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
+<text x="1225.0" y="260" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle">Formalização</text>
+<text x="1225.0" y="286" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle">SBVR</text>
+<text x="1225.0" y="328" font-size="17" fill="#2f4f4a" text-anchor="middle">RC · RD · RN</text>
+<text x="1225.0" y="352" font-size="17" fill="#2f4f4a" text-anchor="middle">tabela de decisão</text>
+<text x="1225.0" y="376" font-size="17" fill="#2f4f4a" text-anchor="middle">com política</text>
+<text x="1225.0" y="400" font-size="17" fill="#2f4f4a" text-anchor="middle">de acerto</text>
+<rect x="1346" y="170" width="190" height="270" rx="12" fill="#004d40" stroke="#004d40" stroke-width="3"/>
+<circle cx="1441.0" cy="204" r="20" fill="#00897b"/><text x="1441.0" y="212" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">6</text>
+<text x="1441.0" y="260" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">Derivação</text>
+<text x="1441.0" y="286" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">de testes</text>
+<text x="1441.0" y="328" font-size="17" fill="#e0f2f1" text-anchor="middle">testes de</text>
+<text x="1441.0" y="352" font-size="17" fill="#e0f2f1" text-anchor="middle">precedência e</text>
+<text x="1441.0" y="376" font-size="17" fill="#e0f2f1" text-anchor="middle">de dados ausentes</text>
+<g stroke="#00695c" stroke-width="4" fill="none">
+<line x1="242" y1="305.0" x2="262" y2="305.0" marker-end="url(#seta)"/>
+<line x1="458" y1="305.0" x2="478" y2="305.0" marker-end="url(#seta)"/>
+<line x1="674" y1="305.0" x2="694" y2="305.0" marker-end="url(#seta)"/>
+<line x1="890" y1="305.0" x2="910" y2="305.0" marker-end="url(#seta)"/>
+<line x1="1106" y1="305.0" x2="1126" y2="305.0" marker-end="url(#seta)"/>
+<line x1="1322" y1="305.0" x2="1342" y2="305.0" marker-end="url(#seta)"/>
+</g>
+<g stroke="#00897b" stroke-width="3" fill="none">
+<line x1="577.0" y1="442" x2="577.0" y2="514" marker-end="url(#seta)"/>
+<line x1="793.0" y1="520" x2="793.0" y2="448" stroke-dasharray="8 6" marker-end="url(#seta)"/>
+<line x1="1009.0" y1="520" x2="1009.0" y2="448" stroke-dasharray="8 6" marker-end="url(#seta)"/>
+<line x1="1225.0" y1="520" x2="1225.0" y2="448" stroke-dasharray="8 6" marker-end="url(#seta)"/>
+<line x1="1441.0" y1="520" x2="1441.0" y2="448" stroke-dasharray="8 6" marker-end="url(#seta)"/>
+</g>
+<rect x="482" y="520" width="1054" height="64" rx="12" fill="#f3faf9" stroke="#00897b" stroke-width="3"/>
+<text x="1009.0" y="560" font-size="21" fill="#12302b" text-anchor="middle"><tspan font-weight="bold">Evidência por linha</tspan> capturada no movimento 2 e citada nos movimentos 3 a 6</text>
+</svg>
