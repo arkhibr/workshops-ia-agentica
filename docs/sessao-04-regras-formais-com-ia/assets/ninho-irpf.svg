@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00695c"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="#ffffff"/>
+  <text x="50" y="80" font-size="36" font-weight="bold" fill="#12302b">Desmonte do ninho de regras do IRPF</text>
+
+  <!-- Ninho -->
+  <rect x="50" y="170" width="400" height="560" rx="14" fill="#f4f6f5" stroke="#5f7a75" stroke-width="3"/>
+  <text x="250" y="222" font-size="28" font-weight="bold" fill="#12302b" text-anchor="middle">Ninho de regras</text>
+  <text x="250" y="254" font-size="19" fill="#2f4f4a" text-anchor="middle">um parágrafo, vários assuntos</text>
+  <g>
+    <rect x="80" y="290" width="340" height="14" rx="7" fill="#c9d3d1"/>
+    <rect x="80" y="322" width="120" height="14" rx="7" fill="#c9d3d1"/><rect x="208" y="322" width="150" height="14" rx="7" fill="#00897b"/><rect x="366" y="322" width="54" height="14" rx="7" fill="#c9d3d1"/>
+    <rect x="80" y="354" width="200" height="14" rx="7" fill="#2e7d32"/><rect x="288" y="354" width="132" height="14" rx="7" fill="#c9d3d1"/>
+    <rect x="80" y="386" width="90" height="14" rx="7" fill="#c9d3d1"/><rect x="178" y="386" width="242" height="14" rx="7" fill="#2e7d32"/>
+    <rect x="80" y="418" width="160" height="14" rx="7" fill="#c9d3d1"/><rect x="248" y="418" width="172" height="14" rx="7" fill="#004d40"/>
+    <rect x="80" y="450" width="260" height="14" rx="7" fill="#004d40"/><rect x="348" y="450" width="72" height="14" rx="7" fill="#c9d3d1"/>
+    <rect x="80" y="482" width="140" height="14" rx="7" fill="#c9d3d1"/><rect x="228" y="482" width="192" height="14" rx="7" fill="#2e7d32"/>
+    <rect x="80" y="514" width="300" height="14" rx="7" fill="#c9d3d1"/>
+    <rect x="80" y="546" width="110" height="14" rx="7" fill="#c9d3d1"/><rect x="198" y="546" width="222" height="14" rx="7" fill="#00897b"/>
+    <rect x="80" y="578" width="250" height="14" rx="7" fill="#c9d3d1"/>
+  </g>
+  <text x="250" y="642" font-size="18" fill="#2f4f4a" text-anchor="middle">definições, fórmula, faixas, teto,</text>
+  <text x="250" y="668" font-size="18" fill="#2f4f4a" text-anchor="middle">exceção documental e compensação</text>
+  <text x="250" y="694" font-size="18" fill="#2f4f4a" text-anchor="middle">na mesma frase</text>
+
+  <!-- Seta de decomposição -->
+  <line x1="462" y1="450" x2="548" y2="450" stroke="#00695c" stroke-width="5" marker-end="url(#seta)"/>
+  <text x="509" y="428" font-size="18" fill="#00695c" text-anchor="middle" font-weight="bold">decompor</text>
+
+  <!-- Cartões: linha 1 -->
+  <g text-anchor="middle">
+    <rect x="570" y="170" width="170" height="260" rx="12" fill="#e0f2f1" stroke="#00897b" stroke-width="3"/>
+    <text x="655" y="208" font-size="16" fill="#2f4f4a">Passo 1</text>
+    <text x="655" y="240" font-size="22" font-weight="bold" fill="#12302b">Conceitos</text>
+    <text x="655" y="318" font-size="56" font-weight="bold" fill="#00695c">8</text>
+    <text x="655" y="366" font-size="17" fill="#2f4f4a">termos com</text>
+    <text x="655" y="390" font-size="17" fill="#2f4f4a">definição</text>
+
+    <rect x="756" y="170" width="170" height="260" rx="12" fill="#e0f2f1" stroke="#00897b" stroke-width="3"/>
+    <text x="841" y="208" font-size="16" fill="#2f4f4a">Passo 1</text>
+    <text x="841" y="240" font-size="20" font-weight="bold" fill="#12302b">Tipos de fato</text>
+    <text x="841" y="318" font-size="56" font-weight="bold" fill="#00695c">6</text>
+    <text x="841" y="366" font-size="17" fill="#2f4f4a">relações entre</text>
+    <text x="841" y="390" font-size="17" fill="#2f4f4a">conceitos</text>
+
+    <rect x="942" y="170" width="170" height="260" rx="12" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+    <text x="1027" y="208" font-size="16" fill="#2f4f4a">Passo 2</text>
+    <text x="1027" y="240" font-size="22" font-weight="bold" fill="#12302b">RC</text>
+    <text x="1027" y="318" font-size="56" font-weight="bold" fill="#2e7d32">2</text>
+    <text x="1027" y="366" font-size="17" fill="#2f4f4a">classificações</text>
+    <text x="1027" y="390" font-size="17" fill="#2f4f4a">estruturais</text>
+
+    <rect x="1128" y="170" width="170" height="260" rx="12" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+    <text x="1213" y="208" font-size="16" fill="#2f4f4a">Passo 2</text>
+    <text x="1213" y="240" font-size="22" font-weight="bold" fill="#12302b">RD</text>
+    <text x="1213" y="318" font-size="56" font-weight="bold" fill="#2e7d32">6</text>
+    <text x="1213" y="366" font-size="17" fill="#2f4f4a">derivações</text>
+    <text x="1213" y="390" font-size="17" fill="#2f4f4a">estruturais</text>
+
+    <!-- linha 2 -->
+    <rect x="570" y="470" width="170" height="260" rx="12" fill="#ffffff" stroke="#004d40" stroke-width="3" stroke-dasharray="10 6"/>
+    <text x="655" y="508" font-size="16" fill="#2f4f4a">Passo 3</text>
+    <text x="655" y="540" font-size="22" font-weight="bold" fill="#12302b">RN</text>
+    <text x="655" y="618" font-size="56" font-weight="bold" fill="#004d40">2</text>
+    <text x="655" y="666" font-size="17" fill="#2f4f4a">operativas</text>
+    <text x="655" y="690" font-size="17" fill="#2f4f4a">candidatas</text>
+
+    <rect x="756" y="470" width="170" height="260" rx="12" fill="#ffffff" stroke="#00897b" stroke-width="3" stroke-dasharray="10 6"/>
+    <text x="841" y="508" font-size="16" fill="#2f4f4a">Passo 4</text>
+    <text x="841" y="540" font-size="22" font-weight="bold" fill="#12302b">Precedência</text>
+    <text x="841" y="618" font-size="56" font-weight="bold" fill="#00695c">6</text>
+    <text x="841" y="666" font-size="17" fill="#2f4f4a">etapas em ordem</text>
+    <text x="841" y="690" font-size="17" fill="#2f4f4a">inferida</text>
+
+    <rect x="942" y="470" width="170" height="260" rx="12" fill="#00695c"/>
+    <text x="1027" y="508" font-size="16" fill="#e0f2f1">Passo 5</text>
+    <text x="1027" y="540" font-size="22" font-weight="bold" fill="#ffffff">F</text>
+    <text x="1027" y="618" font-size="56" font-weight="bold" fill="#ffffff">3</text>
+    <text x="1027" y="666" font-size="17" fill="#e0f2f1">faixas na tabela</text>
+    <text x="1027" y="690" font-size="17" fill="#e0f2f1">de decisão</text>
+
+    <rect x="1128" y="470" width="170" height="260" rx="12" fill="#ffffff" stroke="#5f7a75" stroke-width="3" stroke-dasharray="4 5"/>
+    <text x="1213" y="508" font-size="16" fill="#2f4f4a">Passo 6</text>
+    <text x="1213" y="540" font-size="22" font-weight="bold" fill="#12302b">Lacuna</text>
+    <text x="1213" y="618" font-size="56" font-weight="bold" fill="#5f7a75">1</text>
+    <text x="1213" y="666" font-size="17" fill="#2f4f4a">regra de</text>
+    <text x="1213" y="690" font-size="17" fill="#2f4f4a">arredondamento</text>
+  </g>
+
+  <!-- Seta para casos -->
+  <line x1="1310" y1="450" x2="1368" y2="450" stroke="#00695c" stroke-width="5" marker-end="url(#seta)"/>
+
+  <!-- Casos de fronteira -->
+  <g text-anchor="middle">
+    <rect x="1380" y="320" width="180" height="260" rx="12" fill="#004d40"/>
+    <text x="1470" y="358" font-size="16" fill="#e0f2f1">Passo 6</text>
+    <text x="1470" y="390" font-size="22" font-weight="bold" fill="#ffffff">Casos de</text>
+    <text x="1470" y="416" font-size="22" font-weight="bold" fill="#ffffff">fronteira</text>
+    <text x="1470" y="490" font-size="56" font-weight="bold" fill="#ffffff">5</text>
+    <text x="1470" y="536" font-size="17" fill="#e0f2f1">testes com</text>
+    <text x="1470" y="560" font-size="17" fill="#e0f2f1">resultado esperado</text>
+  </g>
+
+  <!-- Legenda de traço -->
+  <g font-size="18" fill="#2f4f4a">
+    <rect x="570" y="758" width="46" height="24" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+    <text x="630" y="777">borda contínua: regra extraída do parágrafo</text>
+    <rect x="570" y="796" width="46" height="24" rx="6" fill="#ffffff" stroke="#004d40" stroke-width="3" stroke-dasharray="10 6"/>
+    <text x="630" y="815">borda tracejada: inferência que aguarda validação do especialista</text>
+    <rect x="570" y="834" width="46" height="24" rx="6" fill="#ffffff" stroke="#5f7a75" stroke-width="3" stroke-dasharray="4 5"/>
+    <text x="630" y="853">borda pontilhada: lacuna registrada como pergunta</text>
+  </g>
+</svg>

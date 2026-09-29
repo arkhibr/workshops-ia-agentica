@@ -6,6 +6,10 @@ Este exercício parte do mapa de regras do cashback do IBS e da CBS produzido no
 
 Use o mapa com conceitos, fatos, regras estruturais, regras operativas, exceções, conflitos, lacunas, evidência e confiança. Se o mapa ainda chama de regra operativa uma derivação de percentual ou uma classificação de pessoa, corrija o tipo e o prefixo do ID antes do Passo 1, porque cada teste herda o ID da regra de origem.
 
+![Fluxo em duas faixas. Na faixa do exercício geral, a fonte pública (LC 214/2025, texto compilado) segue para a marcação inicial feita pelo participante, o mapa de regras gerado pelo agente com RC, RD, RN, evidência e LACUNA, a revisão por camada e a tabela de decisão com política de acerto e precedência. O mapa revisado é a entrada da faixa do exercício especialista, que segue por regras testáveis, matriz de testes gerada pelo agente, crítica da matriz e ciclo TDD de vermelho, verde e refatorar, e termina em test.todo para cada caso INDETERMINADO.](assets/fluxo-regra-tributaria.png)
+
+*Leitura da figura: esta página cobre a faixa inferior, que recebe o mapa revisado no exercício geral. A etiqueta de cada caixa indica quem executa o passo, e o último quadro, pontilhado, recebe os casos INDETERMINADO registrados como `test.todo`.*
+
 ## Passo 1 — selecione regras testáveis
 
 Escolha regras com saída observável:

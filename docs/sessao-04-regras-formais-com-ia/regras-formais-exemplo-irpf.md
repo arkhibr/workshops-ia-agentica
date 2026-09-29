@@ -11,6 +11,10 @@ Esta demonstração usa o cálculo do Imposto de Renda da Pessoa Física (IRPF) 
 
 O parágrafo mistura definições, fórmula, faixas, teto, exceção documental e compensação. Pedir a um agente que “transforme isso em regra” sem contrato de saída costuma produzir uma paráfrase do parágrafo, sem identificadores, evidência ou tipo de regra que um teste consiga verificar.
 
+![À esquerda, o ninho de regras aparece como um único bloco de texto com trechos de cores diferentes. Uma seta de decomposição leva a oito cartões: 8 conceitos e 6 tipos de fato (Passo 1), 2 classificações RC e 6 derivações RD (Passo 2), 2 regras operativas RN candidatas (Passo 3), precedência em 6 etapas inferidas (Passo 4), 3 faixas F na tabela de decisão (Passo 5) e 1 lacuna de arredondamento (Passo 6). Os cartões convergem para 5 casos de fronteira.](assets/ninho-irpf.png)
+
+*Leitura da figura: cada cartão corresponde a um passo desta página e traz a quantidade de itens que o passo extrai do parágrafo. A borda contínua marca regra extraída do texto, a tracejada marca inferência que aguarda o especialista e a pontilhada marca a lacuna registrada como pergunta.*
+
 ## Passo 1 — conceitos e fatos
 
 | Conceito | Definição neste exemplo |

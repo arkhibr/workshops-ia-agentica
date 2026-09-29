@@ -14,6 +14,10 @@ Formalizar uma regra começa antes da frase normativa. O time precisa definir os
 
 Misturar as camadas produz sentenças difíceis de testar: “Contribuinte elegível recebe devolução” contém ao menos um conceito indefinido, um fato e uma consequência normativa na mesma frase.
 
+![Diagrama horizontal do mapa de regras. Conceitos seguem para fatos, e fatos seguem para as regras estruturais de classificação e derivação (RC, RD) e para as regras operativas de obrigação, proibição e permissão (RN). As duas famílias de regra convergem na tabela de decisão, da qual derivam os testes. Uma faixa inferior de controles, com exceções, conflitos, lacunas, evidência e confiança, liga-se por linhas tracejadas a conceitos, fatos, regras e tabela.](assets/mapa-de-regras.png)
+
+*Leitura da figura: siga as setas da esquerda para a direita, das camadas 1 a 4 até a tabela e os testes, e depois leia a faixa 5, cujas linhas tracejadas indicam as camadas em que cada controle é registrado.*
+
 ## Conceitos: o que precisa de nome
 
 Um **conceito** representa uma coisa ou categoria relevante para o negócio, e sua definição informa o critério que permite reconhecer cada instância.

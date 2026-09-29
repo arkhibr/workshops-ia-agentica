@@ -25,6 +25,10 @@ Use o [texto compilado da Lei Complementar nº 214/2025](https://www.planalto.go
 
 A lista da frase [5] tem cinco categorias e a da frase [4] tem seis, porque o art. 116, §1º, menciona energia elétrica, água, esgoto, gás canalizado e telecomunicações, enquanto o botijão de gás liquefeito de petróleo aparece apenas no art. 118, I. O mapa precisa representar essa diferença em duas regras distintas, uma para o percentual e outra para o momento da devolução.
 
+![Fluxo em duas faixas. Na faixa do exercício geral, a fonte pública (LC 214/2025, texto compilado) segue para a marcação inicial feita pelo participante, o mapa de regras gerado pelo agente com RC, RD, RN, evidência e LACUNA, a revisão por camada e a tabela de decisão com política de acerto e precedência. O mapa revisado é a entrada da faixa do exercício especialista, que segue por regras testáveis, matriz de testes gerada pelo agente, crítica da matriz e ciclo TDD de vermelho, verde e refatorar, e termina em test.todo para cada caso INDETERMINADO.](assets/fluxo-regra-tributaria.png)
+
+*Leitura da figura: esta página cobre a faixa superior, lida da esquerda para a direita. A etiqueta de cada caixa indica quem executa o passo, e a seta de retorno mostra que o mapa revisado nesta página é a entrada do exercício especialista, na faixa inferior.*
+
 ## Passo 1 — marque antes de perguntar
 
 Em três minutos, use anotações diferentes para:

@@ -25,6 +25,10 @@ Antes de usar IA, responda:
 
 ## O método em seis movimentos
 
+![O arquivo calculo-beneficio.sql, com as linhas 4, 5, 7, 13, 28, 29 e 30 em destaque, segue por seis movimentos em sequência: inventário, captura de evidência, hipóteses de regra, validação de domínio com o especialista, formalização SBVR em RC, RD, RN e tabela de decisão, e derivação de testes de precedência e de dados ausentes. Uma faixa inferior mostra que a evidência por linha capturada no movimento 2 é citada nos movimentos 3 a 6.](assets/arqueologia-sql.png)
+
+*Leitura da figura: percorra os movimentos numerados da esquerda para a direita. A seta contínua do movimento 2 desce para a faixa de evidência, e as setas tracejadas que sobem dela indicam os movimentos que citam arquivo, linha e trecho literal.*
+
 ### 1. Inventário
 
 Liste tabelas, colunas, valores literais e resultados possíveis, e converta nomes técnicos em candidatos a conceitos sem apagar o vínculo com a coluna. Registre fatos como “Pessoa possui CPF” e “Documento Fiscal registra Categoria”, mas ainda sem chamar nenhum item de regra.

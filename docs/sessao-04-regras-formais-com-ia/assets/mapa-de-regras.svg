@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00695c"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="800" fill="#ffffff"/>
+  <text x="60" y="80" font-size="36" font-weight="bold" fill="#12302b">Mapa de regras: cinco camadas até os testes</text>
+
+  <!-- 1 Conceitos -->
+  <rect x="60" y="250" width="240" height="180" rx="14" fill="#e0f2f1" stroke="#00897b" stroke-width="3"/>
+  <circle cx="96" cy="286" r="20" fill="#00695c"/><text x="96" y="294" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+  <text x="180" y="340" font-size="28" font-weight="bold" fill="#12302b" text-anchor="middle">Conceitos</text>
+  <text x="180" y="378" font-size="20" fill="#2f4f4a" text-anchor="middle">nomeiam coisas</text>
+  <text x="180" y="404" font-size="20" fill="#2f4f4a" text-anchor="middle">do domínio</text>
+
+  <!-- 2 Fatos -->
+  <rect x="360" y="250" width="240" height="180" rx="14" fill="#e0f2f1" stroke="#00897b" stroke-width="3"/>
+  <circle cx="396" cy="286" r="20" fill="#00695c"/><text x="396" y="294" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+  <text x="480" y="340" font-size="28" font-weight="bold" fill="#12302b" text-anchor="middle">Fatos</text>
+  <text x="480" y="378" font-size="20" fill="#2f4f4a" text-anchor="middle">relacionam</text>
+  <text x="480" y="404" font-size="20" fill="#2f4f4a" text-anchor="middle">conceitos</text>
+
+  <!-- 3 Estruturais -->
+  <rect x="660" y="170" width="310" height="150" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+  <circle cx="686" cy="206" r="20" fill="#2e7d32"/><text x="686" y="214" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+  <text x="840" y="215" font-size="26" font-weight="bold" fill="#12302b" text-anchor="middle">Regras estruturais</text>
+  <text x="815" y="258" font-size="20" fill="#2f4f4a" text-anchor="middle">classificação (RC)</text>
+  <text x="815" y="288" font-size="20" fill="#2f4f4a" text-anchor="middle">derivação (RD)</text>
+
+  <!-- 4 Operativas -->
+  <rect x="660" y="360" width="310" height="150" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+  <circle cx="686" cy="396" r="20" fill="#2e7d32"/><text x="686" y="404" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+  <text x="840" y="405" font-size="26" font-weight="bold" fill="#12302b" text-anchor="middle">Regras operativas</text>
+  <text x="815" y="448" font-size="20" fill="#2f4f4a" text-anchor="middle">obrigação, proibição,</text>
+  <text x="815" y="478" font-size="20" fill="#2f4f4a" text-anchor="middle">permissão (RN)</text>
+
+  <!-- Tabela -->
+  <rect x="1040" y="250" width="240" height="180" rx="14" fill="#00695c"/>
+  <text x="1160" y="310" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">Tabela</text>
+  <text x="1160" y="342" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">de decisão</text>
+  <text x="1160" y="380" font-size="19" fill="#e0f2f1" text-anchor="middle">combinações e</text>
+  <text x="1160" y="405" font-size="19" fill="#e0f2f1" text-anchor="middle">política de acerto</text>
+
+  <!-- Testes -->
+  <rect x="1340" y="250" width="200" height="180" rx="14" fill="#004d40"/>
+  <text x="1440" y="326" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">Testes</text>
+  <text x="1440" y="366" font-size="19" fill="#e0f2f1" text-anchor="middle">casos derivados</text>
+  <text x="1440" y="391" font-size="19" fill="#e0f2f1" text-anchor="middle">das regras</text>
+
+  <!-- Setas principais -->
+  <g stroke="#00695c" stroke-width="4" fill="none">
+    <line x1="302" y1="340" x2="354" y2="340" marker-end="url(#seta)"/>
+    <path d="M602,340 L630,340 L630,245 L654,245" marker-end="url(#seta)"/>
+    <path d="M630,340 L630,435 L654,435" marker-end="url(#seta)"/>
+    <path d="M972,245 L1005,245 L1005,340 L1034,340" marker-end="url(#seta)"/>
+    <path d="M972,435 L1005,435 L1005,340"/>
+    <line x1="1282" y1="340" x2="1334" y2="340" marker-end="url(#seta)"/>
+  </g>
+
+  <!-- 5 Controles -->
+  <g stroke="#00897b" stroke-width="3" stroke-dasharray="8 7" fill="none">
+    <line x1="180" y1="590" x2="180" y2="436"/>
+    <line x1="480" y1="590" x2="480" y2="436"/>
+    <line x1="815" y1="590" x2="815" y2="516"/>
+    <line x1="1160" y1="590" x2="1160" y2="436"/>
+  </g>
+  <rect x="60" y="590" width="1220" height="140" rx="14" fill="#f3faf9" stroke="#00897b" stroke-width="3" stroke-dasharray="10 6"/>
+  <circle cx="96" cy="626" r="20" fill="#00695c"/><text x="96" y="634" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
+  <text x="130" y="636" font-size="26" font-weight="bold" fill="#12302b">Controles</text>
+  <text x="270" y="636" font-size="20" fill="#2f4f4a">acompanham cada camada</text>
+  <g font-size="21" fill="#12302b" text-anchor="middle">
+    <rect x="90" y="660" width="190" height="46" rx="23" fill="#ffffff" stroke="#00897b" stroke-width="2"/><text x="185" y="690">exceções</text>
+    <rect x="320" y="660" width="190" height="46" rx="23" fill="#ffffff" stroke="#00897b" stroke-width="2"/><text x="415" y="690">conflitos</text>
+    <rect x="550" y="660" width="190" height="46" rx="23" fill="#ffffff" stroke="#00897b" stroke-width="2"/><text x="645" y="690">lacunas</text>
+    <rect x="780" y="660" width="190" height="46" rx="23" fill="#ffffff" stroke="#00897b" stroke-width="2"/><text x="875" y="690">evidência</text>
+    <rect x="1010" y="660" width="190" height="46" rx="23" fill="#ffffff" stroke="#00897b" stroke-width="2"/><text x="1105" y="690">confiança</text>
+  </g>
+</svg>

@@ -24,7 +24,8 @@ IMAGES = DOCS / "assets" / "images"
 INTERNOS = DOCS / "superpowers"
 
 # `completa` distingue a sessão já desenvolvida da que ainda é esqueleto.
-# Ao construir uma sessão nova, vire a chave e declare as imagens esperadas.
+# Ao construir uma sessão nova, vire a chave e declare as imagens esperadas:
+# nome simples para docs/assets/images/, ou caminho relativo à pasta da sessão.
 SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
     "sessao-01-o-que-mudou": (
         "O que mudou",
@@ -52,7 +53,16 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
         ),
     ),
     "sessao-03-exploracao-especificacao": ("Exploração e especificação", True, ()),
-    "sessao-04-regras-formais-com-ia": ("Regras formais com IA", True, ()),
+    "sessao-04-regras-formais-com-ia": (
+        "Regras formais com IA",
+        True,
+        (
+            "assets/mapa-de-regras.png",
+            "assets/ninho-irpf.png",
+            "assets/fluxo-regra-tributaria.png",
+            "assets/arqueologia-sql.png",
+        ),
+    ),
     "sessao-05-decomposicao": ("Decomposição", False, ()),
     "sessao-06-tdd-assistido": ("TDD assistido por IA", False, ()),
     "sessao-07-estrategias-avancadas-teste": ("Estratégias avançadas de teste", False, ()),
@@ -398,8 +408,13 @@ def validate_session(
                 )
 
         for esperada in imagens:
-            if not (IMAGES / esperada).is_file():
-                errors.append(f"imagem declarada e ausente: docs/assets/images/{esperada}")
+            # Nome simples fica em docs/assets/images/; caminho com barra é
+            # relativo à pasta da sessão, como os ativos próprios da Sessão 4.
+            destino = session_dir / esperada if "/" in esperada else IMAGES / esperada
+            if not destino.is_file():
+                errors.append(
+                    f"imagem declarada e ausente: {destino.relative_to(ROOT).as_posix()}"
+                )
 
     for path in sorted(session_dir.glob("*.md")):
         text = path.read_text(encoding="utf-8")
