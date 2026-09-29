@@ -405,7 +405,7 @@ Experimento randomizado com 70 desenvolvedores profissionais que completam uma t
 
 Dez artigos que definem regra de negócio como categoria própria de conhecimento, separada de processo. O Artigo 2 ("Separate From Processes, Not Contained In Them") declara que "regras não são processo nem procedimento" e que "regras se aplicam através de processos e procedimentos". Deve existir um corpo coeso de regras, cumprido de forma consistente em toda a atividade de negócio relevante. O Artigo 4 ("Declarative, Not Procedural") exige que toda regra seja expressa em frase declarativa, sem sequenciamento implícito: é essa declaratividade que distingue uma regra de negócio (BR) de um passo de um fluxo.
 
-→ Sessão 3, 4.
+→ Sessão 3.
 
 ---
 
