@@ -1,4 +1,4 @@
--- Artefato didático: o comportamento está no SQL, sem especificação externa.
+-- Artefato didático, sem especificação externa. Os limites 759.00 e 900.00 foram fixados para a aula.
 SELECT
     p.pessoa_id,
     COALESCE(c.renda_per_capita, 0) AS renda_considerada,
@@ -7,11 +7,11 @@ SELECT
         WHEN c.cadastro_ativo = 1 AND COALESCE(c.renda_per_capita, 0) <= 759.00 THEN
             CASE
                 WHEN f.categoria IN ('ENERGIA', 'AGUA', 'ESGOTO', 'GAS_CANALIZADO', 'TELECOM')
-                    THEN 'DEVOLUCAO_ESPECIFICA'
+                    THEN 'DEVOLUCAO_INCISO_I'
                 WHEN f.categoria = 'GLP' AND f.peso_kg <= 13
-                    THEN 'DEVOLUCAO_ESPECIFICA'
+                    THEN 'DEVOLUCAO_INCISO_I'
                 WHEN f.imposto_seletivo = 1 THEN 'SEM_DEVOLUCAO'
-                ELSE 'DEVOLUCAO_GERAL'
+                ELSE 'DEVOLUCAO_DEMAIS_CASOS'
             END
         WHEN c.cadastro_ativo = 1 AND COALESCE(c.renda_per_capita, 0) <= 900.00
             THEN 'ANALISE_MANUAL'
