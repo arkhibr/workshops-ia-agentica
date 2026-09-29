@@ -22,10 +22,6 @@ Ao final desta sessão, o participante deve ser capaz de:
 4. **Isolar** o trabalho de um agente por ramo, evitando que duas sessões pisem no mesmo contexto.
 5. **Diagnosticar** uma falha do agente pela peça do arnês que provavelmente a causou, antes de considerar a troca de modelo.
 
-## A Vetor
-
-A Vetor é uma empresa fictícia de e-commerce B2B, usada nos exemplos deste workshop e apresentada na Sessão 1. Hoje ela tem quatro desenvolvedores usando quatro agentes configurados de quatro jeitos. Nenhum arquivo de instrução em comum, nenhuma ferramenta conectada em comum, e nenhum isolamento quando duas pessoas usam o agente ao mesmo tempo. Esta sessão organiza isso.
-
 ## Roteiro da sessão (2h, das 10h às 12h)
 
 | # | Página | Bloco | Tempo | Resultado esperado |
@@ -37,7 +33,7 @@ A Vetor é uma empresa fictícia de e-commerce B2B, usada nos exemplos deste wor
 | 5 | [O arquivo de instrução](arquivo-de-instrucao.md) | Teoria | 8 min | O que colocar no AGENTS.md, como estruturá-lo e como verificá-lo |
 | 6 | [Isolamento por ramo](isolamento-por-ramo.md) | Teoria | 2 min | O que o `git worktree` isola e o cuidado que ele exige |
 | 7 | [Autonomia e supervisão](autonomia-e-supervisao.md) | Teoria | 3 min | Erro composto, níveis de autonomia e o critério de reversibilidade |
-| 8 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 8 min | Ver, com a Vetor, o ambiente compartilhado montado do zero |
+| 8 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 8 min | Ver, com a Vetor, plataforma fictícia de e-commerce B2B, o ambiente compartilhado montado do zero |
 | 9 | [Estudo de caso](estudo-de-caso.md) | Discussão em grupo | 8 min | Julgar se um incidente de contexto cruzado justifica isolamento formal |
 | — | Intervalo | — | 5 min | — |
 | 10 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 45 min | O mesmo fechamento em planilha rodado cinco vezes, com uma peça de arnês a mais por vez |

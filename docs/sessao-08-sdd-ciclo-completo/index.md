@@ -23,10 +23,6 @@ Ao final desta sessão, o participante deve ser capaz de:
 5. **Reconhecer** os antipadrões que transformam SDD em documentação cara que ninguém consulta.
 6. **Propor** o que medir num piloto de adoção, sem confundir volume gerado com fluxo de entrega.
 
-## O caso que nos acompanha: Vetor
-
-A Vetor, plataforma fictícia de e-commerce B2B que atravessa o workshop, tem uma lacuna conhecida na função `calcularDesconto`: a faixa de 20% para clientes de atacado acima de R$ 10.000,00 nunca foi implementada. As Sessões 3 e 4 especificaram e formalizaram essa regra. Esta sessão fecha o ciclo até o código, com os artefatos conectados e a evidência que autoriza a integração.
-
 ## Roteiro da sessão (2h, das 10h às 12h)
 
 | # | Página | Bloco | Tempo | Resultado esperado |
@@ -36,7 +32,7 @@ A Vetor, plataforma fictícia de e-commerce B2B que atravessa o workshop, tem um
 | 3 | [Escolher a abordagem e a profundidade](escolher-a-abordagem.md) | Teoria | 7 min | Dez critérios de comparação e a régua de profundidade proporcional ao risco |
 | 4 | [Manter os artefatos vivos](artefatos-vivos.md) | Teoria | 7 min | Que mudança atualiza qual artefato, e o que regenerar às cegas destrói |
 | 5 | [Quando o SDD falha](quando-sdd-falha.md) | Teoria | 7 min | Os antipadrões, os casos em que o método não compensa e o que medir num piloto |
-| 6 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 12 min | Ver o ciclo inteiro na Vetor, da constitution ao teste verde |
+| 6 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 12 min | Ver o ciclo inteiro na Vetor, plataforma fictícia de e-commerce B2B, da constitution ao teste verde |
 | 7 | [Estudo de caso](estudo-de-caso.md) | Discussão em grupo | 12 min | Julgar um ciclo que produziu todos os artefatos e ainda assim entregou errado |
 | — | Intervalo | — | 5 min | — |
 | 8 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 30 min | Rodar o ciclo Spec Kit completo sobre a Vetor, com os quatro artefatos versionados |

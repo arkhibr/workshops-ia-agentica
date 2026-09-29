@@ -29,10 +29,6 @@ Ao final desta sessão, o participante deve ser capaz de:
 4. **Escrever** um requisito não funcional como cenário de qualidade verificável, com a função de aptidão que o mantém verdadeiro.
 5. **Escrever** uma especificação que um agente segue sem precisar decidir sozinho o que o pedido queria dizer.
 
-## O caso Vetor
-
-A Vetor, plataforma fictícia de e-commerce B2B introduzida na Sessão 1, tem uma lacuna conhecida: a função `calcularDesconto` recebe um `tipoCliente` que não usa, e a faixa de 20% para clientes de atacado acima de R$ 10.000,00 nunca foi implementada. Esta sessão fecha essa lacuna pelo caminho longo, em dois temas: primeiro elicitando a regra por intervenção socrática, depois decompondo-a em BR, FR e NFR.
-
 ## Roteiro da sessão (2h, das 10h às 12h)
 
 | Horário | Min | Bloco | Trilha | Página |
