@@ -17,14 +17,18 @@ Referências que embasam o conteúdo metodológico do workshop, em ordem alfabé
 - [Boehm — Software Engineering Economics (1981)](#boehm-software-engineering-economics-1981)
 - [Brown et al. — Language Models are Few-Shot Learners (2020)](#brown-et-al-language-models-are-few-shot-learners-2020)
 - [Chen et al. — Codex e HumanEval (2021)](#chen-et-al-codex-e-humaneval-2021)
+- [Chikofsky e Cross — Reverse Engineering and Design Recovery (1990)](#chikofsky-e-cross-reverse-engineering-and-design-recovery-1990)
 - [Datacurve — DeepSWE Leaderboard](#datacurve-deepswe-leaderboard)
 - [Decision Model and Notation (DMN)](#decision-model-and-notation-dmn)
 - [Delimarsky — Spec-Driven Development with AI (2025)](#delimarsky-spec-driven-development-with-ai-2025)
+- [Diggs et al. — LLMs for Legacy Code Documentation (2024)](#diggs-et-al-llms-for-legacy-code-documentation-2024)
 - [fast-check e FsCheck — Property-Based Testing](#fast-check-e-fscheck-property-based-testing)
+- [Feathers — Working Effectively with Legacy Code (2004)](#feathers-working-effectively-with-legacy-code-2004)
 - [Fission-AI — OpenSpec](#fission-ai-openspec)
 - [Ford, Parsons, Kua e Sadalage — Building Evolutionary Architectures (2023)](#ford-parsons-kua-e-sadalage-building-evolutionary-architectures-2023)
 - [GitHub Spec Kit](#github-spec-kit)
 - [gszhangwei — OpenSPDD](#gszhangwei-openspdd)
+- [Hunt e Thomas — Software Archaeology (2002)](#hunt-e-thomas-software-archaeology-2002)
 - [ISO/IEC/IEEE 29148:2018](#isoiecieee-291482018)
 - [Jimenez et al. — SWE-bench (2024)](#jimenez-et-al-swe-bench-2024)
 - [Karpathy — Software 2.0 (2017)](#karpathy-software-20-2017)
@@ -41,6 +45,7 @@ Referências que embasam o conteúdo metodológico do workshop, em ordem alfabé
 - [Peng et al. — Copilot Productivity (2023)](#peng-et-al-copilot-productivity-2023)
 - [Ross (ed.) — Business Rules Manifesto (2003)](#ross-ed-business-rules-manifesto-2003)
 - [Ross — RuleSpeak](#ross-rulespeak)
+- [Sneed e Erdős — Extracting Business Rules from Source Code (1996)](#sneed-e-erdos-extracting-business-rules-from-source-code-1996)
 - [StrykerJS e Stryker.NET — Mutation Testing](#strykerjs-e-strykernet-mutation-testing)
 - [Trivedy — The Anatomy of an Agent Harness (2026)](#trivedy-the-anatomy-of-an-agent-harness-2026)
 - [Vaswani et al. — Attention Is All You Need (2017)](#vaswani-et-al-attention-is-all-you-need-2017)
@@ -185,6 +190,16 @@ Apresenta Codex, versão do GPT ajustada em código do GitHub, com foco em sínt
 
 ---
 
+### Chikofsky e Cross — Reverse Engineering and Design Recovery (1990)
+
+**CHIKOFSKY, Elliot J.; CROSS II, James H. "Reverse Engineering and Design Recovery: A Taxonomy".** *IEEE Software*, v. 7, n. 1, p. 13-17, jan. 1990. DOI: [10.1109/52.43044](https://doi.org/10.1109/52.43044)
+
+Taxonomia que define e relaciona seis termos da manutenção de software: engenharia direta, engenharia reversa, redocumentação, recuperação de projeto, reestruturação e reengenharia. A engenharia reversa é definida como a análise de um sistema para identificar seus componentes e as relações entre eles e para representá-lo em outra forma ou num nível mais alto de abstração, sem alterar o sistema. A recuperação de projeto é a subárea em que conhecimento de domínio, informação externa e dedução são acrescentados às observações do sistema para identificar abstrações de nível mais alto. Fundamenta o enquadramento da arqueologia de regras como recuperação de projeto restrita às decisões de negócio.
+
+→ Sessão 4.
+
+---
+
 ### Datacurve — DeepSWE Leaderboard
 
 **DATACURVE. *DeepSWE Leaderboard*.** Publicado em benchlm.ai. <https://benchlm.ai/benchmarks/deepswe>
@@ -215,11 +230,31 @@ Post oficial de lançamento do GitHub Spec Kit — define o problema do vibe cod
 
 ---
 
+### Diggs et al. — LLMs for Legacy Code Documentation (2024)
+
+**DIGGS, Colin et al. *Leveraging LLMs for Legacy Code Modernization: Challenges and Opportunities for LLM-Generated Documentation*.** arXiv:2411.14971, nov. 2024. Versão resumida submetida ao workshop LLM4Code 2025, colocalizado com o ICSE 2025. <https://arxiv.org/abs/2411.14971>
+
+Estudo empírico com quatro modelos (Claude 3.0 Sonnet, Llama 3 Instruct 70B, Mixtral 8×7B e GPT-4 Turbo Preview) na geração de comentários linha a linha para código legado em MUMPS, de um sistema de prontuário eletrônico, e em linguagem de montagem de mainframe IBM. Avaliadores com experiência profissional nas duas linguagens julgaram completude, legibilidade, utilidade e alucinação por rubrica. Os comentários foram, em geral, livres de alucinação, completos, legíveis e úteis em comparação com comentários de desenvolvedores, com resultado pior na linguagem de montagem, e nenhuma métrica automática testada (complexidade ciclomática, Halstead, BLEU, ROUGE, CHRF, similaridade de cosseno) apresentou correlação forte com a avaliação humana. Fundamenta, na Sessão 4, o limite do que se sabe sobre LLM na leitura de código legado. O estudo avalia a redocumentação, e esta bibliografia trata a aplicação do resultado à recuperação da intenção de negócio como inferência própria, sem medição publicada que a sustente.
+
+→ Sessão 4.
+
+---
+
 ### fast-check e FsCheck — Property-Based Testing
 
 **fast-check** (JavaScript/TypeScript) e **FsCheck** (.NET) — bibliotecas de referência para testes baseados em propriedade.
 
 → Sessão 7.
+
+---
+
+### Feathers — Working Effectively with Legacy Code (2004)
+
+**FEATHERS, Michael C. *Working Effectively with Legacy Code*.** Prentice Hall, 2004. ISBN 978-0-13-117705-5.
+
+Referência para a manutenção de código sem testes. Cunha o termo *characterization test* (teste de caracterização) para o teste que descreve o comportamento real de um trecho de código: o teste é escrito depois do código, e o resultado observado na execução passa a ser a expectativa registrada. Fundamenta a distinção, na Sessão 4, entre o teste que registra o comportamento implementado e o teste de aceitação que verifica a intenção confirmada pelo domínio.
+
+→ Sessão 4.
 
 ---
 
@@ -258,6 +293,16 @@ Origem do termo função de aptidão arquitetural (*architectural fitness functi
 Implementação de referência da comunidade para o método SPDD, com os comandos que materializam o fluxo: analisar requisitos e código existente, produzir o Painel REASONS, gerar a implementação e sincronizar de volta as alterações feitas no código. A distinção que o projeto faz entre plano e Painel é a citada na Sessão 8: um plano diz o que fazer, o Painel especifica como fazer. Projeto de terceiros, não vinculado à Thoughtworks.
 
 → Sessão 8.
+
+---
+
+### Hunt e Thomas — Software Archaeology (2002)
+
+**HUNT, Andy; THOMAS, Dave. "Software Archaeology".** *IEEE Software*, v. 19, n. 2, p. 20-22, mar./abr. 2002. DOI: [10.1109/52.991327](https://doi.org/10.1109/52.991327)
+
+Coluna da série dos autores na *IEEE Software* que desenvolve a analogia entre arqueologia e leitura de código herdado. A coluna abre com a queixa de um programador anônimo para quem o trabalho diante de código antigo era arqueologia, e os autores descrevem a arqueologia propriamente dita como a investigação de uma situação em que se procura entender o que se vê e como as partes se encaixam. A analogia é anterior à coluna: os autores registram que eles, Brian Marick e Ward Cunningham conduziram um workshop sobre *Software Archaeology* na OOPSLA 2001. A coluna também adverte que é perigoso supor que o código ou os comentários sejam inteiramente verdadeiros. Fundamenta, na Sessão 4, a origem da analogia que dá nome ao Tema 2 e o peso baixo atribuído ao comentário como evidência.
+
+→ Sessão 4.
 
 ---
 
@@ -414,6 +459,16 @@ Dez artigos que definem regra de negócio como categoria própria de conheciment
 **ROSS, Ronald G. *RuleSpeak Sentence Forms*, versão 2.2.** Business Rule Solutions, LLC. Desenvolvido a partir de 1996. <https://www.rulespeak.com/en/>
 
 Notação em linguagem natural controlada para expressar regra de negócio sem ambiguidade. O documento normativo organiza cinco formas de sentença em torno de duas palavras-chave de regra e duas de conselho: **"must"** (algo é exigido), **"must not"** (algo é proibido), **"may ... only"** (permissão condicional, que continua sendo regra de negócio, com exceção explícita) e, como *statements of advice*, que o documento classifica à parte das regras, **"may"** isolado e **"need not"**. O próprio documento afirma que o RuleSpeak foi "uma das três notações de referência usadas na criação do SBVR, e é consistente com esse padrão".
+
+→ Sessão 4.
+
+---
+
+### Sneed e Erdős — Extracting Business Rules from Source Code (1996)
+
+**SNEED, Harry M.; ERDŐS, Katalin. "Extracting Business Rules from Source Code".** In: *WPC '96, 4th Workshop on Program Comprehension*, Berlim, 1996. IEEE Computer Society Press, p. 240-247. DOI: [10.1109/WPC.1996.501138](https://doi.org/10.1109/WPC.1996.501138)
+
+Revisa o estado da arte da aquisição de conhecimento de aplicação a partir de sistemas existentes, define o papel das regras de negócio nesse conhecimento e propõe um método de extração que parte da identificação das saídas de dados e reduz o programa às instruções que contribuem para cada saída (*program stripping*). O método foi implementado na ferramenta de engenharia reversa SOFT-REDOC, para programas COBOL, com o objetivo de ajudar o analista de negócio a compreender programas legados.
 
 → Sessão 4.
 

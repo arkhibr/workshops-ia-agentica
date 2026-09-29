@@ -6,7 +6,7 @@
 
 ## Problema
 
-Uma política pode estar correta em cada frase e falhar no conjunto. Condições se sobrepõem, exceções aparecem longe da regra geral, o mesmo conceito recebe nomes diferentes e a ordem de um `CASE` decide o que nenhum documento declarou. Nesta sessão, a IA ajuda a separar conceitos, fatos, regras e exceções sem receber autoridade para preencher lacunas da fonte.
+Uma política com todas as frases corretas pode produzir resultados incompatíveis quando as frases são combinadas, porque condições se sobrepõem, exceções aparecem longe da regra geral, o mesmo conceito recebe nomes diferentes e a ordem de um `CASE` decide o que nenhum documento declarou. Nesta sessão, a IA ajuda a separar conceitos, fatos, regras e exceções sem receber autoridade para preencher lacunas da fonte.
 
 ## Como usar este material
 
@@ -38,22 +38,23 @@ Ao final da sessão, o participante será capaz de:
 
 ## Roteiro da sessão (2h, das 10h às 12h)
 
-| Horário | Min | Bloco | Página | Produto do bloco |
-|---|---:|---|---|---|
-| 10:00–10:20 | 20 | Tema 1: modelo conceitual | [Conceitos, fatos e regras](regras-formais-conceitos.md) | Esquema de mapa com as cinco camadas e a convenção de IDs RC, RD e RN |
-| 10:20–10:45 | 25 | Tema 1: demonstração do ninho de IRPF | [Exemplo: decomposição do IRPF](regras-formais-exemplo-irpf.md) | Ninho decomposto em glossário, regras, tabela de faixas e casos de fronteira |
-| 10:45–11:00 | 15 | Tema 1: início do mapa tributário | [Exercício de IA — Geral](regras-formais-exercicio-geral.md) | Marcação inicial do texto-base e primeira saída do agente |
-| 11:00–11:05 | 5 | Intervalo | Nenhuma | Nenhum |
-| 11:05–11:10 | 5 | Tema 1: conclusão do mapa tributário | [Exercício de IA — Geral](regras-formais-exercicio-geral.md) | Mapa revisado, tabela de decisão e perguntas para validação jurídica |
-| 11:10–11:30 | 20 | Tema 1: casos de teste em TDD | [Exercício de IA — Especialista](regras-formais-exercicio-especialista.md) | Matriz de testes rastreada e três casos verdes em `node --test` |
-| 11:30–11:55 | 25 | Tema 2: arqueologia em SQL | [Arqueologia de regras em SQL](arqueologia-de-regras-sql.md) | Catálogo SBVR com linhas do SQL, tabela de decisão e matriz de testes |
-| 11:55–12:00 | 5 | Síntese e autoavaliação | [Síntese e referências](sintese-e-referencias.md) | Autoavaliação e lista de lacunas levadas à Sessão 5 |
+| Horário | Min | Bloco | Trilha | Página | Produto do bloco |
+|---|---:|---|---|---|---|
+| 10:00–10:16 | 16 | Tema 1 — Conceitos | Comum | [Conceitos, fatos e regras](regras-formais-conceitos.md) | Esquema de mapa com as cinco camadas e a convenção de IDs RC, RD e RN |
+| 10:16–10:28 | 12 | Tema 1 — Exemplo de aplicação de IA | Comum | [Exemplo de aplicação de IA](regras-formais-exemplo-de-aplicacao-de-ia.md) | Ninho decomposto em glossário, regras, tabela de faixas e casos de fronteira |
+| 10:28–11:00 | 32 | Tema 1 — Exercício | Geral | [Exercício de IA — Geral](regras-formais-exercicio-geral.md) | Mapa revisado, tabela de decisão e perguntas para validação jurídica |
+| 10:28–11:00 | 32 | Tema 1 — Exercício | Especialista | [Exercício de IA — Especialista](regras-formais-exercicio-especialista.md) | Matriz de testes rastreada e três casos verdes em `node --test` |
+| 11:00–11:05 | 5 | Intervalo | Todos | Nenhuma | Nenhum |
+| 11:05–11:20 | 15 | Tema 2 — Conceitos | Comum | [Conceitos: arqueologia de regras](arqueologia-de-regras-conceitos.md) | Método de seis movimentos e taxonomia de tipos de evidência para arqueologia de regras |
+| 11:20–11:33 | 13 | Tema 2 — Exemplo de aplicação de IA | Comum | [Exemplo de aplicação de IA](arqueologia-de-regras-exemplo-de-aplicacao-de-ia.md) | Catálogo SBVR do método C# com evidência por linha e correções do instrutor |
+| 11:33–11:55 | 22 | Tema 2 — Exercício | Comum | [Exercício de IA: arqueologia de regras em SQL](arqueologia-de-regras-exercicio.md) | Catálogo SBVR com linhas do SQL, tabela de decisão e matriz de testes |
+| 11:55–12:00 | 5 | Síntese e autoavaliação | Comum | [Síntese e referências](sintese-e-referencias.md) | Autoavaliação e lista de lacunas levadas à Sessão 5 |
 
 O conteúdo soma 115 minutos, e o intervalo das 11:00 às 11:05 completa os 120 minutos de relógio.
 
 ## Como conduzir
 
-No Tema 1, esconda a decomposição do exemplo até o grupo marcar conceitos, fatos e possíveis regras. No Tema 2, peça uma primeira leitura do SQL sem IA, porque essa linha de base torna visível o que a ferramenta encontrou e o que ela apenas formulou melhor.
+No Tema 1, esconda a decomposição do exemplo até o grupo marcar conceitos, fatos e possíveis regras, e explique as duas trilhas paralelas do exercício antes de liberar o grupo. A trilha geral verifica o mapa por revisão por camada e conferência manual, sem terminal, e a trilha especialista monta o projeto a partir dos blocos de código da própria página e conclui com os casos de teste em TDD. No Tema 2, siga a sequência de conceitos, exemplo e exercício: apresente o método de seis movimentos, conduza a demonstração sobre o método C# legado e só então peça ao grupo uma primeira leitura do SQL sem IA, porque essa linha de base torna visível o que a ferramenta encontrou e o que ela apenas formulou melhor.
 
 !!! warning "Limite da IA nesta sessão"
     O agente pode classificar, comparar e encontrar combinações, e quando a fonte não determina uma resposta a saída correta é o rótulo LACUNA acompanhado da pergunta que o especialista precisa responder.

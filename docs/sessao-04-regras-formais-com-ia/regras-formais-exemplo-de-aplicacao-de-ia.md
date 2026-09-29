@@ -1,4 +1,4 @@
-# Exemplo: decomposição de um ninho de regras de IRPF
+# Exemplo de aplicação de IA: decomposição de um ninho de regras de IRPF
 
 Esta demonstração usa o cálculo do Imposto de Renda da Pessoa Física (IRPF) como domínio conhecido, sem reproduzir a legislação vigente. O objetivo é observar uma política confusa sendo separada em conceitos, fatos, regras, tabela de decisão e testes, com o vocabulário do SBVR (*Semantics of Business Vocabulary and Business Rules*, padrão da OMG para vocabulário e regras de negócio).
 

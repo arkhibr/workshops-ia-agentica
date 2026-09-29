@@ -1,4 +1,4 @@
-# Arqueologia de regras em SQL
+# Exercício de IA: arqueologia de regras em SQL
 
 Arqueologia de regras é a recuperação disciplinada de decisões de negócio já incorporadas a um sistema. Aqui, o artefato é SQL realista, e o grupo usará uma ferramenta de IA capaz de ler arquivos e citar linhas para produzir regras em SBVR (*Semantics of Business Vocabulary and Business Rules*, padrão da OMG para vocabulário e regras de negócio), uma tabela de decisão e casos de teste.
 
@@ -25,33 +25,11 @@ Antes de usar IA, responda:
 
 ## O método em seis movimentos
 
+A análise segue os seis movimentos da [página de conceitos do Tema 2](arqueologia-de-regras-conceitos.md#o-metodo-em-seis-movimentos), que parte do inventário de tabelas, colunas e valores, registra a evidência por arquivo e linha, formula hipóteses de regra, leva essas hipóteses à validação de domínio, formaliza o resultado em SBVR com tabela de decisão e deriva testes das regras recuperadas.
+
 ![O arquivo calculo-beneficio.sql, com as linhas 4, 5, 7, 13, 28, 29 e 30 em destaque, segue por seis movimentos em sequência: inventário, captura de evidência, hipóteses de regra, validação de domínio com o especialista, formalização SBVR em RC, RD, RN e tabela de decisão, e derivação de testes de precedência e de dados ausentes. Uma faixa inferior mostra que a evidência por linha capturada no movimento 2 é citada nos movimentos 3 a 6.](assets/arqueologia-sql.png)
 
 *Leitura da figura: percorra os movimentos numerados da esquerda para a direita. A seta contínua do movimento 2 desce para a faixa de evidência, e as setas tracejadas que sobem dela indicam os movimentos que citam arquivo, linha e trecho literal.*
-
-### 1. Inventário
-
-Liste tabelas, colunas, valores literais e resultados possíveis, e converta nomes técnicos em candidatos a conceitos sem apagar o vínculo com a coluna. Registre fatos como “Pessoa possui CPF” e “Documento Fiscal registra Categoria”, mas ainda sem chamar nenhum item de regra.
-
-### 2. Captura de evidência
-
-Antes de interpretar, registre para cada predicado o arquivo, o intervalo exato de linhas e o trecho literal, como `calculo-beneficio.sql:28`, `INNER JOIN cadastro_familiar c ON c.responsavel_id = p.pessoa_id`. A evidência capturada nesse movimento é a base que as hipóteses, a validação e os testes vão citar depois.
-
-### 3. Hipóteses de regra
-
-Leia cada evidência como indício de uma regra candidata. Um `INNER JOIN` pode conter uma regra de elegibilidade, um `WHERE` pode suprimir casos e a ordem do `CASE` estabelece precedência, e cada hipótese recebe confiança e a evidência capturada no movimento 2.
-
-### 4. Validação de domínio
-
-Leve as hipóteses ao especialista do domínio em forma de perguntas fechadas, como “a devolução deve ser calculada quando a situação é `BLOQUEADO`?”. Cada resposta confirma a hipótese, a refuta ou a mantém em aberto, e a confiança é atualizada com o nome de quem respondeu e a data da resposta.
-
-### 5. Formalização SBVR
-
-Classifique cada hipótese como regra estrutural de classificação, estrutural de derivação ou operativa. Se não houver evidência de obrigação dirigida a um ator, evite fabricar regra operativa apenas porque existe código. As combinações relevantes entram numa **tabela de decisão**, que organiza em linhas as condições e o resultado de cada uma, com a política de acerto declarada, e os conflitos aparecem nela: compare a coluna `situacao` com os cálculos de `devolucao_cbs` e `devolucao_ibs` e verifique se eles produzem valores mesmo quando a situação indica bloqueio.
-
-### 6. Derivação de testes
-
-Derive testes das regras recuperadas. Cada teste confirma o comportamento atual do SQL, e a decisão sobre manter esse comportamento pertence à validação de domínio do movimento 4.
 
 ## Prompt para a ferramenta de arqueologia
 

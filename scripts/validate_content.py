@@ -61,6 +61,7 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
             "assets/ninho-irpf.png",
             "assets/fluxo-regra-tributaria.png",
             "assets/arqueologia-sql.png",
+            "assets/arqueologia-metodo.png",
         ),
     ),
     "sessao-05-decomposicao": ("Decomposição", False, ()),

@@ -79,12 +79,14 @@ nav:
           - Síntese e referências: sessao-03-exploracao-especificacao/sintese-e-referencias.md
       - S4 — Regras formais com IA:
           - Visão geral: sessao-04-regras-formais-com-ia/index.md
-          - "Conceitos, fatos e regras: do vocabulário à decisão": sessao-04-regras-formais-com-ia/regras-formais-conceitos.md
-          - "Exemplo: decomposição de um ninho de regras de IRPF": sessao-04-regras-formais-com-ia/regras-formais-exemplo-irpf.md
-          - "Exercício de IA — Geral: mapa de regras do cashback": sessao-04-regras-formais-com-ia/regras-formais-exercicio-geral.md
-          - "Exercício de IA — Especialista: casos de teste em TDD": sessao-04-regras-formais-com-ia/regras-formais-exercicio-especialista.md
-          - "Arqueologia de regras em SQL": sessao-04-regras-formais-com-ia/arqueologia-de-regras-sql.md
-          - "Síntese e referências": sessao-04-regras-formais-com-ia/sintese-e-referencias.md
+          - "Tema 1 — Conceitos: Regras formais com SBVR": sessao-04-regras-formais-com-ia/regras-formais-conceitos.md
+          - "Tema 1 — Exemplo de aplicação de IA": sessao-04-regras-formais-com-ia/regras-formais-exemplo-de-aplicacao-de-ia.md
+          - "Tema 1 — Exercício de IA (Geral)": sessao-04-regras-formais-com-ia/regras-formais-exercicio-geral.md
+          - "Tema 1 — Exercício de IA (Especialista)": sessao-04-regras-formais-com-ia/regras-formais-exercicio-especialista.md
+          - "Tema 2 — Conceitos: Arqueologia de regras": sessao-04-regras-formais-com-ia/arqueologia-de-regras-conceitos.md
+          - "Tema 2 — Exemplo de aplicação de IA": sessao-04-regras-formais-com-ia/arqueologia-de-regras-exemplo-de-aplicacao-de-ia.md
+          - "Tema 2 — Exercício de IA": sessao-04-regras-formais-com-ia/arqueologia-de-regras-exercicio.md
+          - Síntese e referências: sessao-04-regras-formais-com-ia/sintese-e-referencias.md
       - S5 — Decomposição: sessao-05-decomposicao/index.md
   - Bloco 3 — Execução:
       - S6 — TDD assistido por IA: sessao-06-tdd-assistido/index.md

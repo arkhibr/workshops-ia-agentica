@@ -1,6 +1,6 @@
 # Conceitos, fatos e regras: do vocabulário à decisão
 
-Formalizar uma regra começa antes da frase normativa. O time precisa definir os conceitos, registrar os fatos que os relacionam e só então dizer o que deve valer. Esta página apresenta o percurso completo do SBVR à tabela de decisão e fornece o esquema usado no restante da sessão. Os exemplos usam o regulamento de inscrição de um congresso fictício, criado apenas para ilustrar os conceitos e sem relação com o conteúdo dos exercícios da sessão.
+Para formalizar uma regra, o time precisa definir os conceitos e registrar os fatos que os relacionam antes de escrever a frase normativa que diz o que deve valer. Esta página apresenta o percurso completo do SBVR à tabela de decisão e fornece o esquema usado no restante da sessão. Os exemplos usam o regulamento de inscrição de um congresso fictício, criado apenas para ilustrar os conceitos e sem relação com o conteúdo dos exercícios da sessão.
 
 ## O mapa tem cinco camadas
 
@@ -85,14 +85,14 @@ Sentenças atômicas esclarecem cada regra isoladamente, e uma **tabela de decis
 
 | Regra | Pagamento compensado? | Categoria declarada | Comprovante validado? | Resultado |
 |---|---|---|---|---|
-| T1 | Não | qualquer | qualquer | inscrição pendente |
-| T2 | Sim | estudante | Não | valor-base integral |
-| T3 | Sim | estudante | Sim | 50% do valor-base |
-| T4 | Sim | profissional | qualquer | valor-base integral |
+| L1 | Não | qualquer | qualquer | inscrição pendente |
+| L2 | Sim | estudante | Não | valor-base integral |
+| L3 | Sim | estudante | Sim | 50% do valor-base |
+| L4 | Sim | profissional | qualquer | valor-base integral |
 
 A tabela declara sua política de acerto. **Unique** exige que uma única linha se aplique a cada caso, **First** faz a primeira linha aplicável prevalecer e **Priority** usa prioridade explícita. Sem essa decisão, a ordem visual das linhas passa a determinar o resultado sem que ninguém tenha escolhido a precedência.
 
-A combinação “pagamento compensado, categoria palestrante” não aparece em nenhuma linha, e o mapa a registra como **combinação não coberta pela tabela**. O regulamento fictício responde a esse caso no item 4, que isenta o palestrante do valor-base, e por isso a correção consiste em acrescentar a linha T5 com o resultado “isento”. O rótulo de lacuna fica reservado para a ausência de resposta na fonte, como no caso de um comprovante de matrícula que perde a validade entre a inscrição e a abertura do congresso, situação que o regulamento não trata.
+A combinação “pagamento compensado, categoria palestrante” não aparece em nenhuma linha, e o mapa a registra como **combinação não coberta pela tabela**. O regulamento fictício responde a esse caso no item 4, que isenta o palestrante do valor-base, e por isso a correção consiste em acrescentar a linha L5 com o resultado “isento”. O rótulo de lacuna fica reservado para a ausência de resposta na fonte, como no caso de um comprovante de matrícula que perde a validade entre a inscrição e a abertura do congresso, situação que o regulamento não trata.
 
 ## Evidência, confiança e lacuna
 
@@ -107,7 +107,7 @@ O esquema abaixo é o contrato de saída da sessão. O prefixo do ID indica o ti
 - **Evidência** aponta para a menor localização que sustenta a leitura.
 - **Confiança alta** indica correspondência direta, média sinaliza inferência e baixa marca hipótese frágil.
 - **Lacuna** é ausência de resposta na fonte e não recebe texto inventado.
-- **Conflito** ocorre quando duas evidências sustentam resultados incompatíveis para o mesmo caso.
+- **Conflito** ocorre quando duas regras não podem valer ao mesmo tempo para o mesmo caso. Duas evidências que sustentam resultados incompatíveis são o sinal que leva o mapa a registrar esse conflito.
 
 ## Prompt-base de decomposição
 
@@ -132,4 +132,4 @@ confiança. Não complete uma lacuna com conhecimento presumido.
 !!! tip "Critério de revisão"
     Faça a retrotradução: entregue apenas o mapa a uma segunda pessoa, peça que ela reconstrua a política em prosa e compare o escopo, as exceções e a precedência da reconstrução com os artigos ou linhas citados na coluna Evidência.
 
-**Próxima página:** [Exemplo: decomposição do IRPF](regras-formais-exemplo-irpf.md).
+**Próxima página:** [Exemplo de aplicação de IA](regras-formais-exemplo-de-aplicacao-de-ia.md).

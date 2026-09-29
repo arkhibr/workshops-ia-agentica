@@ -102,16 +102,23 @@ class SessaoQuatroTest(unittest.TestCase):
     def test_nova_arquitetura_de_paginas_existe(self):
         for nome in (
             "regras-formais-conceitos.md",
-            "regras-formais-exemplo-irpf.md",
+            "regras-formais-exemplo-de-aplicacao-de-ia.md",
             "regras-formais-exercicio-geral.md",
             "regras-formais-exercicio-especialista.md",
-            "arqueologia-de-regras-sql.md",
+            "arqueologia-de-regras-conceitos.md",
+            "arqueologia-de-regras-exemplo-de-aplicacao-de-ia.md",
+            "arqueologia-de-regras-exercicio.md",
         ):
             with self.subTest(pagina=nome):
                 self.assertTrue((S4 / nome).is_file())
 
+    def test_paginas_antigas_nao_existem(self):
+        for nome in ("regras-formais-exemplo-irpf.md", "arqueologia-de-regras-sql.md"):
+            with self.subTest(pagina=nome):
+                self.assertFalse((S4 / nome).exists())
+
     def test_exemplo_irpf_declara_limites_didaticos(self):
-        exemplo = (S4 / "regras-formais-exemplo-irpf.md").read_text(encoding="utf-8")
+        exemplo = (S4 / "regras-formais-exemplo-de-aplicacao-de-ia.md").read_text(encoding="utf-8")
         self.assertIn("valores hipotéticos", exemplo)
         self.assertIn("não é orientação tributária", exemplo)
 
@@ -125,13 +132,13 @@ class SessaoQuatroTest(unittest.TestCase):
                 self.assertIn("não invente", texto)
 
     def test_arqueologia_exige_teste_de_precedencia(self):
-        arqueologia = (S4 / "arqueologia-de-regras-sql.md").read_text(encoding="utf-8")
+        arqueologia = (S4 / "arqueologia-de-regras-exercicio.md").read_text(encoding="utf-8")
         self.assertIn("teste de precedência", arqueologia)
         self.assertIn("dados ausentes", arqueologia)
         self.assertIn("intervalo exato de linhas", arqueologia)
 
     def test_arqueologia_separa_evidencia_e_validacao_de_dominio(self):
-        arqueologia = (S4 / "arqueologia-de-regras-sql.md").read_text(encoding="utf-8")
+        arqueologia = (S4 / "arqueologia-de-regras-conceitos.md").read_text(encoding="utf-8")
         self.assertIn("### 2. Captura de evidência", arqueologia)
         self.assertIn("### 4. Validação de domínio", arqueologia)
 
@@ -171,10 +178,55 @@ class SessaoQuatroTest(unittest.TestCase):
                 self.assertNotIn("DEVOLUCAO_ESPECIFICA", texto)
 
     def test_exemplo_irpf_nao_classifica_calculo_como_regra_operativa(self):
-        exemplo = (S4 / "regras-formais-exemplo-irpf.md").read_text(encoding="utf-8")
+        exemplo = (S4 / "regras-formais-exemplo-de-aplicacao-de-ia.md").read_text(encoding="utf-8")
         self.assertNotIn("A apuração deve excluir", exemplo)
         self.assertNotIn("RN-03", exemplo)
         self.assertIn("O contribuinte", exemplo)
+
+    def test_prompt_geral_carrega_as_convencoes_sbvr(self):
+        geral = (S4 / "regras-formais-exercicio-geral.md").read_text(encoding="utf-8")
+        for termo in (
+            "Vocabulário antes das regras",
+            "alética",
+            "deôntica",
+            "EX-nn",
+            "REGULAMENTO",
+            "INFERÊNCIA",
+            "Se não conseguir abri-lo",
+            "Unique, First ou Priority",
+        ):
+            with self.subTest(termo=termo):
+                self.assertIn(termo, geral)
+
+    def test_texto_base_traz_a_frase_do_agente_financeiro(self):
+        for nome in ("regras-formais-exercicio-geral.md", "regras-formais-exercicio-especialista.md"):
+            with self.subTest(pagina=nome):
+                texto = (S4 / nome).read_text(encoding="utf-8")
+                self.assertIn("[8]", texto)
+                self.assertIn("agente financeiro", texto)
+                self.assertIn("art. 116, §§3º e 4º", texto)
+
+    def test_especialista_nao_depende_do_exercicio_geral(self):
+        especialista = (S4 / "regras-formais-exercicio-especialista.md").read_text(encoding="utf-8")
+        self.assertNotIn("produzido no exercício geral", especialista)
+        self.assertNotIn("recebe o mapa revisado no exercício geral", especialista)
+        self.assertIn("Vocabulário antes das regras", especialista)
+
+    def test_conceitos_de_arqueologia_ficam_sem_caso_aplicado(self):
+        conceitos = (S4 / "arqueologia-de-regras-conceitos.md").read_text(encoding="utf-8")
+        for termo in ("calculo-beneficio", "cashback", "759", "biblioteca", "IRPF"):
+            with self.subTest(termo=termo):
+                self.assertNotIn(termo, conceitos)
+        for termo in ("teste de caracterização", "engenharia reversa", "comportamento implementado"):
+            with self.subTest(termo=termo):
+                self.assertIn(termo, conceitos)
+
+    def test_exemplo_de_arqueologia_usa_artefato_proprio(self):
+        exemplo = (S4 / "arqueologia-de-regras-exemplo-de-aplicacao-de-ia.md").read_text(encoding="utf-8")
+        self.assertIn("```csharp", exemplo)
+        self.assertIn("[Fact]", exemplo)
+        self.assertIn("fictíci", exemplo)
+        self.assertNotIn("calculo-beneficio", exemplo)
 
 
 class CasoAplicadoTest(unittest.TestCase):
