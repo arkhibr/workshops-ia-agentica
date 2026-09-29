@@ -29,6 +29,7 @@ Referências que embasam o conteúdo metodológico do workshop, em ordem alfabé
 - [Jimenez et al. — SWE-bench (2024)](#jimenez-et-al-swe-bench-2024)
 - [Karpathy — Software 2.0 (2017)](#karpathy-software-20-2017)
 - [Karpathy — Software Is Changing Again (2025)](#karpathy-software-is-changing-again-2025)
+- [Lei Complementar nº 214/2025 — IBS, CBS e Imposto Seletivo](#lei-complementar-n-2142025-ibs-cbs-e-imposto-seletivo)
 - [MADR — Markdown Architectural Decision Records v4](#madr-markdown-architectural-decision-records-v4)
 - [Mendes — Controle e Autonomia (Módulo 4, Agentes)](#mendes-controle-e-autonomia-modulo-4-agentes)
 - [Meszaros — xUnit Test Patterns (2007)](#meszaros-xunit-test-patterns-2007)
@@ -38,6 +39,7 @@ Referências que embasam o conteúdo metodológico do workshop, em ordem alfabé
 - [Paul e Elder — The Thinker's Guide to Socratic Questioning (2019)](#paul-e-elder-the-thinkers-guide-to-socratic-questioning-2019)
 - [Pearce et al. — Copilot Security (2022)](#pearce-et-al-copilot-security-2022)
 - [Peng et al. — Copilot Productivity (2023)](#peng-et-al-copilot-productivity-2023)
+- [Receita Federal — Marcos da Reforma Tributária do Consumo](#receita-federal-marcos-da-reforma-tributaria-do-consumo)
 - [Ross (ed.) — Business Rules Manifesto (2003)](#ross-ed-business-rules-manifesto-2003)
 - [Ross — RuleSpeak](#ross-rulespeak)
 - [StrykerJS e Stryker.NET — Mutation Testing](#strykerjs-e-strykernet-mutation-testing)
@@ -300,6 +302,16 @@ Formulação dos três paradigmas coexistentes: Software 1.0 (código explícito
 
 ---
 
+### Lei Complementar nº 214/2025 — IBS, CBS e Imposto Seletivo
+
+**BRASIL. *Lei Complementar nº 214, de 16 de janeiro de 2025: texto compilado*.** Presidência da República, com alterações posteriores, inclusive da Lei Complementar nº 227/2026. <https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214compilado.htm>. Acesso em: 29 set. 2026.
+
+Institui IBS, CBS e Imposto Seletivo. Os arts. 112 a 124 disciplinam a devolução personalizada para pessoas físicas de famílias de baixa renda: destinatário, critérios cumulativos, dados considerados, momento e percentuais. É a fonte primária do exercício de mapa de regras e testes da Sessão 4.
+
+→ Sessão 4.
+
+---
+
 ### MADR — Markdown Architectural Decision Records v4
 
 **MADR (Markdown Architectural Decision Records) v4.** Template leve para registro de decisões arquiteturais — contexto, opções consideradas, decisão, consequências.
@@ -385,6 +397,16 @@ Investiga segurança do GitHub Copilot avaliando com que frequência recomenda c
 Experimento randomizado com 70 desenvolvedores profissionais que completam uma tarefa de implementação de servidor HTTP. O grupo com Copilot completou a tarefa 55,8% mais rápido (71 minutos contra 161 minutos). O efeito foi maior para desenvolvedores menos experientes, sugerindo que a assistência reduz a curva de aprendizado para tarefas bem delimitadas e novas, onde o contexto é contido e explícito.
 
 → Sessão 1.
+
+---
+
+### Receita Federal — Marcos da Reforma Tributária do Consumo
+
+**RECEITA FEDERAL DO BRASIL. *Principais Marcos Regulatórios*.** Programa da Reforma Tributária do Consumo. <https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/programas-e-atividades/reforma-tributaria-do-consumo/marcos>. Atualizado em 6 maio 2026. Acesso em: 29 set. 2026.
+
+Página oficial que reúne a Emenda Constitucional nº 132/2023, a Lei Complementar nº 214/2025, a Lei Complementar nº 227/2026 e atos de implantação. Serve como segunda fonte oficial para situar a versão compilada usada no exercício.
+
+→ Sessão 4.
 
 ---
 
