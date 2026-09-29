@@ -101,15 +101,10 @@ PAGINAS_FIXAS_POR_SESSAO: dict[str, tuple[str, ...]] = {
     "sessao-04-regras-formais-com-ia": ("index.md", "sintese-e-referencias.md"),
 }
 
-# Sessões que não usam a Vetor como caso aplicado. A Sessão 4 fica de fora
-# porque a especificação de 29/09/2026 troca a Vetor pelos casos IRPF, cashback
-# e SQL (docs/superpowers/specs/2026-09-29-sessao-04-regras-formais-e-arqueologia-design.md:32).
-SESSOES_SEM_CASO_VETOR = frozenset({"sessao-04-regras-formais-com-ia"})
-
 # Sessões cujo esquema abandona o confinamento clássico do caso aplicado
 # (Vetor) à página exemplo-arquitetural.md. Nelas o caso corre por toda a
 # sessão, por desenho, porque não existe mais uma única página de exemplo.
-SESSOES_SEM_CONFINAMENTO_DE_CASO = frozenset(PAGINAS_FIXAS_POR_SESSAO) - SESSOES_SEM_CASO_VETOR
+SESSOES_SEM_CONFINAMENTO_DE_CASO = frozenset(PAGINAS_FIXAS_POR_SESSAO)
 
 
 def paginas_fixas(slug: str) -> tuple[str, ...]:
