@@ -19,6 +19,9 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 IMAGES = DOCS / "assets" / "images"
+# Documentos internos de planejamento: excluídos do site por `exclude_docs` no
+# mkdocs.yml e, pelo mesmo motivo, fora do nav e das checagens de página publicada.
+INTERNOS = DOCS / "superpowers"
 
 # `completa` distingue a sessão já desenvolvida da que ainda é esqueleto.
 # Ao construir uma sessão nova, vire a chave e declare as imagens esperadas.
@@ -425,6 +428,8 @@ def validate_shared_pages(
     for path in sorted(DOCS.rglob("*.md")):
         if any(session_dir in path.parents for session_dir in session_dirs):
             continue
+        if INTERNOS in path.parents:
+            continue
         text = path.read_text(encoding="utf-8")
         for marcador in MARCADORES_PROIBIDOS:
             if re.search(rf"\b{marcador}\b", text):
@@ -437,6 +442,8 @@ def validate_nav(errors: list[str]) -> None:
     config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
     declaradas = set(re.findall(r"([\w./-]+\.md)", config))
     for path in sorted(DOCS.rglob("*.md")):
+        if INTERNOS in path.parents:
+            continue
         relativa = path.relative_to(DOCS).as_posix()
         if relativa not in declaradas:
             errors.append(f"docs/{relativa}: página fora do nav do mkdocs.yml")

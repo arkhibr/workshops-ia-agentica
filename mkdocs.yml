@@ -3,6 +3,10 @@ site_description: Workshop de engenharia agêntica disciplinada para a equipe de
 site_url: https://arkhibr.github.io/workshops-ia-agentica/
 use_directory_urls: true
 
+# Plano e especificação internos ficam no repositório, fora do site publicado.
+exclude_docs: |
+  superpowers/
+
 theme:
   name: material
   language: pt-BR
