@@ -2,7 +2,7 @@
 
 Referências que embasam o conteúdo metodológico do workshop, em ordem alfabética por autor. Cada entrada indica a que sessão(ões) serve de base.
 
-Para configurar os recursos de memória na ferramenta, consulte o [apêndice sobre memória do Claude](apendice-memoria-claude.md).
+Para configurar os recursos de memória na ferramenta, consulte o [apêndice sobre memória do Claude](#apendice-ativar-e-conferir-a-memoria-do-claude), no fim desta página.
 
 ## Índice Alfabético
 
@@ -581,3 +581,131 @@ Método desenvolvido por um time de tecnologia interna da Thoughtworks que trata
 Livro clássico sobre depuração sistemática de programas. Apresenta metodologia científica aplicada à localização de erros: reproduzir o defeito consistentemente, formular hipóteses sobre causas, projetar testes para refutá-las e isolar o código responsável. Zeller desenvolve técnicas como delta debugging (automatizar redução de entradas que causam falha), execução reversa e análise de dependência. Fundamental para engenheiros que buscam evitar tentativa-e-erro em depuração, oferecendo processos rigorosos e automatizáveis para diagnóstico — base do protocolo hipótese → investigação → correção → verificação usado na Sessão 9.
 
 → Sessão 9.
+
+---
+
+## Apêndice — Ativar e conferir a memória do Claude
+
+Este roteiro cobre os recursos de memória do Claude nas aplicações de conversa e no Claude Code, com seus controles, escopos e locais de armazenamento. Cada técnica traz os passos de configuração e um roteiro curto para testar se a configuração produziu efeito, e a busca de chats anteriores fica na última seção.
+
+!!! info "Ambiente desta edição"
+    As fontes oficiais listadas abaixo foram consultadas em 30/09/2026. O único teste local foi `claude --version`, que retornou `2.1.285 (Claude Code)` em macOS. Os caminhos de interface do Claude web, Desktop e Mobile e os comandos `/init`, `/context` e `/memory` foram conferidos na documentação, sem execução numa conta de participante, e plano e tipo de conta não foram verificados. Ao repetir os roteiros, anote aplicação, versão, plataforma, plano, data e resultado, e corrija o passo que divergir da tela observada.
+
+Fontes oficiais:
+
+- [Anthropic — Usar busca de chats e memória no Claude](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context)
+- [Anthropic — Criar e gerenciar projetos](https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects)
+- [Anthropic — Como Claude Code lembra seu projeto](https://code.claude.com/docs/en/memory)
+- [Anthropic — Importar e exportar memória](https://support.claude.com/en/articles/12123587-import-and-export-your-memory-from-claude)
+
+### Escolha o mecanismo
+
+| Necessidade | Recurso | Onde fica |
+|---|---|---|
+| Claude lembrar preferências e contexto entre conversas | Memória das conversas | Claude web, Desktop e Mobile: **Configurações → Memória** |
+| Manter contexto de um assunto separado dos demais | Memória de projeto | Conversas dentro de um **Projeto** do Claude |
+| Fixar convenções de um repositório para sessões de programação | `CLAUDE.md` | Arquivo no repositório ou na pasta pessoal do Claude Code |
+| Permitir que Claude Code anote aprendizados por repositório | Memória automática | Comando `/memory` no Claude Code |
+| Encontrar o que foi dito em um chat anterior | Busca e referência a chats | Alternância em **Configurações → Memória** e consulta no chat |
+
+Memória de conversas e busca de chats têm controles próprios, e o arquivo `CLAUDE.md` fornece instruções persistentes ao Claude Code.
+
+### Memória das conversas no Claude
+
+A Anthropic informa que a memória vem ligada por padrão nos planos Free, Pro e Max. Nos planos Team e Enterprise, um proprietário precisa habilitá-la para a organização antes de o membro ativá-la.
+
+1. Abra o Claude e entre em **Configurações → Memória**.
+2. Ative **Gerar memória a partir dos chats** (*Generate memory from chats*).
+
+!!! warning "Se a opção não aparecer"
+    Em Team ou Enterprise, peça ao proprietário que confira **Configurações da organização → Capacidades**, porque algumas organizações têm restrições de disponibilidade. Se a conta ainda mostrar **Memória** dentro de **Configurações → Capacidades**, siga a seção de experiência legada da [documentação oficial](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context#information-for-legacy-memory-users) e anote esse caminho.
+
+#### Roteiro de teste: memória das conversas
+
+1. Em uma conversa comum, peça: “Lembre que, neste workshop, prefiro exemplos de C# e TypeScript.”
+2. Abra **Configurações → Memória → Tópicos** e confira se a entrada foi criada.
+3. Inicie uma nova conversa comum e pergunte qual linguagem você prefere nos exemplos.
+4. Compare a resposta com a entrada exibida em Tópicos. O teste passa quando a resposta cita C# e TypeScript sem que você repita a preferência.
+
+### Memória de projeto
+
+Crie um projeto em **Projetos → Novo projeto** e abra uma conversa dentro dele. Cada projeto tem seu próprio espaço de memória, separado dos chats comuns e dos demais projetos. Use **Definir instruções do projeto** para orientações que devem valer em todas as conversas do projeto e coloque documentos de referência na base de conhecimento do projeto.
+
+#### Roteiro de teste: memória de projeto
+
+1. Crie o projeto “Teste de memória” e, na primeira conversa dele, diga: “Neste projeto, os testes usam xUnit.”
+2. Abra uma segunda conversa no mesmo projeto e pergunte qual framework de teste o projeto usa. A resposta esperada é xUnit.
+3. Abra uma conversa comum, fora de qualquer projeto, e faça a mesma pergunta. O teste passa quando essa conversa não recupera a informação do projeto.
+
+### Instruções persistentes com `CLAUDE.md`
+
+1. No terminal, entre na raiz do repositório e execute `claude`.
+2. Dentro da sessão, execute `/init` para gerar uma proposta inicial de `CLAUDE.md`. Se o arquivo já existir, o comando sugere melhorias ao conteúdo existente.
+3. Revise o arquivo e registre comandos de build e teste, estrutura do projeto e convenções que devem valer em todas as sessões. Um exemplo curto:
+
+   ```markdown
+   # Convenções do projeto
+
+   - Execute `npm test` antes de propor um commit.
+   - Código de interface fica em `src/ui/`.
+   - Exemplos de API usam TypeScript.
+   ```
+
+O arquivo `./CLAUDE.md` ou `./.claude/CLAUDE.md` serve ao projeto e pode ser versionado com a equipe. O arquivo `~/.claude/CLAUDE.md` serve às preferências pessoais em todos os projetos daquela máquina. Essas instruções orientam o comportamento do agente e não bloqueiam ações tecnicamente.
+
+#### Roteiro de teste: `CLAUDE.md`
+
+1. Encerre a sessão e inicie uma nova com `claude` no mesmo repositório.
+2. Execute `/context` e confirme que o arquivo aparece em **Memory files**.
+3. Pergunte: “Qual comando devo rodar antes de propor um commit?” A resposta esperada é `npm test`, conforme o exemplo acima.
+4. Execute `/memory` e confirme que o `CLAUDE.md` editado está entre os arquivos carregados.
+
+### Memória automática do Claude Code
+
+1. Na sessão do Claude Code, execute `/memory`.
+2. Confira a alternância de **auto memory**, que a documentação descreve como ligada por padrão. Se estiver desligada, ative-a no menu, e o controle gravará `autoMemoryEnabled` nas configurações do usuário.
+
+A memória automática fica em `~/.claude/projects/<project>/memory/`, é local à máquina e é compartilhada entre worktrees do mesmo repositório. O índice `MEMORY.md` é carregado no início da conversa, e os arquivos de tópicos são lidos quando necessários. Para desativar apenas em um projeto, a documentação descreve `"autoMemoryEnabled": false` em `.claude/settings.json`.
+
+#### Roteiro de teste: memória automática
+
+1. Peça uma lembrança útil para sessões futuras, como “Lembre que os testes de integração deste projeto exigem Redis local”.
+2. Volte a `/memory`, abra a pasta de memória automática e confira o índice `MEMORY.md` e o arquivo do tópico criado, se houver.
+3. Abra uma nova sessão no mesmo repositório e pergunte o que os testes de integração exigem. O teste passa quando a resposta cita Redis local.
+4. Se a informação não voltar, confira o arquivo antes de concluir que o recurso falhou, porque a gravação não ocorre necessariamente em toda sessão.
+
+### Trazer memória de outro assistente
+
+No Claude web ou Desktop, abra **Configurações → Memória → Iniciar importação**, cole o texto exportado do serviço anterior e selecione **Adicionar à memória**. A Anthropic classifica a importação como experimental, informa que nem toda entrada será incorporada e documenta o recurso para Free, Pro, Max e Team.
+
+#### Roteiro de teste: importação
+
+1. Antes de importar, anote duas ou três preferências presentes no texto exportado.
+2. Depois da importação, abra **Configurações → Memória → Tópicos** e verifique quais delas foram registradas como entradas.
+3. Em uma nova conversa, pergunte por uma das preferências importadas e compare a resposta com o tópico correspondente.
+
+### Revisar, pausar e apagar
+
+Na memória de conversas, **Configurações → Memória → Tópicos** permite ler, editar e excluir entradas. **Pausar memória** preserva as entradas sem usá-las ou criar outras, e **Redefinir memória** apaga as entradas, inclusive as dos projetos, de forma irreversível. Chats anônimos não entram na memória.
+
+No Claude Code, `/memory` abre os arquivos de instrução e a pasta de memória automática para inspeção. Antes de excluir um arquivo, confirme seu escopo: pessoal, projeto ou organização.
+
+#### Roteiro de teste: pausa
+
+1. Ative **Pausar memória** e, em uma nova conversa, pergunte pela preferência gravada no roteiro da memória das conversas.
+2. Confirme que a resposta não usa a preferência e que a entrada continua listada em Tópicos.
+3. Retome a memória e repita a pergunta em outra conversa para confirmar que a preferência voltou a ser usada.
+
+### Busca e referência a chats anteriores
+
+Nos planos pagos Pro, Max, Team e Enterprise, a alternância **Buscar e referenciar chats** fica em **Configurações → Memória**. Dentro de um projeto, a busca fica limitada às conversas daquele projeto, e nos chats comuns ela cobre os chats fora de projetos. A disponibilidade pode depender da implantação gradual na conta.
+
+1. Abra **Configurações → Memória**.
+2. Ative **Buscar e referenciar chats**.
+
+#### Roteiro de teste: busca de chats
+
+1. Em um chat comum, discuta um assunto com termo fácil de reconhecer, como “faixa de atacado da regra de desconto”.
+2. Abra um novo chat comum e pergunte: “O que discutimos sobre a faixa de atacado?”
+3. Observe se a busca aparece como chamada de ferramenta, com referência ao chat de origem. O teste passa quando a resposta aponta o chat do passo 1.
+4. Repita a pergunta dentro de um projeto. A busca deve ficar restrita às conversas daquele projeto e não deve encontrar o chat comum.
