@@ -2,6 +2,8 @@
 
 Referências que embasam o conteúdo metodológico do workshop, em ordem alfabética por autor. Cada entrada indica a que sessão(ões) serve de base.
 
+Para configurar os recursos de memória na ferramenta, consulte o [apêndice sobre memória do Claude](apendice-memoria-claude.md).
+
 ## Índice Alfabético
 
 - [Agentic AI Foundation — AGENTS.md Standard](#agentic-ai-foundation-agentsmd-standard)
