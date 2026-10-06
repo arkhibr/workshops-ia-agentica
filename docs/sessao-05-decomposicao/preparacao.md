@@ -1,6 +1,6 @@
 # Preparação do ambiente
 
-Na Sessão 5 cada dupla roda o GitHub Spec Kit, ferramenta de linha de comando que conduz o agente pela especificação, pelo plano e pelas tarefas de uma mudança. A instalação leva de 20 a 30 minutos e precisa estar pronta **antes da aula**, porque não há tempo para ela dentro das duas horas.
+Na Sessão 5 cada participante roda, na própria máquina, o GitHub Spec Kit, ferramenta de linha de comando que conduz o agente pela especificação, pelo plano e pelas tarefas de uma mudança. A instalação leva de 20 a 30 minutos e precisa estar pronta **antes da aula**, porque não há tempo para ela dentro das duas horas.
 
 O roteiro abaixo é para Windows. Quem usa macOS ou Linux encontra as diferenças na [última seção](#macos-e-linux).
 
