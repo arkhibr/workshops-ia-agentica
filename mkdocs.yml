@@ -87,7 +87,9 @@ nav:
           - "Tema 2 — Exemplo de aplicação de IA": sessao-04-regras-formais-com-ia/arqueologia-de-regras-exemplo-de-aplicacao-de-ia.md
           - "Tema 2 — Exercício de IA": sessao-04-regras-formais-com-ia/arqueologia-de-regras-exercicio.md
           - Síntese e referências: sessao-04-regras-formais-com-ia/sintese-e-referencias.md
-      - S5 — Decomposição: sessao-05-decomposicao/index.md
+      - S5 — Decomposição:
+          - Visão geral: sessao-05-decomposicao/index.md
+          - Preparação do ambiente: sessao-05-decomposicao/preparacao.md
   - Bloco 3 — Execução:
       - S6 — TDD assistido por IA: sessao-06-tdd-assistido/index.md
       - S7 — Estratégias avançadas de teste: sessao-07-estrategias-avancadas-teste/index.md

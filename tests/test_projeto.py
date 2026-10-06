@@ -56,11 +56,15 @@ class EstruturaTest(unittest.TestCase):
                 self.assertIn(imagem.name, markdown)
 
     def test_sessao_incompleta_tem_apenas_o_indice(self):
+        # preparacao.md é enviada à turma antes da sessão ser construída.
+        permitidas = {"index.md", "preparacao.md"}
         for slug, (_, completa, _) in SESSOES.items():
             if completa:
                 continue
             with self.subTest(slug=slug):
-                self.assertEqual(["index.md"], [p.name for p in (DOCS / slug).glob("*.md")])
+                paginas = {p.name for p in (DOCS / slug).glob("*.md")}
+                self.assertIn("index.md", paginas)
+                self.assertLessEqual(paginas, permitidas)
 
     def test_horario_fixo_declarado_no_material(self):
         """10h–12h com intervalo de 5 min às 11h é decisão fechada."""
