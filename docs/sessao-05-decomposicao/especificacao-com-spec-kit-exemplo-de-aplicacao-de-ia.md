@@ -1,6 +1,6 @@
 # Exemplo de aplicação de IA: a spec do pedido mínimo
 
-O instrutor roda ao vivo a constitution e a spec do GitHub Spec Kit sobre uma feature pequena da Vetor, a plataforma fictícia de e-commerce B2B do workshop. A feature é o pedido mínimo para clientes de atacado. Os trechos abaixo vêm de uma execução real com Spec Kit 1.1.1 e Claude Code, em 07/10/2026. Outra execução produz texto diferente, e os pontos a observar costumam se repetir.
+Esta demonstração aplica a constitution e a spec do GitHub Spec Kit a uma feature pequena da Vetor, a plataforma fictícia de e-commerce B2B do workshop: o pedido mínimo para clientes de atacado. Os trechos abaixo vêm de uma execução real com Spec Kit 1.1.1 e Claude Code, em 07/10/2026. Outra execução produz texto diferente, e os pontos a observar costumam se repetir.
 
 ## As regras de origem
 
@@ -29,11 +29,11 @@ Por quê: teste que nunca falhou não prova nada sobre o código que diz
 cobrir.
 ```
 
-Ele também criou uma seção de governança com versionamento semântico da própria constitution, que ninguém pediu. Pergunte à turma se isso é ganho ou ruído. A seção não muda nenhuma saída dos comandos seguintes, e por isso passa pelo critério da página de conceitos como decoração inofensiva.
+Ele também criou uma seção de governança com versionamento semântico da própria constitution, que ninguém pediu. A seção não muda nenhuma saída dos comandos seguintes, e por isso passa pelo critério da página de conceitos como decoração inofensiva. A pergunta para discussão é se ela é ganho ou ruído.
 
 ## A spec gerada
 
-O `specify` levou cerca de um minuto e meio e produziu uma `spec.md` de pouco mais de cem linhas. Mostre só os três trechos abaixo.
+O `specify` levou cerca de um minuto e meio e produziu uma `spec.md` de pouco mais de cem linhas. Os pontos a observar estão em três trechos.
 
 **O caso que a RD-01 existe para pegar.** O agente transformou a regra de derivação numa história própria, com o exemplo que separa as duas leituras possíveis:
 
@@ -55,7 +55,7 @@ O `specify` levou cerca de um minuto e meio e produziu uma `spec.md` de pouco ma
   desconto existente.
 ```
 
-O FR-007 é uma proteção técnica contra regressão e pode ficar sem ID. O FR-006 decide como o sistema responde a uma entrada que o mapa não previa, e essa decisão pode afetar a mensagem que o cliente vê. Peça à turma que decida se ele precisa de uma regra de origem.
+O FR-007 é uma proteção técnica contra regressão e pode ficar sem ID. O FR-006 decide como o sistema responde a uma entrada que o mapa não previa, e essa decisão pode afetar a mensagem que o cliente vê. Fica em aberto se ele precisa de uma regra de origem.
 
 **Critério que diz mais que o requisito.** Compare:
 

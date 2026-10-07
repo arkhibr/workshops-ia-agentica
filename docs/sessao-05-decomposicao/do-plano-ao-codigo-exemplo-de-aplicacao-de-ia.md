@@ -1,6 +1,6 @@
 # Exemplo de aplicação de IA: as tarefas do pedido mínimo
 
-O instrutor continua ao vivo a demonstração do pedido mínimo de atacado da Vetor, a plataforma fictícia de e-commerce B2B do workshop, a partir da spec gerada no exemplo do Tema 1. Os comandos agora são `plan`, `tasks` e `implement`. Os trechos vêm da mesma execução real com Spec Kit 1.1.1 e Claude Code, em 07/10/2026.
+Esta demonstração continua o pedido mínimo de atacado da Vetor, a plataforma fictícia de e-commerce B2B do workshop, a partir da spec gerada no exemplo do Tema 1. Os comandos agora são `plan`, `tasks` e `implement`. Os trechos vêm da mesma execução real com Spec Kit 1.1.1 e Claude Code, em 07/10/2026.
 
 ## O plano
 
@@ -9,7 +9,7 @@ O instrutor continua ao vivo a demonstração do pedido mínimo de atacado da Ve
 por npm test, sem dependências. A validação fica em src/pedido-minimo.js.
 ```
 
-O comando levou cerca de dois minutos e gerou, além do `plan.md`, quatro documentos de apoio: `research.md`, `data-model.md`, `contracts/` e `quickstart.md`. Mostre só duas coisas.
+O comando levou cerca de dois minutos e gerou, além do `plan.md`, quatro documentos de apoio: `research.md`, `data-model.md`, `contracts/` e `quickstart.md`. Dois pontos interessam aqui.
 
 **O portão que passou por cima de um requisito.** A linha do princípio de rastreabilidade no *Constitution Check* diz:
 
@@ -18,7 +18,7 @@ O comando levou cerca de dois minutos e gerou, além do `plan.md`, quatro docume
   FR-001..005. [...] | PASS |
 ```
 
-A spec tem sete requisitos, e o FR-006 e o FR-007 não citam regra de origem. O portão contou só os cinco que citavam e aprovou. Pergunte à turma o que teria acontecido se o princípio fosse lido literalmente.
+A spec tem sete requisitos, e o FR-006 e o FR-007 não citam regra de origem. O portão contou só os cinco que citavam e aprovou. A pergunta para discussão é o que teria acontecido se o princípio fosse lido literalmente.
 
 **O critério sem lastro virou contrato.** No exemplo anterior, o SC-004 prometia informar ao cliente "o valor que falta atingir", coisa que nenhuma regra pedia. O `research.md` registrou a consequência:
 
@@ -37,7 +37,7 @@ O campo `falta` trouxe junto uma decisão de arredondamento para centavos e a fo
 /speckit-tasks
 ```
 
-O `tasks.md` saiu com 18 tarefas em 169 linhas. Em aula, mostre o esqueleto por fase:
+O `tasks.md` saiu com 18 tarefas em 169 linhas. O esqueleto por fase:
 
 | Fase | Tarefas | Conteúdo | Checkpoint |
 |---|---|---|---|
@@ -49,7 +49,7 @@ O `tasks.md` saiu com 18 tarefas em 169 linhas. Em aula, mostre o esqueleto por 
 
 Seis das dezoito tarefas só rodam `npm test`. Três delas esperam falha (T003, T008, T013) e provam que o teste discrimina. As outras três esperam sucesso e funcionam como critério de aceitação da tarefa anterior.
 
-Três pontos para anotar com a turma.
+O arquivo tem três pontos que interessam à sessão.
 
 **A tarefa composta.** A T009 tem um parágrafo inteiro. Ela cria o formatador monetário, implementa o ramo do atacado, decide que "pelo menos" vira `<` na comparação, calcula `falta` com arredondamento e escreve a mensagem de recusa com o comentário `FR-004 / SC-004`. São cinco decisões numa tarefa, e duas delas vêm do critério sem lastro. Ela é a candidata natural a uma parada humana antes da execução.
 
@@ -71,7 +71,7 @@ que viola o Princípio II para FR-001.
 /speckit-implement Execute até o checkpoint da história US1 e pare.
 ```
 
-Na execução de referência, o comando levou um minuto e meio, marcou T001 a T011 como concluídas e parou com 15 testes passando. Antes da segunda chamada, mostre à turma o diff e a saída do `npm test`. Esse é o ponto de controle humano que o modo básico não cria sozinho.
+Na execução de referência, o comando levou um minuto e meio, marcou T001 a T011 como concluídas e parou com 15 testes passando. Antes da segunda chamada, o diff e a saída do `npm test` passam por revisão. Esse é o ponto de controle humano que o modo básico não cria sozinho.
 
 ```text
 /speckit-implement Execute as fases restantes.

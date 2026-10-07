@@ -274,6 +274,14 @@ class SessaoCincoTest(unittest.TestCase):
             with self.subTest(pagina=caminho.name):
                 self.assertNotIn("dupla", caminho.read_text(encoding="utf-8").lower())
 
+    def test_sem_rubrica_de_bastidor_para_o_instrutor(self):
+        """O texto é do autor da aula, não instrução dirigida a quem conduz."""
+        for caminho in sorted(S5.glob("*.md")):
+            texto = caminho.read_text(encoding="utf-8")
+            for trecho in ("O instrutor", "à turma", "Mostre ", "Pergunte "):
+                with self.subTest(pagina=caminho.name, trecho=trecho):
+                    self.assertNotIn(trecho, texto)
+
     def test_roteiro_abre_com_kahoot_de_quinze_minutos(self):
         self.assertRegex(self.texto("index.md"), r"\| 10:00–10:15 \| 15 \| Kahoot \|")
 

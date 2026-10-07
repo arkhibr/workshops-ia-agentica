@@ -10,7 +10,7 @@ Uma regra de negócio bem formulada ainda pode chegar errada ao código. Entre a
 
 ## Como usar este material
 
-Estas páginas apoiam uma sessão conduzida ao vivo, sem leitura prévia obrigatória. O instrutor alterna explicação, demonstração e prática, e cada participante trabalha na própria máquina. A única tarefa antes da aula é a [preparação do ambiente](preparacao.md), que instala o GitHub Spec Kit 1.1.1.
+Estas páginas apoiam uma sessão conduzida ao vivo, sem leitura prévia obrigatória. A aula alterna explicação, demonstração e prática, e cada participante trabalha na própria máquina. A única tarefa antes da aula é a [preparação do ambiente](preparacao.md), que instala o GitHub Spec Kit 1.1.1.
 
 ## Os dois temas
 
@@ -20,7 +20,7 @@ A sessão percorre o caminho básico do GitHub Spec Kit, os cinco comandos que a
 
 **Tema 2 — Do plano ao código.** O plano escolhe a tecnologia, as tarefas decompõem o trabalho e a implementação executa as tarefas até os testes passarem. O foco é a decomposição e o lugar dos pontos de controle humano.
 
-A demonstração do instrutor usa o pedido mínimo de atacado da Vetor, a plataforma fictícia de e-commerce B2B do workshop. Os exercícios usam outra feature da Vetor, o cálculo de frete, e partem do projeto de exemplo executável do repositório.
+A demonstração usa o pedido mínimo de atacado da Vetor, a plataforma fictícia de e-commerce B2B do workshop. Os exercícios usam outra feature da Vetor, o cálculo de frete, e partem do projeto de exemplo executável do repositório.
 
 ## Objetivos de aprendizagem
 
@@ -52,11 +52,11 @@ O conteúdo soma 100 minutos depois do Kahoot, e o intervalo das 11:00 às 11:05
 
 ## Como conduzir
 
-Confirme durante o Kahoot que todos têm o `specify version` respondendo `1.1.1`. Quem chegou sem a instalação resolve com o instrutor nesse intervalo, seguindo a tabela de problemas comuns da preparação.
+Durante o Kahoot, cada participante confere se o `specify version` responde `1.1.1`. Quem chegou sem a instalação resolve nesse intervalo, com a tabela de problemas comuns da preparação.
 
-Os comandos do agente levam de 40 segundos a 2 minutos cada. Nos exercícios, use essa espera para as perguntas da página, em vez de deixar a turma olhando o terminal. Nas demonstrações, rode os comandos antes da aula e mostre os artefatos já gerados, se a rede da sala for lenta.
+Os comandos do agente levam de 40 segundos a 2 minutos cada. Nos exercícios, a espera é o tempo de responder às perguntas da página. Se a rede da sala estiver lenta, as demonstrações usam os artefatos gerados antes da aula.
 
-Os exercícios mandam ler seções específicas dos artefatos, nunca o arquivo inteiro. Uma `spec.md` passa de cem linhas e um `tasks.md` passa de cento e cinquenta. Segure a turma nas seções indicadas.
+Os exercícios pedem a leitura de seções específicas dos artefatos, nunca do arquivo inteiro, porque uma `spec.md` passa de cem linhas e um `tasks.md` passa de cento e cinquenta.
 
 !!! warning "Limite da IA nesta sessão"
     O agente escreve todos os artefatos e decide tudo o que o mapa de regras deixou em aberto. O Spec Kit só garante que essas decisões fiquem gravadas em arquivo. Quem lê as seções indicadas e devolve ao dono da regra o que não era do agente decidir é o participante.
