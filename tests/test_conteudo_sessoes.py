@@ -19,6 +19,7 @@ from scripts.validate_content import (
 S1 = DOCS / "sessao-01-o-que-mudou"
 S2 = DOCS / "sessao-02-ambiente-agentico"
 S4 = DOCS / "sessao-04-regras-formais-com-ia"
+S5 = DOCS / "sessao-05-decomposicao"
 BIBLIOGRAFIA = DOCS / "referencia" / "bibliografia.md"
 
 
@@ -227,6 +228,97 @@ class SessaoQuatroTest(unittest.TestCase):
         self.assertIn("[Fact]", exemplo)
         self.assertIn("fictíci", exemplo)
         self.assertNotIn("calculo-beneficio", exemplo)
+
+
+class SessaoCincoTest(unittest.TestCase):
+    """Decisões de 06 e 07/10/2026 para a Sessão 5."""
+
+    def setUp(self):
+        self.teoria = teaching_text(S5)
+
+    def texto(self, nome):
+        return (S5 / nome).read_text(encoding="utf-8")
+
+    def test_vocabulario_da_sessao_esta_coberto(self):
+        for termo in (
+            "constitution",
+            "spec",
+            "plan",
+            "tasks",
+            "implement",
+            "tarefa atômica",
+            "tarefa composta",
+            "controle humano",
+            "Constitution Check",
+        ):
+            with self.subTest(termo=termo):
+                self.assertIn(termo, self.teoria)
+
+    def test_paginas_dos_dois_temas_existem(self):
+        for nome in (
+            "preparacao.md",
+            "especificacao-com-spec-kit-conceitos.md",
+            "especificacao-com-spec-kit-exemplo-de-aplicacao-de-ia.md",
+            "especificacao-com-spec-kit-exercicio.md",
+            "do-plano-ao-codigo-conceitos.md",
+            "do-plano-ao-codigo-exemplo-de-aplicacao-de-ia.md",
+            "do-plano-ao-codigo-exercicio.md",
+        ):
+            with self.subTest(pagina=nome):
+                self.assertTrue((S5 / nome).is_file())
+
+    def test_trilha_unica_e_trabalho_individual(self):
+        self.assertFalse(list(S5.glob("*-geral.md")))
+        self.assertFalse(list(S5.glob("*-especialista.md")))
+        for caminho in sorted(S5.glob("*.md")):
+            with self.subTest(pagina=caminho.name):
+                self.assertNotIn("dupla", caminho.read_text(encoding="utf-8").lower())
+
+    def test_roteiro_abre_com_kahoot_de_quinze_minutos(self):
+        self.assertRegex(self.texto("index.md"), r"\| 10:00–10:15 \| 15 \| Kahoot \|")
+
+    def test_versao_do_spec_kit_fixada(self):
+        self.assertIn("specify-cli==1.1.1", self.texto("preparacao.md"))
+        self.assertIn("1.1.1", self.texto("index.md"))
+
+    def test_valor_de_referencia_e_regra_de_derivacao(self):
+        """Convenção da S4: RC classifica, RD deriva, RN rege conduta."""
+        for nome in ("especificacao-com-spec-kit-exercicio.md", "do-plano-ao-codigo-exercicio.md"):
+            with self.subTest(pagina=nome):
+                self.assertNotIn("RC-11", self.texto(nome))
+        self.assertIn("RD-11", self.texto("especificacao-com-spec-kit-exercicio.md"))
+        self.assertIn("RD-01", self.texto("especificacao-com-spec-kit-exemplo-de-aplicacao-de-ia.md"))
+
+    def test_demonstracao_usa_caso_diferente_do_exercicio(self):
+        for nome in (
+            "especificacao-com-spec-kit-exemplo-de-aplicacao-de-ia.md",
+            "do-plano-ao-codigo-exemplo-de-aplicacao-de-ia.md",
+        ):
+            with self.subTest(pagina=nome):
+                texto = self.texto(nome)
+                self.assertIn("pedido mínimo", texto)
+                self.assertNotIn("RN-12", texto)
+
+    def test_conceitos_ficam_sem_caso_aplicado(self):
+        for nome in ("especificacao-com-spec-kit-conceitos.md", "do-plano-ao-codigo-conceitos.md"):
+            with self.subTest(pagina=nome):
+                texto = self.texto(nome)
+                self.assertNotIn("frete", texto)
+                self.assertNotIn("pedido mínimo", texto)
+
+    def test_exercicios_limitam_a_leitura_dos_artefatos(self):
+        self.assertIn("Não leia o arquivo inteiro", self.texto("especificacao-com-spec-kit-exercicio.md"))
+        self.assertIn("Não leia o arquivo", self.texto("do-plano-ao-codigo-exercicio.md"))
+
+    def test_exercicios_cobrem_os_tres_agentes(self):
+        for nome in ("especificacao-com-spec-kit-exercicio.md", "do-plano-ao-codigo-exercicio.md"):
+            with self.subTest(pagina=nome):
+                self.assertIn("$speckit-", self.texto(nome))
+
+    def test_fundamentacao_primaria_do_tamanho_de_tarefa(self):
+        for autor in ("Kwa et al.", "Prasad et al.", "Parnas"):
+            with self.subTest(autor=autor):
+                self.assertIn(autor, self.teoria)
 
 
 class CasoAplicadoTest(unittest.TestCase):

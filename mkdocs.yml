@@ -87,9 +87,16 @@ nav:
           - "Tema 2 — Exemplo de aplicação de IA": sessao-04-regras-formais-com-ia/arqueologia-de-regras-exemplo-de-aplicacao-de-ia.md
           - "Tema 2 — Exercício de IA": sessao-04-regras-formais-com-ia/arqueologia-de-regras-exercicio.md
           - Síntese e referências: sessao-04-regras-formais-com-ia/sintese-e-referencias.md
-      - S5 — Decomposição:
+      - "S5 — Spec Kit: da regra ao código":
           - Visão geral: sessao-05-decomposicao/index.md
           - Preparação do ambiente: sessao-05-decomposicao/preparacao.md
+          - "Tema 1 — Conceitos: Especificação com Spec Kit": sessao-05-decomposicao/especificacao-com-spec-kit-conceitos.md
+          - "Tema 1 — Exemplo de aplicação de IA": sessao-05-decomposicao/especificacao-com-spec-kit-exemplo-de-aplicacao-de-ia.md
+          - "Tema 1 — Exercício de IA": sessao-05-decomposicao/especificacao-com-spec-kit-exercicio.md
+          - "Tema 2 — Conceitos: Do plano ao código": sessao-05-decomposicao/do-plano-ao-codigo-conceitos.md
+          - "Tema 2 — Exemplo de aplicação de IA": sessao-05-decomposicao/do-plano-ao-codigo-exemplo-de-aplicacao-de-ia.md
+          - "Tema 2 — Exercício de IA": sessao-05-decomposicao/do-plano-ao-codigo-exercicio.md
+          - Síntese e referências: sessao-05-decomposicao/sintese-e-referencias.md
   - Bloco 3 — Execução:
       - S6 — TDD assistido por IA: sessao-06-tdd-assistido/index.md
       - S7 — Estratégias avançadas de teste: sessao-07-estrategias-avancadas-teste/index.md
