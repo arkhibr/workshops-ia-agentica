@@ -12,9 +12,27 @@ RN-01: É obrigatório que pedido de cliente atacado tenha valor do
 RN-02: Pedido de cliente padrão não tem valor mínimo.
 ```
 
-O projeto de partida é o mesmo do exercício: o exemplo da Vetor, que só calcula desconto. A constitution usada é a do [exercício](especificacao-com-spec-kit-exercicio.md#passo-3-constitution), com os princípios de rastreabilidade, teste antes do código e nenhuma dependência.
+O projeto de partida é o mesmo do exercício: o exemplo da Vetor, que só calcula desconto. No terminal, dentro da pasta do projeto:
+
+```bash
+specify init --here --force --integration claude
+```
 
 ## A constitution gerada
+
+Comando digitado no chat do Claude Code, o mesmo do [exercício](especificacao-com-spec-kit-exercicio.md#passo-3-constitution):
+
+```text
+/speckit-constitution Três princípios, nada além deles.
+I. Rastreabilidade: toda regra de negócio implementada cita o ID de
+origem (RC-xx, RD-xx ou RN-xx) no requisito, no teste e no comentário
+do código.
+II. Testes antes do código: cada requisito funcional ganha um teste em
+node:test que falha antes da implementação; npm test é o único comando
+de verificação.
+III. Sem dependências: o projeto continua sem pacotes de terceiros e
+usa só a biblioteca padrão do Node 20.
+```
 
 O comando levou cerca de 40 segundos. O agente escreveu os três princípios pedidos e acrescentou, a cada um, um parágrafo de justificativa:
 
@@ -32,6 +50,17 @@ cobrir.
 Ele também criou uma seção de governança com versionamento semântico da própria constitution, que ninguém pediu. A seção não muda nenhuma saída dos comandos seguintes, e por isso passa pelo critério da página de conceitos como decoração inofensiva. A pergunta para discussão é se ela é ganho ou ruído.
 
 ## A spec gerada
+
+Comando digitado no chat, com as três regras de origem coladas por inteiro:
+
+```text
+/speckit-specify Pedido mínimo de atacado da Vetor. Regras de origem:
+RD-01: Valor do pedido, para efeito de pedido mínimo, é o valor total
+antes do desconto.
+RN-01: É obrigatório que pedido de cliente atacado tenha valor do
+pedido de pelo menos R$ 1.000,00.
+RN-02: Pedido de cliente padrão não tem valor mínimo.
+```
 
 O `specify` levou cerca de um minuto e meio e produziu uma `spec.md` de pouco mais de cem linhas. Os pontos a observar estão em três trechos.
 

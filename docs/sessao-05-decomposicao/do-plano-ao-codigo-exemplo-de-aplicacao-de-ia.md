@@ -1,6 +1,6 @@
 # Exemplo de aplicação de IA: as tarefas do pedido mínimo
 
-Esta demonstração continua o pedido mínimo de atacado da Vetor, a plataforma fictícia de e-commerce B2B do workshop, a partir da spec gerada no exemplo do Tema 1. Os comandos agora são `plan`, `tasks` e `implement`. Os trechos vêm da mesma execução real com Spec Kit 1.1.1 e Claude Code, em 07/10/2026.
+Esta demonstração continua o pedido mínimo de atacado da Vetor, a plataforma fictícia de e-commerce B2B do workshop, a partir da spec gerada no exemplo do Tema 1. Os comandos `plan`, `tasks` e `implement` aparecem em cada seção como foram digitados no chat do Claude Code. Os trechos vêm da mesma execução real com Spec Kit 1.1.1 e Claude Code, em 07/10/2026.
 
 ## O plano
 
