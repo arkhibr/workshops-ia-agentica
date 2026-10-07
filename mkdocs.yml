@@ -90,6 +90,7 @@ nav:
       - "S5 — Spec Kit: da regra ao código":
           - Visão geral: sessao-05-decomposicao/index.md
           - Preparação do ambiente: sessao-05-decomposicao/preparacao.md
+          - Contexto da prática: sessao-05-decomposicao/contexto-da-pratica.md
           - "Tema 1 — Conceitos: Especificação com Spec Kit": sessao-05-decomposicao/especificacao-com-spec-kit-conceitos.md
           - "Tema 1 — Exemplo de aplicação de IA": sessao-05-decomposicao/especificacao-com-spec-kit-exemplo-de-aplicacao-de-ia.md
           - "Tema 1 — Exercício de IA": sessao-05-decomposicao/especificacao-com-spec-kit-exercicio.md

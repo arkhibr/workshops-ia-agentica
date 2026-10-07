@@ -25,6 +25,16 @@ HORARIO_RE = re.compile(r"^\d{2}:\d{2}[–-]\d{2}:\d{2}$")
 MINUTOS_RE = re.compile(r"(\d+)\s*min")
 TOTAL_DECLARADO = 120
 
+# Roteiros de comandos da S5 abrem direto no Passo 1, por decisão de 07/10/2026:
+# texto antes do primeiro comando confundia quem seguia o roteiro. O objetivo de
+# cada um fica em contexto-da-pratica.md.
+ROTEIROS_DE_COMANDOS = frozenset({
+    ("sessao-05-decomposicao", "especificacao-com-spec-kit-exemplo-de-aplicacao-de-ia.md"),
+    ("sessao-05-decomposicao", "especificacao-com-spec-kit-exercicio.md"),
+    ("sessao-05-decomposicao", "do-plano-ao-codigo-exemplo-de-aplicacao-de-ia.md"),
+    ("sessao-05-decomposicao", "do-plano-ao-codigo-exercicio.md"),
+})
+
 
 def tabela_do_roteiro(slug: str) -> str:
     texto = (DOCS / slug / "index.md").read_text(encoding="utf-8")
@@ -86,6 +96,8 @@ class OrganizacaoTematicaTest(unittest.TestCase):
         """Toda página é autocontida: o leitor pode chegar direto nela."""
         for slug in COMPLETAS:
             for nome in thematic_pages(DOCS / slug):
+                if (slug, nome) in ROTEIROS_DE_COMANDOS:
+                    continue
                 with self.subTest(slug=slug, pagina=nome):
                     prosa = strip_fences((DOCS / slug / nome).read_text(encoding="utf-8"))
                     corpo = prosa.split("\n", 1)[1]

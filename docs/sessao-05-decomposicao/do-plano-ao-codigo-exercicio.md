@@ -1,12 +1,8 @@
 # Exercício de IA: do plano ao frete funcionando
 
-Este exercício individual continua o projeto `vetor-frete` do exercício anterior, em que a Vetor, plataforma fictícia de e-commerce B2B do workshop, ganhou a spec do cálculo de frete. Agora o GitHub Spec Kit gera o plano e as tarefas, você classifica três delas e o agente implementa em duas etapas, com uma parada sua no meio. O exercício termina com os testes passando e cada regra de origem localizada no código.
+## Passo 1: gere o plano
 
-Tempo: 30 minutos. Ponto de partida: a pasta `vetor-frete` com a `spec.md` commitada. Se você não terminou o exercício anterior, rode os Passos 1 a 4 da [página dele](especificacao-com-spec-kit-exercicio.md) e o commit do Passo 5 antes de começar.
-
-No Codex, troque a barra dos comandos por cifrão (`$speckit-...`).
-
-## Passo 1: plan
+Digite no chat do agente, aberto na pasta `vetor-frete` do exercício do Tema 1, o comando `/speckit-plan`, seguido das escolhas técnicas. No Codex, troque a barra por cifrão (`$speckit-...`).
 
 ```text
 /speckit-plan JavaScript ESM com Node 20, testes em node:test executados
@@ -14,15 +10,35 @@ por npm test, sem dependências. O frete fica em src/frete.js e
 reaproveita calcularDesconto de src/desconto.js.
 ```
 
+Depois, no terminal:
+
+```bash
+git add -A
+git commit -m "plano do frete"
+```
+
+Cada passo deste exercício termina com um commit. Os comandos do Spec Kit criam e reescrevem arquivos, e o commit separa o que cada comando produziu: depois do comando seguinte, `git diff` mostra só o que ele mudou. Se o resultado de um comando não servir, o commit anterior é o ponto para onde voltar.
+
 Abra o `plan.md` e leia só a tabela do *Constitution Check*. Cada princípio deve trazer uma justificativa, além da marca de aprovado.
 
-## Passo 2: tasks
+## Passo 2: gere as tarefas
+
+Digite no chat do agente, sem argumentos:
 
 ```text
 /speckit-tasks
 ```
 
-O `tasks.md` costuma passar de 150 linhas. Não leia o arquivo. Peça ao agente o esqueleto:
+Depois, no terminal:
+
+```bash
+git add -A
+git commit -m "tarefas do frete"
+```
+
+## Passo 3: peça o esqueleto das tarefas
+
+Digite no chat do agente o pedido abaixo. Não leia o arquivo `tasks.md`, que costuma passar de 150 linhas:
 
 ```text
 Liste as tarefas do tasks.md numa tabela com ID, [P], história e no
@@ -30,7 +46,7 @@ máximo oito palavras de descrição. Depois, copie as linhas de
 Checkpoint. Não altere nenhum arquivo.
 ```
 
-## Passo 3: classifique três tarefas
+## Passo 4: classifique três tarefas
 
 Escolha na tabela uma tarefa de cada tipo e preencha:
 
@@ -42,37 +58,52 @@ Escolha na tabela uma tarefa de cada tipo e preencha:
 
 Responda também: o template marca as tarefas de teste como opcionais. Por que elas apareceram no seu `tasks.md`?
 
-## Passo 4: implemente a primeira história e pare
+## Passo 5: implemente até a primeira história
+
+Digite no chat do agente o comando `/speckit-implement`, seguido do ponto de parada:
 
 ```text
 /speckit-implement Execute até o checkpoint da história US1 e pare.
 ```
 
-Revise o que mudou e rode os testes:
+## Passo 6: revise antes de seguir
+
+Digite no terminal:
 
 ```bash
 git status
+git diff --stat
 npm test
 ```
 
-Se os testes passarem, registre o ponto de parada:
+Se os testes passarem e o diff não tocar `src/desconto.js` nem `test/desconto.test.js`, registre a parada:
 
 ```bash
 git add -A
 git commit -m "frete: historia US1"
 ```
 
-## Passo 5: implemente o restante
+## Passo 7: implemente o restante
+
+Digite no chat do agente:
 
 ```text
 /speckit-implement Execute as fases restantes.
 ```
 
-Rode `npm test` de novo. O total de testes precisa ter crescido em relação aos 6 iniciais, sem nenhuma falha.
+Depois, no terminal:
 
-## Passo 6: localize uma regra no código
+```bash
+npm test
+git add -A
+git commit -m "frete implementado"
+```
 
-Procure o ID da regra de frete grátis do atacado:
+O total de testes precisa ter crescido em relação aos 6 iniciais, sem nenhuma falha.
+
+## Passo 8: localize uma regra no código
+
+Digite no terminal, para procurar o ID da regra de frete grátis do atacado:
 
 === "macOS/Linux"
     ```bash
@@ -84,16 +115,11 @@ Procure o ID da regra de frete grátis do atacado:
     Get-ChildItem src, test, specs -Recurse -File | Select-String "RN-12" -List | Select-Object Path
     ```
 
-A saída precisa incluir `src/frete.js`, `test/frete.test.js` e a `spec.md`. Os outros artefatos da pasta `specs` também aparecem, porque citam a regra. Feche com o commit final:
-
-```bash
-git add -A
-git commit -m "frete implementado"
-```
+A saída precisa incluir `src/frete.js`, `test/frete.test.js` e a `spec.md`. Os outros artefatos da pasta `specs` também aparecem, porque citam a regra.
 
 ## Evidência a entregar
 
-A tabela do Passo 3 com a resposta sobre as tarefas de teste, a saída final do `npm test` e a saída do Passo 6.
+A tabela do Passo 4 com a resposta sobre as tarefas de teste, a saída final do `npm test` e a saída do Passo 8.
 
 ## Extensão: no seu repositório
 

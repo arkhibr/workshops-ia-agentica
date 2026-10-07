@@ -282,6 +282,20 @@ class SessaoCincoTest(unittest.TestCase):
                 with self.subTest(pagina=caminho.name, trecho=trecho):
                     self.assertNotIn(trecho, texto)
 
+    def test_exemplos_e_exercicios_abrem_pelo_primeiro_comando(self):
+        """O objetivo de cada roteiro fica em contexto-da-pratica.md, não no topo."""
+        self.assertTrue((S5 / "contexto-da-pratica.md").is_file())
+        for nome in (
+            "especificacao-com-spec-kit-exemplo-de-aplicacao-de-ia.md",
+            "especificacao-com-spec-kit-exercicio.md",
+            "do-plano-ao-codigo-exemplo-de-aplicacao-de-ia.md",
+            "do-plano-ao-codigo-exercicio.md",
+        ):
+            with self.subTest(pagina=nome):
+                linhas = [l for l in self.texto(nome).splitlines() if l.strip()]
+                self.assertTrue(linhas[1].startswith("## Passo 1:"))
+                self.assertTrue(linhas[2].startswith("Digite "))
+
     def test_roteiro_abre_com_kahoot_de_quinze_minutos(self):
         self.assertRegex(self.texto("index.md"), r"\| 10:00–10:15 \| 15 \| Kahoot \|")
 

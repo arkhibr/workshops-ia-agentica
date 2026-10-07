@@ -138,4 +138,4 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 O Claude Code usa `curl -fsSL https://claude.ai/install.sh | bash`. No teste do Passo 6, troque `--script ps` por `--script sh` e apague a pasta com `rm -rf teste-speckit`. Os demais comandos são idênticos.
 
-**Próxima página:** [Especificação com Spec Kit: constitution e spec](especificacao-com-spec-kit-conceitos.md).
+**Próxima página:** [Contexto da prática: exemplos e exercícios](contexto-da-pratica.md).

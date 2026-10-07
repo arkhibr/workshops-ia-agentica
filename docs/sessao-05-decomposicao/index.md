@@ -20,7 +20,7 @@ A sessão percorre o caminho básico do GitHub Spec Kit, os cinco comandos que a
 
 **Tema 2 — Do plano ao código.** O plano escolhe a tecnologia, as tarefas decompõem o trabalho e a implementação executa as tarefas até os testes passarem. O foco é a decomposição e o lugar dos pontos de controle humano.
 
-A demonstração usa o pedido mínimo de atacado da Vetor, a plataforma fictícia de e-commerce B2B do workshop. Os exercícios usam outra feature da Vetor, o cálculo de frete, e partem do projeto de exemplo executável do repositório.
+A demonstração usa o pedido mínimo de atacado da Vetor, a plataforma fictícia de e-commerce B2B do workshop. Os exercícios usam outra feature da Vetor, o cálculo de frete, e partem do projeto de exemplo executável do repositório. Exemplos e exercícios são roteiros de comandos, e o [contexto da prática](contexto-da-pratica.md) reúne o objetivo de cada um e as regras de origem.
 
 ## Objetivos de aprendizagem
 
@@ -38,6 +38,7 @@ Ao final da sessão, o participante será capaz de:
 | Horário | Min | Bloco | Página | Produto do bloco |
 |---|---:|---|---|---|
 | Antes da aula | — | Preparação individual | [Preparação do ambiente](preparacao.md) | Spec Kit 1.1.1 instalado e testado com o agente |
+| Durante a prática | — | Consulta | [Contexto da prática](contexto-da-pratica.md) | Objetivo de cada exemplo e exercício, e regras de origem |
 | 10:00–10:15 | 15 | Kahoot | Nenhuma | Respostas registradas no Kahoot |
 | 10:15–10:27 | 12 | Tema 1 — Conceitos | [Especificação com Spec Kit: constitution e spec](especificacao-com-spec-kit-conceitos.md) | Os cinco comandos e o critério para uma suposição que decide negócio |
 | 10:27–10:35 | 8 | Tema 1 — Exemplo de aplicação de IA | [Exemplo de aplicação de IA](especificacao-com-spec-kit-exemplo-de-aplicacao-de-ia.md) | Três achados na spec do pedido mínimo |

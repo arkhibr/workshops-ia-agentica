@@ -1,46 +1,49 @@
 # Exercício de IA: especificar o frete da Vetor
 
-Neste exercício individual você aplica a constitution e a spec do GitHub Spec Kit a uma feature nova da Vetor, a plataforma fictícia de e-commerce B2B do workshop: o cálculo de frete. Você parte do projeto de exemplo da Vetor, que já calcula desconto, e termina com a `spec.md` versionada e três respostas sobre ela. O código fica para o exercício da segunda metade.
+## Passo 1: baixe o projeto da Vetor
 
-Tempo: 25 minutos. Pré-requisito: a [preparação do ambiente](preparacao.md) concluída.
-
-## As regras de origem
-
-```text
-RD-11: Valor de referência do frete é o valor total do pedido menos
-       o desconto calculado pela regra de desconto vigente.
-RN-11: O frete de um pedido é de R$ 80,00, salvo quando outra regra
-       deste mapa se aplicar.
-RN-12: O frete de um pedido de cliente atacado é zero quando o valor
-       de referência ultrapassa R$ 3.000,00.
-RN-13: O frete de um pedido de cliente padrão é de R$ 40,00 quando o
-       valor de referência ultrapassa R$ 5.000,00.
-```
-
-## Passo 1: monte o projeto
+Digite no terminal para baixar o projeto de exemplo da Vetor, plataforma fictícia de e-commerce B2B do workshop, e conferir os testes:
 
 ```bash
 npx degit arkhibr/workshops-ia-agentica/exemplo/vetor vetor-frete
 cd vetor-frete
 npm test
-git init
-git add -A
-git commit -m "estado inicial da Vetor"
 ```
 
 O `npm test` precisa mostrar 6 testes passando.
 
-## Passo 2: instale o Spec Kit no projeto
+## Passo 2: registre o estado inicial
+
+Digite no terminal:
+
+```bash
+git init
+git add -A
+git commit -m "estado inicial"
+```
+
+Cada passo deste exercício termina com um commit. Os comandos do Spec Kit criam e reescrevem arquivos, e o commit separa o que cada comando produziu: depois do comando seguinte, `git diff` mostra só o que ele mudou. Se o resultado de um comando não servir, o commit anterior é o ponto para onde voltar.
+
+## Passo 3: instale o Spec Kit no projeto
+
+Digite no terminal, trocando `claude` por `codex` ou `copilot` conforme o seu agente:
 
 ```bash
 specify init --here --force --integration claude
 ```
 
-Troque `claude` por `codex` ou `copilot`, conforme o seu agente. Quando o comando perguntar o tipo de script, aperte Enter para aceitar o padrão do seu sistema. Depois, abra o agente dentro da pasta `vetor-frete`.
+Quando o comando perguntar o tipo de script, aperte Enter para aceitar o padrão do sistema. Depois, registre a instalação:
 
-Os comandos abaixo usam a forma do Claude Code e do Copilot (`/speckit-...`). No Codex, troque a barra por cifrão (`$speckit-...`).
+```bash
+git add -A
+git commit -m "spec kit instalado"
+```
 
-## Passo 3: constitution
+Abra o agente dentro da pasta `vetor-frete`. No Codex, os comandos dos próximos passos começam com cifrão (`$speckit-...`) em vez de barra.
+
+## Passo 4: defina a constitution
+
+Digite no chat do agente o comando `/speckit-constitution`, seguido dos três princípios:
 
 ```text
 /speckit-constitution Três princípios, nada além deles.
@@ -54,21 +57,32 @@ III. Sem dependências: o projeto continua sem pacotes de terceiros e
 usa só a biblioteca padrão do Node 20.
 ```
 
-## Passo 4: specify
+Depois, no terminal:
 
-Cole as quatro regras de origem depois do comando:
+```bash
+git add -A
+git commit -m "constitution"
+```
+
+## Passo 5: gere a spec
+
+Digite no chat do agente o comando `/speckit-specify`, seguido do nome da feature e das quatro regras de origem:
 
 ```text
 /speckit-specify Cálculo de frete da Vetor. Regras de origem:
-RD-11: ...
-RN-11: ...
-RN-12: ...
-RN-13: ...
+RD-11: Valor de referência do frete é o valor total do pedido menos
+o desconto calculado pela regra de desconto vigente.
+RN-11: O frete de um pedido é de R$ 80,00, salvo quando outra regra
+deste mapa se aplicar.
+RN-12: O frete de um pedido de cliente atacado é zero quando o valor
+de referência ultrapassa R$ 3.000,00.
+RN-13: O frete de um pedido de cliente padrão é de R$ 40,00 quando o
+valor de referência ultrapassa R$ 5.000,00.
 ```
 
 O agente cria a pasta `specs/001-...` com a `spec.md`. Não leia o arquivo inteiro.
 
-## Passo 5: confira três pontos
+## Passo 6: confira três pontos
 
 Abra a `spec.md` e leia só as seções indicadas.
 
@@ -80,7 +94,9 @@ Abra a `spec.md` e leia só as seções indicadas.
 
 Depois, procure na história do atacado um cenário em que o valor total passa de R$ 3.000,00 e o valor de referência não. Um pedido de atacado de R$ 3.000,00, por exemplo, tem desconto de R$ 300,00, referência de R$ 2.700,00 e paga R$ 80,00. Se a spec não tiver nenhum cenário desse tipo, anote: é a armadilha que a RD-11 cria.
 
-Feche com um commit:
+## Passo 7: registre a spec
+
+Digite no terminal:
 
 ```bash
 git add -A
@@ -89,10 +105,10 @@ git commit -m "spec do frete"
 
 ## Evidência a entregar
 
-A tabela do Passo 5 preenchida e a observação sobre o pedido de R$ 3.000,00. A spec continua no projeto, porque o exercício da segunda metade parte dela.
+A tabela do Passo 6 preenchida e a observação sobre o pedido de R$ 3.000,00. A spec continua no projeto, porque o exercício da segunda metade parte dela.
 
 ## Extensão: no seu repositório
 
-Escolha uma regra de negócio pequena de um sistema seu, com no máximo três regras de origem. Num ramo descartável do repositório, rode os Passos 2 a 5 com essas regras. Compare as suposições que o agente registrou com o que você sabe do negócio.
+Escolha uma regra de negócio pequena de um sistema seu, com no máximo três regras de origem. Num ramo descartável do repositório, rode os Passos 3 a 6 com essas regras. Compare as suposições que o agente registrou com o que você sabe do negócio.
 
 **Próxima página:** [Conceitos: do plano ao código](do-plano-ao-codigo-conceitos.md).
