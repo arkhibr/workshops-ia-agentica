@@ -17,7 +17,7 @@ A tese: a janela de contexto virou o programa. O LLM é o interpretador; o desen
 | Bloco | Sessões | Tema | Intenção metodológica |
 |---|---|---|---|
 | 1 — Fundamentos | S1–S2 | O novo modelo mental, a primeira ferramenta nas mãos | Software 3.0 · Engenharia Agêntica · cadeia de ferramentas e isolamento por ramo |
-| 2 — Especificação e Planejamento | S3–S5 | A habilidade mais valiosa da era agêntica: dizer o quê com precisão | Requisitos BR/FR/NFR · SBVR + RuleSpeak + tabelas de decisão · planos executáveis para SDD |
+| 2 — Especificação e Planejamento | S3–S5 | A habilidade mais valiosa da era agêntica: dizer o quê com precisão | Requisitos BR/FR/NFR · SBVR + RuleSpeak + tabelas de decisão · caminho básico do Spec Kit, da regra ao código |
 | 3 — Execução | S6–S8 | Do plano ao código, com testes na frente e Spec Kit como esteira | TDD assistido · testes de propriedade/mutação/contrato · SDD ponta a ponta |
 | 4 — Qualidade e Integração | S9–S10 | O fechamento da esteira: depuração com método e decisões registradas | Depuração sistemática · esteira completa com ADR (MADR v4) |
 
@@ -29,7 +29,7 @@ A tese: a janela de contexto virou o programa. O LLM é o interpretador; o desen
 | S2 | [O ambiente agêntico](sessao-02-ambiente-agentico/index.md) | 1 — Fundamentos |
 | S3 | [Exploração e especificação](sessao-03-exploracao-especificacao/index.md) | 2 — Especificação e Planejamento |
 | S4 | [Regras formais com IA](sessao-04-regras-formais-com-ia/index.md) | 2 — Especificação e Planejamento |
-| S5 | [Decomposição](sessao-05-decomposicao/index.md) | 2 — Especificação e Planejamento |
+| S5 | [Spec Kit: da regra ao código](sessao-05-decomposicao/index.md) | 2 — Especificação e Planejamento |
 | S6 | [TDD assistido por IA](sessao-06-tdd-assistido/index.md) | 3 — Execução |
 | S7 | [Estratégias avançadas de teste](sessao-07-estrategias-avancadas-teste/index.md) | 3 — Execução |
 | S8 | [SDD ciclo completo](sessao-08-sdd-ciclo-completo/index.md) | 3 — Execução |

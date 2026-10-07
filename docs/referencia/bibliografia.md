@@ -35,6 +35,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Jimenez et al. — SWE-bench (2024)](#jimenez-et-al-swe-bench-2024)
 - [Karpathy — Software 2.0 (2017)](#karpathy-software-20-2017)
 - [Karpathy — Software Is Changing Again (2025)](#karpathy-software-is-changing-again-2025)
+- [Kwa et al. — Measuring AI Ability to Complete Long Software Tasks (2025)](#kwa-et-al-measuring-ai-ability-to-complete-long-software-tasks-2025)
 - [Lei Complementar 214/2025 — IBS, CBS e Imposto Seletivo](#lei-complementar-2142025-ibs-cbs-e-imposto-seletivo)
 - [MADR — Markdown Architectural Decision Records v4](#madr-markdown-architectural-decision-records-v4)
 - [Mendes — Controle e Autonomia (Módulo 4, Agentes)](#mendes-controle-e-autonomia-modulo-4-agentes)
@@ -42,9 +43,11 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [METR — Experienced Developer Productivity (2025)](#metr-experienced-developer-productivity-2025)
 - [OMG — Semantics of Business Vocabulary and Business Rules](#omg-semantics-of-business-vocabulary-and-business-rules)
 - [Osmani — Agent Harness Engineering (2026)](#osmani-agent-harness-engineering-2026)
+- [Parnas — On the Criteria to Be Used in Decomposing Systems into Modules (1972)](#parnas-on-the-criteria-to-be-used-in-decomposing-systems-into-modules-1972)
 - [Paul e Elder — The Thinker's Guide to Socratic Questioning (2019)](#paul-e-elder-the-thinkers-guide-to-socratic-questioning-2019)
 - [Pearce et al. — Copilot Security (2022)](#pearce-et-al-copilot-security-2022)
 - [Peng et al. — Copilot Productivity (2023)](#peng-et-al-copilot-productivity-2023)
+- [Prasad et al. — ADaPT: As-Needed Decomposition and Planning (2024)](#prasad-et-al-adapt-as-needed-decomposition-and-planning-2024)
 - [Ross (ed.) — Business Rules Manifesto (2003)](#ross-ed-business-rules-manifesto-2003)
 - [Ross — RuleSpeak](#ross-rulespeak)
 - [Sneed e Erdős — Extracting Business Rules from Source Code (1996)](#sneed-e-erdos-extracting-business-rules-from-source-code-1996)
@@ -284,6 +287,8 @@ Origem do termo função de aptidão arquitetural (*architectural fitness functi
 
 **GitHub Spec Kit.** Implementação de referência open source do Spec-Driven Development (SDD) — mais de 90 mil estrelas no GitHub. Define os quatro artefatos canônicos (`constitution.md`, `spec.md`, `plan.md`, `tasks.md`) e os comandos `/specify`, `/plan`, `/tasks`, compatíveis com Claude Code, GitHub Copilot e Cursor. O modelo de especificação (`spec-template.md`) numera cada requisito funcional com prefixo `FR-001`, `FR-002` etc., em frases no padrão "o sistema deve..."; não reserva uma seção separada para requisito não funcional.
 
+A Sessão 5 usa a versão 1.1.1, de 6 out. 2026 (<https://github.com/github/spec-kit/releases/tag/v1.1.1>), instalada com `uv tool install specify-cli==1.1.1`. Nessa versão, o `specify init` apresenta como caminho básico `constitution`, `specify`, `plan`, `tasks` e `implement`, e como comandos opcionais `clarify`, `analyze` e `checklist`. Os comandos se chamam `/speckit-<comando>` no Claude Code e no Copilot e `$speckit-<comando>` no Codex CLI. O modelo de tarefas (`tasks-template.md`) declara as tarefas de teste como opcionais, incluídas só quando a especificação as pede.
+
 → Sessões 3, 5, 8.
 
 ---
@@ -345,6 +350,16 @@ Ensaio precursor da tese de Software 3.0: uma rede neural treinada é compilada 
 Formulação dos três paradigmas coexistentes: Software 1.0 (código explícito), Software 2.0 (redes neurais treinadas), Software 3.0 (prompt em linguagem natural como programa executável); e do conceito de *generation-verification loop* ("demo is works.any(), product is works.all()"). Karpathy também cunhou o termo *vibe coding*, em publicação de fevereiro de 2025.
 
 → Sessão 1.
+
+---
+
+### Kwa et al. — Measuring AI Ability to Complete Long Software Tasks (2025)
+
+**KWA, Thomas; WEST, Ben; BECKER, Joel et al. *Measuring AI Ability to Complete Long Software Tasks*.** METR, arXiv:2503.14499, 18 mar. 2025. <https://arxiv.org/abs/2503.14499>
+
+Propõe medir a capacidade de um agente pelo horizonte de tarefa de 50%: o tempo que um humano leva para fazer as tarefas que o modelo completa com 50% de sucesso. Para os modelos de fronteira avaliados em março de 2025, o horizonte era de cerca de 50 minutos, e vinha dobrando a cada sete meses desde 2019. A taxa de sucesso cai à medida que a tarefa cresce, o que fundamenta o tamanho de tarefa como variável relativa ao executor.
+
+→ Sessão 5.
 
 ---
 
@@ -416,6 +431,16 @@ Síntese prática do mesmo achado: um modelo mediano dentro de um bom arnês sup
 
 ---
 
+### Parnas — On the Criteria to Be Used in Decomposing Systems into Modules (1972)
+
+**PARNAS, David L. "On the Criteria to Be Used in Decomposing Systems into Modules".** *Communications of the ACM*, v. 15, n. 12, p. 1053–1058, dez. 1972. <https://doi.org/10.1145/361598.361623>
+
+Compara duas decomposições do mesmo sistema e mostra que dividir pelas etapas do processamento produz módulos frágeis, enquanto dividir pelas decisões de projeto que provavelmente vão mudar, cada módulo escondendo uma delas, facilita a mudança e o trabalho em paralelo. Na Sessão 5, o critério é aplicado ao corte de tarefas: uma tarefa por regra de negócio sujeita a mudança.
+
+→ Sessão 5.
+
+---
+
 ### Paul e Elder — The Thinker's Guide to Socratic Questioning (2019)
 
 **PAUL, Richard; ELDER, Linda. *The Thinker's Guide to Socratic Questioning*.** Foundation for Critical Thinking Press, 2019.
@@ -443,6 +468,16 @@ Investiga segurança do GitHub Copilot avaliando com que frequência recomenda c
 Experimento randomizado com 70 desenvolvedores profissionais que completam uma tarefa de implementação de servidor HTTP. O grupo com Copilot completou a tarefa 55,8% mais rápido (71 minutos contra 161 minutos). O efeito foi maior para desenvolvedores menos experientes, sugerindo que a assistência reduz a curva de aprendizado para tarefas bem delimitadas e novas, onde o contexto é contido e explícito.
 
 → Sessão 1.
+
+---
+
+### Prasad et al. — ADaPT: As-Needed Decomposition and Planning (2024)
+
+**PRASAD, Archiki; KOLLER, Alexander; HARTMANN, Mareike; CLARK, Peter; SABHARWAL, Ashish; BANSAL, Mohit; KHOT, Tushar. "ADaPT: As-Needed Decomposition and Planning with Language Models".** *Findings of the Association for Computational Linguistics: NAACL 2024*. arXiv:2311.05772. <https://arxiv.org/abs/2311.05772>
+
+Decompõe uma subtarefa só quando o modelo executor não consegue concluí-la, de forma recursiva, ajustando a profundidade da decomposição à complexidade da tarefa e à capacidade do executor. Supera a execução direta e o plano decomposto de antemão em ALFWorld, WebShop e TextCraft, com ganhos de 28,3%, 27% e 33% na taxa de sucesso. Na Sessão 5, sustenta que decompor demais também tem custo.
+
+→ Sessão 5.
 
 ---
 

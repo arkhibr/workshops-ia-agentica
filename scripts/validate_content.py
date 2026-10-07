@@ -64,7 +64,7 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
             "assets/arqueologia-metodo.png",
         ),
     ),
-    "sessao-05-decomposicao": ("Decomposição", False, ()),
+    "sessao-05-decomposicao": ("Spec Kit: da regra ao código", True, ()),
     "sessao-06-tdd-assistido": ("TDD assistido por IA", False, ()),
     "sessao-07-estrategias-avancadas-teste": ("Estratégias avançadas de teste", False, ()),
     "sessao-08-sdd-ciclo-completo": ("SDD ciclo completo", True, ()),
@@ -91,7 +91,7 @@ PAGINAS_PRATICA_OPCIONAIS = (
 )
 
 # Exceção documentada em 24/09/2026 (Sessão 3) e estendida em 24/09/2026
-# (Sessão 4): estas sessões abandonaram o par papel-fixo / página-temática.
+# (Sessão 4), e em 07/10/2026 (Sessão 5): estas sessões abandonaram o par papel-fixo / página-temática.
 # Cada uma organiza o conteúdo por tema (dois temas por sessão), cada tema com
 # sua própria progressão de profundidade (conceitos, exemplo de aplicação de
 # IA, exercício geral, exercício especialista). Só a visão geral e a síntese
@@ -100,6 +100,7 @@ PAGINAS_PRATICA_OPCIONAIS = (
 PAGINAS_FIXAS_POR_SESSAO: dict[str, tuple[str, ...]] = {
     "sessao-03-exploracao-especificacao": ("index.md", "sintese-e-referencias.md"),
     "sessao-04-regras-formais-com-ia": ("index.md", "sintese-e-referencias.md"),
+    "sessao-05-decomposicao": ("index.md", "sintese-e-referencias.md"),
 }
 
 # Sessões cujo esquema abandona o confinamento clássico do caso aplicado
