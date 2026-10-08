@@ -303,13 +303,23 @@ class SessaoCincoTest(unittest.TestCase):
         self.assertIn("specify-cli==1.1.1", self.texto("preparacao.md"))
         self.assertIn("1.1.1", self.texto("index.md"))
 
-    def test_valor_de_referencia_e_regra_de_derivacao(self):
-        """Convenção da S4: RC classifica, RD deriva, RN rege conduta."""
-        for nome in ("especificacao-com-spec-kit-exercicio.md", "do-plano-ao-codigo-exercicio.md"):
+    def test_pratica_parte_do_pedido_do_po_numa_pasta_vazia(self):
+        """Decisão de 07/10/2026: sem código de partida, só a intenção do PO."""
+        for nome in (
+            "especificacao-com-spec-kit-exemplo-de-aplicacao-de-ia.md",
+            "especificacao-com-spec-kit-exercicio.md",
+        ):
             with self.subTest(pagina=nome):
-                self.assertNotIn("RC-11", self.texto(nome))
-        self.assertIn("RD-11", self.texto("especificacao-com-spec-kit-exercicio.md"))
-        self.assertIn("RD-01", self.texto("especificacao-com-spec-kit-exemplo-de-aplicacao-de-ia.md"))
+                texto = self.texto(nome)
+                self.assertIn("/speckit-specify Sou PO da Vetor", texto)
+                self.assertIn("mkdir ", texto)
+
+    def test_projeto_de_exemplo_do_repositorio_nao_e_citado(self):
+        for caminho in sorted(S5.glob("*.md")):
+            texto = caminho.read_text(encoding="utf-8")
+            for trecho in ("exemplo/vetor", "degit", "calcularDesconto"):
+                with self.subTest(pagina=caminho.name, trecho=trecho):
+                    self.assertNotIn(trecho, texto)
 
     def test_demonstracao_usa_caso_diferente_do_exercicio(self):
         for nome in (

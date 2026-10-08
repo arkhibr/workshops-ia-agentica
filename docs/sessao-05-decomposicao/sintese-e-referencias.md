@@ -1,6 +1,6 @@
 # Síntese e referências
 
-A sessão percorreu o caminho básico do GitHub Spec Kit, da constitution ao código com testes passando, sobre duas features da Vetor, a plataforma fictícia de e-commerce B2B do workshop. Em cada artefato, a pergunta foi a mesma: o que o agente decidiu que o mapa de regras não decidiu, e onde essa decisão vai aparecer depois.
+A sessão percorreu o caminho básico do GitHub Spec Kit, da constitution ao código com testes passando, sobre duas features da Vetor, a plataforma fictícia de e-commerce B2B do workshop. Em cada artefato, a pergunta foi a mesma: o que o agente decidiu que o pedido do PO não decidiu, e onde essa decisão vai aparecer depois.
 
 ## Ideias essenciais
 

@@ -6,8 +6,7 @@ Digite no chat do agente, aberto na pasta `vetor-frete` do exercício do Tema 1,
 
 ```text
 /speckit-plan JavaScript ESM com Node 20, testes em node:test executados
-por npm test, sem dependências. O frete fica em src/frete.js e
-reaproveita calcularDesconto de src/desconto.js.
+por npm test, sem dependências. O frete fica em src/frete.js.
 ```
 
 Depois, no terminal:
@@ -76,7 +75,7 @@ git diff --stat
 npm test
 ```
 
-Se os testes passarem e o diff não tocar `src/desconto.js` nem `test/desconto.test.js`, registre a parada:
+Confira se o diff só toca arquivos listados na *Project Structure* do `plan.md`, além do `tasks.md`. Se os testes passarem, registre a parada:
 
 ```bash
 git add -A
@@ -99,23 +98,17 @@ git add -A
 git commit -m "frete implementado"
 ```
 
-O total de testes precisa ter crescido em relação aos 6 iniciais, sem nenhuma falha.
+O total de testes precisa ter crescido em relação à parada da US1, sem nenhuma falha.
 
 ## Passo 8: localize uma regra no código
 
-Digite no terminal, para procurar o ID da regra de frete grátis do atacado:
+Digite no terminal, trocando `RN-02` pelo ID que a sua spec deu à regra do frete grátis do atacado, anotado no exercício do Tema 1:
 
-=== "macOS/Linux"
-    ```bash
-    grep -rl "RN-12" src test specs
-    ```
+```bash
+git grep -l "RN-02"
+```
 
-=== "Windows (PowerShell)"
-    ```powershell
-    Get-ChildItem src, test, specs -Recurse -File | Select-String "RN-12" -List | Select-Object Path
-    ```
-
-A saída precisa incluir `src/frete.js`, `test/frete.test.js` e a `spec.md`. Os outros artefatos da pasta `specs` também aparecem, porque citam a regra.
+A saída precisa incluir o código do frete, o arquivo de teste e a `spec.md`. Os outros artefatos da pasta `specs` também aparecem, porque citam a regra. O `git grep` funciona igual nos três sistemas e procura só nos arquivos versionados, por isso o commit do Passo 7 vem antes.
 
 ## Evidência a entregar
 
