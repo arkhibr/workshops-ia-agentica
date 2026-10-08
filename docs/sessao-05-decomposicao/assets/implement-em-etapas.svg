@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 680" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00695c"/>
+    </marker>
+    <marker id="seta-cinza" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#78909c"/>
+    </marker>
+    <marker id="seta-ambar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ef8f00"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="680" fill="#ffffff"/>
+  <text x="60" y="70" font-size="34" font-weight="bold" fill="#12302b">implement em etapas: o argumento do comando cria a parada humana</text>
+
+  <!-- modo básico -->
+  <text x="60" y="125" font-size="20" font-weight="bold" fill="#546e7a">Modo básico: uma chamada</text>
+  <rect x="60" y="140" width="400" height="80" rx="12" fill="#eceff1" stroke="#90a4ae" stroke-width="2"/>
+  <text x="260" y="188" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle" font-family="Menlo, monospace">/speckit-implement</text>
+  <line x1="460" y1="180" x2="526" y2="180" stroke="#78909c" stroke-width="4" marker-end="url(#seta-cinza)"/>
+  <rect x="530" y="140" width="1020" height="80" rx="12" fill="#eceff1" stroke="#90a4ae" stroke-width="2"/>
+  <text x="1040" y="174" font-size="19" fill="#37474f" text-anchor="middle">o agente executa o tasks.md inteiro e valida cada checkpoint sozinho;</text>
+  <text x="1040" y="200" font-size="19" fill="#37474f" text-anchor="middle">a execução só para quando uma tarefa falha</text>
+
+  <!-- em etapas -->
+  <text x="60" y="290" font-size="20" font-weight="bold" fill="#00695c">Em etapas: uma chamada por fase</text>
+
+  <!-- 1 -->
+  <rect x="60" y="310" width="260" height="160" rx="14" fill="#e0f2f1" stroke="#00897b" stroke-width="3"/>
+  <circle cx="92" cy="342" r="18" fill="#00695c"/><text x="92" y="349" font-size="19" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+  <text x="190" y="390" font-size="18" font-weight="bold" fill="#12302b" text-anchor="middle" font-family="Menlo, monospace">/speckit-implement</text>
+  <text x="190" y="422" font-size="16" fill="#2f4f4a" text-anchor="middle" font-family="Menlo, monospace">execute só a fase 3</text>
+  <text x="190" y="444" font-size="16" fill="#2f4f4a" text-anchor="middle" font-family="Menlo, monospace">e pare</text>
+
+  <line x1="320" y1="390" x2="363" y2="390" stroke="#00695c" stroke-width="4" marker-end="url(#seta)"/>
+
+  <!-- 2 -->
+  <rect x="367" y="310" width="260" height="160" rx="14" fill="#e0f2f1" stroke="#00897b" stroke-width="3"/>
+  <circle cx="399" cy="342" r="18" fill="#00695c"/><text x="399" y="349" font-size="19" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+  <text x="497" y="390" font-size="20" font-weight="bold" fill="#12302b" text-anchor="middle">Agente executa</text>
+  <text x="497" y="420" font-size="17" fill="#2f4f4a" text-anchor="middle">as tarefas da fase e</text>
+  <text x="497" y="444" font-size="17" fill="#2f4f4a" text-anchor="middle">valida o checkpoint</text>
+
+  <line x1="627" y1="390" x2="670" y2="390" stroke="#00695c" stroke-width="4" marker-end="url(#seta)"/>
+
+  <!-- 3 -->
+  <rect x="674" y="310" width="260" height="160" rx="14" fill="#fff3e0" stroke="#ef8f00" stroke-width="3"/>
+  <circle cx="706" cy="342" r="18" fill="#ef8f00"/><text x="706" y="349" font-size="19" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+  <text x="804" y="390" font-size="20" font-weight="bold" fill="#12302b" text-anchor="middle">Humano revisa</text>
+  <text x="804" y="420" font-size="17" fill="#5d4037" text-anchor="middle">o que a fase mudou</text>
+  <text x="804" y="448" font-size="17" fill="#5d4037" text-anchor="middle" font-family="Menlo, monospace">git diff --stat</text>
+
+  <line x1="934" y1="390" x2="977" y2="390" stroke="#ef8f00" stroke-width="4" marker-end="url(#seta-ambar)"/>
+
+  <!-- 4 -->
+  <rect x="981" y="310" width="260" height="160" rx="14" fill="#fff3e0" stroke="#ef8f00" stroke-width="3"/>
+  <circle cx="1013" cy="342" r="18" fill="#ef8f00"/><text x="1013" y="349" font-size="19" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+  <text x="1111" y="390" font-size="20" font-weight="bold" fill="#12302b" text-anchor="middle">Humano roda</text>
+  <text x="1111" y="420" font-size="17" fill="#5d4037" text-anchor="middle">os testes</text>
+  <text x="1111" y="448" font-size="17" fill="#5d4037" text-anchor="middle" font-family="Menlo, monospace">npm test</text>
+
+  <line x1="1241" y1="390" x2="1284" y2="390" stroke="#ef8f00" stroke-width="4" marker-end="url(#seta-ambar)"/>
+
+  <!-- 5 -->
+  <rect x="1288" y="310" width="260" height="160" rx="14" fill="#fff3e0" stroke="#ef8f00" stroke-width="3"/>
+  <circle cx="1320" cy="342" r="18" fill="#ef8f00"/><text x="1320" y="349" font-size="19" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
+  <text x="1418" y="390" font-size="20" font-weight="bold" fill="#12302b" text-anchor="middle">Humano registra</text>
+  <text x="1418" y="420" font-size="17" fill="#5d4037" text-anchor="middle">a fase aprovada</text>
+  <text x="1418" y="448" font-size="17" fill="#5d4037" text-anchor="middle" font-family="Menlo, monospace">git commit</text>
+
+  <!-- volta -->
+  <path d="M1418,470 C1418,560 190,560 190,474" fill="none" stroke="#00695c" stroke-width="3" stroke-dasharray="10 8" marker-end="url(#seta)"/>
+  <text x="804" y="580" font-size="19" fill="#00695c" text-anchor="middle">chama a fase seguinte</text>
+
+  <!-- legenda -->
+  <rect x="60" y="610" width="22" height="22" rx="4" fill="#e0f2f1" stroke="#00897b" stroke-width="2"/>
+  <text x="92" y="628" font-size="18" fill="#37474f">etapa do agente</text>
+  <rect x="260" y="610" width="22" height="22" rx="4" fill="#fff3e0" stroke="#ef8f00" stroke-width="2"/>
+  <text x="292" y="628" font-size="18" fill="#37474f">ponto de controle humano, que o modo básico não cria</text>
+</svg>

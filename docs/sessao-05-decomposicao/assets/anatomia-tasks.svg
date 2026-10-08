@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 960" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00695c"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="960" fill="#ffffff"/>
+  <text x="60" y="70" font-size="34" font-weight="bold" fill="#12302b">Anatomia do tasks.md: formato da tarefa, fases e paradas humanas</text>
+
+  <!-- formato de uma tarefa -->
+  <rect x="60" y="105" width="1490" height="165" rx="14" fill="#f5f7f8" stroke="#b0bec5" stroke-width="2"/>
+  <text x="90" y="145" font-size="20" font-weight="bold" fill="#37474f">Formato de cada tarefa</text>
+  <text x="92" y="195" font-size="30" font-weight="bold" fill="#00695c" font-family="Menlo, monospace">T005</text>
+  <text x="330" y="195" font-size="30" font-weight="bold" fill="#6a1b9a" font-family="Menlo, monospace">[P]</text>
+  <text x="520" y="195" font-size="30" font-weight="bold" fill="#2e7d32" font-family="Menlo, monospace">[US1]</text>
+  <text x="700" y="195" font-size="30" fill="#12302b" font-family="Menlo, monospace">Escrever o teste da RN-11</text>
+  <path d="M92,210 L92,218 L164,218 L164,210" fill="none" stroke="#00695c" stroke-width="2"/>
+  <text x="92" y="245" font-size="17" fill="#00695c">ordem de execução</text>
+  <path d="M330,210 L330,218 L384,218 L384,210" fill="none" stroke="#6a1b9a" stroke-width="2"/>
+  <text x="357" y="245" font-size="17" fill="#6a1b9a" text-anchor="middle">pode rodar em paralelo</text>
+  <path d="M520,210 L520,218 L610,218 L610,210" fill="none" stroke="#2e7d32" stroke-width="2"/>
+  <text x="565" y="245" font-size="17" fill="#2e7d32" text-anchor="middle">história da spec</text>
+  <path d="M700,210 L700,218 L1152,218 L1152,210" fill="none" stroke="#546e7a" stroke-width="2"/>
+  <text x="926" y="245" font-size="17" fill="#546e7a" text-anchor="middle">descrição</text>
+  <text x="1200" y="160" font-size="17" fill="#37474f">Não há campo de critério</text>
+  <text x="1200" y="184" font-size="17" fill="#37474f">por tarefa: a pergunta de</text>
+  <text x="1200" y="208" font-size="17" fill="#37474f">revisão é qual comando</text>
+  <text x="1200" y="232" font-size="17" fill="#37474f">prova que ela terminou.</text>
+
+  <!-- fases -->
+  <text x="60" y="320" font-size="20" font-weight="bold" fill="#37474f">Fases, na ordem de execução</text>
+
+  <!-- Setup -->
+  <rect x="60" y="340" width="270" height="350" rx="14" fill="#eceff1" stroke="#90a4ae" stroke-width="2"/>
+  <text x="195" y="378" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle">Setup</text>
+  <rect x="75" y="400" width="240" height="56" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="2"/>
+  <text x="90" y="434" font-size="17" font-weight="bold" fill="#12302b" font-family="Menlo, monospace">T001</text><text x="139" y="434" font-size="17" fill="#12302b">preparar o ambiente</text>
+  <rect x="75" y="620" width="240" height="56" rx="8" fill="#455a64"/>
+  <text x="195" y="645" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Checkpoint</text>
+  <text x="195" y="665" font-size="15" fill="#ffffff" text-anchor="middle">ambiente responde</text>
+
+  <!-- Foundational -->
+  <rect x="365" y="340" width="270" height="350" rx="14" fill="#eceff1" stroke="#90a4ae" stroke-width="2"/>
+  <text x="500" y="378" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle">Foundational</text>
+  <rect x="380" y="400" width="240" height="56" rx="8" fill="#fff3e0" stroke="#ef8f00" stroke-width="3"/>
+  <text x="395" y="425" font-size="17" font-weight="bold" fill="#12302b" font-family="Menlo, monospace">T002</text><text x="444" y="425" font-size="17" fill="#12302b">alterar módulo</text>
+  <text x="395" y="447" font-size="17" fill="#12302b">existente</text>
+  <circle cx="603" cy="400" r="17" fill="#ef8f00"/><text x="603" y="407" font-size="19" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+  <rect x="380" y="466" width="240" height="56" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="2"/>
+  <text x="395" y="500" font-size="17" font-weight="bold" fill="#12302b" font-family="Menlo, monospace">T003 [P]</text><text x="485" y="500" font-size="17" fill="#12302b">validar entrada</text>
+  <rect x="380" y="620" width="240" height="56" rx="8" fill="#455a64"/>
+  <text x="500" y="645" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Checkpoint</text>
+  <text x="500" y="665" font-size="15" fill="#ffffff" text-anchor="middle">base pronta para as histórias</text>
+
+  <!-- US1 -->
+  <rect x="670" y="340" width="270" height="350" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+  <text x="805" y="378" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle">US1 (P1), MVP</text>
+  <rect x="685" y="400" width="240" height="56" rx="8" fill="#ffffff" stroke="#c8e6c9" stroke-width="2"/>
+  <text x="700" y="434" font-size="17" font-weight="bold" fill="#12302b" font-family="Menlo, monospace">T004</text><text x="749" y="434" font-size="17" fill="#12302b">escrever o teste</text>
+  <rect x="685" y="466" width="240" height="56" rx="8" fill="#ffffff" stroke="#c8e6c9" stroke-width="2"/>
+  <text x="700" y="500" font-size="17" font-weight="bold" fill="#12302b" font-family="Menlo, monospace">T005</text><text x="749" y="500" font-size="17" fill="#12302b">ver o teste falhar</text>
+  <rect x="685" y="532" width="240" height="56" rx="8" fill="#ffffff" stroke="#c8e6c9" stroke-width="2"/>
+  <text x="700" y="566" font-size="17" font-weight="bold" fill="#12302b" font-family="Menlo, monospace">T006</text><text x="749" y="566" font-size="17" fill="#12302b">implementar</text>
+  <rect x="685" y="620" width="240" height="56" rx="8" fill="#2e7d32"/>
+  <text x="805" y="645" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Checkpoint</text>
+  <text x="805" y="665" font-size="15" fill="#ffffff" text-anchor="middle">US1 funciona sozinha</text>
+
+  <!-- parada depois do MVP -->
+  <rect x="948" y="340" width="10" height="350" rx="4" fill="#ef8f00"/>
+  <circle cx="953" cy="325" r="17" fill="#ef8f00"/><text x="953" y="332" font-size="19" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+
+  <!-- US2 -->
+  <rect x="975" y="340" width="270" height="350" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+  <text x="1110" y="378" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle">US2 (P2)</text>
+  <rect x="990" y="400" width="240" height="56" rx="8" fill="#ffffff" stroke="#c8e6c9" stroke-width="2"/>
+  <text x="1005" y="434" font-size="17" font-weight="bold" fill="#12302b" font-family="Menlo, monospace">T007</text><text x="1054" y="434" font-size="17" fill="#12302b">escrever o teste</text>
+  <rect x="990" y="466" width="240" height="56" rx="8" fill="#ffffff" stroke="#c8e6c9" stroke-width="2"/>
+  <text x="1005" y="500" font-size="17" font-weight="bold" fill="#12302b" font-family="Menlo, monospace">T008</text><text x="1054" y="500" font-size="17" fill="#12302b">ver o teste falhar</text>
+  <rect x="990" y="532" width="240" height="56" rx="8" fill="#fff3e0" stroke="#ef8f00" stroke-width="3"/>
+  <text x="1005" y="557" font-size="17" font-weight="bold" fill="#12302b" font-family="Menlo, monospace">T009</text><text x="1054" y="557" font-size="17" fill="#12302b">implementar, com</text>
+  <text x="1005" y="579" font-size="17" fill="#12302b">decisão fora da spec</text>
+  <circle cx="1213" cy="532" r="17" fill="#ef8f00"/><text x="1213" y="539" font-size="19" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+  <rect x="990" y="620" width="240" height="56" rx="8" fill="#2e7d32"/>
+  <text x="1110" y="645" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Checkpoint</text>
+  <text x="1110" y="665" font-size="15" fill="#ffffff" text-anchor="middle">US1 e US2 funcionam</text>
+
+  <!-- Polish -->
+  <rect x="1280" y="340" width="270" height="350" rx="14" fill="#eceff1" stroke="#90a4ae" stroke-width="2"/>
+  <text x="1415" y="378" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle">Polish</text>
+  <rect x="1295" y="400" width="240" height="56" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="2"/>
+  <text x="1310" y="434" font-size="17" font-weight="bold" fill="#12302b" font-family="Menlo, monospace">T010</text><text x="1359" y="434" font-size="17" fill="#12302b">verificação final</text>
+  <rect x="1295" y="620" width="240" height="56" rx="8" fill="#455a64"/>
+  <text x="1415" y="645" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Checkpoint</text>
+  <text x="1415" y="665" font-size="15" fill="#ffffff" text-anchor="middle">pronto para revisão</text>
+
+  <!-- setas entre fases -->
+  <line x1="326" y1="515" x2="363" y2="515" stroke="#00695c" stroke-width="4" marker-end="url(#seta)"/>
+  <line x1="631" y1="515" x2="668" y2="515" stroke="#00695c" stroke-width="4" marker-end="url(#seta)"/>
+  <line x1="1241" y1="515" x2="1278" y2="515" stroke="#00695c" stroke-width="4" marker-end="url(#seta)"/>
+
+  <!-- legenda -->
+  <rect x="60" y="725" width="1490" height="205" rx="14" fill="#fff8e1" stroke="#ef8f00" stroke-width="2"/>
+  <text x="90" y="765" font-size="21" font-weight="bold" fill="#12302b">Onde o humano para a execução</text>
+  <circle cx="105" cy="801" r="15" fill="#ef8f00"/><text x="105" y="807" font-size="17" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+  <text x="135" y="808" font-size="19" fill="#37474f">antes de uma tarefa que altera código existente</text>
+  <circle cx="105" cy="843" r="15" fill="#ef8f00"/><text x="105" y="849" font-size="17" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+  <text x="135" y="850" font-size="19" fill="#37474f">depois da primeira fatia completa, o MVP</text>
+  <circle cx="105" cy="885" r="15" fill="#ef8f00"/><text x="105" y="891" font-size="17" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+  <text x="135" y="892" font-size="19" fill="#37474f">em tarefa cuja descrição contém uma decisão que a spec não tomou</text>
+  <text x="900" y="808" font-size="19" fill="#37474f">Os demais checkpoints ficam com o agente,</text>
+  <text x="900" y="836" font-size="19" fill="#37474f">que só interrompe a execução quando</text>
+  <text x="900" y="864" font-size="19" fill="#37474f">uma tarefa falha.</text>
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 820" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00695c"/>
+    </marker>
+    <marker id="seta-cinza" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#78909c"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="820" fill="#ffffff"/>
+  <text x="60" y="70" font-size="34" font-weight="bold" fill="#12302b">Caminho básico do Spec Kit: cada comando lê o que os anteriores gravaram</text>
+
+  <!-- leituras extras, acima das caixas -->
+  <path d="M185,240 C185,160 805,160 805,236" fill="none" stroke="#78909c" stroke-width="3" stroke-dasharray="10 8" marker-end="url(#seta-cinza)"/>
+  <text x="495" y="160" font-size="19" fill="#546e7a" text-anchor="middle">plan confronta o desenho com a constitution (Constitution Check)</text>
+  <path d="M495,500 C495,585 1115,585 1115,504" fill="none" stroke="#78909c" stroke-width="3" stroke-dasharray="10 8" marker-end="url(#seta-cinza)"/>
+  <text x="805" y="610" font-size="19" fill="#546e7a" text-anchor="middle">tasks relê a spec para montar as histórias</text>
+
+  <!-- 1 constitution -->
+  <rect x="60" y="240" width="250" height="260" rx="14" fill="#e0f2f1" stroke="#00897b" stroke-width="3"/>
+  <circle cx="96" cy="276" r="20" fill="#00695c"/><text x="96" y="284" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+  <text x="185" y="345" font-size="26" font-weight="bold" fill="#12302b" text-anchor="middle" font-family="Menlo, monospace">constitution</text>
+  <text x="185" y="385" font-size="19" fill="#2f4f4a" text-anchor="middle">princípios que nenhuma</text>
+  <text x="185" y="410" font-size="19" fill="#2f4f4a" text-anchor="middle">mudança pode violar</text>
+  <rect x="80" y="430" width="210" height="54" rx="8" fill="#ffffff" stroke="#b2dfdb" stroke-width="2"/>
+  <text x="185" y="452" font-size="15" fill="#37474f" text-anchor="middle" font-family="Menlo, monospace">.specify/memory/</text>
+  <text x="185" y="473" font-size="15" fill="#37474f" text-anchor="middle" font-family="Menlo, monospace">constitution.md</text>
+
+  <line x1="310" y1="370" x2="366" y2="370" stroke="#00695c" stroke-width="4" marker-end="url(#seta)"/>
+
+  <!-- 2 specify -->
+  <rect x="370" y="240" width="250" height="260" rx="14" fill="#e0f2f1" stroke="#00897b" stroke-width="3"/>
+  <circle cx="406" cy="276" r="20" fill="#00695c"/><text x="406" y="284" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+  <text x="495" y="345" font-size="26" font-weight="bold" fill="#12302b" text-anchor="middle" font-family="Menlo, monospace">specify</text>
+  <text x="495" y="385" font-size="19" fill="#2f4f4a" text-anchor="middle">o que a mudança faz</text>
+  <text x="495" y="410" font-size="19" fill="#2f4f4a" text-anchor="middle">e por quê, sem tecnologia</text>
+  <rect x="390" y="430" width="210" height="54" rx="8" fill="#ffffff" stroke="#b2dfdb" stroke-width="2"/>
+  <text x="495" y="452" font-size="15" fill="#37474f" text-anchor="middle" font-family="Menlo, monospace">specs/NNN-nome/</text>
+  <text x="495" y="473" font-size="15" fill="#37474f" text-anchor="middle" font-family="Menlo, monospace">spec.md</text>
+
+  <line x1="620" y1="370" x2="676" y2="370" stroke="#00695c" stroke-width="4" marker-end="url(#seta)"/>
+
+  <!-- 3 plan -->
+  <rect x="680" y="240" width="250" height="260" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+  <circle cx="716" cy="276" r="20" fill="#2e7d32"/><text x="716" y="284" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+  <text x="805" y="345" font-size="26" font-weight="bold" fill="#12302b" text-anchor="middle" font-family="Menlo, monospace">plan</text>
+  <text x="805" y="385" font-size="19" fill="#2f4f4a" text-anchor="middle">como construir e se</text>
+  <text x="805" y="410" font-size="19" fill="#2f4f4a" text-anchor="middle">respeita os princípios</text>
+  <rect x="700" y="430" width="210" height="54" rx="8" fill="#ffffff" stroke="#c8e6c9" stroke-width="2"/>
+  <text x="805" y="452" font-size="15" fill="#37474f" text-anchor="middle" font-family="Menlo, monospace">plan.md</text>
+  <text x="805" y="473" font-size="15" fill="#37474f" text-anchor="middle">e documentos de apoio</text>
+
+  <line x1="930" y1="370" x2="986" y2="370" stroke="#00695c" stroke-width="4" marker-end="url(#seta)"/>
+
+  <!-- 4 tasks -->
+  <rect x="990" y="240" width="250" height="260" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+  <circle cx="1026" cy="276" r="20" fill="#2e7d32"/><text x="1026" y="284" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+  <text x="1115" y="345" font-size="26" font-weight="bold" fill="#12302b" text-anchor="middle" font-family="Menlo, monospace">tasks</text>
+  <text x="1115" y="385" font-size="19" fill="#2f4f4a" text-anchor="middle">a sequência de</text>
+  <text x="1115" y="410" font-size="19" fill="#2f4f4a" text-anchor="middle">tarefas executáveis</text>
+  <rect x="1010" y="430" width="210" height="54" rx="8" fill="#ffffff" stroke="#c8e6c9" stroke-width="2"/>
+  <text x="1115" y="463" font-size="15" fill="#37474f" text-anchor="middle" font-family="Menlo, monospace">tasks.md</text>
+
+  <line x1="1240" y1="370" x2="1296" y2="370" stroke="#00695c" stroke-width="4" marker-end="url(#seta)"/>
+
+  <!-- 5 implement -->
+  <rect x="1300" y="240" width="250" height="260" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+  <circle cx="1336" cy="276" r="20" fill="#2e7d32"/><text x="1336" y="284" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
+  <text x="1425" y="345" font-size="26" font-weight="bold" fill="#12302b" text-anchor="middle" font-family="Menlo, monospace">implement</text>
+  <text x="1425" y="385" font-size="19" fill="#2f4f4a" text-anchor="middle">nenhuma decisão nova:</text>
+  <text x="1425" y="410" font-size="19" fill="#2f4f4a" text-anchor="middle">executa as tarefas</text>
+  <rect x="1320" y="430" width="210" height="54" rx="8" fill="#ffffff" stroke="#c8e6c9" stroke-width="2"/>
+  <text x="1425" y="463" font-size="15" fill="#37474f" text-anchor="middle">código e testes</text>
+
+  <!-- agrupamento por tema -->
+  <path d="M60,640 L60,655 L620,655 L620,640" fill="none" stroke="#00897b" stroke-width="3"/>
+  <text x="340" y="688" font-size="21" font-weight="bold" fill="#00695c" text-anchor="middle">Tema 1: da regra à especificação</text>
+  <path d="M680,640 L680,655 L1550,655 L1550,640" fill="none" stroke="#2e7d32" stroke-width="3"/>
+  <text x="1115" y="688" font-size="21" font-weight="bold" fill="#2e7d32" text-anchor="middle">Tema 2: do plano ao código</text>
+
+  <!-- consequência -->
+  <rect x="60" y="720" width="1490" height="70" rx="12" fill="#fff8e1" stroke="#f9a825" stroke-width="2"/>
+  <text x="805" y="763" font-size="21" fill="#4e342e" text-anchor="middle">Um erro gravado na spec chega ao código passando por plan, tasks e implement, que o tratam como premissa.</text>
+</svg>

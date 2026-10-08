@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00695c"/>
+    </marker>
+    <marker id="seta-cinza" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#78909c"/>
+    </marker>
+    <marker id="seta-ambar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ef8f00"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="800" fill="#ffffff"/>
+  <text x="60" y="70" font-size="34" font-weight="bold" fill="#12302b">Rastreabilidade por ID: a constitution cria a cadeia e a busca a percorre</text>
+
+  <!-- princípio na constitution -->
+  <rect x="440" y="115" width="1110" height="80" rx="12" fill="#e0f2f1" stroke="#00897b" stroke-width="3"/>
+  <text x="995" y="148" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle">Princípio de rastreabilidade na constitution</text>
+  <text x="995" y="178" font-size="19" fill="#2f4f4a" text-anchor="middle">toda regra implementada cita o ID de origem no requisito, no teste e no comentário do código</text>
+  <line x1="595" y1="195" x2="595" y2="276" stroke="#00897b" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#seta)"/>
+  <line x1="995" y1="195" x2="995" y2="276" stroke="#00897b" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#seta)"/>
+  <line x1="1395" y1="195" x2="1395" y2="276" stroke="#00897b" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#seta)"/>
+  <text x="1170" y="240" font-size="18" fill="#00695c" text-anchor="middle">exige o ID em cada elo</text>
+
+  <!-- regra de origem -->
+  <rect x="60" y="280" width="320" height="200" rx="14" fill="#fff3e0" stroke="#ef8f00" stroke-width="3"/>
+  <text x="220" y="325" font-size="24" font-weight="bold" fill="#12302b" text-anchor="middle">Regra de origem</text>
+  <text x="220" y="356" font-size="18" fill="#5d4037" text-anchor="middle">mapa de regras da Sessão 4</text>
+  <rect x="85" y="380" width="270" height="70" rx="8" fill="#ffffff" stroke="#ffcc80" stroke-width="2"/>
+  <text x="220" y="424" font-size="26" font-weight="bold" fill="#e65100" text-anchor="middle" font-family="Menlo, monospace">RN-11</text>
+
+  <line x1="380" y1="380" x2="436" y2="380" stroke="#00695c" stroke-width="4" marker-end="url(#seta)"/>
+
+  <!-- requisito -->
+  <rect x="440" y="280" width="310" height="200" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+  <text x="595" y="325" font-size="24" font-weight="bold" fill="#12302b" text-anchor="middle">Requisito</text>
+  <text x="595" y="356" font-size="18" fill="#2f4f4a" text-anchor="middle" font-family="Menlo, monospace">spec.md</text>
+  <rect x="460" y="380" width="270" height="70" rx="8" fill="#ffffff" stroke="#c8e6c9" stroke-width="2"/>
+  <text x="595" y="424" font-size="21" fill="#12302b" text-anchor="middle" font-family="Menlo, monospace">FR-003 (<tspan fill="#e65100" font-weight="bold">RN-11</tspan>)</text>
+
+  <line x1="750" y1="380" x2="836" y2="380" stroke="#00695c" stroke-width="4" marker-end="url(#seta)"/>
+
+  <!-- teste -->
+  <rect x="840" y="280" width="310" height="200" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+  <text x="995" y="325" font-size="24" font-weight="bold" fill="#12302b" text-anchor="middle">Teste</text>
+  <text x="995" y="356" font-size="18" fill="#2f4f4a" text-anchor="middle">nome do teste</text>
+  <rect x="860" y="380" width="270" height="70" rx="8" fill="#ffffff" stroke="#c8e6c9" stroke-width="2"/>
+  <text x="995" y="424" font-size="19" fill="#12302b" text-anchor="middle" font-family="Menlo, monospace">test("<tspan fill="#e65100" font-weight="bold">RN-11</tspan>: ...")</text>
+
+  <line x1="1150" y1="380" x2="1236" y2="380" stroke="#00695c" stroke-width="4" marker-end="url(#seta)"/>
+
+  <!-- código -->
+  <rect x="1240" y="280" width="310" height="200" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+  <text x="1395" y="325" font-size="24" font-weight="bold" fill="#12302b" text-anchor="middle">Código</text>
+  <text x="1395" y="356" font-size="18" fill="#2f4f4a" text-anchor="middle">comentário na linha</text>
+  <rect x="1260" y="380" width="270" height="70" rx="8" fill="#ffffff" stroke="#c8e6c9" stroke-width="2"/>
+  <text x="1395" y="424" font-size="21" fill="#12302b" text-anchor="middle" font-family="Menlo, monospace">// <tspan fill="#e65100" font-weight="bold">RN-11</tspan></text>
+
+  <!-- numeração nativa -->
+  <text x="60" y="140" font-size="18" fill="#78909c">Sem o princípio, a numeração</text>
+  <text x="60" y="164" font-size="18" fill="#78909c">do Spec Kit para em FR-003</text>
+  <text x="60" y="188" font-size="18" fill="#78909c">e US1, e o ID da regra se perde.</text>
+
+  <!-- busca -->
+  <path d="M595,620 L595,488" stroke="#ef8f00" stroke-width="3" marker-end="url(#seta-ambar)"/>
+  <path d="M995,620 L995,488" stroke="#ef8f00" stroke-width="3" marker-end="url(#seta-ambar)"/>
+  <path d="M1395,620 L1395,488" stroke="#ef8f00" stroke-width="3" marker-end="url(#seta-ambar)"/>
+  <rect x="60" y="620" width="1490" height="130" rx="14" fill="#fff8e1" stroke="#ef8f00" stroke-width="3"/>
+  <text x="90" y="662" font-size="22" font-weight="bold" fill="#12302b">Quando a regra muda, uma busca textual pelo ID devolve os três elos</text>
+  <text x="90" y="702" font-size="20" fill="#37474f" font-family="Menlo, monospace">grep -rn "RN-11" specs test src</text>
+  <text x="90" y="734" font-size="20" fill="#37474f" font-family="Menlo, monospace">Get-ChildItem specs, test, src -Recurse -File | Select-String "RN-11"</text>
+</svg>

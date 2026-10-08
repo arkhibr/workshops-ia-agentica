@@ -64,7 +64,16 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
             "assets/arqueologia-metodo.png",
         ),
     ),
-    "sessao-05-decomposicao": ("Spec Kit: da regra ao código", True, ()),
+    "sessao-05-decomposicao": (
+        "Spec Kit: da regra ao código",
+        True,
+        (
+            "assets/caminho-basico-spec-kit.png",
+            "assets/rastreabilidade-por-id.png",
+            "assets/anatomia-tasks.png",
+            "assets/implement-em-etapas.png",
+        ),
+    ),
     "sessao-06-tdd-assistido": ("TDD assistido por IA", False, ()),
     "sessao-07-estrategias-avancadas-teste": ("Estratégias avançadas de teste", False, ()),
     "sessao-08-sdd-ciclo-completo": ("SDD ciclo completo", True, ()),
