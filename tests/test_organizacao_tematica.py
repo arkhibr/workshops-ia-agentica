@@ -33,6 +33,10 @@ ROTEIROS_DE_COMANDOS = frozenset({
     ("sessao-05-decomposicao", "especificacao-com-spec-kit-exercicio.md"),
     ("sessao-05-decomposicao", "do-plano-ao-codigo-exemplo-de-aplicacao-de-ia.md"),
     ("sessao-05-decomposicao", "do-plano-ao-codigo-exercicio.md"),
+    ("sessao-06-spec-kit-aprofundado", "qualidade-da-spec-exemplo-de-aplicacao-de-ia.md"),
+    ("sessao-06-spec-kit-aprofundado", "qualidade-da-spec-exercicio.md"),
+    ("sessao-06-spec-kit-aprofundado", "teste-antes-do-codigo-exemplo-de-aplicacao-de-ia.md"),
+    ("sessao-06-spec-kit-aprofundado", "teste-antes-do-codigo-exercicio.md"),
 })
 
 

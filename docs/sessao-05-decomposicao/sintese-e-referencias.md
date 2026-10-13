@@ -46,4 +46,4 @@ As referências completas e seus links estão na [bibliografia do curso](../refe
 
 ## Conexão com a próxima sessão
 
-A Sessão 6 retoma o caminho completo com as variações que esta sessão deixou de lado: os comandos opcionais `clarify`, `analyze` e `checklist`, e o teste antes do código tratado como prática de engenharia, com xUnit e Jest.
+A Sessão 6 retoma o caminho completo com as variações que esta sessão deixou de lado: os comandos opcionais `clarify`, `analyze` e `checklist`, e o teste antes do código tratado como prática de engenharia, com `node:test`.

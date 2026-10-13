@@ -99,7 +99,17 @@ nav:
           - "Tema 2 — Exercício de IA": sessao-05-decomposicao/do-plano-ao-codigo-exercicio.md
           - Síntese e referências: sessao-05-decomposicao/sintese-e-referencias.md
   - Bloco 3 — Execução:
-      - S6 — TDD assistido por IA: sessao-06-tdd-assistido/index.md
+      - "S6 — Spec Kit: qualidade da spec e teste antes do código":
+          - Visão geral: sessao-06-spec-kit-aprofundado/index.md
+          - Contexto da prática: sessao-06-spec-kit-aprofundado/contexto-da-pratica.md
+          - "Tema 1 — Conceitos: Qualidade da spec": sessao-06-spec-kit-aprofundado/qualidade-da-spec-conceitos.md
+          - "Tema 1 — Exemplo de aplicação de IA": sessao-06-spec-kit-aprofundado/qualidade-da-spec-exemplo-de-aplicacao-de-ia.md
+          - "Tema 1 — Exercício de IA": sessao-06-spec-kit-aprofundado/qualidade-da-spec-exercicio.md
+          - "Tema 2 — Conceitos: Teste antes do código": sessao-06-spec-kit-aprofundado/teste-antes-do-codigo-conceitos.md
+          - "Tema 2 — Exemplo de aplicação de IA": sessao-06-spec-kit-aprofundado/teste-antes-do-codigo-exemplo-de-aplicacao-de-ia.md
+          - "Tema 2 — Exercício de IA": sessao-06-spec-kit-aprofundado/teste-antes-do-codigo-exercicio.md
+          - Síntese e referências: sessao-06-spec-kit-aprofundado/sintese-e-referencias.md
+          - Tarefa entre sessões: sessao-06-spec-kit-aprofundado/tarefa-entre-sessoes.md
       - S7 — Estratégias avançadas de teste: sessao-07-estrategias-avancadas-teste/index.md
       - S8 — SDD ciclo completo:
           - Visão geral: sessao-08-sdd-ciclo-completo/index.md

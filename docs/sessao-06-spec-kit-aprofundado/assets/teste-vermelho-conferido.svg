@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 820" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00695c"/>
+    </marker>
+    <marker id="seta-vermelha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c62828"/>
+    </marker>
+    <marker id="seta-laranja" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e65100"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="820" fill="#ffffff"/>
+  <text x="60" y="64" font-size="32" font-weight="bold" fill="#12302b">Teste vermelho conferido: o caminho de uma história até o verde</text>
+
+  <!-- 1 constitution -->
+  <rect x="60" y="150" width="210" height="190" rx="14" fill="#e0f2f1" stroke="#00897b" stroke-width="3"/>
+  <text x="165" y="196" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle" font-family="Menlo, monospace">constitution</text>
+  <text x="165" y="236" font-size="16" fill="#2f4f4a" text-anchor="middle">princípio II:</text>
+  <text x="165" y="260" font-size="16" fill="#2f4f4a" text-anchor="middle">a história só é</text>
+  <text x="165" y="284" font-size="16" fill="#2f4f4a" text-anchor="middle">implementada depois</text>
+  <text x="165" y="308" font-size="16" fill="#2f4f4a" text-anchor="middle">do vermelho</text>
+  <line x1="270" y1="245" x2="306" y2="245" stroke="#00695c" stroke-width="4" marker-end="url(#seta)"/>
+
+  <!-- 2 tasks -->
+  <rect x="310" y="150" width="210" height="190" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+  <text x="415" y="196" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle" font-family="Menlo, monospace">tasks</text>
+  <text x="415" y="236" font-size="16" fill="#2f4f4a" text-anchor="middle">em cada história,</text>
+  <text x="415" y="260" font-size="16" fill="#2f4f4a" text-anchor="middle">tarefas de teste</text>
+  <text x="415" y="284" font-size="16" fill="#2f4f4a" text-anchor="middle">antes das de</text>
+  <text x="415" y="308" font-size="16" fill="#2f4f4a" text-anchor="middle">implementação</text>
+  <line x1="520" y1="245" x2="556" y2="245" stroke="#00695c" stroke-width="4" marker-end="url(#seta)"/>
+
+  <!-- 3 analyze -->
+  <rect x="560" y="150" width="210" height="190" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3" stroke-dasharray="12 7"/>
+  <text x="665" y="196" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle" font-family="Menlo, monospace">analyze</text>
+  <text x="665" y="236" font-size="16" fill="#4e342e" text-anchor="middle">portão somente</text>
+  <text x="665" y="260" font-size="16" fill="#4e342e" text-anchor="middle">leitura: aponta</text>
+  <text x="665" y="284" font-size="16" fill="#4e342e" text-anchor="middle">teste que nasce</text>
+  <text x="665" y="308" font-size="16" fill="#4e342e" text-anchor="middle">verde, com severidade</text>
+  <text x="665" y="330" font-size="16" fill="#4e342e" text-anchor="middle">a conferir</text>
+  <line x1="770" y1="245" x2="806" y2="245" stroke="#00695c" stroke-width="4" marker-end="url(#seta)"/>
+
+  <!-- 4 implement testes -->
+  <rect x="810" y="150" width="210" height="190" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+  <text x="915" y="196" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle" font-family="Menlo, monospace">implement</text>
+  <text x="915" y="236" font-size="16" fill="#2f4f4a" text-anchor="middle">fase de testes</text>
+  <text x="915" y="260" font-size="16" fill="#2f4f4a" text-anchor="middle">da história,</text>
+  <text x="915" y="284" font-size="16" fill="#2f4f4a" text-anchor="middle">sem código de</text>
+  <text x="915" y="308" font-size="16" fill="#2f4f4a" text-anchor="middle">produção</text>
+  <line x1="1020" y1="245" x2="1056" y2="245" stroke="#00695c" stroke-width="4" marker-end="url(#seta)"/>
+
+  <!-- 5 vermelho -->
+  <rect x="1060" y="150" width="210" height="190" rx="14" fill="#ffebee" stroke="#c62828" stroke-width="3"/>
+  <text x="1165" y="196" font-size="22" font-weight="bold" fill="#b71c1c" text-anchor="middle" font-family="Menlo, monospace">npm test</text>
+  <text x="1165" y="240" font-size="20" font-weight="bold" fill="#b71c1c" text-anchor="middle">vermelho</text>
+  <text x="1165" y="276" font-size="16" fill="#4e342e" text-anchor="middle">os testes da</text>
+  <text x="1165" y="300" font-size="16" fill="#4e342e" text-anchor="middle">história falham</text>
+
+  <!-- 6 verde -->
+  <rect x="1310" y="150" width="230" height="190" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+  <text x="1425" y="196" font-size="22" font-weight="bold" fill="#12302b" text-anchor="middle" font-family="Menlo, monospace">implement</text>
+  <text x="1425" y="236" font-size="16" fill="#2f4f4a" text-anchor="middle">código da história,</text>
+  <text x="1425" y="262" font-size="16" fill="#2f4f4a" text-anchor="middle">até o</text>
+  <text x="1425" y="296" font-size="22" font-weight="bold" fill="#2e7d32" text-anchor="middle">npm test verde</text>
+
+  <!-- parada humana -->
+  <line x1="1165" y1="340" x2="1165" y2="414" stroke="#c62828" stroke-width="3" marker-end="url(#seta-vermelha)"/>
+  <rect x="900" y="418" width="530" height="150" rx="14" fill="#ffffff" stroke="#c62828" stroke-width="3"/>
+  <text x="1165" y="456" font-size="21" font-weight="bold" fill="#b71c1c" text-anchor="middle">Parada humana: falhou pelo motivo certo?</text>
+  <text x="1165" y="492" font-size="17" fill="#37474f" text-anchor="middle">sim, quando a asserção ou o esqueleto falha</text>
+  <text x="1165" y="516" font-size="17" fill="#37474f" text-anchor="middle">não, quando o módulo não existe, há erro de digitação</text>
+  <text x="1165" y="540" font-size="17" fill="#37474f" text-anchor="middle">ou um teste já passava antes</text>
+  <path d="M1430,493 L1470,493 L1470,344" fill="none" stroke="#c62828" stroke-width="3" marker-end="url(#seta-vermelha)"/>
+  <text x="1482" y="420" font-size="16" fill="#b71c1c">sim</text>
+
+  <!-- fronteira -->
+  <rect x="60" y="418" width="760" height="150" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3" stroke-dasharray="12 7"/>
+  <text x="440" y="456" font-size="21" font-weight="bold" fill="#12302b" text-anchor="middle">Fronteira protegida, depois do verde</text>
+  <text x="440" y="492" font-size="17" fill="#4e342e" text-anchor="middle">troque &lt;= por &lt; na comparação da regra e rode npm test</text>
+  <text x="440" y="516" font-size="17" fill="#4e342e" text-anchor="middle">algum teste falha: a suíte percebe a mudança na fronteira</text>
+  <text x="440" y="540" font-size="17" fill="#4e342e" text-anchor="middle">nenhum falha: falta o teste do valor exato do limite</text>
+
+  <!-- legenda -->
+  <rect x="60" y="640" width="1480" height="110" rx="12" fill="#fff8e1" stroke="#f9a825" stroke-width="2"/>
+  <text x="800" y="684" font-size="19" fill="#4e342e" text-anchor="middle">O princípio II faz o tasks gerar os testes primeiro, o analyze confere a ordem antes da execução</text>
+  <text x="800" y="716" font-size="19" fill="#4e342e" text-anchor="middle">e a troca do operador mostra, depois do verde, se algum teste depende do valor exato do limite.</text>
+</svg>

@@ -20,6 +20,7 @@ S1 = DOCS / "sessao-01-o-que-mudou"
 S2 = DOCS / "sessao-02-ambiente-agentico"
 S4 = DOCS / "sessao-04-regras-formais-com-ia"
 S5 = DOCS / "sessao-05-decomposicao"
+S6 = DOCS / "sessao-06-spec-kit-aprofundado"
 BIBLIOGRAFIA = DOCS / "referencia" / "bibliografia.md"
 
 
@@ -351,6 +352,192 @@ class SessaoCincoTest(unittest.TestCase):
         for autor in ("Kwa et al.", "Prasad et al.", "Parnas"):
             with self.subTest(autor=autor):
                 self.assertIn(autor, self.teoria)
+
+
+class SessaoSeisTest(unittest.TestCase):
+    """Decisões de 13/10/2026 para a Sessão 6."""
+
+    ROTEIROS = (
+        "qualidade-da-spec-exemplo-de-aplicacao-de-ia.md",
+        "qualidade-da-spec-exercicio.md",
+        "teste-antes-do-codigo-exemplo-de-aplicacao-de-ia.md",
+        "teste-antes-do-codigo-exercicio.md",
+    )
+    CONCEITOS = ("qualidade-da-spec-conceitos.md", "teste-antes-do-codigo-conceitos.md")
+    PEDIDO = "/speckit-specify Sou PO do sistema de pagamentos de projetos da FUNDEP"
+
+    def setUp(self):
+        self.teoria = teaching_text(S6)
+
+    def texto(self, nome):
+        return (S6 / nome).read_text(encoding="utf-8")
+
+    def test_vocabulario_da_sessao_esta_coberto(self):
+        for termo in (
+            "clarify",
+            "checklist",
+            "analyze",
+            "## Clarifications",
+            "CHK",
+            "somente leitura",
+            "teste vermelho",
+            "constitution",
+        ):
+            with self.subTest(termo=termo):
+                self.assertIn(termo, self.teoria)
+
+    def test_paginas_existem(self):
+        for nome in (
+            "contexto-da-pratica.md",
+            *self.CONCEITOS,
+            *self.ROTEIROS,
+            "tarefa-entre-sessoes.md",
+            "sintese-e-referencias.md",
+        ):
+            with self.subTest(pagina=nome):
+                self.assertTrue((S6 / nome).is_file())
+
+    def test_pasta_antiga_nao_existe(self):
+        self.assertFalse((DOCS / "sessao-06-tdd-assistido").exists())
+
+    def test_roteiros_abrem_pelo_primeiro_comando(self):
+        for nome in self.ROTEIROS:
+            with self.subTest(pagina=nome):
+                linhas = [l for l in self.texto(nome).splitlines() if l.strip()]
+                self.assertTrue(linhas[1].startswith("## Passo 1:"))
+                self.assertTrue(linhas[2].startswith("Digite "))
+
+    def test_roteiro_abre_com_kahoot_de_quinze_minutos(self):
+        self.assertRegex(self.texto("index.md"), r"\| 10:00–10:15 \| 15 \| Kahoot \|")
+
+    def test_versao_do_spec_kit_e_preparacao_da_s5(self):
+        self.assertIn("1.1.1", self.texto("index.md"))
+        self.assertIn("../sessao-05-decomposicao/preparacao.md", self.texto("contexto-da-pratica.md"))
+
+    def test_pedidos_partem_de_pasta_vazia(self):
+        for nome in (
+            "qualidade-da-spec-exemplo-de-aplicacao-de-ia.md",
+            "qualidade-da-spec-exercicio.md",
+            "tarefa-entre-sessoes.md",
+        ):
+            with self.subTest(pagina=nome):
+                texto = self.texto(nome)
+                self.assertIn(self.PEDIDO, texto)
+                self.assertIn("mkdir ", texto)
+
+    def test_cenario_declarado_como_inspirado_na_fundep(self):
+        self.assertIn("não reproduzem regra vigente", self.texto("contexto-da-pratica.md"))
+
+    def test_demonstracao_usa_caso_diferente_do_exercicio(self):
+        for nome in (
+            "qualidade-da-spec-exemplo-de-aplicacao-de-ia.md",
+            "teste-antes-do-codigo-exemplo-de-aplicacao-de-ia.md",
+        ):
+            with self.subTest(pagina=nome):
+                texto = self.texto(nome)
+                self.assertIn("dupla aprovação", texto)
+                self.assertNotIn("rubrica", texto)
+        for nome in ("qualidade-da-spec-exercicio.md", "teste-antes-do-codigo-exercicio.md"):
+            with self.subTest(pagina=nome):
+                self.assertIn("rubrica", self.texto(nome))
+
+    def test_conceitos_ficam_sem_caso_aplicado(self):
+        for nome in self.CONCEITOS:
+            for trecho in ("FUNDEP", "rubrica", "dupla aprovação", "ordem de compra"):
+                with self.subTest(pagina=nome, trecho=trecho):
+                    self.assertNotIn(trecho, self.texto(nome))
+
+    def test_exercicios_limitam_leitura_e_cobrem_o_codex(self):
+        for nome in ("qualidade-da-spec-exercicio.md", "teste-antes-do-codigo-exercicio.md"):
+            with self.subTest(pagina=nome):
+                texto = self.texto(nome)
+                self.assertIn("Não leia o arquivo", texto)
+                self.assertIn("$speckit-", texto)
+
+    def test_exercicio_do_tema_2_troca_a_comparacao_de_fronteira(self):
+        texto = self.texto("teste-antes-do-codigo-exercicio.md")
+        self.assertIn("`<=`", texto)
+        self.assertIn("npm test", texto)
+
+    def test_tarefa_para_no_analyze_e_pede_evidencia(self):
+        texto = self.texto("tarefa-entre-sessoes.md")
+        self.assertIn("/speckit-analyze", texto)
+        self.assertNotIn("/speckit-implement", texto)
+        self.assertIn("## Evidência a entregar", texto)
+
+    def test_trabalho_individual_e_sem_bastidor(self):
+        for caminho in sorted(S6.glob("*.md")):
+            texto = caminho.read_text(encoding="utf-8")
+            for trecho in ("em dupla", "em duplas", "O instrutor", "à turma", "Mostre ", "Pergunte ", "exemplo/vetor"):
+                with self.subTest(pagina=caminho.name, trecho=trecho):
+                    self.assertNotIn(trecho, texto)
+
+    def test_plataforma_de_teste_e_node_test(self):
+        for caminho in sorted(S6.glob("*.md")):
+            texto = caminho.read_text(encoding="utf-8")
+            for trecho in ("xUnit", "Jest"):
+                with self.subTest(pagina=caminho.name, trecho=trecho):
+                    self.assertNotIn(trecho, texto)
+
+    def test_fundamentacao_cita_beck(self):
+        self.assertIn("Beck", self.teoria)
+
+
+class RevisaoFinalSessaoSeisTest(unittest.TestCase):
+    """Achados da revisão final de 13/10/2026, conferidos contra o ensaio."""
+
+    def texto(self, nome):
+        return (S6 / nome).read_text(encoding="utf-8")
+
+    def test_vermelho_por_modulo_ausente_tem_orientacao(self):
+        for nome in ("teste-antes-do-codigo-exercicio.md", "teste-antes-do-codigo-conceitos.md"):
+            with self.subTest(pagina=nome):
+                self.assertIn("ERR_MODULE_NOT_FOUND", self.texto(nome))
+        self.assertNotIn("só os testes da primeira história estavam vermelhos", self.texto("teste-antes-do-codigo-exercicio.md"))
+
+    def test_severidade_do_analyze_e_proposta_a_conferir(self):
+        self.assertNotIn("como CRITICAL", (S6 / "assets" / "teste-vermelho-conferido.svg").read_text(encoding="utf-8"))
+        self.assertIn("classificou como HIGH", self.texto("teste-antes-do-codigo-conceitos.md"))
+
+    def test_limite_do_clarify_nao_e_generalizado(self):
+        self.assertIn("pode tratar como resolvida", self.texto("qualidade-da-spec-conceitos.md"))
+        self.assertNotIn("ninguém havia apontado", self.texto("qualidade-da-spec-exemplo-de-aplicacao-de-ia.md"))
+
+    def test_pergunta_do_specify_no_exercicio(self):
+        texto = self.texto("qualidade-da-spec-exercicio.md")
+        self.assertIn("não responda", texto)
+        self.assertIn("respondida no specify", texto)
+
+    def test_perguntas_do_checklist_tem_orientacao(self):
+        for nome in ("qualidade-da-spec-exercicio.md", "qualidade-da-spec-exemplo-de-aplicacao-de-ia.md"):
+            with self.subTest(pagina=nome):
+                self.assertIn("perguntas para delimitar", self.texto(nome))
+
+    def test_trava_do_implement_pede_leitura_dos_itens(self):
+        self.assertIn("CHK004", self.texto("teste-antes-do-codigo-exemplo-de-aplicacao-de-ia.md"))
+        self.assertIn("`yes`", self.texto("teste-antes-do-codigo-exercicio.md"))
+
+    def test_estudo_de_mathews_nao_e_descrito_como_agente(self):
+        self.assertNotIn("Com agentes de codificação, a ordem tem efeito medido", self.texto("teste-antes-do-codigo-conceitos.md"))
+
+    def test_retomada_do_tema_1_lista_os_comandos_que_faltam(self):
+        texto = self.texto("teste-antes-do-codigo-exercicio.md")
+        self.assertIn("reserva de saldo pendente", texto)
+        self.assertIn("/speckit-checklist", texto)
+
+
+class CorrecoesDaSessaoCincoTest(unittest.TestCase):
+    """Correções de 13/10/2026 vindas do ensaio da S6 com o Spec Kit 1.1.1."""
+
+    def test_sintese_da_s5_nao_promete_xunit_nem_jest(self):
+        texto = (S5 / "sintese-e-referencias.md").read_text(encoding="utf-8")
+        self.assertNotIn("xUnit", texto)
+        self.assertIn("node:test", texto)
+
+    def test_converge_registrado_como_sexto_comando(self):
+        for caminho in (S5 / "index.md", S5 / "especificacao-com-spec-kit-conceitos.md", BIBLIOGRAFIA):
+            with self.subTest(arquivo=caminho.name):
+                self.assertIn("converge", caminho.read_text(encoding="utf-8"))
 
 
 class CasoAplicadoTest(unittest.TestCase):
