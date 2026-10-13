@@ -5,12 +5,12 @@
 Digite no terminal:
 
 ```bash
-mkdir fundep-dupla-aprovacao
-cd fundep-dupla-aprovacao
+mkdir acme-dupla-aprovacao
+cd acme-dupla-aprovacao
 git init
 ```
 
-A pasta começa vazia, e todo o código vai sair do pedido do PO do sistema de pagamentos de projetos, um cenário inspirado no domínio administrativo e financeiro da FUNDEP.
+A pasta começa vazia, e todo o código vai sair do pedido do PO do sistema de pagamentos de projetos de pesquisa da ACME, uma universidade fictícia.
 
 ## Passo 2: instale o Spec Kit no projeto
 
@@ -22,7 +22,7 @@ git add -A
 git commit -m "spec kit instalado"
 ```
 
-Quando o `specify init` perguntar o tipo de script, aperte Enter para aceitar o padrão do sistema. Cada passo deste roteiro termina com um commit, para que `git diff` mostre depois só o que o comando seguinte mudou, e o agente deve ser aberto dentro da pasta `fundep-dupla-aprovacao` antes do passo seguinte.
+Quando o `specify init` perguntar o tipo de script, aperte Enter para aceitar o padrão do sistema. Cada passo deste roteiro termina com um commit, para que `git diff` mostre depois só o que o comando seguinte mudou, e o agente deve ser aberto dentro da pasta `acme-dupla-aprovacao` antes do passo seguinte.
 
 ## Passo 3: defina a constitution
 
@@ -54,7 +54,7 @@ O comando levou cerca de 25 segundos e gravou o princípio II com a forma normat
 Digite no chat do agente o comando `/speckit-specify`, seguido do pedido do PO:
 
 ```text
-/speckit-specify Sou PO do sistema de pagamentos de projetos da FUNDEP.
+/speckit-specify Sou PO do sistema de pagamentos de projetos de pesquisa da universidade ACME.
 Todo pagamento feito com recurso de um projeto precisa ser aprovado antes
 de ser liquidado. Pagamentos acima de R$ 5.000,00 precisam de duas
 aprovações, exceto quando o fornecedor está na lista de fornecedores

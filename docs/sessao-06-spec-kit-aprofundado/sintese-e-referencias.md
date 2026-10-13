@@ -1,6 +1,6 @@
 # Síntese e referências
 
-A sessão retomou o fluxo do GitHub Spec Kit com os três comandos opcionais, `clarify`, `checklist` e `analyze`, e com um princípio de constitution que exige o teste vermelho antes da implementação de cada história. Os exemplos e exercícios usaram dois pedidos de um sistema de pagamentos de projetos, cenário inspirado no domínio da FUNDEP, e em cada comando a pergunta foi o que ele examina, o que grava e o que deixa de ver.
+A sessão retomou o fluxo do GitHub Spec Kit com os três comandos opcionais, `clarify`, `checklist` e `analyze`, e com um princípio de constitution que exige o teste vermelho antes da implementação de cada história. Os exemplos e exercícios usaram dois pedidos de um sistema de pagamentos de projetos de pesquisa da ACME, uma universidade fictícia, e em cada comando a pergunta foi o que ele examina, o que grava e o que deixa de ver.
 
 ## Ideias essenciais
 

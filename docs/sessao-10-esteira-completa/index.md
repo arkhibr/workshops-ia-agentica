@@ -8,7 +8,7 @@ O desenvolvedor domina cada parte da esteira isoladamente, mas não sabe encade�
 
 ## Intenção metodológica
 
-Sessão-âncora do workshop: exploração → especificação → plano → TDD/SDD → revisão → integração, executado de ponta a ponta como uma funcionalidade real do domínio FUNDEP, em duplas. Decisões arquiteturais tomadas ao longo do caminho são registradas em ADR no formato MADR v4 — contexto, opções consideradas, decisão, consequências.
+Sessão-âncora do workshop: exploração → especificação → plano → TDD/SDD → revisão → integração, executado de ponta a ponta como uma funcionalidade do domínio de projetos de pesquisa da ACME, uma universidade fictícia, em duplas. Decisões arquiteturais tomadas ao longo do caminho são registradas em ADR no formato MADR v4 — contexto, opções consideradas, decisão, consequências.
 
 ## Ao final desta sessão, o participante consegue
 
@@ -16,7 +16,7 @@ Executar a esteira completa de engenharia agêntica de forma autônoma numa func
 
 ## Exercício
 
-Funcionalidade FUNDEP completa em duplas, integrando tudo o que foi praticado nas sessões anteriores.
+Funcionalidade completa do domínio ACME, uma universidade fictícia, em duplas, integrando tudo o que foi praticado nas sessões anteriores.
 
 ---
 

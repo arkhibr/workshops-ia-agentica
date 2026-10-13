@@ -5,11 +5,11 @@
 Digite no terminal:
 
 ```bash
-cd fundep-saldo-rubrica
+cd acme-saldo-rubrica
 git log --oneline
 ```
 
-O histórico precisa terminar no commit `plan e checklist` do exercício do Tema 1, sobre o saldo da rubrica no sistema de pagamentos de projetos, cenário inspirado no domínio da FUNDEP, ou no commit `reserva de saldo pendente`, para quem o fez. Se o exercício anterior parou antes, rode no chat só os comandos que faltam, na ordem `/speckit-clarify`, `/speckit-plan` e `/speckit-checklist`, com um commit depois de cada um. No ensaio, esses três comandos somaram cerca de sete minutos de espera, que saem do tempo deste exercício. No Codex CLI, os comandos de chat deste exercício começam com cifrão (`$speckit-...`) no lugar da barra.
+O histórico precisa terminar no commit `plan e checklist` do exercício do Tema 1, sobre o saldo da rubrica no sistema de pagamentos de projetos de pesquisa da ACME, uma universidade fictícia, ou no commit `reserva de saldo pendente`, para quem o fez. Se o exercício anterior parou antes, rode no chat só os comandos que faltam, na ordem `/speckit-clarify`, `/speckit-plan` e `/speckit-checklist`, com um commit depois de cada um. No ensaio, esses três comandos somaram cerca de sete minutos de espera, que saem do tempo deste exercício. No Codex CLI, os comandos de chat deste exercício começam com cifrão (`$speckit-...`) no lugar da barra.
 
 ## Passo 2: gere as tarefas
 

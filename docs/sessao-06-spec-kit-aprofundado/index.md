@@ -20,7 +20,7 @@ A sessão retoma o fluxo da Sessão 5 com os três comandos que o Spec Kit apres
 
 **Tema 2 — Teste antes do código.** A constitution exige que os testes de cada história falhem antes da implementação, o `analyze` confere a coerência entre spec, plano e tarefas sem alterar nada, e o `implement` roda por fase, com parada no vermelho. O foco é saber se o teste falhou pelo motivo certo e se ele protege a fronteira da regra.
 
-Os exemplos e exercícios usam pedidos de um sistema de pagamentos de projetos, inspirados no domínio administrativo e financeiro da FUNDEP. A demonstração usa a dupla aprovação de pagamentos e os exercícios usam o saldo da rubrica. O [contexto da prática](contexto-da-pratica.md) reúne os pedidos do PO, a constitution da sessão e o objetivo de cada página prática.
+Os exemplos e exercícios usam pedidos de um sistema de pagamentos de projetos de pesquisa da ACME, uma universidade fictícia, e esses cenários não reproduzem regra vigente de nenhuma instituição real. A demonstração usa a dupla aprovação de pagamentos e os exercícios usam o saldo da rubrica. O [contexto da prática](contexto-da-pratica.md) reúne os pedidos do PO, a constitution da sessão e o objetivo de cada página prática.
 
 ## Objetivos de aprendizagem
 

@@ -364,7 +364,7 @@ class SessaoSeisTest(unittest.TestCase):
         "teste-antes-do-codigo-exercicio.md",
     )
     CONCEITOS = ("qualidade-da-spec-conceitos.md", "teste-antes-do-codigo-conceitos.md")
-    PEDIDO = "/speckit-specify Sou PO do sistema de pagamentos de projetos da FUNDEP"
+    PEDIDO = "/speckit-specify Sou PO do sistema de pagamentos de projetos de pesquisa da universidade ACME"
 
     def setUp(self):
         self.teoria = teaching_text(S6)
@@ -425,7 +425,7 @@ class SessaoSeisTest(unittest.TestCase):
                 self.assertIn(self.PEDIDO, texto)
                 self.assertIn("mkdir ", texto)
 
-    def test_cenario_declarado_como_inspirado_na_fundep(self):
+    def test_cenario_declarado_como_ficticio_e_anonimizado(self):
         self.assertIn("não reproduzem regra vigente", self.texto("contexto-da-pratica.md"))
 
     def test_demonstracao_usa_caso_diferente_do_exercicio(self):
@@ -443,7 +443,7 @@ class SessaoSeisTest(unittest.TestCase):
 
     def test_conceitos_ficam_sem_caso_aplicado(self):
         for nome in self.CONCEITOS:
-            for trecho in ("FUNDEP", "rubrica", "dupla aprovação", "ordem de compra"):
+            for trecho in ("FUNDEP", "ACME", "rubrica", "dupla aprovação", "ordem de compra"):
                 with self.subTest(pagina=nome, trecho=trecho):
                     self.assertNotIn(trecho, self.texto(nome))
 
@@ -473,9 +473,13 @@ class SessaoSeisTest(unittest.TestCase):
                     self.assertNotIn(trecho, texto)
 
     def test_plataforma_de_teste_e_node_test(self):
+        # Os roteiros rodam em node:test. A pilha C# aparece só na seção própria
+        # de teste-antes-do-codigo-conceitos.md, a pedido do Marco em 13/10/2026,
+        # para a sessão não ficar com um único exemplo baseado em npm.
         for caminho in sorted(S6.glob("*.md")):
             texto = caminho.read_text(encoding="utf-8")
-            for trecho in ("xUnit", "Jest"):
+            proibidos = ("Jest",) if caminho.name == "teste-antes-do-codigo-conceitos.md" else ("xUnit", "Jest")
+            for trecho in proibidos:
                 with self.subTest(pagina=caminho.name, trecho=trecho):
                     self.assertNotIn(trecho, texto)
 
@@ -575,6 +579,26 @@ class BibliografiaTest(unittest.TestCase):
             for numero in re.findall(r"\d+", bloco):
                 with self.subTest(numero=numero):
                     self.assertIn(int(numero), range(1, len(SESSOES) + 1))
+
+
+class PortalPublicoSessaoSeisTest(unittest.TestCase):
+    """O portal é público: a Sessão 6 usa um caso anonimizado, sem citar o cliente."""
+
+    def test_nenhuma_pagina_nem_ativo_cita_o_cliente(self):
+        # docs/superpowers/ guarda specs e planos locais, fora do site.
+        arquivos = [c for c in sorted(DOCS.rglob("*")) if c.suffix in (".md", ".svg") and "superpowers" not in c.parts]
+        arquivos.append(DOCS.parent / "mkdocs.yml")
+        for caminho in arquivos:
+            with self.subTest(arquivo=str(caminho.relative_to(DOCS.parent))):
+                self.assertNotIn("fundep", caminho.read_text(encoding="utf-8").lower())
+
+    def test_pilha_csharp_do_teste_vermelho(self):
+        texto = (S6 / "teste-antes-do-codigo-conceitos.md").read_text(encoding="utf-8")
+        for trecho in ("dotnet test", "CS0246", "NotImplementedException", "assets/teste-vermelho-csharp.png"):
+            with self.subTest(trecho=trecho):
+                self.assertIn(trecho, texto)
+        self.assertTrue((S6 / "assets" / "teste-vermelho-csharp.png").exists())
+        self.assertNotIn("npm", (S6 / "assets" / "teste-vermelho-csharp.svg").read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":

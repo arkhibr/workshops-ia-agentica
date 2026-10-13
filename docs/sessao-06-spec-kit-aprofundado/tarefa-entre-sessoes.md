@@ -2,29 +2,29 @@
 
 Esta tarefa é obrigatória e deve ser entregue antes da Sessão 7. Ela repete, sobre um terceiro pedido do sistema de pagamentos de projetos, o fluxo desta sessão do `init` ao `analyze`, sem implementação. No ensaio feito em 13/10/2026, a espera pelo agente somou cerca de oito minutos e meio, e a tarefa inteira cabe em 30 a 40 minutos com a leitura das seções indicadas.
 
-O pedido é um cenário inspirado no domínio administrativo e financeiro da FUNDEP e não reproduz regra vigente da fundação. A constitution e os comandos de cada agente estão no [contexto da prática](contexto-da-pratica.md), e no Codex CLI os comandos de chat começam com cifrão (`$speckit-...`).
+O pedido é um cenário sobre projetos de pesquisa da ACME, uma universidade fictícia, e não reproduz regra vigente de nenhuma instituição real. A constitution e os comandos de cada agente estão no [contexto da prática](contexto-da-pratica.md), e no Codex CLI os comandos de chat começam com cifrão (`$speckit-...`).
 
 ## Passo 1: crie a pasta e instale o Spec Kit
 
 Digite no terminal:
 
 ```bash
-mkdir fundep-ordem-de-compra
-cd fundep-ordem-de-compra
+mkdir acme-ordem-de-compra
+cd acme-ordem-de-compra
 git init
 specify init --here --force --integration claude
 git add -A
 git commit -m "spec kit instalado"
 ```
 
-Abra o agente dentro da pasta `fundep-ordem-de-compra` e cole no chat a constitution da sessão, que está no contexto da prática e começa por `/speckit-constitution Três princípios, nada além deles.`, registrando depois com `git add -A` e `git commit -m "constitution"`.
+Abra o agente dentro da pasta `acme-ordem-de-compra` e cole no chat a constitution da sessão, que está no contexto da prática e começa por `/speckit-constitution Três princípios, nada além deles.`, registrando depois com `git add -A` e `git commit -m "constitution"`.
 
 ## Passo 2: gere a spec
 
 Digite no chat do agente:
 
 ```text
-/speckit-specify Sou PO do sistema de pagamentos de projetos da FUNDEP.
+/speckit-specify Sou PO do sistema de pagamentos de projetos de pesquisa da universidade ACME.
 Um pagamento não pode ser liquidado se a ordem de compra correspondente
 não tiver sido aprovada, salvo nos pagamentos automáticos autorizados,
 como contas de consumo com débito em conta.
