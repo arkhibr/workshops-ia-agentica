@@ -42,4 +42,4 @@ O `implement` lê todos os arquivos de `checklists/` antes de executar qualquer 
 
 A trava liga a revisão dos requisitos à execução: um checklist gerado e nunca lido aparece no momento de implementar como uma lista de itens em aberto. Responder "sim" é uma decisão legítima quando os itens desmarcados não afetam a história em curso, desde que a pessoa tenha lido quais são esses itens antes de responder.
 
-**Próxima página:** [Exemplo de aplicação de IA: as perguntas da dupla aprovação](qualidade-da-spec-exemplo-de-aplicacao-de-ia.md).
+**Próxima página:** [Exemplo de aplicação de IA](qualidade-da-spec-exemplo-de-aplicacao-de-ia.md).
