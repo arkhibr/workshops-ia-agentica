@@ -5,12 +5,12 @@
 Digite no terminal:
 
 ```bash
-mkdir fundep-saldo-rubrica
-cd fundep-saldo-rubrica
+mkdir acme-saldo-rubrica
+cd acme-saldo-rubrica
 git init
 ```
 
-O exercício parte de um pedido do PO do sistema de pagamentos de projetos, cenário inspirado no domínio da FUNDEP, sobre o saldo de cada rubrica do plano de trabalho.
+O exercício parte de um pedido do PO do sistema de pagamentos de projetos de pesquisa da ACME, uma universidade fictícia, sobre o saldo de cada rubrica do plano de trabalho.
 
 ## Passo 2: instale o Spec Kit no projeto
 
@@ -22,7 +22,7 @@ git add -A
 git commit -m "spec kit instalado"
 ```
 
-No Codex CLI, troque `claude` por `codex` no `specify init` e use os comandos dos próximos passos com cifrão (`$speckit-...`) no lugar da barra. Abra o agente dentro da pasta `fundep-saldo-rubrica` antes de seguir.
+No Codex CLI, troque `claude` por `codex` no `specify init` e use os comandos dos próximos passos com cifrão (`$speckit-...`) no lugar da barra. Abra o agente dentro da pasta `acme-saldo-rubrica` antes de seguir.
 
 ## Passo 3: defina a constitution
 
@@ -52,7 +52,7 @@ git commit -m "constitution"
 Digite no chat do agente o comando `/speckit-specify`, seguido do pedido do PO:
 
 ```text
-/speckit-specify Sou PO do sistema de pagamentos de projetos da FUNDEP.
+/speckit-specify Sou PO do sistema de pagamentos de projetos de pesquisa da universidade ACME.
 Cada projeto tem rubricas, como material de consumo, serviços de
 terceiros e diárias, e cada rubrica tem um valor aprovado no plano de
 trabalho. Um pagamento só pode ser solicitado se a rubrica tiver saldo

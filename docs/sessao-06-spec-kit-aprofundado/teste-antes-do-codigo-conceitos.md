@@ -20,6 +20,25 @@ Conferir o vermelho exige ler o motivo da falha, além de contar as falhas. A fa
 
 Dois antipadrões aparecem com frequência quando o agente conduz o ciclo. O primeiro é o teste que nunca falhou, gerado depois do código ou dependente de um valor que já estava pronto antes da história. O segundo é o agente que altera o teste para que ele passe, mantendo o código como estava, o que transforma a especificação executável numa descrição do que o código faz. A parada humana depois do vermelho existe para os dois casos, e o `git diff` dos arquivos de teste entre o commit do vermelho e o do verde mostra o segundo.
 
+## O mesmo ciclo numa pilha C#
+
+Os roteiros desta sessão rodam em Node com `node:test`, e o ciclo vale para qualquer pilha. A equipe escreve código de produção em C#, e a sequência é a mesma com o SDK do .NET e o xUnit: o princípio II da constitution cita `dotnet test` no lugar de `npm test`, e as etapas do fluxo, do `tasks` ao `implement` por fase, ficam como estão.
+
+![Diagrama intitulado Teste vermelho conferido numa pilha C#: o caminho de uma história até o verde. Uma linha de caixas mostra a sequência. Constitution, com o princípio II, a história só é implementada depois do vermelho. Tasks, em cada história, tarefas de teste antes das de implementação. Analyze, em caixa tracejada, portão somente leitura que aponta teste que nasce verde, com severidade a conferir. Implement, projeto xUnit com testes marcados com o atributo Fact da história, sem código de produção. Dotnet test vermelho, em vermelho, os testes da história falham. Do vermelho, uma seta desce para a caixa Parada humana: falhou pelo motivo certo? Sim, quando Assert falha ou o esqueleto lança NotImplementedException. Não, quando há erro de compilação CS0246, erro de digitação ou teste que já passava antes. Da parada humana, uma seta marcada sim sobe para a última caixa, implement, código da história, até o dotnet test verde. À esquerda, abaixo, uma caixa tracejada com o título Fronteira protegida, depois do verde, diz para trocar menor ou igual por menor na comparação da regra e rodar dotnet test, e que, se algum teste falha, a suíte percebe a mudança na fronteira, e, se nenhum falha, falta o teste do valor exato do limite. Uma faixa inferior diz que o princípio II faz o tasks gerar os testes primeiro, o analyze confere a ordem antes da execução e a troca do operador, que o Stryker.NET automatiza na Sessão 7, mostra depois do verde se algum teste fixa o limite.](assets/teste-vermelho-csharp.png)
+
+| Etapa | Node, com `node:test` | C#, com xUnit |
+|---|---|---|
+| Criar o projeto de teste | `package.json` com o script `test` | `dotnet new xunit` |
+| Marcar um teste | função `test(...)` | atributo `[Fact]` |
+| Executar a suíte | `npm test` | `dotnet test` |
+| Vermelho fraco | `ERR_MODULE_NOT_FOUND`, por arquivo inexistente | erro de compilação `CS0246`, por tipo inexistente |
+| Esqueleto pedido ao agente | função que lança um erro de não implementado | método que lança `NotImplementedException` |
+| Vermelho com motivo certo | `AssertionError` com valores diferentes | `Assert.Equal() Failure: Values differ`, com `Expected` e `Actual` |
+| Dependências do princípio III | só a biblioteca padrão do Node 20 | SDK do .NET e os pacotes de teste que o template instala, xUnit e `Microsoft.NET.Test.Sdk` |
+| Fronteira protegida | troca manual de `<=` por `<` | a mesma troca, que o Stryker.NET automatiza na Sessão 7 |
+
+A diferença que muda o diagnóstico está no vermelho fraco. O C# compila antes de executar, e um tipo ausente impede o projeto de teste inteiro de compilar, de modo que nenhum teste roda. Num ensaio de 13/10/2026, com o SDK 10.0.401 e o xUnit 2.9.3, quatro testes escritos sem nenhuma classe de produção terminaram em erro `CS0246` com zero testes executados. Com um esqueleto que lançava `NotImplementedException`, os quatro falharam por esse motivo, que é o vermelho correto para esta etapa. Com uma implementação errada, as falhas passaram a ser de asserção, e depois do verde a troca de `<=` por `<` derrubou um dos quatro testes, o do valor exato do limite.
+
 ## Analyze
 
 O `analyze` roda depois do `tasks` e antes do `implement` e lê a spec, o plano e as tarefas, conferindo-os contra a constitution. As instruções do comando o definem como estritamente somente leitura: ele produz um relatório, oferece sugestões de correção e não aplica nenhuma delas sem aprovação explícita.

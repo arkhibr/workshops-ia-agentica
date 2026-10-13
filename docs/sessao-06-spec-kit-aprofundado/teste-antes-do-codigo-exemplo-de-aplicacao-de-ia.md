@@ -2,7 +2,7 @@
 
 ## Passo 1: gere as tarefas
 
-Digite no chat do agente, dentro da pasta `fundep-dupla-aprovacao` do exemplo do Tema 1:
+Digite no chat do agente, dentro da pasta `acme-dupla-aprovacao` do exemplo do Tema 1:
 
 ```text
 /speckit-tasks
@@ -15,7 +15,7 @@ git add -A
 git commit -m "tasks"
 ```
 
-**O que o agente gerou:** o comando levou pouco mais de três minutos e gravou 46 tarefas em 282 linhas, para o pedido de dupla aprovação de pagamentos, cenário inspirado no domínio da FUNDEP. Por causa do princípio II da constitution, cada uma das três histórias ganhou uma seção de testes antes da seção de implementação, com o aviso de que os testes devem falhar, como no trecho da primeira história:
+**O que o agente gerou:** o comando levou pouco mais de três minutos e gravou 46 tarefas em 282 linhas, para o pedido de dupla aprovação de pagamentos do sistema de projetos de pesquisa da ACME, uma universidade fictícia. Por causa do princípio II da constitution, cada uma das três histórias ganhou uma seção de testes antes da seção de implementação, com o aviso de que os testes devem falhar, como no trecho da primeira história:
 
 ```text
 ### Tests for User Story 1 (escrever primeiro; devem FALHAR) ⚠️

@@ -1,12 +1,12 @@
 # Workshop: IA Agêntica na Prática
 
-Workshop de engenharia agêntica disciplinada para a equipe de desenvolvimento C#, JavaScript e TypeScript da FUNDEP. Dez sessões que levam o time do uso ad hoc de LLMs (cada desenvolvedor com seu próprio jeito de pedir código, sem vocabulário ou contrato compartilhado) a uma esteira de engenharia com IA como parceiro de execução controlado e saídas previsíveis.
+Workshop de engenharia agêntica disciplinada para equipes de desenvolvimento C#, JavaScript e TypeScript. Dez sessões que levam o time do uso ad hoc de LLMs (cada desenvolvedor com seu próprio jeito de pedir código, sem vocabulário ou contrato compartilhado) a uma esteira de engenharia com IA como parceiro de execução controlado e saídas previsíveis.
 
 A tese: a janela de contexto virou o programa. O LLM é o interpretador; o desenvolvedor escreve em linguagem natural, e o que era arte ou intuição agora é engenharia — especificação, decomposição, verificação. O piso sobe para todos; o teto sobe só com disciplina; o julgamento humano sobe de valor.
 
 **Público:** desenvolvedores C#, JavaScript e TypeScript com experiência intermediária nessas linguagens, que já experimentam IA no dia a dia sem processo formal.
 
-**Formato:** 10 sessões de 2h cada (problema → método → exercício), 20h no total, modalidade online. Cenários genéricos C#/JS/TS alternam com variações no domínio FUNDEP nos Blocos 3 e 4.
+**Formato:** 10 sessões de 2h cada (problema → método → exercício), 20h no total, modalidade online. Cenários genéricos C#/JS/TS alternam com casos de projetos de pesquisa da ACME, uma universidade fictícia, nos Blocos 3 e 4.
 
 **Cadeia de ferramentas:** conteúdo metodológico agnóstico ao ambiente. Recomendado Claude Code + Codex CLI; também compatível com GitHub Copilot + VS Code/JetBrains e Cursor IDE, todos via os comandos `/specify` · `/plan` · `/tasks` do [GitHub Spec Kit](referencia/bibliografia.md).
 
@@ -57,6 +57,3 @@ Para deixar claro o que este workshop não cobre: treinamento em LLMs (operaçã
 
 Ver [referencia/bibliografia.md](referencia/bibliografia.md) para as fontes padrão-ouro que embasam cada sessão.
 
----
-
-*Baseado na proposta comercial Arkhi `OS2025-05-RR1-Proposta_FUNDEP_-_Workshops_de_IA_Agentica`, aprovada por André, aguardando aceite comercial.*

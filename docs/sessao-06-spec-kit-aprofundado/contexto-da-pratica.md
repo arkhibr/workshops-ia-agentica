@@ -6,9 +6,9 @@ As quatro páginas práticas da sessão, dois exemplos e dois exercícios, são 
 
 Exemplos e exercícios começam numa pasta vazia, sem código. Quem conduz faz o papel do PO de um sistema de pagamentos de projetos e entrega ao agente um pedido em linguagem natural. A partir dele, o GitHub Spec Kit leva o agente pela constitution, pela spec, pelo esclarecimento, pelo plano, pelo checklist, pelas tarefas e pela análise até o código com testes.
 
-Os três pedidos são cenários inspirados no domínio administrativo e financeiro da FUNDEP e não reproduzem regra vigente da fundação. O pedido da dupla aprovação parte da regra 16 e o da ordem de compra parte da regra 20 do material de regras de negócio com SBVR e RuleSpeak entregue em maio de 2026, e o pedido do saldo da rubrica foi escrito para esta sessão.
+Os três pedidos são cenários inventados para esta sessão, sobre projetos de pesquisa da ACME, uma universidade fictícia, e não reproduzem regra vigente de nenhuma instituição real.
 
-Os exemplos usam a pasta `fundep-dupla-aprovacao`, os exercícios usam a pasta `fundep-saldo-rubrica` e a tarefa entre sessões usa a pasta `fundep-ordem-de-compra`. Antes de começar, confira se o terminal responde `CLI Version 1.1.1` ao comando `specify version`. Se não responder, siga a [preparação do ambiente da Sessão 5](../sessao-05-decomposicao/preparacao.md).
+Os exemplos usam a pasta `acme-dupla-aprovacao`, os exercícios usam a pasta `acme-saldo-rubrica` e a tarefa entre sessões usa a pasta `acme-ordem-de-compra`. Antes de começar, confira se o terminal responde `CLI Version 1.1.1` ao comando `specify version`. Se não responder, siga a [preparação do ambiente da Sessão 5](../sessao-05-decomposicao/preparacao.md).
 
 ## O objetivo de cada página
 
@@ -28,7 +28,7 @@ Os pedidos não trazem IDs de regra. A constitution manda o agente extrair as re
 **Dupla aprovação, usada nos exemplos:**
 
 ```text
-Sou PO do sistema de pagamentos de projetos da FUNDEP. Todo pagamento
+Sou PO do sistema de pagamentos de projetos de pesquisa da universidade ACME. Todo pagamento
 feito com recurso de um projeto precisa ser aprovado antes de ser
 liquidado. Pagamentos acima de R$ 5.000,00 precisam de duas aprovações,
 exceto quando o fornecedor está na lista de fornecedores recorrentes
@@ -40,7 +40,7 @@ aprová-lo.
 **Saldo da rubrica, usado nos exercícios:**
 
 ```text
-Sou PO do sistema de pagamentos de projetos da FUNDEP. Cada projeto
+Sou PO do sistema de pagamentos de projetos de pesquisa da universidade ACME. Cada projeto
 tem rubricas, como material de consumo, serviços de terceiros e
 diárias, e cada rubrica tem um valor aprovado no plano de trabalho.
 Um pagamento só pode ser solicitado se a rubrica tiver saldo para ele.
@@ -51,7 +51,7 @@ liquidados.
 **Ordem de compra, usada na tarefa entre sessões:**
 
 ```text
-Sou PO do sistema de pagamentos de projetos da FUNDEP. Um pagamento
+Sou PO do sistema de pagamentos de projetos de pesquisa da universidade ACME. Um pagamento
 não pode ser liquidado se a ordem de compra correspondente não tiver
 sido aprovada, salvo nos pagamentos automáticos autorizados, como
 contas de consumo com débito em conta.

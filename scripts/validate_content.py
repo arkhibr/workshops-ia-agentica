@@ -80,6 +80,7 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
         (
             "assets/opcionais-no-fluxo.png",
             "assets/teste-vermelho-conferido.png",
+            "assets/teste-vermelho-csharp.png",
         ),
     ),
     "sessao-07-estrategias-avancadas-teste": ("Estratégias avançadas de teste", False, ()),
