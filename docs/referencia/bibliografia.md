@@ -38,6 +38,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Kwa et al. — Measuring AI Ability to Complete Long Software Tasks (2025)](#kwa-et-al-measuring-ai-ability-to-complete-long-software-tasks-2025)
 - [Lei Complementar 214/2025 — IBS, CBS e Imposto Seletivo](#lei-complementar-2142025-ibs-cbs-e-imposto-seletivo)
 - [MADR — Markdown Architectural Decision Records v4](#madr-markdown-architectural-decision-records-v4)
+- [Mathews e Nagappan — Test-Driven Development and LLM-based Code Generation (2024)](#mathews-e-nagappan-test-driven-development-and-llm-based-code-generation-2024)
 - [Mendes — Controle e Autonomia (Módulo 4, Agentes)](#mendes-controle-e-autonomia-modulo-4-agentes)
 - [Meszaros — xUnit Test Patterns (2007)](#meszaros-xunit-test-patterns-2007)
 - [METR — Experienced Developer Productivity (2025)](#metr-experienced-developer-productivity-2025)
@@ -289,7 +290,7 @@ Origem do termo função de aptidão arquitetural (*architectural fitness functi
 
 A Sessão 5 usa a versão 1.1.1, de 6 out. 2026 (<https://github.com/github/spec-kit/releases/tag/v1.1.1>), instalada com `uv tool install specify-cli==1.1.1`. Nessa versão, o `specify init` apresenta como caminho básico `constitution`, `specify`, `plan`, `tasks` e `implement`, e como comandos opcionais `clarify`, `analyze` e `checklist`. Os comandos se chamam `/speckit-<comando>` no Claude Code e no Copilot e `$speckit-<comando>` no Codex CLI. O modelo de tarefas (`tasks-template.md`) declara as tarefas de teste como opcionais, incluídas só quando a especificação as pede.
 
-→ Sessões 3, 5, 8.
+→ Sessões 3, 5, 6, 8.
 
 ---
 
@@ -381,6 +382,16 @@ Institui IBS, CBS e Imposto Seletivo. Os arts. 112, 113, 116, 117, 118 e 124, re
 
 ---
 
+### Mathews e Nagappan — Test-Driven Development and LLM-based Code Generation (2024)
+
+**MATHEWS, Noble Saji; NAGAPPAN, Meiyappan. "Test-Driven Development and LLM-based Code Generation".** *Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering (ASE 2024)*, p. 1583-1594, out. 2024. DOI 10.1145/3691620.3695527. Preprint com o título "Test-Driven Development for Code Generation": <https://arxiv.org/abs/2402.13521>.
+
+Avalia o efeito de fornecer os casos de teste junto com o enunciado do problema a modelos como GPT-4 e Llama 3, nos conjuntos MBPP e HumanEval, formados por problemas do tamanho de uma função. A inclusão dos testes aumentou de forma consistente a proporção de soluções corretas. Fundamenta, na Sessão 6, o teste escrito antes do código como parte da especificação que o agente recebe.
+
+→ Sessão 6.
+
+---
+
 ### Mendes — Controle e Autonomia (Módulo 4, Agentes)
 
 **MENDES, Marco. "Controle e Autonomia".** *Arquitetura de Soluções com IA Generativa*, Módulo 4 — Agentes. <https://aulas-marco.github.io/arquitetura-solucoes-ia-generativa/modulo-4-agentes/controle-e-autonomia/>
@@ -395,7 +406,7 @@ Material da disciplina de pós-graduação que fundamenta a distinção entre wo
 
 **MESZAROS, Gerard. *xUnit Test Patterns: Refactoring Test Code*. Addison-Wesley, 2007.**
 
-Referência canônica em padrões de teste. Cataloga 60+ padrões para escrever testes mantíveis e confiáveis em frameworks xUnit (JUnit, NUnit, etc.). Cobre testes de unidade, integração e aceitação com padrões como Arrange-Act-Assert, Test Fixtures, Mocks, Stubs e Test Data Builders. Fundamenta a cultura xUnit adotada no workshop (C# com xUnit, JavaScript/TypeScript com Jest). Essencial para qualidade de teste: sem padrões aplicados, testes viram débito técnico que desacelera evolução — base para TDD assistido por IA e para detectar quando o agente erra ao gerar testes.
+Referência canônica em padrões de teste. Cataloga 60+ padrões para escrever testes mantíveis e confiáveis em frameworks xUnit (JUnit, NUnit, etc.). Cobre testes de unidade, integração e aceitação com padrões como Arrange-Act-Assert, Test Fixtures, Mocks, Stubs e Test Data Builders. Fundamenta a família xUnit de ferramentas de teste, da qual descendem as bibliotecas de teste usadas no workshop. Essencial para qualidade de teste: sem padrões aplicados, testes viram débito técnico que desacelera evolução — base para TDD assistido por IA e para detectar quando o agente erra ao gerar testes.
 
 → Sessão 6.
 
