@@ -18,7 +18,7 @@ Nenhuma dessas peças executa raciocínio próprio. Quem escreve cada artefato �
 
 ## O caminho básico
 
-Ao terminar o `specify init`, a versão 1.1.1 imprime dois painéis. O primeiro, *Next Steps*, lista o caminho básico. O segundo, *Enhancement Skills*, lista comandos opcionais que entram na Sessão 6.
+Ao terminar o `specify init`, a versão 1.1.1 imprime dois painéis. O primeiro, *Next Steps*, lista o caminho básico com os cinco comandos da tabela abaixo e um sexto, o `converge`, que avalia o código existente, acrescenta as tarefas que faltam e fica fora deste workshop. O segundo, *Enhancement Skills*, lista comandos opcionais que entram na Sessão 6.
 
 | Comando | Decide | Grava |
 |---|---|---|

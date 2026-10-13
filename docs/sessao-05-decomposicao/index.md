@@ -14,7 +14,7 @@ Estas páginas apoiam uma sessão conduzida ao vivo, sem leitura prévia obrigat
 
 ## Os dois temas
 
-A sessão percorre o caminho básico do GitHub Spec Kit, os cinco comandos que a ferramenta apresenta como sequência principal: `constitution`, `specify`, `plan`, `tasks` e `implement`. Os comandos opcionais, como `clarify` e `analyze`, ficam para a Sessão 6.
+A sessão percorre o caminho básico do GitHub Spec Kit, os cinco comandos que levam da constitution ao código: `constitution`, `specify`, `plan`, `tasks` e `implement`. O painel da versão 1.1.1 lista também um sexto comando, o `converge`, que avalia o código existente e acrescenta as tarefas que faltam e que fica fora deste workshop. Os comandos opcionais, como `clarify` e `analyze`, ficam para a Sessão 6.
 
 **Tema 1 — Da regra à especificação.** A constitution fixa os princípios do projeto, e a spec traduz o pedido do PO, escrito em linguagem natural, em regras com ID, histórias, requisitos e critérios de sucesso. O foco é encontrar o que o agente decidiu sozinho.
 
