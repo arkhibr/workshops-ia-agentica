@@ -179,4 +179,4 @@ O exemplo mostra três achados que o exercício pede para procurar na própria s
 
 Os trechos vêm de uma execução real com Spec Kit 1.1.1 e Claude Code, em 13/10/2026. Outra execução produz texto e perguntas diferentes, e os três tipos de achado costumam se repetir.
 
-**Próxima página:** [Exercício de IA: a spec do saldo da rubrica](qualidade-da-spec-exercicio.md).
+**Próxima página:** [Exercício de IA](qualidade-da-spec-exercicio.md).
