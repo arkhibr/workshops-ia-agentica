@@ -39,7 +39,7 @@ Toda violação da constitution é classificada como CRITICAL, e as instruções
 
 As instruções do `implement` determinam a execução fase por fase, com as tarefas sequenciais em ordem e a marcação `[X]` de cada tarefa concluída no `tasks.md`. Como a parada humana não está no comando, ela entra pelo pedido: o `implement` aceita uma instrução junto com o comando, como executar só as fases de preparação e as tarefas de teste da primeira história e parar.
 
-Essa execução em etapas cria o ponto de conferência do vermelho. O participante roda `npm test`, lê o motivo das falhas e só então pede ao agente que continue até o verde. A trava do checklist, tratada na página de conceitos do Tema 1, aparece antes da primeira tarefa e examina a escrita dos requisitos, enquanto a conferência do vermelho examina o resultado dos testes, e por isso uma não dispensa a outra.
+A execução em etapas cria o ponto de conferência do vermelho. O participante roda `npm test`, lê o motivo das falhas e só então pede ao agente que continue até o verde. A trava do checklist, tratada na página de conceitos do Tema 1, aparece antes da primeira tarefa e examina a escrita dos requisitos, enquanto a conferência do vermelho examina o resultado dos testes, e por isso uma não dispensa a outra.
 
 ## A fronteira protegida
 
