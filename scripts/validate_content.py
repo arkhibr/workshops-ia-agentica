@@ -74,7 +74,14 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
             "assets/implement-em-etapas.png",
         ),
     ),
-    "sessao-06-tdd-assistido": ("TDD assistido por IA", False, ()),
+    "sessao-06-spec-kit-aprofundado": (
+        "Spec Kit: qualidade da spec e teste antes do código",
+        True,
+        (
+            "assets/opcionais-no-fluxo.png",
+            "assets/teste-vermelho-conferido.png",
+        ),
+    ),
     "sessao-07-estrategias-avancadas-teste": ("Estratégias avançadas de teste", False, ()),
     "sessao-08-sdd-ciclo-completo": ("SDD ciclo completo", True, ()),
     "sessao-09-depuracao-sistematica": ("Depuração sistemática", False, ()),
@@ -110,6 +117,7 @@ PAGINAS_FIXAS_POR_SESSAO: dict[str, tuple[str, ...]] = {
     "sessao-03-exploracao-especificacao": ("index.md", "sintese-e-referencias.md"),
     "sessao-04-regras-formais-com-ia": ("index.md", "sintese-e-referencias.md"),
     "sessao-05-decomposicao": ("index.md", "sintese-e-referencias.md"),
+    "sessao-06-spec-kit-aprofundado": ("index.md", "sintese-e-referencias.md"),
 }
 
 # Sessões cujo esquema abandona o confinamento clássico do caso aplicado
