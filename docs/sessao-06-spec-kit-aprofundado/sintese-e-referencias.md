@@ -5,12 +5,12 @@ A sessão retomou o fluxo do GitHub Spec Kit com os três comandos opcionais, `c
 ## Ideias essenciais
 
 1. **Cada comando opcional examina o que os anteriores gravaram.** O `clarify` lê a spec antes do plano, o `checklist` lê os requisitos depois do plano, e o `analyze` lê spec, plano e tarefas antes da implementação, sem alterar nenhum arquivo.
-2. **O `clarify` pergunta só o que a spec ainda marca como aberto.** Uma decisão que o `specify` registrou em *Assumptions* ou declarou fora do escopo aparece como resolvida, e só a leitura dessas seções a encontra.
+2. **O `clarify` pergunta o que o agente considera aberto.** Uma decisão que o `specify` registrou em *Assumptions* ou declarou fora do escopo pode ser tratada como resolvida, e só a leitura dessas seções garante que ela seja encontrada.
 3. **A recomendação do `clarify` é uma proposta do agente.** Aceitá-la grava na spec, como resposta do PO, uma decisão que pode alterar o pedido original, e a pergunta a fazer antes de cada "yes" é quem tem autoridade sobre aquela regra.
 4. **O checklist testa a escrita dos requisitos.** Os itens `CHK` perguntam se o requisito é completo e verificável, a marcação `[x]` é decisão de quem revisa, e o `implement` para quando encontra item desmarcado.
 5. **O princípio de teste vermelho muda as tarefas.** Sem ele, o modelo da versão 1.1.1 trata os testes como opcionais, e com ele cada história ganha uma seção de testes antes da implementação.
-6. **O `analyze` aponta o teste que nasce verde.** Uma violação da constitution é sempre CRITICAL, e com o princípio de teste vermelho isso inclui o teste que passaria antes de existir código da história.
-7. **Conferir o vermelho é ler o motivo da falha.** Asserção sobre o valor esperado e função ainda não implementada são motivos certos, e erro de importação, erro de digitação e teste que já passava indicam problema no teste.
+6. **O `analyze` aponta o teste que nasce verde.** As instruções do comando mandam classificar como CRITICAL toda violação da constitution, e no ensaio o agente classificou como HIGH um dos achados do princípio de teste vermelho, o que faz da severidade uma proposta a conferir.
+7. **Conferir o vermelho é ler o motivo da falha.** Asserção sobre o valor esperado e esqueleto ainda não implementado são motivos certos, módulo inexistente (`ERR_MODULE_NOT_FOUND`) é um vermelho fraco que pede os esqueletos e uma nova execução, e erro de digitação e teste que já passava indicam problema no teste.
 8. **A troca do operador mostra se a fronteira tem teste.** Trocar `<=` por `<` muda o resultado só no valor exato do limite, e se nenhum teste falha a suíte não cobre esse valor.
 
 ## Checklist da sessão

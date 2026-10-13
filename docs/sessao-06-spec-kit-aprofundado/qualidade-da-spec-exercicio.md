@@ -60,7 +60,7 @@ para ele. O saldo da rubrica é o valor aprovado menos os pagamentos já
 liquidados.
 ```
 
-O agente cria a pasta `specs/001-...` com a `spec.md`. Não leia o arquivo inteiro, porque as perguntas do Passo 7 indicam as seções a ler, e registre a spec com os dois comandos abaixo antes do passo seguinte:
+O agente cria a pasta `specs/001-...` com a `spec.md` e pode terminar com uma pergunta, como "Sua escolha: responda, por exemplo, 'P1: B'", sobre um ponto que marcou como `[NEEDS CLARIFICATION]`. Se isso acontecer, não responda a essa pergunta, porque ela é a matéria do `clarify` no passo seguinte. Não leia o arquivo inteiro, porque as perguntas do Passo 7 indicam as seções a ler, e registre a spec com os dois comandos abaixo antes do passo seguinte:
 
 ```bash
 git add -A
@@ -99,6 +99,8 @@ Enquanto o plano é gerado, avance para o Passo 7 nas perguntas que dependem só
 /speckit-checklist requisitos de saldo de rubrica
 ```
 
+Se o agente fizer perguntas para delimitar o checklist, sobre foco, profundidade ou público, responda com a opção recomendada ou com a palavra "padrão".
+
 E registre os dois artefatos:
 
 ```bash
@@ -112,7 +114,7 @@ Leia só as seções indicadas na tabela.
 
 | # | Onde ler | Pergunta | Resposta |
 |---|---|---|---|
-| 1 | `## Clarifications` da `spec.md` | O `clarify` perguntou se um pagamento solicitado e ainda não liquidado reserva saldo da rubrica? Se não perguntou, essa decisão aparece em *Assumptions*? | perguntou / decidido em *Assumptions* / ausente |
+| 1 | `## Clarifications` da `spec.md` | O `clarify` perguntou se um pagamento solicitado e ainda não liquidado reserva saldo da rubrica? Se não perguntou, essa decisão aparece em *Assumptions*? | perguntou / respondida no specify / decidido em *Assumptions* / ausente |
 | 2 | Sua anotação do Passo 5 | Qual recomendação do agente você recusou, ou qual aceitou mesmo alterando uma frase do pedido, e por quê? | cite a pergunta e a frase do pedido |
 | 3 | `checklists/` | Qual item do checklist aponta algo que a spec ainda não decide, e quem precisa decidir? | cite o `CHK` e quem decide |
 

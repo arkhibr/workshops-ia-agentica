@@ -37,7 +37,8 @@
   <text x="665" y="236" font-size="16" fill="#4e342e" text-anchor="middle">portão somente</text>
   <text x="665" y="260" font-size="16" fill="#4e342e" text-anchor="middle">leitura: aponta</text>
   <text x="665" y="284" font-size="16" fill="#4e342e" text-anchor="middle">teste que nasce</text>
-  <text x="665" y="308" font-size="16" fill="#4e342e" text-anchor="middle">verde como CRITICAL</text>
+  <text x="665" y="308" font-size="16" fill="#4e342e" text-anchor="middle">verde, com severidade</text>
+  <text x="665" y="330" font-size="16" fill="#4e342e" text-anchor="middle">a conferir</text>
   <line x1="770" y1="245" x2="806" y2="245" stroke="#00695c" stroke-width="4" marker-end="url(#seta)"/>
 
   <!-- 4 implement testes -->
@@ -67,9 +68,9 @@
   <line x1="1165" y1="340" x2="1165" y2="414" stroke="#c62828" stroke-width="3" marker-end="url(#seta-vermelha)"/>
   <rect x="900" y="418" width="530" height="150" rx="14" fill="#ffffff" stroke="#c62828" stroke-width="3"/>
   <text x="1165" y="456" font-size="21" font-weight="bold" fill="#b71c1c" text-anchor="middle">Parada humana: falhou pelo motivo certo?</text>
-  <text x="1165" y="492" font-size="17" fill="#37474f" text-anchor="middle">sim, quando a asserção compara o valor esperado</text>
-  <text x="1165" y="516" font-size="17" fill="#37474f" text-anchor="middle">não, quando a falha é de importação, digitação</text>
-  <text x="1165" y="540" font-size="17" fill="#37474f" text-anchor="middle">ou de um teste que já passava antes</text>
+  <text x="1165" y="492" font-size="17" fill="#37474f" text-anchor="middle">sim, quando a asserção ou o esqueleto falha</text>
+  <text x="1165" y="516" font-size="17" fill="#37474f" text-anchor="middle">não, quando o módulo não existe, há erro de digitação</text>
+  <text x="1165" y="540" font-size="17" fill="#37474f" text-anchor="middle">ou um teste já passava antes</text>
   <path d="M1430,493 L1470,493 L1470,344" fill="none" stroke="#c62828" stroke-width="3" marker-end="url(#seta-vermelha)"/>
   <text x="1482" y="420" font-size="16" fill="#b71c1c">sim</text>
 

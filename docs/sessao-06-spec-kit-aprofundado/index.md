@@ -60,6 +60,6 @@ No ensaio de 13/10/2026, os comandos levaram de 20 segundos a pouco mais de 3 mi
 Os exercícios pedem a leitura de seções específicas dos artefatos, nunca do arquivo inteiro, porque a spec passa de cem linhas e o `tasks.md` passa de duzentas.
 
 !!! warning "Limite da IA nesta sessão"
-    O `clarify` pergunta apenas o que o agente considera em aberto. Uma decisão que a spec já tomou sozinha, como declarar um caso fora do escopo, não passa pelo `clarify`, e só a leitura das suposições e do escopo a encontra. O `analyze` aponta incoerências entre os artefatos, e quem decide quais delas corrigir é o participante.
+    O `clarify` pergunta apenas o que o agente considera em aberto. Uma decisão que a spec já tomou sozinha, como declarar um caso fora do escopo, pode não passar pelo `clarify`, e só a leitura das suposições e do escopo garante que ela seja encontrada. O `analyze` aponta incoerências entre os artefatos, e quem decide quais delas corrigir é o participante.
 
 **Próxima página:** [Contexto da prática](contexto-da-pratica.md).

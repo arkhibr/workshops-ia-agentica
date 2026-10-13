@@ -26,7 +26,7 @@ A Sessão 3 apresentou a [intervenção socrática](../sessao-03-exploracao-espe
 
 O antipadrão correspondente é responder "yes" a todas as perguntas. Cada aceitação sem leitura grava na spec, como resposta do PO, uma decisão tomada pelo agente, e a seção `## Clarifications` passa a dar aparência de validação a algo que ninguém validou. A pergunta que deve ser feita diante de cada recomendação é se quem responde tem autoridade sobre aquela regra e se a opção recomendada altera o que o pedido original dizia.
 
-O limite principal do comando está no ponto de partida da varredura. O `clarify` pergunta sobre o que a spec ainda marca como parcial ou ausente, e uma decisão que o `specify` já registrou como suposição ou como item fora do escopo aparece como resolvida. Por isso a leitura das seções de suposições e de escopo continua necessária depois do `clarify`, e é nela que aparecem as decisões que o agente tomou sem perguntar.
+O limite principal do comando está no ponto de partida da varredura. O `clarify` pergunta sobre o que considera parcial ou ausente na spec, e pode tratar como resolvida uma decisão que o `specify` já registrou como suposição ou como item fora do escopo. O comportamento varia de uma execução para outra: no ensaio de 13/10/2026, o `clarify` perguntou sobre uma suposição que o `specify` tinha pedido para confirmar e não perguntou sobre outras duas, a reprovação, declarada fora do escopo, e a definição de quem pode aprovar, registrada como suposição. Por isso a leitura das seções de suposições e de escopo continua necessária depois do `clarify`, e é nela que aparecem as decisões que o agente tomou sem perguntar.
 
 ## Checklist
 

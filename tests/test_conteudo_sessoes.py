@@ -483,6 +483,49 @@ class SessaoSeisTest(unittest.TestCase):
         self.assertIn("Beck", self.teoria)
 
 
+class RevisaoFinalSessaoSeisTest(unittest.TestCase):
+    """Achados da revisão final de 13/10/2026, conferidos contra o ensaio."""
+
+    def texto(self, nome):
+        return (S6 / nome).read_text(encoding="utf-8")
+
+    def test_vermelho_por_modulo_ausente_tem_orientacao(self):
+        for nome in ("teste-antes-do-codigo-exercicio.md", "teste-antes-do-codigo-conceitos.md"):
+            with self.subTest(pagina=nome):
+                self.assertIn("ERR_MODULE_NOT_FOUND", self.texto(nome))
+        self.assertNotIn("só os testes da primeira história estavam vermelhos", self.texto("teste-antes-do-codigo-exercicio.md"))
+
+    def test_severidade_do_analyze_e_proposta_a_conferir(self):
+        self.assertNotIn("como CRITICAL", (S6 / "assets" / "teste-vermelho-conferido.svg").read_text(encoding="utf-8"))
+        self.assertIn("classificou como HIGH", self.texto("teste-antes-do-codigo-conceitos.md"))
+
+    def test_limite_do_clarify_nao_e_generalizado(self):
+        self.assertIn("pode tratar como resolvida", self.texto("qualidade-da-spec-conceitos.md"))
+        self.assertNotIn("ninguém havia apontado", self.texto("qualidade-da-spec-exemplo-de-aplicacao-de-ia.md"))
+
+    def test_pergunta_do_specify_no_exercicio(self):
+        texto = self.texto("qualidade-da-spec-exercicio.md")
+        self.assertIn("não responda", texto)
+        self.assertIn("respondida no specify", texto)
+
+    def test_perguntas_do_checklist_tem_orientacao(self):
+        for nome in ("qualidade-da-spec-exercicio.md", "qualidade-da-spec-exemplo-de-aplicacao-de-ia.md"):
+            with self.subTest(pagina=nome):
+                self.assertIn("perguntas para delimitar", self.texto(nome))
+
+    def test_trava_do_implement_pede_leitura_dos_itens(self):
+        self.assertIn("CHK004", self.texto("teste-antes-do-codigo-exemplo-de-aplicacao-de-ia.md"))
+        self.assertIn("`yes`", self.texto("teste-antes-do-codigo-exercicio.md"))
+
+    def test_estudo_de_mathews_nao_e_descrito_como_agente(self):
+        self.assertNotIn("Com agentes de codificação, a ordem tem efeito medido", self.texto("teste-antes-do-codigo-conceitos.md"))
+
+    def test_retomada_do_tema_1_lista_os_comandos_que_faltam(self):
+        texto = self.texto("teste-antes-do-codigo-exercicio.md")
+        self.assertIn("reserva de saldo pendente", texto)
+        self.assertIn("/speckit-checklist", texto)
+
+
 class CorrecoesDaSessaoCincoTest(unittest.TestCase):
     """Correções de 13/10/2026 vindas do ensaio da S6 com o Spec Kit 1.1.1."""
 

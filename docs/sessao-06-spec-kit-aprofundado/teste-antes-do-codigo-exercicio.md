@@ -9,7 +9,7 @@ cd fundep-saldo-rubrica
 git log --oneline
 ```
 
-O histórico precisa terminar no commit `plan e checklist` do exercício do Tema 1, sobre o saldo da rubrica no sistema de pagamentos de projetos, cenário inspirado no domínio da FUNDEP. Se o exercício anterior não terminou, rode os passos dele até esse commit antes de seguir. No Codex CLI, os comandos de chat deste exercício começam com cifrão (`$speckit-...`) no lugar da barra.
+O histórico precisa terminar no commit `plan e checklist` do exercício do Tema 1, sobre o saldo da rubrica no sistema de pagamentos de projetos, cenário inspirado no domínio da FUNDEP, ou no commit `reserva de saldo pendente`, para quem o fez. Se o exercício anterior parou antes, rode no chat só os comandos que faltam, na ordem `/speckit-clarify`, `/speckit-plan` e `/speckit-checklist`, com um commit depois de cada um. No ensaio, esses três comandos somaram cerca de sete minutos de espera, que saem do tempo deste exercício. No Codex CLI, os comandos de chat deste exercício começam com cifrão (`$speckit-...`) no lugar da barra.
 
 ## Passo 2: gere as tarefas
 
@@ -50,7 +50,7 @@ Digite no chat do agente:
 /speckit-implement Execute só as fases de setup e fundação e as tarefas de teste da primeira história, e pare.
 ```
 
-O `implement` vai parar na trava do checklist, porque os itens do `checklists/` gerado no Tema 1 estão desmarcados. Leia os números da tabela que ele mostra e responda `sim` no chat.
+O `implement` vai parar na trava do checklist, porque os itens do `checklists/` gerado no Tema 1 estão desmarcados. Antes de responder, leia os itens que o agente destacar como lacunas que afetam os testes da primeira história e anote-os. Responda `sim` ou `yes`, conforme o idioma da pergunta, se nenhum deles mudar o que os testes da primeira história verificam, e `não` se algum mudar, levando o item ao PO antes de seguir.
 
 ## Passo 5: confira o vermelho
 
@@ -60,7 +60,7 @@ Digite no terminal:
 npm test
 ```
 
-Leia o resumo no fim da saída e o motivo das primeiras falhas. No ensaio deste exercício, feito em 13/10/2026, o resumo mostrou 52 testes com 46 passando e 6 falhando, porque a fundação já estava implementada e só os testes da primeira história estavam vermelhos.
+Leia o resumo no fim da saída e o motivo das primeiras falhas. No ensaio deste exercício, feito em 13/10/2026, o resumo mostrou 52 testes com 46 passando e 6 falhando, e as 6 falhas eram `ERR_MODULE_NOT_FOUND`, porque os arquivos das regras da primeira história ainda não existiam, o que produz um vermelho fraco, já que nenhuma asserção da história chegou a executar. Se o seu vermelho tiver esse motivo, peça ao agente os esqueletos dos módulos, com funções que lancem um erro de não implementado, e rode `npm test` de novo até que as falhas venham das asserções ou dos esqueletos.
 
 ## Passo 6: implemente até o verde
 

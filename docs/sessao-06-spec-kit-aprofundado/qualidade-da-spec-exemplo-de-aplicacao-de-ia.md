@@ -106,7 +106,7 @@ git add -A
 git commit -m "clarify"
 ```
 
-**O que o agente gerou:** a primeira pergunta chegou em cerca de 20 segundos e tratou de uma lacuna que o pedido tinha e que ninguém havia apontado, o momento em que o sistema consulta a lista de recorrentes, aqui com as opções resumidas:
+**O que o agente gerou:** a primeira pergunta chegou em cerca de 20 segundos e tratou de uma decisão que o próprio `specify` tinha tomado e listado ao final da resposta, na seção "Decisões que tomei e que você deve confirmar", o momento em que o sistema consulta a lista de recorrentes, aqui com as opções resumidas:
 
 ```text
 **Question:** Quando o pedido é registrado e quando se verifica se o
@@ -155,6 +155,8 @@ Depois do commit do plano, digite:
 /speckit-checklist requisitos de aprovação de pagamento
 ```
 
+Se o agente fizer perguntas para delimitar o checklist, sobre foco, profundidade ou público, responda com a opção recomendada ou com a palavra "padrão". Na execução registrada abaixo ele não fez nenhuma, porque considerou o foco do pedido suficiente.
+
 E, no terminal:
 
 ```bash
@@ -175,7 +177,7 @@ Nenhum dos 39 itens pergunta se o código funciona, porque ainda não existe có
 
 ## O que levar para o exercício
 
-O exemplo mostra três achados que o exercício pede para procurar na própria spec: o `clarify` encontrou uma lacuna real e fez uma recomendação que alterou uma regra, deixou sem pergunta tudo o que o `specify` já tinha decidido em *Assumptions*, e o checklist apontou lacunas que continuavam na spec depois das duas respostas.
+O exemplo mostra três achados que o exercício pede para procurar na própria spec: o `clarify` perguntou sobre uma decisão do `specify` e fez uma recomendação que alterou uma regra, deixou sem pergunta outras duas decisões registradas em *Assumptions* e no escopo, e o checklist apontou lacunas que continuavam na spec depois das duas respostas.
 
 Os trechos vêm de uma execução real com Spec Kit 1.1.1 e Claude Code, em 13/10/2026. Outra execução produz texto e perguntas diferentes, e os três tipos de achado costumam se repetir.
 

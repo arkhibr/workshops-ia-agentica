@@ -90,7 +90,7 @@ Digite no chat do agente:
 **Quer que eu siga com a implementação mesmo assim? (sim/não)**
 ```
 
-Os 39 itens desmarcados são os do checklist gerado no exemplo do Tema 1, e nenhum deles muda os testes da primeira história. Responda no chat:
+Os 39 itens desmarcados são os do checklist gerado no exemplo do Tema 1. Logo abaixo da tabela, o agente destacou quatro deles como lacunas que afetam o que os testes da primeira história vão verificar: CHK002, a spec não diz quem pode liquidar um pagamento, CHK003, o código `DADOS_INCOMPLETOS` existe no modelo de dados sem requisito que o exija, CHK004, não há requisito para solicitante não identificado, e CHK006, a spec não diz se o histórico registra as recusas de registro. Nenhum dos quatro altera as regras RN-01, RN-04 e RN-05, que os testes da primeira história verificam, e por isso a resposta foi `sim`, com os quatro itens anotados para o PO:
 
 ```text
 sim
@@ -115,7 +115,7 @@ npm test
   - 500000
 ```
 
-As duas falhas têm o motivo certo para esta etapa: as funções ainda não existem, e o valor do limite ainda não foi definido, como pediu a correção do C2. Uma falha por `ERR_MODULE_NOT_FOUND` ou por erro de digitação no nome de uma função indicaria problema no teste, e o próprio agente registrou que nenhuma delas apareceu.
+As duas falhas têm o motivo certo para esta etapa: as funções existem como esqueletos e ainda não foram implementadas, e o valor do limite ainda não foi definido, como pediu a correção do C2. O agente registrou que não houve nenhum `ERR_MODULE_NOT_FOUND`, porque os esqueletos foram criados na fundação, antes dos testes, e por isso as asserções chegaram a executar.
 
 ## Passo 6: implemente até o verde
 
