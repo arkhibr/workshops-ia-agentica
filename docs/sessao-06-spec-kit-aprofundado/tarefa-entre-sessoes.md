@@ -80,4 +80,4 @@ A entrega tem três partes, enviadas pelo canal a combinar com o instrutor:
 
 No ensaio, o `clarify` fez três perguntas, uma delas sobre como o sistema sabe que um pagamento automático está autorizado, e o `analyze` apontou um achado CRITICAL sobre tarefas de implementação que poderiam ser adiantadas antes do vermelho.
 
-**Próxima página:** [S7 — Estratégias avançadas de teste](../sessao-07-estrategias-avancadas-teste/index.md).
+**Próxima página:** [S7 — Casos de uso de IA por papel](../sessao-07-casos-de-uso-por-papel/index.md).

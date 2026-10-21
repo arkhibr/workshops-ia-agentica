@@ -83,7 +83,7 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
             "assets/teste-vermelho-csharp.png",
         ),
     ),
-    "sessao-07-estrategias-avancadas-teste": ("Estratégias avançadas de teste", False, ()),
+    "sessao-07-casos-de-uso-por-papel": ("Casos de uso de IA por papel", True, ()),
     "sessao-08-sdd-ciclo-completo": ("SDD ciclo completo", True, ()),
     "sessao-09-depuracao-sistematica": ("Depuração sistemática", False, ()),
     "sessao-10-esteira-completa": ("Esteira completa", False, ()),

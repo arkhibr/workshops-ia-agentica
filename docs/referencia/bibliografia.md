@@ -18,52 +18,82 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Böckeler — Understanding Spec-Driven Development (2025)](#bockeler-understanding-spec-driven-development-2025)
 - [Boehm — Software Engineering Economics (1981)](#boehm-software-engineering-economics-1981)
 - [Brown et al. — Language Models are Few-Shot Learners (2020)](#brown-et-al-language-models-are-few-shot-learners-2020)
+- [Brynjolfsson, Li e Raymond — Generative AI at Work (2025)](#brynjolfsson-li-e-raymond-generative-ai-at-work-2025)
 - [Chen et al. — Codex e HumanEval (2021)](#chen-et-al-codex-e-humaneval-2021)
 - [Chikofsky e Cross — Reverse Engineering and Design Recovery (1990)](#chikofsky-e-cross-reverse-engineering-and-design-recovery-1990)
+- [Cihan et al. — Automated Code Review In Practice (2025)](#cihan-et-al-automated-code-review-in-practice-2025)
+- [Claessen e Hughes — QuickCheck (2000)](#claessen-e-hughes-quickcheck-2000)
+- [Coleman et al. — The Kanban Guide (2025)](#coleman-et-al-the-kanban-guide-2025)
+- [Cucumber — Gherkin Reference](#cucumber-gherkin-reference)
 - [Datacurve — DeepSWE Leaderboard](#datacurve-deepswe-leaderboard)
 - [Decision Model and Notation (DMN)](#decision-model-and-notation-dmn)
 - [Delimarsky — Spec-Driven Development with AI (2025)](#delimarsky-spec-driven-development-with-ai-2025)
+- [Dell'Acqua et al. — Navigating the Jagged Technological Frontier (2026)](#dellacqua-et-al-navigating-the-jagged-technological-frontier-2026)
+- [Derby e Larsen — Agile Retrospectives (2006)](#derby-e-larsen-agile-retrospectives-2006)
 - [Diggs et al. — LLMs for Legacy Code Documentation (2024)](#diggs-et-al-llms-for-legacy-code-documentation-2024)
 - [fast-check e FsCheck — Property-Based Testing](#fast-check-e-fscheck-property-based-testing)
 - [Feathers — Working Effectively with Legacy Code (2004)](#feathers-working-effectively-with-legacy-code-2004)
 - [Fission-AI — OpenSpec](#fission-ai-openspec)
 - [Ford, Parsons, Kua e Sadalage — Building Evolutionary Architectures (2023)](#ford-parsons-kua-e-sadalage-building-evolutionary-architectures-2023)
+- [Gibbons — Journey Mapping 101 (2018)](#gibbons-journey-mapping-101-2018)
 - [GitHub Spec Kit](#github-spec-kit)
 - [gszhangwei — OpenSPDD](#gszhangwei-openspdd)
+- [Harman et al. — Mutation-Guided LLM Test Generation at Meta (2025)](#harman-et-al-mutation-guided-llm-test-generation-at-meta-2025)
 - [Hunt e Thomas — Software Archaeology (2002)](#hunt-e-thomas-software-archaeology-2002)
 - [ISO/IEC/IEEE 29148:2018](#isoiecieee-291482018)
+- [ISTQB — Certified Tester Foundation Level Syllabus v4.0.1 (2024)](#istqb-certified-tester-foundation-level-syllabus-v401-2024)
 - [Jimenez et al. — SWE-bench (2024)](#jimenez-et-al-swe-bench-2024)
 - [Karpathy — Software 2.0 (2017)](#karpathy-software-20-2017)
 - [Karpathy — Software Is Changing Again (2025)](#karpathy-software-is-changing-again-2025)
 - [Kwa et al. — Measuring AI Ability to Complete Long Software Tasks (2025)](#kwa-et-al-measuring-ai-ability-to-complete-long-software-tasks-2025)
+- [Lee et al. — Impact of Generative AI on Critical Thinking (2025)](#lee-et-al-impact-of-generative-ai-on-critical-thinking-2025)
 - [Lei Complementar 214/2025 — IBS, CBS e Imposto Seletivo](#lei-complementar-2142025-ibs-cbs-e-imposto-seletivo)
+- [Little — A Proof for the Queuing Formula (1961)](#little-a-proof-for-the-queuing-formula-1961)
+- [Luo et al. — An Empirical Analysis of Flaky Tests (2014)](#luo-et-al-an-empirical-analysis-of-flaky-tests-2014)
 - [MADR — Markdown Architectural Decision Records v4](#madr-markdown-architectural-decision-records-v4)
 - [Mathews e Nagappan — Test-Driven Development and LLM-based Code Generation (2024)](#mathews-e-nagappan-test-driven-development-and-llm-based-code-generation-2024)
 - [Mendes — Controle e Autonomia (Módulo 4, Agentes)](#mendes-controle-e-autonomia-modulo-4-agentes)
 - [Meszaros — xUnit Test Patterns (2007)](#meszaros-xunit-test-patterns-2007)
 - [METR — Experienced Developer Productivity (2025)](#metr-experienced-developer-productivity-2025)
+- [Miranda et al. — Monte Carlo para Prever Projetos de Software (2021)](#miranda-et-al-monte-carlo-para-prever-projetos-de-software-2021)
+- [Noy e Zhang — Productivity Effects of Generative AI (2023)](#noy-e-zhang-productivity-effects-of-generative-ai-2023)
+- [Olewicki et al. — Impact of LLM-based Review Comment Generation (2024)](#olewicki-et-al-impact-of-llm-based-review-comment-generation-2024)
+- [OMG — BPMN 2.0.2 (2014)](#omg-bpmn-202-2014)
 - [OMG — Semantics of Business Vocabulary and Business Rules](#omg-semantics-of-business-vocabulary-and-business-rules)
 - [Osmani — Agent Harness Engineering (2026)](#osmani-agent-harness-engineering-2026)
+- [Papadakis et al. — Mutation Testing Advances (2019)](#papadakis-et-al-mutation-testing-advances-2019)
+- [Parasuraman e Manzey — Complacency and Bias in Human Use of Automation (2010)](#parasuraman-e-manzey-complacency-and-bias-in-human-use-of-automation-2010)
 - [Parnas — On the Criteria to Be Used in Decomposing Systems into Modules (1972)](#parnas-on-the-criteria-to-be-used-in-decomposing-systems-into-modules-1972)
+- [Patton — The New User Story Backlog is a Map (2008)](#patton-the-new-user-story-backlog-is-a-map-2008)
 - [Paul e Elder — The Thinker's Guide to Socratic Questioning (2019)](#paul-e-elder-the-thinkers-guide-to-socratic-questioning-2019)
 - [Pearce et al. — Copilot Security (2022)](#pearce-et-al-copilot-security-2022)
 - [Peng et al. — Copilot Productivity (2023)](#peng-et-al-copilot-productivity-2023)
 - [Prasad et al. — ADaPT: As-Needed Decomposition and Planning (2024)](#prasad-et-al-adapt-as-needed-decomposition-and-planning-2024)
+- [Quattrocchi et al. — User stories geradas por LLMs (2025)](#quattrocchi-et-al-user-stories-geradas-por-llms-2025)
 - [Ross (ed.) — Business Rules Manifesto (2003)](#ross-ed-business-rules-manifesto-2003)
 - [Ross — RuleSpeak](#ross-rulespeak)
+- [Schäfer et al. — TestPilot (2024)](#schafer-et-al-testpilot-2024)
+- [Schwaber e Sutherland — The 2020 Scrum Guide (2020)](#schwaber-e-sutherland-the-2020-scrum-guide-2020)
 - [Sneed e Erdős — Extracting Business Rules from Source Code (1996)](#sneed-e-erdos-extracting-business-rules-from-source-code-1996)
+- [Stryker Mutator — Documentação](#stryker-mutator-documentacao)
 - [StrykerJS e Stryker.NET — Mutation Testing](#strykerjs-e-strykernet-mutation-testing)
+- [Tang et al. — TofuEval (2024)](#tang-et-al-tofueval-2024)
+- [Tantithamthavorn et al. — RovoDev Code Reviewer (2026)](#tantithamthavorn-et-al-rovodev-code-reviewer-2026)
 - [Trivedy — The Anatomy of an Agent Harness (2026)](#trivedy-the-anatomy-of-an-agent-harness-2026)
+- [Vacanti — When Will It Be Done?](#vacanti-when-will-it-be-done)
 - [Vaswani et al. — Attention Is All You Need (2017)](#vaswani-et-al-attention-is-all-you-need-2017)
 - [Vercel — Removing 80% of Agent Tools (2026)](#vercel-removing-80-of-agent-tools-2026)
 - [Vincent e Prime Radiant — Superpowers (2026)](#vincent-e-prime-radiant-superpowers-2026)
+- [Wake — INVEST in Good Stories and SMART Tasks (2003)](#wake-invest-in-good-stories-and-smart-tasks-2003)
 - [Wei et al. — Chain-of-Thought Prompting (2022)](#wei-et-al-chain-of-thought-prompting-2022)
 - [Wiegers e Beatty — Software Requirements (2013)](#wiegers-e-beatty-software-requirements-2013)
 - [Willison — What is Agentic Engineering (2026)](#willison-what-is-agentic-engineering-2026)
 - [Yao et al. — ReAct (2023)](#yao-et-al-react-2023)
+- [Zadenoori et al. — LLMs para Engenharia de Requisitos (2025)](#zadenoori-et-al-llms-para-engenharia-de-requisitos-2025)
 - [Zhang e Xia — Structured Prompt-Driven Development (2026)](#zhang-e-xia-structured-prompt-driven-development-2026)
 - [Zeller — Why Programs Fail (2005)](#zeller-why-programs-fail-2005)
-
+- [Zhang et al. — LLMs para Mensagens de Commit (2024)](#zhang-et-al-llms-para-mensagens-de-commit-2024)
+- [Ziftci et al. — Migrating Code at Scale with LLMs at Google (2025)](#ziftci-et-al-migrating-code-at-scale-with-llms-at-google-2025)
 ---
 
 ### Agentic AI Foundation — AGENTS.md Standard
@@ -186,6 +216,16 @@ Demonstra que aumentar a escala de modelos de linguagem melhora substancialmente
 
 ---
 
+### Brynjolfsson, Li e Raymond — Generative AI at Work (2025)
+
+**BRYNJOLFSSON, Erik, LI, Danielle e RAYMOND, Lindsey R. "Generative AI at Work".** *The Quarterly Journal of Economics*, v. 140, n. 2, p. 889-942, 2025. DOI: [10.1093/qje/qjae044](https://doi.org/10.1093/qje/qjae044)
+
+O resumo publicado relata 5.172 agentes de atendimento, produtividade 15% maior, melhora em velocidade e qualidade para os novatos e pequenas quedas de qualidade para os mais experientes. O working paper do NBER, número 31161, traz outros números, e as duas versões não foram misturadas.
+
+→ Sessão 7.
+
+---
+
 ### Chen et al. — Codex e HumanEval (2021)
 
 **CHEN, Mark et al. *Evaluating Large Language Models Trained on Code*.** arXiv:2107.03374, 2021. <https://arxiv.org/abs/2107.03374>
@@ -206,6 +246,46 @@ Taxonomia que define e relaciona seis termos da manutenção de software: engenh
 
 ---
 
+### Cihan et al. — Automated Code Review In Practice (2025)
+
+**CIHAN, Umut et al. *Automated Code Review In Practice*.** ICSE 2025, trilha Software Engineering in Practice, arXiv:2412.18531. <https://arxiv.org/abs/2412.18531>
+
+Estudo industrial de uma ferramenta de revisão automatizada de código. O resumo relata cerca de 238 profissionais em dez projetos, 4.335 pull requests em três projetos, dos quais 1.568 com revisão automatizada, 73,8% dos comentários automatizados resolvidos e aumento do tempo médio de fechamento de pull request de 5 h 52 min para 8 h 20 min.
+
+→ Sessão 7.
+
+---
+
+### Claessen e Hughes — QuickCheck (2000)
+
+**CLAESSEN, Koen e HUGHES, John. "QuickCheck: A Lightweight Tool for Random Testing of Haskell Programs".** ICFP 2000, p. 268-279. DOI: [10.1145/351240.351266](https://doi.org/10.1145/351240.351266)
+
+Apresenta o QuickCheck, origem do teste de propriedade. A seção 5.1.4, "A False Sense of Security", registra o falso senso de segurança de um programa que passa muitos testes sobre casos triviais. O PDF foi lido.
+
+→ Sessão 7.
+
+---
+
+### Coleman et al. — The Kanban Guide (2025)
+
+**COLEMAN, John, VACANTI, Daniel, JOHNSON, Colleen et al. *The Kanban Guide*.** kanbanguides.org, maio 2025. <https://kanbanguides.org/english/>
+
+Define quatro métricas de fluxo, que são o trabalho em andamento, a vazão, a idade do item de trabalho e o tempo de ciclo, e define a expectativa de nível de serviço como previsão do tempo de um item.
+
+→ Sessão 7.
+
+---
+
+### Cucumber — Gherkin Reference
+
+**CUCUMBER. *Gherkin Reference*.** Documentação oficial. <https://cucumber.io/docs/gherkin/reference/>
+
+Referência da sintaxe do Gherkin, usada para escrever critérios de aceite como cenários executáveis.
+
+→ Sessão 7.
+
+---
+
 ### Datacurve — DeepSWE Leaderboard
 
 **DATACURVE. *DeepSWE Leaderboard*.** Publicado em benchlm.ai. <https://benchlm.ai/benchmarks/deepswe>
@@ -222,7 +302,7 @@ Leitura independente de modelos em 113 tarefas de engenharia de software de long
 
 Padrão para representar regras condicionais como tabelas de decisão, complemento ao RuleSpeak para regras de cálculo e elegibilidade que combinam várias condições. Define sete políticas de acerto (*hit policies*) que resolvem o que fazer quando mais de uma linha da tabela poderia se aplicar: Unique (as regras nunca se sobrepõem), Any (podem se sobrepor, mas toda regra que casar produz a mesma saída), Priority (vale a de maior prioridade), First (vale a primeira que casar, de cima para baixo), Collect (retorna todos os resultados, com agregação opcional de soma, mínimo, máximo ou contagem), Rule Order e Output Order (retornam todos os resultados, em ordem de aparição ou de prioridade).
 
-→ Sessão 4.
+→ Sessões 4 e 7.
 
 ---
 
@@ -236,13 +316,33 @@ Post oficial de lançamento do GitHub Spec Kit — define o problema do vibe cod
 
 ---
 
+### Dell'Acqua et al. — Navigating the Jagged Technological Frontier (2026)
+
+**DELL'ACQUA, Fabrizio et al. "Navigating the Jagged Technological Frontier".** *Organization Science*, v. 37, n. 2, p. 403-423, mar. 2026. DOI: [10.1287/orsc.2025.21838](https://doi.org/10.1287/orsc.2025.21838). Versão anterior: HBS Working Paper 24-013.
+
+O resumo da editora, obtido pelo Crossref, relata 758 profissionais e 18 tarefas dentro da fronteira do modelo, com 12,2% mais tarefas concluídas e conclusão 25,1% mais rápida, e relata que fora da fronteira os participantes com IA tiveram 19% menos probabilidade de chegar à solução correta. O texto completo não foi aberto.
+
+→ Sessão 7.
+
+---
+
+### Derby e Larsen — Agile Retrospectives (2006)
+
+**DERBY, Esther e LARSEN, Diana. *Agile Retrospectives: Making Good Teams Great*.** Pragmatic Bookshelf, jul. 2006. <https://pragprog.com/titles/dlret/agile-retrospectives/>
+
+Trata as retrospectivas como prática ao longo do projeto e não só ao final, para problemas técnicos, de método e de pessoas. A descrição vem da página da editora, e o livro não foi lido.
+
+→ Sessão 7.
+
+---
+
 ### Diggs et al. — LLMs for Legacy Code Documentation (2024)
 
 **DIGGS, Colin et al. *Leveraging LLMs for Legacy Code Modernization: Challenges and Opportunities for LLM-Generated Documentation*.** arXiv:2411.14971, nov. 2024. Versão resumida submetida ao workshop LLM4Code 2025, colocalizado com o ICSE 2025. <https://arxiv.org/abs/2411.14971>
 
 Estudo empírico com quatro modelos (Claude 3.0 Sonnet, Llama 3 Instruct 70B, Mixtral 8×7B e GPT-4 Turbo Preview) na geração de comentários linha a linha para código legado em MUMPS, de um sistema de prontuário eletrônico, e em linguagem de montagem de mainframe IBM. Avaliadores com experiência profissional nas duas linguagens julgaram completude, legibilidade, utilidade e alucinação por rubrica. Os comentários foram, em geral, livres de alucinação, completos, legíveis e úteis em comparação com comentários de desenvolvedores, com resultado pior na linguagem de montagem, e nenhuma métrica automática testada (complexidade ciclomática, Halstead, BLEU, ROUGE, CHRF, similaridade de cosseno) apresentou correlação forte com a avaliação humana. Fundamenta, na Sessão 4, o limite do que se sabe sobre LLM na leitura de código legado. O estudo avalia a redocumentação, e esta bibliografia trata a aplicação do resultado à recuperação da intenção de negócio como inferência própria, sem medição publicada que a sustente.
 
-→ Sessão 4.
+→ Sessões 4 e 7.
 
 ---
 
@@ -284,6 +384,16 @@ Origem do termo função de aptidão arquitetural (*architectural fitness functi
 
 ---
 
+### Gibbons — Journey Mapping 101 (2018)
+
+**GIBBONS, Sarah. "Journey Mapping 101".** Nielsen Norman Group, 9 dez. 2018, revisado em 15 jul. 2026. <https://www.nngroup.com/articles/journey-mapping-101/>
+
+Descreve os componentes de um mapa de jornada. Afirma que as ações do ator no mapa se baseiam em dados e recomenda usar falas reais de clientes obtidas em pesquisa.
+
+→ Sessão 7.
+
+---
+
 ### GitHub Spec Kit
 
 **GitHub Spec Kit.** Implementação de referência open source do Spec-Driven Development (SDD) — mais de 90 mil estrelas no GitHub. Define os quatro artefatos canônicos (`constitution.md`, `spec.md`, `plan.md`, `tasks.md`) e os comandos `/specify`, `/plan`, `/tasks`, compatíveis com Claude Code, GitHub Copilot e Cursor. O modelo de especificação (`spec-template.md`) numera cada requisito funcional com prefixo `FR-001`, `FR-002` etc., em frases no padrão "o sistema deve..."; não reserva uma seção separada para requisito não funcional.
@@ -304,6 +414,16 @@ Implementação de referência da comunidade para o método SPDD, com os comando
 
 ---
 
+### Harman et al. — Mutation-Guided LLM Test Generation at Meta (2025)
+
+**HARMAN, Mark, RITCHEY, Jillian, HARPER, Inna, SENGUPTA, Shubho, MAO, Ke e GULATI, Abhishek. *Mutation-Guided LLM-based Test Generation at Meta*.** FSE Companion 2025, p. 180-191. DOI: [10.1145/3696630.3728544](https://doi.org/10.1145/3696630.3728544). Preprint: arXiv:2501.12862.
+
+No preprint, que foi lido, 10.795 classes Kotlin geraram 9.095 mutantes e 571 testes, e os engenheiros aceitaram 73% dos testes. A lista de autores do preprint difere da versão publicada.
+
+→ Sessão 7.
+
+---
+
 ### Hunt e Thomas — Software Archaeology (2002)
 
 **HUNT, Andy; THOMAS, Dave. "Software Archaeology".** *IEEE Software*, v. 19, n. 2, p. 20-22, mar./abr. 2002. DOI: [10.1109/52.991327](https://doi.org/10.1109/52.991327)
@@ -320,7 +440,17 @@ Coluna da série dos autores na *IEEE Software* que desenvolve a analogia entre 
 
 Norma internacional de engenharia de requisitos, sucessora do IEEE 830. Distingue requisito funcional (o que o sistema deve fazer) de requisito não funcional ou de qualidade (o critério usado para julgar como o sistema opera, não um comportamento específico), e subdivide requisito não funcional em classes mais finas — desempenho, usabilidade, interface, entre outras. O texto normativo integral está atrás de paywall; a distinção funcional/não funcional citada aqui segue paráfrase amplamente aceita do padrão, não transcrição literal.
 
-→ Sessão 3.
+→ Sessões 3 e 7.
+
+---
+
+### ISTQB — Certified Tester Foundation Level Syllabus v4.0.1 (2024)
+
+**ISTQB. *Certified Tester Foundation Level Syllabus*, v4.0.1.** 15 set. 2024. <https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf>
+
+A seção 4.2.1 trata da partição de equivalência e a seção 4.2.2, da análise de valor-limite.
+
+→ Sessão 7.
 
 ---
 
@@ -330,7 +460,7 @@ Norma internacional de engenharia de requisitos, sucessora do IEEE 830. Distingu
 
 Apresenta SWE-bench, benchmark contendo 2.294 problemas reais de engenharia de software extraídos do GitHub em 12 repositórios Python populares. Avalia capacidade de modelos em editar bases de código para resolver problemas, exigindo compreensão de múltiplas funções, classes, arquivos e interação com ambientes de execução. Modelos de ponta, incluindo Claude 2, resolvem apenas 1,96% dos problemas no artigo original; em 2026, os melhores agentes resolvem cerca de 97% na versão revisada (SWE-bench Verified) — a evidência quantitativa por trás de "por que agora".
 
-→ Sessão 1.
+→ Sessões 1 e 7.
 
 ---
 
@@ -364,6 +494,16 @@ Propõe medir a capacidade de um agente pelo horizonte de tarefa de 50%: o tempo
 
 ---
 
+### Lee et al. — Impact of Generative AI on Critical Thinking (2025)
+
+**LEE, Hao-Ping (Hank), SARKAR, Advait, TANKELEVITCH, Lev, DROSOS, Ian, RINTEL, Sean, BANKS, Richard e WILSON, Nicholas. "The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers".** CHI 2025, artigo 1121. DOI: [10.1145/3706598.3713778](https://doi.org/10.1145/3706598.3713778)
+
+Pesquisa com 319 trabalhadores do conhecimento e 936 exemplos de uso de IA generativa no trabalho. A página da Microsoft Research informa que maior confiança na IA se associa a menos pensamento crítico e maior autoconfiança na tarefa, a mais pensamento crítico. Os dados são autorrelatados.
+
+→ Sessão 7.
+
+---
+
 ### Lei Complementar 214/2025 — IBS, CBS e Imposto Seletivo
 
 **BRASIL. *Lei Complementar nº 214, de 16 de janeiro de 2025: texto compilado*.** Presidência da República, com alterações posteriores, inclusive da Lei Complementar nº 227/2026. <https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214compilado.htm>. Acesso em: 29 set. 2026.
@@ -371,6 +511,26 @@ Propõe medir a capacidade de um agente pelo horizonte de tarefa de 50%: o tempo
 Institui IBS, CBS e Imposto Seletivo. Os arts. 112, 113, 116, 117, 118 e 124, recorte usado na Sessão 4, disciplinam a devolução personalizada para pessoas físicas de famílias de baixa renda: instituição da devolução (art. 112), destinatário e critérios cumulativos (art. 113), momento da devolução (art. 116), consumo considerado e ressalva do Imposto Seletivo (art. 117, com redação da LC 227/2026), percentuais e limite de ampliação por lei específica (art. 118) e definição de devolução geral e devolução específica (art. 124). É a única fonte legal do exercício de mapa de regras e testes da Sessão 4.
 
 → Sessão 4.
+
+---
+
+### Little — A Proof for the Queuing Formula (1961)
+
+**LITTLE, John D. C. "A Proof for the Queuing Formula: L = λW".** *Operations Research*, v. 9, n. 3, p. 383-387, 1961. DOI: [10.1287/opre.9.3.383](https://doi.org/10.1287/opre.9.3.383)
+
+Demonstra a fórmula L = λW, que relaciona o número médio de itens num sistema à taxa de chegada e ao tempo médio de permanência. Os metadados foram confirmados pelo Crossref, e o artigo não foi lido.
+
+→ Sessão 7.
+
+---
+
+### Luo et al. — An Empirical Analysis of Flaky Tests (2014)
+
+**LUO, Qingzhou, HARIRI, Farah, ELOUSSI, Lamyaa e MARINOV, Darko. "An Empirical Analysis of Flaky Tests".** FSE 2014, p. 643-653. DOI: [10.1145/2635868.2635920](https://doi.org/10.1145/2635868.2635920)
+
+Analisa 201 commits de correção em 51 projetos. Espera assíncrona, concorrência e dependência de ordem entre testes são as três categorias de causa mais frequentes. O PDF foi lido.
+
+→ Sessão 7.
 
 ---
 
@@ -418,7 +578,47 @@ Referência canônica em padrões de teste. Cataloga 60+ padrões para escrever 
 
 Experimento randomizado com 16 desenvolvedores experientes (cerca de 5 anos de trajetória nos próprios projetos) em 246 tarefas reais de manutenção de código aberto. Usar IA tornou a conclusão das tarefas 19% mais lenta. Mais revelador ainda: os próprios desenvolvedores, depois de terminar, estimaram que a IA os havia deixado 20% mais rápidos — o oposto exato do que os dados mediram. Contraponto empírico direto à métrica de produtividade de Peng et al., evidenciando a diferença entre tarefas novas e delimitadas (onde vibe coding ganha) versus manutenção em sistema maduro com contexto implícito.
 
-→ Sessão 1.
+→ Sessões 1 e 7.
+
+---
+
+### Miranda et al. — Monte Carlo para Prever Projetos de Software (2021)
+
+**MIRANDA, Pedro, FARIA, J. Pascoal, CORREIA, Filipe F., FARES, Ahmed, GRAÇA, Ricardo e MOREIRA, João Mendes. "An analysis of Monte Carlo simulations for forecasting software projects".** *Proceedings of the 36th ACM Symposium on Applied Computing (SAC 2021)*, p. 1550-1558. DOI: [10.1145/3412841.3442030](https://doi.org/10.1145/3412841.3442030)
+
+Analisa simulações de Monte Carlo na previsão de projetos de software, conforme o título. Os metadados foram confirmados pelo Crossref, e o resumo e os resultados não foram lidos.
+
+→ Sessão 7.
+
+---
+
+### Noy e Zhang — Productivity Effects of Generative AI (2023)
+
+**NOY, Shakked e ZHANG, Whitney. "Experimental evidence on the productivity effects of generative artificial intelligence".** *Science*, v. 381, n. 6654, p. 187-192, 14 jul. 2023. DOI: [10.1126/science.adh2586](https://doi.org/10.1126/science.adh2586)
+
+O resumo publicado relata 453 profissionais, redução de 40% no tempo e aumento de 18% na qualidade em tarefas de redação. O texto completo da versão publicada não foi lido.
+
+→ Sessão 7.
+
+---
+
+### Olewicki et al. — Impact of LLM-based Review Comment Generation (2024)
+
+**OLEWICKI, Doriane et al. *Impact of LLM-based Review Comment Generation in Practice: A Mixed Open-/Closed-source User Study*.** arXiv:2411.07091, nov. 2024 (preprint). <https://arxiv.org/abs/2411.07091>
+
+Estudo com a ferramenta RevMate em mais de 587 revisões de patches na Mozilla e na Ubisoft. O resumo relata aceitação de 8,1% e de 7,2% dos comentários gerados e mediana de 43 segundos adicionais por patch.
+
+→ Sessão 7.
+
+---
+
+### OMG — BPMN 2.0.2 (2014)
+
+**OMG. *Business Process Model and Notation (BPMN)*, versão 2.0.2.** Object Management Group, jan. 2014. <https://www.omg.org/spec/BPMN/2.0.2/About-BPMN>
+
+Especificação da notação de modelagem de processos de negócio. Segundo a página da IEC, a versão 2.0.1 foi adotada como ISO/IEC 19510:2013 (<https://webstore.iec.ch/publication/10695>).
+
+→ Sessão 7.
 
 ---
 
@@ -428,7 +628,7 @@ Experimento randomizado com 16 desenvolvedores experientes (cerca de 5 anos de t
 
 Especificação para vocabulário de negócio e regras formais, usada como base do bloco de especificação em linguagem controlada. Distingue duas categorias de regra. A **regra estrutural** (ou definicional) usa operadores aléticos ("é necessário que", "é possível que") para dizer como o negócio organiza e define seus próprios conceitos. A **regra operativa** (ou comportamental) usa operadores deônticos ("é obrigatório que", "é permitido que") para reger conduta e é a única das duas que alguém pode efetivamente violar.
 
-→ Sessão 4.
+→ Sessões 4 e 7.
 
 ---
 
@@ -442,6 +642,26 @@ Síntese prática do mesmo achado: um modelo mediano dentro de um bom arnês sup
 
 ---
 
+### Papadakis et al. — Mutation Testing Advances (2019)
+
+**PAPADAKIS, Mike, KINTIS, Marinos, ZHANG, Jie, JIA, Yue, LE TRAON, Yves e HARMAN, Mark. "Mutation Testing Advances: An Analysis and Survey".** *Advances in Computers*, v. 112, p. 275-378, 2019. DOI: [10.1016/bs.adcom.2018.03.015](https://doi.org/10.1016/bs.adcom.2018.03.015)
+
+Levantamento sobre teste de mutação, lido na versão preprint de dez. 2017, disponível em <https://mutationtesting.uni.lu/survey.pdf>.
+
+→ Sessão 7.
+
+---
+
+### Parasuraman e Manzey — Complacency and Bias in Human Use of Automation (2010)
+
+**PARASURAMAN, Raja e MANZEY, Dietrich H. "Complacency and Bias in Human Use of Automation: An Attentional Integration".** *Human Factors*, v. 52, n. 3, p. 381-410, jun. 2010. DOI: [10.1177/0018720810376055](https://doi.org/10.1177/0018720810376055)
+
+Revisão cujo resumo, obtido pelo Crossref, afirma que a complacência e o viés de automação ocorrem em novatos e em especialistas e que o treinamento e as instruções não os evitam.
+
+→ Sessão 7.
+
+---
+
 ### Parnas — On the Criteria to Be Used in Decomposing Systems into Modules (1972)
 
 **PARNAS, David L. "On the Criteria to Be Used in Decomposing Systems into Modules".** *Communications of the ACM*, v. 15, n. 12, p. 1053–1058, dez. 1972. <https://doi.org/10.1145/361598.361623>
@@ -449,6 +669,16 @@ Síntese prática do mesmo achado: um modelo mediano dentro de um bom arnês sup
 Compara duas decomposições do mesmo sistema e mostra que dividir pelas etapas do processamento produz módulos frágeis, enquanto dividir pelas decisões de projeto que provavelmente vão mudar, cada módulo escondendo uma delas, facilita a mudança e o trabalho em paralelo. Na Sessão 5, o critério é aplicado ao corte de tarefas: uma tarefa por regra de negócio sujeita a mudança.
 
 → Sessão 5.
+
+---
+
+### Patton — The New User Story Backlog is a Map (2008)
+
+**PATTON, Jeff. "The New User Story Backlog is a Map".** Jeff Patton & Associates, 8 out. 2008, atualizado em 12 abr. 2023. <https://www.jpattonassociates.com/the-new-backlog/>
+
+Propõe organizar as histórias de usuário num mapa pela ordem em que o sistema é explicado, com os releases em faixas horizontais, cada uma com funcionalidade de ponta a ponta.
+
+→ Sessão 7.
 
 ---
 
@@ -478,7 +708,7 @@ Investiga segurança do GitHub Copilot avaliando com que frequência recomenda c
 
 Experimento randomizado com 70 desenvolvedores profissionais que completam uma tarefa de implementação de servidor HTTP. O grupo com Copilot completou a tarefa 55,8% mais rápido (71 minutos contra 161 minutos). O efeito foi maior para desenvolvedores menos experientes, sugerindo que a assistência reduz a curva de aprendizado para tarefas bem delimitadas e novas, onde o contexto é contido e explícito.
 
-→ Sessão 1.
+→ Sessões 1 e 7.
 
 ---
 
@@ -489,6 +719,16 @@ Experimento randomizado com 70 desenvolvedores profissionais que completam uma t
 Decompõe uma subtarefa só quando o modelo executor não consegue concluí-la, de forma recursiva, ajustando a profundidade da decomposição à complexidade da tarefa e à capacidade do executor. Supera a execução direta e o plano decomposto de antemão em ALFWorld, WebShop e TextCraft, com ganhos de 28,3%, 27% e 33% na taxa de sucesso. Na Sessão 5, sustenta que decompor demais também tem custo.
 
 → Sessão 5.
+
+---
+
+### Quattrocchi et al. — User stories geradas por LLMs (2025)
+
+**QUATTROCCHI, Giovanni, PASQUALE, Liliana, SPOLETINI, Paola e BARESI, Luciano. *Can LLMs Generate User Stories and Assess Their Quality?*.** arXiv:2507.15157, jul. 2025 (preprint). <https://arxiv.org/abs/2507.15157>
+
+Dez modelos de linguagem geraram histórias de usuário a partir de entrevistas simuladas com clientes, e o resultado foi comparado com histórias escritas por especialistas e por estudantes. O resumo relata semelhança em cobertura e em qualidade de estilo, menor diversidade e atendimento menos frequente aos critérios de aceitação definidos no estudo. O veículo de publicação não foi confirmado, e as tabelas de resultado não foram lidas.
+
+→ Sessão 7.
 
 ---
 
@@ -508,7 +748,27 @@ Dez artigos que definem regra de negócio como categoria própria de conheciment
 
 Notação em linguagem natural controlada para expressar regra de negócio sem ambiguidade. O documento normativo organiza cinco formas de sentença em torno de duas palavras-chave de regra e duas de conselho: **"must"** (algo é exigido), **"must not"** (algo é proibido), **"may ... only"** (permissão condicional, que continua sendo regra de negócio, com exceção explícita) e, como *statements of advice*, que o documento classifica à parte das regras, **"may"** isolado e **"need not"**. O próprio documento afirma que o RuleSpeak foi "uma das três notações de referência usadas na criação do SBVR, e é consistente com esse padrão".
 
-→ Sessão 4.
+→ Sessões 4 e 7.
+
+---
+
+### Schäfer et al. — TestPilot (2024)
+
+**SCHÄFER, Max, NADI, Sarah, EGHBALI, Aryaz e TIP, Frank. "An Empirical Evaluation of Using Large Language Models for Automated Unit Test Generation".** *IEEE Transactions on Software Engineering*, v. 50, n. 1, p. 85-105, jan. 2024. DOI: [10.1109/TSE.2023.3334955](https://doi.org/10.1109/TSE.2023.3334955). Preprint: arXiv:2302.06527.
+
+Avalia a ferramenta TestPilot, com o modelo gpt-3.5-turbo, em 25 pacotes npm e 1.684 funções de API. O resumo relata mediana de cobertura de instruções de 70,2% e de ramos de 52,8%, contra 51,3% e 25,6% da ferramenta de comparação, a Nessie.
+
+→ Sessão 7.
+
+---
+
+### Schwaber e Sutherland — The 2020 Scrum Guide (2020)
+
+**SCHWABER, Ken e SUTHERLAND, Jeff. *The 2020 Scrum Guide*.** Scrum.org e Scrum Inc., nov. 2020. <https://scrumguides.org/scrum-guide.html>
+
+Define a retrospectiva da sprint como o evento em que o time planeja maneiras de aumentar qualidade e efetividade.
+
+→ Sessão 7.
 
 ---
 
@@ -522,9 +782,39 @@ Revisa o estado da arte da aquisição de conhecimento de aplicação a partir d
 
 ---
 
+### Stryker Mutator — Documentação
+
+**STRYKER MUTATOR. *Documentação oficial*.** <https://stryker-mutator.io/docs/> e <https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/>
+
+Define mutante morto e mutante sobrevivente e a pontuação de mutação como (mortos + timeout) dividido por (mortos + timeout + sobreviventes + sem cobertura).
+
+→ Sessão 7.
+
+---
+
 ### StrykerJS e Stryker.NET — Mutation Testing
 
 **StrykerJS** (JavaScript/TypeScript) e **Stryker.NET** (.NET) — ferramentas de referência para testes de mutação.
+
+→ Sessão 7.
+
+---
+
+### Tang et al. — TofuEval (2024)
+
+**TANG, Liyan et al. *TofuEval: Evaluating Hallucinations of LLMs on Topic-Focused Dialogue Summarization*.** NAACL 2024, arXiv:2402.13249. <https://arxiv.org/abs/2402.13249>
+
+Benchmark de resumo de diálogo focado em tópicos, com resumos de modelos de vários tamanhos anotados por humanos quanto à consistência factual. O resumo conclui que os modelos produzem muitos erros factuais nesse domínio, independentemente do tamanho. Os modelos avaliados são do período do estudo, 2023 e 2024, e podem diferir dos atuais.
+
+→ Sessão 7.
+
+---
+
+### Tantithamthavorn et al. — RovoDev Code Reviewer (2026)
+
+**TANTITHAMTHAVORN, Kla et al. *RovoDev Code Reviewer: A Large-Scale Online Evaluation of LLM-based Code Review Automation at Atlassian*.** ICSE 2026, trilha SEIP, arXiv:2601.01129. <https://arxiv.org/abs/2601.01129>
+
+Avaliação de um revisor de código com modelo de linguagem feita pela empresa que opera a ferramenta. O resumo relata 38,70% dos comentários gerados levando a alterações de código e redução de 30,8% no tempo de ciclo de pull request.
 
 → Sessão 7.
 
@@ -537,6 +827,16 @@ Revisa o estado da arte da aquisição de conhecimento de aplicação a partir d
 Formulação canônica do arnês (*harness*) como tudo o que cerca o modelo e o transforma em agente: "if you're not the model, you're the harness". Traz a medição de que a mesma família de modelo muda de faixa no Terminal Bench 2.0 quando só o arnês muda.
 
 → Sessão 2.
+
+---
+
+### Vacanti — When Will It Be Done?
+
+**VACANTI, Daniel S. *When Will It Be Done?*.** Leanpub. <https://leanpub.com/whenwillitbedone>
+
+O sumário da página do livro inclui capítulos sobre a estabilidade do processo pela Lei de Little e sobre o planejamento probabilístico de releases por simulação de Monte Carlo. A descrição vem do sumário da página de venda, a página não informa o ano de publicação e o livro não foi lido.
+
+→ Sessão 7.
 
 ---
 
@@ -570,6 +870,16 @@ Conjunto de habilidades combináveis para agentes de codificação, acionadas au
 
 ---
 
+### Wake — INVEST in Good Stories and SMART Tasks (2003)
+
+**WAKE, Bill. "INVEST in Good Stories, and SMART Tasks".** XP123, 17 ago. 2003. <https://xp123.com/invest-in-good-stories-and-smart-tasks/>
+
+Propõe seis critérios para avaliar uma história de usuário: independente, negociável, valiosa, estimável, pequena e testável.
+
+→ Sessão 7.
+
+---
+
 ### Wei et al. — Chain-of-Thought Prompting (2022)
 
 **WEI, Jason et al. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*.** NeurIPS, 2022. <https://arxiv.org/abs/2201.11903>
@@ -586,7 +896,7 @@ Demonstra que solicitar ao modelo que gere uma sequência de passos intermediár
 
 Referência de mercado em engenharia de requisitos. Organiza requisitos em camadas (requisito de negócio, requisito de usuário, requisito funcional de software) e trata regra de negócio como categoria própria e anterior a essas camadas: uma regra de negócio não é, em si, um requisito de software, porque também rege operação manual; ela é a origem de onde requisitos funcionais são derivados, não um requisito por si só.
 
-→ Sessão 3.
+→ Sessões 3 e 7.
 
 ---
 
@@ -610,6 +920,16 @@ Propõe ReAct, que integra raciocínio e ação em modelos de linguagem, permiti
 
 ---
 
+### Zadenoori et al. — LLMs para Engenharia de Requisitos (2025)
+
+**ZADENOORI, Mohammad Amin, DĄBROWSKI, Jacek, ALHOSHAN, Waad, ZHAO, Liping e FERRARI, Alessio. *Large Language Models (LLMs) for Requirements Engineering (RE): A Systematic Literature Review*.** arXiv:2509.11446, set. 2025 (preprint). <https://arxiv.org/abs/2509.11446>
+
+Revisão sistemática de 74 estudos primários publicados em 2023 e 2024. A maioria dos trabalhos trata de elicitação e validação de requisitos, e as avaliações ocorrem em geral em ambiente controlado, com pouco uso na indústria.
+
+→ Sessão 7.
+
+---
+
 ### Zhang e Xia — Structured Prompt-Driven Development (2026)
 
 **ZHANG, Wei; XIA, Jing Jing. "Structured-Prompt-Driven Development (SPDD)".** *martinfowler.com*, 28 abr. 2026. <https://martinfowler.com/articles/structured-prompt-driven/>
@@ -627,6 +947,26 @@ Método desenvolvido por um time de tecnologia interna da Thoughtworks que trata
 Livro clássico sobre depuração sistemática de programas. Apresenta metodologia científica aplicada à localização de erros: reproduzir o defeito consistentemente, formular hipóteses sobre causas, projetar testes para refutá-las e isolar o código responsável. Zeller desenvolve técnicas como delta debugging (automatizar redução de entradas que causam falha), execução reversa e análise de dependência. Fundamental para engenheiros que buscam evitar tentativa-e-erro em depuração, oferecendo processos rigorosos e automatizáveis para diagnóstico — base do protocolo hipótese → investigação → correção → verificação usado na Sessão 9.
 
 → Sessão 9.
+
+---
+
+### Zhang et al. — LLMs para Mensagens de Commit (2024)
+
+**ZHANG, Linghao, ZHAO, Jingshu, WANG, Chong e LIANG, Peng. *Using Large Language Models for Commit Message Generation: A Preliminary Study*.** SANER 2024, arXiv:2401.05926. <https://arxiv.org/abs/2401.05926>
+
+O resumo relata que, na avaliação humana, as mensagens de commit geradas por modelos foram consideradas as melhores em 78% de 366 amostras.
+
+→ Sessão 7.
+
+---
+
+### Ziftci et al. — Migrating Code at Scale with LLMs at Google (2025)
+
+**ZIFTCI, Celal, NIKOLOV, Stoyan, SJÖVALL, Anna, KIM, Bo, CODECASA, Daniele e KIM, Max. *Migrating Code At Scale With LLMs At Google*.** arXiv:2504.09691, abr. 2025 (preprint). <https://arxiv.org/abs/2504.09691>
+
+Relata 39 migrações feitas por três desenvolvedores em doze meses, com 595 alterações. O resumo informa que 74,45% das alterações e 69,46% das edições foram geradas pelo modelo e que a redução de 50% no tempo foi estimada pelos próprios desenvolvedores, em comparação com migrações manuais anteriores. Os resultados são da própria empresa e não vêm de medição controlada.
+
+→ Sessão 7.
 
 ---
 
