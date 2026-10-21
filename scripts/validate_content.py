@@ -119,6 +119,13 @@ PAGINAS_FIXAS_POR_SESSAO: dict[str, tuple[str, ...]] = {
     "sessao-04-regras-formais-com-ia": ("index.md", "sintese-e-referencias.md"),
     "sessao-05-decomposicao": ("index.md", "sintese-e-referencias.md"),
     "sessao-06-spec-kit-aprofundado": ("index.md", "sintese-e-referencias.md"),
+    # Sessão 7, 21/10/2026: sem exemplo-arquitetural.md nem estudo-de-caso.md.
+    "sessao-07-casos-de-uso-por-papel": (
+        "index.md",
+        "oficina-de-ferramentas.md",
+        "exercicios.md",
+        "sintese-e-referencias.md",
+    ),
 }
 
 # Sessões cujo esquema abandona o confinamento clássico do caso aplicado

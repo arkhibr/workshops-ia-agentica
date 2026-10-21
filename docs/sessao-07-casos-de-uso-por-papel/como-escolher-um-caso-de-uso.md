@@ -28,7 +28,7 @@ Cada estudo tem uma população, uma tarefa e uma métrica, e nenhum deles mede 
 
 A expectativa de que a pessoa perceba o erro durante o uso tem pouco apoio na pesquisa. [Parasuraman e Manzey (2010)](../referencia/bibliografia.md#parasuraman-e-manzey-complacency-and-bias-in-human-use-of-automation-2010), em revisão sobre automação em geral, concluem que a complacência e o viés de automação ocorrem em novatos e em especialistas e que treinamento e instruções não os evitam. [Lee et al. (2025)](../referencia/bibliografia.md#lee-et-al-impact-of-generative-ai-on-critical-thinking-2025) entrevistaram 319 trabalhadores do conhecimento sobre 936 usos de IA generativa e encontraram, em relatos dos próprios participantes, que maior confiança na IA se associa a menos pensamento crítico. Os dados desse estudo são autorrelatados pelos participantes, e a associação medida não permite concluir que a confiança cause a redução do pensamento crítico.
 
-O que as duas fontes sustentam é uma decisão de projeto: a conferência fica no caso como passo explícito, com a fonte de comparação nomeada, como a comparação da ata com a fala na [demonstração](exemplo-arquitetural.md).
+O que as duas fontes sustentam é uma decisão de projeto: a conferência fica no caso como passo explícito, com a fonte de comparação nomeada, como a comparação de cada decisão da ata com a fala na transcrição.
 
 ## Quatro critérios para escolher
 

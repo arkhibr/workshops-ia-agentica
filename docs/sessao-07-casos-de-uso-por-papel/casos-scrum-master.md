@@ -39,6 +39,6 @@ Esta pesquisa não localizou estudo revisado por pares que meça o uso de IA nas
 
 Dois casos do catálogo produzem números, e a conferência por recálculo é o que os sustenta. O caso de previsão por simulação é o mais exposto, porque um agente pode escrever uma faixa de datas sem ter rodado simulação nenhuma, e o texto fica igual ao de uma simulação real. O sumário do livro de [Vacanti, *When Will It Be Done?*](../referencia/bibliografia.md#vacanti-when-will-it-be-done), inclui um capítulo sobre planejamento probabilístico de releases com simulação de Monte Carlo, e [Miranda et al. (2021)](../referencia/bibliografia.md#miranda-et-al-monte-carlo-para-prever-projetos-de-software-2021) analisam simulações de Monte Carlo na previsão de projetos de software. A regra para o caso é que o agente escreve o script e a simulação roda fora dele.
 
-Nos casos que partem de texto de terceiros, como notas de retrospectiva e respostas de pesquisa de clima, o risco é o resumo atribuir ao grupo uma opinião que uma pessoa expressou. A conferência por amostra e a preservação do anonimato respondem a esse risco, e o [estudo de caso](estudo-de-caso.md) da sessão mostra o efeito de uma conferência omitida.
+Nos casos que partem de texto de terceiros, como notas de retrospectiva e respostas de pesquisa de clima, o risco é o resumo atribuir ao grupo uma opinião que uma pessoa expressou. A conferência por amostra e a preservação do anonimato respondem a esse risco.
 
 **Próxima página:** [Casos de uso para Desenvolvimento](casos-desenvolvimento.md).

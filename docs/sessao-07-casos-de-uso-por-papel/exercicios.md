@@ -56,7 +56,7 @@ A amostra basta quando o erro é barato de desfazer e a amostra representa o con
 
 **Situação**
 
-A [demonstração](exemplo-arquitetural.md) executou o caso "Processar reuniões" com um pedido que declarava restrições e conferiu a ata contra a transcrição. Aqui a ata abaixo foi gerada a partir de uma segunda reunião da ACME com um pedido sem restrições, que dizia apenas para transformar a transcrição em ata com decisões, ações e pendências, e a reunião, os nomes e as regras citadas são inventados e não reproduzem norma de nenhuma instituição.
+Esta situação usa o caso "Processar reuniões", do catálogo de Product Owner. A ata abaixo foi gerada a partir de uma reunião da ACME, a universidade fictícia usada nesta sessão, com um pedido sem restrições, que dizia apenas para transformar a transcrição em ata com decisões, ações e pendências, e a reunião, os nomes e as regras citadas são inventados e não reproduzem norma de nenhuma instituição.
 
 **Transcrição**
 
@@ -136,13 +136,13 @@ Escolha cinco cartões do catálogo do seu papel e classifique cada um segundo a
 
 ### 7. O que a conferência não encontraria
 
-A ata da demonstração passou por uma conferência de seis itens, todos corretos, e ainda assim continha duas falhas. Descreva uma terceira falha que a mesma conferência também não encontraria, e indique o que mudaria na conferência para encontrá-la.
+A conferência do exercício 5 compara cada linha da ata com a transcrição, e toda linha aprovada nessa comparação corresponde a uma fala. Descreva uma falha que essa conferência não encontraria mesmo assim, e indique o que mudaria na conferência para encontrá-la.
 
 ## Avaliar
 
-### 8. As duas medidas do estudo de caso
+### 8. Duas medidas para a ata sem conferência
 
-O [estudo de caso](estudo-de-caso.md) apresenta duas medidas propostas pela coordenação, a leitura obrigatória da ata antes do envio e a proibição do uso de IA para registrar decisões. Escolha uma, defenda a escolha em cinco linhas e indique o custo que ela impõe ao time.
+Na ACME, a universidade fictícia usada nesta sessão, uma ata gerada por IA foi enviada ao time sem leitura e registrou o prazo de cinco dias úteis, quando a reunião havia decidido dez. A coordenação propõe duas medidas: a leitura obrigatória da ata pelo product owner antes do envio, ou a proibição do uso de IA para registrar decisões. Escolha uma, defenda a escolha em cinco linhas e indique o custo que ela impõe ao time.
 
 ## Criar
 
