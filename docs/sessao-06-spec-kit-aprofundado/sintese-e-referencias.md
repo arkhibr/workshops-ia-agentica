@@ -44,6 +44,6 @@ As referências completas e seus links estão na [bibliografia do curso](../refe
 
 ## Conexão com a próxima sessão
 
-A troca manual de um operador, feita no exercício do Tema 2, é um caso único de teste de mutação. A Sessão 7 automatiza essa verificação, junto com testes de propriedade e de contrato, e decide onde cada técnica compensa o custo. Antes dela, a [tarefa entre sessões](tarefa-entre-sessoes.md) repete o fluxo desta sessão, do `init` ao `analyze`, sobre o pedido da ordem de compra.
+A troca manual de um operador, feita no exercício do Tema 2, é um caso único de teste de mutação. O Stryker.NET e o StrykerJS automatizam essa verificação, gerando e executando centenas dessas trocas, e a Sessão 7 inclui a avaliação da suíte por mutação entre os casos de uso do papel de Testes. Antes dela, a [tarefa entre sessões](tarefa-entre-sessoes.md) repete o fluxo desta sessão, do `init` ao `analyze`, sobre o pedido da ordem de compra.
 
 **Próxima página:** [Tarefa entre sessões](tarefa-entre-sessoes.md).

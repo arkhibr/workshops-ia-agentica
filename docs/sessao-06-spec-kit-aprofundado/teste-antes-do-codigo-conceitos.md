@@ -35,7 +35,7 @@ Os roteiros desta sessão rodam em Node com `node:test`, e o ciclo vale para qua
 | Esqueleto pedido ao agente | função que lança um erro de não implementado | método que lança `NotImplementedException` |
 | Vermelho com motivo certo | `AssertionError` com valores diferentes | `Assert.Equal() Failure: Values differ`, com `Expected` e `Actual` |
 | Dependências do princípio III | só a biblioteca padrão do Node 20 | SDK do .NET e os pacotes de teste que o template instala, xUnit e `Microsoft.NET.Test.Sdk` |
-| Fronteira protegida | troca manual de `<=` por `<` | a mesma troca, que o Stryker.NET automatiza na Sessão 7 |
+| Fronteira protegida | troca manual de `<=` por `<` | a mesma troca, que o Stryker.NET automatiza |
 
 A diferença que muda o diagnóstico está no vermelho fraco. O C# compila antes de executar, e um tipo ausente impede o projeto de teste inteiro de compilar, de modo que nenhum teste roda. Num ensaio de 13/10/2026, com o SDK 10.0.401 e o xUnit 2.9.3, quatro testes escritos sem nenhuma classe de produção terminaram em erro `CS0246` com zero testes executados. Com um esqueleto que lançava `NotImplementedException`, os quatro falharam por esse motivo, que é o vermelho correto para esta etapa. Com uma implementação errada, as falhas passaram a ser de asserção, e depois do verde a troca de `<=` por `<` derrubou um dos quatro testes, o do valor exato do limite.
 
@@ -64,6 +64,6 @@ A execução em etapas cria o ponto de conferência do vermelho. O participante 
 
 Um teste verde mostra que o código atende aos casos que o teste verifica, e a pergunta seguinte é se a suíte detectaria uma mudança no código. Uma regra com limite numérico, como "valor até um teto", depende de um operador de comparação, e a troca de `<=` por `<` muda o resultado apenas no valor exato do limite. Se nenhum teste falha depois dessa troca, a suíte não tem o caso do valor exato, e um defeito nessa fronteira chegaria à produção sem aviso.
 
-A troca manual de um operador, seguida de `npm test` e da restauração do código, é a versão de um caso só do teste de mutação, que a Sessão 7 automatiza com ferramentas que geram e executam centenas dessas alterações. Nesta sessão, a troca é feita à mão e numa única comparação, a da regra principal da história.
+A troca manual de um operador, seguida de `npm test` e da restauração do código, é a versão de um caso só do teste de mutação, que ferramentas como o Stryker automatizam, gerando e executando centenas dessas alterações. Nesta sessão, a troca é feita à mão e numa única comparação, a da regra principal da história.
 
 **Próxima página:** [Exemplo de aplicação de IA](teste-antes-do-codigo-exemplo-de-aplicacao-de-ia.md).

@@ -110,7 +110,20 @@ nav:
           - "Tema 2 — Exercício de IA": sessao-06-spec-kit-aprofundado/teste-antes-do-codigo-exercicio.md
           - Síntese e referências: sessao-06-spec-kit-aprofundado/sintese-e-referencias.md
           - Tarefa entre sessões: sessao-06-spec-kit-aprofundado/tarefa-entre-sessoes.md
-      - S7 — Estratégias avançadas de teste: sessao-07-estrategias-avancadas-teste/index.md
+      - S7 — Casos de uso de IA por papel:
+          - Visão geral: sessao-07-casos-de-uso-por-papel/index.md
+          - Como escolher um caso de uso: sessao-07-casos-de-uso-por-papel/como-escolher-um-caso-de-uso.md
+          - Product Owner: sessao-07-casos-de-uso-por-papel/casos-product-owner.md
+          - Scrum Master: sessao-07-casos-de-uso-por-papel/casos-scrum-master.md
+          - Desenvolvimento: sessao-07-casos-de-uso-por-papel/casos-desenvolvimento.md
+          - Testes: sessao-07-casos-de-uso-por-papel/casos-testes.md
+          - Analista de Negócio: sessao-07-casos-de-uso-por-papel/casos-analista-de-negocio.md
+          - Exemplo arquitetural: sessao-07-casos-de-uso-por-papel/exemplo-arquitetural.md
+          - Estudo de caso: sessao-07-casos-de-uso-por-papel/estudo-de-caso.md
+          - Oficina de ferramentas: sessao-07-casos-de-uso-por-papel/oficina-de-ferramentas.md
+          - Pitch de um caso de uso: sessao-07-casos-de-uso-por-papel/pitch-de-caso-de-uso.md
+          - Exercícios: sessao-07-casos-de-uso-por-papel/exercicios.md
+          - Síntese e referências: sessao-07-casos-de-uso-por-papel/sintese-e-referencias.md
       - S8 — SDD ciclo completo:
           - Visão geral: sessao-08-sdd-ciclo-completo/index.md
           - "O ciclo e os quatro artefatos": sessao-08-sdd-ciclo-completo/ciclo-e-artefatos.md
