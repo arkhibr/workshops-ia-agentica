@@ -12,7 +12,7 @@ A evidência disponível para o papel é limitada e recente. [Quattrocchi et al.
 
 | Caso | Entrada e saída | Pedido-base | Conferência |
 |---|---|---|---|
-| Processar reuniões | Transcrição vira ata com decisões, ações e pontos sem decisão | "Registre apenas o que está na transcrição e escreva *sem responsável citado* quando ninguém foi indicado" | Comparar cada decisão, número e prazo com a fala, como na [demonstração](exemplo-arquitetural.md) |
+| Processar reuniões | Transcrição vira ata com decisões, ações e pontos sem decisão | "Registre apenas o que está na transcrição e escreva *sem responsável citado* quando ninguém foi indicado" | Comparar cada decisão, número e prazo com a fala na transcrição |
 | Escrever histórias de usuário | Pedido vago do patrocinador vira histórias no formato "como, quero, para" | "Gere histórias independentes e testáveis e liste as suposições que você fez" | Aplicar os critérios de [Wake (2003)](../referencia/bibliografia.md#wake-invest-in-good-stories-and-smart-tasks-2003) a cada história e devolver as que não passam |
 | Desenhar jornada de usuário | Relatos e entrevistas viram etapas, ações, dores e oportunidades | "Use só o que está nos relatos e marque como lacuna a etapa sem relato" | Uma pessoa que vive a jornada confere cada dor, porque [Gibbons (2018)](../referencia/bibliografia.md#gibbons-journey-mapping-101-2018) descreve as ações do mapa como baseadas em dados e recomenda falas reais de clientes obtidas em pesquisa |
 | Refinar o backlog | Item grande vira itens menores com dependências e dúvidas | "Fatie por valor entregável e liste as dúvidas que o PO precisa responder" | Cada fatia atravessa o fluxo do usuário de ponta a ponta, como as faixas de release que [Patton (2008)](../referencia/bibliografia.md#patton-the-new-user-story-backlog-is-a-map-2008) descreve no mapa de histórias |
@@ -35,6 +35,5 @@ A evidência disponível para o papel é limitada e recente. [Quattrocchi et al.
 
 ## Onde os casos falham
 
-Os cinco primeiros casos do catálogo dependem de o PO conhecer a fonte melhor do que o agente. Uma ata que atribui uma decisão à pessoa errada, uma história que repete o pedido com outra formatação e uma jornada com dor sem relato correspondente passam numa leitura rápida e se propagam para o backlog. A regra operacional desta sessão é que nenhum resultado dos casos desta página circula sem conferência de quem decide, e que o material de entrada não contém dado pessoal nem sigiloso. O [estudo de caso](estudo-de-caso.md) discute o que acontece quando essa conferência é omitida numa ata de reunião.
-
+Os cinco primeiros casos do catálogo dependem de o PO conhecer a fonte melhor do que o agente. Uma ata que atribui uma decisão à pessoa errada, uma história que repete o pedido com outra formatação e uma jornada com dor sem relato correspondente passam numa leitura rápida e se propagam para o backlog. A regra operacional desta sessão é que nenhum resultado dos casos desta página circula sem conferência de quem decide, e que o material de entrada não contém dado pessoal nem sigiloso.
 **Próxima página:** [Casos de uso para Scrum Master](casos-scrum-master.md).

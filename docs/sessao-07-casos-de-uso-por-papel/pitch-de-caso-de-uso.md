@@ -32,7 +32,7 @@ Uma equipe com papéis diversos pode escolher o caso de qualquer um dos papéis 
 
 ## Exemplo de pitch
 
-O texto abaixo mostra as cinco partes em sequência, com o caso "Processar reuniões" da [demonstração](exemplo-arquitetural.md). Ele tem cerca de cem palavras e serve de modelo de estrutura, e a duração real depende do ritmo de fala de quem apresenta.
+O texto abaixo mostra as cinco partes em sequência, com o caso "Processar reuniões", do catálogo de Product Owner. Ele tem cerca de cem palavras e serve de modelo de estrutura, e a duração real depende do ritmo de fala de quem apresenta.
 
 > Nossa tarefa foi transformar a transcrição de uma reunião de refinamento em ata. Pedimos ao agente que registrasse apenas o que estava na transcrição, que anotasse mudanças de decisão e que escrevesse "sem responsável citado" quando ninguém fosse indicado. O resultado foi uma ata com três decisões, três ações e dois pontos sem decisão. Conferimos cada decisão, número e prazo com a fala e encontramos duas falhas: a ata atribuiu a um erro de transcrição um lapso de fala, e repetiu a dúvida de LGPD em duas listas. Vamos adotar o caso com a conferência obrigatória e testar na reunião de sexta.
 

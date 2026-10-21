@@ -39,4 +39,4 @@ A norma [ISO/IEC/IEEE 29148:2018](../referencia/bibliografia.md#isoiecieee-29148
 
 Os casos de formalização e rastreabilidade produzem texto com aparência de rigor, e esse é o risco: uma regra numerada e com evidência citada parece verificada mesmo quando a evidência não existe. A conferência por retrotradução, a devolução ao especialista e a amostra de linhas contra o documento original são os três mecanismos desta página, e nenhum depende de o analista conhecer o domínio melhor do que o especialista. Em resumo de conversas, [Tang et al. (2024)](../referencia/bibliografia.md#tang-et-al-tofueval-2024) encontraram erros factuais em resumos de diálogo gerados por modelos de vários tamanhos, o que justifica a devolução ao especialista nos casos que partem de transcrição.
 
-**Próxima página:** [Exemplo arquitetural](exemplo-arquitetural.md).
+**Próxima página:** [Oficina de ferramentas](oficina-de-ferramentas.md).

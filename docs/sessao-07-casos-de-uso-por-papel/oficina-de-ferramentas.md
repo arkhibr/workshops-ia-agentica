@@ -6,7 +6,7 @@ Esta oficina usa um quadro do Miro para que cada equipe registre, a partir do ca
 
 | Experimento | Tempo | Classificação |
 |---|---:|---|
-| A. Classificar os cartões do próprio papel | 20 min | Essencial em aula |
+| A. Classificar os cartões do próprio papel | 25 min | Essencial em aula |
 | B. Ler o mural e debater | 7 min | Essencial em aula, conduzido pelo instrutor |
 | C. Propor um cartão que falta no catálogo | fora do relógio | Extensão opcional |
 
@@ -18,7 +18,7 @@ Os cartões do catálogo reproduzem os dez primeiros casos de cada página de pa
 
 ## Experimento A: classificar os cartões do próprio papel
 
-Cada pessoa trabalha com os cartões do papel que exerce na equipe. Uma equipe com cinco papéis distintos classifica, em paralelo, até cinquenta cartões em vinte minutos.
+Cada pessoa trabalha com os cartões do papel que exerce na equipe. Uma equipe com cinco papéis distintos classifica, em paralelo, até cinquenta cartões em vinte e cinco minutos.
 
 1. Localize, na área "Catálogo", a moldura do seu papel e leia os dez cartões.
 2. Selecione um cartão, copie com Ctrl+C (Cmd+C no macOS) e cole com Ctrl+V (Cmd+V no macOS) dentro da moldura da sua equipe. O original permanece no catálogo.

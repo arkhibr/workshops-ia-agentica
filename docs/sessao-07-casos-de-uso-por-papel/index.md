@@ -34,14 +34,12 @@ Ao final desta sessão, o participante deve ser capaz de:
 | 4 | [Desenvolvimento](casos-desenvolvimento.md) | Teoria | 4 min | Quinze casos do papel e a evidência de revisão de código |
 | 5 | [Testes](casos-testes.md) | Teoria | 4 min | Quinze casos do papel e a conferência por mutação |
 | 6 | [Analista de Negócio](casos-analista-de-negocio.md) | Teoria | 4 min | Quinze casos do papel e a devolução ao especialista |
-| 7 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 5 min | Uma ata gerada por IA conferida contra a transcrição |
-| 8 | [Estudo de caso](estudo-de-caso.md) | Leitura depois da aula | depois da aula | Critério para conferência integral ou por amostra |
-| 9 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 20 min | Cartões do próprio papel classificados no mural da equipe |
-| 10 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Debate | 7 min | Leitura do mural das quinze equipes em três perguntas |
+| 7 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 25 min | Cartões do próprio papel classificados no mural da equipe |
+| 8 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Debate | 7 min | Leitura do mural das quinze equipes em três perguntas |
 | | Intervalo | Pausa | 5 min | Nenhum |
-| 11 | [Pitch de um caso de uso](pitch-de-caso-de-uso.md) | Teoria | 7 min | Cinco partes do pitch e critério de escolha do caso |
-| 12 | [Exercícios](exercicios.md) | Prática avaliada | 23 min | Caso aplicado a uma tarefa real e resultado conferido |
-| 13 | [Exercícios](exercicios.md) | Pitches | 20 min | Quinze pitches de oitenta segundos, com a conferência de cada um |
+| 9 | [Pitch de um caso de uso](pitch-de-caso-de-uso.md) | Teoria | 7 min | Cinco partes do pitch e critério de escolha do caso |
+| 10 | [Exercícios](exercicios.md) | Prática avaliada | 23 min | Caso aplicado a uma tarefa real e resultado conferido |
+| 11 | [Exercícios](exercicios.md) | Pitches | 20 min | Quinze pitches de oitenta segundos, com a conferência de cada um |
 | — | [Síntese e referências](sintese-e-referencias.md) | Fechamento | 5 min | Checklist, autoavaliação e fontes completas |
 | | | | **120 min** | |
 
