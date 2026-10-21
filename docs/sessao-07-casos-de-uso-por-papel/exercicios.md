@@ -198,7 +198,7 @@ Cada participante parte do próprio trabalho, sem material real, e produz dois c
 
 ### 11. Exercício-âncora: um caso real e o pitch
 
-**O que é:** a equipe aplica um caso de uso a uma tarefa real, confere o resultado e apresenta o pitch de oitenta segundos descrito na página [Pitch de um caso de uso](pitch-de-caso-de-uso.md). A atividade ocupa 23 minutos de preparação e 20 minutos de apresentações.
+**O que é:** a equipe aplica um caso de uso a uma tarefa real, confere o resultado e apresenta o pitch de cerca de cinco minutos descrito na página [Pitch de um caso de uso](pitch-de-caso-de-uso.md). A atividade ocupa 23 minutos de preparação e 20 minutos reservados às apresentações, que o instrutor administra.
 
 **Situação**
 
@@ -209,7 +209,7 @@ Cada equipe escolhe uma tarefa que realizaria na semana seguinte, com material s
 1. Em cinco minutos, a equipe escolhe a tarefa e o caso e declara a fonte de comparação para a conferência.
 2. Em dez minutos, uma pessoa da equipe escreve o pedido com papel, tarefa, formato e restrições, e executa o caso no agente.
 3. Em cinco minutos, a equipe confere o resultado contra a fonte declarada e registra cada divergência.
-4. Em três minutos, a equipe prepara as cinco partes do pitch e decide se adota, ajusta ou descarta o caso.
+4. Em três minutos, a equipe organiza o pitch e decide se adota, ajusta ou descarta o caso.
 
 **Critérios de avaliação**
 
@@ -218,6 +218,6 @@ Cada equipe escolhe uma tarefa que realizaria na semana seguinte, com material s
 | Conferência executada e registrada | 40% | O pitch diz contra que fonte o resultado foi comparado e o que a comparação encontrou |
 | Pedido com restrições | 25% | O pedido declara pelo menos uma restrição que impede o agente de preencher lacunas |
 | Decisão com próximo passo | 20% | A equipe diz se adota, ajusta ou descarta o caso e declara um prazo |
-| Respeito ao tempo | 15% | O pitch cabe nos oitenta segundos |
+| Clareza do pitch | 15% | O pitch percorre a tarefa, o pedido, o resultado, a conferência e a decisão em cerca de cinco minutos |
 
 **Próxima página:** [Síntese e referências](sintese-e-referencias.md).
