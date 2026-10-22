@@ -42,4 +42,4 @@ Todas as fontes citadas nesta sessão estão na [bibliografia do curso](../refer
 
 ## Conexão com a próxima sessão
 
-A Sessão 8 assume que a equipe já separa, em cada tarefa com IA, o que o agente produz do que uma pessoa confere. Ela percorre o ciclo completo do Spec-Driven Development, da constituição à implementação, em que cada artefato é uma fonte de comparação para o seguinte e a conferência deixa de depender da atenção de quem executa o caso.
+A Sessão 8 assume que a equipe já separa, em cada tarefa com IA, o que o agente produz do que uma pessoa confere. Ela ensina a transformar um caso de uso que passou pela conferência em skill ou agente reutilizável, com atenção a custo de tokens, escolha de modelo, desempenho, segurança e coordenação entre agentes.

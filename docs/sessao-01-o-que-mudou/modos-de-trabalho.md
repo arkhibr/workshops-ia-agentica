@@ -4,17 +4,17 @@ Um time que adota IA no desenvolvimento costuma trabalhar em três modos ao mesm
 
 ## Os três modos
 
-O terceiro modo, **SDD**, é desenvolvimento guiado por especificação, e a Sessão 8 o cobre por inteiro.
+O terceiro modo, **SDD**, é desenvolvimento guiado por especificação, e a Sessão 10 o cobre por inteiro.
 
 | Modo                       | Forma de trabalho                                                                        | Como a qualidade é julgada                                | Risco dominante                                    |
 | -------------------------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------- | -------------------------------------------------- |
 | Vibe coding                | conversa corrente e resultado aparente                                                   | "parece funcionar"                                        | intenção implícita, regressão, dívida invisível    |
 | Assistência de codificação | tarefa pontual, código existente, revisão do desenvolvedor                               | testes e revisão depois de gerar                          | contexto fragmentado, decisões não registradas     |
-| SDD (Sessão 8)             | constituição, spec (especificação), plano, tarefas, testes, revisões e barreiras formais | rastreabilidade entre intenção, implementação e evidência | custo de especificar sem manter os artefatos vivos |
+| SDD (Sessão 10)             | constituição, spec (especificação), plano, tarefas, testes, revisões e barreiras formais | rastreabilidade entre intenção, implementação e evidência | custo de especificar sem manter os artefatos vivos |
 
 ![Três colunas comparam vibe coding, assistência de codificação e SDD pelos artefatos que governam o trabalho, pela forma de verificação e pelo risco dominante. Uma seta inferior mostra a progressão de conversa para código e ticket, até artefatos versionados.](../assets/images/s1-tres-modos-trabalho.png)
 
-Este workshop move o time da primeira linha para a terceira ao longo de dez sessões: assistência de codificação disciplinada do Bloco 2 ao Bloco 3, SDD completo na Sessão 8.
+Este workshop move o time da primeira linha para a terceira ao longo de dez sessões: assistência de codificação disciplinada do Bloco 2 ao Bloco 3, SDD completo na Sessão 10.
 
 ## De onde vem o termo *vibe coding*
 
@@ -63,6 +63,6 @@ Um protótipo promovido a produto acumula **dívida de intenção**. O sistema f
 
 As duas se pagam com trabalho de tipo diferente. Você paga dívida técnica refatorando, que é trabalho de engenharia. Para pagar dívida de intenção, alguém precisa fazer arqueologia e reconstruir a decisão, muitas vezes entrevistando gente que já saiu da empresa. Às vezes ninguém paga: a decisão original se perdeu, e o time escolhe de novo sem saber o que a primeira escolha levava em conta.
 
-A [Sessão 8](../sessao-08-sdd-ciclo-completo/index.md) trata do ciclo que evita essa dívida, mantendo intenção, decisão e evidência ligadas ao código.
+A [Sessão 10](../sessao-10-sdd-ciclo-completo/index.md) trata do ciclo que evita essa dívida, mantendo intenção, decisão e evidência ligadas ao código.
 
 **Próxima página:** [Evidência empírica de produtividade](evidencia-empirica.md).

@@ -18,8 +18,8 @@ A tese: a janela de contexto virou o programa. O LLM é o interpretador; o desen
 |---|---|---|---|
 | 1 — Fundamentos | S1–S2 | O novo modelo mental, a primeira ferramenta nas mãos | Software 3.0 · Engenharia Agêntica · cadeia de ferramentas e isolamento por ramo |
 | 2 — Especificação e Planejamento | S3–S5 | A habilidade mais valiosa da era agêntica: dizer o quê com precisão | Requisitos BR/FR/NFR · SBVR + RuleSpeak + tabelas de decisão · caminho básico do Spec Kit, da regra ao código |
-| 3 — Execução | S6–S8 | Do plano ao código, com testes na frente e Spec Kit como esteira | Qualidade da spec e teste antes do código · casos de uso de IA por papel, com mural das equipes e pitch · SDD ponta a ponta |
-| 4 — Qualidade e Integração | S9–S10 | O fechamento da esteira: depuração com método e decisões registradas | Depuração sistemática · esteira completa com ADR (MADR v4) |
+| 3 — Execução | S6–S8 | Do plano ao código, com testes na frente e Spec Kit como esteira | Qualidade da spec e teste antes do código · casos de uso de IA por papel, com mural das equipes e pitch · criação de skills e agentes |
+| 4 — Qualidade e Integração | S9–S10 | O fechamento da esteira: depuração com método e SDD de ponta a ponta | Depuração sistemática · SDD ciclo completo |
 
 ## Sessões
 
@@ -32,9 +32,9 @@ A tese: a janela de contexto virou o programa. O LLM é o interpretador; o desen
 | S5 | [Spec Kit: da regra ao código](sessao-05-decomposicao/index.md) | 2 — Especificação e Planejamento |
 | S6 | [Spec Kit: qualidade da spec e teste antes do código](sessao-06-spec-kit-aprofundado/index.md) | 3 — Execução |
 | S7 | [Casos de uso de IA por papel](sessao-07-casos-de-uso-por-papel/index.md) | 3 — Execução |
-| S8 | [SDD ciclo completo](sessao-08-sdd-ciclo-completo/index.md) | 3 — Execução |
+| S8 | [Skills e agentes](sessao-08-skills-e-agentes/index.md) | 3 — Execução |
 | S9 | [Depuração sistemática](sessao-09-depuracao-sistematica/index.md) | 4 — Qualidade e Integração |
-| S10 | [Esteira completa](sessao-10-esteira-completa/index.md) | 4 — Qualidade e Integração |
+| S10 | [SDD ciclo completo](sessao-10-sdd-ciclo-completo/index.md) | 4 — Qualidade e Integração |
 
 ## Critérios de sucesso
 

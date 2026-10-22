@@ -84,9 +84,9 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
         ),
     ),
     "sessao-07-casos-de-uso-por-papel": ("Casos de uso de IA por papel", True, ()),
-    "sessao-08-sdd-ciclo-completo": ("SDD ciclo completo", True, ()),
+    "sessao-08-skills-e-agentes": ("Skills e agentes", False, ()),
     "sessao-09-depuracao-sistematica": ("Depuração sistemática", False, ()),
-    "sessao-10-esteira-completa": ("Esteira completa", False, ()),
+    "sessao-10-sdd-ciclo-completo": ("SDD ciclo completo", True, ()),
 }
 
 # As seis páginas de papel fixo do esquema clássico. Tudo o mais numa sessão
