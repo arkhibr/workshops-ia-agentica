@@ -7,11 +7,19 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 ## Índice Alfabético
 
 - [Agentic AI Foundation — AGENTS.md Standard](#agentic-ai-foundation-agentsmd-standard)
+- [Anthropic — Agent Skills (documentação)](#anthropic-agent-skills-documentacao)
 - [Anthropic — Building Effective Agents (2024)](#anthropic-building-effective-agents-2024)
+- [Anthropic — Choosing the Right Model (documentação)](#anthropic-choosing-the-right-model-documentacao)
+- [Anthropic — Claude Code Security (documentação)](#anthropic-claude-code-security-documentacao)
 - [Anthropic — Code Execution with MCP (2025)](#anthropic-code-execution-with-mcp-2025)
 - [Anthropic — Effective Context Engineering (2025)](#anthropic-effective-context-engineering-2025)
+- [Anthropic — How We Built Our Multi-Agent Research System](#anthropic-how-we-built-our-multi-agent-research-system)
 - [Anthropic — Introducing the Model Context Protocol (2024)](#anthropic-introducing-the-model-context-protocol-2024)
+- [Anthropic — Manage Costs Effectively (documentação do Claude Code)](#anthropic-manage-costs-effectively-documentacao-do-claude-code)
+- [Anthropic — Prompt Caching (documentação)](#anthropic-prompt-caching-documentacao)
+- [Anthropic — Skill Authoring Best Practices (documentação)](#anthropic-skill-authoring-best-practices-documentacao)
 - [Anthropic — Steering Claude Code (2026)](#anthropic-steering-claude-code-2026)
+- [Anthropic — Subagents no Claude Code (documentação)](#anthropic-subagents-no-claude-code-documentacao)
 - [Anthropic — Writing Effective Tools for Agents (2025)](#anthropic-writing-effective-tools-for-agents-2025)
 - [Bass, Clements e Kazman — Software Architecture in Practice (2021)](#bass-clements-e-kazman-software-architecture-in-practice-2021)
 - [Beck — Test-Driven Development: By Example (2002)](#beck-test-driven-development-by-example-2002)
@@ -37,6 +45,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Ford, Parsons, Kua e Sadalage — Building Evolutionary Architectures (2023)](#ford-parsons-kua-e-sadalage-building-evolutionary-architectures-2023)
 - [Gibbons — Journey Mapping 101 (2018)](#gibbons-journey-mapping-101-2018)
 - [GitHub Spec Kit](#github-spec-kit)
+- [GitHub — Managing Your Personal Access Tokens (documentação)](#github-managing-your-personal-access-tokens-documentacao)
 - [gszhangwei — OpenSPDD](#gszhangwei-openspdd)
 - [Harman et al. — Mutation-Guided LLM Test Generation at Meta (2025)](#harman-et-al-mutation-guided-llm-test-generation-at-meta-2025)
 - [Hunt e Thomas — Software Archaeology (2002)](#hunt-e-thomas-software-archaeology-2002)
@@ -55,6 +64,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Mendes — Controle e Autonomia (Módulo 4, Agentes)](#mendes-controle-e-autonomia-modulo-4-agentes)
 - [Meszaros — xUnit Test Patterns (2007)](#meszaros-xunit-test-patterns-2007)
 - [METR — Experienced Developer Productivity (2025)](#metr-experienced-developer-productivity-2025)
+- [Microsoft — Use Personal Access Tokens in Azure DevOps (documentação)](#microsoft-use-personal-access-tokens-in-azure-devops-documentacao)
 - [Miranda et al. — Monte Carlo para Prever Projetos de Software (2021)](#miranda-et-al-monte-carlo-para-prever-projetos-de-software-2021)
 - [Noy e Zhang — Productivity Effects of Generative AI (2023)](#noy-e-zhang-productivity-effects-of-generative-ai-2023)
 - [Olewicki et al. — Impact of LLM-based Review Comment Generation (2024)](#olewicki-et-al-impact-of-llm-based-review-comment-generation-2024)
@@ -106,13 +116,43 @@ Arquivo markdown na raiz do repositório, sem esquema obrigatório, que instrui 
 
 ---
 
+### Anthropic — Agent Skills (documentação)
+
+**ANTHROPIC. "Agent Skills".** Claude Platform Docs, acessado em 22 out. 2026. <https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview>
+
+Documentação oficial das skills: pasta com `SKILL.md` e frontmatter obrigatório (`name` de até 64 caracteres e `description` de até 1.024), carga em três níveis (metadados de cerca de 100 tokens por skill, instruções abaixo de 5 mil tokens e recursos sob demanda), locais de instalação no Claude Code e o alerta de que skills de origem desconhecida podem causar exfiltração de dados e uso indevido de ferramentas.
+
+→ Sessão 8.
+
+---
+
 ### Anthropic — Building Effective Agents (2024)
 
 **ANTHROPIC. "Building Effective Agents".** Anthropic Engineering, dez. 2024. <https://www.anthropic.com/engineering/building-effective-agents>
 
 Guia de referência do mercado para decidir entre workflow (código orquestra o modelo em caminho predefinido) e agente (o modelo decide os próprios passos); recomenda a solução mais simples possível, aumentando autonomia apenas quando o problema exigir. Cataloga cinco padrões de workflow: encadeamento de prompts, roteamento, paralelização, orquestrador-trabalhadores, avaliador-otimizador.
 
-→ Sessão 1.
+→ Sessões 1 e 8.
+
+---
+
+### Anthropic — Choosing the Right Model (documentação)
+
+**ANTHROPIC. "Choosing the right model".** Claude Platform Docs, acessado em 22 out. 2026. <https://platform.claude.com/docs/en/about-claude/models/choosing-a-model>
+
+Guia de escolha de modelo: critérios de capacidade, velocidade, custo e esforço, duas estratégias de partida (eficiência primeiro com Haiku 5.5 e capacidade primeiro com Opus 5.5), matriz de uso por modelo, o parâmetro de esforço como alavanca dentro de um mesmo modelo e o padrão de combinar modelos com orquestrador e trabalhadores de menor custo.
+
+→ Sessão 8.
+
+---
+
+### Anthropic — Claude Code Security (documentação)
+
+**ANTHROPIC. "Security".** Claude Code Docs, acessado em 22 out. 2026. <https://code.claude.com/docs/en/security>
+
+Documentação de segurança do Claude Code: modelo de permissões, isolamento da ferramenta de shell em sandbox, proteções contra injeção de prompt, armazenamento de credenciais no chaveiro do sistema, aprovação de servidores MCP e recomendações para trabalhar com conteúdo não confiável.
+
+→ Sessão 8.
 
 ---
 
@@ -136,6 +176,16 @@ Define context engineering como a evolução do prompt engineering: cuidar de tu
 
 ---
 
+### Anthropic — How We Built Our Multi-Agent Research System
+
+**ANTHROPIC. "How we built our multi-agent research system".** Anthropic Engineering. <https://www.anthropic.com/engineering/multi-agent-research-system>
+
+Relato de engenharia sobre um sistema de pesquisa com vários agentes: o orquestrador com subagentes superou o agente único em 90,2% na avaliação interna, agentes consomem cerca de 4 vezes os tokens de um chat e sistemas multiagente cerca de 15 vezes, o uso de tokens explicou 80% da variação de desempenho no BrowseComp, e o texto lista os tipos de tarefa adequados, os modos de falha e o método de avaliação com cerca de 20 consultas reais. Os números vêm do próprio relato, sem replicação independente.
+
+→ Sessão 8.
+
+---
+
 ### Anthropic — Introducing the Model Context Protocol (2024)
 
 **ANTHROPIC. "Introducing the Model Context Protocol".** Anthropic News, 25 nov. 2024. <https://www.anthropic.com/news/model-context-protocol>
@@ -146,6 +196,36 @@ Anúncio do MCP, protocolo aberto que resolve o problema M×N de integrações e
 
 ---
 
+### Anthropic — Manage Costs Effectively (documentação do Claude Code)
+
+**ANTHROPIC. "Manage costs effectively".** Claude Code Docs, acessado em 22 out. 2026. <https://code.claude.com/docs/en/costs>
+
+Guia de custo do Claude Code: média de cerca de US$ 13 por desenvolvedor por dia ativo em implantações corporativas, acompanhamento por `/usage`, redução de tokens por limpeza de contexto, escolha de modelo, delegação a subagentes, filtros em hooks e instruções movidas do `CLAUDE.md` para skills, e o aviso de que equipes de agentes consomem cerca de sete vezes mais tokens que uma sessão comum.
+
+→ Sessão 8.
+
+---
+
+### Anthropic — Prompt Caching (documentação)
+
+**ANTHROPIC. "Prompt caching".** Claude Platform Docs, acessado em 22 out. 2026. <https://platform.claude.com/docs/en/build-with-claude/prompt-caching>
+
+Documentação do cache de prompt: escrita de 5 minutos a 1,25 vez o preço-base de entrada, escrita de 1 hora a 2 vezes, leitura a 0,1 vez para a maioria dos modelos, vida padrão de 5 minutos renovada a cada uso e tamanho mínimo de prompt que varia conforme o modelo.
+
+→ Sessão 8.
+
+---
+
+### Anthropic — Skill Authoring Best Practices (documentação)
+
+**ANTHROPIC. "Skill authoring best practices".** Claude Platform Docs, acessado em 22 out. 2026. <https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices>
+
+Guia de escrita de skills: contexto como recurso compartilhado, graus de liberdade conforme a fragilidade da tarefa, descrição em terceira pessoa com o que a skill faz e quando usá-la, corpo do `SKILL.md` abaixo de 500 linhas, referências a um nível de profundidade, scripts para operações determinísticas, padrão plano-validação-execução e desenvolvimento orientado por avaliações com pelo menos três cenários testados em Haiku, Sonnet e Opus.
+
+→ Sessão 8.
+
+---
+
 ### Anthropic — Steering Claude Code (2026)
 
 **ANTHROPIC. "Steering Claude Code".** Anthropic Blog, 2026. <https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more>
@@ -153,6 +233,16 @@ Anúncio do MCP, protocolo aberto que resolve o problema M×N de integrações e
 Separa os mecanismos que guiam o modelo, como arquivos de contexto, dos que impõem comportamento, como hooks e permissões — a base da regra de que proteção real precisa ser determinística.
 
 → Sessões 2, 10.
+
+---
+
+### Anthropic — Subagents no Claude Code (documentação)
+
+**ANTHROPIC. "Create custom subagents".** Claude Code Docs, acessado em 22 out. 2026. <https://code.claude.com/docs/en/sub-agents>
+
+Documentação dos subagentes do Claude Code: arquivo Markdown com frontmatter (`name` e `description` obrigatórios; `tools`, `disallowedTools`, `model`, `permissionMode` e `maxTurns` opcionais), contexto próprio com retorno apenas do resumo, ordem de resolução do modelo, subagentes internos Explore e Plan, limite de três camadas de aninhamento e de 20 subagentes simultâneos por padrão.
+
+→ Sessão 8.
 
 ---
 
@@ -404,6 +494,16 @@ As Sessões 5 e 6 usam a versão 1.1.1, de 6 out. 2026 (<https://github.com/gith
 
 ---
 
+### GitHub — Managing Your Personal Access Tokens (documentação)
+
+**GITHUB. "Managing your personal access tokens".** GitHub Docs, acessado em 22 out. 2026. <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens>
+
+Documentação dos tokens de acesso pessoal do GitHub: recomendação de tokens de granularidade fina, restritos a repositórios e permissões mínimas, validade padrão de 30 dias, orientação de tratar o token como senha, alternativas como o Git Credential Manager e o `GITHUB_TOKEN` de workflows, e remoção do que não é mais necessário.
+
+→ Sessão 8.
+
+---
+
 ### gszhangwei — OpenSPDD
 
 **GSZHANGWEI. *OpenSPDD: A SPDD AI coding assistant command template manager*.** Repositório de software. <https://github.com/gszhangwei/open-spdd>
@@ -579,6 +679,16 @@ Referência canônica em padrões de teste. Cataloga 60+ padrões para escrever 
 Experimento randomizado com 16 desenvolvedores experientes (cerca de 5 anos de trajetória nos próprios projetos) em 246 tarefas reais de manutenção de código aberto. Usar IA tornou a conclusão das tarefas 19% mais lenta. Mais revelador ainda: os próprios desenvolvedores, depois de terminar, estimaram que a IA os havia deixado 20% mais rápidos — o oposto exato do que os dados mediram. Contraponto empírico direto à métrica de produtividade de Peng et al., evidenciando a diferença entre tarefas novas e delimitadas (onde vibe coding ganha) versus manutenção em sistema maduro com contexto implícito.
 
 → Sessões 1 e 7.
+
+---
+
+### Microsoft — Use Personal Access Tokens in Azure DevOps (documentação)
+
+**MICROSOFT. "Use personal access tokens".** Microsoft Learn, atualizada em 21 set. 2026, acessada em 22 out. 2026. <https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate>
+
+Documentação dos PATs do Azure DevOps: o PAT funciona como senha alternativa e não concede mais permissões que o dono possui, a recomendação de evitar PATs quando houver identidade de aplicação (tokens do Microsoft Entra, identidade gerenciada ou service principal), PAT com escopo de organização, escopos mínimos e vida mais curta possível, armazenamento em cofre de segredos, proibição de embutir o token em URL de remoto, código, YAML de pipeline e logs, rodízio em seis passos e fim dos PATs globais em 1º de dezembro de 2026.
+
+→ Sessão 8.
 
 ---
 

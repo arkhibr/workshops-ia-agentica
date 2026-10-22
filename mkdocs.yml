@@ -98,7 +98,7 @@ nav:
           - "Tema 2 — Exemplo de aplicação de IA": sessao-05-decomposicao/do-plano-ao-codigo-exemplo-de-aplicacao-de-ia.md
           - "Tema 2 — Exercício de IA": sessao-05-decomposicao/do-plano-ao-codigo-exercicio.md
           - Síntese e referências: sessao-05-decomposicao/sintese-e-referencias.md
-  - Bloco 3 — Execução:
+  - Bloco 3 — Execução e adoção:
       - "S6 — Spec Kit: qualidade da spec e teste antes do código":
           - Visão geral: sessao-06-spec-kit-aprofundado/index.md
           - Contexto da prática: sessao-06-spec-kit-aprofundado/contexto-da-pratica.md
@@ -122,9 +122,19 @@ nav:
           - Pitch de um caso de uso: sessao-07-casos-de-uso-por-papel/pitch-de-caso-de-uso.md
           - Exercícios: sessao-07-casos-de-uso-por-papel/exercicios.md
           - Síntese e referências: sessao-07-casos-de-uso-por-papel/sintese-e-referencias.md
+  - Bloco 4 — Automação, qualidade e integração:
       - S8 — Skills e agentes:
           - Visão geral: sessao-08-skills-e-agentes/index.md
-  - Bloco 4 — Qualidade e Integração:
+          - Skills: sessao-08-skills-e-agentes/skills.md
+          - Agentes e subagentes: sessao-08-skills-e-agentes/agentes-e-subagentes.md
+          - Geração de artefatos: sessao-08-skills-e-agentes/geracao-de-artefatos.md
+          - Escolha de modelos: sessao-08-skills-e-agentes/escolha-de-modelos.md
+          - Custo de tokens: sessao-08-skills-e-agentes/custo-de-tokens.md
+          - Performance: sessao-08-skills-e-agentes/performance.md
+          - Oficina de ferramentas: sessao-08-skills-e-agentes/oficina-de-ferramentas.md
+          - Segurança e credenciais: sessao-08-skills-e-agentes/seguranca-e-credenciais.md
+          - Exercícios: sessao-08-skills-e-agentes/exercicios.md
+          - Síntese e referências: sessao-08-skills-e-agentes/sintese-e-referencias.md
       - S9 — Depuração sistemática:
           - Visão geral: sessao-09-depuracao-sistematica/index.md
       - S10 — SDD ciclo completo:

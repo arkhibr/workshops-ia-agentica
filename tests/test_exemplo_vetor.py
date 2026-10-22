@@ -1,7 +1,7 @@
 """O projeto de exemplo e a regra de que nenhum enunciado depende do repo do aluno.
 
 `exemplo/vetor` continua no repositório, íntegro, para sessões futuras (TDD e
-testes avançados dos Blocos 3). A oficina e os exercícios da Sessão 2 não o
+testes avançados do Bloco 3). A oficina e os exercícios da Sessão 2 não o
 usam mais: partem de uma pasta vazia (`oficina-arnes`), criada do zero com os
 mesmos dois comandos para todo mundo, mais o CSV de 24 pedidos publicado na
 própria página. O entregável da Sessão 2 é uma planilha, e não código, porque
