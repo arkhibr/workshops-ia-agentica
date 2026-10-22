@@ -84,7 +84,7 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
         ),
     ),
     "sessao-07-casos-de-uso-por-papel": ("Casos de uso de IA por papel", True, ()),
-    "sessao-08-skills-e-agentes": ("Skills e agentes", False, ()),
+    "sessao-08-skills-e-agentes": ("Skills e agentes", True, ()),
     "sessao-09-depuracao-sistematica": ("Depuração sistemática", False, ()),
     "sessao-10-sdd-ciclo-completo": ("SDD ciclo completo", True, ()),
 }
@@ -119,6 +119,13 @@ PAGINAS_FIXAS_POR_SESSAO: dict[str, tuple[str, ...]] = {
     "sessao-04-regras-formais-com-ia": ("index.md", "sintese-e-referencias.md"),
     "sessao-05-decomposicao": ("index.md", "sintese-e-referencias.md"),
     "sessao-06-spec-kit-aprofundado": ("index.md", "sintese-e-referencias.md"),
+    # Sessão 8, 22/10/2026: skills e agentes, sem exemplo arquitetural nem estudo de caso.
+    "sessao-08-skills-e-agentes": (
+        "index.md",
+        "oficina-de-ferramentas.md",
+        "exercicios.md",
+        "sintese-e-referencias.md",
+    ),
     # Sessão 7, 21/10/2026: sem exemplo-arquitetural.md nem estudo-de-caso.md.
     "sessao-07-casos-de-uso-por-papel": (
         "index.md",
