@@ -1,6 +1,6 @@
 # S9 — Depuração sistemática e revisão de código
 
-**Bloco:** 4 — Qualidade e Integração
+**Bloco:** 4 — Automação, qualidade e integração
 
 ## Problema
 

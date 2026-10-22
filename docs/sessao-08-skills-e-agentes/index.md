@@ -1,6 +1,6 @@
 # S8 — Skills e agentes
 
-**Bloco:** 3 — Execução
+**Bloco:** 4 — Automação, qualidade e integração
 
 ## Problema
 
