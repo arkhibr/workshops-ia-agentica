@@ -122,9 +122,11 @@ nav:
           - Pitch de um caso de uso: sessao-07-casos-de-uso-por-papel/pitch-de-caso-de-uso.md
           - Exercícios: sessao-07-casos-de-uso-por-papel/exercicios.md
           - Síntese e referências: sessao-07-casos-de-uso-por-papel/sintese-e-referencias.md
-      - S8 — Skills e agentes: sessao-08-skills-e-agentes/index.md
+      - S8 — Skills e agentes:
+          - Visão geral: sessao-08-skills-e-agentes/index.md
   - Bloco 4 — Qualidade e Integração:
-      - S9 — Depuração sistemática: sessao-09-depuracao-sistematica/index.md
+      - S9 — Depuração sistemática:
+          - Visão geral: sessao-09-depuracao-sistematica/index.md
       - S10 — SDD ciclo completo:
           - Visão geral: sessao-10-sdd-ciclo-completo/index.md
           - "O ciclo e os quatro artefatos": sessao-10-sdd-ciclo-completo/ciclo-e-artefatos.md
