@@ -23,6 +23,6 @@ Não existe resposta única aqui. Pratique o critério da tabela de [Modos de tr
 
 ## Depois da discussão
 
-Compare a posição que o grupo chegou com a tabela de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica). A Sessão 10, sobre a esteira completa de engenharia agêntica, volta a esse dilema com uma ferramenta mais precisa: decisões arquiteturais registradas em ADR. Com elas, a proporcionalidade fica escrita, em vez de depender da memória de alguém ou de uma regra geral.
+Compare a posição que o grupo chegou com a tabela de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica). A Sessão 10, sobre o ciclo completo de SDD, volta a esse dilema com uma ferramenta mais precisa: uma régua de profundidade proporcional ao risco, com os artefatos versionados. Com ela, a proporcionalidade fica escrita, em vez de depender da memória de alguém ou de uma regra geral.
 
 **Próxima página:** [Oficina de ferramentas](oficina-de-ferramentas.md).

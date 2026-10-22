@@ -30,11 +30,11 @@ Responda para si, sem anotar:
 3. A última vez que você corrigiu o agente numa conversa, essa correção entrou em algum artefato versionado, ou valeu só para aquela sessão?
 4. Qual dos nove antipadrões está mais perto de acontecer no seu time hoje?
 
-## Conexão com a próxima sessão
+## Conexão com as sessões anteriores
 
-Esta sessão fechou o ciclo do pedido ao código verificado. A [Sessão 9](../sessao-09-depuracao-sistematica/index.md) trata do que acontece quando o código verificado apresenta comportamento inesperado depois: depuração sistemática por hipótese e investigação, em vez de tentativa e erro conduzida pelo agente.
+Esta é a última sessão do workshop e fecha o ciclo do pedido ao código verificado. Ela reaproveita a [Sessão 9](../sessao-09-depuracao-sistematica/index.md), de depuração sistemática, e a [Sessão 8](../sessao-08-skills-e-agentes/index.md), de criação de skills e agentes, porque o ciclo pode ser executado por agentes e skills da própria equipe.
 
-A ligação entre as duas é direta. Um defeito encontrado em produção não termina no remendo que restaura o serviço: ele volta para o requisito e para o teste de regressão, como a página sobre [artefatos vivos](artefatos-vivos.md) argumentou. A depuração produz a informação, e o ciclo desta sessão é onde ela se deposita.
+Um defeito encontrado em produção não termina no remendo que restaura o serviço: ele volta para o requisito e para o teste de regressão, como a página sobre [artefatos vivos](artefatos-vivos.md) argumentou. A depuração produz a informação, e o ciclo desta sessão é onde ela se deposita.
 
 ## Fundamentação
 

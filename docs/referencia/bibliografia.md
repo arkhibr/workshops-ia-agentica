@@ -190,7 +190,7 @@ O ciclo vermelho-verde-refatoração, adaptado neste workshop para o fluxo assis
 
 **BÖCKELER, Birgitta. "Understanding Spec-Driven Development: Kiro, spec-kit, and Tessl".** *martinfowler.com*, 15 out. 2025. <https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html>
 
-Comparação de três ferramentas de SDD que estabelece a taxonomia usada na Sessão 8 para distinguir graus de compromisso entre especificação e código: *spec-first* (a especificação orienta a primeira geração e pode ser abandonada depois), *spec-anchored* (especificação e código evoluem juntos, com reconciliação a cada mudança) e *spec-as-source* (a especificação é o artefato primário e o código é projeção regenerável). O argumento central é que ferramentas distintas não são equivalentes só porque todas produzem arquivos Markdown.
+Comparação de três ferramentas de SDD que estabelece a taxonomia usada na Sessão 10 para distinguir graus de compromisso entre especificação e código: *spec-first* (a especificação orienta a primeira geração e pode ser abandonada depois), *spec-anchored* (especificação e código evoluem juntos, com reconciliação a cada mudança) e *spec-as-source* (a especificação é o artefato primário e o código é projeção regenerável). O argumento central é que ferramentas distintas não são equivalentes só porque todas produzem arquivos Markdown.
 
 → Sessões 5, 8.
 
@@ -368,9 +368,9 @@ Referência para a manutenção de código sem testes. Cunha o termo *characteri
 
 **FISSION-AI. *OpenSpec*.** Repositório de software. <https://github.com/Fission-AI/OpenSpec>
 
-Ferramenta de SDD que organiza o trabalho em torno da mudança, não da funcionalidade: um espaço descreve o comportamento atual do sistema e outro contém uma pasta por mudança proposta, com proposta, especificação-delta, design e tarefas. O arquivamento incorpora o delta à especificação principal e preserva o histórico da mudança. Serve na Sessão 8 como contraste ao Spec Kit, por operar sem uma camada de princípios de projeto acima das mudanças individuais.
+Ferramenta de SDD que organiza o trabalho em torno da mudança, não da funcionalidade: um espaço descreve o comportamento atual do sistema e outro contém uma pasta por mudança proposta, com proposta, especificação-delta, design e tarefas. O arquivamento incorpora o delta à especificação principal e preserva o histórico da mudança. Serve na Sessão 10 como contraste ao Spec Kit, por operar sem uma camada de princípios de projeto acima das mudanças individuais.
 
-→ Sessão 8.
+→ Sessão 10.
 
 ---
 
@@ -408,9 +408,9 @@ As Sessões 5 e 6 usam a versão 1.1.1, de 6 out. 2026 (<https://github.com/gith
 
 **GSZHANGWEI. *OpenSPDD: A SPDD AI coding assistant command template manager*.** Repositório de software. <https://github.com/gszhangwei/open-spdd>
 
-Implementação de referência da comunidade para o método SPDD, com os comandos que materializam o fluxo: analisar requisitos e código existente, produzir o Painel REASONS, gerar a implementação e sincronizar de volta as alterações feitas no código. A distinção que o projeto faz entre plano e Painel é a citada na Sessão 8: um plano diz o que fazer, o Painel especifica como fazer. Projeto de terceiros, não vinculado à Thoughtworks.
+Implementação de referência da comunidade para o método SPDD, com os comandos que materializam o fluxo: analisar requisitos e código existente, produzir o Painel REASONS, gerar a implementação e sincronizar de volta as alterações feitas no código. A distinção que o projeto faz entre plano e Painel é a citada na Sessão 10: um plano diz o que fazer, o Painel especifica como fazer. Projeto de terceiros, não vinculado à Thoughtworks.
 
-→ Sessão 8.
+→ Sessão 10.
 
 ---
 
@@ -864,9 +864,9 @@ Relato de redução de dezesseis ferramentas especializadas para acesso a sistem
 
 **VINCENT, Jesse; PRIME RADIANT. *Superpowers: An agentic skills framework & software development methodology*.** Repositório de software. <https://github.com/obra/superpowers>
 
-Conjunto de habilidades combináveis para agentes de codificação, acionadas automaticamente conforme a situação, com uma metodologia de execução em volta: levantamento de ideias e aprovação do design antes de qualquer código, cópia isolada do repositório, plano de tarefas pequenas, ciclo vermelho-verde-refatorar obrigatório, revisão em duas etapas e verificação antes de declarar conclusão. Entra na Sessão 8 como o contraponto que mostra que disciplina documental e disciplina operacional são eixos independentes: o projeto não mantém especificação consolidada do domínio e ainda assim é mais exigente que o Spec Kit na execução.
+Conjunto de habilidades combináveis para agentes de codificação, acionadas automaticamente conforme a situação, com uma metodologia de execução em volta: levantamento de ideias e aprovação do design antes de qualquer código, cópia isolada do repositório, plano de tarefas pequenas, ciclo vermelho-verde-refatorar obrigatório, revisão em duas etapas e verificação antes de declarar conclusão. Entra na Sessão 10 como o contraponto que mostra que disciplina documental e disciplina operacional são eixos independentes: o projeto não mantém especificação consolidada do domínio e ainda assim é mais exigente que o Spec Kit na execução.
 
-→ Sessão 8.
+→ Sessão 10.
 
 ---
 
@@ -934,9 +934,9 @@ Revisão sistemática de 74 estudos primários publicados em 2023 e 2024. A maio
 
 **ZHANG, Wei; XIA, Jing Jing. "Structured-Prompt-Driven Development (SPDD)".** *martinfowler.com*, 28 abr. 2026. <https://martinfowler.com/articles/structured-prompt-driven/>
 
-Método desenvolvido por um time de tecnologia interna da Thoughtworks que trata o prompt como artefato de entrega versionado, organizado no Painel REASONS de sete dimensões (Requirements, Entities, Approach, Structure, Operations, Norms, Safeguards). O artigo é também a fonte do diagnóstico usado na Sessão 8 sobre por que escalar geração desloca o gargalo, com a metáfora do motor de Ferrari em estrada ruim: a potência local não determina o horário de chegada. Os autores são explícitos sobre os limites do método, incluindo o custo de experiência sênior antecipada e a variação remanescente entre praticantes que escrevem o mesmo Painel.
+Método desenvolvido por um time de tecnologia interna da Thoughtworks que trata o prompt como artefato de entrega versionado, organizado no Painel REASONS de sete dimensões (Requirements, Entities, Approach, Structure, Operations, Norms, Safeguards). O artigo é também a fonte do diagnóstico usado na Sessão 10 sobre por que escalar geração desloca o gargalo, com a metáfora do motor de Ferrari em estrada ruim: a potência local não determina o horário de chegada. Os autores são explícitos sobre os limites do método, incluindo o custo de experiência sênior antecipada e a variação remanescente entre praticantes que escrevem o mesmo Painel.
 
-→ Sessão 8.
+→ Sessão 10.
 
 ---
 

@@ -1,6 +1,6 @@
-# S8 — SDD ciclo completo
+# S10 — SDD ciclo completo
 
-**Bloco:** 3 — Execução
+**Bloco:** 4 — Qualidade e Integração
 
 > **Pergunta-guia:** o que precisa sobreviver à conversa com o agente para que outra pessoa consiga manter o código depois?
 
@@ -42,7 +42,7 @@ Ao final desta sessão, o participante deve ser capaz de:
 
 ## Como conduzir
 
-As cinco páginas de teoria somam 38 minutos. É o bloco mais conceitual do Bloco 3, e o risco de condução é transformá-lo em apresentação de ferramenta. A página de abordagens existe para impedir isso: o participante precisa sair sabendo que o Spec Kit é uma implementação entre várias de um padrão mais geral.
+As cinco páginas de teoria somam 38 minutos. É o bloco mais conceitual do workshop, e o risco de condução é transformá-lo em apresentação de ferramenta. A página de abordagens existe para impedir isso: o participante precisa sair sabendo que o Spec Kit é uma implementação entre várias de um padrão mais geral.
 
 Na oficina, todos partem de um projeto vazio, montado durante a própria sessão a partir dos blocos de código da página. Ninguém clona nada pronto, e o Spec Kit é instalado nesse projeto descartável, nunca no repositório de trabalho de cada um. A transposição para o repositório real do participante entra como extensão no fim da oficina, nunca como caminho principal.
 

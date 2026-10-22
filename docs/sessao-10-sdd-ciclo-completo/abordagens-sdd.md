@@ -47,7 +47,7 @@ O [Structured Prompt-Driven Development](../referencia/bibliografia.md#zhang-e-x
 
 O Painel comprime num artefato só o que o Spec Kit distribui entre constitution, especificação e plano. O que distingue o método é o laço fechado: correção de lógica atualiza o prompt antes do código, e refatoração sincroniza do código de volta ao prompt, para que nenhum dos dois lados divirja em silêncio.
 
-Duas ressalvas. A estrutura reduz mas não elimina variação, porque duas pessoas produzem Painéis diferentes a partir do mesmo requisito, e um Painel formalmente completo ainda pode estar semanticamente errado. E a sequência de testes diverge do TDD praticado nas Sessões 6 e 7: o fluxo de referência valida a interface antes da revisão detalhada e gera testes de unidade depois que a implementação estabiliza, o que conflita com política que exige teste guiando o design desde o início.
+Duas ressalvas. A estrutura reduz mas não elimina variação, porque duas pessoas produzem Painéis diferentes a partir do mesmo requisito, e um Painel formalmente completo ainda pode estar semanticamente errado. E a sequência de testes diverge do TDD praticado na Sessão 6: o fluxo de referência valida a interface antes da revisão detalhada e gera testes de unidade depois que a implementação estabiliza, o que conflita com política que exige teste guiando o design desde o início.
 
 ## Superpowers
 
