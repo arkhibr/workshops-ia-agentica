@@ -794,5 +794,19 @@ class SessaoOitoReestruturadaTest(unittest.TestCase):
         self.assertIn("pasta nova", e)
 
 
+    def test_codex_sem_afirmacao_de_escrita_sem_status(self):
+        seg = self.texto("seguranca-e-credenciais.md")
+        self.assertNotIn("permite que o agente edite arquivos apesar", seg)
+        self.assertIn("não restringe nada sozinho", seg)
+
+    def test_regra_do_front_matter_na_primeira_linha_aparece_uma_vez(self):
+        skills = self.texto("skills.md")
+        self.assertEqual(
+            skills.count("só lê o front-matter quando o primeiro `---`")
+            + skills.count("lê o front-matter somente quando o primeiro `---`"),
+            1,
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -39,7 +39,7 @@ A diferença de maior efeito prático entre as duas ferramentas está em onde a 
 
 ![Duas colunas comparam as camadas de restrição. No Claude Code, tools e disallowedTools do subagente e disallowed-tools da skill removem ferramentas, allowed-tools e permissionMode liberam ou definem a aprovação sem restringir, o corpo do arquivo orienta e os hooks bloqueiam por programa. No Codex CLI, sandbox_mode e approval_policy da sessão são herdados, as chaves features removem capacidades, developer_instructions e AGENTS.md apenas orientam, e não há equivalente documentado para liberar ferramenta por skill, enquanto valores de permissão colocados no arquivo do agente não sobrescrevem a sessão pai.](assets/restricao-em-camadas.png)
 
-Para o Codex CLI, o equivalente de um subagente somente leitura é iniciar a sessão com o sandbox `read-only`, e esse valor consta da documentação de aprovações e segurança sem execução observada. Um exemplo de agente escrito para o Claude Code com `tools: Read, Grep, Glob` precisa, portanto, de uma ressalva ao ser reaproveitado no Codex, porque o arquivo equivalente, sem o sandbox `read-only` na sessão, permite que o agente edite arquivos apesar da instrução em contrário.
+Para o Codex CLI, o equivalente de um subagente somente leitura é iniciar a sessão com o sandbox `read-only`, e esse valor consta da documentação de aprovações e segurança sem execução observada. Um exemplo de agente escrito para o Claude Code com `tools: Read, Grep, Glob` precisa, portanto, de uma ressalva ao ser reaproveitado no Codex, porque o arquivo equivalente não restringe nada sozinho, e o sandbox e a aprovação vêm da sessão que inicia o agente.
 
 ## Credenciais do agente
 
