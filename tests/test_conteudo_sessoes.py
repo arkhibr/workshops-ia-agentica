@@ -602,139 +602,194 @@ class PortalPublicoSessaoSeisTest(unittest.TestCase):
         self.assertNotIn("npm", (S6 / "assets" / "teste-vermelho-csharp.svg").read_text(encoding="utf-8"))
 
 
-class SessaoOitoExtensaoTest(unittest.TestCase):
-    """Extensão de 23/10/2026: critério de escolha, front-matter e equivalência com o Codex CLI."""
+class SessaoOitoReestruturadaTest(unittest.TestCase):
+    """Reestruturação de 23/10/2026: onze páginas, ficha de requisitos e figuras por tema."""
 
     SLUG = "sessao-08-skills-e-agentes"
-    PAGINAS_NOVAS = (
+    PAGINAS = (
+        "index.md",
+        "skills.md",
+        "agentes-e-subagentes.md",
+        "geracao-de-artefatos.md",
+        "escolha-de-modelos.md",
+        "custo-de-tokens.md",
+        "performance.md",
+        "oficina-de-ferramentas.md",
+        "seguranca-e-credenciais.md",
+        "exercicios.md",
+        "sintese-e-referencias.md",
+    )
+    TEORIA = (
+        "skills.md",
+        "agentes-e-subagentes.md",
+        "geracao-de-artefatos.md",
+        "escolha-de-modelos.md",
+        "custo-de-tokens.md",
+        "performance.md",
+        "seguranca-e-credenciais.md",
+    )
+    REMOVIDAS = (
         "escolher-o-mecanismo.md",
         "front-matter-de-skills.md",
         "front-matter-de-subagentes.md",
         "depuracao-de-skills-e-agentes.md",
         "claude-code-e-codex.md",
     )
-    PAGINAS_COM_NOTA = PAGINAS_NOVAS[:4]
     FIGURAS = (
-        "arvore-de-decisao-do-mecanismo",
+        "ficha-de-requisitos",
+        "mapa-da-sessao",
         "skill-anotada-nucleo-portatil",
         "carga-em-tres-niveis-e-listagem",
         "contexto-skill-subagente-fork",
         "precedencia-de-escopo",
+        "arvore-de-decisao-do-mecanismo",
+        "laco-de-conferencia-em-duas-camadas",
+        "estrategias-de-escolha-de-modelo",
+        "de-onde-o-custo-vem",
+        "cache-em-unidades-relativas",
+        "tres-medidas-de-desempenho",
+        "percurso-dos-experimentos",
+        "pontos-de-entrada-do-risco",
+        "identidade-propria-e-credencial",
+        "ciclo-de-vida-do-token",
         "restricao-em-camadas",
+        "fluxo-do-exercicio-ancora",
     )
+    TEMPOS = {
+        "skills.md": 10,
+        "agentes-e-subagentes.md": 12,
+        "geracao-de-artefatos.md": 5,
+        "escolha-de-modelos.md": 4,
+        "custo-de-tokens.md": 5,
+        "performance.md": 3,
+        "oficina-de-ferramentas.md": 17,
+        "seguranca-e-credenciais.md": 10,
+        "sintese-e-referencias.md": 5,
+    }
 
     def texto(self, nome):
         caminho = S8 / nome
         return caminho.read_text(encoding="utf-8") if caminho.exists() else ""
 
-    def paginas_novas(self):
-        return "\n\n".join(self.texto(nome) for nome in self.PAGINAS_NOVAS)
+    def todo_o_texto(self):
+        return "\n\n".join(c.read_text(encoding="utf-8") for c in sorted(S8.glob("*.md")))
 
-    def test_paginas_novas_existem_e_estao_no_nav(self):
-        nav = (DOCS.parent / "mkdocs.yml").read_text(encoding="utf-8")
-        for nome in self.PAGINAS_NOVAS:
+    def mkdocs(self):
+        return (DOCS.parent / "mkdocs.yml").read_text(encoding="utf-8")
+
+    def test_paginas_de_aprofundamento_removidas(self):
+        todo = self.todo_o_texto()
+        for nome in self.REMOVIDAS:
             with self.subTest(pagina=nome):
-                self.assertTrue((S8 / nome).exists())
-                self.assertIn(f"{self.SLUG}/{nome}", nav)
+                self.assertFalse((S8 / nome).exists())
+                self.assertNotIn(nome, self.mkdocs())
+                self.assertNotIn(nome, todo)
 
-    def test_vocabulario_da_sintaxe_na_teoria(self):
-        novas = self.paginas_novas()
-        for termo in (
-            "allowed-tools",
-            "disallowed-tools",
-            "disallowedTools",
-            "disable-model-invocation",
-            "context: fork",
-            "--debug",
-            ".agents/skills",
-            "developer_instructions",
-        ):
-            with self.subTest(termo=termo):
-                self.assertIn(termo, novas)
+    def test_onze_paginas_no_nav(self):
+        no_nav = re.findall(rf"{self.SLUG}/([a-z0-9.-]+\.md)", self.mkdocs())
+        self.assertEqual(list(self.PAGINAS), no_nav)
 
-    def test_max_depth_so_aparece_como_nao_confirmado(self):
-        for linha in self.paginas_novas().splitlines():
-            if "max_depth" in linha:
-                with self.subTest(linha=linha[:80]):
-                    self.assertIn("não confirmado", linha.lower())
-
-    def test_notas_de_equivalencia_nas_paginas_novas(self):
-        for nome in self.PAGINAS_COM_NOTA:
+    def test_paginas_de_teoria_fecham_com_a_linha_da_ficha(self):
+        marcador = '!!! abstract "Linha da ficha"'
+        for nome in self.TEORIA:
             with self.subTest(pagina=nome):
                 texto = self.texto(nome)
-                self.assertIn("Claude Code:", texto)
-                self.assertIn("Codex CLI:", texto)
-        tabela = self.texto("claude-code-e-codex.md")
-        self.assertRegex(tabela, r"\|\s*Codex CLI\s*\|")
-        for status in ("observado", "documentado", "não confirmado"):
-            with self.subTest(status=status):
-                self.assertIn(status, tabela)
+                self.assertEqual(1, texto.count(marcador))
+                inicio = texto.index(marcador)
+                transicao = texto.index("**Próxima página:**")
+                self.assertLess(inicio, transicao)
+                self.assertIsNone(re.search(r"(?m)^#{1,6} ", texto[inicio:transicao]))
 
-    def test_exercicios_11_a_14_e_originais_preservados(self):
+    def test_visao_geral_traz_a_ficha_e_as_duas_figuras(self):
+        texto = self.texto("index.md")
+        self.assertIn("ficha de requisitos", texto.lower())
+        self.assertIn("assets/ficha-de-requisitos.png", texto)
+        self.assertIn("assets/mapa-da-sessao.png", texto)
+
+    def test_roteiro_traz_os_tempos_acordados(self):
+        texto = self.texto("index.md")
+        tabela = texto.split("## Roteiro da sessão", 1)[1].split("\n## ", 1)[0]
+        por_pagina = {}
+        visao_geral = None
+        for linha in re.findall(r"(?m)^\|(?!-)(.+)\|[ \t]*$", tabela):
+            minutos = re.search(r"(\d+)\s*min", linha)
+            if not minutos:
+                continue
+            paginas = re.findall(r"\]\(([a-z0-9.-]+\.md)\)", linha)
+            if not paginas and "Visão geral" in linha:
+                visao_geral = int(minutos.group(1))
+            for nome in paginas:
+                por_pagina.setdefault(nome, []).append(int(minutos.group(1)))
+        self.assertEqual(4, visao_geral)
+        for nome, esperado in self.TEMPOS.items():
+            with self.subTest(pagina=nome):
+                self.assertEqual(esperado, sum(por_pagina.get(nome, [])))
+        self.assertEqual(40, sum(por_pagina.get("exercicios.md", [])))
+
+    def test_exercicios_de_1_a_12_com_ancora_e_rubrica(self):
         texto = self.texto("exercicios.md")
-        for numero in range(1, 15):
+        for numero in range(1, 13):
             with self.subTest(exercicio=numero):
                 self.assertRegex(texto, rf"(?m)^### {numero}\. ")
-        self.assertIn("### 3. Skill, subagente ou agente principal", texto)
-        self.assertIn("### 10. Exercício-âncora: uma skill, um subagente e um artefato conferido", texto)
-        ancora = texto.split("### 13. ", 1)[-1].split("### 14. ", 1)[0]
+        self.assertNotRegex(texto, r"(?m)^### 13\. ")
+        self.assertNotIn("Extensão: front-matter na prática", texto)
+        ancora = texto.split("### 12. ", 1)[-1]
         self.assertIn("**Critérios de avaliação**", ancora)
 
-    def test_oficina_tem_experimentos_d_e_f_e_preserva_os_originais(self):
-        texto = self.texto("oficina-de-ferramentas.md")
-        for experimento in ("A", "B", "C", "D", "E", "F"):
-            with self.subTest(experimento=experimento):
-                self.assertRegex(texto, rf"(?m)^## Experimento {experimento}\b")
+    def test_exercicios_nao_citam_numeracao_antiga(self):
+        todo = self.todo_o_texto()
+        for antiga in ("exercício 13", "exercícios 11 a 14", "exercícios 1 a 9"):
+            with self.subTest(trecho=antiga):
+                self.assertNotIn(antiga, todo)
 
-    def test_indice_marca_aprofundamento_fora_do_relogio(self):
-        texto = self.texto("index.md")
-        self.assertIn("Aprofundamento", texto)
-        self.assertIn("115 minutos", texto)
-
-    def test_frase_de_escopo_reescrita(self):
-        texto = (DOCS / "index.md").read_text(encoding="utf-8")
-        self.assertNotIn("agentes feitos sob medida", texto)
-        self.assertIn("Sessão 8", texto)
-
-    def test_figuras_existem_e_estao_declaradas_no_validador(self):
-        declaradas = SESSOES[self.SLUG][2]
+    def test_figuras_declaradas_existem_e_sao_referenciadas(self):
+        declaradas = set(SESSOES[self.SLUG][2])
+        self.assertEqual({f"assets/{nome}.png" for nome in self.FIGURAS}, declaradas)
+        todo = self.todo_o_texto()
         for nome in self.FIGURAS:
             with self.subTest(figura=nome):
-                self.assertIn(f"assets/{nome}.png", declaradas)
                 self.assertTrue((S8 / "assets" / f"{nome}.png").exists())
                 self.assertTrue((S8 / "assets" / f"{nome}.svg").exists())
+                self.assertRegex(todo, rf"!\[[^\]]+\]\(assets/{nome}\.png\)")
 
+    def test_fatos_preservados_na_mesclagem(self):
+        todo = self.todo_o_texto()
+        for termo in (
+            "disable-model-invocation",
+            "allowed-tools",
+            "disallowed-tools",
+            "context: fork",
+            "does not recognize or apply",
+            "claude plugin validate",
+            "/context",
+            "Git Bash",
+            "permissionMode",
+            "CLAUDE_CODE_SUBAGENT_MODEL",
+            "skillListingBudgetFraction",
+            "sandbox_mode",
+            "features.*",
+            "ignore_default_excludes",
+            "developer_instructions",
+            ".agents/skills",
+            "--debug-file",
+            "claude agents",
+        ):
+            with self.subTest(termo=termo):
+                self.assertIn(termo, todo)
 
-class RevisaoFinalSessaoOitoTest(unittest.TestCase):
-    """Achados da revisão final de 23/10/2026 sobre a extensão da Sessão 8."""
-
-    def texto(self, nome):
-        return (S8 / nome).read_text(encoding="utf-8")
-
-    def secao(self, nome, inicio, fim):
-        texto = self.texto(nome)
-        return texto.split(inicio, 1)[1].split(fim, 1)[0]
-
-    def test_oficina_nao_nega_que_o_codex_remove_capacidades_por_agente(self):
-        self.assertNotIn("não traz um campo que limite as ferramentas", self.texto("oficina-de-ferramentas.md"))
-
-    def test_depuracao_nao_generaliza_o_acionamento_para_qualquer_description(self):
-        self.assertNotIn("acionou com qualquer", self.texto("depuracao-de-skills-e-agentes.md"))
-
-    def test_injecao_de_comando_declara_o_caso_do_windows_sem_git_bash(self):
-        skills = self.texto("front-matter-de-skills.md")
-        self.assertNotIn("O mesmo bloco funciona nas três plataformas", skills)
-        self.assertIn("Git Bash", skills)
-        experimento_f = self.texto("oficina-de-ferramentas.md").split("## Experimento F", 1)[1]
-        self.assertIn("Git Bash", experimento_f)
-
-    def test_pagina_de_escolha_nao_cita_pergunta_numerada_da_tabela(self):
-        self.assertNotIn("pergunta 1 ou a pergunta 2", self.texto("escolher-o-mecanismo.md"))
-
-    def test_experimentos_d_e_e1_pedem_pasta_nova(self):
-        oficina = "oficina-de-ferramentas.md"
-        d = self.secao(oficina, "## Experimento D", "## Experimento E")
-        e = self.secao(oficina, "## Experimento E", "## Experimento F")
+    def test_protecoes_da_revisao_final_preservadas(self):
+        todo = self.todo_o_texto()
+        for proibida in (
+            "não traz um campo que limite as ferramentas",
+            "acionou com qualquer",
+            "O mesmo bloco funciona nas três plataformas",
+            "pergunta 1 ou a pergunta 2",
+        ):
+            with self.subTest(trecho=proibida):
+                self.assertNotIn(proibida, todo)
+        oficina = self.texto("oficina-de-ferramentas.md")
+        d = oficina.split("## Experimento D", 1)[1].split("## Experimento E", 1)[0]
+        e = oficina.split("## Experimento E", 1)[1].split("## Experimento F", 1)[0]
         self.assertIn("pasta nova", d)
         self.assertIn("pasta nova", e)
 
