@@ -6,6 +6,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 
 ## Índice Alfabético
 
+- [Agent Skills — Especificação aberta](#agent-skills-especificacao-aberta)
 - [Agentic AI Foundation — AGENTS.md Standard](#agentic-ai-foundation-agentsmd-standard)
 - [Anthropic — Agent Skills (documentação)](#anthropic-agent-skills-documentacao)
 - [Anthropic — Building Effective Agents (2024)](#anthropic-building-effective-agents-2024)
@@ -108,6 +109,16 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Zeller — Why Programs Fail (2005)](#zeller-why-programs-fail-2005)
 - [Zhang et al. — LLMs para Mensagens de Commit (2024)](#zhang-et-al-llms-para-mensagens-de-commit-2024)
 - [Ziftci et al. — Migrating Code at Scale with LLMs at Google (2025)](#ziftci-et-al-migrating-code-at-scale-with-llms-at-google-2025)
+---
+
+### Agent Skills — Especificação aberta
+
+**AGENT SKILLS. "Specification".** agentskills.io, acessado em 23 out. 2026. <https://agentskills.io/specification>
+
+Especificação aberta do formato de skill: `name` (1 a 64 caracteres, igual ao nome do diretório) e `description` (1 a 1.024 caracteres) obrigatórios, `license`, `compatibility` (até 500 caracteres), `metadata` e `allowed-tools` (experimental) opcionais, corpo recomendado abaixo de 5 mil tokens e de 500 linhas, e carga progressiva em três camadas. A página lida em 23/10/2026 não exibe data nem versão.
+
+→ Sessão 8.
+
 ---
 
 ### Agentic AI Foundation — AGENTS.md Standard

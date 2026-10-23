@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 820" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00695c"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="820" fill="#ffffff"/>
+  <text x="60" y="64" font-size="32" font-weight="bold" fill="#12302b">Carga de uma skill em três níveis e o orçamento da listagem</text>
+
+  <!-- nível 1 -->
+  <rect x="60" y="100" width="900" height="190" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="90" y="146" font-size="28" font-weight="bold" fill="#12302b">Nível 1: metadados</text>
+  <text x="90" y="186" font-size="21" fill="#37474f"><tspan font-weight="bold">Quando:</tspan> na inicialização, para toda skill habilitada</text>
+  <text x="90" y="220" font-size="21" fill="#37474f"><tspan font-weight="bold">Custo:</tspan> cerca de 100 tokens por skill</text>
+  <text x="90" y="254" font-size="21" fill="#37474f"><tspan font-weight="bold">Conteúdo:</tspan> <tspan font-family="Menlo, monospace" font-size="20">name</tspan> e <tspan font-family="Menlo, monospace" font-size="20">description</tspan> do front-matter</text>
+
+  <line x1="510" y1="290" x2="510" y2="326" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+
+  <!-- nível 2 -->
+  <rect x="60" y="330" width="900" height="190" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="90" y="376" font-size="28" font-weight="bold" fill="#12302b">Nível 2: instruções</text>
+  <text x="90" y="416" font-size="21" fill="#37474f"><tspan font-weight="bold">Quando:</tspan> a skill é acionada, pelo modelo ou pela pessoa</text>
+  <text x="90" y="450" font-size="21" fill="#37474f"><tspan font-weight="bold">Custo:</tspan> corpo abaixo de 5 mil tokens e de 500 linhas, recomendado</text>
+  <text x="90" y="484" font-size="21" fill="#37474f"><tspan font-weight="bold">Conteúdo:</tspan> corpo do <tspan font-family="Menlo, monospace" font-size="20">SKILL.md</tspan>, que permanece no contexto nos turnos seguintes</text>
+
+  <line x1="510" y1="520" x2="510" y2="556" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+
+  <!-- nível 3 -->
+  <rect x="60" y="560" width="900" height="190" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="90" y="606" font-size="28" font-weight="bold" fill="#12302b">Nível 3: recursos e scripts</text>
+  <text x="90" y="646" font-size="21" fill="#37474f"><tspan font-weight="bold">Quando:</tspan> sob demanda, quando a tarefa pede o arquivo</text>
+  <text x="90" y="680" font-size="21" fill="#37474f"><tspan font-weight="bold">Custo:</tspan> nenhum até o acesso</text>
+  <text x="90" y="714" font-size="21" fill="#37474f"><tspan font-weight="bold">Conteúdo:</tspan> referências, modelos e scripts, e do script entra só a saída</text>
+
+  <!-- orçamento da listagem -->
+  <rect x="1010" y="100" width="530" height="650" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+  <text x="1040" y="146" font-size="28" font-weight="bold" fill="#12302b">Orçamento da listagem</text>
+  <g font-size="21" fill="#37474f">
+    <text x="1040" y="196">O orçamento da listagem é de 1% da janela</text>
+    <text x="1040" y="226">de contexto, e cada entrada é cortada em</text>
+    <text x="1040" y="256">1.536 caracteres (description e when_to_use).</text>
+    <text x="1040" y="316" font-weight="bold" fill="#bf360c">Quando o orçamento estoura</text>
+    <text x="1040" y="352">Todo nome de skill permanece na listagem.</text>
+    <text x="1040" y="382">As descrições saem primeiro das skills</text>
+    <text x="1040" y="412">menos invocadas.</text>
+    <text x="1040" y="472" font-weight="bold" fill="#bf360c">Como ajustar</text>
+    <text x="1040" y="508" font-family="Menlo, monospace" font-size="19">skillListingBudgetFraction</text>
+    <text x="1040" y="538" font-family="Menlo, monospace" font-size="19">SLASH_COMMAND_TOOL_CHAR_BUDGET</text>
+    <text x="1040" y="568" font-family="Menlo, monospace" font-size="19">skillOverrides: "name-only"</text>
+    <text x="1040" y="628" font-weight="bold" fill="#bf360c">Como medir</text>
+    <text x="1040" y="664" font-family="Menlo, monospace" font-size="19">/doctor</text>
+    <text x="1170" y="664" font-size="21">estima o custo da listagem</text>
+    <text x="1040" y="694" font-family="Menlo, monospace" font-size="19">/context</text>
+    <text x="1170" y="694" font-size="21">mostra o tamanho após o orçamento</text>
+    <text x="1040" y="724" font-family="Menlo, monospace" font-size="19">--debug</text>
+    <text x="1170" y="724" font-size="21">registra o aviso de estouro</text>
+  </g>
+</svg>

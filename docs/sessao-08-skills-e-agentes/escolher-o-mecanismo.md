@@ -67,4 +67,4 @@ Os três mecanismos restantes cobrem necessidades que skill e subagente não ate
 | Subagente por cargo | Subagentes chamados analista, desenvolvedor e testador, criados para espelhar o organograma sem que a tarefa peça contexto isolado, ferramentas restritas ou modelo próprio | Criar subagente somente quando a pergunta 4 da árvore tiver resposta afirmativa. A origem é o [princípio de simplicidade](../sessao-01-o-que-mudou/sistemas-agenticos.md#o-principio-de-simplicidade), e a aplicação ao caso é inferência deste material |
 | Vários agentes sem necessidade | Partes dependentes entre si, divididas entre agentes que precisam do mesmo contexto | Manter um agente e, se necessário, adicionar subagentes de leitura. A [aritmética do erro composto](../sessao-02-ambiente-agentico/arnes.md#a-aritmetica-do-erro-composto) mostra que cada etapa acrescentada multiplica a chance de falha |
 
-**Próxima página:** [Síntese e referências](sintese-e-referencias.md).
+**Próxima página:** [Front-matter de skills](front-matter-de-skills.md).

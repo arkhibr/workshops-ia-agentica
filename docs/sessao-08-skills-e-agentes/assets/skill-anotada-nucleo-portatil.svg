@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1600" height="900" fill="#ffffff"/>
+  <text x="60" y="64" font-size="32" font-weight="bold" fill="#12302b">Um SKILL.md anotado: núcleo portátil, especificação aberta e campos do Claude Code</text>
+
+  <!-- legenda -->
+  <rect x="60" y="92" width="26" height="26" rx="5" fill="#00695c"/>
+  <text x="96" y="113" font-size="20" fill="#37474f">Núcleo portátil: name e description</text>
+  <rect x="520" y="92" width="26" height="26" rx="5" fill="#455a64"/>
+  <text x="556" y="113" font-size="20" fill="#37474f">Especificação aberta, suporte variável</text>
+  <rect x="1030" y="92" width="26" height="26" rx="5" fill="#e65100"/>
+  <text x="1066" y="113" font-size="20" fill="#37474f">Específico do Claude Code</text>
+
+  <!-- painel do arquivo -->
+  <rect x="60" y="140" width="700" height="710" rx="14" fill="#f5f7f8" stroke="#78909c" stroke-width="3"/>
+  <g font-family="Menlo, monospace" font-size="25" fill="#12302b">
+    <text x="92" y="200" fill="#78909c">---</text>
+    <text x="92" y="266">name: revisar-adr</text>
+    <text x="92" y="332">description: Revisa a estrutura de um ADR</text>
+    <text x="92" y="398">when_to_use: pedido de revisão de ADR</text>
+    <text x="92" y="464">disable-model-invocation: true</text>
+    <text x="92" y="530">allowed-tools: Read Grep</text>
+    <text x="92" y="596">context: fork</text>
+    <text x="92" y="662">agent: Explore</text>
+    <text x="92" y="728" fill="#78909c">---</text>
+    <text x="92" y="794">Revise o ADR <tspan fill="#e65100" font-weight="bold">$ARGUMENTS</tspan>.</text>
+  </g>
+
+  <!-- barras de cor por linha -->
+  <rect x="60" y="238" width="10" height="38" fill="#00695c"/>
+  <rect x="60" y="304" width="10" height="38" fill="#00695c"/>
+  <rect x="60" y="370" width="10" height="38" fill="#e65100"/>
+  <rect x="60" y="436" width="10" height="38" fill="#e65100"/>
+  <rect x="60" y="502" width="10" height="38" fill="#455a64"/>
+  <rect x="60" y="568" width="10" height="38" fill="#e65100"/>
+  <rect x="60" y="634" width="10" height="38" fill="#e65100"/>
+  <rect x="60" y="766" width="10" height="38" fill="#e65100"/>
+
+  <!-- anotações -->
+  <g font-size="22" fill="#12302b">
+    <text x="810" y="258" font-weight="bold" fill="#00695c">name</text>
+    <text x="810" y="286" font-size="19" fill="#37474f">1 a 64 caracteres e igual ao nome do diretório (especificação aberta)</text>
+    <text x="810" y="324" font-weight="bold" fill="#00695c">description</text>
+    <text x="810" y="352" font-size="19" fill="#37474f">1 a 1.024 caracteres na especificação, listagem do Claude Code cortada em 1.536</text>
+    <text x="810" y="390" font-weight="bold" fill="#bf360c">when_to_use</text>
+    <text x="810" y="418" font-size="19" fill="#37474f">soma-se à description no mesmo corte de 1.536 caracteres</text>
+    <text x="810" y="456" font-weight="bold" fill="#bf360c">disable-model-invocation</text>
+    <text x="810" y="484" font-size="19" fill="#37474f">só a pessoa aciona a skill, pelo nome</text>
+    <text x="810" y="514" font-weight="bold" fill="#455a64">allowed-tools<tspan dx="12" font-weight="normal" font-size="17" fill="#546e7a">(experimental na especificação aberta)</tspan></text>
+    <text x="810" y="542" font-size="19" fill="#37474f">no Claude Code, libera as ferramentas no turno, sem restringir as demais</text>
+    <text x="810" y="588" font-weight="bold" fill="#bf360c">context: fork</text>
+    <text x="810" y="616" font-size="19" fill="#37474f">executa em subagente, sem o histórico da conversa</text>
+    <text x="810" y="654" font-weight="bold" fill="#bf360c">agent</text>
+    <text x="810" y="682" font-size="19" fill="#37474f">tipo do subagente, só vale junto com context: fork</text>
+    <text x="810" y="786" font-weight="bold" fill="#bf360c">$ARGUMENTS</text>
+    <text x="810" y="814" font-size="19" fill="#37474f">vira o texto digitado depois do nome da skill</text>
+  </g>
+</svg>

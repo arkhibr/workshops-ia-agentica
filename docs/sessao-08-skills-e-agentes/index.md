@@ -43,6 +43,7 @@ Ao final desta sessão, o participante deve ser capaz de:
 | — | [Síntese e referências](sintese-e-referencias.md) | Fechamento | 5 min | Checklist, autoavaliação e fontes completas |
 | | | | **120 min** | |
 | + | [Escolher o mecanismo](escolher-o-mecanismo.md) | Aprofundamento | Fora do relógio | Critério entre skill, subagente, skill com fork, hook, MCP e arquivo de instrução |
+| + | [Front-matter de skills](front-matter-de-skills.md) | Aprofundamento | Fora do relógio | Campos do `SKILL.md`, núcleo portátil, custo da `description` e substituições no corpo |
 
 O conteúdo soma 115 minutos, e o intervalo das 11h00 às 11h05 completa os 120 minutos de relógio. A primeira parte ocupa das 10h00 às 11h00, e a segunda, das 11h05 às 12h00.
 
