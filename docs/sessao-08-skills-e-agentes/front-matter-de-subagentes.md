@@ -1,6 +1,6 @@
 # Front-matter de subagentes
 
-Um subagente é um agente auxiliar com janela de contexto própria, definido num arquivo Markdown cujo front-matter YAML declara nome, ferramentas, modelo e permissões, e cujo corpo vira o prompt de sistema. A tabela de oito campos da página [Agentes e subagentes](agentes-e-subagentes.md#anatomia-de-um-subagente) cobre o uso básico, e esta página completa a lista, explica o `permissionMode`, a resolução do `model` e a ordem de escopo, e compara o contexto do subagente com o da skill.
+Um subagente é um agente auxiliar com janela de contexto própria, definido num arquivo Markdown cujo front-matter YAML declara nome, ferramentas, modelo e permissões, e cujo corpo vira o prompt de sistema. A tabela de oito campos da página [Agentes e subagentes](agentes-e-subagentes.md#anatomia-e-front-matter-do-subagente) cobre o uso básico, e esta página completa a lista, explica o `permissionMode`, a resolução do `model` e a ordem de escopo, e compara o contexto do subagente com o da skill.
 
 !!! info "Versões verificadas"
     As observações desta página foram feitas em 23/10/2026 com `claude 2.1.309` e `codex-cli 0.140.0`, e cada afirmação indica se foi observada, se vem da documentação ou se continua sem confirmação. A versão instalada em cada máquina aparece nos comandos `claude --version` e `codex --version`, e o comportamento pode divergir em versões diferentes das citadas.

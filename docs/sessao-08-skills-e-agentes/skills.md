@@ -156,11 +156,11 @@ Uma instrução pode ficar em três lugares, e cada um tem um custo de carga dif
 | Skill | Quando acionada | Procedimento recorrente de um tipo de tarefa |
 | Pedido avulso | Uma conversa | Tarefa que não se repete |
 
-A comparação da skill com o subagente, a skill com fork, o hook e o servidor MCP está na seção [Escolher o mecanismo](agentes-e-subagentes.md) da página de agentes e subagentes.
+A comparação da skill com o subagente, a skill com fork, o hook e o servidor MCP está na seção [Escolher o mecanismo](agentes-e-subagentes.md#escolher-o-mecanismo) da página de agentes e subagentes.
 
 ## Quando a skill não aciona
 
-A skill com erro de front-matter raramente produz mensagem na sessão. O Claude Code lê o front-matter somente quando o primeiro `---` está na primeira linha do arquivo, e trata o arquivo inteiro como conteúdo da skill em qualquer outro caso. YAML inválido faz a skill carregar sem nenhum campo: o comando `/nome` continua funcionando, e o modelo deixa de acioná-la pela `description`. Campos desconhecidos são ignorados sem erro, e um nome de pasta com caracteres como o espaço de largura zero ou `<` impede o carregamento. Um `paths` que aponta para arquivos fora do diretório de trabalho atual mantém a skill inativa. Esses comportamentos constam da documentação, e a observação desta sessão cobriu só os subagentes, tratados na página de [agentes e subagentes](agentes-e-subagentes.md).
+A skill com erro de front-matter raramente produz mensagem na sessão. O Claude Code lê o front-matter somente quando o primeiro `---` está na primeira linha do arquivo, e trata o arquivo inteiro como conteúdo da skill em qualquer outro caso. YAML inválido faz a skill carregar sem nenhum campo: o comando `/nome` continua funcionando, e o modelo deixa de acioná-la pela `description`. Campos desconhecidos são ignorados sem erro, e um nome de pasta com caracteres como o espaço de largura zero ou `<` impede o carregamento. Um `paths` que aponta para arquivos fora do diretório de trabalho atual mantém a skill inativa. Esses comportamentos constam da documentação, e a observação desta sessão cobriu só os subagentes, tratados na página de [agentes e subagentes](agentes-e-subagentes.md#ferramentas-permissoes-e-arquivos-ignorados).
 
 A documentação propõe uma sequência para a skill que o modelo não usa quando devia:
 
