@@ -35,7 +35,7 @@ Não edite arquivos. Devolva uma lista curta, com a linha de cada problema.
 | `maxTurns` | Número máximo de turnos antes de o subagente parar |
 | `skills` | Skills carregadas no contexto na inicialização |
 
-Duas regras da documentação pedem atenção na escrita. O Claude Code ignora em silêncio os campos de frontmatter que não reconhece, e o campo `tools` omitido faz o subagente herdar todas as ferramentas. A combinação, que é inferência deste material e não afirmação da documentação, indica que um campo de restrição escrito com erro de grafia deixa o subagente com acesso total, e por isso o teste da oficina verifica o que o subagente consegue fazer de fato.
+Duas regras da documentação pedem atenção na escrita. O Claude Code ignora em silêncio os campos de frontmatter que não reconhece, e o campo `tools` omitido faz o subagente herdar todas as ferramentas. A combinação indica que um campo de restrição escrito com erro de grafia deixa o subagente com acesso total, e o teste da oficina confirmou o efeito na versão 2.1.309 do Claude Code: o subagente com `tool` no lugar de `tools` carregou e editou o arquivo, e o log de depuração registrou o campo desconhecido com a sugestão `tools`. Os campos que esta tabela não cobre, a ordem de escopo e a resolução do `model` estão em [Front-matter de subagentes](front-matter-de-subagentes.md).
 
 Os subagentes ficam em `.claude/agents/` quando pertencem ao projeto e em `~/.claude/agents/` quando são pessoais. Em caso de nome repetido, vale o local de maior prioridade, na ordem: configurações gerenciadas da organização, a opção `--agents` da sessão, o projeto, o diretório pessoal e os plugins.
 

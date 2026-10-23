@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 880" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1600" height="880" fill="#ffffff"/>
+  <text x="60" y="64" font-size="32" font-weight="bold" fill="#12302b">Onde a restrição acontece: camadas no Claude Code e no Codex CLI</text>
+
+  <!-- legenda -->
+  <rect x="60" y="88" width="26" height="26" rx="5" fill="#00695c"/>
+  <text x="96" y="109" font-size="20" fill="#37474f">Restringe de fato</text>
+  <rect x="330" y="88" width="26" height="26" rx="5" fill="#e65100"/>
+  <text x="366" y="109" font-size="20" fill="#37474f">Orienta ou libera, sem restringir</text>
+  <rect x="720" y="88" width="26" height="26" rx="5" fill="#ffffff" stroke="#78909c" stroke-width="3" stroke-dasharray="6 4"/>
+  <text x="756" y="109" font-size="20" fill="#37474f">Sem equivalente documentado</text>
+
+  <text x="60" y="164" font-size="28" font-weight="bold" fill="#12302b">Claude Code</text>
+  <text x="830" y="164" font-size="28" font-weight="bold" fill="#12302b">Codex CLI</text>
+
+  <!-- coluna Claude Code -->
+  <rect x="60" y="184" width="710" height="88" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="84" y="222" font-size="22" font-weight="bold" fill="#12302b"><tspan font-family="Menlo, monospace" font-size="20">tools</tspan> e <tspan font-family="Menlo, monospace" font-size="20">disallowedTools</tspan> no subagente</text>
+  <text x="84" y="252" font-size="18" fill="#37474f">removem ferramentas do conjunto do agente (observado)</text>
+
+  <rect x="60" y="284" width="710" height="88" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="84" y="322" font-size="22" font-weight="bold" fill="#12302b"><tspan font-family="Menlo, monospace" font-size="20">disallowed-tools</tspan> na skill</text>
+  <text x="84" y="352" font-size="18" fill="#37474f">removem ferramentas enquanto a skill estiver ativa (observado)</text>
+
+  <rect x="60" y="384" width="710" height="88" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+  <text x="84" y="422" font-size="22" font-weight="bold" fill="#12302b"><tspan font-family="Menlo, monospace" font-size="20">allowed-tools</tspan> na skill</text>
+  <text x="84" y="452" font-size="18" fill="#37474f">libera sem pedir aprovação e mantém as demais ferramentas (observado)</text>
+
+  <rect x="60" y="484" width="710" height="88" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+  <text x="84" y="522" font-size="22" font-weight="bold" fill="#12302b"><tspan font-family="Menlo, monospace" font-size="20">permissionMode</tspan> no subagente</text>
+  <text x="84" y="552" font-size="18" fill="#37474f">define a aprovação, e o modo da conversa pode prevalecer (documentado)</text>
+
+  <rect x="60" y="584" width="710" height="88" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+  <text x="84" y="622" font-size="22" font-weight="bold" fill="#12302b">Corpo do arquivo e <tspan font-family="Menlo, monospace" font-size="20">CLAUDE.md</tspan></text>
+  <text x="84" y="652" font-size="18" fill="#37474f">orientam, e o agente pode ignorar o texto (Sessão 2)</text>
+
+  <rect x="60" y="684" width="710" height="88" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="84" y="722" font-size="22" font-weight="bold" fill="#12302b">Hooks</text>
+  <text x="84" y="752" font-size="18" fill="#37474f">bloqueiam por programa, fora do modelo (Sessão 2)</text>
+
+  <!-- coluna Codex CLI -->
+  <rect x="830" y="184" width="710" height="88" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="854" y="222" font-size="22" font-weight="bold" fill="#12302b"><tspan font-family="Menlo, monospace" font-size="20">sandbox_mode</tspan> e <tspan font-family="Menlo, monospace" font-size="20">approval_policy</tspan> da sessão</text>
+  <text x="854" y="252" font-size="18" fill="#37474f">definidos na sessão pai e herdados pelos subagentes (documentado)</text>
+
+  <rect x="830" y="284" width="710" height="88" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="854" y="322" font-size="22" font-weight="bold" fill="#12302b"><tspan font-family="Menlo, monospace" font-size="20">features.*</tspan> com valor <tspan font-family="Menlo, monospace" font-size="20">false</tspan> no agente</text>
+  <text x="854" y="352" font-size="18" fill="#37474f">removem capacidades como shell_tool, apps e plugins (documentado)</text>
+
+  <rect x="830" y="384" width="710" height="88" rx="14" fill="#ffffff" stroke="#78909c" stroke-width="3" stroke-dasharray="12 7"/>
+  <text x="854" y="422" font-size="22" font-weight="bold" fill="#12302b">Liberar ferramenta por skill</text>
+  <text x="854" y="452" font-size="18" fill="#37474f">sem equivalente de allowed-tools na documentação lida</text>
+
+  <rect x="830" y="484" width="710" height="88" rx="14" fill="#ffffff" stroke="#78909c" stroke-width="3" stroke-dasharray="12 7"/>
+  <text x="854" y="522" font-size="22" font-weight="bold" fill="#12302b">Permissão por agente</text>
+  <text x="854" y="552" font-size="18" fill="#37474f">valores no arquivo do agente não sobrescrevem a sessão pai</text>
+
+  <rect x="830" y="584" width="710" height="88" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+  <text x="854" y="622" font-size="22" font-weight="bold" fill="#12302b"><tspan font-family="Menlo, monospace" font-size="20">developer_instructions</tspan> e <tspan font-family="Menlo, monospace" font-size="20">AGENTS.md</tspan></text>
+  <text x="854" y="652" font-size="18" fill="#37474f">pedem para evitar edições, sem criar sandbox somente leitura (documentado)</text>
+
+  <rect x="830" y="684" width="710" height="88" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="854" y="722" font-size="22" font-weight="bold" fill="#12302b">Hooks</text>
+  <text x="854" y="752" font-size="18" fill="#37474f">recurso estável e ativo em codex features list (observado)</text>
+
+  <text x="60" y="830" font-size="20" font-weight="bold" fill="#12302b">No Claude Code, o arquivo do agente restringe as ferramentas, e no Codex CLI o sandbox e a aprovação vêm da sessão que inicia o agente.</text>
+</svg>

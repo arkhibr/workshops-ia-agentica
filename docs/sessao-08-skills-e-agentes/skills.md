@@ -6,6 +6,8 @@ Uma skill é uma pasta com um arquivo `SKILL.md` que ensina o agente a executar 
 
 A [documentação das skills](../referencia/bibliografia.md#anthropic-agent-skills-documentacao) define como obrigatório um arquivo `SKILL.md` com frontmatter YAML que contém dois campos. O campo `name` aceita até 64 caracteres, apenas letras minúsculas, números e hífens, e não pode conter as palavras reservadas "anthropic" e "claude". O campo `description` não pode ficar vazio, aceita até 1.024 caracteres e precisa dizer o que a skill faz e quando usá-la.
 
+As regras de `name` e `description` acima, com as palavras reservadas, vêm da documentação de skills da plataforma Claude, que vale para a API e para o claude.ai. A tabela de campos do Claude Code torna todos os campos opcionais, usa o nome do diretório como padrão de `name` e corta `description` e `when_to_use` somados em 1.536 caracteres na listagem, e a especificação aberta Agent Skills, que o Codex CLI também segue, fixa `name` em 1 a 64 caracteres e `description` em 1 a 1.024. A página [Front-matter de skills](front-matter-de-skills.md) detalha cada campo, e [Escolher o mecanismo](escolher-o-mecanismo.md) compara a skill com os demais mecanismos.
+
 No Claude Code, as skills ficam em `~/.claude/skills/` quando são pessoais e em `.claude/skills/` quando pertencem ao projeto, e cada skill ocupa uma pasta com o nome dela. As skills do Claude Code são baseadas em arquivos e não são sincronizadas com as do claude.ai nem com as da API, de modo que cada superfície recebe a própria cópia. No Claude Code, a skill também pode ser distribuída por meio de plugins.
 
 ```text

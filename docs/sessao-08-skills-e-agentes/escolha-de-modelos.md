@@ -28,6 +28,12 @@ A matriz resume o guia, com os modelos vigentes em 22/10/2026.
 
 Para o Claude Code, o [guia de custo](../referencia/bibliografia.md#anthropic-manage-costs-effectively-documentacao-do-claude-code) acrescenta que o Sonnet atende bem à maioria das tarefas de programação e custa menos que o Opus, que fica reservado a decisões de arquitetura complexas e a raciocínio em várias etapas, e que subagentes de tarefas simples podem declarar `model: haiku`.
 
+O Claude Code resolve o modelo de um subagente em quatro passos, descritos em [Front-matter de subagentes](front-matter-de-subagentes.md#resolucao-do-model), e uma skill pode declarar `model` para valer apenas no turno em que está ativa.
+
+!!! note "Claude Code e Codex CLI"
+    **Claude Code:** a ordem de resolução consta de [Choose a model](https://code.claude.com/docs/en/sub-agents#choose-a-model).
+    **Codex CLI:** o arquivo do agente aceita `model` e `model_reasoning_effort`, e o valor do arquivo prevalece sobre o do pai, conforme a [documentação de Subagents](../referencia/bibliografia.md#openai-codex-subagents-documentacao). Os modelos disponíveis dependem da conta, e na observação desta sessão o modelo padrão da conta exigiu uma versão do Codex mais nova que a instalada.
+
 ## Onde a decisão aparece nos arquivos
 
 No subagente, o campo `model` aceita `sonnet`, `opus`, `haiku`, `fable`, um identificador completo ou `inherit`. A [documentação dos subagentes](../referencia/bibliografia.md#anthropic-subagents-no-claude-code-documentacao) fixa a ordem de resolução do modelo: primeiro o parâmetro passado pelo agente principal em cada chamada, depois o campo `model` do arquivo, depois a variável `CLAUDE_CODE_SUBAGENT_MODEL` e, por último, o modelo da conversa principal. Por isso uma troca do modelo da conversa para o Opus se estende aos subagentes que usam `inherit`, o que eleva o custo desses subagentes ao preço do Opus.

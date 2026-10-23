@@ -10,7 +10,7 @@ As sessões anteriores usaram o agente como ferramenta de uso individual. A part
 
 ## Como usar este material
 
-Estas páginas apoiam uma sessão conduzida ao vivo, sem leitura prévia obrigatória. A sessão tem duas partes. Na primeira, o instrutor apresenta skills, agentes, subagentes, geração de artefatos, escolha de modelos, custo e desempenho, e cada participante constrói e mede uma skill na oficina. Na segunda, o instrutor trata de segurança e credenciais, e cada equipe constrói uma skill com um subagente que gera um artefato conferível. A sessão pressupõe o ambiente configurado nas Sessões 1 e 2 e o uso do Claude Code.
+Estas páginas apoiam uma sessão conduzida ao vivo, sem leitura prévia obrigatória. A sessão tem duas partes. Na primeira, o instrutor apresenta skills, agentes, subagentes, geração de artefatos, escolha de modelos, custo e desempenho, e cada participante constrói e mede uma skill na oficina. Na segunda, o instrutor trata de segurança e credenciais, e cada equipe constrói uma skill com um subagente que gera um artefato conferível. A sessão pressupõe o ambiente configurado nas Sessões 1 e 2 e o uso do Claude Code, e as notas "Claude Code e Codex CLI" das páginas indicam o equivalente no Codex CLI quando a documentação o descreve.
 
 Os números citados nas páginas de teoria vêm das fontes listadas na [bibliografia do curso](../referencia/bibliografia.md), que descrevem o comportamento documentado pela Anthropic. Nomes de modelos, preços e limites mudam com frequência, e a equipe confere a documentação vigente antes de decidir, a partir do estado documentado em 22/10/2026.
 
@@ -42,6 +42,11 @@ Ao final desta sessão, o participante deve ser capaz de:
 | 10 | [Exercícios](exercicios.md) | Conferência cruzada | 6 min | Auditoria das credenciais e das permissões da equipe vizinha |
 | — | [Síntese e referências](sintese-e-referencias.md) | Fechamento | 5 min | Checklist, autoavaliação e fontes completas |
 | | | | **120 min** | |
+| + | [Escolher o mecanismo](escolher-o-mecanismo.md) | Aprofundamento | Fora do relógio | Critério entre skill, subagente, skill com fork, hook, MCP e arquivo de instrução |
+| + | [Front-matter de skills](front-matter-de-skills.md) | Aprofundamento | Fora do relógio | Campos do `SKILL.md`, núcleo portátil, custo da `description` e substituições no corpo |
+| + | [Front-matter de subagentes](front-matter-de-subagentes.md) | Aprofundamento | Fora do relógio | Campos que faltam, `permissionMode`, resolução do `model` e precedência de escopo |
+| + | [Depuração de skills e agentes](depuracao-de-skills-e-agentes.md) | Aprofundamento | Fora do relógio | Falhas silenciosas, o que foi carregado, log de depuração e validação da pasta |
+| + | [Claude Code e Codex CLI](claude-code-e-codex.md) | Aprofundamento | Fora do relógio | Tabela de equivalência com status de evidência e a restrição de ferramentas em camadas |
 
 O conteúdo soma 115 minutos, e o intervalo das 11h00 às 11h05 completa os 120 minutos de relógio. A primeira parte ocupa das 10h00 às 11h00, e a segunda, das 11h05 às 12h00.
 
@@ -52,6 +57,8 @@ Cada página de teoria apresenta um tema e termina numa tabela de decisão que a
 A oficina e o exercício-âncora usam o mesmo exemplo, a skill `registrando-decisao-arquitetural`, que gera um registro de decisão arquitetural em Markdown para a ACME, uma universidade fictícia. O exemplo foi escolhido porque o artefato tem estrutura verificável por script e conteúdo que só uma pessoa confere, o que permite discutir as duas formas de conferência.
 
 As equipes são formadas antes da sessão. Cada pessoa executa a oficina no próprio computador, numa pasta vazia, e nenhuma credencial real é usada: os exercícios de segurança trabalham com descrições e com tokens fictícios.
+
+O bloco "Aprofundamento", listado no fim do roteiro, reúne cinco páginas de teoria sobre critério de escolha, front-matter, depuração e equivalência com o Codex CLI, os experimentos D, E e F da oficina e os exercícios 11 a 14. O bloco fica fora dos 115 minutos, serve de apoio ao instrutor e de consulta posterior da turma, e não exige leitura prévia. Cada afirmação sobre comportamento traz o status de evidência (observado, documentado ou não confirmado) e a versão em que foi verificada, e o instrutor decide em aula quais partes conduzir se sobrar tempo.
 
 !!! warning "Limite desta sessão"
     Os números de custo, de ganho de desempenho e de consumo de tokens vêm de documentação e de relatos da própria Anthropic, medidos em tarefas e configurações específicas. Nenhum deles mede as tarefas da equipe. A decisão de adotar uma skill ou um agente depende da medição feita na oficina e no exercício, com as tarefas e os modelos da própria equipe.

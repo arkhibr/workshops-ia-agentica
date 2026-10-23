@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 980" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00695c"/>
+    </marker>
+    <marker id="seta-cinza" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#78909c"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="980" fill="#ffffff"/>
+  <text x="60" y="64" font-size="32" font-weight="bold" fill="#12302b">Qual mecanismo usar: seis perguntas, na ordem em que cada uma elimina uma opção</text>
+
+  <!-- perguntas 1 a 4, coluna da esquerda -->
+  <rect x="60" y="100" width="640" height="100" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3"/>
+  <text x="84" y="142" font-size="24" font-weight="bold" fill="#12302b">1. A tarefa exige ferramenta ou dado externo</text>
+  <text x="84" y="176" font-size="24" font-weight="bold" fill="#12302b">que o agente ainda não tem?</text>
+
+  <rect x="60" y="240" width="640" height="100" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3"/>
+  <text x="84" y="282" font-size="24" font-weight="bold" fill="#12302b">2. A regra precisa valer mesmo que o agente</text>
+  <text x="84" y="316" font-size="24" font-weight="bold" fill="#12302b">decida ignorá-la?</text>
+
+  <rect x="60" y="380" width="640" height="100" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3"/>
+  <text x="84" y="422" font-size="24" font-weight="bold" fill="#12302b">3. A orientação vale para toda sessão do</text>
+  <text x="84" y="456" font-size="24" font-weight="bold" fill="#12302b">projeto, qualquer que seja a tarefa?</text>
+
+  <rect x="60" y="520" width="640" height="100" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3"/>
+  <text x="84" y="562" font-size="24" font-weight="bold" fill="#12302b">4. A saída é volumosa ou a tarefa pede</text>
+  <text x="84" y="596" font-size="24" font-weight="bold" fill="#12302b">ferramentas e permissões próprias?</text>
+
+  <!-- pergunta 6, base da coluna -->
+  <rect x="60" y="700" width="640" height="100" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3"/>
+  <text x="84" y="742" font-size="24" font-weight="bold" fill="#12302b">6. A pessoa deve decidir o momento de</text>
+  <text x="84" y="776" font-size="24" font-weight="bold" fill="#12302b">acionar o procedimento?</text>
+
+  <!-- setas "não" entre perguntas -->
+  <line x1="380" y1="200" x2="380" y2="240" stroke="#78909c" stroke-width="3" marker-end="url(#seta-cinza)"/>
+  <text x="400" y="226" font-size="19" fill="#546e7a">não</text>
+  <line x1="380" y1="340" x2="380" y2="380" stroke="#78909c" stroke-width="3" marker-end="url(#seta-cinza)"/>
+  <text x="400" y="366" font-size="19" fill="#546e7a">não</text>
+  <line x1="380" y1="480" x2="380" y2="520" stroke="#78909c" stroke-width="3" marker-end="url(#seta-cinza)"/>
+  <text x="400" y="506" font-size="19" fill="#546e7a">não</text>
+  <line x1="380" y1="620" x2="380" y2="700" stroke="#78909c" stroke-width="3" marker-end="url(#seta-cinza)"/>
+  <text x="400" y="666" font-size="19" fill="#546e7a">não</text>
+
+  <!-- respostas "sim" das perguntas 1 a 3 -->
+  <line x1="700" y1="150" x2="860" y2="150" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+  <text x="768" y="138" font-size="19" fill="#00695c">sim</text>
+  <rect x="860" y="100" width="420" height="100" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="884" y="142" font-size="26" font-weight="bold" fill="#12302b">Servidor MCP</text>
+  <text x="884" y="176" font-size="19" fill="#37474f">ferramenta ou dado externo ao agente</text>
+
+  <line x1="700" y1="290" x2="860" y2="290" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+  <text x="768" y="278" font-size="19" fill="#00695c">sim</text>
+  <rect x="860" y="240" width="420" height="100" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="884" y="282" font-size="26" font-weight="bold" fill="#12302b">Hook</text>
+  <text x="884" y="316" font-size="19" fill="#37474f">obrigação verificada por programa</text>
+
+  <line x1="700" y1="430" x2="860" y2="430" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+  <text x="768" y="418" font-size="19" fill="#00695c">sim</text>
+  <rect x="860" y="380" width="420" height="100" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="884" y="422" font-size="26" font-weight="bold" fill="#12302b">Arquivo de instrução</text>
+  <text x="884" y="456" font-size="19" fill="#37474f">AGENTS.md ou CLAUDE.md, toda sessão</text>
+
+  <!-- pergunta 4 sim, para a pergunta 5 -->
+  <line x1="700" y1="570" x2="860" y2="570" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+  <text x="768" y="558" font-size="19" fill="#00695c">sim</text>
+  <rect x="860" y="520" width="700" height="100" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3"/>
+  <text x="884" y="562" font-size="24" font-weight="bold" fill="#12302b">5. O procedimento é fixo e serve a várias</text>
+  <text x="884" y="596" font-size="24" font-weight="bold" fill="#12302b">pessoas, com o mesmo roteiro a cada uso?</text>
+
+  <line x1="1025" y1="620" x2="1025" y2="680" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+  <text x="1045" y="656" font-size="19" fill="#00695c">sim</text>
+  <line x1="1395" y1="620" x2="1395" y2="680" stroke="#78909c" stroke-width="3" marker-end="url(#seta-cinza)"/>
+  <text x="1415" y="656" font-size="19" fill="#546e7a">não</text>
+
+  <rect x="860" y="680" width="330" height="100" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="884" y="722" font-size="22" font-weight="bold" fill="#12302b">Skill com <tspan font-family="Menlo, monospace" font-size="20">context: fork</tspan></text>
+  <text x="884" y="756" font-size="17" fill="#37474f">procedimento fixo, contexto isolado</text>
+  <rect x="1230" y="680" width="330" height="100" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="1254" y="722" font-size="26" font-weight="bold" fill="#12302b">Subagente</text>
+  <text x="1254" y="756" font-size="17" fill="#37474f">tarefa avulsa, contexto isolado</text>
+
+  <!-- pergunta 6, desfechos -->
+  <line x1="225" y1="800" x2="225" y2="850" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+  <text x="245" y="831" font-size="19" fill="#00695c">sim</text>
+  <line x1="555" y1="800" x2="555" y2="850" stroke="#78909c" stroke-width="3" marker-end="url(#seta-cinza)"/>
+  <text x="575" y="831" font-size="19" fill="#546e7a">não</text>
+  <rect x="60" y="850" width="330" height="100" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="84" y="892" font-size="24" font-weight="bold" fill="#12302b">Skill manual</text>
+  <text x="84" y="926" font-size="16" font-family="Menlo, monospace" fill="#37474f">disable-model-invocation: true</text>
+  <rect x="410" y="850" width="290" height="100" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="434" y="892" font-size="26" font-weight="bold" fill="#12302b">Skill</text>
+  <text x="434" y="926" font-size="17" fill="#37474f">o modelo aciona pela description</text>
+</svg>
