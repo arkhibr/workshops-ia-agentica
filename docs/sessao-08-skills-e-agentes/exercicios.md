@@ -238,3 +238,152 @@ Cada equipe troca o arquivo do subagente e o plano da credencial com a equipe vi
 | Decisão | 10% | Adotar, ajustar ou descartar, justificada pela medição |
 
 Para a equipe que terminar antes, a extensão é repetir o cenário com entrada incompleta em um segundo modelo e comparar o comportamento do campo "A confirmar".
+
+## Extensão: front-matter na prática
+
+Os exercícios 11 a 14 estendem a sessão para o front-matter de skills e de subagentes e ficam fora do relógio de 115 minutos. Eles seguem os níveis de Bloom a que pertencem, e cada exercício declara o seu: o 11 é de análise, o 12 de aplicação, o 13 de criação e o 14 de avaliação. As páginas de apoio são [Front-matter de skills](front-matter-de-skills.md), [Front-matter de subagentes](front-matter-de-subagentes.md), [Depuração de skills e agentes](depuracao-de-skills-e-agentes.md) e [Claude Code e Codex CLI](claude-code-e-codex.md).
+
+!!! note "Claude Code e Codex CLI"
+    **Claude Code:** os campos usados nestes exercícios constam da [tabela de campos dos subagentes](https://code.claude.com/docs/en/sub-agents#frontmatter-reference) e da [tabela de campos das skills](https://code.claude.com/docs/en/skills#frontmatter-reference).
+    **Codex CLI:** o agente é um arquivo TOML em `.codex/agents/`, e a skill fica em `.agents/skills/`, conforme [Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents) e [Build skills](https://learn.chatgpt.com/docs/build-skills). Nenhum exercício exige o Codex instalado, e os trechos que o executam são opcionais e declaram o pré-requisito.
+
+### 11. Três arquivos de subagente com erro (Analisar)
+
+**Situação**
+
+A equipe da ACME, a universidade fictícia desta sessão, escreveu três arquivos de subagente em `.claude/agents/` e nenhum deles se comporta como o esperado. O `claude --debug` está disponível, e a versão instalada é a 2.1.296 ou posterior.
+
+```markdown
+---
+name: acme:revisor-de-bolsas
+description: Revisa as regras do sistema de bolsas.
+---
+Revise as regras indicadas.
+```
+
+```markdown
+
+---
+name: revisor-de-pagamentos
+description: Revisa as regras do sistema de pagamentos.
+tools: Read, Grep, Glob
+---
+Revise as regras indicadas, sem editar arquivos.
+```
+
+```markdown
+---
+name: revisor-de-chamados
+description: Revisa a fila de chamados.
+tool: Read, Grep, Glob
+color: magenta
+---
+Revise a fila indicada, sem editar arquivos.
+```
+
+**Passos**
+
+1. Para cada arquivo, diga se o subagente carrega e onde o problema aparece: no log de depuração, num aviso ou em nenhum registro.
+2. Aponte o arquivo com o efeito mais perigoso para a segurança e explique por quê.
+3. Escreva a versão corrigida desse arquivo.
+
+<details>
+<summary>Conferir depois de responder</summary>
+
+O primeiro arquivo não carrega, porque o `name` contém `:`, caractere reservado aos identificadores de plugin, e o log de depuração registra o erro. O segundo também não carrega, porque a primeira linha do arquivo está em branco e o Claude Code trata o arquivo como documentação, sem registrar nada no log. O terceiro carrega, e o log traz um aviso de campo desconhecido com a sugestão `tools`, porque `tool` está escrito errado. O valor `magenta` de `color` está fora da lista documentada e foi aceito sem aviso na versão 2.1.309. O efeito mais perigoso é o do terceiro arquivo, porque o subagente carrega sem o campo de restrição e herda todas as ferramentas, de modo que pode editar arquivos apesar de o texto pedir que não edite. A versão corrigida troca `tool` por `tools`, e uma escolha mais segura troca `magenta` por um valor da lista documentada, como `purple`.
+
+</details>
+
+### 12. Skill, subagente ou skill com fork (Aplicar)
+
+**Situação**
+
+A ACME tem três tarefas recorrentes e precisa decidir o mecanismo e escrever as linhas de front-matter que o configuram. A tarefa A é gerar, a pedido da própria pessoa, o resumo semanal da fila de chamados sempre no mesmo formato. A tarefa B é rodar a suíte de 600 testes e relatar só as falhas, com o mesmo roteiro a cada vez e sem encher a conversa de saída. A tarefa C é revisar uma alteração apenas lendo o código, sem poder editar nada, quando o modelo julgar útil.
+
+**Passos**
+
+1. Escolha, para cada tarefa, entre skill, subagente e skill com `context: fork`, e justifique pela árvore da página [Escolher o mecanismo](escolher-o-mecanismo.md).
+2. Escreva as linhas de front-matter de cada escolha.
+3. Indique um campo que a equipe deve conferir em cada uma.
+
+<details>
+<summary>Conferir depois de responder</summary>
+
+A tarefa A é uma skill de acionamento manual, com `disable-model-invocation: true`, porque o procedimento é fixo e a pessoa decide o momento. A tarefa B é uma skill com `context: fork`, porque o procedimento é fixo e a saída é volumosa, e o fork mantém a saída fora da conversa principal. A tarefa C é um subagente com `tools: Read, Grep, Glob`, porque a restrição de ferramentas pertence ao arquivo do agente e o modelo decide quando delegar pela `description`. A equipe confere, na A, que o pedido em linguagem natural não aciona a skill, na B, que tudo o que a tarefa precisa chega pelos argumentos, porque o fork não enxerga o histórico, e na C, que o nome do campo está escrito `tools` e não `tool`.
+
+</details>
+
+### 13. Exercício-âncora da extensão: restringir de fato e verificar (Criar)
+
+**O que é:** cada equipe cria um subagente somente leitura, prevê o que acontece quando pedem a ele que edite um arquivo, verifica a previsão em execução e localiza no log de depuração o efeito de um erro de grafia no campo de restrição. O trabalho pode ser feito com os arquivos da oficina, e a skill ou o subagente da ACME do exercício 10 serve de ponto de partida.
+
+**Situação**
+
+O material não contém dado pessoal nem credencial, e o arquivo a ser editado é um ADR fictício da ACME.
+
+**Passos**
+
+1. A equipe escreve o arquivo de um subagente `revisor-somente-leitura`, com `tools: Read, Grep, Glob` e `model: haiku`.
+2. A equipe registra por escrito a previsão do resultado de pedir que o subagente corrija um ADR, antes de executar.
+3. A equipe executa o pedido e anota o que o subagente respondeu e se o arquivo mudou.
+4. A equipe troca `tools` por `tool`, repete o pedido e localiza no log de depuração a linha que registra o campo desconhecido.
+5. A equipe preenche a tabela abaixo e decide o que mudaria no processo de revisão de agentes do projeto.
+
+| Registro | Com `tools` | Com `tool` |
+|---|---|---|
+| Previsão da equipe | | |
+| O arquivo mudou? | | |
+| Linha do log que explica o resultado | | |
+
+<details>
+<summary>Conferir depois de responder</summary>
+
+O resultado observado na versão 2.1.309 foi que o subagente com `tools: Read, Grep, Glob` respondeu que só tinha ferramentas de leitura e não editou o arquivo, e que o subagente com o campo `tool` editou o arquivo, porque sem `tools` ele herda todas as ferramentas. O log traz um aviso com `did you mean "tools"?` para o campo desconhecido. A decisão de processo esperada é incluir a verificação da restrição, com um pedido de edição, na revisão de todo arquivo de subagente.
+
+</details>
+
+**Critérios de avaliação**
+
+| Critério | Peso | O que se espera |
+|---|---:|---|
+| Previsão registrada antes | 30% | Previsão escrita para os dois casos antes de qualquer execução |
+| Verificação real executada | 40% | Pedido de edição executado nos dois arquivos, com o resultado do arquivo conferido |
+| Diagnóstico do desvio | 30% | Linha do log que aponta o campo desconhecido e decisão de processo coerente com o efeito |
+
+### 14. O mesmo agente no Codex CLI (Avaliar)
+
+**Situação**
+
+A equipe da ACME tem um subagente somente leitura para o Claude Code e recebeu de um colega uma versão para o Codex CLI.
+
+```markdown
+---
+name: revisor-somente-leitura
+description: Revisa a estrutura de um ADR sem editar arquivos.
+tools: Read, Grep, Glob
+---
+Liste as seções ausentes do ADR indicado.
+```
+
+```toml
+name = "revisor_somente_leitura"
+description = "Revisa a estrutura de um ADR sem editar arquivos."
+developer_instructions = """
+Liste as seções ausentes do ADR indicado.
+Não edite arquivos.
+"""
+```
+
+**Passos**
+
+1. Diga o que cada arquivo restringe e o que apenas orienta.
+2. Avalie se o arquivo do Codex impede a edição, citando a documentação.
+3. Decida entre aprovar, revisar ou rejeitar a versão do Codex e proponha a correção.
+4. Opcional, para quem tem o Codex instalado e autenticado numa versão que aceite o modelo da conta: coloque o arquivo em `.codex/agents/` e peça ao Codex que o use para corrigir um ADR, registrando se o arquivo mudou.
+
+<details>
+<summary>Conferir depois de responder</summary>
+
+O arquivo do Claude Code restringe as ferramentas pelo campo `tools`, e o corpo apenas orienta. O arquivo do Codex só orienta, porque a documentação adverte que instruções para evitar edições não criam um sandbox somente leitura, e o sandbox e a aprovação são herdados da sessão que inicia o agente. A decisão é revisar: o arquivo é aceitável como orientação, e a restrição real exige iniciar a sessão com `sandbox_mode = "read-only"`, valor que consta da documentação de aprovações e segurança. Esse comportamento do Codex está documentado e, no ambiente desta sessão, não foi executado, porque o modelo padrão da conta exigia uma versão mais nova do Codex. O passo opcional pede a versão do Codex instalada e um modelo aceito pela conta, e o resultado entra no registro da equipe com a versão usada e o status observado.
+
+</details>
