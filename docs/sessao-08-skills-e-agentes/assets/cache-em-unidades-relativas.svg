@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" font-family="Helvetica, Arial, sans-serif">
+<rect width="1600" height="720" fill="#ffffff"/>
+<text x="60" y="64" font-size="30" font-weight="bold" fill="#12302b">O cache de prompt em unidades relativas: 1 é o preço-base de um token de entrada</text>
+<line x1="600" y1="132" x2="600" y2="640" stroke="#cfd8dc" stroke-width="2" stroke-dasharray="6 6"/><text x="600" y="124" font-size="17" fill="#546e7a" text-anchor="middle">1,0</text>
+<text x="60" y="182" font-size="20" font-weight="bold" fill="#12302b">Preço-base de entrada</text>
+<rect x="430" y="162" width="170.0" height="34" rx="5" fill="#90a4ae"/>
+<text x="612.0" y="187" font-size="21" font-weight="bold" fill="#37474f">1</text>
+<text x="60" y="250" font-size="20" font-weight="bold" fill="#12302b">Escrita no cache, vida de 5</text><text x="60" y="274" font-size="20" font-weight="bold" fill="#12302b">minutos</text>
+<rect x="430" y="242" width="212.5" height="34" rx="5" fill="#e65100"/>
+<text x="654.5" y="267" font-size="21" font-weight="bold" fill="#37474f">1,25</text>
+<text x="60" y="342" font-size="20" font-weight="bold" fill="#12302b">Escrita no cache, vida de 1 hora</text>
+<rect x="430" y="322" width="340.0" height="34" rx="5" fill="#e65100"/>
+<text x="782.0" y="347" font-size="21" font-weight="bold" fill="#37474f">2</text>
+<text x="60" y="422" font-size="20" font-weight="bold" fill="#12302b">Leitura, maioria dos modelos</text>
+<rect x="430" y="402" width="17.0" height="34" rx="5" fill="#00695c"/>
+<text x="459.0" y="427" font-size="21" font-weight="bold" fill="#37474f">0,1</text>
+<text x="60" y="490" font-size="20" font-weight="bold" fill="#12302b">Leitura, Claude Opus 5.5 e Claude</text><text x="60" y="514" font-size="20" font-weight="bold" fill="#12302b">Sonnet 5.5</text>
+<rect x="430" y="482" width="8.5" height="34" rx="5" fill="#00695c"/>
+<text x="450.5" y="507" font-size="21" font-weight="bold" fill="#37474f">0,05</text>
+<text x="60" y="582" font-size="20" font-weight="bold" fill="#12302b">Leitura, Claude Fable 5.1</text>
+<rect x="430" y="562" width="4.2" height="34" rx="5" fill="#00695c"/>
+<text x="446.2" y="587" font-size="21" font-weight="bold" fill="#37474f">0,025</text>
+<rect x="860" y="130" width="680" height="520" rx="14" fill="#f5f7f8" stroke="#78909c" stroke-width="3"/>
+<text x="890" y="172" font-size="22" font-weight="bold" fill="#12302b">Prefixo estável de 100 mil tokens, em 10 pedidos</text>
+<text x="890" y="204" font-size="18" fill="#546e7a">entrada do prefixo, em mil unidades relativas, num modelo de leitura a 0,1</text>
+<text x="890" y="262" font-size="21" font-weight="bold" fill="#12302b">Sem cache</text><rect x="890" y="276" width="600" height="44" rx="6" fill="#90a4ae"/><text x="1480" y="306" font-size="21" font-weight="bold" fill="#263238" text-anchor="end">1.000 mil</text>
+<text x="890" y="384" font-size="21" font-weight="bold" fill="#12302b">Com cache de 5 minutos</text><rect x="890" y="398" width="129" height="44" rx="6" fill="#00695c"/><text x="1034" y="428" font-size="21" font-weight="bold" fill="#00695c">215 mil</text>
+<text x="890" y="500" font-size="19" fill="#37474f">100 mil × 1,25 (escrita) + 9 × 100 mil × 0,1 (leituras)</text>
+<text x="890" y="548" font-size="26" font-weight="bold" fill="#e65100">redução de 78,5% na entrada do prefixo</text>
+<text x="890" y="590" font-size="17" fill="#546e7a">a conta ignora os tokens novos de cada pedido e os de saída, e a primeira</text><text x="890" y="614" font-size="17" fill="#546e7a">mensagem depois de uma pausa maior que a vida do cache paga a escrita de novo</text>
+</svg>
