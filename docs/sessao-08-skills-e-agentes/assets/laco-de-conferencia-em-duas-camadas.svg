@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 620" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker>
+<marker id="seta-l" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker></defs>
+<rect width="1600" height="620" fill="#ffffff"/>
+<text x="60" y="64" font-size="30" font-weight="bold" fill="#12302b">O laço de conferência em duas camadas: o script decide a estrutura e uma pessoa decide o conteúdo</text>
+<rect x="60" y="170" width="232" height="210" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="78" y="210" font-size="22" font-weight="bold" fill="#12302b">Modelo do</text>
+<text x="78" y="238" font-size="22" font-weight="bold" fill="#12302b">artefato</text>
+<text x="78" y="278" font-size="18" fill="#37474f">estrito ou flexível,</text>
+<text x="78" y="304" font-size="18" fill="#37474f">com exemplos de</text>
+<text x="78" y="330" font-size="18" fill="#37474f">entrada e saída</text>
+<rect x="374" y="170" width="232" height="210" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="392" y="210" font-size="22" font-weight="bold" fill="#12302b">Agente gera</text>
+<text x="392" y="238" font-size="22" font-weight="bold" fill="#12302b">o artefato</text>
+<text x="392" y="278" font-size="18" fill="#37474f">a partir do modelo</text>
+<text x="392" y="304" font-size="18" fill="#37474f">declarado na skill</text>
+<rect x="688" y="170" width="232" height="210" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="706" y="210" font-size="22" font-weight="bold" fill="#12302b">Script confere</text>
+<text x="706" y="238" font-size="22" font-weight="bold" fill="#12302b">a estrutura</text>
+<text x="706" y="278" font-size="18" fill="#37474f">seções obrigatórias,</text>
+<text x="706" y="304" font-size="18" fill="#37474f">campos, formato de</text>
+<text x="706" y="330" font-size="18" fill="#37474f">data e referências</text>
+<rect x="688" y="126" width="232" height="34" rx="17" fill="#00695c"/><text x="804.0" y="149" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">Camada estrutural</text>
+<rect x="1002" y="170" width="232" height="210" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="1020" y="210" font-size="22" font-weight="bold" fill="#12302b">Pessoa confere</text>
+<text x="1020" y="238" font-size="22" font-weight="bold" fill="#12302b">o conteúdo</text>
+<text x="1020" y="278" font-size="18" fill="#37474f">decisão humana</text>
+<text x="1020" y="304" font-size="18" fill="#37474f">nomeada, como a</text>
+<text x="1020" y="330" font-size="18" fill="#37474f">correção de uma</text>
+<text x="1020" y="356" font-size="18" fill="#37474f">consequência</text>
+<rect x="1002" y="126" width="232" height="34" rx="17" fill="#e65100"/><text x="1118.0" y="149" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">Camada de conteúdo</text>
+<rect x="1316" y="170" width="232" height="210" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="1334" y="210" font-size="22" font-weight="bold" fill="#12302b">Artefato</text>
+<text x="1334" y="238" font-size="22" font-weight="bold" fill="#12302b">circula</text>
+<text x="1334" y="278" font-size="18" fill="#37474f">com a conferência</text>
+<text x="1334" y="304" font-size="18" fill="#37474f">declarada</text>
+<line x1="292" y1="275" x2="372" y2="275" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<line x1="606" y1="275" x2="686" y2="275" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<line x1="920" y1="275" x2="1000" y2="275" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<line x1="1234" y1="275" x2="1314" y2="275" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<text x="958" y="261" font-size="16" fill="#00695c" text-anchor="middle">aprovado</text>
+<path d="M 804.0 380 L 804.0 440 L 490.0 440 L 490.0 383" fill="none" stroke="#e65100" stroke-width="3" stroke-dasharray="10 6" marker-end="url(#seta-l)"/>
+<text x="647.0" y="470" font-size="19" font-weight="bold" fill="#bf360c" text-anchor="middle">erros apontados: corrigir e executar o script de novo</text>
+<text x="647.0" y="496" font-size="18" fill="#37474f" text-anchor="middle">limite de iterações declarado, por exemplo três</text>
+<text x="60" y="584" font-size="21" font-weight="bold" fill="#12302b">Critério de parada: só prosseguir quando todos os requisitos forem atendidos, e o laço termina no limite de iterações.</text>
+</svg>

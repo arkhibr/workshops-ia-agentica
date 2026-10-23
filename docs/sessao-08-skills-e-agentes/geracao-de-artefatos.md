@@ -1,6 +1,6 @@
 # Geração de artefatos
 
-Um artefato é o arquivo que uma skill ou um agente entrega ao final da tarefa, como um registro de decisão, uma planilha, um relatório, um documento ou um trecho de código. Esta página trata de como declarar o modelo do artefato, de como conferi-lo por script e de como organizar o laço de correção, porque a qualidade de uma skill é verificável no artefato que ela produz.
+Um artefato é o arquivo que uma skill ou um agente entrega ao final da tarefa, como um registro de decisão, uma planilha, um relatório, um documento ou um trecho de código. Esta página trata de como declarar o modelo do artefato, de como conferi-lo por script e de como organizar o laço de correção, porque a qualidade de uma skill é verificável no artefato que ela produz. A página preenche, na [ficha de requisitos](index.md#a-ficha-de-requisitos), a linha "Artefato e conferência".
 
 ## O artefato como saída conferível
 
@@ -31,6 +31,8 @@ Na instrução da skill, vale indicar de forma explícita se o agente deve execu
 
 O laço consiste em gerar o artefato, executar o validador, corrigir os erros apontados e executar o validador de novo até a aprovação. A documentação afirma que esse padrão melhora muito a qualidade da saída e o aplica também sem código, usando um guia de estilo como validador: o agente redige, compara com a lista de verificação, corrige e repete. A skill deve declarar o critério de parada, como "somente prosseguir quando todos os requisitos forem atendidos". Este material acrescenta a recomendação de declarar também um limite de iterações, por exemplo três, para que o laço não consuma tokens sem convergir.
 
+![Cinco etapas em sequência: o modelo do artefato, o agente que gera o artefato, o script que confere a estrutura na camada estrutural, a pessoa que confere o conteúdo na camada de conteúdo e o artefato que circula. Uma seta tracejada leva do script de volta ao agente quando há erros apontados, com limite de iterações, por exemplo três, e um critério de parada declarado no rodapé.](assets/laco-de-conferencia-em-duas-camadas.png)
+
 ## Que forma de conferência cada artefato pede
 
 A tabela abaixo é uma síntese deste material e não uma classificação da documentação.
@@ -48,5 +50,12 @@ A tabela abaixo é uma síntese deste material e não uma classificação da doc
 A Anthropic publica skills prontas para gerar apresentações (`pptx`), planilhas (`xlsx`), documentos de texto (`docx`) e arquivos PDF, disponíveis no claude.ai e na API. A [documentação das skills](../referencia/bibliografia.md#anthropic-agent-skills-documentacao) informa que essas skills de documento não estão disponíveis no Claude Code, que oferece skills personalizadas baseadas em arquivos. Quem precisa dessas saídas no Claude Code cria a própria skill ou usa as skills de documento no claude.ai, e em ambos os casos a conferência do artefato continua sendo declarada.
 
 Artefatos de que outras pessoas dependem, como registros de decisão e especificações, devem ficar no repositório e ser atualizados junto com o código. A [Sessão 10](../sessao-10-sdd-ciclo-completo/artefatos-vivos.md) trata de quais mudanças atualizam qual artefato.
+
+!!! abstract "Linha da ficha"
+    Artefato e conferência:
+
+    - Que artefato é gerado, em que formato e com que modelo, estrito ou flexível?
+    - O que o script confere por conta própria, e com que limite de iterações?
+    - O que só uma pessoa decide, e quem é essa pessoa?
 
 **Próxima página:** [Escolha de modelos](escolha-de-modelos.md).
