@@ -705,5 +705,39 @@ class SessaoOitoExtensaoTest(unittest.TestCase):
                 self.assertTrue((S8 / "assets" / f"{nome}.svg").exists())
 
 
+class RevisaoFinalSessaoOitoTest(unittest.TestCase):
+    """Achados da revisão final de 23/10/2026 sobre a extensão da Sessão 8."""
+
+    def texto(self, nome):
+        return (S8 / nome).read_text(encoding="utf-8")
+
+    def secao(self, nome, inicio, fim):
+        texto = self.texto(nome)
+        return texto.split(inicio, 1)[1].split(fim, 1)[0]
+
+    def test_oficina_nao_nega_que_o_codex_remove_capacidades_por_agente(self):
+        self.assertNotIn("não traz um campo que limite as ferramentas", self.texto("oficina-de-ferramentas.md"))
+
+    def test_depuracao_nao_generaliza_o_acionamento_para_qualquer_description(self):
+        self.assertNotIn("acionou com qualquer", self.texto("depuracao-de-skills-e-agentes.md"))
+
+    def test_injecao_de_comando_declara_o_caso_do_windows_sem_git_bash(self):
+        skills = self.texto("front-matter-de-skills.md")
+        self.assertNotIn("O mesmo bloco funciona nas três plataformas", skills)
+        self.assertIn("Git Bash", skills)
+        experimento_f = self.texto("oficina-de-ferramentas.md").split("## Experimento F", 1)[1]
+        self.assertIn("Git Bash", experimento_f)
+
+    def test_pagina_de_escolha_nao_cita_pergunta_numerada_da_tabela(self):
+        self.assertNotIn("pergunta 1 ou a pergunta 2", self.texto("escolher-o-mecanismo.md"))
+
+    def test_experimentos_d_e_e1_pedem_pasta_nova(self):
+        oficina = "oficina-de-ferramentas.md"
+        d = self.secao(oficina, "## Experimento D", "## Experimento E")
+        e = self.secao(oficina, "## Experimento E", "## Experimento F")
+        self.assertIn("pasta nova", d)
+        self.assertIn("pasta nova", e)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -99,7 +99,7 @@ allowed-tools: Bash(git --version)
 A versão do git neste computador é: !`git --version`
 ```
 
-O mesmo bloco funciona nas três plataformas, porque o `git` aceita o mesmo comando em macOS, Linux e Windows. Para comandos específicos de shell, o campo `shell: powershell` executa os blocos de injeção no PowerShell quando essa ferramenta está habilitada.
+O comando `git --version` é igual em macOS, Linux e Windows, e a documentação informa que o Claude Code executa a injeção pela ferramenta Bash quando há bash disponível e pela ferramenta PowerShell quando não há, como no Windows sem Git Bash. A observação desta sessão foi feita no macOS, e o efeito da regra `Bash(git --version)` em `allowed-tools` no Windows sem Git Bash não foi verificado. O campo `shell: powershell` executa os blocos de injeção no PowerShell quando essa ferramenta está habilitada.
 
 !!! note "Claude Code e Codex CLI"
     **Claude Code:** as variáveis constam de [Available string substitutions](https://code.claude.com/docs/en/skills#available-string-substitutions), e a injeção de comando de [Inject dynamic context](https://code.claude.com/docs/en/skills#inject-dynamic-context).

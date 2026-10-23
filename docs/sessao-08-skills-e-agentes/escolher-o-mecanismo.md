@@ -39,7 +39,7 @@ As duas formas diferem em onde o trabalho acontece: a skill carrega o procedimen
 | A pessoa precisa decidir o momento de acionar? | Skill com `disable-model-invocation: true` | Observado: o pedido em linguagem natural não acionou a skill, e a chamada pelo nome funcionou |
 | A mesma definição precisa valer no Claude Code e no Codex CLI? | Skill, que segue o padrão aberto Agent Skills nas duas ferramentas | Documentado: o subagente tem formato diferente em cada uma, Markdown e TOML |
 
-O isolamento reduz o contexto da conversa principal e soma o consumo de cada janela, razão pela qual a delegação compensa quando a pergunta 1 ou a pergunta 2 tem resposta afirmativa. A página [Agentes e subagentes](agentes-e-subagentes.md#quando-usar-varios-agentes) reúne os números de custo de sistemas com vários agentes.
+O isolamento reduz o contexto da conversa principal e soma o consumo de cada janela, razão pela qual a delegação compensa quando a saída intermediária é grande ou quando a tarefa precisa de menos ferramentas que a conversa. A página [Agentes e subagentes](agentes-e-subagentes.md#quando-usar-varios-agentes) reúne os números de custo de sistemas com vários agentes.
 
 ## Quando usar fork
 

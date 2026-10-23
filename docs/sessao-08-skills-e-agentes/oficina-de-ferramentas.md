@@ -113,7 +113,7 @@ Este experimento é opcional e fica fora do relógio. Peça ao agente que crie o
 
 Depois repita o teste com o campo escrito com erro de grafia, trocando `tools` por `tool`. A [documentação dos subagentes](../referencia/bibliografia.md#anthropic-subagents-no-claude-code-documentacao) informa que os campos desconhecidos são ignorados em silêncio e que o campo `tools` omitido faz o subagente herdar todas as ferramentas, e o teste verifica se essa combinação se confirma na versão instalada. O resultado esperado, confirmado na execução com a versão 2.1.309 do Claude Code, é que o subagente com `tools: Read, Grep, Glob` não consiga editar o arquivo e que o subagente com o campo escrito errado o edite.
 
-No Codex CLI, o passo com `tools` não tem correspondente, porque o arquivo TOML do agente não traz um campo que limite as ferramentas, e a documentação adverte que a instrução "não edite arquivos" não cria um sandbox somente leitura.
+No Codex CLI, o passo com `tools` não tem correspondente direto, porque o arquivo TOML do agente não traz uma lista de ferramentas permitidas como o `tools`, e as chaves `features.*` com valor `false` removem apenas capacidades específicas, como `shell_tool`. A documentação adverte que a instrução "não edite arquivos" não cria um sandbox somente leitura, e a restrição de escrita vem do sandbox da sessão.
 
 !!! note "Claude Code e Codex CLI"
     **Claude Code:** `tools` e `disallowedTools` constam da [tabela de campos dos subagentes](https://code.claude.com/docs/en/sub-agents#frontmatter-reference).
@@ -121,7 +121,7 @@ No Codex CLI, o passo com `tools` não tem correspondente, porque o arquivo TOML
 
 ## Experimento D: localizar front-matter com erro no log de depuração
 
-O objetivo é prever e depois confirmar o que acontece com quatro arquivos de subagente, três deles com erro de front-matter, e localizar a causa no log de depuração. O experimento parte da pasta `oficina-skills` e exige o Claude Code 2.1.296 ou posterior para a mensagem de campo desconhecido, e o comando `claude --version` confirma a versão instalada.
+O objetivo é prever e depois confirmar o que acontece com quatro arquivos de subagente, três deles com erro de front-matter, e localizar a causa no log de depuração. O experimento exige o Claude Code 2.1.296 ou posterior para a mensagem de campo desconhecido, e o comando `claude --version` confirma a versão instalada. Os resultados esperados pressupõem que o projeto não tenha outros subagentes nem skills, e por isso o experimento usa uma pasta nova, criada com `mkdir oficina-skills-d` e acessada com `cd oficina-skills-d`, comandos iguais em macOS, Linux e Windows.
 
 **Passo 1:** crie a pasta dos subagentes.
 
@@ -219,7 +219,7 @@ O resultado esperado, observado no `claude 2.1.309` com o modelo haiku, é o car
 
 ## Experimento E: medir o disparo pela description e liberar ou restringir ferramentas
 
-A primeira parte mede se a `description` basta para o modelo acionar uma skill, e a segunda parte mostra a diferença entre `allowed-tools` e `disallowed-tools`. Os dois testes usam `claude -p`, de modo que a equipe repete as execuções sem uma sessão interativa, e a opção `--setting-sources project,local` isola o resultado das configurações pessoais de cada máquina.
+A primeira parte mede se a `description` basta para o modelo acionar uma skill, e a segunda parte mostra a diferença entre `allowed-tools` e `disallowed-tools`. Os dois testes usam `claude -p`, de modo que a equipe repete as execuções sem uma sessão interativa, e a opção `--setting-sources project,local` isola o resultado das configurações pessoais de cada máquina. Os resultados esperados pressupõem um projeto sem outras skills, e por isso o experimento usa uma pasta nova, criada com `mkdir oficina-skills-e` e acessada com `cd oficina-skills-e`, comandos iguais em macOS, Linux e Windows.
 
 **E.1: o disparo pela description.** O nome da skill é neutro de propósito, porque um nome como `resumo-semanal-de-chamados` já dá a pista ao modelo e esconde o efeito da `description`.
 
@@ -360,7 +360,7 @@ description: Demonstra a injeção de comando.
 A versão do git neste computador é: !`git --version`. Repita essa frase exatamente, sem comentar.
 ```
 
-Sem o campo, a execução observada falhou com `Shell command permission check failed ... This command requires approval`, e a skill não foi montada. Acrescente a linha `allowed-tools: Bash(git --version)` ao front-matter e repita a chamada, e a saída observada trouxe a versão do `git` no texto.
+Sem o campo, a execução observada falhou com `Shell command permission check failed ... This command requires approval`, e a skill não foi montada. Acrescente a linha `allowed-tools: Bash(git --version)` ao front-matter e repita a chamada, e a saída observada trouxe a versão do `git` no texto. A observação foi feita no macOS, e a documentação informa que o Claude Code executa a injeção pela ferramenta Bash quando há bash disponível e pela ferramenta PowerShell quando não há, como no Windows sem Git Bash, caso em que o efeito da regra `Bash(git --version)` não foi verificado.
 
 **F.4: fork e histórico.** Crie duas skills com a mesma pergunta, `sem-fork` e `com-fork`, que diferem só pela linha `context: fork`.
 
