@@ -10,7 +10,7 @@
 <text x="500" y="176" font-size="20" fill="#37474f">Skill, subagente, skill com fork, hook, MCP ou arquivo</text>
 <text x="500" y="202" font-size="20" fill="#37474f">de instrução, e por quê</text>
 <rect x="1200" y="156" width="320" height="52" rx="26" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
-<text x="1360" y="189" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Agentes e subagentes</text>
+<text x="1360" y="189" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Escolher o mecanismo</text>
 <rect x="60" y="232" width="1480" height="84" rx="12" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
 <circle cx="104" cy="274" r="22" fill="#00695c"/><text x="104" y="283" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
 <text x="144" y="282" font-size="22" font-weight="bold" fill="#12302b">Arquivo e front-matter</text>

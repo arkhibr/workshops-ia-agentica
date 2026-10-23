@@ -33,6 +33,56 @@ O laço consiste em gerar o artefato, executar o validador, corrigir os erros ap
 
 ![Cinco etapas em sequência: o modelo do artefato, o agente que gera o artefato, o script que confere a estrutura na camada estrutural, a pessoa que confere o conteúdo na camada de conteúdo e o artefato que circula. Uma seta tracejada leva do script de volta ao agente quando há erros apontados, com limite de iterações, por exemplo três, e um critério de parada declarado no rodapé.](assets/laco-de-conferencia-em-duas-camadas.png)
 
+## Exemplo: o artefato declarado no `SKILL.md`
+
+A skill `registrando-decisao-arquitetural`, descrita na página de [Skills](skills.md#exemplo-um-skillmd-com-valores-escolhidos), gera registros de decisão arquitetural (ADR) e reúne num só arquivo os elementos desta página. Os trechos abaixo reaproveitam o corpo do `SKILL.md` e o modelo de artefato da skill, e são exemplos ilustrativos, sem execução.
+
+O corpo do `SKILL.md` declara o fluxo do artefato, a conferência por script e a regra da conferência de conteúdo:
+
+```markdown
+3. Gere docs/adr/NNNN-titulo.md a partir de modelo-adr.md.
+4. Execute `python ${CLAUDE_SKILL_DIR}/scripts/validar_adr.py <arquivo>` até a
+   saída OK, com no máximo três tentativas.
+5. Informe o caminho do arquivo e os itens marcados "A confirmar".
+
+Nunca invente fatos. Consequência que a descrição não traz recebe o texto
+"A confirmar com <responsável>".
+```
+
+O arquivo `modelo-adr.md`, ao lado do `SKILL.md`, é o modelo estrito do artefato e só entra no contexto quando o agente o lê, conforme os [três níveis de carga](skills.md#tres-niveis-de-carga):
+
+```markdown
+# NNNN. Título
+
+Status: proposta
+Data: AAAA-MM-DD
+
+## Contexto
+## Opções consideradas
+## Decisão
+## Consequências
+```
+
+O script `validar_adr.py` confere a camada estrutural e escreve mensagens que dizem o que falta e o que foi encontrado, no estilo que a documentação recomenda, como no exemplo a seguir:
+
+```text
+ERRO: seção "Consequências" ausente. Seções encontradas: Contexto, Opções consideradas, Decisão
+ERRO: Data fora do formato AAAA-MM-DD. Valor encontrado: 22/10/2026
+```
+
+A tabela relaciona cada trecho ao elemento da página.
+
+| Trecho do arquivo | Elemento | Camada |
+|---|---|---|
+| `modelo-adr.md` com seções e linhas fixas | Modelo estrito do artefato | Declaração |
+| Passo 4, `validar_adr.py` até a saída OK | Conferência por script e critério de parada | Estrutural |
+| Passo 4, no máximo três tentativas | Limite de iterações do laço de correção | Estrutural |
+| Mensagem `ERRO: ... encontrado: ...` | Mensagem que o agente lê para corrigir o artefato | Estrutural |
+| "A confirmar com <responsável>" | Marca do que só uma pessoa decide | Conteúdo |
+| Passo 5, itens marcados "A confirmar" | Entrega da lista que a pessoa confere | Conteúdo |
+
+A linha `allowed-tools: Read Write Bash(python *)` do front-matter libera a escrita do registro e a execução do script sem restringir as demais ferramentas, e a [oficina](oficina-de-ferramentas.md#experimento-a-criar-a-skill-e-gerar-um-artefato) constrói essa skill e confere o artefato nas duas camadas.
+
 ## Que forma de conferência cada artefato pede
 
 A tabela abaixo é uma síntese deste material e não uma classificação da documentação.

@@ -64,6 +64,71 @@ Todos os campos são opcionais no Claude Code, e os nomes usam letras minúscula
     **Claude Code:** os campos acima constam da [tabela de campos](https://code.claude.com/docs/en/skills#frontmatter-reference), e `context: fork` e `agent` estão descritos em [Run skills in a subagent](https://code.claude.com/docs/en/skills#run-skills-in-a-subagent).
     **Codex CLI:** o equivalente documentado de `disable-model-invocation` é `policy.allow_implicit_invocation: false` no arquivo `agents/openai.yaml`, com polaridade inversa, conforme [Build skills](https://learn.chatgpt.com/docs/build-skills). Os demais campos da tabela não têm equivalente confirmado no Codex.
 
+### Valores aceitos em cada campo
+
+A tabela anterior diz o que cada campo faz, e a tabela abaixo diz o que escrever nele. Os valores constam da [tabela de campos](https://code.claude.com/docs/en/skills#frontmatter-reference) da documentação, e os exemplos são ilustrativos.
+
+| Campo | Valores aceitos | Exemplo | Efeito de cada valor |
+|---|---|---|---|
+| `name` | Texto com letras minúsculas, números e hifens, de até 64 caracteres | `registrando-decisao-arquitetural` | Define o nome do comando `/` e o nome que orienta o modelo. Omitido, vale o nome da pasta |
+| `description` | Texto livre de até 1.024 caracteres na especificação aberta, em terceira pessoa | `Gera registros de decisão arquitetural em Markdown. Use ao registrar uma decisão.` | É o texto que o modelo compara com o pedido. Omitida, vale a primeira linha não vazia do corpo |
+| `when_to_use` | Texto livre | `Use quando a pessoa pedir um ADR.` | Soma-se à `description` na listagem, com o mesmo corte de 1.536 caracteres |
+| `argument-hint` | Texto livre, por convenção entre colchetes | `[descrição da decisão]` ou `[arquivo] [formato]` | Aparece no autocompletar e não altera o comportamento da skill |
+| `arguments` | Nomes separados por espaço ou lista YAML | `arguments: tema formato` | Cada nome vira uma variável posicional, `$tema` e `$formato`, na ordem declarada |
+| `disable-model-invocation` | Booleano | `true` | Com `true`, só a pessoa aciona pelo nome, e a skill não entra em subagentes como skill pré-carregada. Com `false`, o modelo também a aciona |
+| `user-invocable` | Booleano | `false` | Com `false`, a skill sai do menu `/` e só o modelo a aciona, como um conhecimento de fundo |
+| `allowed-tools` | Nomes de ferramenta, com ou sem padrão, em texto separado por espaço ou vírgula, ou lista YAML | `Read Grep` ou `Bash(git add *) Bash(git commit *)` | Libera as ferramentas listadas, sem pedir permissão, no turno em que a skill é invocada. Uma entrada com padrão, como `Bash(git add *)`, nomeia os comandos liberados |
+| `disallowed-tools` | Mesmo formato de `allowed-tools` | `Write Edit Bash` | Remove as ferramentas do conjunto disponível enquanto a skill estiver ativa |
+| `model` | Os valores do comando `/model`, ou `inherit` | `inherit` | Troca o modelo só no turno da skill. `inherit` mantém o modelo ativo, e um valor fora da lista `availableModels` da organização é ignorado |
+| `effort` | `low`, `medium`, `high`, `xhigh` ou `max` | `medium` | Substitui o esforço da sessão durante a skill, e os níveis disponíveis dependem do modelo |
+| `context` | `fork` | `fork` | Executa a skill num subagente sem o histórico da conversa. Omitido, a skill roda na conversa principal |
+| `agent` | `Explore`, `Plan`, `general-purpose` ou o nome de um subagente de `.claude/agents/` | `Explore` | Escolhe o tipo de subagente do `fork`. Omitido, vale `general-purpose`, e `Explore` e `Plan` começam sem o `CLAUDE.md` |
+| `background` | Booleano, só com `context: fork` | `false` | Com `false`, a conversa espera o resultado do subagente no mesmo turno. O padrão é `true`, e o modo não interativo também espera |
+| `hooks` | Mapa YAML no formato da configuração de hooks | Ver [Hooks in skills and agents](https://code.claude.com/docs/en/hooks#hooks-in-skills-and-agents) | Registra os hooks na invocação e os mantém até o fim da sessão |
+| `paths` | Globs em texto separado por vírgula ou lista YAML | `src/**/*.ts` | O carregamento automático ocorre só com arquivos que casem o padrão, relativo ao diretório de trabalho |
+| `shell` | `bash` ou `powershell` | `powershell` | Define o shell dos blocos `` !`comando` ``. O padrão é `bash` |
+| `metadata` | Mapa YAML livre | `equipe: plataforma` | Dado para ferramentas próprias, sem efeito no Claude Code. Um valor que não seja mapa é descartado |
+| `license`, `compatibility` | Texto, com até 500 caracteres em `compatibility` | `Apache-2.0` | Aceitos da especificação aberta, sem efeito no Claude Code |
+
+Os booleanos aceitam `true` e `false`, e também `yes`, `no`, `on`, `off`, `1` e `0` a partir da v2.1.218. As listas de ferramentas aceitam as duas formas, e `allowed-tools: Read Grep` equivale a uma lista YAML com os dois nomes.
+
+### Exemplo: um `SKILL.md` com valores escolhidos
+
+O arquivo abaixo reúne os campos de uso comum para a skill `registrando-decisao-arquitetural`, que gera registros de decisão arquitetural (ADR) e é a skill construída na [oficina](oficina-de-ferramentas.md#experimento-a-criar-a-skill-e-gerar-um-artefato). O arquivo é um exemplo ilustrativo e não foi executado como está.
+
+```markdown
+---
+name: registrando-decisao-arquitetural
+description: Gera registros de decisão arquitetural em Markdown a partir da descrição de uma decisão. Use ao registrar ou documentar uma decisão de arquitetura, ou ao pedir um ADR.
+argument-hint: [descrição da decisão]
+allowed-tools: Read Write Bash(python *)
+model: sonnet
+effort: medium
+---
+
+Gere o registro de decisão em cinco passos:
+
+1. Leia a descrição da decisão em $ARGUMENTS.
+2. Se faltar contexto, duas opções ou a decisão, pergunte antes de escrever.
+3. Gere docs/adr/NNNN-titulo.md a partir de modelo-adr.md.
+4. Execute `python ${CLAUDE_SKILL_DIR}/scripts/validar_adr.py <arquivo>` até a
+   saída OK, com no máximo três tentativas.
+5. Informe o caminho do arquivo e os itens marcados "A confirmar".
+
+Nunca invente fatos. Consequência que a descrição não traz recebe o texto
+"A confirmar com <responsável>".
+```
+
+| Linha | Valor | Razão da escolha |
+|---|---|---|
+| `name` | `registrando-decisao-arquitetural` | Descreve a tarefa e atende às regras de caracteres e de tamanho |
+| `description` | Duas frases | A primeira diz o que a skill faz, e a segunda traz os termos que a pessoa usa no pedido, "registrar", "documentar" e "ADR" |
+| `argument-hint` | `[descrição da decisão]` | Orienta quem digita `/registrando-decisao-arquitetural`, e o texto digitado chega ao corpo por `$ARGUMENTS` |
+| `allowed-tools` | `Read Write Bash(python *)` | Libera a leitura do `modelo-adr.md`, a escrita do registro e a execução do script, sem restringir as demais ferramentas |
+| `model` | `sonnet` | Uma tarefa de redação estruturada, conferida por script, que não exige o modelo mais caro. A [página de escolha de modelos](escolha-de-modelos.md#exemplo-o-modelo-declarado-nos-arquivos) mostra como validar essa escolha |
+| `effort` | `medium` | Mantém o esforço abaixo do máximo, porque o script confere a estrutura |
+| Corpo | Cinco passos e uma regra | O procedimento é fixo e a regra de não inventar fatos é o que a conferência de conteúdo verifica, conforme a página de [geração de artefatos](geracao-de-artefatos.md#exemplo-o-artefato-declarado-no-skillmd) |
+
 ## Três níveis de carga
 
 A skill usa divulgação progressiva: o agente carrega a informação em etapas, conforme a tarefa exige. A tabela reproduz os valores da documentação.
@@ -156,7 +221,7 @@ Uma instrução pode ficar em três lugares, e cada um tem um custo de carga dif
 | Skill | Quando acionada | Procedimento recorrente de um tipo de tarefa |
 | Pedido avulso | Uma conversa | Tarefa que não se repete |
 
-A comparação da skill com o subagente, a skill com fork, o hook e o servidor MCP está na seção [Escolher o mecanismo](agentes-e-subagentes.md#escolher-o-mecanismo) da página de agentes e subagentes.
+A comparação da skill com o subagente, a skill com fork, o hook e o servidor MCP está na página [Escolher o mecanismo](escolher-o-mecanismo.md).
 
 ## Quando a skill não aciona
 

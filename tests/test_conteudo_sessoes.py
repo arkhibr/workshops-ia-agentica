@@ -603,13 +603,14 @@ class PortalPublicoSessaoSeisTest(unittest.TestCase):
 
 
 class SessaoOitoReestruturadaTest(unittest.TestCase):
-    """Reestruturação de 23/10/2026: onze páginas, ficha de requisitos e figuras por tema."""
+    """Reestruturação de 23/10/2026: doze páginas, ficha de requisitos e figuras por tema."""
 
     SLUG = "sessao-08-skills-e-agentes"
     PAGINAS = (
         "index.md",
         "skills.md",
         "agentes-e-subagentes.md",
+        "escolher-o-mecanismo.md",
         "geracao-de-artefatos.md",
         "escolha-de-modelos.md",
         "custo-de-tokens.md",
@@ -622,6 +623,7 @@ class SessaoOitoReestruturadaTest(unittest.TestCase):
     TEORIA = (
         "skills.md",
         "agentes-e-subagentes.md",
+        "escolher-o-mecanismo.md",
         "geracao-de-artefatos.md",
         "escolha-de-modelos.md",
         "custo-de-tokens.md",
@@ -629,7 +631,6 @@ class SessaoOitoReestruturadaTest(unittest.TestCase):
         "seguranca-e-credenciais.md",
     )
     REMOVIDAS = (
-        "escolher-o-mecanismo.md",
         "front-matter-de-skills.md",
         "front-matter-de-subagentes.md",
         "depuracao-de-skills-e-agentes.md",
@@ -657,7 +658,8 @@ class SessaoOitoReestruturadaTest(unittest.TestCase):
     )
     TEMPOS = {
         "skills.md": 10,
-        "agentes-e-subagentes.md": 12,
+        "agentes-e-subagentes.md": 7,
+        "escolher-o-mecanismo.md": 5,
         "geracao-de-artefatos.md": 5,
         "escolha-de-modelos.md": 4,
         "custo-de-tokens.md": 5,
@@ -685,7 +687,7 @@ class SessaoOitoReestruturadaTest(unittest.TestCase):
                 self.assertNotIn(nome, self.mkdocs())
                 self.assertNotIn(nome, todo)
 
-    def test_onze_paginas_no_nav(self):
+    def test_doze_paginas_no_nav(self):
         no_nav = re.findall(rf"{self.SLUG}/([a-z0-9.-]+\.md)", self.mkdocs())
         self.assertEqual(list(self.PAGINAS), no_nav)
 
@@ -806,6 +808,59 @@ class SessaoOitoReestruturadaTest(unittest.TestCase):
             + skills.count("lê o front-matter somente quando o primeiro `---`"),
             1,
         )
+
+
+    CAMPOS_DA_SKILL = (
+        "name", "description", "when_to_use", "argument-hint", "arguments",
+        "disable-model-invocation", "user-invocable", "allowed-tools",
+        "disallowed-tools", "model", "effort", "context", "agent", "background",
+        "hooks", "paths", "shell", "metadata",
+    )
+
+    def test_skills_explica_os_valores_de_cada_campo(self):
+        skills = self.texto("skills.md")
+        secao = skills.split("### Valores aceitos em cada campo", 1)[1].split("\n## ", 1)[0]
+        tabela = secao.split("### Exemplo: um `SKILL.md` com valores escolhidos", 1)[0]
+        for campo in self.CAMPOS_DA_SKILL:
+            with self.subTest(campo=campo):
+                self.assertRegex(tabela, rf"(?m)^\| `{re.escape(campo)}`")
+        self.assertIn("| Campo | Valores aceitos | Exemplo | Efeito de cada valor |", tabela)
+        self.assertIn("registrando-decisao-arquitetural", secao)
+
+    def test_escolher_o_mecanismo_e_pagina_propria_e_detalhada(self):
+        pagina = self.texto("escolher-o-mecanismo.md")
+        self.assertIn("## A árvore de seis perguntas", pagina)
+        self.assertIn("### Skill, subagente ou agente principal", pagina)
+        self.assertIn("| Dimensão | Agente principal | Skill | Subagente |", pagina)
+        self.assertIn("| Pergunta | Se a resposta é sim | Evidência | Sinal contrário |", pagina)
+        self.assertIn("#### Situações típicas e o mecanismo indicado", pagina)
+        self.assertIn("#### Como skill e subagente se combinam", pagina)
+        self.assertIn("assets/arvore-de-decisao-do-mecanismo.png", pagina)
+        agentes = self.texto("agentes-e-subagentes.md")
+        self.assertNotIn("## Escolher o mecanismo", agentes)
+        self.assertNotIn("arvore-de-decisao-do-mecanismo", agentes)
+        self.assertNotIn("agentes-e-subagentes.md#escolher-o-mecanismo", self.todo_o_texto())
+
+    def test_artefatos_e_modelos_reaproveitam_os_arquivos_das_paginas_de_skills_e_agentes(self):
+        artefatos = self.texto("geracao-de-artefatos.md")
+        self.assertIn("## Exemplo: o artefato declarado no `SKILL.md`", artefatos)
+        for trecho in ("validar_adr.py", "modelo-adr.md", "A confirmar com <responsável>",
+                       "skills.md#exemplo-um-skillmd-com-valores-escolhidos"):
+            with self.subTest(trecho=trecho):
+                self.assertIn(trecho, artefatos)
+        modelos = self.texto("escolha-de-modelos.md")
+        self.assertIn("### Exemplo: o modelo declarado nos arquivos", modelos)
+        for trecho in ("model: sonnet", "effort: medium", "model: haiku", "maxTurns: 8",
+                       "context: fork", "agentes-e-subagentes.md#anatomia-e-front-matter-do-subagente"):
+            with self.subTest(trecho=trecho):
+                self.assertIn(trecho, modelos)
+        skills = self.texto("skills.md")
+        self.assertIn("model: sonnet", skills)
+        self.assertIn("effort: medium", skills)
+        self.assertIn("validar_adr.py", skills)
+        agentes = self.texto("agentes-e-subagentes.md")
+        self.assertIn("name: revisor-de-adr", agentes)
+        self.assertIn("model: haiku", agentes)
 
 
 if __name__ == "__main__":

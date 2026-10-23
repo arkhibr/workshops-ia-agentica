@@ -20,12 +20,13 @@ A ficha existe para que as decisões fiquem escritas antes do primeiro teste. Um
 
 A sessão percorre a ficha na ordem das linhas e usa o relógio fixo de 10h às 12h. A primeira hora apresenta o mecanismo, o arquivo, o artefato, o modelo, o custo e o tempo, e fecha com a oficina em que cada pessoa cria e mede uma skill. A segunda parte trata de segurança e credenciais e dedica a maior parte do tempo ao exercício-âncora, em que a equipe preenche a ficha inteira.
 
-![Linha do tempo de 10h às 12h com um bloco para cada página da sessão, proporcional ao tempo recomendado: visão geral, skills, agentes e subagentes, geração de artefatos, escolha de modelos, custo de tokens e performance, oficina até as 11h, intervalo de cinco minutos, segurança e credenciais, exercício-âncora com construção e conferência cruzada, e síntese.](assets/mapa-da-sessao.png)
+![Linha do tempo de 10h às 12h com um bloco para cada página da sessão, proporcional ao tempo recomendado: visão geral, skills, agentes e subagentes, escolher o mecanismo, geração de artefatos, escolha de modelos, custo de tokens e performance, oficina até as 11h, intervalo de cinco minutos, segurança e credenciais, exercício-âncora com construção e conferência cruzada, e síntese.](assets/mapa-da-sessao.png)
 
 | Página | Linha da ficha que preenche |
 |---|---|
 | [Skills](skills.md) | Arquivo e front-matter da skill |
-| [Agentes e subagentes](agentes-e-subagentes.md) | Mecanismo, e arquivo e front-matter do subagente |
+| [Agentes e subagentes](agentes-e-subagentes.md) | Arquivo e front-matter do subagente |
+| [Escolher o mecanismo](escolher-o-mecanismo.md) | Mecanismo |
 | [Geração de artefatos](geracao-de-artefatos.md) | Artefato e conferência |
 | [Escolha de modelos](escolha-de-modelos.md) | Modelo e esforço |
 | [Custo de tokens](custo-de-tokens.md) | Orçamento de tokens |
@@ -60,17 +61,18 @@ Ao final desta sessão, o participante deve ser capaz de:
 | # | Página | Bloco | Tempo | O que explicar nesse tempo | Fica para leitura posterior |
 |---|---|---|---|---|---|
 | 0 | Visão geral | Abertura | 4 min | Pergunta-guia, ficha de requisitos e mapa da sessão | Objetivos e como conduzir |
-| 1 | [Skills](skills.md) | Teoria | 10 min | Três níveis de carga, núcleo portátil, `description` como gatilho e custo, `allowed-tools` libera e não restringe | Campos menos usados, substituições e injeção de comando, diagnóstico da skill que não aciona |
-| 2 | [Agentes e subagentes](agentes-e-subagentes.md) | Teoria | 12 min | Contexto isolado, `tools` omitido herda tudo e o erro de grafia, árvore de decisão, custo de vários agentes | Campos que faltam, `permissionMode` e precedência de escopo |
-| 3 | [Geração de artefatos](geracao-de-artefatos.md) | Teoria | 5 min | Duas camadas de conferência e o laço de correção | Documentos prontos |
-| 4 | [Escolha de modelos](escolha-de-modelos.md) | Teoria | 4 min | Quatro critérios, estratégias de partida e esforço | Matriz por modelo |
-| 5 | [Custo de tokens](custo-de-tokens.md) | Teoria | 5 min | De onde o custo vem, cache em unidades relativas e orçamento da listagem | Alavancas de redução em detalhe |
-| 6 | [Performance](performance.md) | Teoria | 3 min | Três medidas que se compensam | Reprodutibilidade |
-| 7 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 17 min | Experimento A em 10 minutos e Experimento B em 7 minutos | Experimentos C a F |
+| 1 | [Skills](skills.md) | Teoria | 10 min | Três níveis de carga, núcleo portátil, `description` como gatilho e custo, `allowed-tools` libera e não restringe | Valores aceitos em cada campo, campos menos usados, substituições e injeção de comando, diagnóstico da skill que não aciona |
+| 2 | [Agentes e subagentes](agentes-e-subagentes.md) | Teoria | 7 min | Contexto isolado, `tools` omitido herda tudo e o erro de grafia, custo de vários agentes | Campos que faltam, `permissionMode` e precedência de escopo |
+| 3 | [Escolher o mecanismo](escolher-o-mecanismo.md) | Teoria | 5 min | Árvore de seis perguntas e comparação entre skill, subagente e agente principal | Tabela de oito perguntas com sinais contrários, situações típicas, combinações e antipadrões |
+| 4 | [Geração de artefatos](geracao-de-artefatos.md) | Teoria | 5 min | Duas camadas de conferência e o laço de correção | Documentos prontos |
+| 5 | [Escolha de modelos](escolha-de-modelos.md) | Teoria | 4 min | Quatro critérios, estratégias de partida e esforço | Matriz por modelo |
+| 6 | [Custo de tokens](custo-de-tokens.md) | Teoria | 5 min | De onde o custo vem, cache em unidades relativas e orçamento da listagem | Alavancas de redução em detalhe |
+| 7 | [Performance](performance.md) | Teoria | 3 min | Três medidas que se compensam | Reprodutibilidade |
+| 8 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 17 min | Experimento A em 10 minutos e Experimento B em 7 minutos | Experimentos C a F |
 | | Intervalo | Pausa | 5 min | | |
-| 8 | [Segurança e credenciais](seguranca-e-credenciais.md) | Teoria | 10 min | Quatro pontos de entrada, permissões mínimas e restrição em camadas, identidade própria e ciclo do token | Perguntas de revisão em detalhe |
-| 9 | [Exercícios](exercicios.md) | Prática avaliada | 34 min | Exercício-âncora: ficha, construção, execução com verificação da restrição e decisão | Exercícios 1 a 11 |
-| 10 | [Exercícios](exercicios.md) | Conferência cruzada | 6 min | Troca do arquivo do subagente e do plano da credencial entre equipes | |
+| 9 | [Segurança e credenciais](seguranca-e-credenciais.md) | Teoria | 10 min | Quatro pontos de entrada, permissões mínimas e restrição em camadas, identidade própria e ciclo do token | Perguntas de revisão em detalhe |
+| 10 | [Exercícios](exercicios.md) | Prática avaliada | 34 min | Exercício-âncora: ficha, construção, execução com verificação da restrição e decisão | Exercícios 1 a 11 |
+| 11 | [Exercícios](exercicios.md) | Conferência cruzada | 6 min | Troca do arquivo do subagente e do plano da credencial entre equipes | |
 | — | [Síntese e referências](sintese-e-referencias.md) | Fechamento | 5 min | Checklist e autoavaliação | Fundamentação e referência rápida |
 | | | | **120 min** | | |
 
