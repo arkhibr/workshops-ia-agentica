@@ -1,17 +1,21 @@
 # Oficina de ferramentas: criar e medir uma skill
 
-Esta oficina conduz cada participante a criar uma skill que gera um artefato, a executá-la e a medir o resultado em dois modelos, num projeto vazio criado durante a própria sessão. O exemplo é a skill `registrando-decisao-arquitetural`, que escreve um registro de decisão arquitetural em Markdown para a ACME, uma universidade fictícia, e o mesmo exemplo volta no exercício-âncora.
+Esta oficina conduz cada participante a criar uma skill que gera um artefato, a executá-la e a medir o resultado em dois modelos, num projeto vazio criado durante a própria sessão. O exemplo é a skill `registrando-decisao-arquitetural`, que escreve um registro de decisão arquitetural em Markdown para a ACME, uma universidade fictícia, e o mesmo exemplo volta no exercício-âncora. Na [ficha de requisitos](index.md#a-ficha-de-requisitos), a oficina é o momento de verificar por medição e por teste as linhas que as páginas de teoria preencheram.
 
 ## Roteiro sugerido para a sessão
 
 | Experimento | Tempo | Classificação |
 |---|---:|---|
-| A. Criar a skill e gerar um artefato conferido por script | 12 min | Essencial em aula |
-| B. Medir o custo e o resultado em dois modelos | 9 min | Essencial em aula |
+| A. Criar a skill e gerar um artefato conferido por script | 10 min | Essencial em aula |
+| B. Medir o custo e o resultado em dois modelos | 7 min | Essencial em aula |
 | C. Restringir um subagente e testar a restrição | fora do relógio | Extensão opcional |
 | D. Localizar front-matter com erro no log de depuração | fora do relógio | Extensão opcional |
 | E. Medir o disparo pela `description` e liberar ou restringir ferramentas | fora do relógio | Extensão opcional |
 | F. Argumentos, acionamento manual, injeção de comando e fork | fora do relógio | Extensão opcional |
+
+Com pouco tempo, o passo de medição do Experimento B pode ser feito pelo instrutor como demonstração, e os Experimentos C a F ficam para a dupla que terminar antes ou para depois da sessão.
+
+![Dois cartões em aula, o Experimento A de 10 minutos e o Experimento B de 7 minutos, ligados por uma seta, e quatro cartões de extensão opcional fora do relógio, os Experimentos C, D, E e F. Cada cartão indica a linha da ficha de requisitos que verifica.](assets/percurso-dos-experimentos.png)
 
 ## Preparação
 
@@ -123,6 +127,31 @@ No Codex CLI, o passo com `tools` não tem correspondente direto, porque o arqui
 
 O objetivo é prever e depois confirmar o que acontece com quatro arquivos de subagente, três deles com erro de front-matter, e localizar a causa no log de depuração. O experimento exige o Claude Code 2.1.296 ou posterior para a mensagem de campo desconhecido, e o comando `claude --version` confirma a versão instalada. Os resultados esperados pressupõem que o projeto não tenha outros subagentes nem skills, e por isso o experimento usa uma pasta nova, criada com `mkdir oficina-skills-d` e acessada com `cd oficina-skills-d`, comandos iguais em macOS, Linux e Windows.
 
+### Onde está o log e como validar a pasta
+
+O log de depuração é a única fonte que nomeia o erro de um subagente ou de uma skill. A opção `--debug` grava o log em `~/.claude/debug/<id-da-sessão>.txt`, e a opção `--debug-file` grava no caminho escolhido, como no passo 4. Para listar os logs gravados pela opção `--debug`, sem caminho próprio, o comando difere entre os sistemas.
+
+=== "macOS/Linux"
+    ```bash
+    ls -t ~/.claude/debug | head -3
+    ```
+
+=== "Windows (PowerShell)"
+    ```powershell
+    Get-ChildItem "$HOME\.claude\debug" | Sort-Object LastWriteTime -Descending | Select-Object -First 3
+    ```
+
+O caminho no Windows segue a documentação, que escreve `~/.claude/debug`, e não foi observado nessa plataforma.
+
+O comando `claude plugin validate` aceita uma pasta de skills ou de agentes, como `.claude/skills` ou `.claude/agents`, e exige a versão 2.1.233 ou posterior. Na observação, a pasta de skills passou, e a pasta de agentes produziu um único aviso, sobre o arquivo sem `description`. O comando deixou sem sinalização o `name` com `:`, o campo `tool`, o valor `magenta` e a primeira linha em branco, e a documentação confirma o limite: o comando verifica se o YAML pode ser lido e não sinaliza um arquivo cujo front-matter é válido e sem `name`. A ordem recomendada é rodar `claude plugin validate` antes da sessão para pegar erros de leitura do YAML e consultar o log de depuração quando o agente se comportar de modo diferente do esperado.
+
+```bash
+claude plugin validate .claude/agents
+claude plugin validate .claude/skills
+```
+
+Os dois comandos funcionam do mesmo modo em macOS, Linux e Windows. Uma skill editada durante a sessão é detectada sem reinício, e uma pasta de skills criada depois do início da sessão exige `/reload-skills`. Um subagente em `~/.claude/agents/` criado quando a pasta não existia no início da sessão exige o reinício do Claude Code.
+
 **Passo 1:** crie a pasta dos subagentes.
 
 === "macOS/Linux"
@@ -211,11 +240,11 @@ O resultado esperado, observado no `claude 2.1.309` com o modelo haiku, é o car
 
 - Qual dos três erros tem o efeito mais perigoso para a segurança, e por quê?
 - Qual deles não deixa nenhum rastro no log, e como a equipe o encontraria sem a previsão feita no passo 3?
-- O comando `claude plugin validate .claude/agents` aponta esses três erros? A página [Depuração de skills e agentes](depuracao-de-skills-e-agentes.md#validar-a-pasta-antes-da-sessao) traz o resultado observado.
+- O comando `claude plugin validate .claude/agents` aponta esses três erros? A seção [Onde está o log e como validar a pasta](#onde-esta-o-log-e-como-validar-a-pasta) traz o resultado observado.
 
 !!! note "Claude Code e Codex CLI"
     **Claude Code:** a mensagem de campo desconhecido e os arquivos ignorados constam de [Frontmatter reference](https://code.claude.com/docs/en/sub-agents#frontmatter-reference) e de [Subagent files Claude Code skips](https://code.claude.com/docs/en/sub-agents#subagent-files-claude-code-skips).
-    **Codex CLI:** a documentação lida não descreve um log equivalente para arquivos de agente com erro, item sem confirmação. O comando `codex debug prompt-input` mostra o prompt visível ao modelo, e o formato TOML dos agentes está na [documentação de Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents).
+    **Codex CLI:** a documentação lida não descreve um log equivalente para arquivos de agente com erro, item sem confirmação. O comando `codex debug prompt-input` mostra o prompt visível ao modelo, `codex doctor` diagnostica a instalação, e o formato TOML dos agentes está na [documentação de Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents).
 
 ## Experimento E: medir o disparo pela description e liberar ou restringir ferramentas
 

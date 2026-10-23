@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker></defs>
+<rect width="1600" height="760" fill="#ffffff"/>
+<text x="60" y="64" font-size="27" font-weight="bold" fill="#12302b">Percurso da oficina: dois experimentos em aula e quatro de extensão, cada um ligado a uma linha da ficha</text>
+<text x="60" y="118" font-size="22" font-weight="bold" fill="#00695c">Essencial em aula: 17 minutos</text>
+<rect x="60" y="134" width="720" height="190" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<circle cx="100" cy="176" r="24" fill="#00695c"/><text x="100" y="185" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">A</text>
+<text x="138" y="174" font-size="22" font-weight="bold" fill="#12302b">Criar a skill e gerar um artefato</text>
+<text x="138" y="201" font-size="22" font-weight="bold" fill="#12302b">conferido por script</text>
+<text x="82" y="240" font-size="16" font-weight="bold" fill="#546e7a">LINHA DA FICHA</text>
+<text x="82" y="264" font-size="19" fill="#37474f">Artefato e conferência, e arquivo e front-matter da skill</text>
+<text x="82" y="306" font-size="19" font-weight="bold" fill="#00695c">10 min</text>
+<rect x="830" y="134" width="710" height="190" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<circle cx="870" cy="176" r="24" fill="#00695c"/><text x="870" y="185" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">B</text>
+<text x="908" y="174" font-size="22" font-weight="bold" fill="#12302b">Medir o custo e o resultado em</text>
+<text x="908" y="201" font-size="22" font-weight="bold" fill="#12302b">dois modelos</text>
+<text x="852" y="240" font-size="16" font-weight="bold" fill="#546e7a">LINHA DA FICHA</text>
+<text x="852" y="264" font-size="19" fill="#37474f">Modelo e esforço, orçamento de tokens e tempo</text>
+<text x="852" y="306" font-size="19" font-weight="bold" fill="#00695c">7 min</text>
+<line x1="782" y1="229" x2="828" y2="229" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<text x="60" y="394" font-size="22" font-weight="bold" fill="#e65100">Extensão opcional, fora do relógio: para a dupla que terminar antes ou para depois da sessão</text>
+<rect x="60" y="410" width="352" height="300" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<circle cx="100" cy="452" r="24" fill="#e65100"/><text x="100" y="461" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">C</text>
+<text x="138" y="450" font-size="22" font-weight="bold" fill="#12302b">Restringir um</text>
+<text x="138" y="477" font-size="22" font-weight="bold" fill="#12302b">subagente e testar a</text>
+<text x="138" y="504" font-size="22" font-weight="bold" fill="#12302b">restrição</text>
+<text x="82" y="541" font-size="16" font-weight="bold" fill="#546e7a">LINHA DA FICHA</text>
+<text x="82" y="565" font-size="19" fill="#37474f">Ferramentas e permissões do</text>
+<text x="82" y="590" font-size="19" fill="#37474f">subagente</text>
+<text x="82" y="692" font-size="19" font-weight="bold" fill="#e65100">fora do relógio</text>
+<rect x="436" y="410" width="352" height="300" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<circle cx="476" cy="452" r="24" fill="#e65100"/><text x="476" y="461" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">D</text>
+<text x="514" y="450" font-size="22" font-weight="bold" fill="#12302b">Localizar front-matter</text>
+<text x="514" y="477" font-size="22" font-weight="bold" fill="#12302b">com erro no log de</text>
+<text x="514" y="504" font-size="22" font-weight="bold" fill="#12302b">depuração</text>
+<text x="458" y="541" font-size="16" font-weight="bold" fill="#546e7a">LINHA DA FICHA</text>
+<text x="458" y="565" font-size="19" fill="#37474f">Arquivo e front-matter do</text>
+<text x="458" y="590" font-size="19" fill="#37474f">subagente, diagnóstico</text>
+<text x="458" y="692" font-size="19" font-weight="bold" fill="#e65100">fora do relógio</text>
+<rect x="812" y="410" width="352" height="300" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<circle cx="852" cy="452" r="24" fill="#e65100"/><text x="852" y="461" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">E</text>
+<text x="890" y="450" font-size="22" font-weight="bold" fill="#12302b">Medir o disparo pela</text>
+<text x="890" y="477" font-size="22" font-weight="bold" fill="#12302b">description e liberar</text>
+<text x="890" y="504" font-size="22" font-weight="bold" fill="#12302b">ou restringir</text>
+<text x="890" y="531" font-size="22" font-weight="bold" fill="#12302b">ferramentas</text>
+<text x="834" y="568" font-size="16" font-weight="bold" fill="#546e7a">LINHA DA FICHA</text>
+<text x="834" y="592" font-size="19" fill="#37474f">Arquivo e front-matter da</text>
+<text x="834" y="617" font-size="19" fill="#37474f">skill, ferramentas e</text>
+<text x="834" y="642" font-size="19" fill="#37474f">permissões</text>
+<text x="834" y="692" font-size="19" font-weight="bold" fill="#e65100">fora do relógio</text>
+<rect x="1188" y="410" width="352" height="300" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<circle cx="1228" cy="452" r="24" fill="#e65100"/><text x="1228" y="461" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">F</text>
+<text x="1266" y="450" font-size="22" font-weight="bold" fill="#12302b">Argumentos,</text>
+<text x="1266" y="477" font-size="22" font-weight="bold" fill="#12302b">acionamento manual,</text>
+<text x="1266" y="504" font-size="22" font-weight="bold" fill="#12302b">injeção de comando e</text>
+<text x="1266" y="531" font-size="22" font-weight="bold" fill="#12302b">fork</text>
+<text x="1210" y="568" font-size="16" font-weight="bold" fill="#546e7a">LINHA DA FICHA</text>
+<text x="1210" y="592" font-size="19" fill="#37474f">Arquivo e front-matter da</text>
+<text x="1210" y="617" font-size="19" fill="#37474f">skill, mecanismo</text>
+<text x="1210" y="692" font-size="19" font-weight="bold" fill="#e65100">fora do relógio</text>
+</svg>
