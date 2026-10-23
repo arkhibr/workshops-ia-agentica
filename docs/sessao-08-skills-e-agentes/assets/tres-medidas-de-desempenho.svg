@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker></defs>
+<rect width="1600" height="760" fill="#ffffff"/>
+<text x="60" y="64" font-size="30" font-weight="bold" fill="#12302b">As três medidas do desempenho se compensam: melhorar uma delas costuma custar as outras</text>
+<rect x="60" y="120" width="430" height="210" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="82" y="168" font-size="25" font-weight="bold" fill="#12302b">Tempo até o resultado</text>
+<text x="82" y="214" font-size="20" fill="#37474f">depende do número de chamadas,</text>
+<text x="82" y="244" font-size="20" fill="#37474f">do tamanho do contexto</text>
+<text x="82" y="274" font-size="20" fill="#37474f">e do modelo</text>
+<rect x="585" y="120" width="430" height="210" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="607" y="168" font-size="25" font-weight="bold" fill="#12302b">Consumo de tokens</text>
+<text x="607" y="214" font-size="20" fill="#37474f">determina o custo,</text>
+<text x="607" y="244" font-size="20" fill="#37474f">tratado na página</text>
+<text x="607" y="274" font-size="20" fill="#37474f">de custo de tokens</text>
+<rect x="1110" y="120" width="430" height="210" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="1132" y="168" font-size="25" font-weight="bold" fill="#12302b">Taxa de resultados corretos</text>
+<text x="1132" y="214" font-size="20" fill="#37474f">medida contra a conferência</text>
+<text x="1132" y="244" font-size="20" fill="#37474f">declarada na skill</text>
+
+
+<line x1="500" y1="225" x2="575" y2="225" stroke="#e65100" stroke-width="3" marker-start="url(#seta)" marker-end="url(#seta)"/><line x1="1025" y1="225" x2="1100" y2="225" stroke="#e65100" stroke-width="3" marker-start="url(#seta)" marker-end="url(#seta)"/><rect x="60" y="380" width="1480" height="150" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="84" y="424" font-size="23" font-weight="bold" fill="#12302b">O que o relato do sistema multiagente mediu no benchmark BrowseComp</text>
+<text x="84" y="462" font-size="20" fill="#37474f">três fatores explicaram 95% da variação de desempenho, e o uso de tokens, sozinho, explicou 80%.</text>
+<text x="84" y="494" font-size="20" fill="#37474f">Os outros dois fatores foram o número de chamadas de ferramenta e a escolha do modelo.</text>
+<rect x="60" y="570" width="720" height="140" rx="14" fill="#f5f7f8" stroke="#78909c" stroke-width="3"/>
+<text x="84" y="612" font-size="22" font-weight="bold" fill="#12302b">Registrar em cada execução</text>
+<text x="84" y="648" font-size="20" fill="#37474f">modelo, esforço, número de tokens, tempo</text><text x="84" y="676" font-size="20" fill="#37474f">e resultado da conferência</text>
+<rect x="820" y="570" width="720" height="140" rx="14" fill="#f5f7f8" stroke="#78909c" stroke-width="3"/>
+<text x="844" y="612" font-size="22" font-weight="bold" fill="#12302b">Avaliar com casos reais</text>
+<text x="844" y="648" font-size="20" fill="#37474f">começar com cerca de 20 consultas que representem</text><text x="844" y="676" font-size="20" fill="#37474f">o uso real, sem esperar por um conjunto grande</text>
+</svg>

@@ -1,10 +1,12 @@
 # Performance
 
-O desempenho de uma skill ou de um agente tem três medidas, o tempo até o resultado, o consumo de tokens e a taxa de resultados corretos, e melhorar uma delas costuma custar as outras. Esta página reúne as alavancas de tempo que a documentação e o relato da Anthropic descrevem e o método de avaliação que permite saber se uma mudança melhorou o conjunto.
+O desempenho de uma skill ou de um agente tem três medidas, o tempo até o resultado, o consumo de tokens e a taxa de resultados corretos, e melhorar uma delas costuma custar as outras. Esta página reúne as alavancas de tempo que a documentação e o relato da Anthropic descrevem e o método de avaliação que permite saber se uma mudança melhorou o conjunto. A página preenche, na [ficha de requisitos](index.md#a-ficha-de-requisitos), a linha "Tempo".
 
 ## Três medidas que se compensam
 
 O tempo total depende do número de chamadas, do tamanho do contexto e do modelo. O consumo de tokens determina o custo, tratado na [página anterior](custo-de-tokens.md). A taxa de resultados corretos é medida contra a conferência declarada na skill. O [relato do sistema multiagente](../referencia/bibliografia.md#anthropic-how-we-built-our-multi-agent-research-system) mostra a compensação: três fatores explicaram 95% da variação de desempenho no benchmark BrowseComp, sendo 80% pelo uso de tokens, e os outros dois foram o número de chamadas de ferramenta e a escolha do modelo.
+
+![Três cartões ligados por setas duplas: o tempo até o resultado, que depende do número de chamadas, do tamanho do contexto e do modelo, o consumo de tokens, que determina o custo, e a taxa de resultados corretos, medida contra a conferência declarada na skill. Abaixo, o que o relato multiagente mediu no BrowseComp, o registro por execução e a avaliação com cerca de 20 consultas reais.](assets/tres-medidas-de-desempenho.png)
 
 ## Alavancas de tempo
 
@@ -31,5 +33,12 @@ A [documentação de boas práticas de skills](../referencia/bibliografia.md#ant
 ## Reprodutibilidade
 
 As execuções de agente não são determinísticas, o que dificulta a depuração. O relato resolveu o problema com rastreamento completo em produção, e com pontos de retomada, porque erros se acumulam em agentes de longa duração. A equipe que mede o desempenho de uma skill deve registrar, em cada execução, o modelo, o esforço, o número de tokens, o tempo e o resultado da conferência, para comparar execuções feitas em dias diferentes.
+
+!!! abstract "Linha da ficha"
+    Tempo:
+
+    - Qual o tempo máximo por execução, e a medição foi feita com casos reais da equipe?
+    - Que alavanca de tempo a skill ou o agente usa, e o que ela troca em tokens ou em acerto?
+    - Que registro cada execução deixa: modelo, esforço, tokens, tempo e resultado da conferência?
 
 **Próxima página:** [Oficina de ferramentas](oficina-de-ferramentas.md).

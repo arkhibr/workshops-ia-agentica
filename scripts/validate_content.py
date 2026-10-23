@@ -100,6 +100,7 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
             "assets/estrategias-de-escolha-de-modelo.png",
             "assets/de-onde-o-custo-vem.png",
             "assets/cache-em-unidades-relativas.png",
+            "assets/tres-medidas-de-desempenho.png",
         ),
     ),
     "sessao-09-depuracao-sistematica": ("Depuração sistemática", False, ()),
