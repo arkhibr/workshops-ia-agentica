@@ -47,7 +47,7 @@ Antes da v2.1.251, a variável de ambiente vinha em primeiro lugar e prevalecia 
 
 !!! note "Claude Code e Codex CLI"
     **Claude Code:** a ordem de resolução consta de [Choose a model](https://code.claude.com/docs/en/sub-agents#choose-a-model).
-    **Codex CLI:** o arquivo do agente aceita `model` e `model_reasoning_effort`, e o valor do arquivo prevalece sobre o do pai, conforme a [documentação de Subagents](../referencia/bibliografia.md#openai-codex-subagents-documentacao). Os modelos disponíveis dependem da conta, e na observação desta sessão o modelo padrão da conta exigiu uma versão do Codex mais nova que a instalada.
+    **Codex CLI:** o arquivo do agente aceita `model` e `model_reasoning_effort`, e o valor do arquivo prevalece sobre o do pai, enquanto os padrões globais dos subagentes ficam em `agents.default_subagent_model`, conforme a [documentação de Subagents](../referencia/bibliografia.md#openai-codex-subagents-documentacao) e a [referência de configuração](../referencia/bibliografia.md#openai-codex-configuration-reference-documentacao). Os modelos disponíveis dependem da conta, e na observação desta sessão o modelo padrão da conta exigiu uma versão do Codex mais nova que a instalada.
 
 ## Combinar modelos
 

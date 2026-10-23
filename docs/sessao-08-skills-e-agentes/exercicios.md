@@ -278,7 +278,7 @@ Não edite arquivos.
 <details>
 <summary>Conferir depois de responder</summary>
 
-No arquivo do Claude Code, o campo `tools` restringe as ferramentas e o corpo orienta. No arquivo do Codex, a instrução orienta, e a documentação adverte que instruções para evitar edições não criam um sandbox somente leitura, de modo que o sandbox e a aprovação são herdados da sessão que inicia o agente. A decisão é revisar: o arquivo é aceitável como orientação, e a restrição real exige iniciar a sessão com `sandbox_mode = "read-only"`, valor que consta da documentação de aprovações e segurança. Esse comportamento do Codex está documentado e, no ambiente desta sessão, não foi executado, porque o modelo padrão da conta exigia uma versão mais nova do Codex. O passo opcional pede a versão do Codex instalada e um modelo aceito pela conta, e o resultado entra no registro da equipe com a versão usada e o status observado.
+O campo `tools` do arquivo do Claude Code limita as ferramentas disponíveis ao agente. A documentação do Codex informa que o sandbox e a aprovação são herdados da sessão que inicia o agente e que instruções para evitar edições permanecem como orientação sem criar um sandbox somente leitura. A decisão da equipe é tratar o arquivo do Codex como orientação e aplicar a restrição real ao iniciar a sessão com `sandbox_mode = "read-only"`, valor que consta da documentação de aprovações e segurança. O status desse comportamento do Codex é documentado, sem execução no ambiente desta sessão, porque o modelo padrão da conta exigia uma versão mais nova do Codex. O passo opcional pede a versão do Codex instalada e um modelo aceito pela conta, e o resultado entra no registro da equipe com a versão usada e o status observado.
 
 </details>
 
