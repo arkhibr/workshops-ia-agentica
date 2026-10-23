@@ -56,7 +56,7 @@ Para o Codex CLI, o equivalente de um subagente somente leitura é iniciar a ses
 
 As páginas do Claude Code foram lidas em Markdown cru e as do Codex CLI também, e a especificação aberta foi lida na página oficial. As URLs `developers.openai.com/codex/...` respondem 308 para `learn.chatgpt.com/docs/...`, e nenhuma das páginas exibe data de publicação.
 
-- Claude Code: [skills](https://code.claude.com/docs/en/skills), [subagentes](https://code.claude.com/docs/en/sub-agents) e [permissões](https://code.claude.com/docs/en/permissions).
+- Claude Code: [skills](https://code.claude.com/docs/en/skills) e [subagentes](https://code.claude.com/docs/en/sub-agents).
 - Codex CLI: [Build skills](https://learn.chatgpt.com/docs/build-skills), [Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents), [AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md), [aprovações e segurança](https://learn.chatgpt.com/docs/agent-approvals-security), [comandos](https://learn.chatgpt.com/docs/developer-commands) e [referência de configuração](https://learn.chatgpt.com/docs/config-file/config-reference).
 - Padrão aberto: [especificação Agent Skills](https://agentskills.io/specification).
 

@@ -72,8 +72,11 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Olewicki et al. — Impact of LLM-based Review Comment Generation (2024)](#olewicki-et-al-impact-of-llm-based-review-comment-generation-2024)
 - [OMG — BPMN 2.0.2 (2014)](#omg-bpmn-202-2014)
 - [OMG — Semantics of Business Vocabulary and Business Rules](#omg-semantics-of-business-vocabulary-and-business-rules)
+- [OpenAI — Codex: Agent Approvals and Security (documentação)](#openai-codex-agent-approvals-and-security-documentacao)
 - [OpenAI — Codex: AGENTS.md (documentação)](#openai-codex-agentsmd-documentacao)
 - [OpenAI — Codex: Build Skills (documentação)](#openai-codex-build-skills-documentacao)
+- [OpenAI — Codex: Configuration Reference (documentação)](#openai-codex-configuration-reference-documentacao)
+- [OpenAI — Codex: Developer Commands (documentação)](#openai-codex-developer-commands-documentacao)
 - [OpenAI — Codex: Subagents (documentação)](#openai-codex-subagents-documentacao)
 - [Osmani — Agent Harness Engineering (2026)](#osmani-agent-harness-engineering-2026)
 - [Papadakis et al. — Mutation Testing Advances (2019)](#papadakis-et-al-mutation-testing-advances-2019)
@@ -767,6 +770,16 @@ Especificação para vocabulário de negócio e regras formais, usada como base 
 
 ---
 
+### OpenAI — Codex: Agent Approvals and Security (documentação)
+
+**OPENAI. "Agent approvals & security".** Codex Docs, acessado em 23 out. 2026. <https://learn.chatgpt.com/docs/agent-approvals-security>
+
+Aprovações e sandbox do Codex CLI: o `sandbox_mode` com os valores `read-only` e `workspace-write`, o preset `Auto` e a regra de que os subagentes herdam o sandbox e a aprovação da sessão. A página lida em 23/10/2026 não exibe data nem versão.
+
+→ Sessão 8.
+
+---
+
 ### OpenAI — Codex: AGENTS.md (documentação)
 
 **OPENAI. "Custom instructions with AGENTS.md".** Codex Docs, acessado em 23 out. 2026. <https://learn.chatgpt.com/docs/agent-configuration/agents-md>
@@ -782,6 +795,26 @@ Documentação do `AGENTS.md` no Codex CLI: busca da raiz do projeto até o dire
 **OPENAI. "Build skills".** Codex Docs, acessado em 23 out. 2026. <https://learn.chatgpt.com/docs/build-skills>
 
 Documentação das skills no Codex CLI: diretório com `SKILL.md` descoberto em `.agents/skills/`, `name` e `description` obrigatórios, invocação explícita por `$nome` e o campo `allow_implicit_invocation` em `agents/openai.yaml`. A página declara seguir o padrão aberto Agent Skills. As URLs `developers.openai.com/codex/...` respondem 308 para `learn.chatgpt.com/docs/...`, e a página lida em 23/10/2026 não exibe data nem versão.
+
+→ Sessão 8.
+
+---
+
+### OpenAI — Codex: Configuration Reference (documentação)
+
+**OPENAI. "Configuration Reference".** Codex Docs, acessado em 23 out. 2026. <https://learn.chatgpt.com/docs/config-file/config-reference>
+
+Referência de configuração do Codex CLI: `model` e `model_reasoning_effort`, os padrões globais de subagentes em `agents.default_subagent_model` e a política `shell_environment_policy.ignore_default_excludes`, cujo padrão `true` mantém no ambiente dos subprocessos as variáveis com KEY, SECRET ou TOKEN no nome. A página lida em 23/10/2026 não exibe data nem versão.
+
+→ Sessão 8.
+
+---
+
+### OpenAI — Codex: Developer Commands (documentação)
+
+**OPENAI. "Developer commands".** Codex Docs, acessado em 23 out. 2026. <https://learn.chatgpt.com/docs/developer-commands>
+
+Comandos do Codex CLI: `/skills` para listar e usar skills, `/subagents` para alternar entre threads de subagentes e `/debug-config` para o diagnóstico das camadas de configuração. A página lida em 23/10/2026 não exibe data nem versão.
 
 → Sessão 8.
 

@@ -51,7 +51,7 @@ Ao final das 20h, cada participante consegue:
 
 ## Fora de escopo
 
-Para deixar claro o que este workshop não cobre: treinamento em LLMs (operação de modelos, ajuste fino, infraestrutura), agentes feitos sob medida além do uso dos existentes, esteiras CI/CD automatizadas, gestão de custos de uso de API.
+Para deixar claro o que este workshop não cobre: treinamento em LLMs (operação de modelos, ajuste fino, infraestrutura), esteiras CI/CD automatizadas e operação de agentes em produção. A criação de skills e de subagentes e a estimativa de custo de tokens são cobertas na Sessão 8.
 
 ## Referências
 
