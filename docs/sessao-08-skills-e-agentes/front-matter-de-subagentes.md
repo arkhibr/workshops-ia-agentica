@@ -86,4 +86,4 @@ O Claude Code procura subagentes de projeto subindo do diretório de trabalho at
     **Claude Code:** as duas ordens constam de [Choose the subagent scope](https://code.claude.com/docs/en/sub-agents#choose-the-subagent-scope) e de [Resolve skills that share a name](https://code.claude.com/docs/en/skills#resolve-skills-that-share-a-name).
     **Codex CLI:** um agente customizado com o mesmo nome de um agente embutido, como `explorer`, tem precedência sobre ele, e vale o campo `name` do arquivo, conforme a [documentação de Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents).
 
-**Próxima página:** [Síntese e referências](sintese-e-referencias.md).
+**Próxima página:** [Depuração de skills e agentes](depuracao-de-skills-e-agentes.md).

@@ -45,6 +45,7 @@ Ao final desta sessão, o participante deve ser capaz de:
 | + | [Escolher o mecanismo](escolher-o-mecanismo.md) | Aprofundamento | Fora do relógio | Critério entre skill, subagente, skill com fork, hook, MCP e arquivo de instrução |
 | + | [Front-matter de skills](front-matter-de-skills.md) | Aprofundamento | Fora do relógio | Campos do `SKILL.md`, núcleo portátil, custo da `description` e substituições no corpo |
 | + | [Front-matter de subagentes](front-matter-de-subagentes.md) | Aprofundamento | Fora do relógio | Campos que faltam, `permissionMode`, resolução do `model` e precedência de escopo |
+| + | [Depuração de skills e agentes](depuracao-de-skills-e-agentes.md) | Aprofundamento | Fora do relógio | Falhas silenciosas, o que foi carregado, log de depuração e validação da pasta |
 
 O conteúdo soma 115 minutos, e o intervalo das 11h00 às 11h05 completa os 120 minutos de relógio. A primeira parte ocupa das 10h00 às 11h00, e a segunda, das 11h05 às 12h00.
 
