@@ -21,6 +21,7 @@ S2 = DOCS / "sessao-02-ambiente-agentico"
 S4 = DOCS / "sessao-04-regras-formais-com-ia"
 S5 = DOCS / "sessao-05-decomposicao"
 S6 = DOCS / "sessao-06-spec-kit-aprofundado"
+S8 = DOCS / "sessao-08-skills-e-agentes"
 BIBLIOGRAFIA = DOCS / "referencia" / "bibliografia.md"
 
 
@@ -599,6 +600,109 @@ class PortalPublicoSessaoSeisTest(unittest.TestCase):
                 self.assertIn(trecho, texto)
         self.assertTrue((S6 / "assets" / "teste-vermelho-csharp.png").exists())
         self.assertNotIn("npm", (S6 / "assets" / "teste-vermelho-csharp.svg").read_text(encoding="utf-8"))
+
+
+class SessaoOitoExtensaoTest(unittest.TestCase):
+    """Extensão de 23/10/2026: critério de escolha, front-matter e equivalência com o Codex CLI."""
+
+    SLUG = "sessao-08-skills-e-agentes"
+    PAGINAS_NOVAS = (
+        "escolher-o-mecanismo.md",
+        "front-matter-de-skills.md",
+        "front-matter-de-subagentes.md",
+        "depuracao-de-skills-e-agentes.md",
+        "claude-code-e-codex.md",
+    )
+    PAGINAS_COM_NOTA = PAGINAS_NOVAS[:4]
+    FIGURAS = (
+        "arvore-de-decisao-do-mecanismo",
+        "skill-anotada-nucleo-portatil",
+        "carga-em-tres-niveis-e-listagem",
+        "contexto-skill-subagente-fork",
+        "precedencia-de-escopo",
+        "restricao-em-camadas",
+    )
+
+    def texto(self, nome):
+        caminho = S8 / nome
+        return caminho.read_text(encoding="utf-8") if caminho.exists() else ""
+
+    def paginas_novas(self):
+        return "\n\n".join(self.texto(nome) for nome in self.PAGINAS_NOVAS)
+
+    def test_paginas_novas_existem_e_estao_no_nav(self):
+        nav = (DOCS.parent / "mkdocs.yml").read_text(encoding="utf-8")
+        for nome in self.PAGINAS_NOVAS:
+            with self.subTest(pagina=nome):
+                self.assertTrue((S8 / nome).exists())
+                self.assertIn(f"{self.SLUG}/{nome}", nav)
+
+    def test_vocabulario_da_sintaxe_na_teoria(self):
+        novas = self.paginas_novas()
+        for termo in (
+            "allowed-tools",
+            "disallowed-tools",
+            "disallowedTools",
+            "disable-model-invocation",
+            "context: fork",
+            "--debug",
+            ".agents/skills",
+            "developer_instructions",
+        ):
+            with self.subTest(termo=termo):
+                self.assertIn(termo, novas)
+
+    def test_max_depth_so_aparece_como_nao_confirmado(self):
+        for linha in self.paginas_novas().splitlines():
+            if "max_depth" in linha:
+                with self.subTest(linha=linha[:80]):
+                    self.assertIn("não confirmado", linha.lower())
+
+    def test_notas_de_equivalencia_nas_paginas_novas(self):
+        for nome in self.PAGINAS_COM_NOTA:
+            with self.subTest(pagina=nome):
+                texto = self.texto(nome)
+                self.assertIn("Claude Code:", texto)
+                self.assertIn("Codex CLI:", texto)
+        tabela = self.texto("claude-code-e-codex.md")
+        self.assertRegex(tabela, r"\|\s*Codex CLI\s*\|")
+        for status in ("observado", "documentado", "não confirmado"):
+            with self.subTest(status=status):
+                self.assertIn(status, tabela)
+
+    def test_exercicios_11_a_14_e_originais_preservados(self):
+        texto = self.texto("exercicios.md")
+        for numero in range(1, 15):
+            with self.subTest(exercicio=numero):
+                self.assertRegex(texto, rf"(?m)^### {numero}\. ")
+        self.assertIn("### 3. Skill, subagente ou agente principal", texto)
+        self.assertIn("### 10. Exercício-âncora: uma skill, um subagente e um artefato conferido", texto)
+        ancora = texto.split("### 13. ", 1)[-1].split("### 14. ", 1)[0]
+        self.assertIn("**Critérios de avaliação**", ancora)
+
+    def test_oficina_tem_experimentos_d_e_f_e_preserva_os_originais(self):
+        texto = self.texto("oficina-de-ferramentas.md")
+        for experimento in ("A", "B", "C", "D", "E", "F"):
+            with self.subTest(experimento=experimento):
+                self.assertRegex(texto, rf"(?m)^## Experimento {experimento}\b")
+
+    def test_indice_marca_aprofundamento_fora_do_relogio(self):
+        texto = self.texto("index.md")
+        self.assertIn("Aprofundamento", texto)
+        self.assertIn("115 minutos", texto)
+
+    def test_frase_de_escopo_reescrita(self):
+        texto = (DOCS / "index.md").read_text(encoding="utf-8")
+        self.assertNotIn("agentes feitos sob medida", texto)
+        self.assertIn("Sessão 8", texto)
+
+    def test_figuras_existem_e_estao_declaradas_no_validador(self):
+        declaradas = SESSOES[self.SLUG][2]
+        for nome in self.FIGURAS:
+            with self.subTest(figura=nome):
+                self.assertIn(f"assets/{nome}.png", declaradas)
+                self.assertTrue((S8 / "assets" / f"{nome}.png").exists())
+                self.assertTrue((S8 / "assets" / f"{nome}.svg").exists())
 
 
 if __name__ == "__main__":
