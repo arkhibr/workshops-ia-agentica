@@ -88,6 +88,8 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
         "Skills e agentes",
         True,
         (
+            "assets/ficha-de-requisitos.png",
+            "assets/mapa-da-sessao.png",
             "assets/arvore-de-decisao-do-mecanismo.png",
             "assets/skill-anotada-nucleo-portatil.png",
             "assets/carga-em-tres-niveis-e-listagem.png",

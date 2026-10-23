@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 940" font-family="Helvetica, Arial, sans-serif">
+<rect width="1600" height="940" fill="#ffffff"/>
+<text x="60" y="64" font-size="32" font-weight="bold" fill="#12302b">A ficha de requisitos do agente: uma linha para cada decisão, uma página para cada linha</text>
+<text x="60" y="124" font-size="20" font-weight="bold" fill="#546e7a">Linha da ficha</text>
+<text x="500" y="124" font-size="20" font-weight="bold" fill="#546e7a">Pergunta que a linha responde</text>
+<text x="1210" y="124" font-size="20" font-weight="bold" fill="#546e7a">Página que preenche</text>
+<rect x="60" y="140" width="1480" height="84" rx="12" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<circle cx="104" cy="182" r="22" fill="#00695c"/><text x="104" y="191" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<text x="144" y="190" font-size="22" font-weight="bold" fill="#12302b">Mecanismo</text>
+<text x="500" y="176" font-size="20" fill="#37474f">Skill, subagente, skill com fork, hook, MCP ou arquivo</text>
+<text x="500" y="202" font-size="20" fill="#37474f">de instrução, e por quê</text>
+<rect x="1200" y="156" width="320" height="52" rx="26" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1360" y="189" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Agentes e subagentes</text>
+<rect x="60" y="232" width="1480" height="84" rx="12" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<circle cx="104" cy="274" r="22" fill="#00695c"/><text x="104" y="283" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<text x="144" y="282" font-size="22" font-weight="bold" fill="#12302b">Arquivo e front-matter</text>
+<text x="500" y="281" font-size="20" fill="#37474f">Quais campos e valores o arquivo declara</text>
+<rect x="1200" y="248" width="320" height="52" rx="26" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1360" y="281" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Skills, e Agentes e subagentes</text>
+<rect x="60" y="324" width="1480" height="84" rx="12" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<circle cx="104" cy="366" r="22" fill="#00695c"/><text x="104" y="375" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<text x="144" y="374" font-size="22" font-weight="bold" fill="#12302b">Artefato e conferência</text>
+<text x="500" y="360" font-size="20" fill="#37474f">O que é gerado, o que o script confere e o que só</text>
+<text x="500" y="386" font-size="20" fill="#37474f">uma pessoa decide</text>
+<rect x="1200" y="340" width="320" height="52" rx="26" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1360" y="373" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Geração de artefatos</text>
+<rect x="60" y="416" width="1480" height="84" rx="12" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<circle cx="104" cy="458" r="22" fill="#00695c"/><text x="104" y="467" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+<text x="144" y="466" font-size="22" font-weight="bold" fill="#12302b">Modelo e esforço</text>
+<text x="500" y="465" font-size="20" fill="#37474f">Qual modelo e qual esforço, com a razão</text>
+<rect x="1200" y="432" width="320" height="52" rx="26" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1360" y="465" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Escolha de modelos</text>
+<rect x="60" y="508" width="1480" height="84" rx="12" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<circle cx="104" cy="550" r="22" fill="#00695c"/><text x="104" y="559" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
+<text x="144" y="558" font-size="22" font-weight="bold" fill="#12302b">Orçamento de tokens</text>
+<text x="500" y="557" font-size="20" fill="#37474f">Quanto cada execução pode consumir e como se mede</text>
+<rect x="1200" y="524" width="320" height="52" rx="26" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1360" y="557" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Custo de tokens</text>
+<rect x="60" y="600" width="1480" height="84" rx="12" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<circle cx="104" cy="642" r="22" fill="#00695c"/><text x="104" y="651" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">6</text>
+<text x="144" y="650" font-size="22" font-weight="bold" fill="#12302b">Tempo</text>
+<text x="500" y="649" font-size="20" fill="#37474f">Tempo máximo por execução e como se mede</text>
+<rect x="1200" y="616" width="320" height="52" rx="26" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1360" y="649" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Performance</text>
+<rect x="60" y="692" width="1480" height="84" rx="12" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<circle cx="104" cy="734" r="22" fill="#00695c"/><text x="104" y="743" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">7</text>
+<text x="144" y="742" font-size="22" font-weight="bold" fill="#12302b">Ferramentas e permissões</text>
+<text x="500" y="728" font-size="20" fill="#37474f">Que ferramentas existem para o agente e que</text>
+<text x="500" y="754" font-size="20" fill="#37474f">permissão cada uma exige</text>
+<rect x="1200" y="708" width="320" height="52" rx="26" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1360" y="741" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Segurança e credenciais</text>
+<rect x="60" y="784" width="1480" height="84" rx="12" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<circle cx="104" cy="826" r="22" fill="#00695c"/><text x="104" y="835" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">8</text>
+<text x="144" y="834" font-size="22" font-weight="bold" fill="#12302b">Identidade, credencial e cofre</text>
+<text x="500" y="820" font-size="20" fill="#37474f">Qual identidade, com que escopo e validade, e onde</text>
+<text x="500" y="846" font-size="20" fill="#37474f">o valor da credencial fica</text>
+<rect x="1200" y="800" width="320" height="52" rx="26" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1360" y="833" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Segurança e credenciais</text>
+</svg>
