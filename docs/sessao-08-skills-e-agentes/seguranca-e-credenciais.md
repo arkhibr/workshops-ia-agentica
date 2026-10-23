@@ -25,7 +25,7 @@ A restrição de permissões é declarada no arquivo do subagente e não depende
 
 Um subagente de revisão, que apenas lê e comenta, declara `tools: Read, Grep, Glob`. Um subagente que precisa de rede ou de escrita declara, no arquivo, o motivo, e a equipe revisa essa declaração como revisa uma mudança de código.
 
-Numa skill, o campo `allowed-tools` libera ferramentas sem pedir aprovação e deixa as demais disponíveis, e a restrição vem de `disallowed-tools`, como mostra a página [Front-matter de skills](front-matter-de-skills.md#liberar-nao-e-restringir). A documentação alerta que o Claude Code aplica o `allowed-tools` de uma skill de projeto até numa execução com `-p` em pasta nunca marcada como confiável, de modo que o `allowed-tools` de uma skill versionada no repositório entra na revisão como mudança de permissão.
+Numa skill, o campo `allowed-tools` libera ferramentas sem pedir aprovação e deixa as demais disponíveis, e a restrição vem de `disallowed-tools`, como mostra a página [Skills](skills.md#liberar-nao-e-restringir). A documentação alerta que o Claude Code aplica o `allowed-tools` de uma skill de projeto até numa execução com `-p` em pasta nunca marcada como confiável, de modo que o `allowed-tools` de uma skill versionada no repositório entra na revisão como mudança de permissão.
 
 !!! note "Claude Code e Codex CLI"
     **Claude Code:** o alerta sobre `allowed-tools` consta de [Pre-approve tools for a skill](https://code.claude.com/docs/en/skills#pre-approve-tools-for-a-skill).
