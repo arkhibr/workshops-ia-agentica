@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker>
+<marker id="seta-l" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker></defs>
+<rect width="1600" height="760" fill="#ffffff"/>
+<text x="60" y="64" font-size="30" font-weight="bold" fill="#12302b">Duas estratégias de partida para escolher o modelo, e o esforço como alavanca</text>
+<rect x="60" y="120" width="260" height="172" rx="14" fill="#f5f7f8" stroke="#78909c" stroke-width="3"/>
+<text x="78" y="158" font-size="22" font-weight="bold" fill="#12302b">Eficiência</text>
+<text x="78" y="186" font-size="22" font-weight="bold" fill="#12302b">primeiro</text>
+<text x="78" y="220" font-size="18" fill="#37474f">protótipos, latência</text>
+<text x="78" y="245" font-size="18" fill="#37474f">apertada, volume alto,</text>
+<text x="78" y="270" font-size="18" fill="#37474f">custo sensível</text>
+<rect x="400" y="120" width="320" height="172" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="418" y="158" font-size="22" font-weight="bold" fill="#12302b">Implementar com</text>
+<text x="418" y="186" font-size="22" font-weight="bold" fill="#12302b">Claude Haiku 5.5</text>
+<text x="418" y="220" font-size="18" fill="#37474f">ponto de partida</text>
+<rect x="800" y="120" width="320" height="172" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="818" y="158" font-size="22" font-weight="bold" fill="#12302b">Testar a fundo</text>
+<text x="818" y="192" font-size="18" fill="#37474f">com as avaliações</text>
+<text x="818" y="217" font-size="18" fill="#37474f">próprias da equipe</text>
+<rect x="1200" y="120" width="340" height="172" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="1218" y="158" font-size="22" font-weight="bold" fill="#12302b">Subir de modelo</text>
+<text x="1218" y="192" font-size="18" fill="#37474f">somente diante de uma</text>
+<text x="1218" y="217" font-size="18" fill="#37474f">lacuna de capacidade</text>
+<text x="1218" y="242" font-size="18" fill="#37474f">específica</text>
+<line x1="320" y1="206" x2="398" y2="206" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<line x1="720" y1="206" x2="798" y2="206" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<line x1="1120" y1="206" x2="1198" y2="206" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<rect x="60" y="322" width="260" height="172" rx="14" fill="#f5f7f8" stroke="#78909c" stroke-width="3"/>
+<text x="78" y="360" font-size="22" font-weight="bold" fill="#12302b">Capacidade</text>
+<text x="78" y="388" font-size="22" font-weight="bold" fill="#12302b">primeiro</text>
+<text x="78" y="422" font-size="18" fill="#37474f">raciocínio complexo,</text>
+<text x="78" y="447" font-size="18" fill="#37474f">programação avançada,</text>
+<text x="78" y="472" font-size="18" fill="#37474f">agentes de alta autonomia</text>
+<rect x="400" y="322" width="320" height="172" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="418" y="360" font-size="22" font-weight="bold" fill="#12302b">Implementar com</text>
+<text x="418" y="388" font-size="22" font-weight="bold" fill="#12302b">Claude Opus 5.5</text>
+<text x="418" y="422" font-size="18" fill="#37474f">ponto de partida</text>
+<rect x="800" y="322" width="320" height="172" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="818" y="360" font-size="22" font-weight="bold" fill="#12302b">Otimizar o prompt</text>
+<text x="818" y="388" font-size="22" font-weight="bold" fill="#12302b">e avaliar</text>
+<text x="818" y="422" font-size="18" fill="#37474f">otimizar para o Opus</text>
+<rect x="1200" y="322" width="340" height="172" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="1218" y="360" font-size="22" font-weight="bold" fill="#12302b">Reduzir o esforço</text>
+<text x="1218" y="388" font-size="22" font-weight="bold" fill="#12302b">ou o modelo</text>
+<text x="1218" y="422" font-size="18" fill="#37474f">ao longo do tempo,</text>
+<text x="1218" y="447" font-size="18" fill="#37474f">conforme as avaliações</text>
+<line x1="320" y1="397" x2="398" y2="397" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<line x1="720" y1="397" x2="798" y2="397" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<line x1="1120" y1="397" x2="1198" y2="397" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<rect x="60" y="530" width="660" height="150" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="78" y="568" font-size="22" font-weight="bold" fill="#12302b">O esforço é uma alavanca dentro do modelo</text>
+<text x="78" y="602" font-size="18" fill="#37474f">troca inteligência por latência e custo dentro do mesmo modelo,</text>
+<text x="78" y="627" font-size="18" fill="#37474f">e costuma ser melhor alavanca que trocar de modelo</text>
+<text x="78" y="652" font-size="18" fill="#37474f">níveis: low, medium, high, xhigh e max</text>
+<rect x="800" y="530" width="740" height="150" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="818" y="568" font-size="22" font-weight="bold" fill="#12302b">Ainda abaixo do necessário em xhigh ou max?</text>
+<text x="818" y="602" font-size="18" fill="#37474f">em raciocínio exigente ou em trabalho agêntico de longo horizonte,</text>
+<text x="818" y="627" font-size="18" fill="#37474f">o guia indica passar ao Claude Fable 5.1</text>
+<text x="60" y="726" font-size="21" font-weight="bold" fill="#12302b">Os dois caminhos exigem um conjunto de avaliações próprio, que o guia classifica como o passo mais importante do processo.</text>
+</svg>

@@ -1,6 +1,6 @@
 # Escolha de modelos
 
-A escolha do modelo de uma skill ou de um agente é uma decisão de projeto que equilibra capacidade, velocidade e custo, e não uma configuração herdada da conversa. Esta página reúne os critérios e as duas estratégias de partida do [guia de escolha de modelo](../referencia/bibliografia.md#anthropic-choosing-the-right-model-documentacao) da Anthropic e mostra onde cada decisão aparece nos arquivos de skill e de subagente.
+A escolha do modelo de uma skill ou de um agente é uma decisão de projeto que equilibra capacidade, velocidade e custo, e não uma configuração herdada da conversa. Esta página reúne os critérios e as duas estratégias de partida do [guia de escolha de modelo](../referencia/bibliografia.md#anthropic-choosing-the-right-model-documentacao) da Anthropic e mostra onde cada decisão aparece nos arquivos de skill e de subagente. A página preenche, na [ficha de requisitos](index.md#a-ficha-de-requisitos), a linha "Modelo e esforço".
 
 ## Quatro critérios
 
@@ -15,6 +15,8 @@ O guia recomenda avaliar, antes de escolher, quatro fatores. A capacidade respon
 
 Se as avaliações no esforço `xhigh` ou `max` ainda ficam abaixo do necessário em raciocínio exigente ou em trabalho agêntico de longo horizonte, o guia indica passar ao Claude Fable 5.1. Os dois caminhos têm o mesmo requisito: um conjunto de avaliações próprio. O guia classifica esse conjunto como o passo mais importante do processo.
 
+![Duas faixas de estratégia. Eficiência primeiro: implementar com Claude Haiku 5.5, testar a fundo e subir de modelo só diante de uma lacuna de capacidade específica. Capacidade primeiro: implementar com Claude Opus 5.5, otimizar o prompt e avaliar, e reduzir o esforço ou o modelo ao longo do tempo. Abaixo, o esforço como alavanca dentro do modelo e a indicação do Claude Fable 5.1 quando xhigh ou max ainda ficam abaixo do necessário.](assets/estrategias-de-escolha-de-modelo.png)
+
 ## Matriz de uso por modelo
 
 A matriz resume o guia, com os modelos vigentes em 22/10/2026.
@@ -28,17 +30,24 @@ A matriz resume o guia, com os modelos vigentes em 22/10/2026.
 
 Para o Claude Code, o [guia de custo](../referencia/bibliografia.md#anthropic-manage-costs-effectively-documentacao-do-claude-code) acrescenta que o Sonnet atende bem à maioria das tarefas de programação e custa menos que o Opus, que fica reservado a decisões de arquitetura complexas e a raciocínio em várias etapas, e que subagentes de tarefas simples podem declarar `model: haiku`.
 
-O Claude Code resolve o modelo de um subagente em quatro passos, descritos em [Front-matter de subagentes](front-matter-de-subagentes.md#resolucao-do-model), e uma skill pode declarar `model` para valer apenas no turno em que está ativa.
+## Onde a decisão aparece nos arquivos
+
+No subagente, o campo `model` aceita `sonnet`, `opus`, `haiku`, `fable`, um identificador completo ou `inherit`, e uma troca do modelo da conversa para o Opus se estende aos subagentes que usam `inherit`, o que eleva o custo desses subagentes ao preço do Opus. Na skill, a plataforma Claude e a especificação aberta não declaram modelo, e o Claude Code acrescenta o campo `model`, que vale apenas no turno em que a skill está ativa e não grava nas configurações. O guia de boas práticas pede que a skill seja testada com os três modelos que a equipe pretende usar, porque o texto que basta para o Opus pode exigir mais detalhe para o Haiku, e o texto escrito para o Haiku pode explicar demais para o Opus.
+
+### Resolução do model por subagente e por skill
+
+A [documentação dos subagentes](../referencia/bibliografia.md#anthropic-subagents-no-claude-code-documentacao) fixa a ordem em que o Claude Code resolve o modelo do subagente, em quatro passos:
+
+1. O parâmetro `model` passado pelo agente principal na própria chamada de delegação.
+2. O campo `model` do arquivo do subagente, em que `inherit` seleciona o modelo da conversa principal.
+3. A variável de ambiente `CLAUDE_CODE_SUBAGENT_MODEL`, quando definida com um apelido ou um identificador.
+4. O modelo da conversa principal.
+
+Antes da v2.1.251, a variável de ambiente vinha em primeiro lugar e prevalecia sobre a chamada e sobre o arquivo. A lista completa de identificadores válidos não foi confirmada, e por isso os exemplos do material usam apenas os apelidos. Na skill, o campo `model` aceita os mesmos valores do comando `/model` ou `inherit`, e o modelo da sessão volta a valer na mensagem seguinte.
 
 !!! note "Claude Code e Codex CLI"
     **Claude Code:** a ordem de resolução consta de [Choose a model](https://code.claude.com/docs/en/sub-agents#choose-a-model).
     **Codex CLI:** o arquivo do agente aceita `model` e `model_reasoning_effort`, e o valor do arquivo prevalece sobre o do pai, conforme a [documentação de Subagents](../referencia/bibliografia.md#openai-codex-subagents-documentacao). Os modelos disponíveis dependem da conta, e na observação desta sessão o modelo padrão da conta exigiu uma versão do Codex mais nova que a instalada.
-
-## Onde a decisão aparece nos arquivos
-
-No subagente, o campo `model` aceita `sonnet`, `opus`, `haiku`, `fable`, um identificador completo ou `inherit`. A [documentação dos subagentes](../referencia/bibliografia.md#anthropic-subagents-no-claude-code-documentacao) fixa a ordem de resolução do modelo: primeiro o parâmetro passado pelo agente principal em cada chamada, depois o campo `model` do arquivo, depois a variável `CLAUDE_CODE_SUBAGENT_MODEL` e, por último, o modelo da conversa principal. Por isso uma troca do modelo da conversa para o Opus se estende aos subagentes que usam `inherit`, o que eleva o custo desses subagentes ao preço do Opus.
-
-A skill não declara modelo. O guia de boas práticas pede, por isso, que a skill seja testada com os três modelos que a equipe pretende usar, porque o texto que basta para o Opus pode exigir mais detalhe para o Haiku, e o texto escrito para o Haiku pode explicar demais para o Opus.
 
 ## Combinar modelos
 
@@ -50,5 +59,12 @@ O guia descreve duas estratégias que pagam a maior parte dos tokens à tarifa d
 2. Execute as tarefas no modelo de partida da estratégia escolhida e registre o resultado conferido, o tempo e os tokens.
 3. Repita com um modelo menor ou com esforço menor e compare os três registros.
 4. Adote o menor modelo cujo resultado conferido atenda ao critério, e anote a data da medição, porque a conclusão vale para as versões testadas.
+
+!!! abstract "Linha da ficha"
+    Modelo e esforço:
+
+    - Qual modelo e qual esforço a skill ou o subagente usa, e com que razão?
+    - Que conjunto de avaliações próprio sustenta a escolha, e em que data foi medido?
+    - O `model` do subagente é explícito ou herdado da conversa com `inherit`?
 
 **Próxima página:** [Custo de tokens](custo-de-tokens.md).

@@ -32,7 +32,7 @@ Não edite arquivos. Devolva uma lista curta, com a linha de cada problema.
 | `description` | Diz ao agente principal quando delegar, obrigatório |
 | `tools` | Lista de ferramentas permitidas. Se omitido, o subagente herda todas as disponíveis |
 | `disallowedTools` | Lista de ferramentas negadas, aplicada antes de `tools` |
-| `model` | `sonnet`, `opus`, `haiku`, `fable`, um identificador completo ou `inherit` |
+| `model` | `sonnet`, `opus`, `haiku`, `fable`, um identificador completo ou `inherit`, com a ordem de resolução descrita em [Escolha de modelos](escolha-de-modelos.md#resolucao-do-model-por-subagente-e-por-skill) |
 | `permissionMode` | Modo de permissão, como `default`, `acceptEdits`, `plan` ou `bypassPermissions` |
 | `maxTurns` | Número máximo de turnos antes de o subagente parar |
 | `skills` | Skills carregadas no contexto na inicialização |
