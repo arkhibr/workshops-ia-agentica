@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 860" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00695c"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="860" fill="#ffffff"/>
+  <text x="60" y="64" font-size="32" font-weight="bold" fill="#12302b">Onde o trabalho acontece: skill, subagente e skill com fork</text>
+
+  <!-- cabeçalhos -->
+  <text x="60" y="118" font-size="28" font-weight="bold" fill="#12302b">Skill</text>
+  <text x="580" y="118" font-size="28" font-weight="bold" fill="#12302b">Subagente</text>
+  <text x="1100" y="118" font-size="28" font-weight="bold" fill="#12302b">Skill com <tspan font-family="Menlo, monospace" font-size="26">context: fork</tspan></text>
+
+  <!-- janela principal: três colunas -->
+  <rect x="60" y="140" width="440" height="270" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3"/>
+  <text x="84" y="176" font-size="21" font-weight="bold" fill="#37474f">Janela principal</text>
+  <rect x="84" y="196" width="392" height="42" rx="8" fill="#ffffff" stroke="#78909c" stroke-width="2"/><text x="100" y="224" font-size="19" fill="#37474f">histórico da conversa</text>
+  <rect x="84" y="250" width="392" height="42" rx="8" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/><text x="100" y="278" font-size="19" fill="#12302b">corpo da skill, entra ao acionar</text>
+  <rect x="84" y="304" width="392" height="42" rx="8" fill="#ffffff" stroke="#78909c" stroke-width="2"/><text x="100" y="332" font-size="19" fill="#37474f">saída das ferramentas</text>
+  <text x="84" y="378" font-size="17" fill="#546e7a">o corpo permanece nos turnos seguintes</text>
+
+  <rect x="580" y="140" width="440" height="270" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3"/>
+  <text x="604" y="176" font-size="21" font-weight="bold" fill="#37474f">Janela principal</text>
+  <rect x="604" y="196" width="392" height="42" rx="8" fill="#ffffff" stroke="#78909c" stroke-width="2"/><text x="620" y="224" font-size="19" fill="#37474f">histórico da conversa</text>
+  <rect x="604" y="250" width="392" height="42" rx="8" fill="#ffffff" stroke="#78909c" stroke-width="2"/><text x="620" y="278" font-size="19" fill="#37474f">pedido de delegação</text>
+  <rect x="604" y="304" width="392" height="42" rx="8" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/><text x="620" y="332" font-size="19" fill="#12302b">resumo devolvido</text>
+
+  <rect x="1100" y="140" width="440" height="270" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3"/>
+  <text x="1124" y="176" font-size="21" font-weight="bold" fill="#37474f">Janela principal</text>
+  <rect x="1124" y="196" width="392" height="42" rx="8" fill="#ffffff" stroke="#78909c" stroke-width="2"/><text x="1140" y="224" font-size="19" fill="#37474f">histórico da conversa</text>
+  <rect x="1124" y="250" width="392" height="42" rx="8" fill="#ffffff" stroke="#78909c" stroke-width="2"/><text x="1140" y="278" font-size="19" fill="#37474f">chamada da skill, com argumentos</text>
+  <rect x="1124" y="304" width="392" height="42" rx="8" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/><text x="1140" y="332" font-size="19" fill="#12302b">resumo devolvido</text>
+
+  <!-- setas de delegação e retorno -->
+  <line x1="700" y1="410" x2="700" y2="480" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+  <text x="716" y="450" font-size="18" fill="#00695c">delega</text>
+  <line x1="880" y1="480" x2="880" y2="410" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+  <text x="896" y="450" font-size="18" fill="#00695c">só o resumo volta</text>
+  <line x1="1220" y1="410" x2="1220" y2="480" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+  <text x="1236" y="450" font-size="18" fill="#00695c">delega</text>
+  <line x1="1400" y1="480" x2="1400" y2="410" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+  <text x="1416" y="450" font-size="18" fill="#00695c">só o resumo volta</text>
+
+  <!-- coluna da skill: sem janela própria -->
+  <rect x="60" y="480" width="440" height="270" rx="14" fill="#ffffff" stroke="#78909c" stroke-width="3" stroke-dasharray="12 7"/>
+  <text x="84" y="516" font-size="21" font-weight="bold" fill="#37474f">Sem janela própria</text>
+  <text x="84" y="556" font-size="19" fill="#37474f">O corpo da skill e a saída das</text>
+  <text x="84" y="584" font-size="19" fill="#37474f">ferramentas somam ao contexto da</text>
+  <text x="84" y="612" font-size="19" fill="#37474f">conversa e ficam nele.</text>
+
+  <!-- janelas dos subagentes -->
+  <rect x="580" y="480" width="440" height="270" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="604" y="516" font-size="21" font-weight="bold" fill="#12302b">Janela do subagente, começa vazia</text>
+  <rect x="604" y="536" width="392" height="42" rx="8" fill="#ffffff" stroke="#00695c" stroke-width="2"/><text x="620" y="564" font-size="19" fill="#12302b">prompt de sistema: corpo do arquivo</text>
+  <rect x="604" y="590" width="392" height="42" rx="8" fill="#ffffff" stroke="#00695c" stroke-width="2"/><text x="620" y="618" font-size="19" fill="#12302b">pedido recebido</text>
+  <rect x="604" y="644" width="392" height="42" rx="8" fill="#ffffff" stroke="#00695c" stroke-width="2"/><text x="620" y="672" font-size="19" fill="#12302b">leituras e saídas, ficam aqui</text>
+  <text x="604" y="716" font-size="17" fill="#37474f">tools, model e permissões próprios</text>
+
+  <rect x="1100" y="480" width="440" height="270" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+  <text x="1124" y="516" font-size="21" font-weight="bold" fill="#12302b">Janela do subagente, sem histórico</text>
+  <rect x="1124" y="536" width="392" height="42" rx="8" fill="#ffffff" stroke="#00695c" stroke-width="2"/><text x="1140" y="564" font-size="19" fill="#12302b">corpo da skill como prompt</text>
+  <rect x="1124" y="590" width="392" height="42" rx="8" fill="#ffffff" stroke="#00695c" stroke-width="2"/><text x="1140" y="618" font-size="19" fill="#12302b">argumentos da chamada</text>
+  <rect x="1124" y="644" width="392" height="42" rx="8" fill="#ffffff" stroke="#00695c" stroke-width="2"/><text x="1140" y="672" font-size="19" fill="#12302b">leituras e saídas, ficam aqui</text>
+  <text x="1124" y="716" font-size="17" fill="#37474f">tipo do subagente escolhido por agent</text>
+
+  <!-- legendas -->
+  <text x="60" y="790" font-size="21" font-weight="bold" fill="#12302b">contexto compartilhado</text>
+  <text x="580" y="790" font-size="21" font-weight="bold" fill="#12302b">contexto isolado e ferramentas próprias</text>
+  <text x="1100" y="790" font-size="21" font-weight="bold" fill="#12302b">contexto isolado e roteiro fixo da skill</text>
+</svg>

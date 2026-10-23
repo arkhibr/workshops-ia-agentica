@@ -105,4 +105,4 @@ O mesmo bloco funciona nas três plataformas, porque o `git` aceita o mesmo coma
     **Claude Code:** as variáveis constam de [Available string substitutions](https://code.claude.com/docs/en/skills#available-string-substitutions), e a injeção de comando de [Inject dynamic context](https://code.claude.com/docs/en/skills#inject-dynamic-context).
     **Codex CLI:** o uso de `$ARGUMENTS` e de injeção de comando em skills do Codex continua sem confirmação, e o estado documentado das skills está em [Build skills](https://learn.chatgpt.com/docs/build-skills).
 
-**Próxima página:** [Síntese e referências](sintese-e-referencias.md).
+**Próxima página:** [Front-matter de subagentes](front-matter-de-subagentes.md).
