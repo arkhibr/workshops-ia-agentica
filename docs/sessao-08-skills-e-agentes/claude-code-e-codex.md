@@ -28,7 +28,7 @@ Skills e subagentes existem nas duas ferramentas, com nomes, arquivos e campos d
 | Campos obrigatórios | `name` e `description` | `name`, `description` e `developer_instructions` | Claude Code observado, Codex CLI documentado |
 | Instruções do agente | Corpo do arquivo, que vira o prompt de sistema | Campo `developer_instructions` | Documentado |
 | Restringir ferramentas | `tools` e `disallowedTools` | Chaves `features.*` com valor `false` removem capacidades, como `shell_tool`, `apps` e `plugins` | Claude Code observado, Codex CLI documentado |
-| Permissões do agente | `permissionMode` no arquivo | Herdadas da sessão pai, sem campo no arquivo do agente | Documentado |
+| Permissões do agente | `permissionMode` no arquivo | Herdadas da sessão pai, e `sandbox_mode` e `approval_policy` colocados no arquivo do agente não as sobrescrevem | Documentado |
 | Modelo | `model` | `model` e `model_reasoning_effort` | Documentado |
 | Como invocar | Delegação pela `description`, nome citado no pedido, `@agent-<nome>` ou a opção `--agent` | Pedido em linguagem natural, com `/subagents` para alternar entre threads | Documentado |
 | Aninhamento | Até três camadas por padrão | Limite de profundidade (`max_depth` não aparece na documentação lida) | Claude Code documentado, Codex CLI não confirmado |
@@ -48,7 +48,7 @@ Skills e subagentes existem nas duas ferramentas, com nomes, arquivos e campos d
 
 A diferença de maior efeito prático entre as duas ferramentas está em onde a restrição de ferramentas acontece. No Claude Code, os campos `tools` e `disallowedTools` do arquivo do agente removem ferramentas do conjunto, e a restrição foi observada: o subagente com `tools: Read, Grep, Glob` não editou o arquivo. No Codex CLI, o sandbox e a aprovação são definidos na sessão que inicia o agente e herdados pelos subagentes, e a documentação adverte que instruções para evitar edições não criam um sandbox somente leitura.
 
-![Duas colunas comparam as camadas de restrição. No Claude Code, tools e disallowedTools do subagente e disallowed-tools da skill removem ferramentas, allowed-tools e permissionMode liberam ou definem a aprovação sem restringir, o corpo do arquivo orienta e os hooks bloqueiam por programa. No Codex CLI, sandbox_mode e approval_policy da sessão são herdados, as chaves features removem capacidades, developer_instructions e AGENTS.md apenas orientam, e não há campo documentado para liberar ferramenta por skill nem para definir permissão por agente.](assets/restricao-em-camadas.png)
+![Duas colunas comparam as camadas de restrição. No Claude Code, tools e disallowedTools do subagente e disallowed-tools da skill removem ferramentas, allowed-tools e permissionMode liberam ou definem a aprovação sem restringir, o corpo do arquivo orienta e os hooks bloqueiam por programa. No Codex CLI, sandbox_mode e approval_policy da sessão são herdados, as chaves features removem capacidades, developer_instructions e AGENTS.md apenas orientam, e não há equivalente documentado para liberar ferramenta por skill, enquanto valores de permissão colocados no arquivo do agente não sobrescrevem a sessão pai.](assets/restricao-em-camadas.png)
 
 Para o Codex CLI, o equivalente de um subagente somente leitura é iniciar a sessão com o sandbox `read-only`, e esse valor consta da documentação de aprovações e segurança sem execução observada. Um exemplo de agente escrito para o Claude Code com `tools: Read, Grep, Glob` precisa, portanto, de uma ressalva ao ser reaproveitado no Codex, porque o arquivo equivalente não restringe nada sozinho.
 

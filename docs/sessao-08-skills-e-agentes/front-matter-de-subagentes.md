@@ -13,7 +13,7 @@ Só `name` e `description` são obrigatórios, e os nomes compostos usam camelCa
 |---|---|---|
 | `mcpServers` | Servidores MCP disponíveis só para este subagente, por nome ou por definição completa | Ignorado em subagentes de plugin |
 | `hooks` | Hooks de ciclo de vida limitados ao subagente | Ignorado em subagentes de plugin |
-| `memory` | Memória persistente entre sessões, com escopo `user`, `project` ou `local` | Desligado por padrão |
+| `memory` | Memória persistente entre sessões, com escopo `user`, `project` ou `local` | Sem o campo, o subagente não tem memória própria, e a memória automática da conversa principal não é carregada nele |
 | `background` | Com `true`, mantém o subagente em segundo plano mesmo quando o modelo pede para esperá-lo | Subagentes criados pela conversa principal já começam em segundo plano por padrão |
 | `omitClaudeMd` | Com `true`, inicia sem os arquivos `CLAUDE.md` de usuário, projeto e local | Requer v2.1.271 ou posterior |
 | `effort` | Nível de esforço do subagente (`low`, `medium`, `high`, `xhigh`, `max`) | Não sobrepõe a variável `CLAUDE_CODE_EFFORT_LEVEL` |
@@ -23,7 +23,7 @@ Só `name` e `description` são obrigatórios, e os nomes compostos usam camelCa
 | `autoCompactWindow` | Reduz a janela de compactação automática, entre 100000 e 1000000 tokens | Requer v2.1.296 ou posterior |
 | `experimental` | Mapa de opções experimentais, hoje com `cacheTtl` igual a `5m` ou `1h` | Requer v2.1.248 ou posterior |
 
-O campo `name` aceita até 256 caracteres, não pode começar com `-` e não pode conter `:`, porque os dois-pontos pertencem aos identificadores de plugin, como `meu-plugin:revisor`. Na observação, um arquivo com `name: meu:revisor` não carregou, e o log de depuração registrou `names must not contain ':' (reserved for plugin namespacing)`.
+O campo `name` aceita até 256 caracteres, exige um primeiro caractere diferente de `-` e proíbe `:`, símbolo que pertence aos identificadores de plugin, como `meu-plugin:revisor`. Na observação, um arquivo com `name: meu:revisor` não carregou, e o log de depuração registrou `names must not contain ':' (reserved for plugin namespacing)`.
 
 O campo `color` mostra a diferença entre o que a documentação lista e o que a versão instalada aceita. Um subagente com `color: magenta`, valor fora da lista, foi carregado sem nenhum aviso no log da versão 2.1.309, e o efeito visual do valor não foi observado. Uma lista de valores válidos é, por isso, mais segura do que um exemplo copiado de outro projeto.
 
@@ -57,7 +57,7 @@ A restrição de `tools` é independente do modo de permissão. Na observação,
 
 !!! note "Claude Code e Codex CLI"
     **Claude Code:** os modos constam de [Permission modes](https://code.claude.com/docs/en/sub-agents#permission-modes).
-    **Codex CLI:** não há campo de permissão por agente, porque o sandbox e a aprovação se definem na sessão pai, e a documentação adverte que instruções para evitar edições não criam um sandbox somente leitura. A redução de capacidades por agente usa chaves como `features.shell_tool` com valor `false`, e a fonte é a [documentação de Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents).
+    **Codex CLI:** o sandbox e a aprovação se definem na sessão pai, e `sandbox_mode` e `approval_policy` colocados no arquivo do agente não sobrescrevem essa configuração, de modo que não há permissão por agente. A documentação adverte ainda que instruções para evitar edições não criam um sandbox somente leitura. A redução de capacidades por agente usa chaves como `features.shell_tool` com valor `false`, e a fonte é a [documentação de Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents).
 
 ## Resolução do `model`
 

@@ -8,7 +8,7 @@
   <rect x="330" y="88" width="26" height="26" rx="5" fill="#e65100"/>
   <text x="366" y="109" font-size="20" fill="#37474f">Orienta ou libera, sem restringir</text>
   <rect x="720" y="88" width="26" height="26" rx="5" fill="#ffffff" stroke="#78909c" stroke-width="3" stroke-dasharray="6 4"/>
-  <text x="756" y="109" font-size="20" fill="#37474f">Sem campo documentado</text>
+  <text x="756" y="109" font-size="20" fill="#37474f">Sem equivalente documentado</text>
 
   <text x="60" y="164" font-size="28" font-weight="bold" fill="#12302b">Claude Code</text>
   <text x="830" y="164" font-size="28" font-weight="bold" fill="#12302b">Codex CLI</text>
@@ -53,7 +53,7 @@
 
   <rect x="830" y="484" width="710" height="88" rx="14" fill="#ffffff" stroke="#78909c" stroke-width="3" stroke-dasharray="12 7"/>
   <text x="854" y="522" font-size="22" font-weight="bold" fill="#12302b">Permissão por agente</text>
-  <text x="854" y="552" font-size="18" fill="#37474f">sem campo no arquivo do agente, a sessão pai decide</text>
+  <text x="854" y="552" font-size="18" fill="#37474f">valores no arquivo do agente não sobrescrevem a sessão pai</text>
 
   <rect x="830" y="584" width="710" height="88" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
   <text x="854" y="622" font-size="22" font-weight="bold" fill="#12302b"><tspan font-family="Menlo, monospace" font-size="20">developer_instructions</tspan> e <tspan font-family="Menlo, monospace" font-size="20">AGENTS.md</tspan></text>
