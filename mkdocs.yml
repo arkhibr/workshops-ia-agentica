@@ -139,6 +139,7 @@ nav:
           - "Aprofundamento: front-matter de skills": sessao-08-skills-e-agentes/front-matter-de-skills.md
           - "Aprofundamento: front-matter de subagentes": sessao-08-skills-e-agentes/front-matter-de-subagentes.md
           - "Aprofundamento: depuração de skills e agentes": sessao-08-skills-e-agentes/depuracao-de-skills-e-agentes.md
+          - "Aprofundamento: Claude Code e Codex CLI": sessao-08-skills-e-agentes/claude-code-e-codex.md
       - S9 — Depuração sistemática:
           - Visão geral: sessao-09-depuracao-sistematica/index.md
       - S10 — SDD ciclo completo:

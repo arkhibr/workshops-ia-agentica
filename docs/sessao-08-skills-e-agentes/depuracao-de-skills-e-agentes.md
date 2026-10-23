@@ -106,4 +106,4 @@ A observação desta sessão acrescenta um cuidado de método: o nome da skill t
     **Claude Code:** a sequência consta de [Skill not triggering](https://code.claude.com/docs/en/skills#skill-not-triggering) e de [Claude stops following a skill](https://code.claude.com/docs/en/skills#claude-stops-following-a-skill).
     **Codex CLI:** a skill pode ser invocada explicitamente por `$nome`, e `policy.allow_implicit_invocation: false` restringe a invocação à forma explícita, conforme [Build skills](https://learn.chatgpt.com/docs/build-skills).
 
-**Próxima página:** [Síntese e referências](sintese-e-referencias.md).
+**Próxima página:** [Claude Code e Codex CLI](claude-code-e-codex.md).
