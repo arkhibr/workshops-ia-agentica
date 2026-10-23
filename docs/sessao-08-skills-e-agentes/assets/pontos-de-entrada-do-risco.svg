@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 840" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker></defs>
+<rect width="1600" height="840" fill="#ffffff"/>
+<text x="60" y="64" font-size="30" font-weight="bold" fill="#12302b">Onde o risco entra: quatro pontos de entrada de instrução maliciosa, e o alcance das permissões</text>
+<rect x="60" y="120" width="500" height="160" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="80" y="156" font-size="23" font-weight="bold" fill="#12302b">Skill de terceiros</text>
+<text x="80" y="188" font-size="19" fill="#37474f">pode instruir o agente a chamar</text>
+<text x="80" y="214" font-size="19" fill="#37474f">ferramentas ou a vazar dados</text>
+<rect x="60" y="310" width="500" height="160" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="80" y="346" font-size="23" font-weight="bold" fill="#12302b">Servidor MCP de terceiros</text>
+<text x="80" y="378" font-size="19" fill="#37474f">recebe o mesmo alerta: escrever os</text>
+<text x="80" y="404" font-size="19" fill="#37474f">próprios servidores ou usar os de</text>
+<text x="80" y="430" font-size="19" fill="#37474f">provedores confiáveis</text>
+<rect x="1040" y="120" width="500" height="160" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="1060" y="156" font-size="23" font-weight="bold" fill="#12302b">Conteúdo externo buscado pelo</text>
+<text x="1060" y="184" font-size="23" font-weight="bold" fill="#12302b">agente</text>
+<text x="1060" y="216" font-size="19" fill="#37474f">páginas e documentos podem conter</text>
+<text x="1060" y="242" font-size="19" fill="#37474f">instruções de injeção de prompt</text>
+<rect x="1040" y="310" width="500" height="160" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="1060" y="346" font-size="23" font-weight="bold" fill="#12302b">Skill que busca dados em URLs</text>
+<text x="1060" y="374" font-size="23" font-weight="bold" fill="#12302b">externas</text>
+<text x="1060" y="406" font-size="19" fill="#37474f">herda esse risco, porque o conteúdo muda</text>
+<text x="1060" y="432" font-size="19" fill="#37474f">sem que a skill mude</text>
+<rect x="640" y="170" width="320" height="250" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="660" y="206" font-size="26" font-weight="bold" fill="#12302b">Agente</text>
+<text x="660" y="241" font-size="19" fill="#37474f">age com as permissões e as</text>
+<text x="660" y="267" font-size="19" fill="#37474f">credenciais que recebeu.</text>
+<text x="660" y="293" font-size="19" fill="#37474f">O alcance de uma instrução</text>
+<text x="660" y="319" font-size="19" fill="#37474f">maliciosa é o alcance dessas</text>
+<text x="660" y="345" font-size="19" fill="#37474f">permissões</text>
+<line x1="560" y1="200" x2="638" y2="260" stroke="#e65100" stroke-width="3" marker-end="url(#seta)"/>
+<line x1="560" y1="390" x2="638" y2="340" stroke="#e65100" stroke-width="3" marker-end="url(#seta)"/>
+<line x1="1040" y1="200" x2="962" y2="260" stroke="#e65100" stroke-width="3" marker-end="url(#seta)"/>
+<line x1="1040" y1="390" x2="962" y2="340" stroke="#e65100" stroke-width="3" marker-end="url(#seta)"/>
+<text x="60" y="534" font-size="22" font-weight="bold" fill="#12302b">Boas práticas da documentação para conteúdo não confiável</text>
+<rect x="60" y="562" width="730" height="70" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="82" y="605" font-size="21" font-weight="bold" fill="#12302b">Revisar os comandos antes da aprovação</text>
+<rect x="810" y="562" width="730" height="70" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="832" y="605" font-size="21" font-weight="bold" fill="#12302b">Evitar enviar conteúdo não confiável diretamente ao agente</text>
+<rect x="60" y="648" width="730" height="70" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="82" y="691" font-size="21" font-weight="bold" fill="#12302b">Verificar mudanças em arquivos críticos</text>
+<rect x="810" y="648" width="730" height="70" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="832" y="691" font-size="21" font-weight="bold" fill="#12302b">Usar máquinas virtuais para scripts e chamadas de ferramenta</text>
+<text x="60" y="790" font-size="19" fill="#546e7a">O mesmo texto da documentação reconhece que nenhum sistema é imune a todos os ataques.</text>
+</svg>
