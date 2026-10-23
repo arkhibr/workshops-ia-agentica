@@ -84,7 +84,11 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
         ),
     ),
     "sessao-07-casos-de-uso-por-papel": ("Casos de uso de IA por papel", True, ()),
-    "sessao-08-skills-e-agentes": ("Skills e agentes", True, ()),
+    "sessao-08-skills-e-agentes": (
+        "Skills e agentes",
+        True,
+        ("assets/arvore-de-decisao-do-mecanismo.png",),
+    ),
     "sessao-09-depuracao-sistematica": ("Depuração sistemática", False, ()),
     "sessao-10-sdd-ciclo-completo": ("SDD ciclo completo", True, ()),
 }
