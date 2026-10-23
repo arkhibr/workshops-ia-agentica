@@ -25,6 +25,12 @@ A restrição de permissões é declarada no arquivo do subagente e não depende
 
 Um subagente de revisão, que apenas lê e comenta, declara `tools: Read, Grep, Glob`. Um subagente que precisa de rede ou de escrita declara, no arquivo, o motivo, e a equipe revisa essa declaração como revisa uma mudança de código.
 
+Numa skill, o campo `allowed-tools` libera ferramentas sem pedir aprovação e deixa as demais disponíveis, e a restrição vem de `disallowed-tools`, como mostra a página [Front-matter de skills](front-matter-de-skills.md#liberar-nao-e-restringir). A documentação alerta que o Claude Code aplica o `allowed-tools` de uma skill de projeto até numa execução com `-p` em pasta nunca marcada como confiável, de modo que o `allowed-tools` de uma skill versionada no repositório entra na revisão como mudança de permissão.
+
+!!! note "Claude Code e Codex CLI"
+    **Claude Code:** o alerta sobre `allowed-tools` consta de [Pre-approve tools for a skill](https://code.claude.com/docs/en/skills#pre-approve-tools-for-a-skill).
+    **Codex CLI:** o sandbox e a aprovação são definidos na sessão que inicia o agente e herdados pelos subagentes, conforme [aprovações e segurança](https://learn.chatgpt.com/docs/agent-approvals-security). Na [referência de configuração](https://learn.chatgpt.com/docs/config-file/config-reference), `shell_environment_policy.ignore_default_excludes` tem padrão `true`, que mantém no ambiente dos subprocessos as variáveis com KEY, SECRET ou TOKEN no nome, e o valor `false` aplica as exclusões automáticas de nomes de segredo, comportamento que consta da documentação e não teve execução observada nesta sessão.
+
 ## Credenciais do agente
 
 O agente age em nome de alguma identidade, e a pergunta de projeto é qual. As regras abaixo reúnem a orientação do Microsoft Learn para PATs do Azure DevOps e a do GitHub para tokens de acesso pessoal, e a tabela marca o que é orientação das fontes e o que é conclusão deste material.
