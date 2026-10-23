@@ -1,6 +1,6 @@
 # Exercícios
 
-Tente responder antes de abrir os blocos de feedback. A progressão segue a Taxonomia de Bloom, do nível mais simples (recordar) ao mais exigente (criar), e a sessão inteira treina uma habilidade: declarar os requisitos de uma skill ou de um agente e conferir se a medição os cumpre. Os exercícios de Aplicar em diante usam situações da ACME, a universidade fictícia desta sessão. Na aula, a atividade de 36 minutos é o exercício-âncora do nível Criar (exercício 10), seguido de 6 minutos de conferência cruzada, e os exercícios 1 a 9 ficam para estudo posterior, com gabarito.
+Tente responder antes de abrir os blocos de feedback. A progressão segue a Taxonomia de Bloom, do nível mais simples (recordar) ao mais exigente (criar), e a sessão inteira treina uma habilidade: preencher a ficha de requisitos de uma skill ou de um agente e conferir se a medição a cumpre. Os exercícios de Aplicar em diante usam situações da ACME, a universidade fictícia desta sessão. Na aula, a atividade de 34 minutos é o exercício-âncora do nível Criar (exercício 12), seguido de 6 minutos de conferência cruzada, e os exercícios 1 a 11 ficam para estudo posterior, com gabarito.
 
 ## Recordar
 
@@ -30,14 +30,18 @@ A skill exige `name` e `description`. O `name` aceita até 64 caracteres, apenas
 
 ### 3. Skill, subagente ou agente principal
 
-Para cada tarefa da ACME, a universidade fictícia desta sessão, indique o mecanismo mais adequado entre skill, subagente e agente principal e escreva a razão da escolha. A tarefa A é escrever, toda semana, um resumo da fila de chamados no mesmo formato, a tarefa B é executar a suíte de 600 testes e relatar apenas as falhas, e a tarefa C é decidir com a equipe, em conversa, se a integração entre bolsas e pagamentos usa fila ou arquivo em lote.
+Para cada tarefa da ACME, a universidade fictícia desta sessão, indique o mecanismo mais adequado entre skill, subagente, skill com `context: fork` e agente principal, escreva a razão da escolha pela árvore da seção [Escolher o mecanismo](agentes-e-subagentes.md#escolher-o-mecanismo) e, nas escolhas que não sejam o agente principal, escreva as linhas de front-matter que as configuram. A tarefa A é escrever, a pedido da própria pessoa e toda semana, um resumo da fila de chamados no mesmo formato. A tarefa B é executar a suíte de 600 testes e relatar apenas as falhas, com o mesmo roteiro a cada vez e sem encher a conversa de saída. A tarefa C é decidir com a equipe, em conversa, se a integração entre bolsas e pagamentos usa fila ou arquivo em lote. A tarefa D é revisar uma alteração apenas lendo o código, sem poder editar nada, quando o modelo julgar útil.
 
 <details>
 <summary>Ver resposta</summary>
 
-A tarefa A é uma skill, porque se repete, tem procedimento conhecido e formato fixo, e o procedimento só ocupa contexto quando acionado. A tarefa B é um subagente, porque gera muita saída intermediária que a conversa não precisa ler, e apenas o resumo das falhas retorna ao contexto principal. A tarefa C fica com o agente principal, porque depende das decisões da equipe a cada passo, e delegar acrescentaria custo sem benefício.
+A tarefa A é uma skill de acionamento manual, com `disable-model-invocation: true`, porque se repete, tem procedimento conhecido e formato fixo, a pessoa decide o momento, e o procedimento só ocupa contexto quando acionado. A tarefa B gera muita saída intermediária que a conversa não precisa ler, e apenas o resumo das falhas retorna ao contexto principal, o que pede um subagente ou, como o roteiro é fixo, uma skill com `context: fork`, com `agent` escolhendo o tipo do subagente. A tarefa C fica com o agente principal, porque depende das decisões da equipe a cada passo, e delegar acrescentaria custo sem benefício, de modo que não há front-matter a escrever. A tarefa D é um subagente com `tools: Read, Grep, Glob`, porque a restrição de ferramentas pertence ao arquivo do agente e o modelo decide quando delegar pela `description`. Em cada escolha convém conferir um campo: na A, que o pedido em linguagem natural não aciona a skill, na B, que tudo o que a tarefa precisa chega pelos argumentos, porque o fork não enxerga o histórico, e na D, que o campo está escrito `tools` e não `tool`.
 
 </details>
+
+!!! note "Claude Code e Codex CLI"
+    **Claude Code:** os campos usados nestes exercícios constam da [tabela de campos dos subagentes](https://code.claude.com/docs/en/sub-agents#frontmatter-reference) e da [tabela de campos das skills](https://code.claude.com/docs/en/skills#frontmatter-reference).
+    **Codex CLI:** o agente é um arquivo TOML em `.codex/agents/`, e a skill fica em `.agents/skills/`, conforme [Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents) e [Build skills](https://learn.chatgpt.com/docs/build-skills). Nenhum exercício exige o Codex instalado, e os trechos que o executam são opcionais e declaram o pré-requisito.
 
 ### 4. Por que vários agentes custam mais
 
@@ -153,101 +157,7 @@ O primeiro problema é a quantidade de subagentes desproporcional à complexidad
 
 </details>
 
-## Avaliar
-
-### 9. Aprovar, revisar ou rejeitar uma skill
-
-**Situação**
-
-A equipe da ACME recebeu esta skill de um colega para instalar no projeto.
-
-```text
----
-name: Claude-Helper
-description: Eu ajudo você com documentos.
----
-
-(corpo de 900 linhas com explicações do que é um PDF,
-uma lista de oito bibliotecas "que você pode usar" e uma
-instrução: "para publicar, use o PAT TOKEN-FICTICIO-123")
-```
-
-**Passos**
-
-1. Liste os defeitos, citando a regra da documentação de cada um.
-2. Decida entre aprovar, revisar ou rejeitar e justifique.
-3. Escreva a ordem em que a equipe corrigiria os defeitos.
-
-<details>
-<summary>Conferir depois de responder</summary>
-
-Os defeitos são: o `name` tem letra maiúscula e contém a palavra reservada "claude", o que o invalida. A descrição está em primeira pessoa e é vaga, sem dizer quando usar. O corpo excede as 500 linhas recomendadas e explica o que o modelo já conhece. A lista de oito bibliotecas viola a orientação de oferecer um caminho padrão e não várias opções. O token está no texto da skill, o que viola a regra de não guardar segredo em arquivo versionado e exige revogar o token. A decisão é rejeitar a versão atual e reescrevê-la, porque o `name` inválido impede o uso e o segredo exposto exige ação imediata. A ordem de correção é revogar o token, corrigir o `name` e a descrição, reduzir o corpo e mover o detalhe para arquivos de referência, definir um caminho padrão e criar três avaliações antes de reinstalar.
-
-</details>
-
-**Critérios de avaliação**
-
-| Critério | Peso | O que se espera |
-|---|---:|---|
-| Defeitos encontrados | 40% | Pelo menos cinco dos seis defeitos, cada um com a regra associada |
-| Decisão justificada | 30% | Rejeita ou exige revisão com base no `name` inválido e no segredo exposto |
-| Ordem de correção | 30% | Revoga o token antes de qualquer outra correção |
-
-## Criar
-
-### 10. Exercício-âncora: uma skill, um subagente e um artefato conferido
-
-**O que é:** cada equipe constrói uma skill e um subagente que geram um artefato do trabalho da própria equipe, declara os requisitos antes da construção, mede o resultado e submete as permissões e as credenciais à conferência da equipe vizinha. A atividade ocupa 36 minutos de construção e 6 minutos de conferência cruzada. A equipe pode reutilizar a skill `registrando-decisao-arquitetural` da oficina ou escolher outro artefato, desde que tenha estrutura verificável por script.
-
-**Situação**
-
-O material de entrada não contém dado pessoal nem sigiloso, e nenhuma credencial real é usada. Onde o exercício pedir um token, a equipe descreve o plano e usa um valor fictício.
-
-**Passos**
-
-1. Em 6 minutos, a equipe preenche a tabela de requisitos abaixo, antes de qualquer construção.
-2. Em 12 minutos, a equipe usa o agente para criar a skill, o script de conferência e o subagente de revisão, com `tools` explícito.
-3. Em 8 minutos, a equipe executa a skill em três cenários: uma entrada completa, uma entrada incompleta e uma entrada com um texto que parece segredo. Cada execução registra tokens, tempo, resultado do script e itens a confirmar.
-4. Em 6 minutos, a equipe compara a medição com os requisitos, decide entre adotar, ajustar o modelo ou o esforço, ou descartar, e registra a decisão.
-5. Em 4 minutos, a equipe prepara para o vizinho o arquivo do subagente e o plano da credencial.
-
-| Requisito | Declaração da equipe |
-|---|---|
-| Artefato e formato | |
-| Conferência por script (o que o script verifica) | |
-| Conferência por pessoa (o que só uma pessoa decide) | |
-| Modelo e esforço, com a razão | |
-| Orçamento de tokens por execução | |
-| Tempo máximo por execução | |
-| Ferramentas e permissões do subagente | |
-| Identidade e credencial usadas, com escopo e validade | |
-| Local de guarda do valor da credencial | |
-
-**Conferência cruzada (6 minutos)**
-
-Cada equipe troca o arquivo do subagente e o plano da credencial com a equipe vizinha, aplica a tabela de [perguntas de revisão](seguranca-e-credenciais.md#perguntas-de-revisao) e entrega por escrito ao menos um achado, com a regra correspondente. A equipe dona do material decide o que corrigir.
-
-**Critérios de avaliação**
-
-| Critério | Peso | O que se espera |
-|---|---:|---|
-| Requisitos antes da construção | 20% | Tabela completa, com orçamento de tokens e tempo declarados |
-| Conferência em duas camadas | 25% | Script que verifica a estrutura e a lista do que só uma pessoa decide |
-| Medição | 20% | Três cenários executados, com tokens, tempo e resultado do script registrados |
-| Permissões e credencial | 25% | `tools` explícito, identidade própria, escopo mínimo, validade e cofre indicados |
-| Decisão | 10% | Adotar, ajustar ou descartar, justificada pela medição |
-
-Para a equipe que terminar antes, a extensão é repetir o cenário com entrada incompleta em um segundo modelo e comparar o comportamento do campo "A confirmar".
-
-## Extensão: front-matter na prática
-
-Os exercícios 11 a 14 estendem a sessão para o front-matter de skills e de subagentes e ficam fora do relógio de 115 minutos. Eles seguem os níveis de Bloom a que pertencem, e cada exercício declara o seu: o 11 é de análise, o 12 de aplicação, o 13 de criação e o 14 de avaliação. As páginas de apoio são [Front-matter de skills](front-matter-de-skills.md), [Front-matter de subagentes](front-matter-de-subagentes.md), [Depuração de skills e agentes](depuracao-de-skills-e-agentes.md) e [Claude Code e Codex CLI](claude-code-e-codex.md).
-
-!!! note "Claude Code e Codex CLI"
-    **Claude Code:** os campos usados nestes exercícios constam da [tabela de campos dos subagentes](https://code.claude.com/docs/en/sub-agents#frontmatter-reference) e da [tabela de campos das skills](https://code.claude.com/docs/en/skills#frontmatter-reference).
-    **Codex CLI:** o agente é um arquivo TOML em `.codex/agents/`, e a skill fica em `.agents/skills/`, conforme [Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents) e [Build skills](https://learn.chatgpt.com/docs/build-skills). Nenhum exercício exige o Codex instalado, e os trechos que o executam são opcionais e declaram o pré-requisito.
-
-### 11. Três arquivos de subagente com erro (Analisar)
+### 9. Três arquivos de subagente com erro
 
 **Situação**
 
@@ -294,51 +204,35 @@ O primeiro arquivo não carrega, porque o `name` contém `:`, caractere reservad
 
 </details>
 
-### 12. Skill, subagente ou skill com fork (Aplicar)
+## Avaliar
+
+### 10. Aprovar, revisar ou rejeitar uma skill
 
 **Situação**
 
-A ACME tem três tarefas recorrentes e precisa decidir o mecanismo e escrever as linhas de front-matter que o configuram. A tarefa A é gerar, a pedido da própria pessoa, o resumo semanal da fila de chamados sempre no mesmo formato. A tarefa B é rodar a suíte de 600 testes e relatar só as falhas, com o mesmo roteiro a cada vez e sem encher a conversa de saída. A tarefa C é revisar uma alteração apenas lendo o código, sem poder editar nada, quando o modelo julgar útil.
+A equipe da ACME recebeu esta skill de um colega para instalar no projeto.
+
+```text
+---
+name: Claude-Helper
+description: Eu ajudo você com documentos.
+---
+
+(corpo de 900 linhas com explicações do que é um PDF,
+uma lista de oito bibliotecas "que você pode usar" e uma
+instrução: "para publicar, use o PAT TOKEN-FICTICIO-123")
+```
 
 **Passos**
 
-1. Escolha, para cada tarefa, entre skill, subagente e skill com `context: fork`, e justifique pela árvore da página [Escolher o mecanismo](escolher-o-mecanismo.md).
-2. Escreva as linhas de front-matter de cada escolha.
-3. Indique um campo que a equipe deve conferir em cada uma.
+1. Liste os defeitos, citando a regra da documentação de cada um.
+2. Decida entre aprovar, revisar ou rejeitar e justifique.
+3. Escreva a ordem em que a equipe corrigiria os defeitos.
 
 <details>
 <summary>Conferir depois de responder</summary>
 
-A tarefa A é uma skill de acionamento manual, com `disable-model-invocation: true`, porque o procedimento é fixo e a pessoa decide o momento. A tarefa B é uma skill com `context: fork`, porque o procedimento é fixo e a saída é volumosa, e o fork mantém a saída fora da conversa principal. A tarefa C é um subagente com `tools: Read, Grep, Glob`, porque a restrição de ferramentas pertence ao arquivo do agente e o modelo decide quando delegar pela `description`. A equipe confere, na A, que o pedido em linguagem natural não aciona a skill, na B, que tudo o que a tarefa precisa chega pelos argumentos, porque o fork não enxerga o histórico, e na C, que o nome do campo está escrito `tools` e não `tool`.
-
-</details>
-
-### 13. Exercício-âncora da extensão: restringir de fato e verificar (Criar)
-
-**O que é:** cada equipe cria um subagente somente leitura, prevê o que acontece quando pedem a ele que edite um arquivo, verifica a previsão em execução e localiza no log de depuração o efeito de um erro de grafia no campo de restrição. O trabalho pode ser feito com os arquivos da oficina, e a skill ou o subagente da ACME do exercício 10 serve de ponto de partida.
-
-**Situação**
-
-O material não contém dado pessoal nem credencial, e o arquivo a ser editado é um ADR fictício da ACME.
-
-**Passos**
-
-1. A equipe escreve o arquivo de um subagente `revisor-somente-leitura`, com `tools: Read, Grep, Glob` e `model: haiku`.
-2. A equipe registra por escrito a previsão do resultado de pedir que o subagente corrija um ADR, antes de executar.
-3. A equipe executa o pedido e anota o que o subagente respondeu e se o arquivo mudou.
-4. A equipe troca `tools` por `tool`, repete o pedido e localiza no log de depuração a linha que registra o campo desconhecido.
-5. A equipe preenche a tabela abaixo e decide o que mudaria no processo de revisão de agentes do projeto.
-
-| Registro | Com `tools` | Com `tool` |
-|---|---|---|
-| Previsão da equipe | | |
-| O arquivo mudou? | | |
-| Linha do log que explica o resultado | | |
-
-<details>
-<summary>Conferir depois de responder</summary>
-
-O resultado observado na versão 2.1.309 foi que o subagente com `tools: Read, Grep, Glob` respondeu que só tinha ferramentas de leitura e não editou o arquivo, e que o subagente com o campo `tool` editou o arquivo, porque sem `tools` ele herda todas as ferramentas. O log traz um aviso com `did you mean "tools"?` para o campo desconhecido. A decisão de processo esperada é incluir a verificação da restrição, com um pedido de edição, na revisão de todo arquivo de subagente.
+Os defeitos são: o `name` tem letra maiúscula e contém a palavra reservada "claude", o que o invalida. A descrição está em primeira pessoa e é vaga, sem dizer quando usar. O corpo excede as 500 linhas recomendadas e explica o que o modelo já conhece. A lista de oito bibliotecas viola a orientação de oferecer um caminho padrão e não várias opções. O token está no texto da skill, o que viola a regra de não guardar segredo em arquivo versionado e exige revogar o token. A decisão é rejeitar a versão atual e reescrevê-la, porque o `name` inválido impede o uso e o segredo exposto exige ação imediata. A ordem de correção é revogar o token, corrigir o `name` e a descrição, reduzir o corpo e mover o detalhe para arquivos de referência, definir um caminho padrão e criar três avaliações antes de reinstalar.
 
 </details>
 
@@ -346,11 +240,11 @@ O resultado observado na versão 2.1.309 foi que o subagente com `tools: Read, G
 
 | Critério | Peso | O que se espera |
 |---|---:|---|
-| Previsão registrada antes | 30% | Previsão escrita para os dois casos antes de qualquer execução |
-| Verificação real executada | 40% | Pedido de edição executado nos dois arquivos, com o resultado do arquivo conferido |
-| Diagnóstico do desvio | 30% | Linha do log que aponta o campo desconhecido e decisão de processo coerente com o efeito |
+| Defeitos encontrados | 40% | Pelo menos cinco dos seis defeitos, cada um com a regra associada |
+| Decisão justificada | 30% | Rejeita ou exige revisão com base no `name` inválido e no segredo exposto |
+| Ordem de correção | 30% | Revoga o token antes de qualquer outra correção |
 
-### 14. O mesmo agente no Codex CLI (Avaliar)
+### 11. O mesmo agente no Codex CLI
 
 **Situação**
 
@@ -384,6 +278,69 @@ Não edite arquivos.
 <details>
 <summary>Conferir depois de responder</summary>
 
-O arquivo do Claude Code restringe as ferramentas pelo campo `tools`, e o corpo apenas orienta. O arquivo do Codex só orienta, porque a documentação adverte que instruções para evitar edições não criam um sandbox somente leitura, e o sandbox e a aprovação são herdados da sessão que inicia o agente. A decisão é revisar: o arquivo é aceitável como orientação, e a restrição real exige iniciar a sessão com `sandbox_mode = "read-only"`, valor que consta da documentação de aprovações e segurança. Esse comportamento do Codex está documentado e, no ambiente desta sessão, não foi executado, porque o modelo padrão da conta exigia uma versão mais nova do Codex. O passo opcional pede a versão do Codex instalada e um modelo aceito pela conta, e o resultado entra no registro da equipe com a versão usada e o status observado.
+No arquivo do Claude Code, o campo `tools` restringe as ferramentas e o corpo orienta. No arquivo do Codex, a instrução orienta, e a documentação adverte que instruções para evitar edições não criam um sandbox somente leitura, de modo que o sandbox e a aprovação são herdados da sessão que inicia o agente. A decisão é revisar: o arquivo é aceitável como orientação, e a restrição real exige iniciar a sessão com `sandbox_mode = "read-only"`, valor que consta da documentação de aprovações e segurança. Esse comportamento do Codex está documentado e, no ambiente desta sessão, não foi executado, porque o modelo padrão da conta exigia uma versão mais nova do Codex. O passo opcional pede a versão do Codex instalada e um modelo aceito pela conta, e o resultado entra no registro da equipe com a versão usada e o status observado.
 
 </details>
+
+## Criar
+
+### 12. Exercício-âncora: uma skill, um subagente e um artefato conferido
+
+**O que é:** cada equipe preenche a ficha de requisitos, constrói uma skill e um subagente que geram um artefato do trabalho da própria equipe, mede o resultado, prevê e verifica a restrição de ferramentas do subagente e submete as permissões e as credenciais à conferência da equipe vizinha. A atividade ocupa 34 minutos de construção e 6 minutos de conferência cruzada. A equipe pode reutilizar a skill `registrando-decisao-arquitetural` da oficina ou escolher outro artefato, desde que tenha estrutura verificável por script.
+
+![Cinco passos de construção em sequência, com 6 minutos para preencher a ficha, 11 minutos para construir a skill, o script e o subagente, 8 minutos para executar os três cenários e verificar a restrição de ferramentas, 5 minutos para comparar a medição com a ficha e decidir, e 4 minutos para preparar o material do vizinho, seguidos de 6 minutos de conferência cruzada entre equipes.](assets/fluxo-do-exercicio-ancora.png)
+
+**Situação**
+
+O material de entrada não contém dado pessoal nem sigiloso, e nenhuma credencial real é usada. Onde o exercício pedir um token, a equipe descreve o plano e usa um valor fictício.
+
+**Passos**
+
+1. Em 6 minutos, a equipe preenche a ficha de requisitos abaixo, antes de qualquer construção.
+2. Em 11 minutos, a equipe usa o agente para criar a skill, o script de conferência e o subagente de revisão, com `tools` explícito.
+3. Em 8 minutos, a equipe executa a skill em três cenários: uma entrada completa, uma entrada incompleta e uma entrada com um texto que parece segredo. Cada execução registra tokens, tempo, resultado do script e itens a confirmar. Na mesma etapa, a equipe escreve a previsão do que acontece quando se pede ao subagente que edite um arquivo, executa o pedido e anota se o arquivo mudou, e repete o teste com `tool` no lugar de `tools`, localizando no log de depuração a linha que registra o campo desconhecido.
+4. Em 5 minutos, a equipe compara a medição com a ficha, decide entre adotar, ajustar o modelo ou o esforço, ou descartar, e registra a decisão.
+5. Em 4 minutos, a equipe prepara para o vizinho o arquivo do subagente e o plano da credencial.
+
+| Linha da ficha | Declaração da equipe |
+|---|---|
+| Mecanismo e razão da escolha | |
+| Arquivo e front-matter (campos e valores) | |
+| Artefato e formato | |
+| Conferência por script (o que o script verifica) | |
+| Conferência por pessoa (o que só uma pessoa decide) | |
+| Modelo e esforço, com a razão | |
+| Orçamento de tokens por execução | |
+| Tempo máximo por execução | |
+| Ferramentas e permissões do subagente | |
+| Identidade e credencial usadas, com escopo e validade | |
+| Local de guarda do valor da credencial | |
+
+| Verificação da restrição | Com `tools` | Com `tool` |
+|---|---|---|
+| Previsão da equipe | | |
+| O arquivo mudou? | | |
+| Linha do log que explica o resultado | | |
+
+<details>
+<summary>Conferir depois de executar a verificação</summary>
+
+O resultado observado na versão 2.1.309 foi que o subagente com `tools: Read, Grep, Glob` respondeu que só tinha ferramentas de leitura e não editou o arquivo, e que o subagente com o campo `tool` editou o arquivo, porque sem `tools` ele herda todas as ferramentas. O log traz um aviso com `did you mean "tools"?` para o campo desconhecido. A decisão de processo esperada é incluir a verificação da restrição, com um pedido de edição, na revisão de todo arquivo de subagente.
+
+</details>
+
+**Conferência cruzada (6 minutos)**
+
+Cada equipe troca o arquivo do subagente e o plano da credencial com a equipe vizinha, aplica a tabela de [perguntas de revisão](seguranca-e-credenciais.md#perguntas-de-revisao) e entrega por escrito ao menos um achado, com a regra correspondente. A equipe dona do material decide o que corrigir.
+
+**Critérios de avaliação**
+
+| Critério | Peso | O que se espera |
+|---|---:|---|
+| Requisitos antes da construção | 20% | Ficha completa, com mecanismo, front-matter, orçamento de tokens e tempo declarados |
+| Conferência em duas camadas | 25% | Script que verifica a estrutura e a lista do que só uma pessoa decide |
+| Medição | 20% | Três cenários executados, com tokens, tempo e resultado do script registrados |
+| Permissões e credencial | 25% | `tools` explícito, previsão e verificação da restrição registradas, identidade própria, escopo mínimo, validade e cofre indicados |
+| Decisão | 10% | Adotar, ajustar ou descartar, justificada pela medição |
+
+Para a equipe que terminar antes, a extensão é repetir o cenário com entrada incompleta em um segundo modelo e comparar o comportamento do campo "A confirmar".
