@@ -7,26 +7,56 @@ Faça o exercício 1. Em seguida, use o exercício 5 para criar o subagente de l
 
 ## 1. Criar e invocar uma skill
 
-Uma skill é um procedimento reutilizável. O arquivo `SKILL.md` define seu nome, quando ela é útil e o que deve fazer. Os comandos abaixo criam a skill e um arquivo de notas para testá-la. O marcador `$ARGUMENTS` recebe o texto informado após o nome da skill.
+Uma skill é um procedimento reutilizável. O arquivo `SKILL.md` define seu nome, quando ela é útil e o que deve fazer. Os comandos abaixo criam a skill e uma transcrição fictícia para testá-la. O marcador `$ARGUMENTS` recebe o texto informado após o nome da skill.
 
 **Windows — PowerShell**
+
+Crie a skill em `.claude/skills/resumir-notas/SKILL.md`:
 
 ```powershell
 New-Item -ItemType Directory -Force .claude/skills/resumir-notas | Out-Null
 $skill = @'
 ---
 name: resumir-notas
-description: Resume notas de reunião quando solicitado.
+description: Identifica tarefas e riscos de projeto em transcrições de reunião. Use ao analisar uma reunião.
 argument-hint: [arquivo]
 ---
-Leia $ARGUMENTS e responda em três itens: assunto, decisões e pendências.
+Leia a transcrição em $ARGUMENTS. Liste tarefas e riscos de projeto, com
+responsável, prazo e trecho de evidência quando houver. Não invente dados:
+marque o que estiver ausente como "A confirmar" e identifique riscos inferidos.
 '@
 [IO.File]::WriteAllText((Join-Path (Get-Location) '.claude/skills/resumir-notas/SKILL.md'), $skill, [Text.UTF8Encoding]::new($false))
+```
+
+Crie a transcrição de teste em `notas-exemplo.md`:
+
+```powershell
 $notas = @'
-# Notas de reunião
-Assunto: organização do encontro da equipe.
-Decisões: realizar o encontro na sexta-feira.
-Pendências: confirmar o local.
+# Transcrição — projeto de bolsas
+Reunião de 22 de outubro de 2026
+
+Ana: As inscrições começam em 16 de novembro. Até lá, precisamos integrar
+    o sistema de bolsas ao de pagamentos e concluir a homologação.
+Bruno: A fila gerenciada continua sendo a opção escolhida? O arquivo em lote
+    seria mais simples, mas só atualizaria os pagamentos no dia seguinte.
+Ana: Sim, seguimos com a fila. O lote fica como alternativa de contingência,
+    ainda sem aprovação para uso em produção.
+Bruno: Vou enviar a especificação da integração até 30 de outubro. Dependo
+    dos campos obrigatórios da API; Carla, você consegue confirmá-los?
+Carla: Consigo pedir ao fornecedor até 27 de outubro. A documentação atual
+    está incompleta e o fornecedor ainda não confirmou a data da nova API.
+    Se ela atrasar, talvez a homologação não termine antes das inscrições.
+Ana: Precisamos também verificar se o ambiente de homologação tem acesso à
+    fila. Podemos pedir isso para a equipe de infraestrutura?
+Bruno: Podemos, mas ainda não falamos com eles nem combinamos um responsável.
+    A verificação precisa acontecer antes do início dos testes de integração.
+Carla: Os testes estão previstos para 5 de novembro, se a API estiver pronta.
+    Também precisamos preparar um plano de contingência caso não esteja.
+Ana: Concordo. Ainda não temos responsável nem prazo para esse plano. Não
+    assumam que o arquivo em lote já está aprovado: preciso discutir a opção
+    com pagamentos antes de tomar essa decisão.
+Carla: Eu registro a dependência da API no quadro de riscos. Não lembro se o
+    contrato cobre indisponibilidade; vou confirmar, mas ainda não tenho data.
 '@
 [IO.File]::WriteAllText((Join-Path (Get-Location) 'notas-exemplo.md'), $notas, [Text.UTF8Encoding]::new($false))
 ```
@@ -34,21 +64,51 @@ Pendências: confirmar o local.
 <details>
 <summary>Linux / macOS — Bash ou Zsh</summary>
 
+Crie a skill:
+
 ```bash
 mkdir -p .claude/skills/resumir-notas
 cat > .claude/skills/resumir-notas/SKILL.md <<'EOF_SKILL'
 ---
 name: resumir-notas
-description: Resume notas de reunião quando solicitado.
+description: Identifica tarefas e riscos de projeto em transcrições de reunião. Use ao analisar uma reunião.
 argument-hint: [arquivo]
 ---
-Leia $ARGUMENTS e responda em três itens: assunto, decisões e pendências.
+Leia a transcrição em $ARGUMENTS. Liste tarefas e riscos de projeto, com
+responsável, prazo e trecho de evidência quando houver. Não invente dados:
+marque o que estiver ausente como "A confirmar" e identifique riscos inferidos.
 EOF_SKILL
+```
+
+Crie a transcrição de teste:
+
+```bash
 cat > notas-exemplo.md <<'EOF_NOTAS'
-# Notas de reunião
-Assunto: organização do encontro da equipe.
-Decisões: realizar o encontro na sexta-feira.
-Pendências: confirmar o local.
+# Transcrição — projeto de bolsas
+Reunião de 22 de outubro de 2026
+
+Ana: As inscrições começam em 16 de novembro. Até lá, precisamos integrar
+    o sistema de bolsas ao de pagamentos e concluir a homologação.
+Bruno: A fila gerenciada continua sendo a opção escolhida? O arquivo em lote
+    seria mais simples, mas só atualizaria os pagamentos no dia seguinte.
+Ana: Sim, seguimos com a fila. O lote fica como alternativa de contingência,
+    ainda sem aprovação para uso em produção.
+Bruno: Vou enviar a especificação da integração até 30 de outubro. Dependo
+    dos campos obrigatórios da API; Carla, você consegue confirmá-los?
+Carla: Consigo pedir ao fornecedor até 27 de outubro. A documentação atual
+    está incompleta e o fornecedor ainda não confirmou a data da nova API.
+    Se ela atrasar, talvez a homologação não termine antes das inscrições.
+Ana: Precisamos também verificar se o ambiente de homologação tem acesso à
+    fila. Podemos pedir isso para a equipe de infraestrutura?
+Bruno: Podemos, mas ainda não falamos com eles nem combinamos um responsável.
+    A verificação precisa acontecer antes do início dos testes de integração.
+Carla: Os testes estão previstos para 5 de novembro, se a API estiver pronta.
+    Também precisamos preparar um plano de contingência caso não esteja.
+Ana: Concordo. Ainda não temos responsável nem prazo para esse plano. Não
+    assumam que o arquivo em lote já está aprovado: preciso discutir a opção
+    com pagamentos antes de tomar essa decisão.
+Carla: Eu registro a dependência da API no quadro de riscos. Não lembro se o
+    contrato cobre indisponibilidade; vou confirmar, mas ainda não tenho data.
 EOF_NOTAS
 ```
 
@@ -61,7 +121,7 @@ Inicie o Claude Code na raiz do projeto e invoque a skill, passando o arquivo co
 /resumir-notas notas-exemplo.md
 ```
 
-Compare a saída com o arquivo. Retire a linha de pendências e execute novamente: o resultado identifica a ausência ou inventa conteúdo? Ajuste a instrução para marcar dados ausentes como `A confirmar` e repita.
+Compare a saída com a transcrição: Bruno ficou responsável pela especificação e Carla por consultar o fornecedor e confirmar a cobertura contratual. A verificação do ambiente e o plano de contingência ainda não têm responsáveis; o atraso da API pode afetar os testes e a homologação. A opção de lote não está aprovada. Confira as evidências, os prazos ausentes e os riscos inferidos. Depois, retire o prazo da especificação e execute novamente: a skill deve marcá-lo como `A confirmar`, sem inventar uma data.
 
 ## 2. Controlar o acionamento
 
@@ -158,7 +218,7 @@ tools: Read, Grep, Glob
 model: haiku
 maxTurns: 8
 ---
-Revise as notas indicadas. Verifique assunto, decisões e pendências; liste informações ausentes sem editar arquivos.
+Revise as notas indicadas. Verifique tarefas, riscos, responsáveis e prazos; liste informações ausentes sem editar arquivos.
 '@
 [IO.File]::WriteAllText((Join-Path (Get-Location) '.claude/agents/revisor-notas.md'), $agente, [Text.UTF8Encoding]::new($false))
 Copy-Item notas-exemplo.md notas-antes.md
@@ -177,7 +237,7 @@ tools: Read, Grep, Glob
 model: haiku
 maxTurns: 8
 ---
-Revise as notas indicadas. Verifique assunto, decisões e pendências; liste informações ausentes sem editar arquivos.
+Revise as notas indicadas. Verifique tarefas, riscos, responsáveis e prazos; liste informações ausentes sem editar arquivos.
 EOF_AGENT
 cp notas-exemplo.md notas-antes.md
 ```
