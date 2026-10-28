@@ -1,6 +1,30 @@
 # Agentes e subagentes
 
-Um agente executa uma tarefa em várias etapas, decidindo por conta própria quais ferramentas chamar, e um subagente é um agente auxiliar que recebe uma parte do trabalho num contexto separado. Esta página preenche, na [ficha de requisitos](index.md#a-ficha-de-requisitos), a linha "Arquivo e front-matter" no recorte do subagente, e percorre a anatomia do arquivo, o isolamento de contexto, as ferramentas e as permissões, a ordem de escopo e o custo de usar vários agentes. A escolha entre subagente, skill e os demais mecanismos fica na página [Escolher o mecanismo](escolher-o-mecanismo.md).
+Um **agente** recebe um objetivo e usa um modelo para escolher ações ao longo do trabalho. Ele pode ler um arquivo, decidir que precisa consultar outro, usar uma ferramenta, examinar o resultado e escolher o próximo passo. A pessoa define o objetivo e os limites; o agente conduz a sequência dentro das ferramentas e permissões disponíveis.
+
+Por exemplo, ao receber “identifique os riscos do projeto nesta transcrição”, o agente pode ler a reunião, localizar trechos relevantes, procurar esclarecimentos em outro documento indicado e apresentar os riscos com evidências. Ele decide os passos conforme o que encontra. Um programa com uma sequência fixa, por outro lado, executa as etapas que foram definidas antecipadamente.
+
+![Um objetivo chega ao agente; ele escolhe uma ação, usa uma ferramenta, observa o resultado e decide se precisa de outra ação antes de responder.](assets/como-funciona-um-agente.png)
+
+### Onde entra o subagente?
+
+Um **subagente** é um agente auxiliar ao qual o agente principal delega parte do trabalho. Ele recebe uma tarefa e trabalha em contexto separado; ao terminar, devolve seu resultado para a conversa principal. A equipe pode configurar um subagente especializado, por exemplo, para revisar relatórios de reunião sem editar arquivos.
+
+```text
+Pessoa: analise a transcrição e confira o relatório.
+    ↓
+Agente principal: produz o relatório e delega a revisão.
+    ↓
+Subagente revisor: compara o relatório com a transcrição e devolve achados.
+    ↓
+Agente principal: apresenta o relatório e os pontos encontrados.
+```
+
+O subagente é útil quando há uma parte do trabalho que pode ser delegada com objetivo e contexto claros, ou que precisa de ferramentas próprias. Ele não vê automaticamente o histórico da conversa: a delegação precisa incluir os arquivos e as informações necessários. Um contexto separado também não é uma permissão somente de leitura; as ferramentas e permissões devem ser configuradas.
+
+Uma skill registra um procedimento; um subagente configura um especialista que recebe tarefas. Uma skill com `context: fork` combina as duas ideias: suas instruções são executadas em um subagente. A [comparação com o exemplo da reunião](escolher-o-mecanismo.md#skill-com-fork-ou-subagente-qual-e-a-diferenca) mostra quando escolher cada opção.
+
+Esta página apresenta a estrutura do arquivo de subagente, o isolamento de contexto e a configuração de ferramentas e permissões.
 
 ## Workflow, agente e subagente
 
