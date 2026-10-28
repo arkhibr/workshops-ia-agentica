@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="500" viewBox="0 0 1600 500" font-family="Arial, sans-serif">
+<rect width="1600" height="500" fill="white"/>
+<text x="60" y="55" font-size="32" font-weight="bold" fill="#12302b">Skill com fork e subagente personalizado</text>
+<text x="60" y="91" font-size="21" fill="#455a64">Dois caminhos independentes: nos dois, o trabalho acontece em contexto separado.</text>
+<defs><marker id="seta" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker></defs>
+<text x="60" y="151" font-size="23" font-weight="bold" fill="#00695c">SKILL COM FORK</text>
+<text x="60" y="301" font-size="23" font-weight="bold" fill="#e65100">SUBAGENTE PERSONALIZADO</text>
+<rect x="60" y="167" width="390" height="100" rx="12" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="80" y="204" font-size="21" font-weight="bold" fill="#12302b">Skill: procedimento</text><text x="80" y="239" font-size="19" fill="#37474f">+ transcrição indicada no pedido</text>
+<rect x="550" y="167" width="390" height="100" rx="12" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="570" y="204" font-size="21" font-weight="bold" fill="#12302b">Subagente executa a skill</text><text x="570" y="239" font-size="19" fill="#37474f">em contexto separado</text>
+<rect x="60" y="317" width="390" height="100" rx="12" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+<text x="80" y="354" font-size="21" font-weight="bold" fill="#12302b">Subagente: papel e ferramentas</text><text x="80" y="389" font-size="19" fill="#37474f">+ tarefa delegada</text>
+<rect x="550" y="317" width="390" height="100" rx="12" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+<text x="570" y="354" font-size="21" font-weight="bold" fill="#12302b">Especialista executa a tarefa</text><text x="570" y="389" font-size="19" fill="#37474f">em contexto separado</text>
+<rect x="1040" y="210" width="450" height="165" rx="12" fill="#f5f7f8" stroke="#78909c" stroke-width="2"/>
+<text x="1060" y="254" font-size="21" font-weight="bold" fill="#12302b">Resultado à conversa principal</text><text x="1060" y="291" font-size="19" fill="#37474f">O pedido deve trazer os arquivos</text><text x="1060" y="321" font-size="19" fill="#37474f">e o contexto necessários.</text>
+<line x1="455" y1="217" x2="540" y2="217" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/><line x1="455" y1="367" x2="540" y2="367" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<line x1="945" y1="217" x2="1030" y2="252" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/><line x1="945" y1="367" x2="1030" y2="330" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<text x="60" y="466" font-size="19" fill="#455a64">Contexto separado não garante acesso somente de leitura: configure ferramentas e permissões.</text></svg>

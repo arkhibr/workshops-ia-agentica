@@ -1,6 +1,30 @@
 # Skills
 
-Uma skill é uma pasta com um arquivo `SKILL.md` que ensina o agente a executar um tipo de tarefa da equipe sempre do mesmo modo, sem que a pessoa repita as instruções a cada conversa. Esta página preenche, na [ficha de requisitos](index.md#a-ficha-de-requisitos), a linha "Arquivo e front-matter" no recorte da skill, e percorre a anatomia da pasta, o front-matter com os campos de cada ferramenta, o custo de carga em três níveis, as regras de escrita da descrição e do corpo, a diferença entre liberar e restringir ferramentas e o diagnóstico da skill que não aciona.
+Uma **skill** é uma capacidade reutilizável que uma equipe entrega ao agente. Ela reúne instruções, critérios e, quando necessário, modelos e scripts para executar um tipo de tarefa. Em vez de explicar as regras de novo em cada conversa, a equipe as escreve uma vez e as aplica quando precisa.
+
+A skill entra em cena quando a pessoa a chama pelo nome ou quando o agente identifica que ela corresponde ao pedido, conforme a configuração. Ao acioná-la, o agente recebe as instruções e trabalha com a entrada daquele uso. A skill orienta o trabalho, mas não garante que o resultado esteja correto: é preciso testá-lo e conferir o que foi produzido.
+
+![Fluxo de uma skill: pedido e transcrição entram no agente, que carrega a skill, utiliza seus modelos e scripts quando necessário e entrega um relatório conferível.](assets/como-funciona-uma-skill.png)
+
+### Um exemplo: analisar reuniões
+
+Uma equipe precisa transformar transcrições em tarefas e riscos de projeto. Sem uma skill, cada pessoa precisa lembrar de pedir o formato do relatório, a indicação de evidências e o tratamento de informações ausentes. Com a skill `identificando-tarefas-e-riscos`, essas orientações ficam registradas para os próximos usos.
+
+| Elemento | Neste exemplo |
+|---|---|
+| **Quando usar** | Ao analisar uma transcrição de reunião para levantar tarefas e riscos. |
+| **Entrada** | A transcrição da reunião, fornecida no pedido ou em um arquivo. |
+| **Instruções** | Identificar tarefas e riscos, citar trechos da transcrição e marcar dados ausentes como “A confirmar”. |
+| **Recursos** | Um modelo de relatório e um script que verifica sua estrutura. |
+| **Saída e conferência** | Um relatório em Markdown; o script verifica campos e seções, e uma pessoa confere o conteúdo contra a transcrição. |
+
+Cada reunião traz uma entrada diferente; a skill preserva as orientações da equipe. O resultado pode variar, pois o agente interpreta a transcrição. Um script pode verificar se o campo “Responsável” existe, mas não garante que o responsável foi identificado corretamente.
+
+### Onde o trabalho acontece?
+
+Por padrão, a skill é executada na conversa principal: o agente aplica suas instruções no contexto da conversa. No Claude Code, `context: fork` faz a skill executar em um subagente com contexto separado. A receita continua sendo a da skill; muda onde ela é executada e quais informações da conversa estão disponíveis. Um subagente personalizado, por sua vez, define um especialista que pode receber tarefas diferentes. A [comparação com exemplos](escolher-o-mecanismo.md#skill-com-fork-ou-subagente-qual-e-a-diferenca) mostra as duas configurações lado a lado.
+
+A implementação dessa capacidade é uma pasta com `SKILL.md` e, se necessário, arquivos auxiliares. Esta página apresenta como escrever esses arquivos e como o agente encontra e carrega a skill.
 
 ## Anatomia de uma skill
 

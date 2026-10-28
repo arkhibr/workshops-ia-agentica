@@ -8,6 +8,8 @@ Uma **skill** guarda um procedimento reutilizável: o que fazer, em que ordem e 
 
 A skill pode rodar na conversa principal ou em um subagente. Com `context: fork`, o Claude Code inicia um subagente em contexto separado e entrega a ele as instruções da skill. Por isso, os dois caminhos usam um subagente; a diferença é se o ponto de partida é **um procedimento a executar** ou **um especialista para receber uma tarefa**.
 
+![Comparação de dois fluxos: uma skill com fork entrega seu procedimento e uma entrada a um subagente; um subagente personalizado recebe uma tarefa e executa segundo seu papel. Ambos devolvem o resultado à conversa principal.](assets/skill-fork-e-subagente.png)
+
 ### Exemplo: analisar uma reunião
 
 A equipe quer identificar tarefas e riscos numa transcrição. Ela cria a skill `.claude/skills/analisar-reuniao/SKILL.md`:
