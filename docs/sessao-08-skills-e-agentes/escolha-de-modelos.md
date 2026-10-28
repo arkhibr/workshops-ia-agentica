@@ -53,21 +53,21 @@ Antes da v2.1.251, a variável de ambiente vinha em primeiro lugar e prevalecia 
 
 Os três arquivos abaixo reaproveitam os exemplos das páginas de [Skills](skills.md#exemplo-um-skillmd-com-valores-escolhidos) e de [Agentes e subagentes](agentes-e-subagentes.md#anatomia-e-front-matter-do-subagente), e mostram onde cada decisão de modelo é escrita. São exemplos ilustrativos, sem execução.
 
-A skill `registrando-decisao-arquitetural` gera registros de decisão arquitetural (ADR) e declara o modelo e o esforço no front-matter:
+A skill `identificando-tarefas-e-riscos` identifica tarefas e riscos em transcrições de reuniões e declara o modelo e o esforço no front-matter:
 
 ```markdown
 ---
-name: registrando-decisao-arquitetural
+name: identificando-tarefas-e-riscos
 model: sonnet
 effort: medium
 ---
 ```
 
-O subagente `revisor-de-adr` revisa o registro depois de gerado e declara um modelo menor, além de um limite de turnos:
+O subagente `revisor-de-reuniao` revisa o relatório e sua transcrição depois de gerado e declara um modelo menor, além de um limite de turnos:
 
 ```markdown
 ---
-name: revisor-de-adr
+name: revisor-de-reuniao
 tools: Read, Grep, Glob
 model: haiku
 maxTurns: 8
@@ -93,7 +93,7 @@ model: haiku
 | Subagente | `maxTurns: 8` | Limite de custo e de tempo da revisão | Cada execução do subagente |
 | Skill com `fork` | `model: haiku` | Tarefa de saída volumosa e de pouca decisão | O subagente criado pelo `fork` |
 
-Se a pessoa trocar o modelo da conversa para o Opus com `/model`, a skill continua com `sonnet` no próprio turno e o `revisor-de-adr` continua com `haiku`, porque os dois declaram o modelo. Um subagente com `model: inherit`, ou sem o campo e sem a variável `CLAUDE_CODE_SUBAGENT_MODEL`, passaria a usar o Opus e custaria o preço dele. A [oficina](oficina-de-ferramentas.md#experimento-b-medir-o-custo-e-o-resultado-em-dois-modelos) mede a skill em dois modelos, e o resultado decide se o `sonnet` e o `medium` do exemplo se mantêm.
+Se a pessoa trocar o modelo da conversa para o Opus com `/model`, a skill continua com `sonnet` no próprio turno e o `revisor-de-reuniao` continua com `haiku`, porque os dois declaram o modelo. Um subagente com `model: inherit`, ou sem o campo e sem a variável `CLAUDE_CODE_SUBAGENT_MODEL`, passaria a usar o Opus e custaria o preço dele. A [oficina](oficina-de-ferramentas.md#experimento-b-medir-o-custo-e-o-resultado-em-dois-modelos) mede a skill em dois modelos, e o resultado decide se o `sonnet` e o `medium` do exemplo se mantêm.
 
 ## Combinar modelos
 

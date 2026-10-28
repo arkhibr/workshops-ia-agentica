@@ -12,15 +12,15 @@ O subagente é um arquivo Markdown com frontmatter YAML, e o corpo do arquivo se
 
 ```markdown
 ---
-name: revisor-de-adr
-description: Revisa registros de decisão arquitetural quanto a estrutura e consistência. Use depois de gerar ou editar um ADR.
+name: revisor-de-reuniao
+description: Revisa tarefas e riscos extraídos de transcrições. Use depois de gerar ou editar o relatório de reunião.
 tools: Read, Grep, Glob
 model: haiku
 maxTurns: 8
 ---
 
-Você revisa um registro de decisão arquitetural. Leia o arquivo indicado,
-liste as seções ausentes e aponte opções sem consequência declarada.
+Você revisa um relatório de reunião e sua transcrição. Liste seções ausentes,
+afirmativas sem evidência e responsáveis ou prazos inventados.
 Não edite arquivos. Devolva uma lista curta, com a linha de cada problema.
 ```
 
@@ -108,7 +108,7 @@ Num subagente, cada problema de front-matter tem um efeito e um lugar onde o reg
 | Campo com nome errado, como `tool` no lugar de `tools` | O agente carrega sem o campo e, sem `tools`, herda todas as ferramentas | Linha `[WARN]` com a sugestão `did you mean "tools"?` | Observado, e o agente editou o arquivo que o `tools` correto impediu |
 | Valor fora da lista documentada, como `color: magenta` | O agente carrega | Nenhum aviso | Observado |
 
-O log de depuração, o comando `/context` e o `claude plugin validate .claude/agents` mostram o que carregou e o que foi ignorado. O [Experimento D](oficina-de-ferramentas.md#experimento-d-localizar-front-matter-com-erro-no-log-de-depuracao) da oficina reproduz os três erros mais comuns e traz os comandos, e a seção [O que o Claude Code mostra do que foi carregado](custo-de-tokens.md#o-que-o-claude-code-mostra-do-que-foi-carregado) reúne os comandos que mostram o que está carregado.
+O log de depuração, o comando `/context` e o `claude plugin validate .claude/agents` mostram o que carregou e o que foi ignorado. O [Experimento D](experimentos-complementares.md#experimento-d-localizar-front-matter-com-erro-no-log-de-depuracao) da oficina reproduz os três erros mais comuns e traz os comandos, e a seção [O que o Claude Code mostra do que foi carregado](custo-de-tokens.md#o-que-o-claude-code-mostra-do-que-foi-carregado) reúne os comandos que mostram o que está carregado.
 
 !!! note "Claude Code e Codex CLI"
     **Claude Code:** as regras de arquivos ignorados constam de [Subagent files Claude Code skips](https://code.claude.com/docs/en/sub-agents#subagent-files-claude-code-skips).

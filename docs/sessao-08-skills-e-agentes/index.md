@@ -10,7 +10,7 @@ As sessões anteriores usaram o agente como ferramenta de uso individual. A part
 
 ## A ficha de requisitos
 
-A resposta à pergunta-guia é uma ficha de requisitos, uma tabela com uma linha para cada decisão que a skill ou o agente declara antes da construção. Cada página de teoria preenche uma ou duas linhas e termina com o bloco "Linha da ficha", que lista as perguntas daquela linha, e o exercício-âncora preenche a ficha inteira para o artefato da própria equipe.
+A resposta à pergunta-guia é uma ficha de requisitos, uma tabela com uma linha para cada decisão que a skill ou o agente declara antes da construção. Cada página de teoria preenche uma ou duas linhas e termina com o bloco "Linha da ficha", que lista as perguntas daquela linha, e os exercícios aplicam essas decisões à construção e à avaliação de uma skill.
 
 ![A ficha de requisitos do agente, com oito linhas: mecanismo, arquivo e front-matter, artefato e conferência, modelo e esforço, orçamento de tokens, tempo, ferramentas e permissões, e identidade, credencial e cofre. Cada linha traz a pergunta que responde e a página que a preenche.](assets/ficha-de-requisitos.png)
 
@@ -18,9 +18,9 @@ A ficha existe para que as decisões fiquem escritas antes do primeiro teste. Um
 
 ## Mapa da sessão
 
-A sessão percorre a ficha na ordem das linhas e usa o relógio fixo de 10h às 12h. A primeira hora apresenta o mecanismo, o arquivo, o artefato, o modelo, o custo e o tempo, e fecha com a oficina em que cada pessoa cria e mede uma skill. A segunda parte trata de segurança e credenciais e dedica a maior parte do tempo ao exercício-âncora, em que a equipe preenche a ficha inteira.
+A sessão alterna teoria e dois blocos de exercícios de 25 minutos. O primeiro aplica skills, subagentes e escolha do mecanismo; o segundo cria e mede uma skill após o estudo de artefatos, modelos, custo, performance e segurança.
 
-![Linha do tempo de 10h às 12h com um bloco para cada página da sessão, proporcional ao tempo recomendado: visão geral, skills, agentes e subagentes, escolher o mecanismo, geração de artefatos, escolha de modelos, custo de tokens e performance, oficina até as 11h, intervalo de cinco minutos, segurança e credenciais, exercício-âncora com construção e conferência cruzada, e síntese.](assets/mapa-da-sessao.png)
+![Sequência dos temas e dos dois blocos de exercícios de 25 minutos.](assets/mapa-da-sessao.png)
 
 | Página | Linha da ficha que preenche |
 |---|---|
@@ -32,12 +32,12 @@ A sessão percorre a ficha na ordem das linhas e usa o relógio fixo de 10h às 
 | [Custo de tokens](custo-de-tokens.md) | Orçamento de tokens |
 | [Performance](performance.md) | Tempo |
 | [Segurança e credenciais](seguranca-e-credenciais.md) | Ferramentas e permissões, e identidade, credencial e cofre |
-| [Oficina de ferramentas](oficina-de-ferramentas.md) | Verificação das linhas anteriores por medição e por teste |
-| [Exercícios](exercicios.md) | A ficha completa, no exercício-âncora |
+| [Exercícios — artefatos, modelos, custo e segurança](oficina-de-ferramentas.md) | Construção e medição da skill |
+| [Exercícios — skills, agentes e escolha do mecanismo](exercicios.md) | Criação e restrição de ferramentas |
 
 ## Como usar este material
 
-Estas páginas apoiam uma sessão conduzida ao vivo, sem leitura prévia obrigatória. Cada página tem um tempo recomendado no roteiro abaixo, e o instrutor explica o que couber nesse tempo, com a coluna "O que explicar nesse tempo" como guia e a coluna "Fica para leitura posterior" como a parte que a turma consulta depois. A sessão pressupõe o ambiente configurado nas Sessões 1 e 2 e o uso do Claude Code, e as notas "Claude Code e Codex CLI" das páginas indicam o equivalente no Codex CLI quando a documentação o descreve.
+Estas páginas apoiam uma sessão conduzida ao vivo, sem leitura prévia obrigatória. O roteiro abaixo apresenta a sequência dos temas e das atividades. A sessão pressupõe o ambiente configurado nas Sessões 1 e 2 e o uso do Claude Code, e as notas "Claude Code e Codex CLI" das páginas indicam o equivalente no Codex CLI quando a documentação o descreve.
 
 !!! info "Versões verificadas"
     A versão instalada em cada máquina aparece nos comandos `claude --version` e `codex --version`. As observações foram feitas em 23/10/2026 com `claude 2.1.309` e `codex-cli 0.140.0`, e o comando `codex doctor` informa a versão 0.164.0 como disponível. O modelo padrão da conta exigiu uma versão mais nova do Codex e os demais modelos do catálogo foram recusados com conta ChatGPT, de modo que nenhum agente do Codex foi executado e as linhas de subagente do Codex têm o status documentado.
@@ -56,39 +56,34 @@ Ao final desta sessão, o participante deve ser capaz de:
 6. **Conferir** o artefato gerado por um agente por meio de script e de critérios declarados antes da construção.
 7. **Localizar** o equivalente de um recurso do Claude Code no Codex CLI e reconhecer quando não há equivalente documentado.
 
-## Roteiro da sessão (2h, das 10h às 12h)
+## Roteiro da sessão
 
-| # | Página | Bloco | Tempo | O que explicar nesse tempo | Fica para leitura posterior |
-|---|---|---|---|---|---|
-| 0 | Visão geral | Abertura | 4 min | Pergunta-guia, ficha de requisitos e mapa da sessão | Objetivos e como conduzir |
-| 1 | [Skills](skills.md) | Teoria | 10 min | Três níveis de carga, núcleo portátil, `description` como gatilho e custo, `allowed-tools` libera e não restringe | Valores aceitos em cada campo, campos menos usados, substituições e injeção de comando, diagnóstico da skill que não aciona |
-| 2 | [Agentes e subagentes](agentes-e-subagentes.md) | Teoria | 7 min | Contexto isolado, `tools` omitido herda tudo e o erro de grafia, custo de vários agentes | Campos que faltam, `permissionMode` e precedência de escopo |
-| 3 | [Escolher o mecanismo](escolher-o-mecanismo.md) | Teoria | 5 min | Árvore de seis perguntas e comparação entre skill, subagente e agente principal | Tabela de oito perguntas com sinais contrários, situações típicas, combinações e antipadrões |
-| 4 | [Geração de artefatos](geracao-de-artefatos.md) | Teoria | 5 min | Duas camadas de conferência e o laço de correção | Documentos prontos |
-| 5 | [Escolha de modelos](escolha-de-modelos.md) | Teoria | 4 min | Quatro critérios, estratégias de partida e esforço | Matriz por modelo |
-| 6 | [Custo de tokens](custo-de-tokens.md) | Teoria | 5 min | De onde o custo vem, cache em unidades relativas e orçamento da listagem | Alavancas de redução em detalhe |
-| 7 | [Performance](performance.md) | Teoria | 3 min | Três medidas que se compensam | Reprodutibilidade |
-| 8 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 17 min | Experimento A em 10 minutos e Experimento B em 7 minutos | Experimentos C a F |
-| | Intervalo | Pausa | 5 min | | |
-| 9 | [Segurança e credenciais](seguranca-e-credenciais.md) | Teoria | 10 min | Quatro pontos de entrada, permissões mínimas e restrição em camadas, identidade própria e ciclo do token | Perguntas de revisão em detalhe |
-| 10 | [Exercícios](exercicios.md) | Prática avaliada | 34 min | Exercício-âncora: ficha, construção, execução com verificação da restrição e decisão | Exercícios 1 a 11 |
-| 11 | [Exercícios](exercicios.md) | Conferência cruzada | 6 min | Troca do arquivo do subagente e do plano da credencial entre equipes | |
-| — | [Síntese e referências](sintese-e-referencias.md) | Fechamento | 5 min | Checklist e autoavaliação | Fundamentação e referência rápida |
-| | | | **120 min** | | |
-
-O conteúdo soma 115 minutos, e o intervalo das 11h00 às 11h05 completa os 120 minutos de relógio. A primeira parte ocupa das 10h00 às 11h00, com 60 minutos, e a segunda, das 11h05 às 12h00, com 55 minutos.
-
-Se faltar tempo, o corte recomendado é resumir a página de Performance a uma frase com a figura, depois reduzir pela metade a de Escolha de modelos. O Experimento A da oficina, o exercício-âncora e a página de Segurança e credenciais ficam fora de qualquer corte.
+| Página ou atividade | Foco |
+|---|---|
+| Visão geral | Pergunta-guia e ficha |
+| [Skills](skills.md) | Front-matter, descrição e níveis de carga |
+| [Agentes e subagentes](agentes-e-subagentes.md) | Contexto isolado e ferramentas |
+| [Escolher o mecanismo](escolher-o-mecanismo.md) | Critérios de escolha |
+| [Exercícios — skills, agentes e escolha do mecanismo](exercicios.md) | Exercício 1 e teste de restrição do exercício 5; 25 minutos |
+| Intervalo | |
+| [Geração de artefatos](geracao-de-artefatos.md) | Conferência estrutural e humana |
+| [Escolha de modelos](escolha-de-modelos.md) | Capacidade, custo e esforço |
+| [Custo de tokens](custo-de-tokens.md) | Cache e medição |
+| [Performance](performance.md) | Medidas de desempenho |
+| [Segurança e credenciais](seguranca-e-credenciais.md) | Permissões e identidade |
+| [Exercícios — artefatos, modelos, custo e segurança](oficina-de-ferramentas.md) | Criar, conferir e medir a skill; 25 minutos |
+| [Experimentos complementares](experimentos-complementares.md) | Práticas opcionais para depois da sessão |
+| [Síntese e referências](sintese-e-referencias.md) | Checklist e autoavaliação |
 
 ## Como conduzir
 
-Cada página de teoria apresenta um tema, termina com o bloco "Linha da ficha" e traz tabelas de decisão que a oficina e os exercícios reutilizam. O instrutor apresenta o tema no tempo recomendado e não percorre as tabelas linha a linha, porque elas ficam à disposição da turma durante a prática.
+Cada página de teoria apresenta um tema, termina com o bloco "Linha da ficha" e traz tabelas de decisão que os exercícios reutilizam. O instrutor apresenta o tema e não precisa percorrer as tabelas linha a linha, porque elas ficam à disposição da turma durante a prática.
 
-A oficina e o exercício-âncora usam o mesmo exemplo, a skill `registrando-decisao-arquitetural`, que gera um registro de decisão arquitetural em Markdown para a ACME, uma universidade fictícia. O exemplo foi escolhido porque o artefato tem estrutura verificável por script e conteúdo que só uma pessoa confere, o que permite discutir as duas formas de conferência.
+O segundo bloco de exercícios usa a skill `identificando-tarefas-e-riscos`, que gera um relatório de tarefas e riscos a partir de uma transcrição de reunião para a ACME, uma universidade fictícia. O exemplo foi escolhido porque o artefato tem estrutura verificável por script e conteúdo que só uma pessoa confere, o que permite discutir as duas formas de conferência.
 
-As equipes são formadas antes da sessão. Cada pessoa executa a oficina no próprio computador, numa pasta vazia, e nenhuma credencial real é usada: os exercícios de segurança trabalham com descrições e com tokens fictícios.
+As equipes são formadas antes da sessão. Cada pessoa executa o segundo bloco de exercícios no próprio computador, numa pasta vazia, e nenhuma credencial real é usada: os exercícios de segurança trabalham com descrições e com tokens fictícios.
 
 !!! warning "Limite desta sessão"
-    Os números de custo, de ganho de desempenho e de consumo de tokens vêm de documentação e de relatos da própria Anthropic, medidos em tarefas e configurações específicas. Nenhum deles mede as tarefas da equipe. A decisão de adotar uma skill ou um agente depende da medição feita na oficina e no exercício, com as tarefas e os modelos da própria equipe.
+    Os números de custo, de ganho de desempenho e de consumo de tokens vêm de documentação e de relatos da própria Anthropic, medidos em tarefas e configurações específicas. Nenhum deles mede as tarefas da equipe. A decisão de adotar uma skill ou um agente depende da medição feita nos exercícios, com as tarefas e os modelos da própria equipe.
 
 **Próxima página:** [Skills](skills.md).

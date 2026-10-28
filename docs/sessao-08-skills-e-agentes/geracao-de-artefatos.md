@@ -6,7 +6,7 @@ Um artefato é o arquivo que uma skill ou um agente entrega ao final da tarefa, 
 
 A Sessão 7 apresentou os cinco elementos de um caso de uso: entrada, saída, pedido, conferência e decisão humana. Numa skill, o artefato é a saída, e o quarto elemento, a conferência, é a fonte contra a qual o artefato é comparado antes de circular. Um artefato sem conferência declarada herda o problema descrito na [Sessão 7](../sessao-07-casos-de-uso-por-papel/como-escolher-um-caso-de-uso.md): circula na confiança de quem o gerou.
 
-A conferência de um artefato tem duas camadas que dependem de quem as executa. A camada estrutural verifica o que um script consegue decidir sem interpretar o texto, como seções obrigatórias, campos preenchidos, formato de data e referências existentes. A camada de conteúdo verifica o que só uma pessoa decide, como a correção de uma consequência atribuída a uma opção, e permanece como decisão humana nomeada.
+A conferência de um artefato tem duas camadas que dependem de quem as executa. A camada estrutural verifica o que um script consegue decidir sem interpretar o texto, como seções obrigatórias, campos preenchidos, formato de data e referências existentes. A camada de conteúdo verifica o que só uma pessoa decide, como se uma tarefa ou um risco é sustentado pela transcrição, e permanece como decisão humana nomeada.
 
 ## Declarar o modelo do artefato
 
@@ -23,7 +23,7 @@ Quando a qualidade da saída depende de o agente ver o estilo esperado, a docume
 
 A documentação recomenda o padrão plano, validação e execução para operações em lote, mudanças destrutivas e regras de validação complexas. O agente cria primeiro um plano em formato estruturado, um script valida esse plano, e só então a execução ocorre. O ciclo completo fica: analisar, criar o plano, validar o plano, executar e verificar o resultado.
 
-Os benefícios listados são a detecção antecipada de erros, a verificação objetiva por máquina, o planejamento reversível, porque o agente itera sobre o plano sem tocar nos originais, e a depuração clara, porque a mensagem de erro aponta o problema específico. A mesma documentação orienta escrever o validador com mensagens detalhadas, como "campo 'data_decisao' ausente, campos disponíveis: titulo, status, data_da_decisao", porque a mensagem é o que o agente lê para corrigir o artefato.
+Os benefícios listados são a detecção antecipada de erros, a verificação objetiva por máquina, o planejamento reversível, porque o agente itera sobre o plano sem tocar nos originais, e a depuração clara, porque a mensagem de erro aponta o problema específico. A mesma documentação orienta escrever o validador com mensagens detalhadas, como "campo 'responsável' ausente, campos disponíveis: tarefa, prazo, evidência", porque a mensagem é o que o agente lê para corrigir o artefato.
 
 Na instrução da skill, vale indicar de forma explícita se o agente deve executar o script ou ler o código dele como referência. A execução é o caso comum, e o código do script não entra no contexto.
 
@@ -35,53 +35,49 @@ O laço consiste em gerar o artefato, executar o validador, corrigir os erros ap
 
 ## Exemplo: o artefato declarado no `SKILL.md`
 
-A skill `registrando-decisao-arquitetural`, descrita na página de [Skills](skills.md#exemplo-um-skillmd-com-valores-escolhidos), gera registros de decisão arquitetural (ADR) e reúne num só arquivo os elementos desta página. Os trechos abaixo reaproveitam o corpo do `SKILL.md` e o modelo de artefato da skill, e são exemplos ilustrativos, sem execução.
-
-O corpo do `SKILL.md` declara o fluxo do artefato, a conferência por script e a regra da conferência de conteúdo:
+A skill `identificando-tarefas-e-riscos`, descrita na página de [Skills](skills.md#exemplo-um-skillmd-com-valores-escolhidos), analisa uma transcrição e gera um relatório de tarefas e riscos. Os trechos são ilustrativos, sem execução.
 
 ```markdown
-3. Gere docs/adr/NNNN-titulo.md a partir de modelo-adr.md.
-4. Execute `python ${CLAUDE_SKILL_DIR}/scripts/validar_adr.py <arquivo>` até a
+3. Gere docs/reunioes/relatorio.md a partir de modelo-reuniao.md.
+4. Execute `python ${CLAUDE_SKILL_DIR}/scripts/validar_reuniao.py <arquivo>` até a
    saída OK, com no máximo três tentativas.
 5. Informe o caminho do arquivo e os itens marcados "A confirmar".
 
-Nunca invente fatos. Consequência que a descrição não traz recebe o texto
-"A confirmar com <responsável>".
+Nunca invente fatos, responsáveis ou prazos. Marque dados ausentes como
+"A confirmar" e distinga riscos explícitos de riscos inferidos.
 ```
 
-O arquivo `modelo-adr.md`, ao lado do `SKILL.md`, é o modelo estrito do artefato e só entra no contexto quando o agente o lê, conforme os [três níveis de carga](skills.md#tres-niveis-de-carga):
+O arquivo `modelo-reuniao.md`, ao lado do `SKILL.md`, define o formato estrito:
 
 ```markdown
-# NNNN. Título
+# Relatório de reunião
 
-Status: proposta
-Data: AAAA-MM-DD
+Fonte: [arquivo ou identificação da transcrição]
 
-## Contexto
-## Opções consideradas
-## Decisão
-## Consequências
+## Tarefas
+- Tarefa: [descrição]; Responsável: [nome ou A confirmar]; Prazo: [data ou A confirmar]; Evidência: [trecho da transcrição]
+
+## Riscos
+- Risco: [descrição]; Tipo: [explícito ou inferido]; Evidência: [trecho da transcrição]
+
+## Pontos a confirmar
+- [dúvida ou Nenhum]
 ```
 
-O script `validar_adr.py` confere a camada estrutural e escreve mensagens que dizem o que falta e o que foi encontrado, no estilo que a documentação recomenda, como no exemplo a seguir:
+Quando não houver tarefas ou riscos, registre `Nenhuma identificada` na seção correspondente. O script `validar_reuniao.py` verifica seções, campos e marcadores, sem decidir se a extração está correta:
 
 ```text
-ERRO: seção "Consequências" ausente. Seções encontradas: Contexto, Opções consideradas, Decisão
-ERRO: Data fora do formato AAAA-MM-DD. Valor encontrado: 22/10/2026
+ERRO: seção "Riscos" ausente. Seções encontradas: Tarefas, Pontos a confirmar
+ERRO: campo "Responsável" ausente na tarefa 1.
 ```
 
-A tabela relaciona cada trecho ao elemento da página.
-
-| Trecho do arquivo | Elemento | Camada |
+| Trecho | Elemento | Camada |
 |---|---|---|
-| `modelo-adr.md` com seções e linhas fixas | Modelo estrito do artefato | Declaração |
-| Passo 4, `validar_adr.py` até a saída OK | Conferência por script e critério de parada | Estrutural |
-| Passo 4, no máximo três tentativas | Limite de iterações do laço de correção | Estrutural |
-| Mensagem `ERRO: ... encontrado: ...` | Mensagem que o agente lê para corrigir o artefato | Estrutural |
-| "A confirmar com <responsável>" | Marca do que só uma pessoa decide | Conteúdo |
-| Passo 5, itens marcados "A confirmar" | Entrega da lista que a pessoa confere | Conteúdo |
+| `modelo-reuniao.md` | Modelo estrito | Declaração |
+| `validar_reuniao.py`, até OK ou três tentativas | Verificação e limite de correção | Estrutural |
+| Evidências, riscos inferidos e itens a confirmar | Comparação com a transcrição por uma pessoa | Conteúdo |
 
-A linha `allowed-tools: Read Write Bash(python *)` do front-matter libera a escrita do registro e a execução do script sem restringir as demais ferramentas, e a [oficina](oficina-de-ferramentas.md#experimento-a-criar-a-skill-e-gerar-um-artefato) constrói essa skill e confere o artefato nas duas camadas.
+A [oficina](oficina-de-ferramentas.md#experimento-a-criar-a-skill-e-gerar-um-artefato) constrói a skill e confere o relatório nas duas camadas. A validação estrutural não comprova fidelidade ou completude.
 
 ## Que forma de conferência cada artefato pede
 
@@ -89,7 +85,7 @@ A tabela abaixo é uma síntese deste material e não uma classificação da doc
 
 | Artefato | Conferência por script | Conferência por pessoa |
 |---|---|---|
-| Registro de decisão em Markdown | Seções obrigatórias, status válido, data no formato esperado | Se as consequências decorrem da decisão |
+| Relatório de reunião em Markdown | Seções e campos obrigatórios | Se tarefas e riscos são fiéis à transcrição e se faltou algo |
 | Planilha | Recalcular totais com script e comparar com a planilha | Se os critérios de agregação servem ao uso |
 | Código | Compilar e executar os testes | Se os testes cobrem o comportamento que importa |
 | Relatório de texto | Citações e números presentes na fonte | Se a conclusão se sustenta nos dados |

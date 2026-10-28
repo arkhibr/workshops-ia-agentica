@@ -14,15 +14,15 @@
   <rect x="60" y="140" width="700" height="710" rx="14" fill="#f5f7f8" stroke="#78909c" stroke-width="3"/>
   <g font-family="Menlo, monospace" font-size="25" fill="#12302b">
     <text x="92" y="200" fill="#78909c">---</text>
-    <text x="92" y="266">name: revisar-adr</text>
-    <text x="92" y="332">description: Revisa a estrutura de um ADR</text>
-    <text x="92" y="398">when_to_use: pedido de revisão de ADR</text>
+    <text x="92" y="266">name: identificar-tarefas-riscos</text>
+    <text x="92" y="332">description: Identifica tarefas e riscos</text>
+    <text x="92" y="398">when_to_use: análise de reunião</text>
     <text x="92" y="464">disable-model-invocation: true</text>
     <text x="92" y="530">allowed-tools: Read Grep</text>
     <text x="92" y="596">context: fork</text>
     <text x="92" y="662">agent: Explore</text>
     <text x="92" y="728" fill="#78909c">---</text>
-    <text x="92" y="794">Revise o ADR <tspan fill="#e65100" font-weight="bold">$ARGUMENTS</tspan>.</text>
+    <text x="92" y="794">Analise a transcrição <tspan fill="#e65100" font-weight="bold">$ARGUMENTS</tspan>.</text>
   </g>
 
   <!-- barras de cor por linha -->

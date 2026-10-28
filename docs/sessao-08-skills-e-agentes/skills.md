@@ -9,11 +9,11 @@ A [documentação das skills](../referencia/bibliografia.md#anthropic-agent-skil
 No Claude Code, as skills ficam em `~/.claude/skills/` quando são pessoais e em `.claude/skills/` quando pertencem ao projeto, e cada skill ocupa uma pasta com o nome dela. As skills do Claude Code são baseadas em arquivos e não são sincronizadas com as do claude.ai nem com as da API, de modo que cada superfície recebe a própria cópia. No Claude Code, a skill também pode ser distribuída por meio de plugins.
 
 ```text
-.claude/skills/registrando-decisao-arquitetural/
+.claude/skills/identificando-tarefas-e-riscos/
 ├── SKILL.md            instruções principais, carregadas quando a skill é acionada
-├── modelo-adr.md       modelo do artefato, lido só quando o agente precisa dele
+├── modelo-reuniao.md       modelo do artefato, lido só quando o agente precisa dele
 └── scripts/
-    └── validar_adr.py  script de conferência, executado sem entrar no contexto
+    └── validar_reuniao.py  script de conferência, executado sem entrar no contexto
 ```
 
 ## Front-matter
@@ -70,10 +70,10 @@ A tabela anterior diz o que cada campo faz, e a tabela abaixo diz o que escrever
 
 | Campo | Valores aceitos | Exemplo | Efeito de cada valor |
 |---|---|---|---|
-| `name` | Texto com letras minúsculas, números e hifens, de até 64 caracteres | `registrando-decisao-arquitetural` | Define o nome do comando `/` e o nome que orienta o modelo. Omitido, vale o nome da pasta |
-| `description` | Texto livre de até 1.024 caracteres na especificação aberta, em terceira pessoa | `Gera registros de decisão arquitetural em Markdown. Use ao registrar uma decisão.` | É o texto que o modelo compara com o pedido. Omitida, vale a primeira linha não vazia do corpo |
-| `when_to_use` | Texto livre | `Use quando a pessoa pedir um ADR.` | Soma-se à `description` na listagem, com o mesmo corte de 1.536 caracteres |
-| `argument-hint` | Texto livre, por convenção entre colchetes | `[descrição da decisão]` ou `[arquivo] [formato]` | Aparece no autocompletar e não altera o comportamento da skill |
+| `name` | Texto com letras minúsculas, números e hifens, de até 64 caracteres | `identificando-tarefas-e-riscos` | Define o nome do comando `/` e o nome que orienta o modelo. Omitido, vale o nome da pasta |
+| `description` | Texto livre de até 1.024 caracteres na especificação aberta, em terceira pessoa | `Identifica tarefas e riscos em transcrições de reuniões. Use para analisar uma reunião.` | É o texto que o modelo compara com o pedido. Omitida, vale a primeira linha não vazia do corpo |
+| `when_to_use` | Texto livre | `Use quando pedirem tarefas e riscos de uma reunião.` | Soma-se à `description` na listagem, com o mesmo corte de 1.536 caracteres |
+| `argument-hint` | Texto livre, por convenção entre colchetes | `[transcrição]` ou `[arquivo] [formato]` | Aparece no autocompletar e não altera o comportamento da skill |
 | `arguments` | Nomes separados por espaço ou lista YAML | `arguments: tema formato` | Cada nome vira uma variável posicional, `$tema` e `$formato`, na ordem declarada |
 | `disable-model-invocation` | Booleano | `true` | Com `true`, só a pessoa aciona pelo nome, e a skill não entra em subagentes como skill pré-carregada. Com `false`, o modelo também a aciona |
 | `user-invocable` | Booleano | `false` | Com `false`, a skill sai do menu `/` e só o modelo a aciona, como um conhecimento de fundo |
@@ -94,37 +94,37 @@ Os booleanos aceitam `true` e `false`, e também `yes`, `no`, `on`, `off`, `1` e
 
 ### Exemplo: um `SKILL.md` com valores escolhidos
 
-O arquivo abaixo reúne os campos de uso comum para a skill `registrando-decisao-arquitetural`, que gera registros de decisão arquitetural (ADR) e é a skill construída na [oficina](oficina-de-ferramentas.md#experimento-a-criar-a-skill-e-gerar-um-artefato). O arquivo é um exemplo ilustrativo e não foi executado como está.
+O arquivo abaixo reúne os campos de uso comum para a skill `identificando-tarefas-e-riscos`, que identifica tarefas e riscos em transcrições de reuniões e é a skill construída na [oficina](oficina-de-ferramentas.md#experimento-a-criar-a-skill-e-gerar-um-artefato). O arquivo é um exemplo ilustrativo e não foi executado como está.
 
 ```markdown
 ---
-name: registrando-decisao-arquitetural
-description: Gera registros de decisão arquitetural em Markdown a partir da descrição de uma decisão. Use ao registrar ou documentar uma decisão de arquitetura, ou ao pedir um ADR.
-argument-hint: [descrição da decisão]
+name: identificando-tarefas-e-riscos
+description: Identifica tarefas e riscos de projeto em transcrições de reuniões. Use ao analisar uma reunião e registrar seus encaminhamentos.
+argument-hint: [transcrição]
 allowed-tools: Read Write Bash(python *)
 model: sonnet
 effort: medium
 ---
 
-Gere o registro de decisão em cinco passos:
+Gere o relatório de reunião em cinco passos:
 
-1. Leia a descrição da decisão em $ARGUMENTS.
-2. Se faltar contexto, duas opções ou a decisão, pergunte antes de escrever.
-3. Gere docs/adr/NNNN-titulo.md a partir de modelo-adr.md.
-4. Execute `python ${CLAUDE_SKILL_DIR}/scripts/validar_adr.py <arquivo>` até a
+1. Leia a transcrição fornecida em $ARGUMENTS ou no arquivo indicado.
+2. Identifique tarefas e riscos, com trechos de evidência da transcrição.
+3. Gere docs/reunioes/relatorio.md a partir de modelo-reuniao.md.
+4. Execute `python ${CLAUDE_SKILL_DIR}/scripts/validar_reuniao.py <arquivo>` até a
    saída OK, com no máximo três tentativas.
 5. Informe o caminho do arquivo e os itens marcados "A confirmar".
 
-Nunca invente fatos. Consequência que a descrição não traz recebe o texto
-"A confirmar com <responsável>".
+Nunca invente fatos, responsáveis ou prazos. Marque dados ausentes como
+"A confirmar" e distinga riscos explícitos de riscos inferidos.
 ```
 
 | Linha | Valor | Razão da escolha |
 |---|---|---|
-| `name` | `registrando-decisao-arquitetural` | Descreve a tarefa e atende às regras de caracteres e de tamanho |
-| `description` | Duas frases | A primeira diz o que a skill faz, e a segunda traz os termos que a pessoa usa no pedido, "registrar", "documentar" e "ADR" |
-| `argument-hint` | `[descrição da decisão]` | Orienta quem digita `/registrando-decisao-arquitetural`, e o texto digitado chega ao corpo por `$ARGUMENTS` |
-| `allowed-tools` | `Read Write Bash(python *)` | Libera a leitura do `modelo-adr.md`, a escrita do registro e a execução do script, sem restringir as demais ferramentas |
+| `name` | `identificando-tarefas-e-riscos` | Descreve a tarefa e atende às regras de caracteres e de tamanho |
+| `description` | Duas frases | A primeira diz o que a skill faz, e a segunda traz os termos que a pessoa usa no pedido, "tarefas", "riscos" e "reunião" |
+| `argument-hint` | `[transcrição]` | Orienta quem digita `/identificando-tarefas-e-riscos`, e o texto digitado chega ao corpo por `$ARGUMENTS` |
+| `allowed-tools` | `Read Write Bash(python *)` | Libera a leitura do `modelo-reuniao.md`, a escrita do relatório e a execução do script, sem restringir as demais ferramentas |
 | `model` | `sonnet` | Uma tarefa de redação estruturada, conferida por script, que não exige o modelo mais caro. A [página de escolha de modelos](escolha-de-modelos.md#exemplo-o-modelo-declarado-nos-arquivos) mostra como validar essa escolha |
 | `effort` | `medium` | Mantém o esforço abaixo do máximo, porque o script confere a estrutura |
 | Corpo | Cinco passos e uma regra | O procedimento é fixo e a regra de não inventar fatos é o que a conferência de conteúdo verifica, conforme a página de [geração de artefatos](geracao-de-artefatos.md#exemplo-o-artefato-declarado-no-skillmd) |
@@ -153,7 +153,7 @@ A descrição é o texto contra o qual o agente compara o pedido da pessoa para 
 | `Posso ajudar você a processar arquivos Excel.` | Primeira pessoa, sem gatilho de uso |
 | `Ajuda com documentos.` | Vaga, o agente não distingue de outras skills |
 
-Cada entrada da listagem é cortada em 1.536 caracteres, somando `description` e `when_to_use`, e a documentação recomenda colocar o caso de uso principal no começo do texto. A `description` também decide o acionamento na prática. Numa skill de nome neutro, `rotina-a7`, uma descrição específica, a descrição de uma palavra ("Chamados.") e uma descrição genérica ("Ajuda com várias tarefas da equipe.") acionaram a skill diante do pedido "Preciso do resumo semanal da fila de chamados.", e uma descrição sobre outro assunto não a acionou. Cada variante rodou uma vez, no modelo haiku, e com uma única skill disponível, de modo que com várias skills concorrentes o resultado pode diferir, e o Experimento E da oficina propõe a medição com as skills da própria equipe.
+Cada entrada da listagem é cortada em 1.536 caracteres, somando `description` e `when_to_use`, e a documentação recomenda colocar o caso de uso principal no começo do texto. A `description` também decide o acionamento na prática. Numa skill de nome neutro, `rotina-a7`, uma descrição específica, a descrição de uma palavra ("Chamados.") e uma descrição genérica ("Ajuda com várias tarefas da equipe.") acionaram a skill diante do pedido "Preciso do resumo semanal da fila de chamados.", e uma descrição sobre outro assunto não a acionou. Cada variante rodou uma vez, no modelo haiku, e com uma única skill disponível, de modo que com várias skills concorrentes o resultado pode diferir, e o Experimento E dos exercícios complementares propõe a medição com as skills da própria equipe.
 
 ## Escrever o corpo
 
@@ -236,7 +236,7 @@ A documentação propõe uma sequência para a skill que o modelo não usa quand
 5. Se `/nome` também não for reconhecido, verificar se o Claude Code recusou o nome da skill.
 6. Se a skill usa `paths`, verificar se os arquivos estão dentro do diretório de trabalho atual.
 
-A observação desta sessão acrescenta um cuidado de método: o nome da skill também orienta o modelo, e uma skill chamada `resumo-semanal-de-chamados` acionou com as três primeiras descrições testadas. O teste da `description` isolada exige um nome neutro, como `rotina-a7`, e a oficina usa essa regra. Para o problema inverso, a skill acionada em excesso, a documentação recomenda tornar a `description` mais específica ou adicionar `disable-model-invocation: true`. Quando o modelo deixa de seguir uma skill depois do primeiro turno, a documentação orienta mover a regra obrigatória para um hook e colocar as instruções mais importantes no início do `SKILL.md`, porque a compactação da conversa pode manter só o começo da skill invocada. O comando `claude plugin validate .claude/skills` encontra os `SKILL.md` cujo front-matter não pode ser lido, e o [Experimento D](oficina-de-ferramentas.md#experimento-d-localizar-front-matter-com-erro-no-log-de-depuracao) mostra o log de depuração.
+A observação desta sessão acrescenta um cuidado de método: o nome da skill também orienta o modelo, e uma skill chamada `resumo-semanal-de-chamados` acionou com as três primeiras descrições testadas. O teste da `description` isolada exige um nome neutro, como `rotina-a7`, e os exercícios complementares usam essa regra. Para o problema inverso, a skill acionada em excesso, a documentação recomenda tornar a `description` mais específica ou adicionar `disable-model-invocation: true`. Quando o modelo deixa de seguir uma skill depois do primeiro turno, a documentação orienta mover a regra obrigatória para um hook e colocar as instruções mais importantes no início do `SKILL.md`, porque a compactação da conversa pode manter só o começo da skill invocada. O comando `claude plugin validate .claude/skills` encontra os `SKILL.md` cujo front-matter não pode ser lido, e o [Experimento D](experimentos-complementares.md#experimento-d-localizar-front-matter-com-erro-no-log-de-depuracao) mostra o log de depuração.
 
 !!! note "Claude Code e Codex CLI"
     **Claude Code:** a sequência consta de [Skill not triggering](https://code.claude.com/docs/en/skills#skill-not-triggering) e de [Claude stops following a skill](https://code.claude.com/docs/en/skills#claude-stops-following-a-skill).
