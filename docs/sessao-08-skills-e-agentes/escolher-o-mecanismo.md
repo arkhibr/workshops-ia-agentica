@@ -2,6 +2,56 @@
 
 Um agente de codificação oferece seis mecanismos para guardar uma instrução, um procedimento ou uma restrição: o arquivo de instrução, a skill (um procedimento reutilizável escrito em Markdown), o subagente (um agente auxiliar com janela de contexto própria), a skill executada em contexto isolado com `context: fork`, o hook e o servidor MCP. Esta página reúne os critérios da escolha, compara skill, subagente e agente principal dimensão por dimensão e lista os antipadrões. Ela preenche, na [ficha de requisitos](index.md#a-ficha-de-requisitos), a linha "Mecanismo".
 
+## Skill com fork ou subagente: qual é a diferença?
+
+Uma **skill** guarda um procedimento reutilizável: o que fazer, em que ordem e como entregar o resultado. Um **subagente personalizado** configura um especialista: seu papel, suas instruções e, quando necessário, suas ferramentas e seu modelo.
+
+A skill pode rodar na conversa principal ou em um subagente. Com `context: fork`, o Claude Code inicia um subagente em contexto separado e entrega a ele as instruções da skill. Por isso, os dois caminhos usam um subagente; a diferença é se o ponto de partida é **um procedimento a executar** ou **um especialista para receber uma tarefa**.
+
+### Exemplo: analisar uma reunião
+
+A equipe quer identificar tarefas e riscos numa transcrição. Ela cria a skill `.claude/skills/analisar-reuniao/SKILL.md`:
+
+```markdown
+---
+name: analisar-reuniao
+description: Identifica tarefas e riscos em transcrições de reunião.
+context: fork
+agent: general-purpose
+---
+Leia a transcrição indicada em $ARGUMENTS.
+Liste tarefas e riscos, cite os trechos que sustentam cada item e marque
+responsáveis ou prazos ausentes como "A confirmar".
+```
+
+A chamada `/analisar-reuniao reuniao.md` envia a receita e o caminho da transcrição ao subagente. Ele executa o procedimento em sua própria janela e devolve o resultado à conversa principal. O mesmo procedimento pode ser usado com outras transcrições.
+
+Agora a equipe quer um **revisor** que receba diferentes pedidos: conferir um relatório, verificar uma correção ou comparar versões. Ela define `.claude/agents/revisor-reuniao.md`:
+
+```markdown
+---
+name: revisor-reuniao
+description: Revisa relatórios de reunião em relação à transcrição.
+tools: Read, Grep, Glob
+---
+Você revisa relatórios de reunião. Compare os documentos indicados,
+aponte omissões e informações sem evidência e não edite arquivos.
+```
+
+A pessoa pode pedir: “Use o revisor-reuniao para comparar `relatorio.md` com `reuniao.md`”. O agente principal delega esse pedido ao revisor, que trabalha em contexto separado e devolve seus achados. Em outro pedido, o mesmo revisor pode conferir se as correções resolveram os problemas.
+
+| Pergunta | Skill com `context: fork` | Subagente personalizado |
+|---|---|---|
+| O que fica definido? | O procedimento de análise | O papel e a configuração do especialista |
+| O que recebe em cada uso? | Os dados necessários ao procedimento, como o caminho da transcrição | Uma tarefa específica, como revisar ou comparar documentos |
+| Quem executa? | Um subagente que recebe o conteúdo da skill | O subagente definido no arquivo de agente |
+| Onde executa? | Em contexto separado | Em contexto separado |
+| O que volta à conversa? | O resultado da execução | O resultado da tarefa delegada |
+
+Escolha uma **skill com fork** quando quiser repetir um procedimento e manter o trabalho intermediário fora da conversa. Escolha um **subagente personalizado** quando quiser reutilizar um especialista, com ferramentas ou modelo próprios, para diferentes tarefas. Isso é uma orientação, não uma fronteira rígida: uma skill pode deixar decisões em aberto e um subagente pode seguir passos fixos.
+
+A equipe também pode usar os dois juntos: a skill gera o relatório e o subagente revisor compara o resultado com a transcrição. Em qualquer dos casos, informe os caminhos e o contexto necessários no pedido: o subagente não recebe automaticamente o histórico da conversa. Contexto separado não garante acesso somente de leitura; para isso, configure ferramentas e permissões, como `tools: Read, Grep, Glob` no exemplo do revisor.
+
 ## A árvore de seis perguntas
 
 A escolha entre os seis mecanismos segue seis perguntas, apresentadas em ordem na figura, e cada pergunta elimina uma opção antes de a seguinte ser feita.
@@ -16,7 +66,7 @@ A tabela seguinte explica cada pergunta e o que a resposta elimina.
 | 2. A regra precisa valer mesmo que o agente decida ignorá-la? | Hook, porque a verificação ocorre na camada de execução, fora do modelo | Segue para a pergunta 3 |
 | 3. A orientação vale para toda sessão do projeto, qualquer que seja a tarefa? | Arquivo de instrução (`AGENTS.md` ou `CLAUDE.md`), carregado em toda sessão | Segue para a pergunta 4 |
 | 4. A saída é volumosa ou a tarefa pede ferramentas e permissões próprias? | Segue para a pergunta 5, porque o isolamento de um subagente se justifica | Segue para a pergunta 6, porque não há razão para isolar |
-| 5. O procedimento é fixo e serve a várias pessoas, com o mesmo roteiro a cada uso? | Skill com `context: fork` | Subagente |
+| 5. O foco é reutilizar um procedimento em contexto separado? | Comece com uma skill com `context: fork` | Considere um subagente personalizado para receber tarefas de um mesmo papel |
 | 6. A pessoa deve decidir o momento de acionar o procedimento? | Skill de acionamento manual, com `disable-model-invocation: true` | Skill acionada pelo modelo pela `description` |
 
 ### O que cada mecanismo muda
