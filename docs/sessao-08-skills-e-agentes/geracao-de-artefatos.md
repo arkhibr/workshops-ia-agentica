@@ -6,7 +6,7 @@ Um artefato é o arquivo que uma skill ou um agente entrega ao final da tarefa, 
 
 A Sessão 7 apresentou os cinco elementos de um caso de uso: entrada, saída, pedido, conferência e decisão humana. Numa skill, o artefato é a saída, e o quarto elemento, a conferência, é a fonte contra a qual o artefato é comparado antes de circular. Um artefato sem conferência declarada herda o problema descrito na [Sessão 7](../sessao-07-casos-de-uso-por-papel/como-escolher-um-caso-de-uso.md): circula na confiança de quem o gerou.
 
-A conferência de um artefato tem duas camadas que dependem de quem as executa. A camada estrutural verifica o que um script consegue decidir sem interpretar o texto, como seções obrigatórias, campos preenchidos, formato de data e referências existentes. A camada de conteúdo verifica o que só uma pessoa decide, como a correção de uma consequência atribuída a uma opção, e permanece como decisão humana nomeada.
+A conferência de um artefato tem duas camadas que dependem de quem as executa. A camada estrutural verifica o que um script consegue decidir sem interpretar o texto, como seções obrigatórias, campos preenchidos, formato de data e referências existentes. A camada de conteúdo verifica o que só uma pessoa decide, como se uma tarefa ou um risco é sustentado pela transcrição, e permanece como decisão humana nomeada.
 
 ## Declarar o modelo do artefato
 
@@ -23,7 +23,7 @@ Quando a qualidade da saída depende de o agente ver o estilo esperado, a docume
 
 A documentação recomenda o padrão plano, validação e execução para operações em lote, mudanças destrutivas e regras de validação complexas. O agente cria primeiro um plano em formato estruturado, um script valida esse plano, e só então a execução ocorre. O ciclo completo fica: analisar, criar o plano, validar o plano, executar e verificar o resultado.
 
-Os benefícios listados são a detecção antecipada de erros, a verificação objetiva por máquina, o planejamento reversível, porque o agente itera sobre o plano sem tocar nos originais, e a depuração clara, porque a mensagem de erro aponta o problema específico. A mesma documentação orienta escrever o validador com mensagens detalhadas, como "campo 'data_decisao' ausente, campos disponíveis: titulo, status, data_da_decisao", porque a mensagem é o que o agente lê para corrigir o artefato.
+Os benefícios listados são a detecção antecipada de erros, a verificação objetiva por máquina, o planejamento reversível, porque o agente itera sobre o plano sem tocar nos originais, e a depuração clara, porque a mensagem de erro aponta o problema específico. A mesma documentação orienta escrever o validador com mensagens detalhadas, como "campo 'responsável' ausente, campos disponíveis: tarefa, prazo, evidência", porque a mensagem é o que o agente lê para corrigir o artefato.
 
 Na instrução da skill, vale indicar de forma explícita se o agente deve executar o script ou ler o código dele como referência. A execução é o caso comum, e o código do script não entra no contexto.
 
@@ -33,13 +33,59 @@ O laço consiste em gerar o artefato, executar o validador, corrigir os erros ap
 
 ![Cinco etapas em sequência: o modelo do artefato, o agente que gera o artefato, o script que confere a estrutura na camada estrutural, a pessoa que confere o conteúdo na camada de conteúdo e o artefato que circula. Uma seta tracejada leva do script de volta ao agente quando há erros apontados, com limite de iterações, por exemplo três, e um critério de parada declarado no rodapé.](assets/laco-de-conferencia-em-duas-camadas.png)
 
+## Exemplo: o artefato declarado no `SKILL.md`
+
+A skill `identificando-tarefas-e-riscos`, descrita na página de [Skills](skills.md#exemplo-um-skillmd-com-valores-escolhidos), analisa uma transcrição e gera um relatório de tarefas e riscos. Os trechos são ilustrativos, sem execução.
+
+```markdown
+3. Gere docs/reunioes/relatorio.md a partir de modelo-reuniao.md.
+4. Execute `python ${CLAUDE_SKILL_DIR}/scripts/validar_reuniao.py <arquivo>` até a
+   saída OK, com no máximo três tentativas.
+5. Informe o caminho do arquivo e os itens marcados "A confirmar".
+
+Nunca invente fatos, responsáveis ou prazos. Marque dados ausentes como
+"A confirmar" e distinga riscos explícitos de riscos inferidos.
+```
+
+O arquivo `modelo-reuniao.md`, ao lado do `SKILL.md`, define o formato estrito:
+
+```markdown
+# Relatório de reunião
+
+Fonte: [arquivo ou identificação da transcrição]
+
+## Tarefas
+- Tarefa: [descrição]; Responsável: [nome ou A confirmar]; Prazo: [data ou A confirmar]; Evidência: [trecho da transcrição]
+
+## Riscos
+- Risco: [descrição]; Tipo: [explícito ou inferido]; Evidência: [trecho da transcrição]
+
+## Pontos a confirmar
+- [dúvida ou Nenhum]
+```
+
+Quando não houver tarefas ou riscos, registre `Nenhuma identificada` na seção correspondente. O script `validar_reuniao.py` verifica seções, campos e marcadores, sem decidir se a extração está correta:
+
+```text
+ERRO: seção "Riscos" ausente. Seções encontradas: Tarefas, Pontos a confirmar
+ERRO: campo "Responsável" ausente na tarefa 1.
+```
+
+| Trecho | Elemento | Camada |
+|---|---|---|
+| `modelo-reuniao.md` | Modelo estrito | Declaração |
+| `validar_reuniao.py`, até OK ou três tentativas | Verificação e limite de correção | Estrutural |
+| Evidências, riscos inferidos e itens a confirmar | Comparação com a transcrição por uma pessoa | Conteúdo |
+
+A [oficina](oficina-de-ferramentas.md#experimento-a-criar-a-skill-e-gerar-um-artefato) constrói a skill e confere o relatório nas duas camadas. A validação estrutural não comprova fidelidade ou completude.
+
 ## Que forma de conferência cada artefato pede
 
 A tabela abaixo é uma síntese deste material e não uma classificação da documentação.
 
 | Artefato | Conferência por script | Conferência por pessoa |
 |---|---|---|
-| Registro de decisão em Markdown | Seções obrigatórias, status válido, data no formato esperado | Se as consequências decorrem da decisão |
+| Relatório de reunião em Markdown | Seções e campos obrigatórios | Se tarefas e riscos são fiéis à transcrição e se faltou algo |
 | Planilha | Recalcular totais com script e comparar com a planilha | Se os critérios de agregação servem ao uso |
 | Código | Compilar e executar os testes | Se os testes cobrem o comportamento que importa |
 | Relatório de texto | Citações e números presentes na fonte | Se a conclusão se sustenta nos dados |

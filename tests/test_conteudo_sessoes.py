@@ -603,25 +603,28 @@ class PortalPublicoSessaoSeisTest(unittest.TestCase):
 
 
 class SessaoOitoReestruturadaTest(unittest.TestCase):
-    """Reestruturação de 23/10/2026: onze páginas, ficha de requisitos e figuras por tema."""
+    """Reestruturação de 23/10/2026: doze páginas, ficha de requisitos e figuras por tema."""
 
     SLUG = "sessao-08-skills-e-agentes"
     PAGINAS = (
         "index.md",
         "skills.md",
         "agentes-e-subagentes.md",
+        "escolher-o-mecanismo.md",
+        "exercicios.md",
         "geracao-de-artefatos.md",
         "escolha-de-modelos.md",
         "custo-de-tokens.md",
         "performance.md",
-        "oficina-de-ferramentas.md",
         "seguranca-e-credenciais.md",
-        "exercicios.md",
+        "oficina-de-ferramentas.md",
+        "experimentos-complementares.md",
         "sintese-e-referencias.md",
     )
     TEORIA = (
         "skills.md",
         "agentes-e-subagentes.md",
+        "escolher-o-mecanismo.md",
         "geracao-de-artefatos.md",
         "escolha-de-modelos.md",
         "custo-de-tokens.md",
@@ -629,7 +632,6 @@ class SessaoOitoReestruturadaTest(unittest.TestCase):
         "seguranca-e-credenciais.md",
     )
     REMOVIDAS = (
-        "escolher-o-mecanismo.md",
         "front-matter-de-skills.md",
         "front-matter-de-subagentes.md",
         "depuracao-de-skills-e-agentes.md",
@@ -648,16 +650,15 @@ class SessaoOitoReestruturadaTest(unittest.TestCase):
         "de-onde-o-custo-vem",
         "cache-em-unidades-relativas",
         "tres-medidas-de-desempenho",
-        "percurso-dos-experimentos",
         "pontos-de-entrada-do-risco",
         "identidade-propria-e-credencial",
         "ciclo-de-vida-do-token",
         "restricao-em-camadas",
-        "fluxo-do-exercicio-ancora",
     )
     TEMPOS = {
         "skills.md": 10,
-        "agentes-e-subagentes.md": 12,
+        "agentes-e-subagentes.md": 7,
+        "escolher-o-mecanismo.md": 5,
         "geracao-de-artefatos.md": 5,
         "escolha-de-modelos.md": 4,
         "custo-de-tokens.md": 5,
@@ -685,7 +686,7 @@ class SessaoOitoReestruturadaTest(unittest.TestCase):
                 self.assertNotIn(nome, self.mkdocs())
                 self.assertNotIn(nome, todo)
 
-    def test_onze_paginas_no_nav(self):
+    def test_doze_paginas_no_nav(self):
         no_nav = re.findall(rf"{self.SLUG}/([a-z0-9.-]+\.md)", self.mkdocs())
         self.assertEqual(list(self.PAGINAS), no_nav)
 
@@ -706,35 +707,19 @@ class SessaoOitoReestruturadaTest(unittest.TestCase):
         self.assertIn("assets/ficha-de-requisitos.png", texto)
         self.assertIn("assets/mapa-da-sessao.png", texto)
 
-    def test_roteiro_traz_os_tempos_acordados(self):
-        texto = self.texto("index.md")
-        tabela = texto.split("## Roteiro da sessão", 1)[1].split("\n## ", 1)[0]
-        por_pagina = {}
-        visao_geral = None
-        for linha in re.findall(r"(?m)^\|(?!-)(.+)\|[ \t]*$", tabela):
-            minutos = re.search(r"(\d+)\s*min", linha)
-            if not minutos:
-                continue
-            paginas = re.findall(r"\]\(([a-z0-9.-]+\.md)\)", linha)
-            if not paginas and "Visão geral" in linha:
-                visao_geral = int(minutos.group(1))
-            for nome in paginas:
-                por_pagina.setdefault(nome, []).append(int(minutos.group(1)))
-        self.assertEqual(4, visao_geral)
-        for nome, esperado in self.TEMPOS.items():
-            with self.subTest(pagina=nome):
-                self.assertEqual(esperado, sum(por_pagina.get(nome, [])))
-        self.assertEqual(40, sum(por_pagina.get("exercicios.md", [])))
+    def test_roteiro_tem_dois_blocos_sem_tempos_sugeridos(self):
+        roteiro = self.texto("index.md").split("## Roteiro da sessão", 1)[1].split("\n## ", 1)[0]
+        self.assertIn("exercicios.md", roteiro)
+        self.assertIn("oficina-de-ferramentas.md", roteiro)
+        self.assertNotRegex(roteiro, r"\b\d+\s*min")
 
-    def test_exercicios_de_1_a_12_com_ancora_e_rubrica(self):
+    def test_exercicios_tem_praticas_e_revisao(self):
         texto = self.texto("exercicios.md")
-        for numero in range(1, 13):
+        for numero in range(1, 9):
             with self.subTest(exercicio=numero):
-                self.assertRegex(texto, rf"(?m)^### {numero}\. ")
-        self.assertNotRegex(texto, r"(?m)^### 13\. ")
-        self.assertNotIn("Extensão: front-matter na prática", texto)
-        ancora = texto.split("### 12. ", 1)[-1]
-        self.assertIn("**Critérios de avaliação**", ancora)
+                self.assertRegex(texto, rf"(?m)^## {numero}\. ")
+        self.assertIn("notas-exemplo.md", texto)
+        self.assertIn("tools: Read, Grep, Glob", texto)
 
     def test_exercicios_nao_citam_numeracao_antiga(self):
         todo = self.todo_o_texto()
@@ -787,7 +772,7 @@ class SessaoOitoReestruturadaTest(unittest.TestCase):
         ):
             with self.subTest(trecho=proibida):
                 self.assertNotIn(proibida, todo)
-        oficina = self.texto("oficina-de-ferramentas.md")
+        oficina = self.texto("experimentos-complementares.md")
         d = oficina.split("## Experimento D", 1)[1].split("## Experimento E", 1)[0]
         e = oficina.split("## Experimento E", 1)[1].split("## Experimento F", 1)[0]
         self.assertIn("pasta nova", d)
@@ -806,6 +791,59 @@ class SessaoOitoReestruturadaTest(unittest.TestCase):
             + skills.count("lê o front-matter somente quando o primeiro `---`"),
             1,
         )
+
+
+    CAMPOS_DA_SKILL = (
+        "name", "description", "when_to_use", "argument-hint", "arguments",
+        "disable-model-invocation", "user-invocable", "allowed-tools",
+        "disallowed-tools", "model", "effort", "context", "agent", "background",
+        "hooks", "paths", "shell", "metadata",
+    )
+
+    def test_skills_explica_os_valores_de_cada_campo(self):
+        skills = self.texto("skills.md")
+        secao = skills.split("### Valores aceitos em cada campo", 1)[1].split("\n## ", 1)[0]
+        tabela = secao.split("### Exemplo: um `SKILL.md` com valores escolhidos", 1)[0]
+        for campo in self.CAMPOS_DA_SKILL:
+            with self.subTest(campo=campo):
+                self.assertRegex(tabela, rf"(?m)^\| `{re.escape(campo)}`")
+        self.assertIn("| Campo | Valores aceitos | Exemplo | Efeito de cada valor |", tabela)
+        self.assertIn("identificando-tarefas-e-riscos", secao)
+
+    def test_escolher_o_mecanismo_e_pagina_propria_e_detalhada(self):
+        pagina = self.texto("escolher-o-mecanismo.md")
+        self.assertIn("## A árvore de seis perguntas", pagina)
+        self.assertIn("### Skill, subagente ou agente principal", pagina)
+        self.assertIn("| Dimensão | Agente principal | Skill | Subagente |", pagina)
+        self.assertIn("| Pergunta | Se a resposta é sim | Evidência | Sinal contrário |", pagina)
+        self.assertIn("#### Situações típicas e o mecanismo indicado", pagina)
+        self.assertIn("#### Como skill e subagente se combinam", pagina)
+        self.assertIn("assets/arvore-de-decisao-do-mecanismo.png", pagina)
+        agentes = self.texto("agentes-e-subagentes.md")
+        self.assertNotIn("## Escolher o mecanismo", agentes)
+        self.assertNotIn("arvore-de-decisao-do-mecanismo", agentes)
+        self.assertNotIn("agentes-e-subagentes.md#escolher-o-mecanismo", self.todo_o_texto())
+
+    def test_artefatos_e_modelos_reaproveitam_os_arquivos_das_paginas_de_skills_e_agentes(self):
+        artefatos = self.texto("geracao-de-artefatos.md")
+        self.assertIn("## Exemplo: o artefato declarado no `SKILL.md`", artefatos)
+        for trecho in ("validar_reuniao.py", "modelo-reuniao.md", "A confirmar",
+                       "skills.md#exemplo-um-skillmd-com-valores-escolhidos"):
+            with self.subTest(trecho=trecho):
+                self.assertIn(trecho, artefatos)
+        modelos = self.texto("escolha-de-modelos.md")
+        self.assertIn("### Exemplo: o modelo declarado nos arquivos", modelos)
+        for trecho in ("model: sonnet", "effort: medium", "model: haiku", "maxTurns: 8",
+                       "context: fork", "agentes-e-subagentes.md#anatomia-e-front-matter-do-subagente"):
+            with self.subTest(trecho=trecho):
+                self.assertIn(trecho, modelos)
+        skills = self.texto("skills.md")
+        self.assertIn("model: sonnet", skills)
+        self.assertIn("effort: medium", skills)
+        self.assertIn("validar_reuniao.py", skills)
+        agentes = self.texto("agentes-e-subagentes.md")
+        self.assertIn("name: revisor-de-reuniao", agentes)
+        self.assertIn("model: haiku", agentes)
 
 
 if __name__ == "__main__":

@@ -49,6 +49,52 @@ Antes da v2.1.251, a variável de ambiente vinha em primeiro lugar e prevalecia 
     **Claude Code:** a ordem de resolução consta de [Choose a model](https://code.claude.com/docs/en/sub-agents#choose-a-model).
     **Codex CLI:** o arquivo do agente aceita `model` e `model_reasoning_effort`, e o valor do arquivo prevalece sobre o do pai, enquanto os padrões globais dos subagentes ficam em `agents.default_subagent_model`, conforme a [documentação de Subagents](../referencia/bibliografia.md#openai-codex-subagents-documentacao) e a [referência de configuração](../referencia/bibliografia.md#openai-codex-configuration-reference-documentacao). Os modelos disponíveis dependem da conta, e na observação desta sessão o modelo padrão da conta exigiu uma versão do Codex mais nova que a instalada.
 
+### Exemplo: o modelo declarado nos arquivos
+
+Os três arquivos abaixo reaproveitam os exemplos das páginas de [Skills](skills.md#exemplo-um-skillmd-com-valores-escolhidos) e de [Agentes e subagentes](agentes-e-subagentes.md#anatomia-e-front-matter-do-subagente), e mostram onde cada decisão de modelo é escrita. São exemplos ilustrativos, sem execução.
+
+A skill `identificando-tarefas-e-riscos` identifica tarefas e riscos em transcrições de reuniões e declara o modelo e o esforço no front-matter:
+
+```markdown
+---
+name: identificando-tarefas-e-riscos
+model: sonnet
+effort: medium
+---
+```
+
+O subagente `revisor-de-reuniao` revisa o relatório e sua transcrição depois de gerado e declara um modelo menor, além de um limite de turnos:
+
+```markdown
+---
+name: revisor-de-reuniao
+tools: Read, Grep, Glob
+model: haiku
+maxTurns: 8
+---
+```
+
+Uma skill de saída volumosa, que roda num subagente por `context: fork`, declara o modelo do subagente no mesmo campo, porque com `fork` o valor de `model` passa a valer para o subagente:
+
+```markdown
+---
+name: relatar-falhas-de-teste
+context: fork
+agent: general-purpose
+model: haiku
+---
+```
+
+| Arquivo | Linha | Decisão de modelo | Alcance |
+|---|---|---|---|
+| Skill | `model: sonnet` | Ponto de partida intermediário, adequado a redação estruturada conferida por script | Só o turno em que a skill é invocada |
+| Skill | `effort: medium` | Esforço abaixo do máximo, porque a camada estrutural é conferida pelo script | Só o turno da skill |
+| Subagente | `model: haiku` | Estratégia de eficiência primeiro, para uma revisão curta e de leitura | Toda delegação a esse subagente, salvo o parâmetro `model` da chamada de delegação, que vence o arquivo |
+| Subagente | `maxTurns: 8` | Limite de custo e de tempo da revisão | Cada execução do subagente |
+| Skill com `fork` | `model: haiku` | Tarefa de saída volumosa e de pouca decisão | O subagente criado pelo `fork` |
+
+Se a pessoa trocar o modelo da conversa para o Opus com `/model`, a skill continua com `sonnet` no próprio turno e o `revisor-de-reuniao` continua com `haiku`, porque os dois declaram o modelo. Um subagente com `model: inherit`, ou sem o campo e sem a variável `CLAUDE_CODE_SUBAGENT_MODEL`, passaria a usar o Opus e custaria o preço dele. A [oficina](oficina-de-ferramentas.md#experimento-b-medir-o-custo-e-o-resultado-em-dois-modelos) mede a skill em dois modelos, e o resultado decide se o `sonnet` e o `medium` do exemplo se mantêm.
+
 ## Combinar modelos
 
 O guia descreve duas estratégias que pagam a maior parte dos tokens à tarifa do modelo mais barato: um executor que escala as decisões difíceis a um consultor mais forte, e um orquestrador que delega o trabalho em volume a trabalhadores de menor custo. O relato do [sistema multiagente da Anthropic](../referencia/bibliografia.md#anthropic-how-we-built-our-multi-agent-research-system) usou a segunda forma, com orquestrador Opus e subagentes Sonnet, e o guia de custo recomenda Sonnet para os integrantes de equipes de agentes.

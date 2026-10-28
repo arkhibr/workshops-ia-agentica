@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" font-family="Helvetica, Arial, sans-serif">
 <defs><marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker></defs>
 <rect width="1600" height="700" fill="#ffffff"/>
-<text x="60" y="64" font-size="30" font-weight="bold" fill="#12302b">O exercício-âncora: 34 minutos de construção em cinco passos e 6 minutos de conferência cruzada</text>
+<text x="60" y="64" font-size="30" font-weight="bold" fill="#12302b">Exercício complementar: construção e conferência cruzada</text>
 <rect x="60" y="130" width="270" height="350" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
 <circle cx="98" cy="174" r="22" fill="#00695c"/><text x="98" y="182" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
-<text x="136" y="182" font-size="24" font-weight="bold" fill="#00695c">6 min</text>
+
 <text x="80" y="234" font-size="22" font-weight="bold" fill="#12302b">Preencher a ficha</text>
 <text x="80" y="268" font-size="19" fill="#37474f">antes de qualquer</text>
 <text x="80" y="294" font-size="19" fill="#37474f">construção: mecanismo,</text>
@@ -15,7 +15,7 @@
 <line x1="332" y1="305" x2="360" y2="305" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
 <rect x="362" y="130" width="270" height="350" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
 <circle cx="400" cy="174" r="22" fill="#00695c"/><text x="400" y="182" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
-<text x="438" y="182" font-size="24" font-weight="bold" fill="#00695c">11 min</text>
+
 <text x="382" y="234" font-size="22" font-weight="bold" fill="#12302b">Construir</text>
 <text x="382" y="268" font-size="19" fill="#37474f">a skill, o script de</text>
 <text x="382" y="294" font-size="19" fill="#37474f">conferência e o</text>
@@ -24,7 +24,7 @@
 <line x1="634" y1="305" x2="662" y2="305" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
 <rect x="664" y="130" width="270" height="350" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
 <circle cx="702" cy="174" r="22" fill="#00695c"/><text x="702" y="182" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
-<text x="740" y="182" font-size="24" font-weight="bold" fill="#00695c">8 min</text>
+
 <text x="684" y="234" font-size="22" font-weight="bold" fill="#12302b">Executar e</text>
 <text x="684" y="262" font-size="22" font-weight="bold" fill="#12302b">verificar</text>
 <text x="684" y="296" font-size="19" fill="#37474f">três cenários, com</text>
@@ -36,7 +36,7 @@
 <line x1="936" y1="305" x2="964" y2="305" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
 <rect x="966" y="130" width="270" height="350" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
 <circle cx="1004" cy="174" r="22" fill="#00695c"/><text x="1004" y="182" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
-<text x="1042" y="182" font-size="24" font-weight="bold" fill="#00695c">5 min</text>
+
 <text x="986" y="234" font-size="22" font-weight="bold" fill="#12302b">Comparar e</text>
 <text x="986" y="262" font-size="22" font-weight="bold" fill="#12302b">decidir</text>
 <text x="986" y="296" font-size="19" fill="#37474f">a medição contra a</text>
@@ -46,13 +46,13 @@
 <line x1="1238" y1="305" x2="1266" y2="305" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
 <rect x="1268" y="130" width="270" height="350" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
 <circle cx="1306" cy="174" r="22" fill="#00695c"/><text x="1306" y="182" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
-<text x="1344" y="182" font-size="24" font-weight="bold" fill="#00695c">4 min</text>
+
 <text x="1288" y="234" font-size="22" font-weight="bold" fill="#12302b">Preparar o</text>
 <text x="1288" y="262" font-size="22" font-weight="bold" fill="#12302b">vizinho</text>
 <text x="1288" y="296" font-size="19" fill="#37474f">o arquivo do subagente e</text>
 <text x="1288" y="322" font-size="19" fill="#37474f">o plano da credencial</text>
 <rect x="60" y="520" width="1472" height="130" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
-<text x="90" y="566" font-size="24" font-weight="bold" fill="#bf360c">6 min  Conferência cruzada entre equipes</text>
+<text x="90" y="566" font-size="24" font-weight="bold" fill="#bf360c">Conferência cruzada entre equipes</text>
 <text x="90" y="604" font-size="20" fill="#37474f">cada equipe troca o arquivo do subagente e o plano da credencial com a equipe vizinha, aplica as perguntas de revisão</text>
 <text x="90" y="632" font-size="20" fill="#37474f">da página de segurança e entrega por escrito ao menos um achado, com a regra correspondente</text>
 </svg>

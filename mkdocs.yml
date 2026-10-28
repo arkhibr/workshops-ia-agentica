@@ -127,13 +127,15 @@ nav:
           - Visão geral: sessao-08-skills-e-agentes/index.md
           - Skills: sessao-08-skills-e-agentes/skills.md
           - Agentes e subagentes: sessao-08-skills-e-agentes/agentes-e-subagentes.md
+          - Escolher o mecanismo: sessao-08-skills-e-agentes/escolher-o-mecanismo.md
+          - "Exercícios — skills, agentes e escolha do mecanismo": sessao-08-skills-e-agentes/exercicios.md
           - Geração de artefatos: sessao-08-skills-e-agentes/geracao-de-artefatos.md
           - Escolha de modelos: sessao-08-skills-e-agentes/escolha-de-modelos.md
           - Custo de tokens: sessao-08-skills-e-agentes/custo-de-tokens.md
           - Performance: sessao-08-skills-e-agentes/performance.md
-          - Oficina de ferramentas: sessao-08-skills-e-agentes/oficina-de-ferramentas.md
           - Segurança e credenciais: sessao-08-skills-e-agentes/seguranca-e-credenciais.md
-          - Exercícios: sessao-08-skills-e-agentes/exercicios.md
+          - "Exercícios — artefatos, modelos, custo e segurança": sessao-08-skills-e-agentes/oficina-de-ferramentas.md
+          - Experimentos complementares: sessao-08-skills-e-agentes/experimentos-complementares.md
           - Síntese e referências: sessao-08-skills-e-agentes/sintese-e-referencias.md
       - S9 — Depuração sistemática:
           - Visão geral: sessao-09-depuracao-sistematica/index.md
