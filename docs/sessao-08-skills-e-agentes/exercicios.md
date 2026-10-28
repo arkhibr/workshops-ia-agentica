@@ -1,6 +1,6 @@
 # Exercícios — skills, agentes e escolha do mecanismo
 
-**25 minutos:** faça o exercício 1. Em seguida, use o exercício 5 para criar o subagente de leitura, pedir uma edição e observar se a restrição funciona. Os demais exercícios são opcionais para depois da sessão.
+Faça o exercício 1. Em seguida, use o exercício 5 para criar o subagente de leitura, pedir uma edição e observar se a restrição funciona. Os demais exercícios são opcionais para depois da sessão.
 
 !!! note "Ambiente"
     Os exemplos usam **Claude Code** em um projeto de teste, sem dados sensíveis nem credenciais reais. Execute os comandos de terminal na raiz do projeto: use PowerShell no Windows ou as alternativas para Linux/macOS e os comandos `/...` dentro do Claude Code. Reinicie a sessão após alterar arquivos de configuração. Os campos e comandos são específicos do Claude Code.

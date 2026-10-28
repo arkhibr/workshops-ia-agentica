@@ -18,9 +18,9 @@ A ficha existe para que as decisões fiquem escritas antes do primeiro teste. Um
 
 ## Mapa da sessão
 
-A sessão alterna teoria e dois blocos de exercícios de 25 minutos. O primeiro aplica skills, subagentes e escolha do mecanismo; o segundo cria e mede uma skill após o estudo de artefatos, modelos, custo, performance e segurança.
+A sessão alterna teoria e dois blocos de exercícios. O primeiro aplica skills, subagentes e escolha do mecanismo; o segundo cria e mede uma skill após o estudo de artefatos, modelos, custo, performance e segurança.
 
-![Sequência dos temas e dos dois blocos de exercícios de 25 minutos.](assets/mapa-da-sessao.png)
+![Sequência dos temas e dos dois blocos de exercícios.](assets/mapa-da-sessao.png)
 
 | Página | Linha da ficha que preenche |
 |---|---|
@@ -64,14 +64,14 @@ Ao final desta sessão, o participante deve ser capaz de:
 | [Skills](skills.md) | Front-matter, descrição e níveis de carga |
 | [Agentes e subagentes](agentes-e-subagentes.md) | Contexto isolado e ferramentas |
 | [Escolher o mecanismo](escolher-o-mecanismo.md) | Critérios de escolha |
-| [Exercícios — skills, agentes e escolha do mecanismo](exercicios.md) | Exercício 1 e teste de restrição do exercício 5; 25 minutos |
+| [Exercícios — skills, agentes e escolha do mecanismo](exercicios.md) | Exercício 1 e teste de restrição do exercício 5 |
 | Intervalo | |
 | [Geração de artefatos](geracao-de-artefatos.md) | Conferência estrutural e humana |
 | [Escolha de modelos](escolha-de-modelos.md) | Capacidade, custo e esforço |
 | [Custo de tokens](custo-de-tokens.md) | Cache e medição |
 | [Performance](performance.md) | Medidas de desempenho |
 | [Segurança e credenciais](seguranca-e-credenciais.md) | Permissões e identidade |
-| [Exercícios — artefatos, modelos, custo e segurança](oficina-de-ferramentas.md) | Criar, conferir e medir a skill; 25 minutos |
+| [Exercícios — artefatos, modelos, custo e segurança](oficina-de-ferramentas.md) | Criar, conferir e medir a skill |
 | [Experimentos complementares](experimentos-complementares.md) | Práticas opcionais para depois da sessão |
 | [Síntese e referências](sintese-e-referencias.md) | Checklist e autoavaliação |
 

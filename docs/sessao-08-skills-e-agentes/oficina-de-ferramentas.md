@@ -2,7 +2,7 @@
 
 Crie e teste a skill `identificando-tarefas-e-riscos` com uma transcrição fictícia. Trabalhe em uma pasta vazia, sem credenciais reais.
 
-**25 minutos:** crie a skill, confira o relatório e compare dois modelos.
+Crie a skill, confira o relatório e compare dois modelos.
 
 Para praticar depois da sessão, consulte os [experimentos complementares](experimentos-complementares.md).
 

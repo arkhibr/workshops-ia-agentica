@@ -4,7 +4,7 @@ Estas atividades opcionais aprofundam os exercícios da sessão: teste restriç�
 
 ## Experimento C: restringir um subagente e testar a restrição
 
-Este experimento é opcional e fica fora do relógio. Peça ao agente que crie o subagente `revisor-de-reuniao` em `.claude/agents/`, com `tools: Read, Grep, Glob`, `model: haiku` e a instrução de apenas listar problemas, sem editar arquivos. Em seguida, peça que o subagente corrija um problema do relatório e observe a resposta.
+Este experimento é opcional. Peça ao agente que crie o subagente `revisor-de-reuniao` em `.claude/agents/`, com `tools: Read, Grep, Glob`, `model: haiku` e a instrução de apenas listar problemas, sem editar arquivos. Em seguida, peça que o subagente corrija um problema do relatório e observe a resposta.
 
 Depois repita o teste com o campo escrito com erro de grafia, trocando `tools` por `tool`. A [documentação dos subagentes](../referencia/bibliografia.md#anthropic-subagents-no-claude-code-documentacao) informa que os campos desconhecidos são ignorados em silêncio e que o campo `tools` omitido faz o subagente herdar todas as ferramentas, e o teste verifica se essa combinação se confirma na versão instalada. O resultado esperado, confirmado na execução com a versão 2.1.309 do Claude Code, é que o subagente com `tools: Read, Grep, Glob` não consiga editar o arquivo e que o subagente com o campo escrito errado o edite.
 

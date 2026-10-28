@@ -41,4 +41,4 @@ As execuções de agente não são determinísticas, o que dificulta a depuraç�
     - Que alavanca de tempo a skill ou o agente usa, e o que ela troca em tokens ou em acerto?
     - Que registro cada execução deixa: modelo, esforço, tokens, tempo e resultado da conferência?
 
-**Próxima página:** [Oficina de ferramentas](oficina-de-ferramentas.md).
+**Próxima página:** [Segurança e credenciais](seguranca-e-credenciais.md).
