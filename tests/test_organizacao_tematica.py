@@ -126,6 +126,8 @@ class OrganizacaoTematicaTest(unittest.TestCase):
     def test_roteiro_soma_cento_e_vinte_minutos(self):
         """Linhas que repetem o mesmo horário são trilhas paralelas, contam uma vez."""
         for slug in COMPLETAS:
+            if slug == "sessao-08-skills-e-agentes":
+                continue  # O roteiro da sessão 8 não apresenta tempos sugeridos.
             with self.subTest(slug=slug):
                 por_horario = {}
                 for horario, minutos, _ in linhas_do_roteiro(slug):

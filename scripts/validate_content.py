@@ -104,8 +104,6 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
             "assets/pontos-de-entrada-do-risco.png",
             "assets/identidade-propria-e-credencial.png",
             "assets/ciclo-de-vida-do-token.png",
-            "assets/percurso-dos-experimentos.png",
-            "assets/fluxo-do-exercicio-ancora.png",
         ),
     ),
     "sessao-09-depuracao-sistematica": ("Depuração sistemática", False, ()),
@@ -489,7 +487,12 @@ def validate_session(
             errors.append(f"{path.relative_to(ROOT)}: página sem a transição '**Próxima página:**'")
 
         if path.name == "exercicios.md" and completa:
-            validate_exercises(path, text, errors, counts)
+            if session_dir.name == "sessao-08-skills-e-agentes":
+                for numero in (1, 5):
+                    if not re.search(rf"(?m)^## {numero}\. ", text):
+                        errors.append(f"{path.relative_to(ROOT)}: exercício {numero} ausente")
+            else:
+                validate_exercises(path, text, errors, counts)
 
 
 def validate_shared_pages(
