@@ -1121,6 +1121,16 @@ class SessaoNoveTest(unittest.TestCase):
                 with self.subTest(pagina=nome, termo=termo):
                     self.assertNotIn(termo, texto)
 
+    def test_oficina_sem_link_para_outras_paginas(self):
+        """Pedido do Marco, 03/11/2026: a oficina é autocontida, sem leitura em outra página."""
+        texto = self.texto("oficina-de-ferramentas.md")
+        corpo = re.sub(r"(?m)^\*\*Próxima página:\*\*.*$", "", texto)
+        alvos = re.findall(r"(?<!!)\[[^\]]*\]\(([^)]+)\)", corpo)
+        self.assertIn("assets/marketplace-governado.zip", alvos)
+        for alvo in alvos:
+            with self.subTest(alvo=alvo):
+                self.assertTrue(alvo == "assets/marketplace-governado.zip" or alvo.startswith("#"))
+
     def test_oficina_usa_caminho_relativo_nas_duas_abas(self):
         texto = self.texto("oficina-de-ferramentas.md")
         experimento_a = texto.split("## Experimento A", 1)[1].split("\n## ", 1)[0]
