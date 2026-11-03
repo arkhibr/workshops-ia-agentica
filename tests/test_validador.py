@@ -253,7 +253,7 @@ class SessoesSemTemposTest(unittest.TestCase):
     def test_exercicios_obrigatorios_por_sessao(self):
         self.assertEqual(EXERCICIOS_OBRIGATORIOS["sessao-08-skills-e-agentes"], (1, 5))
         self.assertEqual(
-            EXERCICIOS_OBRIGATORIOS["sessao-09-governanca-de-skills-e-agentes"], (1, 2, 3)
+            EXERCICIOS_OBRIGATORIOS["sessao-09-governanca-de-skills-e-agentes"], (1, 2, 3, 4, 5, 6)
         )
 
 

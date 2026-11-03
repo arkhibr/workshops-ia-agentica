@@ -27,7 +27,7 @@
 
 ## Autoavaliação
 
-As seis primeiras perguntas são as discussões orientadas do guia do facilitador, usadas no exercício 3. A resposta de cada pessoa pode ser comparada depois com os pontos de chegada da página de [exercícios](exercicios.md#3-discussoes-orientadas).
+As seis primeiras perguntas são as discussões orientadas do guia do facilitador, e as perguntas 1, 3 e 5 são as do exercício 6. A resposta de cada pessoa a essas três pode ser comparada depois com o ponto de chegada da página de [exercícios](exercicios.md#6-discussao-com-a-turma).
 
 1. Se o PO aprovou o caso, o time pode usar qualquer dado?
 2. Se o prompt pede para não vazar dados, já existe controle?

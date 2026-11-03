@@ -10,7 +10,7 @@ O grupo acrescenta o protótipo em que trabalha como terceiro plugin de uma cóp
 
 **Passo 1:** copiar a pasta `marketplace-acme` da oficina para o repositório interno e criar dentro de `plugins/` uma pasta com o nome do protótipo, em letras minúsculas e com hífens. A pasta recebe o manifesto `.claude-plugin/plugin.json`, com `name`, `version` e `description`, e cada skill do protótipo em `skills/<nome-da-skill>/SKILL.md`, a mesma estrutura dos dois plugins da oficina.
 
-**Passo 2:** gravar em `governanca.json` a ficha preenchida nos exercícios 1 e 2, com os mesmos campos dos plugins da oficina. A ficha descreve a credencial pelo tipo, pelo dono e pelo escopo, sem conter o valor de nenhuma credencial, e uma faixa alta exige o nome do aprovador e a data da aprovação em `gate`, regra que o portão confere.
+**Passo 2:** gravar em `governanca.json` a ficha preenchida nos exercícios 1 a 5, com os mesmos campos dos plugins da oficina. A ficha descreve a credencial pelo tipo, pelo dono e pelo escopo, sem conter o valor de nenhuma credencial, e uma faixa alta exige o nome do aprovador e a data da aprovação em `gate`, regra que o portão confere.
 
 **Passo 3:** acrescentar a entrada do protótipo à lista `plugins` do `marketplace.json`, com `name`, `source` relativo em barras normais e `description`, e rodar o portão e a instalação da oficina. Os comandos são os mesmos dos Experimentos B e C, observados na versão 2.1.317, com o nome do protótipo no lugar de `identificando-tarefas-e-riscos`.
 
@@ -21,7 +21,7 @@ claude plugin install <nome-do-prototipo>@marketplace-acme
 claude plugin details <nome-do-prototipo>
 ```
 
-**Passo 4:** trocar o marketplace com outro grupo, que instala o protótipo como colega e revisa a ficha com a rubrica do exercício 2. O resultado esperado é ao menos um achado registrado na ficha, como uma premissa sem responsável pela verificação ou um controle preventivo que ainda depende de instrução ao modelo.
+**Passo 4:** trocar o marketplace com outro grupo, que instala o protótipo como colega e revisa a ficha com os critérios dos exercícios 3 a 5. O resultado esperado é ao menos um achado registrado na ficha, como uma premissa sem responsável pela verificação ou um controle preventivo que ainda depende de instrução ao modelo.
 
 A página [Compartilhamento governado](compartilhamento-governado.md) informa que um plugin também pode agrupar agentes, hooks e servidores MCP, e a disposição desses componentes dentro do plugin consta da [documentação de marketplaces](../referencia/bibliografia.md#anthropic-marketplaces-de-plugins-no-claude-code-documentacao) sem execução nesta sessão (documentado).
 

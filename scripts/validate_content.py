@@ -180,7 +180,7 @@ SESSOES_SEM_TEMPOS = frozenset(
 # Sessões cujo exercicios.md exige apenas estes números, em vez dos seis níveis de Bloom.
 EXERCICIOS_OBRIGATORIOS: dict[str, tuple[int, ...]] = {
     "sessao-08-skills-e-agentes": (1, 5),
-    "sessao-09-governanca-de-skills-e-agentes": (1, 2, 3),
+    "sessao-09-governanca-de-skills-e-agentes": (1, 2, 3, 4, 5, 6),
 }
 
 # Sessões cujo esquema abandona o confinamento clássico do caso aplicado

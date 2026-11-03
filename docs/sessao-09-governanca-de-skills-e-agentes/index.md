@@ -61,7 +61,7 @@ Ao final desta sessão, o participante deve ser capaz de:
 | [Governança de IA](governanca-de-ia.md) | Cinco distinções, quatro decisões e papéis |
 | [Triagem por criticidade](triagem-por-criticidade.md) | Inventário, três faixas e fator decisivo |
 | [Riscos de agentes](riscos-de-agentes.md) | Fronteiras de confiança e três incidentes |
-| [Exercícios — triagem e riscos dos protótipos](exercicios.md) | Exercícios 1 a 3 |
+| [Exercícios — triagem e riscos dos protótipos](exercicios.md) | Exercícios 1 a 6 |
 | Intervalo | Às 11h00 |
 | [Controles e evidências](controles-e-evidencias.md) | Controles fora do modelo, testes, DoR e DoD |
 | [Compartilhamento governado](compartilhamento-governado.md) | Quatro níveis, plugin, marketplace e ciclo de vida |

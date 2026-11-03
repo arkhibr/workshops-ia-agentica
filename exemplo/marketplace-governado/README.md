@@ -40,3 +40,13 @@ Uma entrada nula ou sem `name` em `plugins` reprova só aquela entrada, identifi
 ## Um plugin reprova de propósito
 
 O plugin `revisando-pull-requests` usa uma credencial pessoal ampla por conveniência, e o único controle preventivo do risco é uma instrução ao modelo. O portão reprova esse caso, e a oficina pede a correção da ficha para que ele passe.
+
+## O zip publicado na oficina
+
+A oficina da Sessão 9 distribui este diretório como `docs/sessao-09-governanca-de-skills-e-agentes/assets/marketplace-governado.zip`, com os arquivos acima e sem `node_modules`. Depois de alterar qualquer arquivo daqui, o zip é regenerado na raiz do repositório do workshop com o comando abaixo, igual no Windows, no macOS e no Linux, que usa só a biblioteca padrão do Python.
+
+```text
+python scripts/gerar_zip_marketplace.py
+```
+
+A suíte `python -m unittest discover -s tests` reprova o commit quando o conteúdo do zip difere destes arquivos.
