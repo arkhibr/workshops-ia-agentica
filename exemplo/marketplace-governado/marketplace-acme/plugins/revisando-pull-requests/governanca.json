@@ -1,0 +1,31 @@
+{
+  "dono": "Arquitetura de Software da ACME",
+  "finalidade": "Revisar pull requests contra os padrões de arquitetura da ACME",
+  "alternativaSemIA": "Revisão manual feita pela pessoa responsável pela arquitetura",
+  "dados": ["interno"],
+  "ferramentas": ["Read", "Bash"],
+  "autonomia": "sugere",
+  "faixa": "moderada",
+  "fatorDecisivo": "O código revisado é interno e o parecer é apenas uma sugestão",
+  "premissas": [
+    "Os critérios de aprovação ainda não foram definidos",
+    "A revisão usa a credencial pessoal de quem a executa"
+  ],
+  "riscos": [
+    {
+      "evento": "A credencial pessoal ampla, usada por conveniência, permite ao agente alterar repositórios além do pull request revisado",
+      "consequencia": "Uma alteração indevida chega a um repositório sem que ninguém a tenha solicitado",
+      "preventivo": {
+        "tipo": "instrucao",
+        "descricao": "Pedir ao modelo que use a credencial somente para ler o pull request"
+      },
+      "detectivo": "Auditoria mensal dos acessos feitos com a credencial",
+      "evidencia": "Relatório de auditoria dos acessos"
+    }
+  ],
+  "gate": { "aprovador": "", "aprovadoEm": "" },
+  "revisao": {
+    "gatilhos": ["Definição dos critérios de aprovação", "Troca de credencial"],
+    "retirada": "Revogar a credencial e remover o plugin do marketplace"
+  }
+}

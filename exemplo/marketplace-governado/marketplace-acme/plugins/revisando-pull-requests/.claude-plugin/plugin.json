@@ -1,0 +1,8 @@
+{
+  "name": "revisando-pull-requests",
+  "version": "1.0.0",
+  "description": "Revisa pull requests contra os padrões de arquitetura da ACME.",
+  "author": {
+    "name": "ACME"
+  }
+}

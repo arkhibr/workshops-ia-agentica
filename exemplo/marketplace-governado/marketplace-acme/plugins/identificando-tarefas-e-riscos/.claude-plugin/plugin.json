@@ -1,0 +1,8 @@
+{
+  "name": "identificando-tarefas-e-riscos",
+  "version": "1.0.0",
+  "description": "Extrai tarefas e riscos de transcrições de reuniões.",
+  "author": {
+    "name": "ACME"
+  }
+}

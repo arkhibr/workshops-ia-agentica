@@ -1,0 +1,19 @@
+{
+  "name": "marketplace-acme",
+  "owner": {
+    "name": "ACME"
+  },
+  "description": "Marketplace local de plugins governados da ACME.",
+  "plugins": [
+    {
+      "name": "identificando-tarefas-e-riscos",
+      "source": "./plugins/identificando-tarefas-e-riscos",
+      "description": "Extrai tarefas e riscos de transcrições de reuniões."
+    },
+    {
+      "name": "revisando-pull-requests",
+      "source": "./plugins/revisando-pull-requests",
+      "description": "Revisa pull requests contra os padrões de arquitetura da ACME."
+    }
+  ]
+}

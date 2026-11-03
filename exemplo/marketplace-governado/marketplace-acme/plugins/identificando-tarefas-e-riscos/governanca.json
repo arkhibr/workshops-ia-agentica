@@ -1,0 +1,31 @@
+{
+  "dono": "Coordenação de Projetos da ACME",
+  "finalidade": "Extrair tarefas e riscos de transcrições de reuniões de projeto",
+  "alternativaSemIA": "Leitura manual da transcrição e preenchimento do relatório pela pessoa responsável",
+  "dados": ["interno", "pessoal"],
+  "ferramentas": ["Read", "Write"],
+  "autonomia": "sugere",
+  "faixa": "moderada",
+  "fatorDecisivo": "Os dados são internos e pessoais, e todo relatório passa por revisão humana antes de circular",
+  "premissas": [
+    "As transcrições não contêm dado sensível",
+    "O relatório não é enviado a ninguém sem revisão"
+  ],
+  "riscos": [
+    {
+      "evento": "A transcrição traz uma instrução embutida e o modelo a obedece",
+      "consequencia": "Uma tarefa falsa ou um responsável inventado entra no relatório",
+      "preventivo": {
+        "tipo": "validacao",
+        "descricao": "Script confere o formato do relatório e exige um trecho de evidência por item"
+      },
+      "detectivo": "Revisão do relatório por uma pessoa antes da distribuição",
+      "evidencia": "Registro da revisão anexado ao relatório"
+    }
+  ],
+  "gate": { "aprovador": "", "aprovadoEm": "" },
+  "revisao": {
+    "gatilhos": ["Troca de modelo", "Mudança no formato do relatório", "Incidente com o relatório"],
+    "retirada": "Remover o plugin do marketplace e comunicar a Coordenação de Projetos"
+  }
+}

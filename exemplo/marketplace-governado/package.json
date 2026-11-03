@@ -1,0 +1,11 @@
+{
+  "name": "marketplace-governado-exemplo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Marketplace local de plugins com portao de governanca. Sem dependencias: roda so com Node 20+.",
+  "scripts": {
+    "test": "node --test",
+    "portao": "node portao.mjs marketplace-acme"
+  }
+}
