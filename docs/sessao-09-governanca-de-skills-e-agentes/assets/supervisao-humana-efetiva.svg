@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 660" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="sv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="sl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="sn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="660" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Supervisão humana efetiva: quatro condições necessárias ao mesmo tempo</text>
+<rect x="60" y="120" width="340" height="150" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="82" y="166" font-size="23" font-weight="bold" fill="#12302b">Informação</text>
+<text x="82" y="232" font-size="18" fill="#37474f">Suficiente sobre o que o agente fez</text>
+<text x="420" y="204" font-size="22" font-weight="bold" text-anchor="middle" fill="#00695c">e</text>
+<rect x="440" y="120" width="340" height="150" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="462" y="166" font-size="23" font-weight="bold" fill="#12302b">Tempo</text>
+<text x="462" y="232" font-size="18" fill="#37474f">Para examinar o resultado</text>
+<text x="800" y="204" font-size="22" font-weight="bold" text-anchor="middle" fill="#00695c">e</text>
+<rect x="820" y="120" width="340" height="150" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="842" y="166" font-size="23" font-weight="bold" fill="#12302b">Autoridade</text>
+<text x="842" y="232" font-size="18" fill="#37474f">Para recusar</text>
+<text x="1180" y="204" font-size="22" font-weight="bold" text-anchor="middle" fill="#00695c">e</text>
+<rect x="1200" y="120" width="340" height="150" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="1222" y="166" font-size="23" font-weight="bold" fill="#12302b">Possibilidade real de</text>
+<text x="1222" y="194" font-size="23" font-weight="bold" fill="#12302b">rejeitar</text>
+<text x="1222" y="232" font-size="18" fill="#37474f">Antes que o efeito se torne</text>
+<text x="1222" y="256" font-size="18" fill="#37474f">irreversível</text>
+<text x="60" y="330" font-size="21" font-weight="bold" fill="#e65100">Não contam como supervisão humana efetiva</text>
+<rect x="60" y="350" width="473" height="70" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+<text x="296" y="392" font-size="20" font-weight="bold" text-anchor="middle" fill="#12302b">Aprovação automática</text>
+<rect x="563" y="350" width="473" height="70" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+<text x="800" y="392" font-size="20" font-weight="bold" text-anchor="middle" fill="#12302b">Conferência superficial</text>
+<rect x="1066" y="350" width="473" height="70" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+<text x="1302" y="392" font-size="20" font-weight="bold" text-anchor="middle" fill="#12302b">Revisão feita depois de um ato irreversível</text>
+<rect x="60" y="460" width="1480" height="160" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3"/>
+<text x="84" y="500" font-size="20" font-weight="bold" fill="#12302b">Por que informação e exame atento são frágeis numa aprovação repetitiva</text>
+<text x="84" y="534" font-size="19" fill="#37474f">Parasuraman e Manzey (2010): a complacência e o viés de automação ocorrem tanto em novatos quanto em especialistas, e treinamento e instruções não os evitam.</text>
+<text x="84" y="568" font-size="19" font-weight="bold" fill="#12302b">Desenho do controle: reduzir o volume de aprovação ou exigir que o revisor registre o que conferiu.</text>
+</svg>

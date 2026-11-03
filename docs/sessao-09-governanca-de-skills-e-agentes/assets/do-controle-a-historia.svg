@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="sv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="sl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="sn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="800" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Do controle à história: os sete elementos da ficha C, com o exemplo do guia</text>
+<text x="60" y="112" font-size="18" font-weight="bold" fill="#78909c">Elemento</text>
+<text x="560" y="112" font-size="18" font-weight="bold" fill="#78909c">Exemplo preenchido do guia: acesso de leitura</text>
+<rect x="60" y="128" width="470" height="74" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<circle cx="98" cy="165" r="20" fill="#00695c"/>
+<text x="98" y="172" font-size="19" font-weight="bold" text-anchor="middle" fill="#ffffff">1</text>
+<text x="132" y="172" font-size="19" font-weight="bold" fill="#12302b">História ou mudança técnica</text>
+<rect x="560" y="128" width="980" height="74" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<text x="584" y="158" font-size="18" fill="#37474f">Skill de consulta com identidade somente de leitura e escopo por usuário, para impedir alteração e acesso</text>
+<text x="584" y="181" font-size="18" fill="#37474f">indevido</text>
+<line x1="532" y1="165" x2="556" y2="165" stroke="#78909c" stroke-width="2" marker-end="url(#sn)"/>
+<rect x="60" y="212" width="470" height="74" rx="14" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="3"/>
+<circle cx="98" cy="249" r="20" fill="#78909c"/>
+<text x="98" y="256" font-size="19" font-weight="bold" text-anchor="middle" fill="#ffffff">2</text>
+<text x="132" y="256" font-size="19" font-weight="bold" fill="#12302b">Risco tratado</text>
+<text x="584" y="256" font-size="17" font-style="italic" fill="#78909c">sem preenchimento no exemplo</text>
+<rect x="60" y="296" width="470" height="74" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<circle cx="98" cy="333" r="20" fill="#00695c"/>
+<text x="98" y="340" font-size="19" font-weight="bold" text-anchor="middle" fill="#ffffff">3</text>
+<text x="132" y="340" font-size="19" font-weight="bold" fill="#12302b">Critério de aceite (dado, quando, então)</text>
+<rect x="560" y="296" width="980" height="74" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="584" y="326" font-size="18" font-weight="bold" fill="#12302b">Dado um pedido de atualização, quando o agente chama a API, então a operação é negada</text>
+<text x="584" y="349" font-size="18" font-weight="bold" fill="#12302b">independentemente da resposta do modelo</text>
+<line x1="532" y1="333" x2="556" y2="333" stroke="#78909c" stroke-width="2" marker-end="url(#sn)"/>
+<rect x="60" y="380" width="470" height="74" rx="14" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="3"/>
+<circle cx="98" cy="417" r="20" fill="#78909c"/>
+<text x="98" y="424" font-size="19" font-weight="bold" text-anchor="middle" fill="#ffffff">4</text>
+<text x="132" y="424" font-size="19" font-weight="bold" fill="#12302b">Teste positivo e adversarial</text>
+<text x="584" y="424" font-size="17" font-style="italic" fill="#78909c">sem preenchimento no exemplo</text>
+<rect x="60" y="464" width="470" height="74" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<circle cx="98" cy="501" r="20" fill="#00695c"/>
+<text x="98" y="508" font-size="19" font-weight="bold" text-anchor="middle" fill="#ffffff">5</text>
+<text x="132" y="508" font-size="19" font-weight="bold" fill="#12302b">Evidência e local de guarda</text>
+<rect x="560" y="464" width="980" height="74" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<text x="584" y="494" font-size="18" fill="#37474f">Teste automatizado no pipeline, política de API versionada e trilha de auditoria</text>
+<line x1="532" y1="501" x2="556" y2="501" stroke="#78909c" stroke-width="2" marker-end="url(#sn)"/>
+<rect x="60" y="548" width="470" height="74" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<circle cx="98" cy="585" r="20" fill="#00695c"/>
+<text x="98" y="592" font-size="19" font-weight="bold" text-anchor="middle" fill="#ffffff">6</text>
+<text x="132" y="592" font-size="19" font-weight="bold" fill="#12302b">Gate e quem aprova</text>
+<rect x="560" y="548" width="980" height="74" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<text x="584" y="578" font-size="18" fill="#37474f">Líder técnico, com revisão de segurança quando houver dado sensível</text>
+<line x1="532" y1="585" x2="556" y2="585" stroke="#78909c" stroke-width="2" marker-end="url(#sn)"/>
+<rect x="60" y="632" width="470" height="74" rx="14" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="3"/>
+<circle cx="98" cy="669" r="20" fill="#78909c"/>
+<text x="98" y="676" font-size="19" font-weight="bold" text-anchor="middle" fill="#ffffff">7</text>
+<text x="132" y="676" font-size="19" font-weight="bold" fill="#12302b">Monitoramento e gatilho de suspensão</text>
+<text x="584" y="676" font-size="17" font-style="italic" fill="#78909c">sem preenchimento no exemplo</text>
+<text x="60" y="760" font-size="19" fill="#37474f">Se o critério só é satisfeito quando o modelo obedece, o controle é instrução textual e precisa de um mecanismo externo.</text>
+</svg>

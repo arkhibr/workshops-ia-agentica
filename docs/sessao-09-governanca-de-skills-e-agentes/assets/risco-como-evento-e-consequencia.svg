@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 560" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="sv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="sl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="sn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="560" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Risco escrito como evento e consequência: a formulação que permite escolher o controle</text>
+<rect x="60" y="120" width="330" height="220" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3"/>
+<text x="84" y="160" font-size="19" font-weight="bold" fill="#78909c">Categoria</text>
+<text x="84" y="206" font-size="28" font-weight="bold" fill="#12302b">“segurança”</text>
+<text x="84" y="250" font-size="18" fill="#37474f">Nomeia uma categoria inteira e</text>
+<text x="84" y="274" font-size="18" fill="#37474f">deixa a escolha do controle sem</text>
+<text x="84" y="298" font-size="18" fill="#37474f">critério</text>
+<rect x="460" y="120" width="240" height="220" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="480" y="160" font-size="19" font-weight="bold" fill="#e65100">Evento</text>
+<text x="480" y="196" font-size="19" font-weight="bold" fill="#12302b">Documento malicioso</text>
+<text x="480" y="221" font-size="19" font-weight="bold" fill="#12302b">induz chamada a API</text>
+<text x="480" y="246" font-size="19" font-weight="bold" fill="#12302b">externa</text>
+<line x1="703" y1="230" x2="727" y2="230" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<rect x="730" y="120" width="240" height="220" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="750" y="160" font-size="19" font-weight="bold" fill="#e65100">Consequência</text>
+<text x="750" y="196" font-size="19" font-weight="bold" fill="#12302b">Expõe dados do</text>
+<text x="750" y="221" font-size="19" font-weight="bold" fill="#12302b">usuário</text>
+<line x1="973" y1="230" x2="997" y2="230" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<rect x="1000" y="120" width="240" height="220" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="1020" y="160" font-size="19" font-weight="bold" fill="#00695c">Controle escolhido</text>
+<text x="1020" y="196" font-size="19" font-weight="bold" fill="#12302b">Bloqueio de saída de</text>
+<text x="1020" y="221" font-size="19" font-weight="bold" fill="#12302b">rede não autorizada</text>
+<line x1="1243" y1="230" x2="1267" y2="230" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<rect x="1270" y="120" width="240" height="220" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="1290" y="160" font-size="19" font-weight="bold" fill="#00695c">Teste escrito</text>
+<text x="1290" y="196" font-size="19" font-weight="bold" fill="#12302b">T01: nenhuma</text>
+<text x="1290" y="221" font-size="19" font-weight="bold" fill="#12302b">chamada externa</text>
+<text x="1290" y="246" font-size="19" font-weight="bold" fill="#12302b">ocorre</text>
+<rect x="60" y="390" width="1480" height="120" rx="14" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="3"/>
+<text x="84" y="428" font-size="20" font-weight="bold" fill="#12302b">Cada linha distingue fato verificado, hipótese e decisão pendente</text>
+<text x="84" y="462" font-size="18" fill="#37474f">A hipótese “o token talvez permita escrita” passa a ser uma tarefa de verificação com dono, e o resultado atualiza a faixa de risco da triagem.</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 560" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="sv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="sl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="sn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="560" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Framework adotado, controle implementado e evidência guardada são três estados distintos</text>
+<rect x="60" y="120" width="420" height="150" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="82" y="162" font-size="23" font-weight="bold" fill="#12302b">Framework adotado</text>
+<text x="82" y="198" font-size="18" fill="#37474f">A equipe declara seguir uma referência, como</text>
+<text x="82" y="222" font-size="18" fill="#37474f">o NIST AI RMF</text>
+<line x1="486" y1="195" x2="584" y2="195" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<text x="535" y="176" font-size="14" font-weight="bold" text-anchor="middle" fill="#78909c">ainda falta</text>
+<rect x="590" y="120" width="420" height="150" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="612" y="162" font-size="23" font-weight="bold" fill="#12302b">Controle implementado</text>
+<text x="612" y="198" font-size="18" fill="#37474f">Um mecanismo roda e limita o que o agente</text>
+<text x="612" y="222" font-size="18" fill="#37474f">faz</text>
+<line x1="1016" y1="195" x2="1114" y2="195" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<text x="1065" y="176" font-size="14" font-weight="bold" text-anchor="middle" fill="#78909c">ainda falta</text>
+<rect x="1120" y="120" width="420" height="150" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="1142" y="162" font-size="23" font-weight="bold" fill="#12302b">Evidência guardada</text>
+<text x="1142" y="198" font-size="18" fill="#37474f">A prova de que o controle funciona fica num</text>
+<text x="1142" y="222" font-size="18" fill="#37474f">lugar que outra pessoa consulta</text>
+<rect x="60" y="320" width="1480" height="200" rx="14" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="3"/>
+<text x="84" y="360" font-size="19" font-weight="bold" fill="#12302b">“O agente deve ser seguro” não atinge nenhum dos três estados. A frase passa a valer como controle quando vira:</text>
+<rect x="84" y="390" width="340" height="54" rx="27" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="254" y="423" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Permissão limitada</text>
+<rect x="446" y="390" width="340" height="54" rx="27" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="616" y="423" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Teste verificável</text>
+<rect x="808" y="390" width="340" height="54" rx="27" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="978" y="423" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Responsável nomeado</text>
+<rect x="1170" y="390" width="340" height="54" rx="27" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1340" y="423" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Critério de bloqueio da publicação</text>
+<text x="84" y="492" font-size="18" fill="#37474f">Os quatro itens ficam registrados na linha “Evidência e gate” da ficha.</text>
+</svg>

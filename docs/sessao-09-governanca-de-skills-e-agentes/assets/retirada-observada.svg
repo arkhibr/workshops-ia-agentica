@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 650" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="sv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="sl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="sn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="650" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Retirada de um plugin observada pela linha de comando, passo a passo</text>
+<rect x="60" y="120" width="272" height="210" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<circle cx="94" cy="156" r="18" fill="#00695c"/>
+<text x="94" y="163" font-size="19" font-weight="bold" text-anchor="middle" fill="#ffffff">1</text>
+<text x="122" y="163" font-size="17" font-weight="bold" fill="#12302b">Editar o catálogo</text>
+<text x="78" y="250" font-size="17" fill="#37474f">Remover a entrada de plugins</text>
+<text x="78" y="272" font-size="17" fill="#37474f">e acrescentar "renames":</text>
+<text x="78" y="294" font-size="17" fill="#37474f">{"&lt;nome&gt;": null}</text>
+<line x1="335" y1="225" x2="359" y2="225" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<rect x="362" y="120" width="272" height="210" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<circle cx="396" cy="156" r="18" fill="#00695c"/>
+<text x="396" y="163" font-size="19" font-weight="bold" text-anchor="middle" fill="#ffffff">2</text>
+<text x="424" y="163" font-size="17" font-weight="bold" fill="#12302b">claude plugin</text>
+<text x="424" y="185" font-size="17" font-weight="bold" fill="#12302b">marketplace update</text>
+<text x="380" y="250" font-size="17" fill="#37474f">Atualiza o catálogo</text>
+<text x="380" y="272" font-size="17" fill="#37474f">registrado</text>
+<line x1="637" y1="225" x2="661" y2="225" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<rect x="664" y="120" width="272" height="210" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<circle cx="698" cy="156" r="18" fill="#00695c"/>
+<text x="698" y="163" font-size="19" font-weight="bold" text-anchor="middle" fill="#ffffff">3</text>
+<text x="726" y="163" font-size="17" font-weight="bold" fill="#12302b">1ª claude plugin list</text>
+<text x="682" y="250" font-size="17" fill="#37474f">Plugin ainda enabled, já sem</text>
+<text x="682" y="272" font-size="17" fill="#37474f">Read from:</text>
+<line x1="939" y1="225" x2="963" y2="225" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<rect x="966" y="120" width="272" height="210" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<circle cx="1000" cy="156" r="18" fill="#00695c"/>
+<text x="1000" y="163" font-size="19" font-weight="bold" text-anchor="middle" fill="#ffffff">4</text>
+<text x="1028" y="163" font-size="17" font-weight="bold" fill="#12302b">2ª claude plugin list</text>
+<text x="984" y="250" font-size="17" fill="#37474f">Plugin disabled</text>
+<line x1="1241" y1="225" x2="1265" y2="225" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<rect x="1268" y="120" width="272" height="210" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<circle cx="1302" cy="156" r="18" fill="#00695c"/>
+<text x="1302" y="163" font-size="19" font-weight="bold" text-anchor="middle" fill="#ffffff">5</text>
+<text x="1330" y="163" font-size="17" font-weight="bold" fill="#12302b">claude plugin update</text>
+<text x="1286" y="250" font-size="17" fill="#37474f">Plugin "&lt;plugin&gt;" not found,</text>
+<text x="1286" y="272" font-size="17" fill="#37474f">código 1</text>
+<rect x="60" y="380" width="720" height="130" rx="14" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="3"/>
+<text x="84" y="416" font-size="19" font-weight="bold" fill="#78909c">Documentado</text>
+<text x="84" y="448" font-size="18" fill="#37474f">O usuário vê Removed from the "&lt;marketplace&gt;" marketplace em claude plugin</text>
+<text x="84" y="472" font-size="18" fill="#37474f">list e em /plugin numa sessão interativa.</text>
+<rect x="820" y="380" width="720" height="130" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="844" y="416" font-size="19" font-weight="bold" fill="#e65100">Observado na linha de comando</text>
+<text x="844" y="448" font-size="18" font-weight="bold" fill="#12302b">A mensagem não apareceu. Numa sessão interativa, ficou sem verificação</text>
+<text x="844" y="472" font-size="18" font-weight="bold" fill="#12302b">(não confirmado).</text>
+<text x="60" y="566" font-size="19" font-weight="bold" fill="#12302b">Consequência na ficha: o procedimento de retirada inclui a revogação da credencial e o aviso direto a quem tinha o plugin instalado.</text>
+<text x="60" y="612" font-size="18" fill="#37474f">Depois, claude plugin marketplace remove desinstalou todos os plugins daquele marketplace, inclusive o desabilitado, e a pasta do cache permaneceu no disco (observado).</text>
+</svg>

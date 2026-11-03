@@ -1,34 +1,57 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 860" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="sv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="sl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="sn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
 <rect width="1600" height="860" fill="#ffffff"/>
-<text x="60" y="55" font-size="32" font-weight="bold" fill="#12302b">Mapa da sessão: temas e exercícios</text>
-<rect x="60" y="90" width="32" height="32" rx="6" fill="#00695c"/>
-<text x="112" y="115" font-size="23" fill="#12302b">Visão geral</text>
-<rect x="60" y="150" width="32" height="32" rx="6" fill="#00695c"/>
-<text x="112" y="175" font-size="23" fill="#12302b">Governança de IA</text>
-<rect x="60" y="210" width="32" height="32" rx="6" fill="#00695c"/>
-<text x="112" y="235" font-size="23" fill="#12302b">Triagem por criticidade</text>
-<rect x="60" y="270" width="32" height="32" rx="6" fill="#00695c"/>
-<text x="112" y="295" font-size="23" fill="#12302b">Riscos de agentes</text>
-<rect x="60" y="330" width="32" height="32" rx="6" fill="#e65100"/>
-<text x="112" y="355" font-size="23" fill="#12302b">Exercícios — triagem e riscos dos protótipos</text>
-<rect x="60" y="390" width="32" height="32" rx="6" fill="#78909c"/>
-<text x="112" y="415" font-size="23" fill="#12302b">Intervalo</text>
-<rect x="60" y="450" width="32" height="32" rx="6" fill="#00695c"/>
-<text x="112" y="475" font-size="23" fill="#12302b">Controles e evidências</text>
-<rect x="60" y="510" width="32" height="32" rx="6" fill="#00695c"/>
-<text x="112" y="535" font-size="23" fill="#12302b">Compartilhamento governado</text>
-<rect x="60" y="570" width="32" height="32" rx="6" fill="#e65100"/>
-<text x="112" y="595" font-size="23" fill="#12302b">Oficina — marketplace local governado</text>
-<rect x="61" y="631" width="30" height="30" rx="6" fill="#ffffff" stroke="#78909c" stroke-width="3"/>
-<text x="112" y="655" font-size="23" fill="#12302b">Experimentos complementares</text>
-<rect x="60" y="690" width="32" height="32" rx="6" fill="#00695c"/>
-<text x="112" y="715" font-size="23" fill="#12302b">Síntese e referências</text>
-<rect x="60" y="790" width="24" height="24" rx="5" fill="#00695c"/>
-<text x="96" y="809" font-size="20" fill="#37474f">Teoria</text>
-<rect x="222" y="790" width="24" height="24" rx="5" fill="#e65100"/>
-<text x="258" y="809" font-size="20" fill="#37474f">Exercícios</text>
-<rect x="428" y="790" width="24" height="24" rx="5" fill="#78909c"/>
-<text x="464" y="809" font-size="20" fill="#37474f">Intervalo</text>
-<rect x="624" y="791" width="22" height="22" rx="5" fill="#ffffff" stroke="#78909c" stroke-width="3"/>
-<text x="659" y="809" font-size="20" fill="#37474f">Opcional, depois da sessão</text>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Mapa da sessão: temas, exercícios e linhas da ficha</text>
+<text x="900" y="104" font-size="18" font-weight="bold" fill="#78909c">Linha da ficha ou foco</text>
+<rect x="60" y="120" width="32" height="32" rx="6" fill="#00695c"/>
+<text x="112" y="145" font-size="23" fill="#12302b">Visão geral</text>
+<text x="900" y="144" font-size="19" fill="#37474f">A ficha de governança</text>
+<line x1="112" y1="166" x2="1540" y2="166" stroke="#eceff1" stroke-width="1"/>
+<rect x="60" y="180" width="32" height="32" rx="6" fill="#00695c"/>
+<text x="112" y="205" font-size="23" fill="#12302b">Governança de IA</text>
+<text x="900" y="204" font-size="19" fill="#37474f">Dono e finalidade, autonomia</text>
+<line x1="112" y1="226" x2="1540" y2="226" stroke="#eceff1" stroke-width="1"/>
+<rect x="60" y="240" width="32" height="32" rx="6" fill="#00695c"/>
+<text x="112" y="265" font-size="23" fill="#12302b">Triagem por criticidade</text>
+<text x="900" y="264" font-size="19" fill="#37474f">Dados e ferramentas, faixa de risco</text>
+<line x1="112" y1="286" x2="1540" y2="286" stroke="#eceff1" stroke-width="1"/>
+<rect x="60" y="300" width="32" height="32" rx="6" fill="#00695c"/>
+<text x="112" y="325" font-size="23" fill="#12302b">Riscos de agentes</text>
+<text x="900" y="324" font-size="19" fill="#37474f">Riscos e controles</text>
+<line x1="112" y1="346" x2="1540" y2="346" stroke="#eceff1" stroke-width="1"/>
+<rect x="60" y="360" width="32" height="32" rx="6" fill="#e65100"/>
+<text x="112" y="385" font-size="23" fill="#12302b">Exercícios — triagem e riscos de uma skill</text>
+<text x="900" y="384" font-size="19" fill="#37474f">Ficha aplicada à skill de revisão da ACME</text>
+<line x1="112" y1="406" x2="1540" y2="406" stroke="#eceff1" stroke-width="1"/>
+<rect x="60" y="420" width="32" height="32" rx="6" fill="#78909c"/>
+<text x="112" y="445" font-size="23" fill="#12302b">Intervalo, às 11h00</text>
+<line x1="112" y1="466" x2="1540" y2="466" stroke="#eceff1" stroke-width="1"/>
+<rect x="60" y="480" width="32" height="32" rx="6" fill="#00695c"/>
+<text x="112" y="505" font-size="23" fill="#12302b">Controles e evidências</text>
+<text x="900" y="504" font-size="19" fill="#37474f">Evidência e gate</text>
+<line x1="112" y1="526" x2="1540" y2="526" stroke="#eceff1" stroke-width="1"/>
+<rect x="60" y="540" width="32" height="32" rx="6" fill="#00695c"/>
+<text x="112" y="565" font-size="23" fill="#12302b">Compartilhamento governado</text>
+<text x="900" y="564" font-size="19" fill="#37474f">Canal e versão, revisão e retirada</text>
+<line x1="112" y1="586" x2="1540" y2="586" stroke="#eceff1" stroke-width="1"/>
+<rect x="60" y="600" width="32" height="32" rx="6" fill="#e65100"/>
+<text x="112" y="625" font-size="23" fill="#12302b">Oficina — marketplace local governado</text>
+<text x="900" y="624" font-size="19" fill="#37474f">Ficha gravada em governanca.json</text>
+<line x1="112" y1="646" x2="1540" y2="646" stroke="#eceff1" stroke-width="1"/>
+<rect x="61" y="661" width="30" height="30" rx="6" fill="#ffffff" stroke="#78909c" stroke-width="3"/>
+<text x="112" y="685" font-size="23" fill="#12302b">Experimentos complementares</text>
+<text x="900" y="684" font-size="19" fill="#37474f">Protótipo do grupo e marketplace em git</text>
+<line x1="112" y1="706" x2="1540" y2="706" stroke="#eceff1" stroke-width="1"/>
+<rect x="60" y="720" width="32" height="32" rx="6" fill="#00695c"/>
+<text x="112" y="745" font-size="23" fill="#12302b">Síntese e referências</text>
+<text x="900" y="744" font-size="19" fill="#37474f">Checklist, autoavaliação e kit de 30 dias</text>
+<line x1="112" y1="766" x2="1540" y2="766" stroke="#eceff1" stroke-width="1"/>
+<rect x="60" y="800" width="24" height="24" rx="5" fill="#00695c"/>
+<text x="96" y="819" font-size="20" fill="#37474f">Teoria</text>
+<rect x="222" y="800" width="24" height="24" rx="5" fill="#e65100"/>
+<text x="258" y="819" font-size="20" fill="#37474f">Exercícios</text>
+<rect x="428" y="800" width="24" height="24" rx="5" fill="#78909c"/>
+<text x="464" y="819" font-size="20" fill="#37474f">Intervalo</text>
+<rect x="624" y="801" width="22" height="22" rx="5" fill="#ffffff" stroke="#78909c" stroke-width="3"/>
+<text x="659" y="819" font-size="20" fill="#37474f">Opcional, depois da sessão</text>
 </svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="sv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="sl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="sn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="720" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Onde a decisão é aplicada: controle fora do modelo e instrução textual</text>
+<rect x="60" y="120" width="390" height="470" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3" stroke-dasharray="10 7"/>
+<text x="84" y="156" font-size="20" font-weight="bold" fill="#12302b">Dentro do contexto do modelo</text>
+<rect x="84" y="180" width="342" height="150" rx="14" fill="#ffffff" stroke="#78909c" stroke-width="3"/>
+<text x="104" y="214" font-size="20" font-weight="bold" fill="#12302b">Instrução textual</text>
+<text x="104" y="244" font-size="17" fill="#37474f">Prompt, SKILL.md ou instruções do</text>
+<text x="104" y="266" font-size="17" fill="#37474f">projeto. Orienta o modelo e pode ser</text>
+<text x="104" y="288" font-size="17" fill="#37474f">ignorada.</text>
+<rect x="84" y="350" width="342" height="110" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="104" y="384" font-size="20" font-weight="bold" fill="#12302b">Conteúdo recuperado</text>
+<text x="104" y="412" font-size="17" fill="#37474f">Pode trazer instrução em sentido</text>
+<text x="104" y="434" font-size="17" fill="#37474f">contrário</text>
+<rect x="84" y="480" width="342" height="90" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<text x="255" y="532" font-size="24" font-weight="bold" text-anchor="middle" fill="#12302b">Modelo</text>
+<rect x="490" y="120" width="1050" height="470" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="514" y="156" font-size="20" font-weight="bold" fill="#12302b">Componentes que o modelo não altera</text>
+<rect x="514" y="190" width="230" height="140" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<text x="532" y="226" font-size="19" font-weight="bold" fill="#12302b">Permissão de</text>
+<text x="532" y="250" font-size="19" font-weight="bold" fill="#12302b">ferramenta</text>
+<text x="532" y="284" font-size="16" fill="#37474f">Lista tools do subagente</text>
+<line x1="747" y1="260" x2="771" y2="260" stroke="#00695c" stroke-width="3" marker-end="url(#sv)"/>
+<rect x="774" y="190" width="230" height="140" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<text x="792" y="226" font-size="19" font-weight="bold" fill="#12302b">Hook</text>
+<text x="792" y="284" font-size="16" fill="#37474f">PreToolUse, no arnês,</text>
+<text x="792" y="305" font-size="16" fill="#37474f">antes da chamada</text>
+<line x1="1007" y1="260" x2="1031" y2="260" stroke="#00695c" stroke-width="3" marker-end="url(#sv)"/>
+<rect x="1034" y="190" width="230" height="140" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<text x="1052" y="226" font-size="19" font-weight="bold" fill="#12302b">Política na API</text>
+<text x="1052" y="284" font-size="16" fill="#37474f">Escopo do token, no</text>
+<text x="1052" y="305" font-size="16" fill="#37474f">servidor</text>
+<line x1="1267" y1="260" x2="1301" y2="260" stroke="#00695c" stroke-width="3" marker-end="url(#sv)"/>
+<rect x="514" y="400" width="230" height="140" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<text x="532" y="436" font-size="19" font-weight="bold" fill="#12302b">Validação de</text>
+<text x="532" y="461" font-size="19" font-weight="bold" fill="#12302b">esquema</text>
+<text x="532" y="494" font-size="16" fill="#37474f">Código que confere a saída</text>
+<text x="532" y="515" font-size="16" fill="#37474f">antes do uso</text>
+<rect x="1298" y="200" width="218" height="120" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="2"/>
+<text x="1407" y="245" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">API do sistema</text>
+<text x="1407" y="266" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">executa só o que</text>
+<text x="1407" y="287" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">passou</text>
+<rect x="1298" y="410" width="218" height="120" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="2"/>
+<text x="1407" y="465" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">Sistema seguinte</text>
+<text x="1407" y="486" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">recebe só saída válida</text>
+<line x1="746" y1="470" x2="1294" y2="470" stroke="#00695c" stroke-width="3" marker-end="url(#sv)"/>
+<path d="M428,505 C470,505 460,260 510,260" fill="none" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<path d="M428,540 C470,540 470,470 510,470" fill="none" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<text x="60" y="640" font-size="19" font-weight="bold" fill="#12302b">O resultado do controle fora do modelo independe do que o modelo decidiu, e a instrução textual não impede nenhuma operação.</text>
+<text x="60" y="676" font-size="19" fill="#37474f">Teste prático: o critério de aceite vale “independentemente da resposta do modelo”.</text>
+</svg>

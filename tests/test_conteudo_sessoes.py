@@ -879,7 +879,32 @@ class SessaoNoveTest(unittest.TestCase):
         "fronteiras-de-confianca",
         "niveis-de-compartilhamento",
         "ciclo-de-vida-do-plugin",
+        "cinco-distincoes",
+        "quatro-decisoes",
+        "niveis-de-autonomia",
+        "papeis-no-modelo-federado",
+        "supervisao-humana-efetiva",
+        "funcoes-do-nist-ai-rmf",
+        "do-inventario-a-faixa",
+        "tres-faixas-de-criticidade",
+        "regra-do-fator-critico",
+        "premissa-nao-verificada",
+        "tres-incidentes",
+        "recuperacao-e-alucinacao",
+        "risco-como-evento-e-consequencia",
+        "tres-estados-do-controle",
+        "controles-no-tempo-do-incidente",
+        "controle-fora-do-modelo",
+        "testes-de-aceite-t01-a-t07",
+        "do-controle-a-historia",
+        "operacoes-do-ciclo-de-vida",
+        "retirada-observada",
+        "caminho-do-portao",
+        "caso-da-skill-de-revisao",
+        "do-prototipo-ao-marketplace",
+        "kit-de-30-dias",
     )
+
     def texto(self, nome):
         caminho = S9 / nome
         return caminho.read_text(encoding="utf-8") if caminho.exists() else ""

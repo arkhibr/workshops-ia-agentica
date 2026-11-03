@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 570" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="sv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="sl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="sn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="570" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Do inventário à faixa: a triagem só classifica os casos que a equipe conhece</text>
+<rect x="60" y="150" width="332" height="300" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<rect x="60" y="150" width="332" height="62" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="78" y="189" font-size="23" font-weight="bold" fill="#12302b">1. Inventariar</text>
+<circle cx="86" cy="248" r="4" fill="#00695c"/>
+<text x="100" y="254" font-size="18" fill="#37474f">Skills na pasta pessoal</text>
+<circle cx="86" cy="284" r="4" fill="#00695c"/>
+<text x="100" y="290" font-size="18" fill="#37474f">Subagentes nos repositórios</text>
+<circle cx="86" cy="320" r="4" fill="#00695c"/>
+<text x="100" y="326" font-size="18" fill="#37474f">Servidores MCP locais</text>
+<circle cx="86" cy="356" r="4" fill="#00695c"/>
+<text x="100" y="362" font-size="18" fill="#37474f">Tokens criados para o agente</text>
+<circle cx="86" cy="392" r="4" fill="#00695c"/>
+<text x="100" y="398" font-size="18" fill="#37474f">Scripts que chamam a API de um</text>
+<text x="100" y="422" font-size="18" fill="#37474f">provedor</text>
+<line x1="396" y1="300" x2="438" y2="300" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<rect x="442" y="150" width="332" height="300" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<rect x="442" y="150" width="332" height="62" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="460" y="189" font-size="23" font-weight="bold" fill="#12302b">2. Campos mínimos</text>
+<circle cx="468" cy="248" r="4" fill="#00695c"/>
+<text x="482" y="254" font-size="18" fill="#37474f">Nome do dono</text>
+<circle cx="468" cy="284" r="4" fill="#00695c"/>
+<text x="482" y="290" font-size="18" fill="#37474f">Finalidade em uma frase</text>
+<circle cx="468" cy="320" r="4" fill="#00695c"/>
+<text x="482" y="326" font-size="18" fill="#37474f">Classes de dado que o item lê</text>
+<line x1="778" y1="300" x2="820" y2="300" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<rect x="824" y="150" width="332" height="300" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<rect x="824" y="150" width="332" height="62" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="842" y="189" font-size="23" font-weight="bold" fill="#12302b">3. Dados e ferramentas</text>
+<circle cx="850" cy="248" r="4" fill="#00695c"/>
+<text x="864" y="254" font-size="18" fill="#37474f">Classe: público, interno, pessoal</text>
+<text x="864" y="278" font-size="18" fill="#37474f">ou sensível</text>
+<circle cx="850" cy="308" r="4" fill="#00695c"/>
+<text x="864" y="314" font-size="18" fill="#37474f">Permissão: ler, recomendar,</text>
+<text x="864" y="338" font-size="18" fill="#37474f">escrever ou executar</text>
+<circle cx="850" cy="368" r="4" fill="#00695c"/>
+<text x="864" y="374" font-size="18" fill="#37474f">Modelo, provedor, skills,</text>
+<text x="864" y="398" font-size="18" fill="#37474f">servidores MCP e APIs</text>
+<line x1="1160" y1="300" x2="1202" y2="300" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<rect x="1206" y="150" width="332" height="300" rx="14" fill="#ffffff" stroke="#e65100" stroke-width="3"/>
+<rect x="1206" y="150" width="332" height="62" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="1224" y="189" font-size="23" font-weight="bold" fill="#12302b">4. Faixa de risco</text>
+<circle cx="1232" cy="248" r="4" fill="#e65100"/>
+<text x="1246" y="254" font-size="18" fill="#37474f">Baixa, moderada ou alta</text>
+<circle cx="1232" cy="284" r="4" fill="#e65100"/>
+<text x="1246" y="290" font-size="18" fill="#37474f">Fator que decidiu a faixa</text>
+<circle cx="1232" cy="320" r="4" fill="#e65100"/>
+<text x="1246" y="326" font-size="18" fill="#37474f">Premissas não verificadas</text>
+<rect x="60" y="112" width="714" height="28" rx="8" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="417" y="132" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">Função Map (mapear) do NIST AI RMF 1.0</text>
+<rect x="442" y="490" width="332" height="50" rx="25" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+<text x="608" y="521" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">Item sem dono: pendência registrada</text>
+<line x1="608" y1="452" x2="608" y2="488" stroke="#e65100" stroke-width="2.5" marker-end="url(#sl)"/>
+<text x="824" y="522" font-size="19" fill="#37474f">A regra do fator crítico decide a faixa entre a etapa 3 e a etapa 4.</text>
+</svg>

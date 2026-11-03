@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 650" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="sv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="sl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="sn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="650" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Cinco atividades: cada uma responde a uma pergunta e deixa uma evidência própria</text>
+<rect x="60" y="120" width="280" height="440" rx="14" fill="#ffffff" stroke="#e65100" stroke-width="3"/>
+<rect x="60" y="120" width="280" height="88" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="78" y="172" font-size="23" font-weight="bold" fill="#12302b">Governança</text>
+<text x="78" y="246" font-size="18" font-weight="bold" fill="#e65100">Pergunta</text>
+<text x="78" y="276" font-size="18" fill="#37474f">Quem pode aprovar o caso e</text>
+<text x="78" y="300" font-size="18" fill="#37474f">aceitar o risco residual?</text>
+<line x1="78" y1="390" x2="322" y2="390" stroke="#cfd8dc" stroke-width="2"/>
+<text x="78" y="426" font-size="18" font-weight="bold" fill="#e65100">Evidência que deixa</text>
+<text x="78" y="456" font-size="18" font-weight="bold" fill="#12302b">Ficha de decisão com o</text>
+<text x="78" y="480" font-size="18" font-weight="bold" fill="#12302b">nome do responsável</text>
+<rect x="360" y="120" width="280" height="440" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<rect x="360" y="120" width="280" height="88" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="378" y="172" font-size="23" font-weight="bold" fill="#12302b">Gestão de riscos</text>
+<text x="378" y="246" font-size="18" font-weight="bold" fill="#00695c">Pergunta</text>
+<text x="378" y="276" font-size="18" fill="#37474f">O que pode dar errado e qual</text>
+<text x="378" y="300" font-size="18" fill="#37474f">seria a gravidade?</text>
+<line x1="378" y1="390" x2="622" y2="390" stroke="#cfd8dc" stroke-width="2"/>
+<text x="378" y="426" font-size="18" font-weight="bold" fill="#00695c">Evidência que deixa</text>
+<text x="378" y="456" font-size="18" font-weight="bold" fill="#12302b">Registro de risco com a</text>
+<text x="378" y="480" font-size="18" font-weight="bold" fill="#12302b">resposta escolhida</text>
+<rect x="660" y="120" width="280" height="440" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<rect x="660" y="120" width="280" height="88" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="678" y="158" font-size="23" font-weight="bold" fill="#12302b">Segurança e</text>
+<text x="678" y="186" font-size="23" font-weight="bold" fill="#12302b">privacidade</text>
+<text x="678" y="246" font-size="18" font-weight="bold" fill="#00695c">Pergunta</text>
+<text x="678" y="276" font-size="18" fill="#37474f">A quais dados e a quais ações</text>
+<text x="678" y="300" font-size="18" fill="#37474f">o agente tem acesso?</text>
+<line x1="678" y1="390" x2="922" y2="390" stroke="#cfd8dc" stroke-width="2"/>
+<text x="678" y="426" font-size="18" font-weight="bold" fill="#00695c">Evidência que deixa</text>
+<text x="678" y="456" font-size="18" font-weight="bold" fill="#12302b">Matriz de permissões e</text>
+<text x="678" y="480" font-size="18" font-weight="bold" fill="#12302b">testes de acesso</text>
+<rect x="960" y="120" width="280" height="440" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<rect x="960" y="120" width="280" height="88" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="978" y="172" font-size="23" font-weight="bold" fill="#12302b">Qualidade e avaliação</text>
+<text x="978" y="246" font-size="18" font-weight="bold" fill="#00695c">Pergunta</text>
+<text x="978" y="276" font-size="18" fill="#37474f">Como a equipe sabe que o</text>
+<text x="978" y="300" font-size="18" fill="#37474f">comportamento é adequado?</text>
+<line x1="978" y1="390" x2="1222" y2="390" stroke="#cfd8dc" stroke-width="2"/>
+<text x="978" y="426" font-size="18" font-weight="bold" fill="#00695c">Evidência que deixa</text>
+<text x="978" y="456" font-size="18" font-weight="bold" fill="#12302b">Conjunto de testes com</text>
+<text x="978" y="480" font-size="18" font-weight="bold" fill="#12302b">critério de aprovação e</text>
+<text x="978" y="504" font-size="18" font-weight="bold" fill="#12302b">métricas</text>
+<rect x="1260" y="120" width="280" height="440" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<rect x="1260" y="120" width="280" height="88" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="1278" y="158" font-size="23" font-weight="bold" fill="#12302b">Operação e</text>
+<text x="1278" y="186" font-size="23" font-weight="bold" fill="#12302b">supervisão</text>
+<text x="1278" y="246" font-size="18" font-weight="bold" fill="#00695c">Pergunta</text>
+<text x="1278" y="276" font-size="18" fill="#37474f">Como a equipe detecta a</text>
+<text x="1278" y="300" font-size="18" fill="#37474f">falha, interrompe a execução</text>
+<text x="1278" y="324" font-size="18" fill="#37474f">e recupera o estado?</text>
+<line x1="1278" y1="390" x2="1522" y2="390" stroke="#cfd8dc" stroke-width="2"/>
+<text x="1278" y="426" font-size="18" font-weight="bold" fill="#00695c">Evidência que deixa</text>
+<text x="1278" y="456" font-size="18" font-weight="bold" fill="#12302b">Logs mínimos, alerta e</text>
+<text x="1278" y="480" font-size="18" font-weight="bold" fill="#12302b">procedimento de reversão</text>
+<rect x="78" y="500" width="244" height="40" rx="20" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+<text x="200" y="526" font-size="17" font-weight="bold" text-anchor="middle" fill="#e65100">a que mais costuma faltar</text>
+<text x="60" y="615" font-size="20" fill="#37474f">Diante de um agente que “está governado”, a pergunta de diagnóstico é qual das cinco evidências existe.</text>
+</svg>

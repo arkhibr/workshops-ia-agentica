@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 770" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="sv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="sl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="sn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="770" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Papéis no modelo federado: cada área responde por uma parte do caso</text>
+<rect x="60" y="110" width="280" height="270" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<rect x="60" y="110" width="280" height="88" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="78" y="161" font-size="21" font-weight="bold" fill="#12302b">PO ou dono do processo</text>
+<text x="78" y="234" font-size="17" font-weight="bold" fill="#00695c">Responde por</text>
+<text x="78" y="262" font-size="18" fill="#37474f">Finalidade, benefício, público,</text>
+<text x="78" y="286" font-size="18" fill="#37474f">impacto, aceitação funcional</text>
+<text x="78" y="310" font-size="18" fill="#37474f">e autorização de uso</text>
+<line x1="200" y1="380" x2="200" y2="414" stroke="#00695c" stroke-width="2.5" marker-end="url(#sv)"/>
+<rect x="70" y="418" width="260" height="58" rx="29" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="200" y="453" font-size="16" font-weight="bold" text-anchor="middle" fill="#12302b">Na ficha: Dono e finalidade</text>
+<rect x="360" y="110" width="280" height="270" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<rect x="360" y="110" width="280" height="88" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="378" y="149" font-size="21" font-weight="bold" fill="#12302b">Líder técnico ou</text>
+<text x="378" y="174" font-size="21" font-weight="bold" fill="#12302b">engenharia</text>
+<text x="378" y="234" font-size="17" font-weight="bold" fill="#00695c">Responde por</text>
+<text x="378" y="262" font-size="18" fill="#37474f">Arquitetura, identidade e</text>
+<text x="378" y="286" font-size="18" fill="#37474f">permissões, avaliações,</text>
+<text x="378" y="310" font-size="18" fill="#37474f">versionamento e reversão</text>
+<line x1="500" y1="380" x2="500" y2="414" stroke="#00695c" stroke-width="2.5" marker-end="url(#sv)"/>
+<rect x="370" y="418" width="260" height="58" rx="29" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="500" y="443" font-size="16" font-weight="bold" text-anchor="middle" fill="#12302b">Na ficha: Evidência e gate,</text>
+<text x="500" y="463" font-size="16" font-weight="bold" text-anchor="middle" fill="#12302b">como aprovador</text>
+<rect x="660" y="110" width="280" height="270" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<rect x="660" y="110" width="280" height="88" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="678" y="149" font-size="21" font-weight="bold" fill="#12302b">Segurança e</text>
+<text x="678" y="174" font-size="21" font-weight="bold" fill="#12302b">privacidade</text>
+<text x="678" y="234" font-size="17" font-weight="bold" fill="#00695c">Responde por</text>
+<text x="678" y="262" font-size="18" fill="#37474f">Critérios de risco,</text>
+<text x="678" y="286" font-size="18" fill="#37474f">tratamento de dados e</text>
+<text x="678" y="310" font-size="18" fill="#37474f">revisão de casos sensíveis</text>
+<rect x="960" y="110" width="280" height="270" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<rect x="960" y="110" width="280" height="88" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="978" y="149" font-size="21" font-weight="bold" fill="#12302b">Operação ou</text>
+<text x="978" y="174" font-size="21" font-weight="bold" fill="#12302b">plataforma</text>
+<text x="978" y="234" font-size="17" font-weight="bold" fill="#00695c">Responde por</text>
+<text x="978" y="262" font-size="18" fill="#37474f">Monitoramento, custos,</text>
+<text x="978" y="286" font-size="18" fill="#37474f">incidentes, retenção técnica</text>
+<text x="978" y="310" font-size="18" fill="#37474f">e desativação</text>
+<rect x="1260" y="110" width="280" height="270" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<rect x="1260" y="110" width="280" height="88" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="1278" y="149" font-size="21" font-weight="bold" fill="#12302b">Patrocinador ou</text>
+<text x="1278" y="174" font-size="21" font-weight="bold" fill="#12302b">gestor competente</text>
+<text x="1278" y="234" font-size="17" font-weight="bold" fill="#00695c">Responde por</text>
+<text x="1278" y="262" font-size="18" fill="#37474f">Aceitação formal do risco</text>
+<text x="1278" y="286" font-size="18" fill="#37474f">residual relevante e</text>
+<text x="1278" y="310" font-size="18" fill="#37474f">arbitragem entre as áreas</text>
+<text x="60" y="530" font-size="21" font-weight="bold" fill="#12302b">O grau de revisão cresce com a faixa de risco do caso</text>
+<rect x="60" y="650" width="120" height="30" rx="8" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="120" y="640" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Baixa</text>
+<text x="200" y="666" font-size="18" fill="#37474f">Aprovação do PO e do líder técnico, sem</text>
+<text x="200" y="690" font-size="18" fill="#37474f">comitê para alteração trivial</text>
+<rect x="560" y="620" width="120" height="60" rx="8" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="620" y="610" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Moderada</text>
+<text x="700" y="666" font-size="18" fill="#37474f">Revisão de segurança e privacidade</text>
+<text x="700" y="690" font-size="18" fill="#37474f">conforme os dados</text>
+<rect x="1060" y="590" width="120" height="90" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+<text x="1120" y="580" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Alta</text>
+<text x="1200" y="666" font-size="18" fill="#37474f">Aprovações formais: a revisão formal</text>
+<text x="1200" y="690" font-size="18" fill="#37474f">se concentra nesta faixa</text>
+<text x="60" y="740" font-size="19" fill="#78909c">Numa equipe pequena, uma pessoa acumula dois ou três papéis, e a matriz obriga a declarar quem acumula o quê.</text>
+</svg>

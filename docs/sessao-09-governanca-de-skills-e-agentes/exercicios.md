@@ -1,10 +1,12 @@
-# Exercícios — triagem e riscos dos protótipos
+# Exercícios — triagem e riscos de uma skill
 
 Os exercícios aplicam a ficha de governança a uma skill da ACME, universidade fictícia.
 
 ## O caso
 
 A ACME tem uma skill que revisa pull requests contra padrões de arquitetura e escreve um parecer, com critérios de aprovação ainda não definidos. Por conveniência, a skill usa a credencial pessoal de quem a executa, com escrita em todos os repositórios dessa pessoa.
+
+![A skill de revisão da ACME lê o código do pull request, compara com os padrões de arquitetura e produz um parecer, com critérios de aprovação indefinidos. Em laranja, a credencial pessoal dá escrita em todos os repositórios de quem executa, alcance maior que o repositório revisado.](assets/caso-da-skill-de-revisao.png)
 
 ## 1. Dono e finalidade
 

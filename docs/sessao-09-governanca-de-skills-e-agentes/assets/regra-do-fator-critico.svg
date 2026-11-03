@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="sv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="sl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="sn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="720" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">A regra do fator crítico, na forma estrita desta sessão: um fator crítico basta</text>
+<text x="60" y="104" font-size="20" fill="#37474f">A faixa é a do fator mais grave, conferido da faixa alta para a baixa</text>
+<rect x="60" y="140" width="520" height="140" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<text x="84" y="178" font-size="22" font-weight="bold" fill="#12302b">Algum fator crítico?</text>
+<text x="84" y="212" font-size="18" fill="#37474f">Dado sensível, efeito relevante sobre pessoas, escrita em</text>
+<text x="84" y="236" font-size="18" fill="#37474f">sistemas ou execução financeira</text>
+<rect x="680" y="150" width="280" height="120" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="700" y="190" font-size="24" font-weight="bold" fill="#12302b">Faixa alta</text>
+<text x="700" y="222" font-size="17" fill="#37474f">A justificativa nomeia o fator</text>
+<text x="700" y="244" font-size="17" fill="#37474f">decisivo</text>
+<line x1="582" y1="210" x2="676" y2="210" stroke="#e65100" stroke-width="3" marker-end="url(#sl)"/>
+<text x="628" y="198" font-size="18" font-weight="bold" text-anchor="middle" fill="#e65100">sim</text>
+<rect x="60" y="340" width="520" height="140" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<text x="84" y="378" font-size="22" font-weight="bold" fill="#12302b">Algum fator de faixa moderada?</text>
+<text x="84" y="412" font-size="18" fill="#37474f">Conteúdo interno, recuperação de documentos, integração</text>
+<text x="84" y="436" font-size="18" fill="#37474f">limitada ou decisão assistida</text>
+<line x1="320" y1="282" x2="320" y2="336" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<text x="334" y="316" font-size="18" font-weight="bold" fill="#78909c">não</text>
+<rect x="680" y="350" width="280" height="120" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3"/>
+<text x="700" y="398" font-size="24" font-weight="bold" fill="#12302b">Faixa moderada</text>
+<line x1="582" y1="410" x2="676" y2="410" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<text x="628" y="398" font-size="18" font-weight="bold" text-anchor="middle" fill="#78909c">sim</text>
+<line x1="320" y1="482" x2="320" y2="536" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<text x="334" y="516" font-size="18" font-weight="bold" fill="#78909c">não</text>
+<rect x="60" y="540" width="520" height="110" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="84" y="580" font-size="24" font-weight="bold" fill="#12302b">Faixa baixa</text>
+<text x="84" y="612" font-size="18" fill="#37474f">Público, sem dado pessoal, só leitura e revisão de toda</text>
+<text x="84" y="636" font-size="18" fill="#37474f">saída</text>
+<rect x="1020" y="140" width="520" height="510" rx="14" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="3"/>
+<text x="1044" y="178" font-size="21" font-weight="bold" fill="#12302b">Exemplo da página</text>
+<rect x="1044" y="200" width="472" height="48" rx="24" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+<text x="1280" y="230" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Escrita em sistema financeiro</text>
+<rect x="1044" y="262" width="472" height="48" rx="24" fill="#eceff1" stroke="#78909c" stroke-width="2"/>
+<text x="1280" y="292" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Leitura apenas de conteúdo interno</text>
+<rect x="1044" y="324" width="472" height="48" rx="24" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1280" y="354" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Revisão humana de toda saída</text>
+<text x="1044" y="422" font-size="19" font-weight="bold" fill="#78909c">Soma de pontos (excluída)</text>
+<text x="1044" y="450" font-size="17" fill="#37474f">Os fatores leves compensam o severo, e a média esconde o</text>
+<text x="1044" y="472" font-size="17" fill="#37474f">fator que causaria o pior dano.</text>
+<text x="1044" y="548" font-size="19" font-weight="bold" fill="#e65100">Regra estrita (adotada)</text>
+<text x="1044" y="576" font-size="17" font-weight="bold" fill="#12302b">Faixa alta, com a escrita em sistema financeiro como</text>
+<text x="1044" y="598" font-size="17" font-weight="bold" fill="#12302b">fator decisivo.</text>
+<text x="60" y="696" font-size="19" fill="#37474f">A passagem de “ler” para “escrever” muda o fator e exige revisão da ficha antes da mudança.</text>
+</svg>

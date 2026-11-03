@@ -8,6 +8,8 @@ As afirmações sobre o Claude Code seguem as marcas da sessão: **observado** i
 
 O grupo acrescenta o protótipo em que trabalha como terceiro plugin de uma cópia do marketplace da oficina. A cópia fica num repositório interno da equipe, e nem a ficha nem os arquivos do protótipo entram no repositório público do workshop ou neste site.
 
+![Seis etapas do protótipo do grupo ao marketplace da equipe: terceiro plugin numa cópia do marketplace no repositório interno, ficha em governanca.json, portão e instalação observados na versão 2.1.317, troca com outro grupo, hospedagem num repositório git da equipe, documentada e sem execução, e portão na esteira, por inferência e sem execução.](assets/do-prototipo-ao-marketplace.png)
+
 **Passo 1:** copiar a pasta `marketplace-acme` da oficina para o repositório interno e criar dentro de `plugins/` uma pasta com o nome do protótipo, em letras minúsculas e com hífens. A pasta recebe o manifesto `.claude-plugin/plugin.json`, com `name`, `version` e `description`, e cada skill do protótipo em `skills/<nome-da-skill>/SKILL.md`, a mesma estrutura dos dois plugins da oficina.
 
 **Passo 2:** gravar em `governanca.json` a ficha preenchida nos exercícios 1 a 5, com os mesmos campos dos plugins da oficina. A ficha descreve a credencial pelo tipo, pelo dono e pelo escopo, sem conter o valor de nenhuma credencial, e uma faixa alta exige o nome do aprovador e a data da aprovação em `gate`, regra que o portão confere.

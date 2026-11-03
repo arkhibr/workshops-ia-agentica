@@ -6,11 +6,11 @@
 
 <rect x="50" y="130" width="220" height="300" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
 <rect x="50" y="130" width="220" height="62" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
-<text x="68" y="171" font-size="26" font-weight="bold" fill="#12302b">Criar</text>
+<text x="68" y="171" font-size="26" font-weight="bold" fill="#12302b">Validar</text>
 <text x="68" y="228" font-size="18" font-weight="bold" fill="#00695c">Experimento A</text>
-<text x="68" y="260" font-size="17" fill="#37474f">marketplace.json,</text>
-<text x="68" y="285" font-size="17" fill="#37474f">plugin.json, SKILL.md</text>
-<text x="68" y="310" font-size="17" fill="#37474f">e governanca.json</text>
+<text x="68" y="260" font-size="17" fill="#37474f">Baixar o zip e</text>
+<text x="68" y="285" font-size="17" fill="#37474f">conferir o catálogo</text>
+<text x="68" y="310" font-size="17" fill="#37474f">e os dois plugins</text>
 <text x="68" y="355" font-size="17" font-family="Menlo, monospace" fill="#12302b">plugin validate</text>
 
 <line x1="272" y1="280" x2="304" y2="280" stroke="#78909c" stroke-width="3" marker-end="url(#seta)"/>

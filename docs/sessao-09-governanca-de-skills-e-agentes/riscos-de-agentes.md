@@ -49,17 +49,23 @@ O guia usa três cartões de incidente para concentrar a discussão em poucos ri
 | B, agência excessiva | Credencial por serviço com menor privilégio, lista explícita de operações e confirmação humana para escrita | Auditoria das ações, alerta para chamada fora do escopo e revogação do token |
 | C, desinformação | Fonte e data na resposta, recuperação da versão vigente e proibição de resposta categórica sem evidência | Avaliação com gabarito, revisão humana, sinalização de incerteza e canal de correção |
 
+![Três cartões de incidente: A, instrução escondida no documento, ligado ao LLM01 (2026), B, permissão maior que a finalidade, ligado ao LLM03 (2026), e C, resposta plausível e incorreta, ligado ao LLM07 (2026). Cada cartão traz o cenário, o controle preventivo que roda fora do modelo em destaque, os demais controles preventivos e os controles de detecção e resposta.](assets/tres-incidentes.png)
+
 Nas três linhas, a coluna de prevenção traz pelo menos um controle que roda fora do modelo, como o bloqueio de rede, o escopo do token e a recuperação restrita à versão vigente. A página [Controles e evidências](controles-e-evidencias.md) trata dessa diferença entre controle aplicado fora do modelo e instrução textual dirigida ao modelo, e dos testes T01 a T07 que verificam cada controle.
 
 ## Recuperação de documentos e alucinação
 
 A recuperação de documentos (RAG) reduz a dependência do conhecimento guardado nos parâmetros do modelo e deixa de fora quatro garantias: que o documento recuperado é o correto, que a versão é a vigente, que o usuário tem autorização para lê-lo e que o modelo interpreta o texto com fidelidade. O guia recomenda que a avaliação de um agente com RAG verifique a cobertura das fontes, a fidelidade da resposta à evidência e o comportamento quando a base não contém a resposta, e lembra que o conteúdo recuperado também é superfície de injeção de prompt.
 
+![Fluxo de um agente com recuperação de documentos, da pergunta à resposta, com quatro garantias em aberto marcadas em laranja: documento correto e autorização de leitura na recuperação, versão vigente nos documentos do contexto e interpretação fiel no modelo. Abaixo, o que a avaliação verifica e uma barra que marca a faixa de 17% a 33% de alucinação medida por Magesh et al. em ferramentas jurídicas comerciais com RAG.](assets/recuperacao-e-alucinacao.png)
+
 A avaliação pré-registrada de [Magesh et al.](../referencia/bibliografia.md#magesh-et-al-hallucination-free-2025) mediu o efeito em ferramentas comerciais de pesquisa jurídica construídas sobre recuperação de documentos. Os autores encontraram menos alucinação do que no GPT-4 de propósito geral e, ainda assim, taxas entre 17% e 33% nas ferramentas da LexisNexis e da Thomson Reuters avaliadas, e concluíram que as afirmações dos fornecedores sobre ausência de alucinação eram exageradas. O resultado vale para as ferramentas e as versões avaliadas em 2024 e sustenta a regra do incidente C, que exige fonte, data e avaliação com gabarito mesmo quando o agente usa RAG.
 
 ## Risco escrito como evento e consequência
 
 A ficha de registro de riscos do guia, chamada ficha B, exige que cada risco seja formulado como evento e consequência. A formulação "documento malicioso induz chamada a API externa e expõe dados do usuário" descreve o que acontece, em que ordem e com que dano, e por isso permite escolher um controle e escrever um teste. A formulação "segurança" nomeia uma categoria inteira e deixa a escolha do controle sem critério.
+
+![À esquerda, a categoria “segurança”, que não permite escolher controle. À direita, a cadeia que a formulação por evento e consequência permite: o evento de um documento malicioso induzir chamada a API externa, a consequência de expor dados do usuário, o controle de bloqueio de saída de rede e o teste T01. Abaixo, a nota de que uma hipótese registrada vira tarefa de verificação com dono.](assets/risco-como-evento-e-consequencia.png)
 
 A mesma ficha pede que cada linha distinga o fato verificado, a hipótese e a decisão pendente. Um risco registrado como hipótese, como "o token talvez permita escrita", passa a ser uma tarefa de verificação com dono, e o resultado da verificação atualiza a faixa de risco definida na página [Triagem por criticidade](triagem-por-criticidade.md).
 
@@ -70,4 +76,4 @@ A mesma ficha pede que cada linha distinga o fato verificado, a hipótese e a de
     - Que controle preventivo, aplicado fora do modelo, reduz a chance do evento?
     - Que controle detectivo mostra que o evento ocorreu, e qual é a resposta prevista?
 
-**Próxima página:** [Exercícios — triagem e riscos dos protótipos](exercicios.md).
+**Próxima página:** [Exercícios — triagem e riscos de uma skill](exercicios.md).

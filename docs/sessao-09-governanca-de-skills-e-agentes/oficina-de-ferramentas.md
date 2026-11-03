@@ -15,7 +15,7 @@ Cada plugin traz a ficha de governança no arquivo `governanca.json`, e o script
 | E, registrar num repositório | Extensão opcional | Caminho absoluto em `.claude/settings.json` |
 | F, limpar | Essencial em aula | Remoção do marketplace e dos plugins |
 
-![Ciclo de vida do plugin em seis etapas: criar e validar no Experimento A, aprovar no portão no B, instalar e publicar a versão 1.0.1 no C, retirar pelo mapa renames no D e limpar no F, com o Experimento E, opcional, derivado da instalação para registrar o marketplace num repositório com --scope project. A nota de rodapé informa que os comandos foram observados no Claude Code 2.1.317, no macOS, e que o comportamento no Windows não foi confirmado.](assets/ciclo-de-vida-do-plugin.png)
+![Ciclo de vida do plugin em seis etapas: baixar e validar no Experimento A, aprovar no portão no B, instalar e publicar a versão 1.0.1 no C, retirar pelo mapa renames no D e limpar no F, com o Experimento E, opcional, derivado da instalação para registrar o marketplace num repositório com --scope project. A nota de rodapé informa que os comandos foram observados no Claude Code 2.1.317, no macOS, e que o comportamento no Windows não foi confirmado.](assets/ciclo-de-vida-do-plugin.png)
 
 ## Preparação
 
@@ -121,6 +121,8 @@ A ficha do segundo plugin declara como controle preventivo um pedido ao modelo, 
 ```
 
 O portão reprova a ficha com campo obrigatório vazio, a faixa abaixo da alta com dado sensível ou autonomia `executa`, a faixa alta sem aprovador e o controle preventivo do tipo `instrucao`. Quando nenhum plugin reprova, ele executa `claude plugin validate`, e o código de saída é 0 na aprovação, 1 na reprovação e 2 quando o catálogo é ilegível ou o `claude` está ausente. No Windows, a execução do portão é não confirmada.
+
+![Caminho da ficha à instalação: o arquivo governanca.json entra no script portao.mjs, que reprova com código 1 diante de campo vazio, faixa incompatível com dado sensível ou autonomia executa, faixa alta sem aprovador ou controle preventivo do tipo instrucao, e sai com código 2 quando o catálogo é ilegível. Com código 0, o portão chama claude plugin validate e o colega registra o marketplace e instala o plugin.](assets/caminho-do-portao.png)
 
 **Passo 1:** rodar o portão.
 

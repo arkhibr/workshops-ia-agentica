@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="sv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="sl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="sn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="700" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">O caso dos exercícios: a skill de revisão de pull requests da ACME</text>
+<rect x="60" y="140" width="380" height="120" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<text x="84" y="180" font-size="18" font-weight="bold" fill="#00695c">Lê</text>
+<text x="84" y="212" font-size="19" font-weight="bold" fill="#12302b">Código do pull request, dado</text>
+<text x="84" y="237" font-size="19" font-weight="bold" fill="#12302b">interno</text>
+<rect x="60" y="290" width="380" height="120" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<text x="84" y="330" font-size="18" font-weight="bold" fill="#00695c">Compara com</text>
+<text x="84" y="362" font-size="19" font-weight="bold" fill="#12302b">Padrões de arquitetura da ACME</text>
+<rect x="560" y="180" width="480" height="200" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="800" y="240" font-size="26" font-weight="bold" text-anchor="middle" fill="#12302b">Skill de revisão</text>
+<text x="800" y="272" font-size="26" font-weight="bold" text-anchor="middle" fill="#12302b">de pull requests</text>
+<rect x="590" y="300" width="420" height="56" rx="12" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+<text x="800" y="335" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">Critérios de aprovação ainda indefinidos</text>
+<line x1="442" y1="200" x2="556" y2="250" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<line x1="442" y1="350" x2="556" y2="310" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<rect x="1160" y="180" width="380" height="200" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<text x="1184" y="220" font-size="18" font-weight="bold" fill="#00695c">Produz</text>
+<text x="1184" y="254" font-size="19" font-weight="bold" fill="#12302b">Parecer sobre o pull request</text>
+<text x="1184" y="310" font-size="18" fill="#37474f">Uma pessoa decide o merge</text>
+<line x1="1042" y1="280" x2="1156" y2="280" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<rect x="560" y="440" width="480" height="120" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="584" y="478" font-size="18" font-weight="bold" fill="#e65100">Usa</text>
+<text x="584" y="510" font-size="19" font-weight="bold" fill="#12302b">Credencial pessoal de quem executa, por</text>
+<text x="584" y="535" font-size="19" font-weight="bold" fill="#12302b">conveniência</text>
+<line x1="800" y1="382" x2="800" y2="436" stroke="#e65100" stroke-width="3"/>
+<line x1="1042" y1="500" x2="1156" y2="500" stroke="#e65100" stroke-width="3" marker-end="url(#sl)"/>
+<rect x="1160" y="420" width="380" height="70" rx="12" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1350" y="462" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Repositório revisado</text>
+<rect x="1160" y="506" width="380" height="70" rx="12" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+<text x="1350" y="548" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Todos os outros repositórios da pessoa</text>
+<text x="1099" y="488" font-size="16" font-weight="bold" text-anchor="middle" fill="#e65100">escrita em</text>
+<rect x="60" y="440" width="440" height="136" rx="14" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="3"/>
+<text x="84" y="476" font-size="19" font-weight="bold" fill="#e65100">Onde está o risco</text>
+<text x="84" y="508" font-size="18" fill="#37474f">O alcance da credencial vai além do repositório</text>
+<text x="84" y="532" font-size="18" fill="#37474f">que a revisão precisa ler</text>
+<line x1="502" y1="508" x2="556" y2="508" stroke="#e65100" stroke-width="2.5" stroke-dasharray="9 7"/>
+<text x="60" y="650" font-size="18" fill="#78909c">ACME: universidade fictícia usada nas Sessões 8 e 9. Nenhum dado ou credencial real entra nos exercícios.</text>
+</svg>

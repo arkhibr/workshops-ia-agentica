@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="sv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="sl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="sn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="700" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Da ficha à instalação pelo colega: o que o portão confere antes da validação</text>
+<rect x="60" y="130" width="300" height="230" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<text x="84" y="170" font-size="22" font-weight="bold" font-family="Menlo, monospace" fill="#12302b">governanca.json</text>
+<text x="84" y="210" font-size="18" fill="#37474f">A ficha de governança gravada</text>
+<text x="84" y="234" font-size="18" fill="#37474f">dentro de cada plugin</text>
+<line x1="362" y1="245" x2="418" y2="245" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
+<rect x="420" y="110" width="520" height="290" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="444" y="150" font-size="22" font-weight="bold" font-family="Menlo, monospace" fill="#12302b">node portao.mjs</text>
+<text x="444" y="184" font-size="18" font-weight="bold" fill="#00695c">Reprova quando encontra:</text>
+<circle cx="452" cy="212" r="4" fill="#00695c"/>
+<text x="466" y="218" font-size="18" fill="#37474f">Campo obrigatório vazio</text>
+<circle cx="452" cy="246" r="4" fill="#00695c"/>
+<text x="466" y="252" font-size="18" fill="#37474f">Faixa abaixo da alta com dado sensível ou autonomia</text>
+<text x="466" y="276" font-size="18" fill="#37474f">executa</text>
+<circle cx="452" cy="304" r="4" fill="#00695c"/>
+<text x="466" y="310" font-size="18" fill="#37474f">Faixa alta sem aprovador</text>
+<circle cx="452" cy="338" r="4" fill="#00695c"/>
+<text x="466" y="344" font-size="18" fill="#37474f">Controle preventivo do tipo instrucao</text>
+<line x1="942" y1="200" x2="998" y2="200" stroke="#00695c" stroke-width="3" marker-end="url(#sv)"/>
+<text x="970" y="188" font-size="17" font-weight="bold" text-anchor="middle" fill="#00695c">0</text>
+<rect x="1000" y="130" width="540" height="150" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="1024" y="170" font-size="21" font-weight="bold" font-family="Menlo, monospace" fill="#12302b">claude plugin validate</text>
+<text x="1024" y="206" font-size="18" fill="#37474f">Confere a sintaxe e os campos obrigatórios do catálogo e</text>
+<text x="1024" y="230" font-size="18" fill="#37474f">ignora governanca.json</text>
+<line x1="1270" y1="282" x2="1270" y2="330" stroke="#00695c" stroke-width="3" marker-end="url(#sv)"/>
+<rect x="1000" y="334" width="540" height="150" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
+<text x="1024" y="374" font-size="21" font-weight="bold" fill="#12302b">Instalação pelo colega</text>
+<text x="1024" y="410" font-size="17" font-family="Menlo, monospace" fill="#12302b">claude plugin marketplace add</text>
+<text x="1024" y="438" font-size="17" font-family="Menlo, monospace" fill="#12302b">claude plugin install</text>
+<path d="M680,402 L680,460" fill="none" stroke="#e65100" stroke-width="3" marker-end="url(#sl)"/>
+<rect x="420" y="464" width="520" height="110" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="444" y="500" font-size="20" font-weight="bold" fill="#12302b">Código 1: reprovado</text>
+<text x="444" y="530" font-size="16" fill="#37474f">A saída lista o motivo, como riscos[0]: controle preventivo</text>
+<text x="444" y="551" font-size="16" fill="#37474f">depende só de instrução ao modelo</text>
+<path d="M420,390 L362,462" fill="none" stroke="#78909c" stroke-width="3" stroke-dasharray="9 7" marker-end="url(#sn)"/>
+<rect x="60" y="464" width="300" height="110" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3"/>
+<text x="84" y="500" font-size="20" font-weight="bold" fill="#12302b">Código 2</text>
+<text x="84" y="530" font-size="17" fill="#37474f">Catálogo ilegível ou claude</text>
+<text x="84" y="552" font-size="17" fill="#37474f">ausente</text>
+<text x="60" y="630" font-size="19" fill="#37474f">O portão confere só o que a ficha declara. A prova de que o token é somente de leitura é um teste em que a API rejeita a escrita, como o T03.</text>
+</svg>
