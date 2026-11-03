@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker></defs>
+<rect width="1600" height="800" fill="#ffffff"/>
+<text x="60" y="60" font-size="30" font-weight="bold" fill="#12302b">Etapas de um agente com ferramentas e as três fronteiras de confiança</text>
+<rect x="60" y="150" width="220" height="120" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="74" y="186" font-size="22" font-weight="bold" fill="#12302b">1. Solicitação</text>
+<text x="74" y="218" font-size="17" fill="#37474f">Usuário, interface</text>
+<text x="74" y="242" font-size="17" fill="#37474f">e orquestração</text>
+<rect x="60" y="290" width="220" height="150" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="74" y="320" font-size="16" font-weight="bold" fill="#e65100">Ameaça</text>
+<text x="74" y="348" font-size="17" fill="#37474f">Entrada com dado</text>
+<text x="74" y="371" font-size="17" fill="#37474f">pessoal ou instrução</text>
+<text x="74" y="394" font-size="17" fill="#37474f">maliciosa</text>
+<line x1="282" y1="210" x2="328" y2="210" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<rect x="330" y="150" width="220" height="120" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="344" y="186" font-size="22" font-weight="bold" fill="#12302b">2. Recuperação</text>
+<text x="344" y="218" font-size="17" fill="#37474f">Orquestrador e</text>
+<text x="344" y="242" font-size="17" fill="#37474f">índice de documentos</text>
+<rect x="330" y="290" width="220" height="150" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="344" y="320" font-size="16" font-weight="bold" fill="#e65100">Ameaça</text>
+<text x="344" y="348" font-size="17" fill="#37474f">Documento</text>
+<text x="344" y="371" font-size="17" fill="#37474f">desatualizado, sem</text>
+<text x="344" y="394" font-size="17" fill="#37474f">autorização ou</text>
+<text x="344" y="417" font-size="17" fill="#37474f">contaminado</text>
+<line x1="552" y1="210" x2="598" y2="210" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<rect x="600" y="150" width="220" height="120" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="614" y="186" font-size="22" font-weight="bold" fill="#12302b">3. Inferência</text>
+<text x="614" y="218" font-size="17" fill="#37474f">Orquestrador e</text>
+<text x="614" y="242" font-size="17" fill="#37474f">provedor do modelo</text>
+<rect x="600" y="290" width="220" height="150" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="614" y="320" font-size="16" font-weight="bold" fill="#e65100">Ameaça</text>
+<text x="614" y="348" font-size="17" fill="#37474f">Envio de dado ao</text>
+<text x="614" y="371" font-size="17" fill="#37474f">provedor e resposta</text>
+<text x="614" y="394" font-size="17" fill="#37474f">inventada</text>
+<line x1="822" y1="210" x2="868" y2="210" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<rect x="870" y="150" width="220" height="120" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="884" y="186" font-size="22" font-weight="bold" fill="#12302b">4. Ferramenta</text>
+<text x="884" y="218" font-size="17" fill="#37474f">Agente, skill e</text>
+<text x="884" y="242" font-size="17" fill="#37474f">API do sistema</text>
+<rect x="870" y="290" width="220" height="150" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="884" y="320" font-size="16" font-weight="bold" fill="#e65100">Ameaça</text>
+<text x="884" y="348" font-size="17" fill="#37474f">Excesso de privilégio</text>
+<text x="884" y="371" font-size="17" fill="#37474f">e ação não</text>
+<text x="884" y="394" font-size="17" fill="#37474f">autorizada</text>
+<line x1="1092" y1="210" x2="1138" y2="210" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<rect x="1140" y="150" width="220" height="120" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
+<text x="1154" y="186" font-size="22" font-weight="bold" fill="#12302b">5. Saída</text>
+<text x="1154" y="218" font-size="17" fill="#37474f">Resposta com fontes</text>
+<text x="1154" y="242" font-size="17" fill="#37474f">e revisão humana</text>
+<rect x="1140" y="290" width="220" height="150" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+<text x="1154" y="320" font-size="16" font-weight="bold" fill="#e65100">Ameaça</text>
+<text x="1154" y="348" font-size="17" fill="#37474f">Alegação falsa,</text>
+<text x="1154" y="371" font-size="17" fill="#37474f">exposição e confiança</text>
+<text x="1154" y="394" font-size="17" fill="#37474f">excessiva do revisor</text>
+<line x1="1362" y1="210" x2="1408" y2="210" stroke="#00695c" stroke-width="3" marker-end="url(#seta)"/>
+<rect x="1410" y="150" width="130" height="120" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3"/>
+<text x="1475" y="190" font-size="21" font-weight="bold" text-anchor="middle" fill="#12302b">Efeito</text>
+<text x="1475" y="216" font-size="21" font-weight="bold" text-anchor="middle" fill="#12302b">externo</text>
+<text x="1475" y="244" font-size="15" text-anchor="middle" fill="#37474f">envio, escrita</text>
+<line x1="575" y1="138" x2="575" y2="455" stroke="#e65100" stroke-width="3" stroke-dasharray="10 8"/>
+<circle cx="575" cy="112" r="22" fill="#e65100"/>
+<text x="575" y="119" font-size="19" font-weight="bold" text-anchor="middle" fill="#ffffff">F1</text>
+<line x1="845" y1="138" x2="845" y2="455" stroke="#e65100" stroke-width="3" stroke-dasharray="10 8"/>
+<circle cx="845" cy="112" r="22" fill="#e65100"/>
+<text x="845" y="119" font-size="19" font-weight="bold" text-anchor="middle" fill="#ffffff">F2</text>
+<line x1="1385" y1="138" x2="1385" y2="455" stroke="#e65100" stroke-width="3" stroke-dasharray="10 8"/>
+<circle cx="1385" cy="112" r="22" fill="#e65100"/>
+<text x="1385" y="119" font-size="19" font-weight="bold" text-anchor="middle" fill="#ffffff">F3</text>
+<rect x="60" y="470" width="1480" height="90" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3"/>
+<text x="80" y="504" font-size="22" font-weight="bold" fill="#12302b">6. Operação: eventos, telemetria, alerta e suspensão acompanham todas as etapas</text>
+<text x="80" y="538" font-size="18" fill="#37474f">Ameaça: falha não detectada, custo sem limite e ausência de rastreabilidade</text>
+<circle cx="82" cy="613" r="20" fill="#e65100"/>
+<text x="82" y="620" font-size="17" font-weight="bold" text-anchor="middle" fill="#ffffff">F1</text>
+<text x="116" y="620" font-size="20" fill="#12302b">Entre recuperação e inferência: o conteúdo recuperado entra no contexto do modelo como dado não confiável.</text>
+<circle cx="82" cy="669" r="20" fill="#e65100"/>
+<text x="82" y="676" font-size="17" font-weight="bold" text-anchor="middle" fill="#ffffff">F2</text>
+<text x="116" y="676" font-size="20" fill="#12302b">Entre inferência e ferramenta: a autorização é aplicada fora do modelo, por permissão, hook, esquema ou política da API.</text>
+<circle cx="82" cy="725" r="20" fill="#e65100"/>
+<text x="82" y="732" font-size="17" font-weight="bold" text-anchor="middle" fill="#ffffff">F3</text>
+<text x="116" y="732" font-size="20" fill="#12302b">Entre saída e efeito externo: revisão humana com informação, tempo e autoridade para rejeitar antes do efeito.</text>
+</svg>

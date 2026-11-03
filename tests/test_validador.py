@@ -10,7 +10,9 @@ import scripts.validate_content as validador
 
 from scripts.validate_content import (
     Counts,
+    EXERCICIOS_OBRIGATORIOS,
     ROOT,
+    SESSOES_SEM_TEMPOS,
     bloom_sections,
     document_anchors,
     slugify,
@@ -241,6 +243,18 @@ class SlugTest(unittest.TestCase):
         self.assertIn("titulo", anchors)
         self.assertIn("preservada", anchors)
         self.assertIn("outra-secao", anchors)
+
+
+class SessoesSemTemposTest(unittest.TestCase):
+    def test_sessoes_sem_tempos_inclui_s8_e_s9(self):
+        self.assertIn("sessao-08-skills-e-agentes", SESSOES_SEM_TEMPOS)
+        self.assertIn("sessao-09-governanca-de-skills-e-agentes", SESSOES_SEM_TEMPOS)
+
+    def test_exercicios_obrigatorios_por_sessao(self):
+        self.assertEqual(EXERCICIOS_OBRIGATORIOS["sessao-08-skills-e-agentes"], (1, 5))
+        self.assertEqual(
+            EXERCICIOS_OBRIGATORIOS["sessao-09-governanca-de-skills-e-agentes"], (1, 2, 3)
+        )
 
 
 if __name__ == "__main__":

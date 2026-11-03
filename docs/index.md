@@ -19,7 +19,7 @@ A tese: a janela de contexto virou o programa. O LLM é o interpretador; o desen
 | 1 — Fundamentos | S1–S2 | O novo modelo mental, a primeira ferramenta nas mãos | Software 3.0 · Engenharia Agêntica · cadeia de ferramentas e isolamento por ramo |
 | 2 — Especificação e Planejamento | S3–S5 | A habilidade mais valiosa da era agêntica: dizer o quê com precisão | Requisitos BR/FR/NFR · SBVR + RuleSpeak + tabelas de decisão · caminho básico do Spec Kit, da regra ao código |
 | 3 — Execução e adoção | S6–S7 | Do plano ao código verificado, e do uso individual ao uso por papel | Qualidade da spec e teste antes do código · casos de uso de IA por papel, com mural das equipes e pitch |
-| 4 — Automação, qualidade e integração | S8–S10 | Skills e agentes próprios, depuração com método e SDD de ponta a ponta | Criação de skills e agentes · depuração sistemática · SDD ciclo completo |
+| 4 — Automação, qualidade e integração | S8–S10 | Skills e agentes próprios, governança antes do compartilhamento e SDD de ponta a ponta | Criação de skills e agentes · governança de skills e agentes · SDD ciclo completo |
 
 ## Sessões
 
@@ -33,7 +33,7 @@ A tese: a janela de contexto virou o programa. O LLM é o interpretador; o desen
 | S6 | [Spec Kit: qualidade da spec e teste antes do código](sessao-06-spec-kit-aprofundado/index.md) | 3 — Execução e adoção |
 | S7 | [Casos de uso de IA por papel](sessao-07-casos-de-uso-por-papel/index.md) | 3 — Execução e adoção |
 | S8 | [Skills e agentes](sessao-08-skills-e-agentes/index.md) | 4 — Automação, qualidade e integração |
-| S9 | [Depuração sistemática](sessao-09-depuracao-sistematica/index.md) | 4 — Automação, qualidade e integração |
+| S9 | [Governança de skills e agentes](sessao-09-governanca-de-skills-e-agentes/index.md) | 4 — Automação, qualidade e integração |
 | S10 | [SDD ciclo completo](sessao-10-sdd-ciclo-completo/index.md) | 4 — Automação, qualidade e integração |
 
 ## Critérios de sucesso
@@ -46,7 +46,7 @@ Ao final das 20h, cada participante consegue:
 - Aplicar TDD com assistência de IA em funcionalidades novas
 - Escolher, aplicar e conferir casos de uso de IA do próprio papel, com a fonte de comparação declarada
 - Executar um ciclo SDD completo com os modelos de especificação agênticas da Arkhi
-- Depurar sistematicamente sem depender de tentativa e erro
+- Classificar e governar skills e agentes antes de compartilhá-los
 - Registrar decisões arquiteturais em ADRs (MADR v4)
 
 ## Fora de escopo

@@ -92,7 +92,7 @@ A utilidade de decompor o arnês em peças é transformar "o agente errou" numa 
 | Ignorou a convenção documentada no momento de executar | *hooks* | impor o limite na camada de execução |
 | O erro atravessou várias etapas antes de aparecer | verificação | dar ao agente um comando de verificação a cada etapa |
 
-A última linha é a de maior retorno, e a Sessão 9 volta a ela: a depuração sistemática de um agente começa por perguntar em que etapa a verificação faltou.
+A última linha é a de maior retorno, porque a investigação de uma falha de agente começa por perguntar em que etapa a verificação faltou. A Sessão 9 retoma as linhas de autonomia, *hooks* e verificação ao tratar dos controles que uma skill ou um agente precisa ter antes de ser compartilhado com a equipe.
 
 Quatro perguntas organizam o trabalho de melhoria. Onde este agente falha mais, e a que peça esse tipo de falha corresponde? Ele tem alguma forma de conferir o próprio trabalho, e se não tem, qual seria a mais barata de dar a ele? Que contexto ele não recebe hoje e deveria receber, que hoje existe só na cabeça de alguém? E qual das tarefas que ele executa tem critério de sucesso inteiramente objetivo, porque essa é a candidata a receber mais autonomia. A ordem entre elas importa, e trocar de modelo é a última.
 

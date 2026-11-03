@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 906" font-family="Helvetica, Arial, sans-serif">
+<rect width="1600" height="906" fill="#ffffff"/>
+<text x="60" y="64" font-size="32" font-weight="bold" fill="#12302b">A ficha de governança: o que precisa estar decidido antes do compartilhamento</text>
+<text x="60" y="124" font-size="20" font-weight="bold" fill="#546e7a">Linha da ficha</text>
+<text x="500" y="124" font-size="20" font-weight="bold" fill="#546e7a">Pergunta que a linha responde</text>
+<text x="1210" y="124" font-size="20" font-weight="bold" fill="#546e7a">Página que preenche</text>
+<rect x="60" y="140" width="1480" height="84" rx="12" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<circle cx="104" cy="182" r="22" fill="#00695c"/><text x="104" y="191" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<text x="144" y="190" font-size="22" font-weight="bold" fill="#12302b">Dono e finalidade</text>
+<text x="500" y="176" font-size="20" fill="#37474f">Quem responde pelo caso, que problema resolve</text>
+<text x="500" y="202" font-size="20" fill="#37474f">e que alternativa sem IA foi considerada</text>
+<rect x="1200" y="156" width="320" height="52" rx="26" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1360" y="189" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Governança de IA</text>
+<rect x="60" y="232" width="1480" height="84" rx="12" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<circle cx="104" cy="274" r="22" fill="#00695c"/><text x="104" y="283" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<text x="144" y="282" font-size="22" font-weight="bold" fill="#12302b">Dados e ferramentas</text>
+<text x="500" y="268" font-size="20" fill="#37474f">Que classes de dado o agente lê e que modelo,</text>
+<text x="500" y="294" font-size="20" fill="#37474f">skills e APIs ele usa</text>
+<rect x="1200" y="248" width="320" height="52" rx="26" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1360" y="281" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Triagem por criticidade</text>
+<rect x="60" y="324" width="1480" height="84" rx="12" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<circle cx="104" cy="366" r="22" fill="#00695c"/><text x="104" y="375" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<text x="144" y="374" font-size="22" font-weight="bold" fill="#12302b">Autonomia</text>
+<text x="500" y="360" font-size="20" fill="#37474f">O agente sugere, prepara para aprovação ou</text>
+<text x="500" y="386" font-size="20" fill="#37474f">executa, e quem o interrompe</text>
+<rect x="1200" y="340" width="320" height="52" rx="26" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1360" y="373" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Governança de IA</text>
+<rect x="60" y="416" width="1480" height="84" rx="12" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<circle cx="104" cy="458" r="22" fill="#00695c"/><text x="104" y="467" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+<text x="144" y="466" font-size="22" font-weight="bold" fill="#12302b">Faixa de risco</text>
+<text x="500" y="452" font-size="20" fill="#37474f">Baixa, moderada ou alta, o fator que decidiu a</text>
+<text x="500" y="478" font-size="20" fill="#37474f">faixa e as premissas não verificadas</text>
+<rect x="1200" y="432" width="320" height="52" rx="26" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1360" y="465" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Triagem por criticidade</text>
+<rect x="60" y="508" width="1480" height="84" rx="12" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<circle cx="104" cy="550" r="22" fill="#00695c"/><text x="104" y="559" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
+<text x="144" y="558" font-size="22" font-weight="bold" fill="#12302b">Riscos e controles</text>
+<text x="500" y="544" font-size="20" fill="#37474f">Evento e consequência, controle preventivo e</text>
+<text x="500" y="570" font-size="20" fill="#37474f">controle detectivo</text>
+<rect x="1200" y="524" width="320" height="52" rx="26" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1360" y="557" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Riscos de agentes</text>
+<rect x="60" y="600" width="1480" height="84" rx="12" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<circle cx="104" cy="642" r="22" fill="#00695c"/><text x="104" y="651" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">6</text>
+<text x="144" y="650" font-size="22" font-weight="bold" fill="#12302b">Evidência e gate</text>
+<text x="500" y="636" font-size="20" fill="#37474f">Teste ou registro que prova o controle, onde fica</text>
+<text x="500" y="662" font-size="20" fill="#37474f">guardado e quem aprova a publicação</text>
+<rect x="1200" y="616" width="320" height="52" rx="26" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1360" y="649" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Controles e evidências</text>
+<rect x="60" y="692" width="1480" height="84" rx="12" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<circle cx="104" cy="734" r="22" fill="#00695c"/><text x="104" y="743" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">7</text>
+<text x="144" y="742" font-size="22" font-weight="bold" fill="#12302b">Canal e versão</text>
+<text x="500" y="728" font-size="20" fill="#37474f">Onde a skill é publicada, em que versão e como o</text>
+<text x="500" y="754" font-size="20" fill="#37474f">colega recebe a atualização</text>
+<rect x="1200" y="708" width="320" height="52" rx="26" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1360" y="741" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Compartilhamento governado</text>
+<rect x="60" y="784" width="1480" height="84" rx="12" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<circle cx="104" cy="826" r="22" fill="#00695c"/><text x="104" y="835" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">8</text>
+<text x="144" y="834" font-size="22" font-weight="bold" fill="#12302b">Revisão e retirada</text>
+<text x="500" y="820" font-size="20" fill="#37474f">Quando a ficha é revista e como a skill é</text>
+<text x="500" y="846" font-size="20" fill="#37474f">retirada do canal de publicação</text>
+<rect x="1200" y="800" width="320" height="52" rx="26" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1360" y="833" font-size="19" font-weight="bold" fill="#12302b" text-anchor="middle">Compartilhamento governado</text>
+</svg>

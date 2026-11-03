@@ -32,9 +32,9 @@ Responda para si, sem anotar:
 
 ## Conexão com as sessões anteriores
 
-Esta é a última sessão do workshop e fecha o ciclo do pedido ao código verificado. Ela reaproveita a [Sessão 9](../sessao-09-depuracao-sistematica/index.md), de depuração sistemática, e a [Sessão 8](../sessao-08-skills-e-agentes/index.md), de criação de skills e agentes, porque o ciclo pode ser executado por agentes e skills da própria equipe.
+Esta é a última sessão do workshop e fecha o ciclo do pedido ao código verificado. Ela reaproveita a [Sessão 9](../sessao-09-governanca-de-skills-e-agentes/index.md), de governança de skills e agentes, e a [Sessão 8](../sessao-08-skills-e-agentes/index.md), de criação de skills e agentes, porque o ciclo pode ser executado por agentes e skills da própria equipe.
 
-Um defeito encontrado em produção não termina no remendo que restaura o serviço: ele volta para o requisito e para o teste de regressão, como a página sobre [artefatos vivos](artefatos-vivos.md) argumentou. A depuração produz a informação, e o ciclo desta sessão é onde ela se deposita.
+Um defeito de comportamento encontrado em produção atualiza o critério e o teste de regressão, e um incidente de produção atualiza o requisito de qualidade e o risco, conforme a tabela da página sobre [artefatos vivos](artefatos-vivos.md#que-descoberta-atualiza-qual-artefato). O ciclo desta sessão registra essa correção na especificação versionada, para que a mudança seguinte parta do entendimento corrigido.
 
 ## Fundamentação
 

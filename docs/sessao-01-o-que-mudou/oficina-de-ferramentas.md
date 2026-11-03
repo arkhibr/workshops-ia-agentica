@@ -23,7 +23,7 @@ Faça os três experimentos individualmente, na ordem em que aparecem.
 3. Classifique seu uso de IA hoje: ad hoc, inconsistente, ou já tem rede de testes e revisão?
 4. Da última vez que um código gerado por IA quebrou, você investigou sistematicamente ou foi tentativa e erro?
 
-**Observe:** guarde as respostas. Os exercícios desta sessão e a Sessão 9, sobre depuração sistemática, voltam a estas mesmas perguntas para medir o que mudou.
+**Observe:** guarde as respostas por escrito, como registro do uso declarado hoje, para comparar com o que a prática mostrar ao longo das sessões seguintes do workshop.
 
 ## Experimento B
 

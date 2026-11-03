@@ -9,10 +9,13 @@ from pathlib import Path
 import re
 import unittest
 
+import termos_privados
 from scripts.validate_content import (
     DOCS,
+    ROOT,
     SESSOES,
     SESSOES_SEM_CONFINAMENTO_DE_CASO,
+    slugify,
     teaching_text,
 )
 
@@ -22,6 +25,7 @@ S4 = DOCS / "sessao-04-regras-formais-com-ia"
 S5 = DOCS / "sessao-05-decomposicao"
 S6 = DOCS / "sessao-06-spec-kit-aprofundado"
 S8 = DOCS / "sessao-08-skills-e-agentes"
+S9 = DOCS / "sessao-09-governanca-de-skills-e-agentes"
 BIBLIOGRAFIA = DOCS / "referencia" / "bibliografia.md"
 
 
@@ -844,6 +848,278 @@ class SessaoOitoReestruturadaTest(unittest.TestCase):
         agentes = self.texto("agentes-e-subagentes.md")
         self.assertIn("name: revisor-de-reuniao", agentes)
         self.assertIn("model: haiku", agentes)
+
+
+class SessaoNoveTest(unittest.TestCase):
+    """Sessão 9, 03/11/2026: governança de skills e agentes, com a ficha de governança como fio."""
+
+    SLUG = "sessao-09-governanca-de-skills-e-agentes"
+    PAGINAS = (
+        "index.md",
+        "governanca-de-ia.md",
+        "triagem-por-criticidade.md",
+        "riscos-de-agentes.md",
+        "exercicios.md",
+        "controles-e-evidencias.md",
+        "compartilhamento-governado.md",
+        "oficina-de-ferramentas.md",
+        "experimentos-complementares.md",
+        "sintese-e-referencias.md",
+    )
+    TEORIA = (
+        "governanca-de-ia.md",
+        "triagem-por-criticidade.md",
+        "riscos-de-agentes.md",
+        "controles-e-evidencias.md",
+        "compartilhamento-governado.md",
+    )
+    FIGURAS = (
+        "ficha-de-governanca",
+        "mapa-da-sessao",
+        "fronteiras-de-confianca",
+        "niveis-de-compartilhamento",
+        "ciclo-de-vida-do-plugin",
+    )
+    def texto(self, nome):
+        caminho = S9 / nome
+        return caminho.read_text(encoding="utf-8") if caminho.exists() else ""
+
+    def roteiro(self):
+        texto = self.texto("index.md")
+        self.assertIn("## Roteiro da sessão", texto)
+        return texto.split("## Roteiro da sessão", 1)[1].split("\n## ", 1)[0]
+
+    def test_visao_geral_traz_a_ficha_e_o_mapa(self):
+        texto = self.texto("index.md")
+        self.assertIn("ficha de governança", texto.lower())
+        for nome in ("ficha-de-governanca", "mapa-da-sessao"):
+            with self.subTest(figura=nome):
+                self.assertRegex(texto, rf"!\[[^\]]+\]\(assets/{nome}\.png\)")
+                self.assertTrue((S9 / "assets" / f"{nome}.png").exists())
+                self.assertTrue((S9 / "assets" / f"{nome}.svg").exists())
+                self.assertIn(f"assets/{nome}.png", SESSOES[self.SLUG][2])
+
+    def test_roteiro_sem_tempos(self):
+        roteiro = self.roteiro()
+        self.assertNotRegex(roteiro, r"\d+\s*min")
+        self.assertIn("Intervalo", roteiro)
+
+    # Rótulos do roteiro na ordem de PAGINAS, com o intervalo depois do primeiro bloco.
+    # Página ainda não criada aparece como texto, por isso a ordem é conferida pelo rótulo.
+    ROTEIRO = (
+        "Governança de IA",
+        "Triagem por criticidade",
+        "Riscos de agentes",
+        "Exercícios",
+        "Intervalo",
+        "Controles e evidências",
+        "Compartilhamento governado",
+        "Oficina",
+        "Experimentos complementares",
+        "Síntese e referências",
+    )
+
+    def test_roteiro_segue_a_ordem_das_paginas(self):
+        roteiro = self.roteiro()
+        posicoes = [roteiro.index(f"| {rotulo}") if f"| {rotulo}" in roteiro else roteiro.index(f"[{rotulo}")
+                    for rotulo in self.ROTEIRO]
+        self.assertEqual(sorted(posicoes), posicoes)
+        links = re.findall(r"\]\(([a-z0-9-]+\.md)\)", roteiro)
+        self.assertEqual([p for p in self.PAGINAS if p in links], links)
+        for nome in links:
+            with self.subTest(link=nome):
+                self.assertTrue((S9 / nome).exists())
+
+    def secao(self, titulo):
+        texto = self.texto("index.md")
+        self.assertIn(f"## {titulo}", texto)
+        return texto.split(f"## {titulo}", 1)[1].split("\n## ", 1)[0]
+
+    def test_pergunta_disparadora_na_abertura(self):
+        conduzir = self.secao("Como conduzir")
+        self.assertIn("quem será responsável", conduzir)
+        self.assertIn("dados fictícios", conduzir)
+        self.assertIn("ferramenta pedagógica", conduzir)
+
+    def test_versao_verificada_do_claude_code(self):
+        self.assertIn("2.1.317", self.secao("Como usar este material"))
+
+    def test_nenhum_termo_privativo(self):
+        # A lista de termos é local e fica fora do Git: o repositório é público.
+        padroes = termos_privados.padroes()
+        if padroes is None:
+            self.skipTest(termos_privados.AVISO_SEM_LISTA)
+        arquivos = sorted(S9.rglob("*.md")) + sorted(S9.rglob("*.svg"))
+        self.assertTrue(arquivos)
+        for caminho in arquivos:
+            conteudo = caminho.read_text(encoding="utf-8")
+            for termo, regex in padroes:
+                with self.subTest(arquivo=caminho.name, termo=termo):
+                    self.assertIsNone(regex.search(conteudo))
+                    self.assertIsNone(regex.search(caminho.name))
+
+    def test_teoria_fecha_com_a_linha_da_ficha(self):
+        marcador = '!!! abstract "Linha da ficha"'
+        for nome in self.TEORIA:
+            with self.subTest(pagina=nome):
+                texto = self.texto(nome)
+                self.assertEqual(1, texto.count(marcador))
+                inicio = texto.index(marcador)
+                transicao = texto.index("**Próxima página:**")
+                self.assertLess(inicio, transicao)
+                self.assertIsNone(re.search(r"(?m)^#{1,6} ", texto[inicio:transicao]))
+
+    def test_conteudo_essencial_da_teoria(self):
+        texto = teaching_text(S9)
+        for termo in (
+            "evento e consequência",
+            "fator crítico",
+            "supervisão humana efetiva",
+            "NIST AI RMF",
+            "OWASP",
+            "LGPD",
+            "PL 2338/2023",
+            "marketplace.json",
+            "renames",
+            "extraKnownMarketplaces",
+            "strictKnownMarketplaces",
+            "T01",
+            "T07",
+            "Definition of Done",
+        ):
+            with self.subTest(termo=termo):
+                self.assertIn(termo, texto)
+
+    def test_teoria_remete_a_seguranca_da_s8(self):
+        alvo = "../sessao-08-skills-e-agentes/seguranca-e-credenciais.md"
+        self.assertTrue((S9 / alvo).resolve().exists())
+        self.assertIn(alvo, self.texto("riscos-de-agentes.md"))
+
+    # Casos do Bloco 1, publicados só na forma anonimizada e atribuídos à ACME.
+    CASOS_DO_BLOCO_1 = (
+        "revisa pull requests contra padrões de arquitetura",
+        "vários agentes que implementa uma funcionalidade",
+        "prioriza itens de trabalho",
+        "onde um campo é usado num sistema legado",
+        "identificando-tarefas-e-riscos",
+    )
+
+    def test_exercicios_tem_os_tres_do_bloco_1(self):
+        texto = self.texto("exercicios.md")
+        for numero in (1, 2, 3):
+            with self.subTest(exercicio=numero):
+                self.assertRegex(texto, rf"(?m)^## {numero}\. ")
+        for caso in self.CASOS_DO_BLOCO_1:
+            with self.subTest(caso=caso):
+                self.assertIn(caso, texto)
+        self.assertIn("ACME", texto)
+        self.assertIn("premissa", texto.lower())
+        self.assertIn("qual seria o impacto se a solução fosse usada fora da finalidade", texto.lower())
+
+    def test_oficina_tem_os_experimentos(self):
+        texto = self.texto("oficina-de-ferramentas.md")
+        self.assertIn("## Roteiro sugerido para a sessão", texto)
+        for letra in "ABCDEF":
+            with self.subTest(experimento=letra):
+                self.assertRegex(texto, rf"(?m)^## Experimento {letra}\b")
+        self.assertLess(texto.index("## Roteiro sugerido para a sessão"), texto.index("## Experimento A"))
+        preparacao = texto.split("## Preparação", 1)[1].split("\n## ", 1)[0]
+        for item in ("claude --version", "claude update", "2.1.317", "Node", "não confirmado"):
+            with self.subTest(preparacao=item):
+                self.assertIn(item, preparacao)
+        self.assertNotIn("file://", texto)
+        self.assertNotIn("**Classificação:**", texto)
+
+    def test_oficina_usa_caminho_relativo_nas_duas_abas(self):
+        texto = self.texto("oficina-de-ferramentas.md")
+        experimento_a = texto.split("## Experimento A", 1)[1].split("\n## ", 1)[0]
+        abas = re.split(r'(?m)^=== "', experimento_a)[1:]
+        rotulos = [aba.split('"', 1)[0] for aba in abas]
+        self.assertEqual(["macOS/Linux", "Windows (PowerShell)"], rotulos[:2])
+        for aba in abas[:2]:
+            with self.subTest(aba=aba.split('"', 1)[0]):
+                self.assertIn("./marketplace-acme", aba)
+
+    def test_oficina_cita_mensagens_do_portao(self):
+        texto = self.texto("oficina-de-ferramentas.md")
+        portao = (ROOT / "exemplo" / "marketplace-governado" / "portao.mjs").read_text(encoding="utf-8")
+        for mensagem in (
+            "revisando-pull-requests: reprovado",
+            "riscos[0]: controle preventivo depende só de instrução ao modelo",
+            "identificando-tarefas-e-riscos: aprovado",
+        ):
+            with self.subTest(mensagem=mensagem):
+                self.assertIn(mensagem, texto)
+        self.assertIn("controle preventivo depende só de instrução ao modelo", portao)
+
+    def test_ciclo_de_vida_do_plugin_na_oficina(self):
+        nome = "ciclo-de-vida-do-plugin"
+        self.assertRegex(self.texto("oficina-de-ferramentas.md"), rf"!\[[^\]]+\]\(assets/{nome}\.png\)")
+        self.assertTrue((S9 / "assets" / f"{nome}.svg").exists())
+        self.assertIn(f"assets/{nome}.png", SESSOES[self.SLUG][2])
+
+    def test_complementares_sem_eval_executavel(self):
+        texto = self.texto("experimentos-complementares.md")
+        self.assertIn("claude plugin eval", texto)
+        self.assertIn("documentado", texto)
+        for bloco in re.findall(r"(?ms)^\s*```[a-z]*\n(.*?)^\s*```", texto):
+            with self.subTest(bloco=bloco[:40]):
+                self.assertNotIn("plugin eval", bloco)
+
+    def test_nenhuma_pagina_promete_depuracao_na_s9(self):
+        """A S9 deixou de ser a sessão de depuração em 03/11/2026."""
+        paginas = [p for p in DOCS.rglob("*.md") if "superpowers" not in p.relative_to(DOCS).parts]
+        self.assertTrue(paginas)
+        for caminho in paginas:
+            texto = caminho.read_text(encoding="utf-8")
+            with self.subTest(pagina=str(caminho.relative_to(DOCS))):
+                self.assertNotIn("sessao-09-depuracao", texto)
+                for paragrafo in re.split(r"\n\s*\n", texto):
+                    for marca in ("Sessão 9", "S9"):
+                        if re.search(rf"\b{marca}\b", paragrafo):
+                            depois = re.split(rf"\b{marca}\b", paragrafo, maxsplit=1)[1].lower()
+                            self.assertNotIn("depura", depois)
+        indice = (DOCS / "index.md").read_text(encoding="utf-8")
+        bloco_4 = next(linha for linha in indice.splitlines() if linha.startswith("| 4 "))
+        self.assertNotIn("depuração", bloco_4.lower())
+        self.assertIn("governança de skills e agentes", bloco_4.lower())
+        self.assertIn("Classificar e governar skills e agentes antes de compartilhá-los", indice)
+        sintese_s10 = (DOCS / "sessao-10-sdd-ciclo-completo" / "sintese-e-referencias.md").read_text(encoding="utf-8")
+        conexao = sintese_s10.split("## Conexão com as sessões anteriores", 1)[1].split("\n## ", 1)[0]
+        self.assertNotIn("depuração", conexao.lower())
+
+    def sintese(self):
+        return self.texto("sintese-e-referencias.md")
+
+    def test_sintese_tem_kit_de_30_dias_sem_admin(self):
+        texto = self.sintese()
+        self.assertIn("30 dias", texto)
+        for semana in range(1, 5):
+            with self.subTest(semana=semana):
+                self.assertIn(f"Semana {semana}", texto)
+        for termo in ("managed-settings", "Organization settings"):
+            with self.subTest(termo=termo):
+                self.assertNotIn(termo, texto)
+        self.assertIn("../sessao-10-sdd-ciclo-completo/index.md", texto)
+
+    def test_fundamentacao_cobre_toda_citacao_da_sessao(self):
+        fundamentacao = self.sintese().split("## Fundamentação", 1)[-1]
+        self.assertIn("../referencia/bibliografia.md#", fundamentacao)
+        citadas = set()
+        for nome in self.PAGINAS:
+            if nome != "sintese-e-referencias.md":
+                citadas |= set(re.findall(r"bibliografia\.md#([a-z0-9-]+)", self.texto(nome)))
+        self.assertTrue(citadas)
+        bibliografia = BIBLIOGRAFIA.read_text(encoding="utf-8")
+        entradas = {}
+        for bloco in re.split(r"(?m)^### ", bibliografia)[1:]:
+            titulo = bloco.split("\n", 1)[0]
+            entradas[slugify(titulo)] = bloco
+        for ancora in sorted(citadas):
+            with self.subTest(ancora=ancora):
+                self.assertIn(f"bibliografia.md#{ancora})", fundamentacao)
+                linha = re.search(r"(?m)^→ .*$", entradas[ancora]).group(0)
+                self.assertRegex(linha, r"\b9\b")
 
 
 if __name__ == "__main__":

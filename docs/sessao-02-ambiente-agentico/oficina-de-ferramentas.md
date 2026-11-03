@@ -347,7 +347,7 @@ diga onde está a diferença.
 
 ## Ler o placar
 
-Com as cinco linhas preenchidas, use o placar para diagnosticar. Cada resposta negativa aponta para uma peça do arnês, e a tabela abaixo diz qual. A Sessão 9 retoma esse mesmo raciocínio na depuração de agentes.
+Com as cinco linhas preenchidas, use o placar para diagnosticar. Cada resposta negativa aponta para uma peça do arnês, e a tabela abaixo diz qual. A Sessão 9 retoma esse raciocínio ao definir os controles e as evidências exigidos antes de uma skill ou um agente ser compartilhado.
 
 | O que você observou | Peça provável | Primeira intervenção |
 |---|---|---|

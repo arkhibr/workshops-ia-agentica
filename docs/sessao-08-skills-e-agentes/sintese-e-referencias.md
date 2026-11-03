@@ -109,4 +109,4 @@ As páginas do Claude Code foram lidas em Markdown cru e as do Codex CLI também
 
 ## Conexão com a próxima sessão
 
-A Sessão 9 trata de depuração sistemática e de revisão de código gerado por IA. Ela parte de skills e agentes que a equipe já escreveu nesta sessão, porque um agente que gera código ou artefatos produz defeitos que precisam de hipótese, investigação e verificação, e o registro de modelo, tokens, tempo e resultado da conferência, definido aqui, é o primeiro dado que a depuração consulta.
+A [Sessão 9](../sessao-09-governanca-de-skills-e-agentes/index.md) trata da governança de skills e agentes antes do compartilhamento com outras pessoas da equipe. Ela parte das skills e dos agentes escritos nesta sessão, estende a ficha de requisitos com uma ficha de governança de oito linhas, do dono e da finalidade até a revisão e a retirada, e empacota uma skill como plugin num marketplace local, com a ficha gravada dentro do plugin e conferida por um script de portão antes da publicação.

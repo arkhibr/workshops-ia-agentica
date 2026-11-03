@@ -106,7 +106,17 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
             "assets/ciclo-de-vida-do-token.png",
         ),
     ),
-    "sessao-09-depuracao-sistematica": ("Depuração sistemática", False, ()),
+    "sessao-09-governanca-de-skills-e-agentes": (
+        "Governança de skills e agentes",
+        True,
+        (
+            "assets/ficha-de-governanca.png",
+            "assets/mapa-da-sessao.png",
+            "assets/fronteiras-de-confianca.png",
+            "assets/niveis-de-compartilhamento.png",
+            "assets/ciclo-de-vida-do-plugin.png",
+        ),
+    ),
     "sessao-10-sdd-ciclo-completo": ("SDD ciclo completo", True, ()),
 }
 
@@ -147,6 +157,12 @@ PAGINAS_FIXAS_POR_SESSAO: dict[str, tuple[str, ...]] = {
         "exercicios.md",
         "sintese-e-referencias.md",
     ),
+    "sessao-09-governanca-de-skills-e-agentes": (
+        "index.md",
+        "oficina-de-ferramentas.md",
+        "exercicios.md",
+        "sintese-e-referencias.md",
+    ),
     # Sessão 7, 21/10/2026: sem exemplo-arquitetural.md nem estudo-de-caso.md.
     "sessao-07-casos-de-uso-por-papel": (
         "index.md",
@@ -154,6 +170,17 @@ PAGINAS_FIXAS_POR_SESSAO: dict[str, tuple[str, ...]] = {
         "exercicios.md",
         "sintese-e-referencias.md",
     ),
+}
+
+# Sessões cujo roteiro não apresenta tempos sugeridos por atividade.
+SESSOES_SEM_TEMPOS = frozenset(
+    {"sessao-08-skills-e-agentes", "sessao-09-governanca-de-skills-e-agentes"}
+)
+
+# Sessões cujo exercicios.md exige apenas estes números, em vez dos seis níveis de Bloom.
+EXERCICIOS_OBRIGATORIOS: dict[str, tuple[int, ...]] = {
+    "sessao-08-skills-e-agentes": (1, 5),
+    "sessao-09-governanca-de-skills-e-agentes": (1, 2, 3),
 }
 
 # Sessões cujo esquema abandona o confinamento clássico do caso aplicado
@@ -487,8 +514,8 @@ def validate_session(
             errors.append(f"{path.relative_to(ROOT)}: página sem a transição '**Próxima página:**'")
 
         if path.name == "exercicios.md" and completa:
-            if session_dir.name == "sessao-08-skills-e-agentes":
-                for numero in (1, 5):
+            if session_dir.name in EXERCICIOS_OBRIGATORIOS:
+                for numero in EXERCICIOS_OBRIGATORIOS[session_dir.name]:
                     if not re.search(rf"(?m)^## {numero}\. ", text):
                         errors.append(f"{path.relative_to(ROOT)}: exercício {numero} ausente")
             else:

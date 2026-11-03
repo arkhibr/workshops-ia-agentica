@@ -137,8 +137,17 @@ nav:
           - "Exercícios — artefatos, modelos, custo e segurança": sessao-08-skills-e-agentes/oficina-de-ferramentas.md
           - Experimentos complementares: sessao-08-skills-e-agentes/experimentos-complementares.md
           - Síntese e referências: sessao-08-skills-e-agentes/sintese-e-referencias.md
-      - S9 — Depuração sistemática:
-          - Visão geral: sessao-09-depuracao-sistematica/index.md
+      - S9 — Governança de skills e agentes:
+          - Visão geral: sessao-09-governanca-de-skills-e-agentes/index.md
+          - Governança de IA: sessao-09-governanca-de-skills-e-agentes/governanca-de-ia.md
+          - Triagem por criticidade: sessao-09-governanca-de-skills-e-agentes/triagem-por-criticidade.md
+          - Riscos de agentes: sessao-09-governanca-de-skills-e-agentes/riscos-de-agentes.md
+          - "Exercícios — triagem e riscos dos protótipos": sessao-09-governanca-de-skills-e-agentes/exercicios.md
+          - Controles e evidências: sessao-09-governanca-de-skills-e-agentes/controles-e-evidencias.md
+          - Compartilhamento governado: sessao-09-governanca-de-skills-e-agentes/compartilhamento-governado.md
+          - "Oficina — marketplace local governado": sessao-09-governanca-de-skills-e-agentes/oficina-de-ferramentas.md
+          - Experimentos complementares: sessao-09-governanca-de-skills-e-agentes/experimentos-complementares.md
+          - Síntese e referências: sessao-09-governanca-de-skills-e-agentes/sintese-e-referencias.md
       - S10 — SDD ciclo completo:
           - Visão geral: sessao-10-sdd-ciclo-completo/index.md
           - "O ciclo e os quatro artefatos": sessao-10-sdd-ciclo-completo/ciclo-e-artefatos.md
