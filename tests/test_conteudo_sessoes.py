@@ -1100,7 +1100,7 @@ class SessaoNoveTest(unittest.TestCase):
                 self.assertRegex(texto, rf"(?m)^## Experimento {letra}\b")
         self.assertLess(texto.index("## Roteiro sugerido para a sessão"), texto.index("## Experimento A"))
         preparacao = texto.split("## Preparação", 1)[1].split("\n## ", 1)[0]
-        for item in ("claude --version", "claude update", "2.1.317", "Node", "não confirmado"):
+        for item in ("claude --version", "claude update", "Node"):
             with self.subTest(preparacao=item):
                 self.assertIn(item, preparacao)
         self.assertNotIn("file://", texto)

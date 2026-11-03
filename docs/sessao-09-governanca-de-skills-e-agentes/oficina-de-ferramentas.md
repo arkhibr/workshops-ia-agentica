@@ -30,8 +30,6 @@ mkdir oficina-governanca
 cd oficina-governanca
 ```
 
-Os comandos `claude plugin` desta página foram executados em 03/11/2026 com o Claude Code 2.1.317 no macOS, e quem tem versão anterior executa `claude update`. No Windows o comportamento deles é não confirmado, porque nenhum foi executado no PowerShell, e por inferência os subcomandos são os mesmos nos três sistemas.
-
 Os experimentos registram o marketplace na configuração do usuário do Claude Code, o Experimento F desfaz o registro, e a lista de `claude plugin list` pode trazer outros plugins já instalados na máquina.
 
 ## Experimento A: baixar e validar o marketplace
