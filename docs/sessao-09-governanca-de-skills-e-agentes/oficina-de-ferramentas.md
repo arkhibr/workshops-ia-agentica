@@ -136,7 +136,7 @@ revisando-pull-requests: reprovado
   - riscos[0]: controle preventivo depende só de instrução ao modelo
 ```
 
-A reprovação aplica o critério do [exercício 5](exercicios.md#5-controle-preventivo-e-evidencia). A faixa `moderada` dessa ficha também é questionável, porque o ponto de chegada do caso 1 no exercício 3 é a faixa alta enquanto a credencial pessoal ampla for usada, e o portão deixa passar a divergência porque `governanca.json` não tem campo para a permissão da credencial.
+A reprovação aplica o critério do [exercício 5](exercicios.md#5-controle-preventivo-e-evidencia). A faixa `moderada` dessa ficha também é questionável, porque a resposta esperada do [exercício 3](exercicios.md#3-faixa-e-fator-decisivo) é a faixa alta enquanto a credencial pessoal ampla for usada, e o portão deixa passar a divergência porque `governanca.json` não tem campo para a permissão da credencial.
 
 **Passo 2:** corrigir a ficha. No arquivo acima, substitua o objeto `preventivo` pelo trecho abaixo e troque a premissa `"A revisão usa a credencial pessoal de quem a executa"` por `"O token do agente tem só permissão de leitura no repositório revisado"`.
 

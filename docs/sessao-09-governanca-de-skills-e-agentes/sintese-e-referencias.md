@@ -16,7 +16,7 @@
 
 ## Checklist antes de encerrar a sessão
 
-- [ ] Cada grupo classificou um caso da ACME, a universidade fictícia da sessão, numa faixa de risco e nomeou o fator que decidiu a faixa.
+- [ ] A skill de revisão de pull requests da ACME, a universidade fictícia da sessão, foi classificada numa faixa de risco com o fator que decidiu a faixa.
 - [ ] Cada grupo registrou ao menos um risco como evento e consequência, com controle preventivo fora do modelo, controle detectivo e evidência.
 - [ ] Cada premissa não verificada da ficha tem o nome de quem vai verificá-la.
 - [ ] O portão da oficina reprovou o plugin com controle feito só de instrução e aprovou o plugin que tinha a ficha completa.
@@ -27,7 +27,7 @@
 
 ## Autoavaliação
 
-As seis primeiras perguntas são as discussões orientadas do guia do facilitador, e as perguntas 1, 3 e 5 são as do exercício 6. A resposta de cada pessoa a essas três pode ser comparada depois com o ponto de chegada da página de [exercícios](exercicios.md#6-discussao-com-a-turma).
+As seis primeiras perguntas são as discussões orientadas do guia do facilitador, e as perguntas 1, 3 e 5 são as do exercício 6. A resposta de cada pessoa a essas três pode ser comparada depois com a resposta esperada da página de [exercícios](exercicios.md#6-discussao-com-a-turma).
 
 1. Se o PO aprovou o caso, o time pode usar qualquer dado?
 2. Se o prompt pede para não vazar dados, já existe controle?

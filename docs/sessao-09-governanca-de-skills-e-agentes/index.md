@@ -29,7 +29,7 @@ A ficha existe para que a decisão de compartilhar fique escrita antes da primei
 
 ## Mapa da sessão
 
-A sessão alterna teoria e dois blocos de exercícios. O primeiro bloco aplica a triagem por criticidade e a análise de riscos a casos de uma organização fictícia, e o segundo empacota uma skill como plugin num marketplace local, com a ficha de governança dentro do plugin, e percorre a publicação, a instalação, a correção e a retirada.
+A sessão alterna teoria e dois blocos de exercícios. O primeiro bloco aplica a triagem por criticidade e a análise de riscos a uma skill de uma organização fictícia, e o segundo empacota uma skill como plugin num marketplace local, com a ficha de governança dentro do plugin, e percorre a publicação, a instalação, a correção e a retirada.
 
 ![Sequência da sessão: visão geral, as páginas de governança de IA, triagem por criticidade e riscos de agentes, o primeiro bloco de exercícios, o intervalo, as páginas de controles e evidências e de compartilhamento governado, o segundo bloco de exercícios, os experimentos complementares opcionais e a síntese.](assets/mapa-da-sessao.png)
 
@@ -75,7 +75,7 @@ A sessão abre com a pergunta disparadora do guia do facilitador [Governança de
 
 Cada página de teoria apresenta um tema, indica no início a linha da ficha que preenche e termina com o bloco "Linha da ficha". O instrutor apresenta o tema sem percorrer as tabelas linha a linha, porque elas ficam à disposição da turma durante os exercícios.
 
-O primeiro bloco de exercícios usa casos atribuídos à ACME, a universidade fictícia da Sessão 8, que preservam padrões de risco comuns em protótipos de equipes de desenvolvimento, como a credencial pessoal ampla usada por conveniência e o acesso de leitura a dado interno que pode ser ampliado para escrita. O segundo bloco usa o marketplace de exemplo da pasta `exemplo/marketplace-governado/` do repositório do workshop, com os plugins `identificando-tarefas-e-riscos` e `revisando-pull-requests` e um script de portão escrito para Node 20 ou superior, sem dependências, executado no macOS em 03/11/2026.
+O primeiro bloco de exercícios usa uma skill da ACME, a universidade fictícia da Sessão 8, que revisa pull requests com uma credencial pessoal ampla usada por conveniência, padrão de risco comum em protótipos de equipes de desenvolvimento. O segundo bloco usa o marketplace de exemplo da pasta `exemplo/marketplace-governado/` do repositório do workshop, com os plugins `identificando-tarefas-e-riscos` e `revisando-pull-requests` e um script de portão escrito para Node 20 ou superior, sem dependências, executado no macOS em 03/11/2026.
 
 A regra de dados fictícios vale para toda a sessão e é declarada pelo instrutor na abertura. Nenhum exercício usa dado real, credencial real, prompt interno ou documento confidencial, e nenhum depende de papel de administrador na organização do Claude ou do repositório privado do participante. A aplicação ao protótipo real do grupo fica como extensão no fim de cada bloco, feita no ambiente interno da equipe e sem publicação.
 

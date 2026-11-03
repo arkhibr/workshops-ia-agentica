@@ -995,16 +995,8 @@ class SessaoNoveTest(unittest.TestCase):
         self.assertTrue((S9 / alvo).resolve().exists())
         self.assertIn(alvo, self.texto("riscos-de-agentes.md"))
 
-    # Casos do Bloco 1, publicados só na forma anonimizada e atribuídos à ACME.
-    CASOS_DO_BLOCO_1 = (
-        "revisa pull requests contra padrões de arquitetura",
-        "vários agentes que implementa uma funcionalidade",
-        "prioriza itens de trabalho",
-        "onde um campo é usado num sistema legado",
-        "identificando-tarefas-e-riscos",
-    )
-
-    # Desenho aprovado em 03/11/2026: exercícios curtos, uma tarefa cada, com entrega e critério.
+    # Desenho aprovado em 03/11/2026, revisto no mesmo dia: um único caso para toda a turma,
+    # contexto curto e perguntas diretas, com a resposta esperada recolhida.
     EXERCICIOS = (
         "Dono e finalidade",
         "Dados e autonomia",
@@ -1013,41 +1005,57 @@ class SessaoNoveTest(unittest.TestCase):
         "Controle preventivo e evidência",
         "Discussão com a turma",
     )
-    TETO_DE_PALAVRAS = {"exercicios.md": 1700, "oficina-de-ferramentas.md": 2000}
+    TETO_DE_PALAVRAS = {"exercicios.md": 700, "oficina-de-ferramentas.md": 2000}
 
     def exercicio(self, numero):
         texto = self.texto("exercicios.md")
         return re.split(r"(?m)^## ", texto.split(f"\n## {numero}. ", 1)[1], maxsplit=1)[0]
 
-    def test_exercicios_tem_os_seis_do_bloco_1(self):
+    def test_exercicios_usam_um_unico_caso(self):
         texto = self.texto("exercicios.md")
         titulos = re.findall(r"(?m)^## (\d+)\. (.+)$", texto)
         self.assertEqual([(str(n), t) for n, t in enumerate(self.EXERCICIOS, 1)], titulos)
-        for caso in self.CASOS_DO_BLOCO_1:
-            with self.subTest(caso=caso):
-                self.assertIn(caso, texto)
-        self.assertIn("ACME", texto)
-        self.assertIn("premissa", texto.lower())
-        self.assertIn("qual seria o impacto se a solução fosse usada fora da finalidade", texto.lower())
+        caso = texto.split("## O caso", 1)[1].split("\n## ", 1)[0]
+        for termo in ("ACME", "revisa pull requests contra padrões de arquitetura", "credencial pessoal", "critérios de aprovação"):
+            with self.subTest(termo=termo):
+                self.assertIn(termo, caso)
+        self.assertNotRegex(texto, r"(?m)^\| *Caso *\|")
+        self.assertNotRegex(texto, r"\bcaso [1-5]\b")
 
-    def test_frase_do_topo_declara_os_exercicios_de_aula(self):
-        abertura = self.texto("exercicios.md").split("\n## ", 1)[0]
-        self.assertIn("exercícios 1 a 5", abertura)
-        self.assertIn("exercício 6", abertura)
-        self.assertIn("depois da sessão", abertura)
+    def test_topo_sem_organizacao_da_aula(self):
+        abertura = self.texto("exercicios.md").split("\n## ", 1)[0].lower()
+        for termo in ("instrutor", "grupo", "ficha de governança, a tabela", "linhas da ficha"):
+            with self.subTest(termo=termo):
+                self.assertNotIn(termo, abertura)
+        self.assertLessEqual(len(abertura.split("\n", 1)[1].split()), 25)
 
-    def test_cada_exercicio_tem_entrega_e_criterio(self):
-        for numero in range(1, 6):
+    def test_cada_exercicio_tem_perguntas_numeradas(self):
+        for numero in range(1, len(self.EXERCICIOS) + 1):
             with self.subTest(exercicio=numero):
                 corpo = self.exercicio(numero)
-                self.assertEqual(1, corpo.count("**Entregue:**"))
-                self.assertEqual(1, corpo.count("**Critério:**"))
-                self.assertNotIn("**Rubrica**", corpo)
+                perguntas = re.findall(r"(?m)^\d+\. .+\?$", corpo.split("??? note", 1)[0])
+                self.assertGreaterEqual(len(perguntas), 2)
+                self.assertLessEqual(len(perguntas), 4)
+                self.assertIn('??? note "Resposta esperada"', corpo)
+                for marca in ("**Entregue:**", "**Critério:**", "**Rubrica**", "instrutor"):
+                    self.assertNotIn(marca, corpo)
+
+    def test_sem_apresentacao_por_grupo(self):
+        texto = self.texto("exercicios.md").lower()
+        self.assertNotIn("cada grupo apresente", texto)
+        self.assertNotRegex(texto, r"grupo[^.\n]{0,40}apresent|apresent[^.\n]{0,40}grupo")
 
     def test_exercicios_mantem_as_decisoes_de_conteudo(self):
+        texto = self.texto("exercicios.md").lower()
+        self.assertIn("qual seria o impacto se a solução fosse usada fora da finalidade", texto)
+        self.assertIn("sem ia", self.exercicio(1).lower())
+        self.assertIn("sugere, prepara para aprovação ou executa", self.exercicio(2))
         self.assertIn("forma estrita", self.exercicio(3))
         self.assertIn("preliminar", self.exercicio(3))
         self.assertIn("condição do gate", self.exercicio(3))
+        self.assertIn("permissão maior que a finalidade", self.exercicio(4))
+        self.assertIn("riscos-de-agentes.md#tres-incidentes", self.exercicio(4))
+        self.assertIn("fora do modelo", self.exercicio(5))
         self.assertIn("depende só de instrução no prompt", self.exercicio(5))
 
     def test_discussao_tem_no_maximo_tres_perguntas(self):
