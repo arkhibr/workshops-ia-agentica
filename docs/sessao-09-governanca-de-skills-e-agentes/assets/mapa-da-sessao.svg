@@ -40,7 +40,7 @@
 <line x1="112" y1="646" x2="1540" y2="646" stroke="#eceff1" stroke-width="1"/>
 <rect x="61" y="661" width="30" height="30" rx="6" fill="#ffffff" stroke="#78909c" stroke-width="3"/>
 <text x="112" y="685" font-size="23" fill="#12302b">Experimentos complementares</text>
-<text x="900" y="684" font-size="19" fill="#37474f">Protótipo do grupo e marketplace em git</text>
+<text x="900" y="684" font-size="19" fill="#37474f">Protótipo da equipe e marketplace em git</text>
 <line x1="112" y1="706" x2="1540" y2="706" stroke="#eceff1" stroke-width="1"/>
 <rect x="60" y="720" width="32" height="32" rx="6" fill="#00695c"/>
 <text x="112" y="745" font-size="23" fill="#12302b">Síntese e referências</text>
@@ -53,5 +53,5 @@
 <rect x="428" y="800" width="24" height="24" rx="5" fill="#78909c"/>
 <text x="464" y="819" font-size="20" fill="#37474f">Intervalo</text>
 <rect x="624" y="801" width="22" height="22" rx="5" fill="#ffffff" stroke="#78909c" stroke-width="3"/>
-<text x="659" y="819" font-size="20" fill="#37474f">Opcional, depois da sessão</text>
+<text x="659" y="819" font-size="20" fill="#37474f">Prática complementar</text>
 </svg>

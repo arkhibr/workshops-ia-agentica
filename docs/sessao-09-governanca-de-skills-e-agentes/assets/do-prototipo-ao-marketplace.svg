@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 670" font-family="Helvetica, Arial, sans-serif">
 <defs><marker id="sv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="sl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="sn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
 <rect width="1600" height="670" fill="#ffffff"/>
-<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Do protótipo do grupo ao marketplace num repositório git da equipe</text>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Do protótipo ao marketplace num repositório git da equipe</text>
 <rect x="60" y="120" width="460" height="210" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
 <rect x="60" y="120" width="460" height="56" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
 <text x="78" y="156" font-size="22" font-weight="bold" fill="#12302b">1. Terceiro plugin</text>
@@ -21,11 +21,11 @@
 <text x="1098" y="156" font-size="22" font-weight="bold" fill="#12302b">3. Portão e instalação</text>
 <text x="1100" y="212" font-size="18" fill="#37474f">Comandos dos Experimentos B e C com o nome do</text>
 <text x="1100" y="236" font-size="18" fill="#37474f">protótipo</text>
-<text x="1100" y="306" font-size="16" font-weight="bold" fill="#00695c">Observado, v2.1.317</text>
+<text x="1100" y="306" font-size="16" font-weight="bold" fill="#00695c">Mesmos comandos da oficina</text>
 <rect x="60" y="380" width="460" height="210" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
 <rect x="60" y="380" width="460" height="56" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="3"/>
-<text x="78" y="416" font-size="22" font-weight="bold" fill="#12302b">4. Troca com outro grupo</text>
-<text x="80" y="472" font-size="18" fill="#37474f">O outro grupo instala como colega e revisa a ficha</text>
+<text x="78" y="416" font-size="22" font-weight="bold" fill="#12302b">4. Troca com outra equipe</text>
+<text x="80" y="472" font-size="18" fill="#37474f">A outra equipe instala como colega e revisa a ficha</text>
 <text x="80" y="566" font-size="16" font-weight="bold" fill="#00695c">Ao menos um achado registrado</text>
 <line x1="523" y1="485" x2="567" y2="485" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
 <rect x="570" y="380" width="460" height="210" rx="14" fill="#ffffff" stroke="#78909c" stroke-width="3" stroke-dasharray="10 7"/>
@@ -33,14 +33,14 @@
 <text x="588" y="416" font-size="22" font-weight="bold" fill="#12302b">5. Repositório git da equipe</text>
 <text x="590" y="472" font-size="18" fill="#37474f">Fonte github ou git em extraKnownMarketplaces,</text>
 <text x="590" y="496" font-size="18" fill="#37474f">sem caminho absoluto</text>
-<text x="590" y="566" font-size="16" font-weight="bold" fill="#78909c">Documentado, sem execução</text>
+<text x="590" y="566" font-size="16" font-weight="bold" fill="#78909c">Forma descrita na documentação</text>
 <line x1="1033" y1="485" x2="1077" y2="485" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
 <rect x="1080" y="380" width="460" height="210" rx="14" fill="#ffffff" stroke="#78909c" stroke-width="3" stroke-dasharray="10 7"/>
 <rect x="1080" y="380" width="460" height="56" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3" stroke-dasharray="10 7"/>
 <text x="1098" y="416" font-size="22" font-weight="bold" fill="#12302b">6. Portão na esteira</text>
 <text x="1100" y="472" font-size="18" fill="#37474f">Roda antes de cada merge e sai com código 1 ou 2</text>
 <text x="1100" y="496" font-size="18" fill="#37474f">quando reprova</text>
-<text x="1100" y="566" font-size="16" font-weight="bold" fill="#78909c">Inferência, sem execução</text>
+<text x="1100" y="566" font-size="16" font-weight="bold" fill="#78909c">Proposta a configurar pela equipe</text>
 <path d="M1310,332 L1310,356 L290,356 L290,376" fill="none" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
-<text x="60" y="636" font-size="17" fill="#37474f">O registro de pasta local grava um caminho absoluto em .claude/settings.json, que só funciona no computador de quem executou o comando (observado).</text>
+<text x="60" y="636" font-size="17" fill="#37474f">O registro de pasta local grava um caminho absoluto em .claude/settings.json, que só funciona no computador de quem executou o comando.</text>
 </svg>

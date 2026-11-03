@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 650" font-family="Helvetica, Arial, sans-serif">
 <defs><marker id="sv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="sl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="sn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
 <rect width="1600" height="650" fill="#ffffff"/>
-<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Retirada de um plugin observada pela linha de comando, passo a passo</text>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Retirada de um plugin pela linha de comando, passo a passo</text>
 <rect x="60" y="120" width="272" height="210" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="3"/>
 <circle cx="94" cy="156" r="18" fill="#00695c"/>
 <text x="94" y="163" font-size="19" font-weight="bold" text-anchor="middle" fill="#ffffff">1</text>
@@ -38,13 +38,12 @@
 <text x="1286" y="250" font-size="17" fill="#37474f">Plugin "&lt;plugin&gt;" not found,</text>
 <text x="1286" y="272" font-size="17" fill="#37474f">código 1</text>
 <rect x="60" y="380" width="720" height="130" rx="14" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="3"/>
-<text x="84" y="416" font-size="19" font-weight="bold" fill="#78909c">Documentado</text>
+<text x="84" y="416" font-size="19" font-weight="bold" fill="#78909c">Segundo a documentação</text>
 <text x="84" y="448" font-size="18" fill="#37474f">O usuário vê Removed from the "&lt;marketplace&gt;" marketplace em claude plugin</text>
 <text x="84" y="472" font-size="18" fill="#37474f">list e em /plugin numa sessão interativa.</text>
 <rect x="820" y="380" width="720" height="130" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
-<text x="844" y="416" font-size="19" font-weight="bold" fill="#e65100">Observado na linha de comando</text>
-<text x="844" y="448" font-size="18" font-weight="bold" fill="#12302b">A mensagem não apareceu. Numa sessão interativa, ficou sem verificação</text>
-<text x="844" y="472" font-size="18" font-weight="bold" fill="#12302b">(não confirmado).</text>
+<text x="844" y="416" font-size="19" font-weight="bold" fill="#e65100">Na linha de comando</text>
+<text x="844" y="448" font-size="18" font-weight="bold" fill="#12302b">A mensagem não aparece, e o colega fica sem aviso explícito</text>
 <text x="60" y="566" font-size="19" font-weight="bold" fill="#12302b">Consequência na ficha: o procedimento de retirada inclui a revogação da credencial e o aviso direto a quem tinha o plugin instalado.</text>
-<text x="60" y="612" font-size="18" fill="#37474f">Depois, claude plugin marketplace remove desinstalou todos os plugins daquele marketplace, inclusive o desabilitado, e a pasta do cache permaneceu no disco (observado).</text>
+<text x="60" y="612" font-size="18" fill="#37474f">Depois, claude plugin marketplace remove desinstala todos os plugins daquele marketplace, inclusive o desabilitado, e a pasta do cache permanece no disco.</text>
 </svg>

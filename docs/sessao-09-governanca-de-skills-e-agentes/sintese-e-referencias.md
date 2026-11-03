@@ -12,15 +12,15 @@
 8. **Um controle que depende apenas de instrução ao modelo é reprovado como controle.** Permissão de ferramenta, hook, validação de esquema e política na API rodam fora do modelo, e o critério de aceite com a expressão "independentemente da resposta do modelo" é o teste prático que separa os dois casos, conforme a página [Controles e evidências](controles-e-evidencias.md#controle-fora-do-modelo-e-instrucao-textual).
 9. **Framework adotado, controle implementado e evidência guardada são três estados com registros próprios.** Os [testes T01 a T07](controles-e-evidencias.md#testes-de-aceite-t01-a-t07) transformam os controles em prova verificável, e o guia recomenda automatizar primeiro o T01, o T02 e o T03, que cobrem a injeção de prompt e a agência excessiva.
 10. **Três dos quatro níveis de compartilhamento ficam ao alcance da equipe.** Os níveis pessoal, de repositório e de marketplace dispensam privilégio especial, e o nível de organização, com as configurações gerenciadas, exige papel de administrador, segundo a [página de gestão de plugins na organização](../referencia/bibliografia.md#anthropic-gerenciar-plugins-na-organizacao-documentacao-do-claude-code).
-11. **A versão do plugin controla o aviso de atualização, e a retirada exige procedimento escrito.** Num marketplace de pasta local, a `version` governou o aviso `updated from 1.0.0 to 1.0.1`, o número exibido e o cache, com o conteúdo lido da própria pasta, e a retirada pelo mapa `renames` com `null` desabilitou o plugin sem aviso explícito na linha de comando (observado, v2.1.317), conforme o [ciclo de vida do plugin](compartilhamento-governado.md#ciclo-de-vida-do-plugin).
+11. **A versão do plugin controla o aviso de atualização, e a retirada exige procedimento escrito.** Num marketplace de pasta local, a `version` governou o aviso `updated from 1.0.0 to 1.0.1`, o número exibido e o cache, com o conteúdo lido da própria pasta, e a retirada pelo mapa `renames` com `null` desabilitou o plugin sem aviso explícito na linha de comando, conforme o [ciclo de vida do plugin](compartilhamento-governado.md#ciclo-de-vida-do-plugin).
 
 ## Checklist antes de encerrar a sessão
 
 - [ ] A skill de revisão de pull requests da ACME, a universidade fictícia da sessão, foi classificada numa faixa de risco com o fator que decidiu a faixa.
-- [ ] Cada grupo registrou ao menos um risco como evento e consequência, com controle preventivo fora do modelo, controle detectivo e evidência.
+- [ ] Ao menos um risco foi registrado como evento e consequência, com controle preventivo fora do modelo, controle detectivo e evidência.
 - [ ] Cada premissa não verificada da ficha tem o nome de quem vai verificá-la.
 - [ ] O portão da oficina reprovou o plugin com controle feito só de instrução e aprovou o plugin que tinha a ficha completa.
-- [ ] Cada pessoa instalou o plugin como colega, recebeu a versão 1.0.1 e conferiu o número com `claude plugin details`.
+- [ ] O plugin foi instalado como colega e atualizado para a versão 1.0.1, com o número conferido em `claude plugin details`.
 - [ ] A retirada do plugin de revisão foi feita pelo mapa `renames`, e a ficha registra a revogação da credencial e o aviso direto a quem tinha o plugin instalado.
 - [ ] O marketplace da oficina foi removido com `claude plugin marketplace remove`, e a pasta de trabalho foi apagada.
 - [ ] Nenhum exercício usou dado real, credencial real ou papel de administrador da organização do Claude.
@@ -71,7 +71,7 @@ O guia recomenda evitar metas artificiais de perfeição no primeiro mês e usar
 
 ## Fundamentação
 
-Todas as fontes citadas nesta sessão estão na [bibliografia do curso](../referencia/bibliografia.md), com URL e data de consulta. A teoria se apoia no guia do facilitador, em normas e frameworks usados como quadro de referência e em pesquisa primária sobre segurança de agentes, alucinação e fatores humanos, e a documentação do Claude Code e do Codex CLI foi consultada em 03/11/2026. O comportamento marcado como observado foi executado com o Claude Code 2.1.317 no macOS e vale para essa versão.
+Todas as fontes citadas nesta sessão estão na [bibliografia do curso](../referencia/bibliografia.md), com URL e data de consulta. A teoria se apoia no guia do facilitador, em normas e frameworks usados como quadro de referência, em pesquisa primária sobre segurança de agentes, alucinação e fatores humanos e na documentação oficial do Claude Code e do Codex CLI.
 
 | Página | Fontes citadas |
 |---|---|
@@ -82,7 +82,7 @@ Todas as fontes citadas nesta sessão estão na [bibliografia do curso](../refer
 | Exercícios — triagem e riscos de uma skill | [Governança de IA na prática](../referencia/bibliografia.md#arkhi-governanca-de-ia-na-pratica-2026), [OWASP Top 10 para aplicações de LLM, edição 2026](../referencia/bibliografia.md#owasp-top-10-for-llm-applications-2026) e [LGPD](../referencia/bibliografia.md#brasil-lei-geral-de-protecao-de-dados-pessoais-2018) |
 | Controles e evidências | [Governança de IA na prática](../referencia/bibliografia.md#arkhi-governanca-de-ia-na-pratica-2026), [NIST AI RMF 1.0](../referencia/bibliografia.md#nist-ai-risk-management-framework-10-core-2023) e [Gherkin](../referencia/bibliografia.md#cucumber-gherkin-reference) |
 | Compartilhamento governado | [Skills no Claude Code](../referencia/bibliografia.md#anthropic-skills-no-claude-code-documentacao), [Gerenciar plugins na organização](../referencia/bibliografia.md#anthropic-gerenciar-plugins-na-organizacao-documentacao-do-claude-code), [Marketplaces de plugins](../referencia/bibliografia.md#anthropic-marketplaces-de-plugins-no-claude-code-documentacao), [Avaliação de plugins](../referencia/bibliografia.md#anthropic-avaliacao-de-plugins-no-claude-code-documentacao), [Governança de IA na prática](../referencia/bibliografia.md#arkhi-governanca-de-ia-na-pratica-2026) e [Codex: Build plugins](../referencia/bibliografia.md#openai-codex-build-plugins-documentacao) |
-| Oficina — marketplace local governado | [Marketplaces de plugins](../referencia/bibliografia.md#anthropic-marketplaces-de-plugins-no-claude-code-documentacao) e [Instalação e requisitos do Claude Code](../referencia/bibliografia.md#anthropic-instalacao-e-requisitos-do-claude-code-documentacao), esta última para a ausência de exemplo dos comandos `claude plugin` no Windows |
+| Oficina — marketplace local governado | [Marketplaces de plugins](../referencia/bibliografia.md#anthropic-marketplaces-de-plugins-no-claude-code-documentacao) e [Instalação e requisitos do Claude Code](../referencia/bibliografia.md#anthropic-instalacao-e-requisitos-do-claude-code-documentacao) |
 | Experimentos complementares | [Marketplaces de plugins](../referencia/bibliografia.md#anthropic-marketplaces-de-plugins-no-claude-code-documentacao), [Avaliação de plugins](../referencia/bibliografia.md#anthropic-avaliacao-de-plugins-no-claude-code-documentacao) e [Codex: Build plugins](../referencia/bibliografia.md#openai-codex-build-plugins-documentacao) |
 | Síntese e referências | [Governança de IA na prática](../referencia/bibliografia.md#arkhi-governanca-de-ia-na-pratica-2026), para o kit de 30 dias, os indicadores de partida e as discussões orientadas |
 

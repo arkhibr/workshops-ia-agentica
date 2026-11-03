@@ -966,8 +966,16 @@ class SessaoNoveTest(unittest.TestCase):
         self.assertIn("dados fictícios", conduzir)
         self.assertIn("ferramenta pedagógica", conduzir)
 
-    def test_versao_verificada_do_claude_code(self):
-        self.assertIn("2.1.317", self.secao("Como usar este material"))
+    def test_sem_marcas_de_verificacao(self):
+        """Pedido do Marco, 03/11/2026: as páginas não explicam como as afirmações foram verificadas."""
+        arquivos = sorted(S9.glob("*.md")) + sorted((S9 / "assets").glob("*.svg"))
+        self.assertTrue(arquivos)
+        for caminho in arquivos:
+            texto = caminho.read_text(encoding="utf-8")
+            sem_rotulo_de_aba = re.sub(r'(?m)^=== "Windows \(PowerShell\)"$', "", texto)
+            for marca in (r"(?i)não confirmad", r"(?i)executado no", r"2\.1\.317", r"(?i)\bobservado\b", r"PowerShell"):
+                with self.subTest(arquivo=caminho.name, marca=marca):
+                    self.assertIsNone(re.search(marca, sem_rotulo_de_aba))
 
     def test_nenhum_termo_privativo(self):
         # A lista de termos é local e fica fora do Git: o repositório é público.
@@ -1137,7 +1145,7 @@ class SessaoNoveTest(unittest.TestCase):
     def test_complementares_sem_eval_executavel(self):
         texto = self.texto("experimentos-complementares.md")
         self.assertIn("claude plugin eval", texto)
-        self.assertIn("documentado", texto)
+        self.assertIn("documentação", texto)
         for bloco in re.findall(r"(?ms)^\s*```[a-z]*\n(.*?)^\s*```", texto):
             with self.subTest(bloco=bloco[:40]):
                 self.assertNotIn("plugin eval", bloco)

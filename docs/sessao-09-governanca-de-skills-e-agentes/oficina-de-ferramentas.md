@@ -15,7 +15,7 @@ Cada plugin traz a ficha de governança no arquivo `governanca.json`, e o script
 | E, registrar num repositório | Extensão opcional | Caminho absoluto em `.claude/settings.json` |
 | F, limpar | Essencial em aula | Remoção do marketplace e dos plugins |
 
-![Ciclo de vida do plugin em seis etapas: baixar e validar no Experimento A, aprovar no portão no B, instalar e publicar a versão 1.0.1 no C, retirar pelo mapa renames no D e limpar no F, com o Experimento E, opcional, derivado da instalação para registrar o marketplace num repositório com --scope project. A nota de rodapé informa que os comandos foram observados no Claude Code 2.1.317, no macOS, e que o comportamento no Windows não foi confirmado.](assets/ciclo-de-vida-do-plugin.png)
+![Ciclo de vida do plugin em seis etapas: baixar e validar no Experimento A, aprovar no portão no B, instalar e publicar a versão 1.0.1 no C, retirar pelo mapa renames no D e limpar no F, com o Experimento E, opcional, derivado da instalação para registrar o marketplace num repositório com --scope project.](assets/ciclo-de-vida-do-plugin.png)
 
 ## Preparação
 
@@ -50,7 +50,7 @@ Os experimentos registram o marketplace na configuração do usuário do Claude 
     Get-ChildItem ./marketplace-acme/plugins
     ```
 
-A listagem mostra as pastas `identificando-tarefas-e-riscos` e `revisando-pull-requests`, e a pasta de trabalho fica com a estrutura abaixo (observado no macOS). No Windows, a extração com `Expand-Archive` é não confirmada, porque nenhum comando desta página foi executado no PowerShell.
+A listagem mostra as pastas `identificando-tarefas-e-riscos` e `revisando-pull-requests`, e a pasta de trabalho fica com a estrutura abaixo.
 
 ```text
 oficina-governanca/
@@ -76,7 +76,7 @@ O primeiro plugin é a skill `identificando-tarefas-e-riscos` da Sessão 8, na v
 claude plugin validate ./marketplace-acme
 ```
 
-A saída traz `Validating marketplace manifest:` com o caminho absoluto do catálogo e termina com `✔ Validation passed` e código 0 (observado, v2.1.317). O comando ignora `governanca.json`, e por isso a ficha precisa de um portão próprio.
+A saída traz `Validating marketplace manifest:` com o caminho absoluto do catálogo e termina com `✔ Validation passed` e código 0. O comando ignora `governanca.json`, e por isso a ficha precisa de um portão próprio.
 
 ## Experimento B: aprovar no portão
 
@@ -118,7 +118,7 @@ A ficha do segundo plugin declara como controle preventivo um pedido ao modelo, 
 }
 ```
 
-O portão reprova a ficha com campo obrigatório vazio, a faixa abaixo da alta com dado sensível ou autonomia `executa`, a faixa alta sem aprovador e o controle preventivo do tipo `instrucao`. Quando nenhum plugin reprova, ele executa `claude plugin validate`, e o código de saída é 0 na aprovação, 1 na reprovação e 2 quando o catálogo é ilegível ou o `claude` está ausente. No Windows, a execução do portão é não confirmada.
+O portão reprova a ficha com campo obrigatório vazio, a faixa abaixo da alta com dado sensível ou autonomia `executa`, a faixa alta sem aprovador e o controle preventivo do tipo `instrucao`. Quando nenhum plugin reprova, ele executa `claude plugin validate`, e o código de saída é 0 na aprovação, 1 na reprovação e 2 quando o catálogo é ilegível ou o `claude` está ausente.
 
 ![Caminho da ficha à instalação: o arquivo governanca.json entra no script portao.mjs, que reprova com código 1 diante de campo vazio, faixa incompatível com dado sensível ou autonomia executa, faixa alta sem aprovador ou controle preventivo do tipo instrucao, e sai com código 2 quando o catálogo é ilegível. Com código 0, o portão chama claude plugin validate e o colega registra o marketplace e instala o plugin.](assets/caminho-do-portao.png)
 
@@ -128,7 +128,7 @@ O portão reprova a ficha com campo obrigatório vazio, a faixa abaixo da alta c
 node portao.mjs ./marketplace-acme
 ```
 
-A saída mostra a reprovação do segundo plugin, e o código de saída é 1 (observado).
+A saída mostra a reprovação do segundo plugin, e o código de saída é 1.
 
 ```text
 identificando-tarefas-e-riscos: aprovado
@@ -147,7 +147,7 @@ A reprovação aplica o critério do [exercício 5](exercicios.md#5-controle-pre
       },
 ```
 
-**Passo 3:** rodar o portão de novo com `node portao.mjs ./marketplace-acme`. Os dois plugins passam e o código de saída é 0 (observado).
+**Passo 3:** rodar o portão de novo com `node portao.mjs ./marketplace-acme`. Os dois plugins passam e o código de saída é 0.
 
 ```text
 identificando-tarefas-e-riscos: aprovado
@@ -170,7 +170,7 @@ claude plugin install revisando-pull-requests@marketplace-acme
 claude plugin list
 ```
 
-O registro responde `✔ Successfully added marketplace: marketplace-acme (declared in user settings)`, cada instalação termina com `(scope: user)`, e a lista mostra `Version: 1.0.0`, `Read from:` com a pasta do plugin e `Status: ✔ enabled` (observado).
+O registro responde `✔ Successfully added marketplace: marketplace-acme (declared in user settings)`, cada instalação termina com `(scope: user)`, e a lista mostra `Version: 1.0.0`, `Read from:` com a pasta do plugin e `Status: ✔ enabled`.
 
 **Passo 2:** publicar uma correção. Acrescente ao fim do `SKILL.md` de `identificando-tarefas-e-riscos` a linha `Ordene as tarefas pelo prazo, com as tarefas sem prazo no fim da lista.` e troque `"version": "1.0.0"` por `"version": "1.0.1"` no `plugin.json` do mesmo plugin.
 
@@ -181,9 +181,9 @@ claude plugin update identificando-tarefas-e-riscos@marketplace-acme
 claude plugin details identificando-tarefas-e-riscos
 ```
 
-O `update` responde `✔ Plugin "identificando-tarefas-e-riscos" updated from 1.0.0 to 1.0.1 for scope user. Restart to apply changes.`, e `details` passa a mostrar a versão 1.0.1 (observado).
+O `update` responde `✔ Plugin "identificando-tarefas-e-riscos" updated from 1.0.0 to 1.0.1 for scope user. Restart to apply changes.`, e `details` passa a mostrar a versão 1.0.1.
 
-Num marketplace de pasta local, a versão controla o aviso de atualização e o número exibido, além da cópia gravada no cache (observado). O conteúdo carregado pela skill vem da própria pasta do marketplace, indicada na linha `Read from:` de `claude plugin list` (observado). Uma edição sem aumento de versão produziu `nothing to update` (observado). Numa fonte git remota, a documentação informa que a versão decide o que o colega recebe, e essa entrega não foi testada (documentado e não confirmado).
+Num marketplace de pasta local, a versão controla o aviso de atualização e o número exibido, além da cópia gravada no cache, e o conteúdo carregado pela skill vem da própria pasta do marketplace, indicada na linha `Read from:` de `claude plugin list`. Uma edição sem aumento de versão produz `nothing to update`. Numa fonte git remota, a documentação indica que a versão decide o que o colega recebe.
 
 ## Experimento D: retirar o plugin de revisão
 
@@ -205,7 +205,7 @@ claude plugin list
 claude plugin update revisando-pull-requests@marketplace-acme
 ```
 
-O portão aprova o plugin restante. A primeira lista ainda mostrou `revisando-pull-requests` com `Status: ✔ enabled`, já sem `Read from:`, a segunda mostrou `Status: ✘ disabled`, e o `update` terminou com código 1 e a mensagem `Plugin "revisando-pull-requests" not found` (observado). A documentação informa que o usuário vê `Removed from the "marketplace-acme" marketplace` em `claude plugin list` e em `/plugin` (documentado), mas essa mensagem não apareceu na linha de comando e ficou sem verificação numa sessão interativa (não confirmado em campo). Como o colega fica sem aviso explícito, o campo `revisao.retirada` da ficha inclui a revogação da credencial e o aviso direto a quem tinha o plugin instalado.
+O portão aprova o plugin restante. A primeira lista ainda mostra `revisando-pull-requests` com `Status: ✔ enabled`, já sem `Read from:`, a segunda mostra `Status: ✘ disabled`, e o `update` termina com código 1 e a mensagem `Plugin "revisando-pull-requests" not found`. A mensagem `Removed from the "marketplace-acme" marketplace`, que a documentação descreve, não aparece na linha de comando. Como o colega fica sem aviso explícito, o campo `revisao.retirada` da ficha inclui a revogação da credencial e o aviso direto a quem tinha o plugin instalado.
 
 ## Experimento E: registrar o marketplace num repositório
 
@@ -220,9 +220,9 @@ claude plugin install identificando-tarefas-e-riscos@marketplace-acme --scope pr
 git status
 ```
 
-Com o marketplace já registrado no escopo do usuário, o registro responde `✔ Marketplace 'marketplace-acme' already on disk — declared in project settings`, e a instalação responde com `(scope: project)`. O `git status` mostra `.claude/` como pasta nova, com `.claude/settings.json` contendo `extraKnownMarketplaces` e `enabledPlugins` (observado).
+Com o marketplace já registrado no escopo do usuário, o registro responde `✔ Marketplace 'marketplace-acme' already on disk — declared in project settings`, e a instalação responde com `(scope: project)`. O `git status` mostra `.claude/` como pasta nova, com `.claude/settings.json` contendo `extraKnownMarketplaces` e `enabledPlugins`.
 
-O valor gravado em `extraKnownMarketplaces` é o caminho absoluto da pasta no computador de quem executou o comando, e esse caminho entra no arquivo versionado do repositório (observado). Para repositório compartilhado, a documentação descreve as fontes `github` e `git`, que esta oficina deixou sem teste (documentado e não confirmado), e a página [Experimentos complementares](experimentos-complementares.md) trata dessa hospedagem.
+O valor gravado em `extraKnownMarketplaces` é o caminho absoluto da pasta no computador de quem executou o comando, e esse caminho entra no arquivo versionado do repositório. Para repositório compartilhado, a documentação descreve as fontes `github` e `git`, e a página [Experimentos complementares](experimentos-complementares.md) trata dessa hospedagem.
 
 ## Experimento F: limpar
 
@@ -233,7 +233,7 @@ claude plugin marketplace remove marketplace-acme
 claude plugin list
 ```
 
-A remoção responde `✔ Successfully removed marketplace: marketplace-acme` e `Also uninstalled` com os plugins instalados a partir dele, inclusive o desabilitado, e por isso um `claude plugin uninstall` depois dela termina com erro (observado).
+A remoção responde `✔ Successfully removed marketplace: marketplace-acme` e `Also uninstalled` com os plugins instalados a partir dele, inclusive o desabilitado, e por isso um `claude plugin uninstall` depois dela termina com erro.
 
 **Passo 2:** sair da pasta de trabalho e apagá-la. Quem está em `repositorio-acme` executa `cd ..` uma vez antes dos comandos abaixo.
 
@@ -249,7 +249,7 @@ A remoção responde `✔ Successfully removed marketplace: marketplace-acme` e 
     Remove-Item -Recurse -Force ./oficina-governanca
     ```
 
-A pasta do cache do marketplace, dentro da configuração do Claude Code do usuário, permaneceu no disco depois da remoção, sem registrar o marketplace nem habilitar plugin (observado).
+A pasta do cache do marketplace, dentro da configuração do Claude Code do usuário, permaneceu no disco depois da remoção, sem registrar o marketplace nem habilitar plugin.
 
 ## Extensão: o protótipo real do grupo
 
