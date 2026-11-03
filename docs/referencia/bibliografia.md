@@ -9,26 +9,34 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Agent Skills — Especificação aberta](#agent-skills-especificacao-aberta)
 - [Agentic AI Foundation — AGENTS.md Standard](#agentic-ai-foundation-agentsmd-standard)
 - [Anthropic — Agent Skills (documentação)](#anthropic-agent-skills-documentacao)
+- [Anthropic — Avaliação de plugins no Claude Code (documentação)](#anthropic-avaliacao-de-plugins-no-claude-code-documentacao)
 - [Anthropic — Building Effective Agents (2024)](#anthropic-building-effective-agents-2024)
 - [Anthropic — Choosing the Right Model (documentação)](#anthropic-choosing-the-right-model-documentacao)
 - [Anthropic — Claude Code Security (documentação)](#anthropic-claude-code-security-documentacao)
 - [Anthropic — Code Execution with MCP (2025)](#anthropic-code-execution-with-mcp-2025)
 - [Anthropic — Effective Context Engineering (2025)](#anthropic-effective-context-engineering-2025)
+- [Anthropic — Gerenciar plugins na organização (documentação do Claude Code)](#anthropic-gerenciar-plugins-na-organizacao-documentacao-do-claude-code)
 - [Anthropic — How We Built Our Multi-Agent Research System](#anthropic-how-we-built-our-multi-agent-research-system)
+- [Anthropic — Instalação e requisitos do Claude Code (documentação)](#anthropic-instalacao-e-requisitos-do-claude-code-documentacao)
 - [Anthropic — Introducing the Model Context Protocol (2024)](#anthropic-introducing-the-model-context-protocol-2024)
 - [Anthropic — Manage Costs Effectively (documentação do Claude Code)](#anthropic-manage-costs-effectively-documentacao-do-claude-code)
+- [Anthropic — Marketplaces de plugins no Claude Code (documentação)](#anthropic-marketplaces-de-plugins-no-claude-code-documentacao)
 - [Anthropic — Prompt Caching (documentação)](#anthropic-prompt-caching-documentacao)
 - [Anthropic — Skill Authoring Best Practices (documentação)](#anthropic-skill-authoring-best-practices-documentacao)
 - [Anthropic — Skills no Claude Code (documentação)](#anthropic-skills-no-claude-code-documentacao)
 - [Anthropic — Steering Claude Code (2026)](#anthropic-steering-claude-code-2026)
 - [Anthropic — Subagents no Claude Code (documentação)](#anthropic-subagents-no-claude-code-documentacao)
 - [Anthropic — Writing Effective Tools for Agents (2025)](#anthropic-writing-effective-tools-for-agents-2025)
+- [Arkhi — Governança de IA na prática (2026)](#arkhi-governanca-de-ia-na-pratica-2026)
 - [Bass, Clements e Kazman — Software Architecture in Practice (2021)](#bass-clements-e-kazman-software-architecture-in-practice-2021)
 - [Beck — Test-Driven Development: By Example (2002)](#beck-test-driven-development-by-example-2002)
+- [Beurer-Kellner et al. — Design Patterns for Securing LLM Agents (2025)](#beurer-kellner-et-al-design-patterns-for-securing-llm-agents-2025)
 - [Böckeler — Understanding Spec-Driven Development (2025)](#bockeler-understanding-spec-driven-development-2025)
 - [Boehm — Software Engineering Economics (1981)](#boehm-software-engineering-economics-1981)
+- [Brasil — Lei Geral de Proteção de Dados Pessoais (2018)](#brasil-lei-geral-de-protecao-de-dados-pessoais-2018)
 - [Brown et al. — Language Models are Few-Shot Learners (2020)](#brown-et-al-language-models-are-few-shot-learners-2020)
 - [Brynjolfsson, Li e Raymond — Generative AI at Work (2025)](#brynjolfsson-li-e-raymond-generative-ai-at-work-2025)
+- [Câmara dos Deputados — PL 2338/2023 (ficha de tramitação)](#camara-dos-deputados-pl-23382023-ficha-de-tramitacao)
 - [Chen et al. — Codex e HumanEval (2021)](#chen-et-al-codex-e-humaneval-2021)
 - [Chikofsky e Cross — Reverse Engineering and Design Recovery (1990)](#chikofsky-e-cross-reverse-engineering-and-design-recovery-1990)
 - [Cihan et al. — Automated Code Review In Practice (2025)](#cihan-et-al-automated-code-review-in-practice-2025)
@@ -48,9 +56,11 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Gibbons — Journey Mapping 101 (2018)](#gibbons-journey-mapping-101-2018)
 - [GitHub Spec Kit](#github-spec-kit)
 - [GitHub — Managing Your Personal Access Tokens (documentação)](#github-managing-your-personal-access-tokens-documentacao)
+- [Greshake et al. — Indirect Prompt Injection (2023)](#greshake-et-al-indirect-prompt-injection-2023)
 - [gszhangwei — OpenSPDD](#gszhangwei-openspdd)
 - [Harman et al. — Mutation-Guided LLM Test Generation at Meta (2025)](#harman-et-al-mutation-guided-llm-test-generation-at-meta-2025)
 - [Hunt e Thomas — Software Archaeology (2002)](#hunt-e-thomas-software-archaeology-2002)
+- [ISO/IEC 42001:2023](#isoiec-420012023)
 - [ISO/IEC/IEEE 29148:2018](#isoiecieee-291482018)
 - [ISTQB — Certified Tester Foundation Level Syllabus v4.0.1 (2024)](#istqb-certified-tester-foundation-level-syllabus-v401-2024)
 - [Jimenez et al. — SWE-bench (2024)](#jimenez-et-al-swe-bench-2024)
@@ -62,23 +72,28 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Little — A Proof for the Queuing Formula (1961)](#little-a-proof-for-the-queuing-formula-1961)
 - [Luo et al. — An Empirical Analysis of Flaky Tests (2014)](#luo-et-al-an-empirical-analysis-of-flaky-tests-2014)
 - [MADR — Markdown Architectural Decision Records v4](#madr-markdown-architectural-decision-records-v4)
+- [Magesh et al. — Hallucination-Free? (2025)](#magesh-et-al-hallucination-free-2025)
 - [Mathews e Nagappan — Test-Driven Development and LLM-based Code Generation (2024)](#mathews-e-nagappan-test-driven-development-and-llm-based-code-generation-2024)
 - [Mendes — Controle e Autonomia (Módulo 4, Agentes)](#mendes-controle-e-autonomia-modulo-4-agentes)
 - [Meszaros — xUnit Test Patterns (2007)](#meszaros-xunit-test-patterns-2007)
 - [METR — Experienced Developer Productivity (2025)](#metr-experienced-developer-productivity-2025)
 - [Microsoft — Use Personal Access Tokens in Azure DevOps (documentação)](#microsoft-use-personal-access-tokens-in-azure-devops-documentacao)
 - [Miranda et al. — Monte Carlo para Prever Projetos de Software (2021)](#miranda-et-al-monte-carlo-para-prever-projetos-de-software-2021)
+- [NIST — AI 600-1: Generative Artificial Intelligence Profile (2024)](#nist-ai-600-1-generative-artificial-intelligence-profile-2024)
+- [NIST — AI Risk Management Framework 1.0, Core (2023)](#nist-ai-risk-management-framework-10-core-2023)
 - [Noy e Zhang — Productivity Effects of Generative AI (2023)](#noy-e-zhang-productivity-effects-of-generative-ai-2023)
 - [Olewicki et al. — Impact of LLM-based Review Comment Generation (2024)](#olewicki-et-al-impact-of-llm-based-review-comment-generation-2024)
 - [OMG — BPMN 2.0.2 (2014)](#omg-bpmn-202-2014)
 - [OMG — Semantics of Business Vocabulary and Business Rules](#omg-semantics-of-business-vocabulary-and-business-rules)
 - [OpenAI — Codex: Agent Approvals and Security (documentação)](#openai-codex-agent-approvals-and-security-documentacao)
 - [OpenAI — Codex: AGENTS.md (documentação)](#openai-codex-agentsmd-documentacao)
+- [OpenAI — Codex: Build Plugins (documentação)](#openai-codex-build-plugins-documentacao)
 - [OpenAI — Codex: Build Skills (documentação)](#openai-codex-build-skills-documentacao)
 - [OpenAI — Codex: Configuration Reference (documentação)](#openai-codex-configuration-reference-documentacao)
 - [OpenAI — Codex: Developer Commands (documentação)](#openai-codex-developer-commands-documentacao)
 - [OpenAI — Codex: Subagents (documentação)](#openai-codex-subagents-documentacao)
 - [Osmani — Agent Harness Engineering (2026)](#osmani-agent-harness-engineering-2026)
+- [OWASP — Top 10 for LLM Applications 2026](#owasp-top-10-for-llm-applications-2026)
 - [Papadakis et al. — Mutation Testing Advances (2019)](#papadakis-et-al-mutation-testing-advances-2019)
 - [Parasuraman e Manzey — Complacency and Bias in Human Use of Automation (2010)](#parasuraman-e-manzey-complacency-and-bias-in-human-use-of-automation-2010)
 - [Parnas — On the Criteria to Be Used in Decomposing Systems into Modules (1972)](#parnas-on-the-criteria-to-be-used-in-decomposing-systems-into-modules-1972)
@@ -90,6 +105,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Quattrocchi et al. — User stories geradas por LLMs (2025)](#quattrocchi-et-al-user-stories-geradas-por-llms-2025)
 - [Ross (ed.) — Business Rules Manifesto (2003)](#ross-ed-business-rules-manifesto-2003)
 - [Ross — RuleSpeak](#ross-rulespeak)
+- [Saltzer e Schroeder — The Protection of Information in Computer Systems (1975)](#saltzer-e-schroeder-the-protection-of-information-in-computer-systems-1975)
 - [Schäfer et al. — TestPilot (2024)](#schafer-et-al-testpilot-2024)
 - [Schwaber e Sutherland — The 2020 Scrum Guide (2020)](#schwaber-e-sutherland-the-2020-scrum-guide-2020)
 - [Sneed e Erdős — Extracting Business Rules from Source Code (1996)](#sneed-e-erdos-extracting-business-rules-from-source-code-1996)
@@ -144,11 +160,21 @@ Documentação oficial das skills: pasta com `SKILL.md` e frontmatter obrigatór
 
 ---
 
+### Anthropic — Avaliação de plugins no Claude Code (documentação)
+
+**ANTHROPIC. "Test plugins with evals".** Claude Code Docs, acessado em 3 nov. 2026. <https://code.claude.com/docs/en/plugin-evals.md>
+
+O comando `claude plugin eval` executa o plugin contra um conjunto de casos e pontua o resultado. Cada caso é um prompt mais um ou mais avaliadores (regex sobre a resposta, uso de ferramenta ou rubrica julgada por um segundo modelo). A página distingue o comando da verificação de sintaxe feita por `claude plugin validate`. A contagem de execuções por caso e o custo por avaliador estão em trecho que esta consulta não leu por inteiro, e os valores usados no material vêm das observações registradas na sessão, enquanto a página não exibe data de publicação.
+
+→ Sessão 9.
+
+---
+
 ### Anthropic — Building Effective Agents (2024)
 
 **ANTHROPIC. "Building Effective Agents".** Anthropic Engineering, dez. 2024. <https://www.anthropic.com/engineering/building-effective-agents>
 
-Guia de referência do mercado para decidir entre workflow (código orquestra o modelo em caminho predefinido) e agente (o modelo decide os próprios passos); recomenda a solução mais simples possível, aumentando autonomia apenas quando o problema exigir. Cataloga cinco padrões de workflow: encadeamento de prompts, roteamento, paralelização, orquestrador-trabalhadores, avaliador-otimizador.
+Guia de referência do mercado para decidir entre workflow (código orquestra o modelo em caminho predefinido) e agente (o modelo decide os próprios passos). Recomenda a solução mais simples possível, aumentando autonomia apenas quando o problema exigir. Cataloga cinco padrões de workflow: encadeamento de prompts, roteamento, paralelização, orquestrador-trabalhadores, avaliador-otimizador.
 
 → Sessões 1 e 8.
 
@@ -194,6 +220,16 @@ Define context engineering como a evolução do prompt engineering: cuidar de tu
 
 ---
 
+### Anthropic — Gerenciar plugins na organização (documentação do Claude Code)
+
+**ANTHROPIC. "Manage Claude Code plugins for your organization".** Claude Code Docs, acessado em 3 nov. 2026. <https://code.claude.com/docs/en/plugins/org.md>
+
+As configurações gerenciadas definem quais plugins o Claude Code instala e permite em todas as máquinas da organização, e o usuário não as pode sobrescrever. A chave `extraKnownMarketplaces` registra um marketplace e `enabledPlugins` nomeia os plugins a instalar e habilitar. A chave `strictKnownMarketplaces` é uma lista de permissão de origens de marketplace, `blockedMarketplaces` é uma lista de bloqueio, e `disableSideloadFlags` rejeita `--plugin-dir` e opções semelhantes. A chave `strictPluginOnlyCustomization` bloqueia skills, agentes, hooks e servidores MCP que não venham de plugin, de configuração gerenciada ou do próprio Claude Code. As configurações gerenciadas pelo servidor, definidas no console de administração do claude.ai, exigem papel Owner na organização, e a página Organization settings > Plugins & skills liga plugins para as contas dos membros sem definir nenhuma dessas chaves. No `.claude/settings.json` de um repositório, as entradas de `extraKnownMarketplaces` só se aplicam depois que a pessoa aceita a confiança na pasta. A página também descreve eventos OpenTelemetry de instalação e carga de plugin para auditoria, e a página não exibe data de publicação.
+
+→ Sessão 9.
+
+---
+
 ### Anthropic — How We Built Our Multi-Agent Research System
 
 **ANTHROPIC. "How we built our multi-agent research system".** Anthropic Engineering. <https://www.anthropic.com/engineering/multi-agent-research-system>
@@ -201,6 +237,16 @@ Define context engineering como a evolução do prompt engineering: cuidar de tu
 Relato de engenharia sobre um sistema de pesquisa com vários agentes: o orquestrador com subagentes superou o agente único em 90,2% na avaliação interna, agentes consomem cerca de 4 vezes os tokens de um chat e sistemas multiagente cerca de 15 vezes, o uso de tokens explicou 80% da variação de desempenho no BrowseComp, e o texto lista os tipos de tarefa adequados, os modos de falha e o método de avaliação com cerca de 20 consultas reais. Os números vêm do próprio relato, sem replicação independente.
 
 → Sessão 8.
+
+---
+
+### Anthropic — Instalação e requisitos do Claude Code (documentação)
+
+**ANTHROPIC. "Advanced setup".** Claude Code Docs, acessado em 3 nov. 2026. <https://code.claude.com/docs/en/setup.md>
+
+Lista como sistemas operacionais suportados macOS 13.0 ou superior, Windows 10 1809 ou superior, Windows Server 2019 ou superior, Ubuntu 20.04 ou superior, Debian 10 ou superior e Alpine Linux 3.19 ou superior, com shell Bash, Zsh, PowerShell ou CMD. No Windows nativo, sem Git for Windows, o Claude Code usa PowerShell como ferramenta de shell. A página mostra `claude --version` para conferir a instalação e não trata dos subcomandos `claude plugin`, de modo que o comportamento deles no Windows não consta dessa página.
+
+→ Sessão 9.
 
 ---
 
@@ -221,6 +267,16 @@ Anúncio do MCP, protocolo aberto que resolve o problema M×N de integrações e
 Guia de custo do Claude Code: média de cerca de US$ 13 por desenvolvedor por dia ativo em implantações corporativas, acompanhamento por `/usage`, redução de tokens por limpeza de contexto, escolha de modelo, delegação a subagentes, filtros em hooks e instruções movidas do `CLAUDE.md` para skills, e o aviso de que equipes de agentes consomem cerca de sete vezes mais tokens que uma sessão comum.
 
 → Sessão 8.
+
+---
+
+### Anthropic — Marketplaces de plugins no Claude Code (documentação)
+
+**ANTHROPIC. "Create a marketplace" e "Host and maintain a marketplace".** Claude Code Docs, acessados em 3 nov. 2026. <https://code.claude.com/docs/en/plugin-marketplaces> e <https://code.claude.com/docs/en/plugins/host-marketplace.md>
+
+Um marketplace é um diretório ou repositório com `.claude-plugin/marketplace.json`, que exige `name`, `owner` e a lista `plugins`. Cada entrada de plugin exige `name` e `source`, e a fonte pode ser caminho relativo, `github`, `git-subdir`, `url`, `archive`, `npm` ou `command`. O comando `claude plugin validate` confere a sintaxe e os campos obrigatórios. O marketplace pode ficar em GitHub, em outro host git, em uma URL de `marketplace.json` ou em diretório de sistema de arquivos compartilhado. A página de hospedagem informa que uma nova versão só chega aos usuários quando a versão calculada do plugin muda, e que não existe estado de plugin obsoleto, apenas a remoção da entrada com o mapa `renames`. As páginas não exibem data nem versão do Claude Code para esses trechos.
+
+→ Sessão 9.
 
 ---
 
@@ -248,9 +304,9 @@ Guia de escrita de skills: contexto como recurso compartilhado, graus de liberda
 
 **ANTHROPIC. "Extend Claude with skills".** Claude Code Docs, acessado em 23 out. 2026. <https://code.claude.com/docs/en/skills>
 
-Documentação das skills no Claude Code: arquivo `SKILL.md` com frontmatter YAML, campos como `name`, `description`, `disable-model-invocation`, `allowed-tools`, `disallowed-tools` e `context`, carga progressiva e substituições no corpo da skill. A página lida em 23/10/2026 não exibe data de atualização, e a documentação cita versões do Claude Code até a v2.1.304.
+Documentação das skills no Claude Code: arquivo `SKILL.md` com frontmatter YAML, campos como `name`, `description`, `disable-model-invocation`, `allowed-tools`, `disallowed-tools` e `context`, carga progressiva e substituições no corpo da skill. A página lida em 23/10/2026 não exibe data de atualização, e a documentação cita versões do Claude Code até a v2.1.304. Em nova consulta em 3/11/2026, a página lista quatro locais de skill (corporativo, pessoal, projeto e plugin), recomenda versionar `.claude/skills/` para compartilhar com a equipe e informa que o escopo corporativo fica no diretório de configurações gerenciadas, com precedência sobre o pessoal e este sobre o de projeto. Cita versões até a v2.1.309 e remete aos marketplaces para a distribuição, sem detalhar a publicação.
 
-→ Sessão 8.
+→ Sessões 8 e 9.
 
 ---
 
@@ -268,7 +324,7 @@ Separa os mecanismos que guiam o modelo, como arquivos de contexto, dos que imp�
 
 **ANTHROPIC. "Create custom subagents".** Claude Code Docs, acessado em 22 out. 2026. <https://code.claude.com/docs/en/sub-agents>
 
-Documentação dos subagentes do Claude Code: arquivo Markdown com frontmatter (`name` e `description` obrigatórios; `tools`, `disallowedTools`, `model`, `permissionMode` e `maxTurns` opcionais), contexto próprio com retorno apenas do resumo, ordem de resolução do modelo, subagentes internos Explore e Plan, limite de três camadas de aninhamento e de 20 subagentes simultâneos por padrão.
+Documentação dos subagentes do Claude Code: arquivo Markdown com frontmatter (`name` e `description` obrigatórios, e `tools`, `disallowedTools`, `model`, `permissionMode` e `maxTurns` opcionais), contexto próprio com retorno apenas do resumo, ordem de resolução do modelo, subagentes internos Explore e Plan, limite de três camadas de aninhamento e de 20 subagentes simultâneos por padrão.
 
 → Sessão 8.
 
@@ -281,6 +337,16 @@ Documentação dos subagentes do Claude Code: arquivo Markdown com frontmatter (
 Critério verificável para catálogo de ferramentas: se uma pessoa da engenharia não sabe dizer qual ferramenta usar numa situação, o modelo também não saberá. Recomenda consolidar por fluxo de trabalho em vez de espelhar endpoints.
 
 → Sessão 2.
+
+---
+
+### Arkhi — Governança de IA na prática (2026)
+
+**ARKHI. "Governança de IA na prática".** Guia do facilitador, versão 1.0, nov. 2026. Material próprio adaptado, sem URL pública.
+
+Guia de oficina de 120 minutos sobre governança de IA para desenvolvedores, Product Owners e líderes técnicos. Reúne as quatro funções do NIST AI RMF, o papel da ISO/IEC 42001 como referência de estrutura, três ameaças do OWASP (injeção de prompt, agência excessiva e desinformação), a LGPD, o estado do PL 2338/2023 e fichas de controle verificável. As afirmações reaproveitadas no workshop são conferidas contra as fontes primárias listadas nesta bibliografia. O texto da norma ISO/IEC 42001 não foi consultado, e a LGPD e a ficha de tramitação da Câmara tiveram leitura parcial.
+
+→ Sessão 9.
 
 ---
 
@@ -304,6 +370,16 @@ O ciclo vermelho-verde-refatoração, adaptado neste workshop para o fluxo assis
 
 ---
 
+### Beurer-Kellner et al. — Design Patterns for Securing LLM Agents (2025)
+
+**BEURER-KELLNER, Luca et al. *Design Patterns for Securing LLM Agents against Prompt Injections*.** arXiv:2506.08837, jun. 2025 (v3 de 27 jun. 2025). Versão consultada em 3 nov. 2026 na página do arXiv: <https://arxiv.org/abs/2506.08837>
+
+Propõe padrões de projeto para agentes com resistência demonstrável à injeção de prompt e analisa o equilíbrio entre utilidade e segurança de cada um por estudos de caso. O princípio comum é que, depois de processar entrada não confiável, o agente fica restrito de modo que essa entrada não consiga disparar ações com efeito colateral sobre o sistema ou o ambiente. Os seis padrões são o seletor de ações, o planejar e depois executar, o map-reduce com LLM, o LLM duplo, o gerar código e depois executar e a minimização de contexto. Os autores afirmam que agentes de propósito geral dificilmente oferecem garantias de segurança confiáveis e recomendam agentes específicos para cada aplicação.
+
+→ Sessão 9.
+
+---
+
 ### Böckeler — Understanding Spec-Driven Development (2025)
 
 **BÖCKELER, Birgitta. "Understanding Spec-Driven Development: Kiro, spec-kit, and Tessl".** *martinfowler.com*, 15 out. 2025. <https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html>
@@ -324,6 +400,16 @@ Documentou empiricamente que o custo de corrigir um defeito cresce a cada fase d
 
 ---
 
+### Brasil — Lei Geral de Proteção de Dados Pessoais (2018)
+
+**BRASIL. Lei nº 13.709, de 14 de agosto de 2018.** Lei Geral de Proteção de Dados Pessoais (LGPD). Planalto, consultada em 3 nov. 2026 (leitura parcial: os artigos 6º, 20 e 46 e a ementa). <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm>
+
+Ementa: "Dispõe sobre a proteção de dados pessoais e altera a Lei nº 12.965, de 23 de abril de 2014 (Marco Civil da Internet)". O art. 6º enumera a boa-fé e dez princípios do tratamento, entre eles finalidade, necessidade, segurança, prevenção e responsabilização e prestação de contas. O art. 20 garante ao titular o direito de solicitar a revisão de decisões tomadas unicamente com base em tratamento automatizado, e o art. 46 obriga os agentes de tratamento a adotar medidas de segurança técnicas e administrativas.
+
+→ Sessão 9.
+
+---
+
 ### Brown et al. — Language Models are Few-Shot Learners (2020)
 
 **BROWN, Tom B. et al. *Language Models are Few-Shot Learners*.** NeurIPS, 2020. <https://arxiv.org/abs/2005.14165>
@@ -341,6 +427,16 @@ Demonstra que aumentar a escala de modelos de linguagem melhora substancialmente
 O resumo publicado relata 5.172 agentes de atendimento, produtividade 15% maior, melhora em velocidade e qualidade para os novatos e pequenas quedas de qualidade para os mais experientes. O working paper do NBER, número 31161, traz outros números, e as duas versões não foram misturadas.
 
 → Sessão 7.
+
+---
+
+### Câmara dos Deputados — PL 2338/2023 (ficha de tramitação)
+
+**CÂMARA DOS DEPUTADOS. "PL 2338/2023 — Dispõe sobre o desenvolvimento, o fomento e o uso ético e responsável da inteligência artificial".** Ficha de tramitação, consultada em 3 nov. 2026 (leitura parcial: cerca de 100 mil dos 274 mil caracteres da página). <https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2487262>
+
+Na consulta de 3 nov. 2026 a ficha exibe a situação "Aguardando Parecer do(a) Relator(a) na Comissão Especial sobre Inteligência Artificial (PL 2338/23)", com última tramitação em 27/10/2026, regime de "Prioridade (Art. 151, II, RICD)", apresentação em 17/03/2025 e autoria do Senado Federal (Rodrigo Pacheco). O projeto não é lei vigente, e a situação muda a cada tramitação, de modo que a ficha precisa ser consultada de novo antes de qualquer repetição do dado.
+
+→ Sessão 9.
 
 ---
 
@@ -400,7 +496,7 @@ Define quatro métricas de fluxo, que são o trabalho em andamento, a vazão, a 
 
 Referência da sintaxe do Gherkin, usada para escrever critérios de aceite como cenários executáveis.
 
-→ Sessão 7.
+→ Sessões 7 e 9.
 
 ---
 
@@ -532,6 +628,16 @@ Documentação dos tokens de acesso pessoal do GitHub: recomendação de tokens 
 
 ---
 
+### Greshake et al. — Indirect Prompt Injection (2023)
+
+**GRESHAKE, Kai et al. *Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection*.** arXiv:2302.12173, fev. 2023 (v2 de 5 maio 2023). Versão consultada em 3 nov. 2026 na página do arXiv: <https://arxiv.org/abs/2302.12173>
+
+Mostra que aplicações integradas a LLMs apagam a fronteira entre dado e instrução e que um atacante consegue explorá-las remotamente ao plantar instruções em dados que o modelo provavelmente vai recuperar, ataque que os autores chamam de injeção indireta de prompt. Apresenta uma taxonomia de impactos, com roubo de dados, propagação entre sistemas e contaminação de ecossistemas de informação, e demonstra os ataques contra o chat do Bing baseado no GPT-4, contra motores de complementação de código e contra aplicações sintéticas. A página do arXiv, na versão 2, não informa publicação em conferência ou periódico.
+
+→ Sessão 9.
+
+---
+
 ### gszhangwei — OpenSPDD
 
 **GSZHANGWEI. *OpenSPDD: A SPDD AI coding assistant command template manager*.** Repositório de software. <https://github.com/gszhangwei/open-spdd>
@@ -562,6 +668,16 @@ Coluna da série dos autores na *IEEE Software* que desenvolve a analogia entre 
 
 ---
 
+### ISO/IEC 42001:2023
+
+**ISO/IEC. *Information technology — Artificial intelligence — Management system*, 42001:2023.** Edição 1.0, publicada em 18 dez. 2023. Página da IEC Webstore consultada em 3 nov. 2026. <https://webstore.iec.ch/publication/90574>. Página da ISO: <https://www.iso.org/standard/42001>
+
+Norma de sistema de gestão preparada pelo ISO/IEC JTC 1/SC 42. Segundo a página da IEC, especifica requisitos e orienta o estabelecimento, a implementação, a manutenção e a melhoria contínua de um sistema de gestão de IA em organizações que fornecem ou usam produtos e serviços baseados em IA. A página da ISO respondeu 403 às tentativas de leitura direta em 3/11/2026 e não foi aberta. O texto da norma é pago e não foi lido, de modo que o conteúdo de seus requisitos não é afirmado aqui.
+
+→ Sessão 9.
+
+---
+
 ### ISO/IEC/IEEE 29148:2018
 
 **ISO/IEC/IEEE. *Systems and software engineering — Life cycle processes — Requirements engineering*, 29148:2018.** <https://www.iso.org/standard/72089.html>
@@ -586,7 +702,7 @@ A seção 4.2.1 trata da partição de equivalência e a seção 4.2.2, da anál
 
 **JIMENEZ, Carlos E. et al. *SWE-bench: Can Language Models Resolve Real-World GitHub Issues?*.** ICLR, 2024. <https://arxiv.org/abs/2310.06770>
 
-Apresenta SWE-bench, benchmark contendo 2.294 problemas reais de engenharia de software extraídos do GitHub em 12 repositórios Python populares. Avalia capacidade de modelos em editar bases de código para resolver problemas, exigindo compreensão de múltiplas funções, classes, arquivos e interação com ambientes de execução. Modelos de ponta, incluindo Claude 2, resolvem apenas 1,96% dos problemas no artigo original; em 2026, os melhores agentes resolvem cerca de 97% na versão revisada (SWE-bench Verified) — a evidência quantitativa por trás de "por que agora".
+Apresenta SWE-bench, benchmark contendo 2.294 problemas reais de engenharia de software extraídos do GitHub em 12 repositórios Python populares. Avalia capacidade de modelos em editar bases de código para resolver problemas, exigindo compreensão de múltiplas funções, classes, arquivos e interação com ambientes de execução. Modelos de ponta, incluindo Claude 2, resolvem apenas 1,96% dos problemas no artigo original, e em 2026 os melhores agentes resolvem cerca de 97% na versão revisada (SWE-bench Verified) — a evidência quantitativa por trás de "por que agora".
 
 → Sessões 1 e 7.
 
@@ -606,7 +722,7 @@ Ensaio precursor da tese de Software 3.0: uma rede neural treinada é compilada 
 
 **KARPATHY, Andrej. *Software Is Changing (Again)*.** Palestra, YC AI Startup School, 17 jun. 2025. Recapitulação: Latent Space, <https://www.latent.space/p/s3>
 
-Formulação dos três paradigmas coexistentes: Software 1.0 (código explícito), Software 2.0 (redes neurais treinadas), Software 3.0 (prompt em linguagem natural como programa executável); e do conceito de *generation-verification loop* ("demo is works.any(), product is works.all()"). Karpathy também cunhou o termo *vibe coding*, em publicação de fevereiro de 2025.
+Formulação dos três paradigmas coexistentes: Software 1.0 (código explícito), Software 2.0 (redes neurais treinadas), Software 3.0 (prompt em linguagem natural como programa executável), e do conceito de *generation-verification loop* ("demo is works.any(), product is works.all()"). Karpathy também cunhou o termo *vibe coding*, em publicação de fevereiro de 2025.
 
 → Sessão 1.
 
@@ -670,6 +786,16 @@ Analisa 201 commits de correção em 51 projetos. Espera assíncrona, concorrên
 
 ---
 
+### Magesh et al. — Hallucination-Free? (2025)
+
+**MAGESH, Varun et al. "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools".** *Journal of Empirical Legal Studies*, v. 22, n. 2, p. 216-242, 2025. DOI: [10.1111/jels.12413](https://doi.org/10.1111/jels.12413). Versão preliminar de maio de 2024 consultada em 3 nov. 2026 na página do arXiv: <https://arxiv.org/abs/2405.20362>
+
+Primeira avaliação empírica pré-registrada de ferramentas de pesquisa jurídica com IA, construídas sobre recuperação de documentos. Comparadas ao GPT-4 de propósito geral, as ferramentas alucinam menos, e ainda assim as da LexisNexis (Lexis+ AI) e da Thomson Reuters (Westlaw AI-Assisted Research e Ask Practical Law AI) alucinam entre 17% e 33% das vezes, segundo o resumo, que conclui que as afirmações dos fornecedores são exageradas. Os dados bibliográficos do periódico foram conferidos no Crossref, e o resumo foi lido na página do arXiv.
+
+→ Sessão 9.
+
+---
+
 ### Mathews e Nagappan — Test-Driven Development and LLM-based Code Generation (2024)
 
 **MATHEWS, Noble Saji; NAGAPPAN, Meiyappan. "Test-Driven Development and LLM-based Code Generation".** *Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering (ASE 2024)*, p. 1583-1594, out. 2024. DOI 10.1145/3691620.3695527. Preprint com o título "Test-Driven Development for Code Generation": <https://arxiv.org/abs/2402.13521>.
@@ -686,7 +812,7 @@ Avalia o efeito de fornecer os casos de teste junto com o enunciado do problema 
 
 Material da disciplina de pós-graduação que fundamenta a distinção entre workflow e agente usada nesta sessão. Define quatro formas de controle operacional (chatbot, copiloto, fluxo de trabalho determinístico e agente), distinguidas por uma única pergunta: quem escolhe a próxima transição. A categorização separa controle de qualidade ou maturidade: um fluxo de trabalho bem desenhado pode superar um agente mal supervisionado, e um copiloto que chama ferramenta de leitura continua copiloto, não agente. Cataloga também os critérios técnicos que justificam a escolha de um agente: sequências de comprimento variável, feedback de ferramenta verificável, erros conteníveis, conclusão observável e autoridade/orçamento delimitados.
 
-→ Sessão 1.
+→ Sessões 1 e 9.
 
 ---
 
@@ -727,6 +853,26 @@ Documentação dos PATs do Azure DevOps: o PAT funciona como senha alternativa e
 Analisa simulações de Monte Carlo na previsão de projetos de software, conforme o título. Os metadados foram confirmados pelo Crossref, e o resumo e os resultados não foram lidos.
 
 → Sessão 7.
+
+---
+
+### NIST — AI 600-1: Generative Artificial Intelligence Profile (2024)
+
+**NIST. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile*, NIST AI 600-1.** National Institute of Standards and Technology, jul. 2024, aprovado pelo Editorial Review Board em 25/07/2024. Lido em 3 nov. 2026. <https://doi.org/10.6028/NIST.AI.600-1>
+
+Descreve-se como perfil transversal e recurso complementar do AI RMF 1.0 para IA generativa. O documento define perfil como a implementação das funções, categorias e subcategorias do AI RMF para um contexto ou tecnologia específicos, e declara que o AI RMF é de uso voluntário. Traz uma visão geral dos riscos próprios ou agravados pela IA generativa e uma lista de ações sugeridas para gerenciá-los.
+
+→ Sessão 9.
+
+---
+
+### NIST — AI Risk Management Framework 1.0, Core (2023)
+
+**NIST. "AI RMF Core".** *AI Risk Management Framework 1.0*, jan. 2023. AIRC (NIST), consultada em 3 nov. 2026. <https://airc.nist.gov/airmf-resources/airmf/5-sec-core/>
+
+O Core se compõe de quatro funções: govern, map, measure e manage. A página descreve govern como função transversal, presente ao longo de toda a gestão de risco de IA, e orienta integrá-la às outras três. A página não exibe data de publicação e informa que o AI RMF 1.0 está em atualização, com versão revisada em andamento.
+
+→ Sessão 9.
 
 ---
 
@@ -790,6 +936,16 @@ Documentação do `AGENTS.md` no Codex CLI: busca da raiz do projeto até o dire
 
 ---
 
+### OpenAI — Codex: Build Plugins (documentação)
+
+**OPENAI. "Build plugins".** Codex Docs, acessado em 3 nov. 2026. <https://developers.openai.com/codex/plugins/build.md>
+
+Descreve a distribuição de skills do Codex por plugins, em que um marketplace de repositório fica em `$REPO_ROOT/.agents/plugins/marketplace.json` e um pessoal em `~/.agents/plugins/marketplace.json`, e o comando `codex plugin marketplace add` registra uma origem em GitHub, URL git ou diretório local. Cada entrada declara `policy.installation` com os valores `AVAILABLE`, `INSTALLED_BY_DEFAULT` ou `NOT_AVAILABLE`. Apenas administradores do workspace publicam um plugin no workspace, e `features.plugin_sharing = false` desativa essa publicação. A página de skills (<https://learn.chatgpt.com/docs/build-skills>, consultada na mesma data) recomenda plugins para distribuir skills reutilizáveis e skills versionadas no repositório para a equipe, e descreve o diretório `/etc/codex/skills` para skills administrativas da máquina, sem que nenhuma das duas páginas exiba data ou versão.
+
+→ Sessão 9.
+
+---
+
 ### OpenAI — Codex: Build Skills (documentação)
 
 **OPENAI. "Build skills".** Codex Docs, acessado em 23 out. 2026. <https://learn.chatgpt.com/docs/build-skills>
@@ -840,6 +996,16 @@ Síntese prática do mesmo achado: um modelo mediano dentro de um bom arnês sup
 
 ---
 
+### OWASP — Top 10 for LLM Applications 2026
+
+**OWASP GenAI Security Project. "OWASP Top 10 for Large Language Model Applications 2026".** Publicação em genai.owasp.org e repositório oficial, consultados em 3 nov. 2026. <https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/>. Fonte canônica em Markdown: <https://github.com/GenAI-Security-Project/GenAI-LLM-Top10> (pasta `2026/final/`).
+
+Edição vigente em 3/11/2026. A página da publicação indica 3 ago. 2026 e o repositório indica 4 ago. 2026 como data de publicação. Na numeração de 2026, injeção de prompt é LLM01, agência excessiva é LLM03 e desinformação (*misinformation*) é LLM07. O repositório define injeção de prompt como a alteração do comportamento do modelo, de modo não pretendido pelo desenvolvedor, por entrada direta, conteúdo recuperado, saída de ferramenta ou memória persistente. Define agência excessiva como a vulnerabilidade que permite ações danosas em resposta a saídas inesperadas, ambíguas ou manipuladas do modelo, com causa típica em funcionalidade, permissão ou autonomia em excesso. Define desinformação como informação incorreta, incompleta, sem sustentação ou enganosa que parece crível o bastante para influenciar uma decisão humana, um fluxo automatizado ou uma ação de agente. A página de índice genai.owasp.org/llm-top-10/ ainda listava a edição 2025 na consulta, com agência excessiva em LLM06 e desinformação em LLM09, de modo que cada citação precisa trazer o ano junto ao identificador.
+
+→ Sessão 9.
+
+---
+
 ### Papadakis et al. — Mutation Testing Advances (2019)
 
 **PAPADAKIS, Mike, KINTIS, Marinos, ZHANG, Jie, JIA, Yue, LE TRAON, Yves e HARMAN, Mark. "Mutation Testing Advances: An Analysis and Survey".** *Advances in Computers*, v. 112, p. 275-378, 2019. DOI: [10.1016/bs.adcom.2018.03.015](https://doi.org/10.1016/bs.adcom.2018.03.015)
@@ -856,7 +1022,7 @@ Levantamento sobre teste de mutação, lido na versão preprint de dez. 2017, di
 
 Revisão cujo resumo, obtido pelo Crossref, afirma que a complacência e o viés de automação ocorrem em novatos e em especialistas e que o treinamento e as instruções não os evitam.
 
-→ Sessão 7.
+→ Sessões 7 e 9.
 
 ---
 
@@ -947,6 +1113,16 @@ Dez artigos que definem regra de negócio como categoria própria de conheciment
 Notação em linguagem natural controlada para expressar regra de negócio sem ambiguidade. O documento normativo organiza cinco formas de sentença em torno de duas palavras-chave de regra e duas de conselho: **"must"** (algo é exigido), **"must not"** (algo é proibido), **"may ... only"** (permissão condicional, que continua sendo regra de negócio, com exceção explícita) e, como *statements of advice*, que o documento classifica à parte das regras, **"may"** isolado e **"need not"**. O próprio documento afirma que o RuleSpeak foi "uma das três notações de referência usadas na criação do SBVR, e é consistente com esse padrão".
 
 → Sessões 4 e 7.
+
+---
+
+### Saltzer e Schroeder — The Protection of Information in Computer Systems (1975)
+
+**SALTZER, Jerome H. e SCHROEDER, Michael D. "The Protection of Information in Computer Systems".** *Proceedings of the IEEE*, v. 63, n. 9, p. 1278-1308, 1975. DOI: [10.1109/PROC.1975.9939](https://doi.org/10.1109/PROC.1975.9939). Texto consultado em 3 nov. 2026 na cópia mantida pela Universidade da Virgínia: <https://www.cs.virginia.edu/~evans/cs551/saltzer/>
+
+Formula os princípios de projeto de mecanismos de proteção de informação. A mediação completa exige que todo acesso a todo objeto seja verificado quanto à autoridade, e o menor privilégio exige que todo programa e todo usuário operem com o menor conjunto de privilégios necessário à tarefa. Os dados bibliográficos foram conferidos no Crossref.
+
+→ Sessão 9.
 
 ---
 
@@ -1112,7 +1288,7 @@ Define engenharia agêntica como "a prática de desenvolver software com o auxí
 
 **YAO, Shunyu et al. *ReAct: Synergizing Reasoning and Acting in Language Models*.** ICLR, 2023. <https://arxiv.org/abs/2210.03629>
 
-Propõe ReAct, que integra raciocínio e ação em modelos de linguagem, permitindo que gerem simultaneamente pensamento e ações específicas da tarefa. O raciocínio induz e atualiza planos de ação; as ações permitem interface com fontes externas como bases de conhecimento. Reduz alucinação em QA ao integrar APIs de conhecimento e alcança 34% e 10% de melhoria em benchmarks ALFWorld e WebShop em relação a métodos de imitação. As trajetórias de resolução são mais interpretáveis e confiáveis que abordagens sem raciocínio — a base técnica que distingue um agente de codificação de um LLM respondendo uma pergunta isolada.
+Propõe ReAct, que integra raciocínio e ação em modelos de linguagem, permitindo que gerem simultaneamente pensamento e ações específicas da tarefa. O raciocínio induz e atualiza planos de ação, e as ações permitem interface com fontes externas como bases de conhecimento. Reduz alucinação em QA ao integrar APIs de conhecimento e alcança 34% e 10% de melhoria em benchmarks ALFWorld e WebShop em relação a métodos de imitação. As trajetórias de resolução são mais interpretáveis e confiáveis que abordagens sem raciocínio — a base técnica que distingue um agente de codificação de um LLM respondendo uma pergunta isolada.
 
 → Sessão 1.
 
@@ -1142,9 +1318,9 @@ Método desenvolvido por um time de tecnologia interna da Thoughtworks que trata
 
 **ZELLER, Andreas. *Why Programs Fail: A Guide to Systematic Debugging*. Morgan Kaufmann, 2005.**
 
-Livro clássico sobre depuração sistemática de programas. Apresenta metodologia científica aplicada à localização de erros: reproduzir o defeito consistentemente, formular hipóteses sobre causas, projetar testes para refutá-las e isolar o código responsável. Zeller desenvolve técnicas como delta debugging (automatizar redução de entradas que causam falha), execução reversa e análise de dependência. Fundamental para engenheiros que buscam evitar tentativa-e-erro em depuração, oferecendo processos rigorosos e automatizáveis para diagnóstico — base do protocolo hipótese → investigação → correção → verificação usado na Sessão 9.
+Livro clássico sobre depuração sistemática de programas. Apresenta metodologia científica aplicada à localização de erros: reproduzir o defeito consistentemente, formular hipóteses sobre causas, projetar testes para refutá-las e isolar o código responsável. Zeller desenvolve técnicas como delta debugging (automatizar redução de entradas que causam falha), execução reversa e análise de dependência. Fundamental para engenheiros que buscam evitar tentativa-e-erro em depuração, oferecendo processos rigorosos e automatizáveis para diagnóstico.
 
-→ Sessão 9.
+→ Sessões sem citação direta (referência geral).
 
 ---
 
