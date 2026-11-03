@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 530" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="s00695c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="se65100" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="s78909c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="530" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Incidente B na linha do tempo: o controle de cada tipo e a evidência guardada</text>
+<text x="60" y="102" font-size="18" fill="#37474f">Uma skill de consulta recebe um token que também altera cadastro e aprova pagamento, e o modelo chama a função errada.</text>
+<line x1="60" y1="170" x2="1530" y2="170" stroke="#78909c" stroke-width="3" marker-end="url(#s78909c)"/>
+<text x="60" y="156" font-size="16" fill="#78909c">tempo</text>
+<rect x="495.52" y="136" width="268.96000000000004" height="36" rx="18" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+<text x="630" y="160" font-size="16" font-weight="bold" text-anchor="middle" fill="#12302b">Evento: chamada de escrita</text>
+<line x1="630" y1="174" x2="630" y2="396" stroke="#e65100" stroke-width="2.5" stroke-dasharray="8 7"/>
+<rect x="1141.16" y="136" width="107.68" height="36" rx="18" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+<text x="1195" y="160" font-size="16" font-weight="bold" text-anchor="middle" fill="#12302b">Detecção</text>
+<line x1="1195" y1="174" x2="1195" y2="396" stroke="#e65100" stroke-width="2.5" stroke-dasharray="8 7"/>
+<rect x="60" y="200" width="360" height="180" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="2.5"/>
+<text x="80" y="236" font-size="20" font-weight="bold" fill="#12302b">Preventivo, antes</text>
+<circle cx="86" cy="266" r="4" fill="#00695c"/>
+<text x="100" y="272" font-size="17" fill="#37474f">Credencial por serviço com menor</text>
+<text x="100" y="295" font-size="17" fill="#37474f">privilégio</text>
+<circle cx="86" cy="320" r="4" fill="#00695c"/>
+<text x="100" y="326" font-size="17" fill="#37474f">Lista explícita de operações</text>
+<circle cx="86" cy="351" r="4" fill="#00695c"/>
+<text x="100" y="357" font-size="17" fill="#37474f">Confirmação humana para escrita</text>
+<rect x="450" y="200" width="360" height="180" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="2.5"/>
+<text x="470" y="236" font-size="20" font-weight="bold" fill="#12302b">Preventivo, na chamada</text>
+<text x="470" y="272" font-size="17" fill="#37474f">A política na API rejeita a operação</text>
+<text x="470" y="295" font-size="17" fill="#37474f">que o token não autoriza e registra</text>
+<text x="470" y="318" font-size="17" fill="#37474f">o evento de segurança</text>
+<rect x="840" y="200" width="330" height="180" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="2.5"/>
+<text x="860" y="236" font-size="20" font-weight="bold" fill="#12302b">Detectivo</text>
+<circle cx="866" cy="266" r="4" fill="#00695c"/>
+<text x="880" y="272" font-size="17" fill="#37474f">Auditoria das ações</text>
+<circle cx="866" cy="297" r="4" fill="#00695c"/>
+<text x="880" y="303" font-size="17" fill="#37474f">Alerta para chamada fora do</text>
+<text x="880" y="326" font-size="17" fill="#37474f">escopo</text>
+<rect x="1210" y="200" width="330" height="180" rx="14" fill="#ffffff" stroke="#e65100" stroke-width="2.5"/>
+<text x="1230" y="236" font-size="20" font-weight="bold" fill="#12302b">De resposta</text>
+<text x="1230" y="272" font-size="17" fill="#37474f">Revogação do token</text>
+<rect x="60" y="414" width="1480" height="90" rx="14" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<text x="84" y="446" font-size="18" font-weight="bold" fill="#00695c">Evidência guardada</text>
+<text x="84" y="476" font-size="17" fill="#37474f">Relatório do teste T03 no pipeline, em que a skill tenta alterar o cadastro com token de leitura, e o log da negação pela API.</text>
+</svg>

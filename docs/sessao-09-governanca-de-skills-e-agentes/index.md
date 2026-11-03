@@ -12,8 +12,6 @@ Na Sessão 8, a equipe construiu skills e agentes com uma ficha de requisitos qu
 
 A resposta à pergunta-guia é a ficha de governança, uma tabela de oito linhas que estende a [ficha de requisitos da Sessão 8](../sessao-08-skills-e-agentes/index.md#a-ficha-de-requisitos). A ficha da Sessão 8 reúne as decisões anteriores à construção da skill, e a ficha desta sessão reúne as decisões anteriores ao compartilhamento com a equipe. Cada página de teoria abre dizendo que linha preenche e termina com o bloco "Linha da ficha", e o segundo bloco de exercícios grava a ficha dentro do próprio plugin, no arquivo `governanca.json`, que um script de portão lê antes da publicação.
 
-![A ficha de governança, com oito linhas: dono e finalidade, dados e ferramentas, autonomia, faixa de risco, riscos e controles, evidência e gate, canal e versão, e revisão e retirada. Cada linha traz a pergunta que responde e a página que a preenche.](assets/ficha-de-governanca.png)
-
 | Linha da ficha | Pergunta que a linha responde | Página que preenche |
 |---|---|---|
 | Dono e finalidade | Quem responde pelo caso, que problema ele resolve e que alternativa sem IA foi considerada | [Governança de IA](governanca-de-ia.md) |
@@ -25,13 +23,15 @@ A resposta à pergunta-guia é a ficha de governança, uma tabela de oito linhas
 | Canal e versão | Onde a skill é publicada, em que versão e como o colega recebe a atualização | [Compartilhamento governado](compartilhamento-governado.md) |
 | Revisão e retirada | Quando a ficha é revista (troca de modelo, de base, de permissão ou de finalidade) e como a skill é retirada | [Compartilhamento governado](compartilhamento-governado.md) |
 
+As linhas não são preenchidas de forma independente, porque a faixa de risco depende dos dados, das ferramentas e da autonomia, e o gate depende da faixa e da evidência de cada controle.
+
+![Dependências entre as linhas da ficha. As linhas dono e finalidade, dados e ferramentas, autonomia e faixa de risco formam a Definition of Ready, e as linhas riscos e controles, evidência e gate e revisão e retirada formam a Definition of Done. Dados e ferramentas e autonomia alimentam a faixa de risco, a faixa alta exige aprovação formal no gate e a premissa que mudaria a faixa passa a ser condição do gate, a evidência prova cada controle, o gate libera a publicação registrada em canal e versão, a revisão registra a versão vigente, e a troca de modelo, de base, de permissão, de skill ou de finalidade reabre a faixa antes da mudança.](assets/dependencias-da-ficha.png)
+
 A ficha existe para que a decisão de compartilhar fique escrita antes da primeira instalação feita por um colega. Uma skill compartilhada sem ela costuma esconder escolhas que só aparecem no primeiro incidente, como a credencial pessoal ampla usada por conveniência, a faixa de risco que ninguém declarou ou a cópia antiga que continua instalada na máquina de outra pessoa.
 
 ## Mapa da sessão
 
 A sessão alterna teoria e dois blocos de exercícios. O primeiro bloco aplica a triagem por criticidade e a análise de riscos a uma skill de uma organização fictícia, e o segundo empacota uma skill como plugin num marketplace local, com a ficha de governança dentro do plugin, e percorre a publicação, a instalação, a correção e a retirada.
-
-![Sequência da sessão em onze linhas, com a linha da ficha ou o foco de cada uma: a visão geral, as três páginas de teoria do primeiro bloco com as linhas da ficha que preenchem, os exercícios de triagem e riscos de uma skill da ACME, o intervalo às 11h00, as páginas de controles e evidências e de compartilhamento governado, a oficina do marketplace local com a ficha gravada em governanca.json, os experimentos complementares e a síntese.](assets/mapa-da-sessao.png)
 
 ## Como usar este material
 

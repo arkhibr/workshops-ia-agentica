@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="s00695c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="se65100" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="s78909c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="760" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Os três incidentes no caminho do agente: onde começam, onde o controle age e o teste</text>
+<rect x="230" y="100" width="190" height="54" rx="12" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="325" y="134" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Solicitação</text>
+<line x1="422" y1="127" x2="450" y2="127" stroke="#00695c" stroke-width="2.5" marker-end="url(#s00695c)"/>
+<rect x="454" y="100" width="190" height="54" rx="12" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="549" y="134" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Recuperação</text>
+<line x1="646" y1="127" x2="674" y2="127" stroke="#00695c" stroke-width="2.5" marker-end="url(#s00695c)"/>
+<rect x="678" y="100" width="190" height="54" rx="12" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="773" y="134" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Inferência</text>
+<line x1="870" y1="127" x2="898" y2="127" stroke="#00695c" stroke-width="2.5" marker-end="url(#s00695c)"/>
+<rect x="902" y="100" width="190" height="54" rx="12" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="997" y="134" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Ferramenta</text>
+<line x1="1094" y1="127" x2="1122" y2="127" stroke="#00695c" stroke-width="2.5" marker-end="url(#s00695c)"/>
+<rect x="1126" y="100" width="190" height="54" rx="12" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="1221" y="134" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Saída</text>
+<line x1="1318" y1="127" x2="1346" y2="127" stroke="#00695c" stroke-width="2.5" marker-end="url(#s00695c)"/>
+<rect x="1350" y="100" width="190" height="54" rx="12" fill="#eceff1" stroke="#78909c" stroke-width="2"/>
+<text x="1445" y="134" font-size="18" font-weight="bold" text-anchor="middle" fill="#12302b">Efeito externo</text>
+<line x1="661" y1="166" x2="661" y2="616" stroke="#e65100" stroke-width="2.5" stroke-dasharray="8 7"/>
+<circle cx="661" cy="186" r="17" fill="#e65100"/>
+<text x="661" y="191.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#ffffff">F1</text>
+<line x1="885" y1="166" x2="885" y2="616" stroke="#e65100" stroke-width="2.5" stroke-dasharray="8 7"/>
+<circle cx="885" cy="186" r="17" fill="#e65100"/>
+<text x="885" y="191.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#ffffff">F2</text>
+<line x1="1333" y1="166" x2="1333" y2="616" stroke="#e65100" stroke-width="2.5" stroke-dasharray="8 7"/>
+<circle cx="1333" cy="186" r="17" fill="#e65100"/>
+<text x="1333" y="191.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#ffffff">F3</text>
+<rect x="60" y="222" width="150" height="92" rx="12" fill="#fff3e0" stroke="#e65100" stroke-width="2.5"/>
+<text x="80" y="254" font-size="18" font-weight="bold" fill="#12302b">Incidente A</text>
+<text x="80" y="278" font-size="15" font-weight="bold" fill="#e65100">LLM01 (2026)</text>
+<text x="80" y="300" font-size="15" font-weight="bold" fill="#37474f">Teste T01</text>
+<rect x="454" y="222" width="190" height="92" rx="12" fill="#ffffff" stroke="#e65100" stroke-width="2.5"/>
+<text x="468" y="252" font-size="15" fill="#12302b">Documento recuperado</text>
+<text x="468" y="272" font-size="15" fill="#12302b">traz instrução</text>
+<text x="468" y="292" font-size="15" fill="#12302b">escondida</text>
+<line x1="646" y1="268" x2="898" y2="268" stroke="#e65100" stroke-width="2.5" marker-end="url(#se65100)"/>
+<rect x="902" y="222" width="190" height="92" rx="12" fill="#e0f2f1" stroke="#00695c" stroke-width="2.5"/>
+<text x="916" y="252" font-size="15" font-weight="bold" fill="#12302b">Bloqueio de saída</text>
+<text x="916" y="272" font-size="15" font-weight="bold" fill="#12302b">de rede não</text>
+<text x="916" y="292" font-size="15" font-weight="bold" fill="#12302b">autorizada</text>
+<line x1="1094" y1="268" x2="1346" y2="268" stroke="#78909c" stroke-width="2.5" stroke-dasharray="8 7" marker-end="url(#s78909c)"/>
+<rect x="1350" y="222" width="190" height="92" rx="12" fill="#ffffff" stroke="#78909c" stroke-width="2.5" stroke-dasharray="10 8"/>
+<text x="1364" y="252" font-size="15" fill="#37474f">Envio do conteúdo a</text>
+<text x="1364" y="272" font-size="15" fill="#37474f">uma URL externa</text>
+<rect x="60" y="354" width="150" height="92" rx="12" fill="#fff3e0" stroke="#e65100" stroke-width="2.5"/>
+<text x="80" y="386" font-size="18" font-weight="bold" fill="#12302b">Incidente B</text>
+<text x="80" y="410" font-size="15" font-weight="bold" fill="#e65100">LLM03 (2026)</text>
+<text x="80" y="432" font-size="15" font-weight="bold" fill="#37474f">Teste T03</text>
+<rect x="678" y="354" width="190" height="92" rx="12" fill="#ffffff" stroke="#e65100" stroke-width="2.5"/>
+<text x="692" y="384" font-size="15" fill="#12302b">O modelo chama a</text>
+<text x="692" y="404" font-size="15" fill="#12302b">função de escrita</text>
+<text x="692" y="424" font-size="15" fill="#12302b">errada</text>
+<line x1="870" y1="400" x2="898" y2="400" stroke="#e65100" stroke-width="2.5" marker-end="url(#se65100)"/>
+<rect x="902" y="354" width="190" height="92" rx="12" fill="#e0f2f1" stroke="#00695c" stroke-width="2.5"/>
+<text x="916" y="384" font-size="15" font-weight="bold" fill="#12302b">Escopo do token: a</text>
+<text x="916" y="404" font-size="15" font-weight="bold" fill="#12302b">API rejeita a</text>
+<text x="916" y="424" font-size="15" font-weight="bold" fill="#12302b">operação</text>
+<line x1="1094" y1="400" x2="1346" y2="400" stroke="#78909c" stroke-width="2.5" stroke-dasharray="8 7" marker-end="url(#s78909c)"/>
+<rect x="1350" y="354" width="190" height="92" rx="12" fill="#ffffff" stroke="#78909c" stroke-width="2.5" stroke-dasharray="10 8"/>
+<text x="1364" y="384" font-size="15" fill="#37474f">Cadastro alterado ou</text>
+<text x="1364" y="404" font-size="15" fill="#37474f">pagamento aprovado</text>
+<rect x="60" y="486" width="150" height="92" rx="12" fill="#fff3e0" stroke="#e65100" stroke-width="2.5"/>
+<text x="80" y="518" font-size="18" font-weight="bold" fill="#12302b">Incidente C</text>
+<text x="80" y="542" font-size="15" font-weight="bold" fill="#e65100">LLM07 (2026)</text>
+<text x="80" y="564" font-size="15" font-weight="bold" fill="#37474f">Testes T04 e T05</text>
+<rect x="454" y="486" width="190" height="92" rx="12" fill="#e0f2f1" stroke="#00695c" stroke-width="2.5"/>
+<text x="468" y="516" font-size="15" font-weight="bold" fill="#12302b">Recuperação</text>
+<text x="468" y="536" font-size="15" font-weight="bold" fill="#12302b">restrita à versão</text>
+<text x="468" y="556" font-size="15" font-weight="bold" fill="#12302b">vigente</text>
+<line x1="646" y1="532" x2="674" y2="532" stroke="#e65100" stroke-width="2.5" marker-end="url(#se65100)"/>
+<rect x="678" y="486" width="190" height="92" rx="12" fill="#ffffff" stroke="#e65100" stroke-width="2.5"/>
+<text x="692" y="516" font-size="15" fill="#12302b">Se falhar, o modelo</text>
+<text x="692" y="536" font-size="15" fill="#12302b">cita norma revogada</text>
+<line x1="870" y1="532" x2="1122" y2="532" stroke="#e65100" stroke-width="2.5" marker-end="url(#se65100)"/>
+<rect x="1126" y="486" width="190" height="92" rx="12" fill="#ffffff" stroke="#00695c" stroke-width="2.5"/>
+<text x="1140" y="516" font-size="15" fill="#12302b">Fonte e data na</text>
+<text x="1140" y="536" font-size="15" fill="#12302b">resposta e revisão</text>
+<text x="1140" y="556" font-size="15" fill="#12302b">humana</text>
+<line x1="1318" y1="532" x2="1346" y2="532" stroke="#78909c" stroke-width="2.5" stroke-dasharray="8 7" marker-end="url(#s78909c)"/>
+<rect x="1350" y="486" width="190" height="92" rx="12" fill="#ffffff" stroke="#78909c" stroke-width="2.5" stroke-dasharray="10 8"/>
+<text x="1364" y="516" font-size="15" fill="#37474f">Analista encaminha o</text>
+<text x="1364" y="536" font-size="15" fill="#37474f">prazo errado</text>
+<rect x="60" y="622" width="26" height="24" rx="5" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+<text x="98" y="640" font-size="16" fill="#37474f">Controle aplicado fora do modelo</text>
+<rect x="408.24" y="622" width="26" height="24" rx="5" fill="#ffffff" stroke="#00695c" stroke-width="2"/>
+<text x="446.24" y="640" font-size="16" fill="#37474f">Controle que depende da resposta ou da pessoa</text>
+<rect x="864.6400000000001" y="622" width="26" height="24" rx="5" fill="#ffffff" stroke="#e65100" stroke-width="2"/>
+<text x="902.6400000000001" y="640" font-size="16" fill="#37474f">Evento de risco</text>
+<rect x="1071.44" y="622" width="26" height="24" rx="5" fill="#ffffff" stroke="#78909c" stroke-width="2" stroke-dasharray="10 8"/>
+<text x="1109.44" y="640" font-size="16" fill="#37474f">Efeito que o controle evita</text>
+<text x="60" y="690" font-size="17" fill="#37474f">T02, acesso negado a dado que a permissão do usuário não alcança, completa com T01 e T03 o primeiro conjunto a automatizar.</text>
+<text x="60" y="716" font-size="17" fill="#37474f">T06, validação de esquema, e T07, orçamento de tokens ou de chamadas, verificam controles da operação, que acompanha todas as etapas.</text>
+</svg>

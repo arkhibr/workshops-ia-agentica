@@ -874,35 +874,27 @@ class SessaoNoveTest(unittest.TestCase):
         "compartilhamento-governado.md",
     )
     FIGURAS = (
-        "ficha-de-governanca",
-        "mapa-da-sessao",
+        "dependencias-da-ficha",
         "fronteiras-de-confianca",
-        "niveis-de-compartilhamento",
+        "escolha-do-nivel-de-compartilhamento",
         "ciclo-de-vida-do-plugin",
-        "cinco-distincoes",
         "quatro-decisoes",
-        "niveis-de-autonomia",
-        "papeis-no-modelo-federado",
-        "supervisao-humana-efetiva",
-        "funcoes-do-nist-ai-rmf",
+        "autonomia-e-supervisao",
         "do-inventario-a-faixa",
-        "tres-faixas-de-criticidade",
+        "mesmo-agente-tres-faixas",
         "regra-do-fator-critico",
         "premissa-nao-verificada",
-        "tres-incidentes",
+        "incidentes-nas-fronteiras",
         "recuperacao-e-alucinacao",
         "risco-como-evento-e-consequencia",
-        "tres-estados-do-controle",
-        "controles-no-tempo-do-incidente",
+        "incidente-b-no-tempo",
         "controle-fora-do-modelo",
-        "testes-de-aceite-t01-a-t07",
         "do-controle-a-historia",
-        "operacoes-do-ciclo-de-vida",
         "retirada-observada",
         "caminho-do-portao",
         "caso-da-skill-de-revisao",
         "do-prototipo-ao-marketplace",
-        "kit-de-30-dias",
+        "kit-de-30-dias-e-a-ficha",
     )
 
     def texto(self, nome):
@@ -914,10 +906,10 @@ class SessaoNoveTest(unittest.TestCase):
         self.assertIn("## Roteiro da sessão", texto)
         return texto.split("## Roteiro da sessão", 1)[1].split("\n## ", 1)[0]
 
-    def test_visao_geral_traz_a_ficha_e_o_mapa(self):
+    def test_visao_geral_traz_a_ficha_e_as_dependencias(self):
         texto = self.texto("index.md")
         self.assertIn("ficha de governança", texto.lower())
-        for nome in ("ficha-de-governanca", "mapa-da-sessao"):
+        for nome in ("dependencias-da-ficha",):
             with self.subTest(figura=nome):
                 self.assertRegex(texto, rf"!\[[^\]]+\]\(assets/{nome}\.png\)")
                 self.assertTrue((S9 / "assets" / f"{nome}.png").exists())

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 730" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="s00695c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="se65100" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="s78909c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="730" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Que nível de compartilhamento escolher, pelo alcance que a skill precisa ter</text>
+<rect x="60" y="110" width="560" height="120" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="2.5"/>
+<text x="84" y="154" font-size="20" font-weight="bold" fill="#12302b">A skill será usada só por quem a criou?</text>
+<line x1="622" y1="170" x2="716" y2="170" stroke="#00695c" stroke-width="3" marker-end="url(#s00695c)"/>
+<text x="668" y="158" font-size="17" font-weight="bold" text-anchor="middle" fill="#00695c">sim</text>
+<rect x="720" y="110" width="820" height="120" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="2.5"/>
+<text x="744" y="150" font-size="22" font-weight="bold" fill="#12302b">Pessoal</text>
+<text x="744" y="182" font-size="18" fill="#37474f">Cópia manual para outra máquina, e a versão instalada em cada máquina fica</text>
+<text x="744" y="206" font-size="18" fill="#37474f">desconhecida</text>
+<line x1="340" y1="232" x2="340" y2="266" stroke="#78909c" stroke-width="3" marker-end="url(#s78909c)"/>
+<text x="354" y="256" font-size="17" font-weight="bold" fill="#78909c">não</text>
+<rect x="60" y="270" width="560" height="120" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="2.5"/>
+<text x="84" y="314" font-size="20" font-weight="bold" fill="#12302b">Os colegas que vão usá-la trabalham no mesmo</text>
+<text x="84" y="341" font-size="20" font-weight="bold" fill="#12302b">repositório?</text>
+<line x1="622" y1="330" x2="716" y2="330" stroke="#00695c" stroke-width="3" marker-end="url(#s00695c)"/>
+<text x="668" y="318" font-size="17" font-weight="bold" text-anchor="middle" fill="#00695c">sim</text>
+<rect x="720" y="270" width="820" height="120" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="2.5"/>
+<text x="744" y="310" font-size="22" font-weight="bold" fill="#12302b">Repositório</text>
+<text x="744" y="342" font-size="18" fill="#37474f">A versão chega pelo commit, a cada git pull, e só numa pasta que a pessoa marcou</text>
+<text x="744" y="366" font-size="18" fill="#37474f">como confiável</text>
+<line x1="340" y1="392" x2="340" y2="426" stroke="#78909c" stroke-width="3" marker-end="url(#s78909c)"/>
+<text x="354" y="416" font-size="17" font-weight="bold" fill="#78909c">não</text>
+<rect x="60" y="430" width="560" height="120" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="2.5"/>
+<text x="84" y="474" font-size="20" font-weight="bold" fill="#12302b">A skill precisa chegar a todas as máquinas</text>
+<text x="84" y="501" font-size="20" font-weight="bold" fill="#12302b">sem ação do usuário, ou as origens de</text>
+<text x="84" y="528" font-size="20" font-weight="bold" fill="#12302b">marketplace precisam ser restritas?</text>
+<line x1="622" y1="490" x2="716" y2="490" stroke="#e65100" stroke-width="3" marker-end="url(#se65100)"/>
+<text x="668" y="478" font-size="17" font-weight="bold" text-anchor="middle" fill="#e65100">sim</text>
+<rect x="720" y="430" width="820" height="120" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="2.5"/>
+<text x="744" y="470" font-size="22" font-weight="bold" fill="#12302b">Organização</text>
+<text x="744" y="502" font-size="18" fill="#37474f">Exige administrador: a política é aplicada no início da sessão, e para a equipe o</text>
+<text x="744" y="526" font-size="18" fill="#37474f">caminho é um pedido ao administrador</text>
+<line x1="340" y1="552" x2="340" y2="586" stroke="#78909c" stroke-width="3" marker-end="url(#s78909c)"/>
+<text x="354" y="576" font-size="17" font-weight="bold" fill="#78909c">não</text>
+<rect x="60" y="590" width="1480" height="110" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="2.5"/>
+<text x="84" y="630" font-size="22" font-weight="bold" fill="#12302b">Marketplace</text>
+<text x="84" y="662" font-size="18" fill="#37474f">O mantenedor publica e cada colega registra e instala. A version do plugin governa a atualização, o mapa renames com null retira o plugin, e o nome do</text>
+<text x="84" y="686" font-size="18" fill="#37474f">marketplace precisa ser único.</text>
+</svg>

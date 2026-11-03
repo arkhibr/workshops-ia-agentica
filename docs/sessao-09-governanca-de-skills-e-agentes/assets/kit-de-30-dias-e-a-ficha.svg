@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 630" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="s00695c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="se65100" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="s78909c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="630" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Kit de 30 dias: que linhas da ficha cada semana preenche e que indicador elas alimentam</text>
+<rect x="60" y="100" width="355" height="104" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="2.5"/>
+<text x="80" y="132" font-size="20" font-weight="bold" fill="#12302b">Semana 1</text>
+<text x="80" y="162" font-size="17" fill="#37474f">Inventário com dono, finalidade e</text>
+<text x="80" y="185" font-size="17" fill="#37474f">classes de dado</text>
+<rect x="435" y="100" width="355" height="104" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="2.5"/>
+<text x="455" y="132" font-size="20" font-weight="bold" fill="#12302b">Semana 2</text>
+<text x="455" y="162" font-size="17" fill="#37474f">Ficha de triagem com faixa e fator</text>
+<text x="455" y="185" font-size="17" fill="#37474f">decisivo</text>
+<rect x="810" y="100" width="355" height="104" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="2.5"/>
+<text x="830" y="132" font-size="20" font-weight="bold" fill="#12302b">Semana 3</text>
+<text x="830" y="162" font-size="17" fill="#37474f">Controles críticos e testes T01 a</text>
+<text x="830" y="185" font-size="17" fill="#37474f">T03 no pipeline</text>
+<rect x="1185" y="100" width="355" height="104" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="2.5"/>
+<text x="1205" y="132" font-size="20" font-weight="bold" fill="#12302b">Semana 4</text>
+<text x="1205" y="162" font-size="17" fill="#37474f">Revisão de piloto, incidente</text>
+<text x="1205" y="185" font-size="17" fill="#37474f">simulado e ajuste do portão</text>
+<rect x="60" y="290" width="170" height="72" rx="12" fill="#ffffff" stroke="#00695c" stroke-width="2"/>
+<text x="145" y="320" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">Dono e</text>
+<text x="145" y="342" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">finalidade</text>
+<rect x="247" y="290" width="170" height="72" rx="12" fill="#ffffff" stroke="#00695c" stroke-width="2"/>
+<text x="332" y="320" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">Dados e</text>
+<text x="332" y="342" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">ferramentas</text>
+<rect x="434" y="290" width="170" height="72" rx="12" fill="#ffffff" stroke="#00695c" stroke-width="2"/>
+<text x="519" y="331" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">Autonomia</text>
+<rect x="621" y="290" width="170" height="72" rx="12" fill="#ffffff" stroke="#00695c" stroke-width="2"/>
+<text x="706" y="331" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">Faixa de risco</text>
+<rect x="808" y="290" width="170" height="72" rx="12" fill="#ffffff" stroke="#00695c" stroke-width="2"/>
+<text x="893" y="320" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">Riscos e</text>
+<text x="893" y="342" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">controles</text>
+<rect x="995" y="290" width="170" height="72" rx="12" fill="#ffffff" stroke="#00695c" stroke-width="2"/>
+<text x="1080" y="320" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">Evidência e</text>
+<text x="1080" y="342" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">gate</text>
+<rect x="1182" y="290" width="170" height="72" rx="12" fill="#eceff1" stroke="#78909c" stroke-width="2"/>
+<text x="1267" y="331" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">Canal e versão</text>
+<rect x="1369" y="290" width="170" height="72" rx="12" fill="#ffffff" stroke="#00695c" stroke-width="2"/>
+<text x="1454" y="320" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">Revisão e</text>
+<text x="1454" y="342" font-size="17" font-weight="bold" text-anchor="middle" fill="#12302b">retirada</text>
+<line x1="237" y1="206" x2="145" y2="286" stroke="#00695c" stroke-width="2" marker-end="url(#s00695c)"/>
+<line x1="237" y1="206" x2="332" y2="286" stroke="#00695c" stroke-width="2" marker-end="url(#s00695c)"/>
+<line x1="612" y1="206" x2="519" y2="286" stroke="#00695c" stroke-width="2" marker-end="url(#s00695c)"/>
+<line x1="612" y1="206" x2="706" y2="286" stroke="#00695c" stroke-width="2" marker-end="url(#s00695c)"/>
+<line x1="987" y1="206" x2="893" y2="286" stroke="#00695c" stroke-width="2" marker-end="url(#s00695c)"/>
+<line x1="987" y1="206" x2="1080" y2="286" stroke="#00695c" stroke-width="2" marker-end="url(#s00695c)"/>
+<line x1="1362" y1="206" x2="1080" y2="286" stroke="#00695c" stroke-width="2" marker-end="url(#s00695c)"/>
+<line x1="1362" y1="206" x2="1454" y2="286" stroke="#00695c" stroke-width="2" marker-end="url(#s00695c)"/>
+<rect x="60" y="450" width="355" height="96" rx="14" fill="#ffffff" stroke="#e65100" stroke-width="2.5"/>
+<text x="80" y="482" font-size="19" font-weight="bold" fill="#12302b">Indicador: Cobertura</text>
+<text x="80" y="512" font-size="17" fill="#37474f">Casos com dono, finalidade e faixa</text>
+<line x1="145" y1="364" x2="237" y2="446" stroke="#e65100" stroke-width="2" marker-end="url(#se65100)"/>
+<line x1="706" y1="364" x2="237" y2="446" stroke="#e65100" stroke-width="2" marker-end="url(#se65100)"/>
+<rect x="435" y="450" width="355" height="96" rx="14" fill="#ffffff" stroke="#e65100" stroke-width="2.5"/>
+<text x="455" y="482" font-size="19" font-weight="bold" fill="#12302b">Indicador: Prevenção</text>
+<text x="455" y="512" font-size="17" fill="#37474f">Permissões verificadas e testes</text>
+<text x="455" y="535" font-size="17" fill="#37474f">adversariais</text>
+<line x1="332" y1="364" x2="612" y2="446" stroke="#e65100" stroke-width="2" marker-end="url(#se65100)"/>
+<line x1="1080" y1="364" x2="612" y2="446" stroke="#e65100" stroke-width="2" marker-end="url(#se65100)"/>
+<rect x="810" y="450" width="355" height="96" rx="14" fill="#ffffff" stroke="#78909c" stroke-width="2.5"/>
+<text x="830" y="482" font-size="19" font-weight="bold" fill="#12302b">Indicador: Operação</text>
+<text x="830" y="512" font-size="17" fill="#37474f">Medida no incidente simulado da</text>
+<text x="830" y="535" font-size="17" fill="#37474f">semana 4</text>
+<rect x="1185" y="450" width="355" height="96" rx="14" fill="#ffffff" stroke="#e65100" stroke-width="2.5"/>
+<text x="1205" y="482" font-size="19" font-weight="bold" fill="#12302b">Indicador: Entrega</text>
+<text x="1205" y="512" font-size="17" fill="#37474f">Mudanças com reavaliação documentada</text>
+<line x1="1267" y1="364" x2="1362" y2="446" stroke="#e65100" stroke-width="2" marker-end="url(#se65100)"/>
+<line x1="1454" y1="364" x2="1362" y2="446" stroke="#e65100" stroke-width="2" marker-end="url(#se65100)"/>
+<text x="60" y="590" font-size="17" fill="#37474f">A linha canal e versão não aparece em nenhuma atividade do kit e entra pelo indicador de entrega, com as versões publicadas no marketplace.</text>
+</svg>

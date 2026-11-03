@@ -8,7 +8,7 @@ Nenhuma das práticas publica dado interno, e o trabalho com o protótipo real d
 
 Nesta prática, o protótipo em que a equipe trabalha entra como terceiro plugin de uma cópia do marketplace, num repositório interno.
 
-![Seis etapas do protótipo ao marketplace da equipe: terceiro plugin numa cópia do marketplace no repositório interno, ficha em governanca.json, portão e instalação com os comandos da oficina, troca com outra equipe, hospedagem num repositório git da equipe na forma descrita pela documentação, e portão na esteira, como proposta a configurar pela equipe.](assets/do-prototipo-ao-marketplace.png)
+![Seis etapas do protótipo ao marketplace da equipe: terceiro plugin numa cópia do marketplace no repositório interno, ficha em governanca.json, portão e instalação com os comandos da oficina, troca com outra equipe, hospedagem num repositório git da equipe, registrada por owner/repo ou por URL git, e portão na esteira, como proposta a configurar pela equipe.](assets/do-prototipo-ao-marketplace.png)
 
 **Passo 1:** extrair o zip no repositório interno da equipe e criar, dentro de `marketplace-acme/plugins/`, uma pasta com o nome do protótipo, em letras minúsculas e com hífens.
 
@@ -46,7 +46,7 @@ claude plugin marketplace add <owner>/<repo>
 claude plugin marketplace add https://<servidor>/<caminho-do-repositorio>.git
 ```
 
-**Passo 3:** publicar uma correção com versão nova no `plugin.json` e conferir, na máquina de um colega, se `claude plugin update` entrega a versão nova. Segundo a documentação do Claude Code, numa fonte git o colega recebe a cópia nova quando a `version` do plugin muda, e um commit com a mesma `version` não chega até ele.
+**Passo 3:** publicar uma correção com versão nova no `plugin.json` e conferir, na máquina de um colega, se `claude plugin update` entrega a versão nova. Numa fonte git, o colega recebe a cópia nova quando a `version` do plugin muda, e um commit com a mesma `version` não chega até ele.
 
 **Passo 4:** para prender o plugin a uma versão, preencher na fonte do plugin o campo `ref`, com um ramo ou uma etiqueta, ou o campo `sha`, com um commit.
 

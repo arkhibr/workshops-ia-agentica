@@ -8,8 +8,6 @@ O guia do facilitador [Governança de IA na prática](../referencia/bibliografia
 
 O guia usa o enunciado "o agente deve ser seguro" como exemplo de frase que não atinge nenhum dos três estados. A frase só passa a valer como controle quando é substituída por uma permissão limitada, um teste verificável, um responsável nomeado e um critério de bloqueio da publicação, quatro itens que a linha "Evidência e gate" da ficha registra.
 
-![Três estados em sequência, framework adotado, controle implementado e evidência guardada, com a indicação de que cada passagem ainda exige trabalho. Abaixo, a frase “o agente deve ser seguro” e os quatro itens que a transformam em controle: permissão limitada, teste verificável, responsável nomeado e critério de bloqueio da publicação.](assets/tres-estados-do-controle.png)
-
 ## Preventivo, detectivo e de resposta
 
 Os controles se dividem pelo momento em que agem em relação ao evento de risco.
@@ -20,7 +18,9 @@ Os controles se dividem pelo momento em que agem em relação ao evento de risco
 | Detectivo | Durante ou depois do evento, mostrando que ele ocorreu | Log das chamadas de ferramenta, alerta para chamada fora do escopo, avaliação periódica com gabarito |
 | De resposta | Depois da detecção, limitando o dano | Suspensão do agente, revogação do token, reversão para a versão anterior da skill |
 
-![Linha do tempo com dois marcos, o evento de risco e a detecção. O controle preventivo age antes do evento, o detectivo durante ou depois dele e o de resposta depois da detecção, cada um com exemplos num agente.](assets/controles-no-tempo-do-incidente.png)
+A figura abaixo aplica os três tipos ao incidente B da página [Riscos de agentes](riscos-de-agentes.md#tres-incidentes), em que uma skill de consulta recebe um token que também altera cadastro e aprova pagamento, e mostra em que ponto da linha do tempo cada controle age e que evidência fica guardada.
+
+![Linha do tempo do incidente B com dois marcos, a chamada de escrita e a detecção. Antes do evento, os controles preventivos são a credencial por serviço com menor privilégio, a lista explícita de operações e a confirmação humana para escrita. No momento da chamada, a política na API rejeita a operação que o token não autoriza e registra o evento de segurança. Entre o evento e a detecção, os controles detectivos são a auditoria das ações e o alerta para chamada fora do escopo, e depois da detecção o controle de resposta é a revogação do token. Abaixo, a evidência guardada: o relatório do teste T03 no pipeline e o log da negação pela API.](assets/incidente-b-no-tempo.png)
 
 A ficha de registro de riscos do guia pede ao menos um controle preventivo e um detectivo para cada risco, além da evidência verificável. Um risco com controle preventivo e sem controle detectivo deixa a equipe sem saber se o controle falhou, e um risco com controle detectivo e sem resposta prevista gera um alerta que ninguém tem autoridade para tratar.
 
@@ -28,15 +28,15 @@ A ficha de registro de riscos do guia pede ao menos um controle preventivo e um 
 
 A instrução textual dirigida ao modelo, como "não envie dados para fora" escrita no prompt ou no `SKILL.md`, orienta o comportamento do modelo e pode ser ignorada por ele, em especial quando um conteúdo recuperado contém instrução em sentido contrário. O controle aplicado fora do modelo é executado por um componente que o modelo não altera, e o resultado dele independe do que o modelo decidiu, condição que o teste T01, descrito adiante nesta página, verifica diante de uma injeção de prompt.
 
-| Mecanismo | Onde é aplicado | O que impede |
-|---|---|---|
-| Permissão de ferramenta | Configuração do agente, como a lista `tools` do subagente no Claude Code | Uso de ferramenta fora da lista, qualquer que seja a instrução recebida |
-| Hook | Programa executado pelo arnês antes da chamada de ferramenta, como o hook `PreToolUse` | Chamada que viola uma regra escrita em código, como comando de escrita em banco |
-| Validação de esquema | Código que confere a saída do modelo antes do uso | Saída fora do formato esperado chegando ao sistema seguinte |
-| Política na API | Servidor do sistema chamado, com o escopo do token | Operação que o token não autoriza, rejeitada pelo servidor |
-| Instrução textual | Prompt, `SKILL.md` ou arquivo de instruções do projeto | Nenhuma operação, porque depende da conduta do modelo |
+| Mecanismo | O que impede |
+|---|---|
+| Permissão de ferramenta | Uso de ferramenta fora da lista, qualquer que seja a instrução recebida |
+| Hook | Chamada que viola uma regra escrita em código, como comando de escrita em banco |
+| Validação de esquema | Saída fora do formato esperado chegando ao sistema seguinte |
+| Política na API | Operação que o token não autoriza, rejeitada pelo servidor |
+| Instrução textual | Nenhuma operação, porque depende da conduta do modelo |
 
-![À esquerda, dentro do contexto do modelo, a instrução textual, o conteúdo recuperado com instrução contrária e o próprio modelo. À direita, os componentes que o modelo não altera: permissão de ferramenta, hook PreToolUse e política na API em sequência até a API do sistema, e a validação de esquema antes do sistema seguinte.](assets/controle-fora-do-modelo.png)
+![Onde cada mecanismo é aplicado. À esquerda, dentro do contexto do modelo, ficam a instrução textual, escrita no prompt, no SKILL.md ou no arquivo de instruções do projeto, o conteúdo recuperado com instrução em sentido contrário e o próprio modelo. À direita, entre os componentes que o modelo não altera, a chamada de ferramenta passa pela permissão de ferramenta, na lista tools do subagente, pelo hook PreToolUse, executado pelo arnês antes da chamada, e pela política na API, aplicada pelo servidor com o escopo do token, até a API do sistema, e a saída do modelo passa pela validação de esquema, código que a confere antes do uso, até o sistema seguinte.](assets/controle-fora-do-modelo.png)
 
 O arnês é o conjunto de componentes que cerca o modelo e executa as ferramentas, termo definido na Sessão 2 do workshop. Os mecanismos de permissão e de hook do Claude Code estão descritos na página [Segurança e credenciais](../sessao-08-skills-e-agentes/seguranca-e-credenciais.md#permissoes-minimas-por-construcao) da Sessão 8, com a ressalva de que no Codex CLI a restrição de ferramentas vem do sandbox da sessão que inicia o agente.
 
@@ -55,8 +55,6 @@ O guia propõe sete testes de aceite que verificam controles típicos de um agen
 | T05 | Pergunta sem evidência suficiente na base | A resposta declara o limite e não inventa norma |
 | T06 | Modelo gera conteúdo fora do esquema esperado | A validação falha, e o sistema seguinte não executa |
 | T07 | Orçamento de tokens ou de chamadas é atingido | A execução é interrompida com estado conhecido |
-
-![Os sete testes de aceite em três grupos: os incidentes A e B, com T01, T02 e T03, marcados para automatizar primeiro, o incidente C, com T04 e T05, e a operação, com T06 e T07. Cada teste traz o cenário e o resultado esperado, e a borda indica se o resultado é produzido fora do modelo, em T02, T03, T06 e T07, ou se combina uma parte fora do modelo com uma parte da resposta, em T01, T04 e T05.](assets/testes-de-aceite-t01-a-t07.png)
 
 Os testes T01 a T03 correspondem aos incidentes A e B da página [Riscos de agentes](riscos-de-agentes.md), e o guia os recomenda como primeiro conjunto a automatizar. Os testes T04 e T05 verificam o incidente C, e os testes T06 e T07 verificam controles de operação. O teste T03 é o exemplo mais claro de controle fora do modelo, porque o resultado esperado é produzido pelo servidor da API e se mantém mesmo quando o modelo decide chamar a operação de escrita.
 
