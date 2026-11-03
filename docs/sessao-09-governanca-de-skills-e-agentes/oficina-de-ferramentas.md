@@ -4,18 +4,7 @@ Esta oficina instala duas skills da ACME, a universidade fictícia usada na Sess
 
 Cada plugin traz a ficha de governança no arquivo `governanca.json`, e o script de portão `portao.mjs` reprova a publicação quando a ficha está incompleta ou declara um controle que depende só de instrução ao modelo.
 
-## Roteiro sugerido para a sessão
-
-| Experimento | Classificação | O que mostra |
-|---|---|---|
-| A, baixar e validar | Essencial em aula | Catálogo, plugins e fichas |
-| B, aprovar no portão | Essencial em aula | Reprovação e correção da ficha |
-| C, instalar e versionar | Essencial em aula | Instalação e versão 1.0.1 |
-| D, retirar | Exploração em dupla | Mapa `renames` e o que o colega vê |
-| E, registrar num repositório | Extensão opcional | Caminho absoluto em `.claude/settings.json` |
-| F, limpar | Essencial em aula | Remoção do marketplace e dos plugins |
-
-![Ciclo de vida do plugin em seis etapas: baixar e validar no Experimento A, aprovar no portão no B, instalar e publicar a versão 1.0.1 no C, retirar pelo mapa renames no D e limpar no F, com o Experimento E, opcional, derivado da instalação para registrar o marketplace num repositório com --scope project.](assets/ciclo-de-vida-do-plugin.png)
+![Ciclo de vida do plugin em seis etapas: baixar e validar no Experimento A, aprovar no portão no B, instalar e publicar a versão 1.0.1 no C, retirar pelo mapa renames no D e limpar no F, com o Experimento E derivado da instalação para registrar o marketplace num repositório com --scope project.](assets/ciclo-de-vida-do-plugin.png)
 
 ## Preparação
 
@@ -250,9 +239,5 @@ A remoção responde `✔ Successfully removed marketplace: marketplace-acme` e 
     ```
 
 A pasta do cache do marketplace, dentro da configuração do Claude Code do usuário, permaneceu no disco depois da remoção, sem registrar o marketplace nem habilitar plugin.
-
-## Extensão: o protótipo real do grupo
-
-Depois da sessão, o grupo pode empacotar o próprio protótipo como terceiro plugin do marketplace, com a ficha dos exercícios 1 a 5 em `governanca.json`, no ambiente interno da equipe e sem publicação neste site, conforme a página [Experimentos complementares](experimentos-complementares.md).
 
 **Próxima página:** [Experimentos complementares](experimentos-complementares.md).

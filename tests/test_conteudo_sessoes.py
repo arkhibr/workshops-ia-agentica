@@ -1102,17 +1102,24 @@ class SessaoNoveTest(unittest.TestCase):
 
     def test_oficina_tem_os_experimentos(self):
         texto = self.texto("oficina-de-ferramentas.md")
-        self.assertIn("## Roteiro sugerido para a sessão", texto)
         for letra in "ABCDEF":
             with self.subTest(experimento=letra):
                 self.assertRegex(texto, rf"(?m)^## Experimento {letra}\b")
-        self.assertLess(texto.index("## Roteiro sugerido para a sessão"), texto.index("## Experimento A"))
         preparacao = texto.split("## Preparação", 1)[1].split("\n## ", 1)[0]
         for item in ("claude --version", "claude update", "Node"):
             with self.subTest(preparacao=item):
                 self.assertIn(item, preparacao)
         self.assertNotIn("file://", texto)
         self.assertNotIn("**Classificação:**", texto)
+
+    def test_sem_classificacao_dos_experimentos(self):
+        """Pedido do Marco, 03/11/2026: a S9 não classifica experimentos nem organiza a turma."""
+        self.assertNotIn("## Roteiro sugerido para a sessão", self.texto("oficina-de-ferramentas.md"))
+        for nome in ("oficina-de-ferramentas.md", "experimentos-complementares.md", "index.md", "sintese-e-referencias.md"):
+            texto = self.texto(nome).lower()
+            for termo in ("essencial em aula", "exploração em dupla", "extensão opcional", "dupla", "cada grupo", "opcional"):
+                with self.subTest(pagina=nome, termo=termo):
+                    self.assertNotIn(termo, texto)
 
     def test_oficina_usa_caminho_relativo_nas_duas_abas(self):
         texto = self.texto("oficina-de-ferramentas.md")

@@ -1,14 +1,14 @@
 # Experimentos complementares
 
-Estas três práticas são opcionais e ficam para depois da sessão. Elas partem do marketplace local da [oficina](oficina-de-ferramentas.md), que empacota duas skills da ACME, a universidade fictícia usada na Sessão 8 e nesta sessão, com a ficha de governança gravada em `governanca.json` dentro de cada plugin e conferida pelo script de portão `portao.mjs`.
+Estas três práticas partem do marketplace local da [oficina](oficina-de-ferramentas.md), que empacota duas skills da ACME, a universidade fictícia usada na Sessão 8 e nesta sessão, com a ficha de governança gravada em `governanca.json` dentro de cada plugin e conferida pelo script de portão `portao.mjs`.
 
-Nenhuma das práticas publica dado interno, e o trabalho com o protótipo real do grupo fica no ambiente interno da equipe.
+Nenhuma das práticas publica dado interno, e o trabalho com o protótipo real da equipe fica no ambiente interno dela.
 
-## Empacotar o protótipo real do grupo
+## Empacotar o protótipo real da equipe
 
-O grupo acrescenta o protótipo em que trabalha como terceiro plugin de uma cópia do marketplace da oficina. A cópia fica num repositório interno da equipe, e nem a ficha nem os arquivos do protótipo entram no repositório público do workshop ou neste site.
+A equipe acrescenta o protótipo em que trabalha como terceiro plugin de uma cópia do marketplace da oficina. A cópia fica num repositório interno da equipe, e nem a ficha nem os arquivos do protótipo entram no repositório público do workshop ou neste site.
 
-![Seis etapas do protótipo do grupo ao marketplace da equipe: terceiro plugin numa cópia do marketplace no repositório interno, ficha em governanca.json, portão e instalação com os comandos da oficina, troca com outra equipe, hospedagem num repositório git da equipe na forma descrita pela documentação, e portão na esteira, como proposta a configurar pela equipe.](assets/do-prototipo-ao-marketplace.png)
+![Seis etapas do protótipo ao marketplace da equipe: terceiro plugin numa cópia do marketplace no repositório interno, ficha em governanca.json, portão e instalação com os comandos da oficina, troca com outra equipe, hospedagem num repositório git da equipe na forma descrita pela documentação, e portão na esteira, como proposta a configurar pela equipe.](assets/do-prototipo-ao-marketplace.png)
 
 **Passo 1:** copiar a pasta `marketplace-acme` da oficina para o repositório interno e criar dentro de `plugins/` uma pasta com o nome do protótipo, em letras minúsculas e com hífens. A pasta recebe o manifesto `.claude-plugin/plugin.json`, com `name`, `version` e `description`, e cada skill do protótipo em `skills/<nome-da-skill>/SKILL.md`, a mesma estrutura dos dois plugins da oficina.
 
@@ -23,7 +23,7 @@ claude plugin install <nome-do-prototipo>@marketplace-acme
 claude plugin details <nome-do-prototipo>
 ```
 
-**Passo 4:** trocar o marketplace com outro grupo, que instala o protótipo como colega e revisa a ficha com os critérios dos exercícios 3 a 5. O resultado esperado é ao menos um achado registrado na ficha, como uma premissa sem responsável pela verificação ou um controle preventivo que ainda depende de instrução ao modelo.
+**Passo 4:** trocar o marketplace com outra equipe, que instala o protótipo como colega e revisa a ficha com os critérios dos exercícios 3 a 5. O resultado esperado é ao menos um achado registrado na ficha, como uma premissa sem responsável pela verificação ou um controle preventivo que ainda depende de instrução ao modelo.
 
 A página [Compartilhamento governado](compartilhamento-governado.md) informa que um plugin também pode agrupar agentes, hooks e servidores MCP, e a disposição desses componentes dentro do plugin consta da [documentação de marketplaces](../referencia/bibliografia.md#anthropic-marketplaces-de-plugins-no-claude-code-documentacao).
 
