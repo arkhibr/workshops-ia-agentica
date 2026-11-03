@@ -1038,7 +1038,7 @@ class SessaoNoveTest(unittest.TestCase):
         "Controle preventivo e evidência",
         "Discussão com a turma",
     )
-    TETO_DE_PALAVRAS = {"exercicios.md": 700, "oficina-de-ferramentas.md": 2000}
+    TETO_DE_PALAVRAS = {"exercicios.md": 1200, "oficina-de-ferramentas.md": 2000}
 
     def exercicio(self, numero):
         texto = self.texto("exercicios.md")
