@@ -1,6 +1,6 @@
 # S4 — Regras formais com IA
 
-**Bloco:** 2 — Especificação e Planejamento
+**Bloco:** 2 — Especificação com precisão
 
 > **Pergunta-guia:** como transformar uma regra espalhada entre prosa e código em um modelo que pessoas, agentes e testes consigam verificar?
 

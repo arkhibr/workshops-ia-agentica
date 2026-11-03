@@ -1,6 +1,6 @@
 # S3 — Exploração e especificação
 
-**Bloco:** 2 — Especificação e Planejamento
+**Bloco:** 2 — Especificação com precisão
 
 > **Pergunta-guia:** por que um pedido tecnicamente correto ainda produz o sistema errado?
 

@@ -38,7 +38,7 @@ markdown_extensions:
 
 nav:
   - Início: index.md
-  - Bloco 1 — Fundamentos:
+  - Bloco 1 — Modelo mental e ambiente agêntico:
       - S1 — O que mudou:
           - Visão geral: sessao-01-o-que-mudou/index.md
           - Modos de trabalho com IA: sessao-01-o-que-mudou/modos-de-trabalho.md
@@ -65,7 +65,7 @@ nav:
           - Oficina de ferramentas: sessao-02-ambiente-agentico/oficina-de-ferramentas.md
           - Exercícios: sessao-02-ambiente-agentico/exercicios.md
           - Síntese e referências: sessao-02-ambiente-agentico/sintese-e-referencias.md
-  - Bloco 2 — Especificação e Planejamento:
+  - Bloco 2 — Especificação com precisão:
       - S3 — Exploração e especificação:
           - Visão geral: sessao-03-exploracao-especificacao/index.md
           - "Tema 1 — Conceitos: Intervenção socrática": sessao-03-exploracao-especificacao/intervencao-socratica-conceitos.md
@@ -98,7 +98,7 @@ nav:
           - "Tema 2 — Exemplo de aplicação de IA": sessao-05-decomposicao/do-plano-ao-codigo-exemplo-de-aplicacao-de-ia.md
           - "Tema 2 — Exercício de IA": sessao-05-decomposicao/do-plano-ao-codigo-exercicio.md
           - Síntese e referências: sessao-05-decomposicao/sintese-e-referencias.md
-  - Bloco 3 — Execução e adoção:
+  - Bloco 3 — Qualidade da spec e adoção por papel:
       - "S6 — Spec Kit: qualidade da spec e teste antes do código":
           - Visão geral: sessao-06-spec-kit-aprofundado/index.md
           - Contexto da prática: sessao-06-spec-kit-aprofundado/contexto-da-pratica.md
@@ -122,7 +122,7 @@ nav:
           - Pitch de um caso de uso: sessao-07-casos-de-uso-por-papel/pitch-de-caso-de-uso.md
           - Exercícios: sessao-07-casos-de-uso-por-papel/exercicios.md
           - Síntese e referências: sessao-07-casos-de-uso-por-papel/sintese-e-referencias.md
-  - Bloco 4 — Automação, qualidade e integração:
+  - Bloco 4 — Skills, agentes e ciclo completo:
       - S8 — Skills e agentes:
           - Visão geral: sessao-08-skills-e-agentes/index.md
           - Skills: sessao-08-skills-e-agentes/skills.md

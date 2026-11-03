@@ -1,6 +1,6 @@
 # S6 — Spec Kit: qualidade da spec e teste antes do código
 
-**Bloco:** 3 — Execução e adoção
+**Bloco:** 3 — Qualidade da spec e adoção por papel
 
 > **Pergunta-guia:** o que a spec ainda não decidiu quando o agente começa a planejar, e como saber que um teste verde testou alguma coisa?
 

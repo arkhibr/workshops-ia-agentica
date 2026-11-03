@@ -1,6 +1,6 @@
 # S5 — Spec Kit: da regra ao código
 
-**Bloco:** 2 — Especificação e Planejamento
+**Bloco:** 2 — Especificação com precisão
 
 > **Pergunta-guia:** o que precisa estar escrito antes que um agente transforme uma regra de negócio em código, e onde o humano intervém no caminho?
 

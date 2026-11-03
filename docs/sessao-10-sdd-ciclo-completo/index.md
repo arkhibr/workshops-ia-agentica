@@ -1,6 +1,6 @@
 # S10 — SDD ciclo completo
 
-**Bloco:** 4 — Automação, qualidade e integração
+**Bloco:** 4 — Skills, agentes e ciclo completo
 
 > **Pergunta-guia:** o que precisa sobreviver à conversa com o agente para que outra pessoa consiga manter o código depois?
 

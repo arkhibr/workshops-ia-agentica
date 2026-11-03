@@ -1,6 +1,6 @@
 # S2 — O ambiente agêntico
 
-**Bloco:** 1 — Fundamentos
+**Bloco:** 1 — Modelo mental e ambiente agêntico
 
 > **Pergunta-guia:** o que muda quando o time para de usar IA cada um do seu próprio jeito e passa a compartilhar um ambiente?
 

@@ -1,6 +1,6 @@
 # S1 — O que mudou
 
-**Bloco:** 1 — Fundamentos
+**Bloco:** 1 — Modelo mental e ambiente agêntico
 
 > **Pergunta-guia:** por que a equipe já usa IA todo dia e o resultado continua desigual?
 

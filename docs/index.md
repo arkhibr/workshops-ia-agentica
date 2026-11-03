@@ -16,25 +16,25 @@ A tese: a janela de contexto virou o programa. O LLM é o interpretador; o desen
 
 | Bloco | Sessões | Tema | Intenção metodológica |
 |---|---|---|---|
-| 1 — Fundamentos | S1–S2 | O novo modelo mental, a primeira ferramenta nas mãos | Software 3.0 · Engenharia Agêntica · cadeia de ferramentas e isolamento por ramo |
-| 2 — Especificação e Planejamento | S3–S5 | A habilidade mais valiosa da era agêntica: dizer o quê com precisão | Requisitos BR/FR/NFR · SBVR + RuleSpeak + tabelas de decisão · caminho básico do Spec Kit, da regra ao código |
-| 3 — Execução e adoção | S6–S7 | Do plano ao código verificado, e do uso individual ao uso por papel | Qualidade da spec e teste antes do código · casos de uso de IA por papel, com mural das equipes e pitch |
-| 4 — Automação, qualidade e integração | S8–S10 | Skills e agentes próprios, governança antes do compartilhamento e SDD de ponta a ponta | Criação de skills e agentes · governança de skills e agentes · SDD ciclo completo |
+| 1 — Modelo mental e ambiente agêntico | S1–S2 | O novo modelo mental, a primeira ferramenta nas mãos | Software 3.0 · Engenharia Agêntica · cadeia de ferramentas e isolamento por ramo |
+| 2 — Especificação com precisão | S3–S5 | A habilidade mais valiosa da era agêntica: dizer o quê com precisão | Requisitos BR/FR/NFR · SBVR + RuleSpeak + tabelas de decisão · caminho básico do Spec Kit, da regra ao código |
+| 3 — Qualidade da spec e adoção por papel | S6–S7 | Do plano ao código verificado, e do uso individual ao uso por papel | Qualidade da spec e teste antes do código · casos de uso de IA por papel, com mural das equipes e pitch |
+| 4 — Skills, agentes e ciclo completo | S8–S10 | Skills e agentes próprios, governança antes do compartilhamento e SDD de ponta a ponta | Criação de skills e agentes · governança de skills e agentes · SDD ciclo completo |
 
 ## Sessões
 
 | # | Sessão | Bloco |
 |---|---|---|
-| S1 | [O que mudou](sessao-01-o-que-mudou/index.md) | 1 — Fundamentos |
-| S2 | [O ambiente agêntico](sessao-02-ambiente-agentico/index.md) | 1 — Fundamentos |
-| S3 | [Exploração e especificação](sessao-03-exploracao-especificacao/index.md) | 2 — Especificação e Planejamento |
-| S4 | [Regras formais com IA](sessao-04-regras-formais-com-ia/index.md) | 2 — Especificação e Planejamento |
-| S5 | [Spec Kit: da regra ao código](sessao-05-decomposicao/index.md) | 2 — Especificação e Planejamento |
-| S6 | [Spec Kit: qualidade da spec e teste antes do código](sessao-06-spec-kit-aprofundado/index.md) | 3 — Execução e adoção |
-| S7 | [Casos de uso de IA por papel](sessao-07-casos-de-uso-por-papel/index.md) | 3 — Execução e adoção |
-| S8 | [Skills e agentes](sessao-08-skills-e-agentes/index.md) | 4 — Automação, qualidade e integração |
-| S9 | [Governança de skills e agentes](sessao-09-governanca-de-skills-e-agentes/index.md) | 4 — Automação, qualidade e integração |
-| S10 | [SDD ciclo completo](sessao-10-sdd-ciclo-completo/index.md) | 4 — Automação, qualidade e integração |
+| S1 | [O que mudou](sessao-01-o-que-mudou/index.md) | 1 — Modelo mental e ambiente agêntico |
+| S2 | [O ambiente agêntico](sessao-02-ambiente-agentico/index.md) | 1 — Modelo mental e ambiente agêntico |
+| S3 | [Exploração e especificação](sessao-03-exploracao-especificacao/index.md) | 2 — Especificação com precisão |
+| S4 | [Regras formais com IA](sessao-04-regras-formais-com-ia/index.md) | 2 — Especificação com precisão |
+| S5 | [Spec Kit: da regra ao código](sessao-05-decomposicao/index.md) | 2 — Especificação com precisão |
+| S6 | [Spec Kit: qualidade da spec e teste antes do código](sessao-06-spec-kit-aprofundado/index.md) | 3 — Qualidade da spec e adoção por papel |
+| S7 | [Casos de uso de IA por papel](sessao-07-casos-de-uso-por-papel/index.md) | 3 — Qualidade da spec e adoção por papel |
+| S8 | [Skills e agentes](sessao-08-skills-e-agentes/index.md) | 4 — Skills, agentes e ciclo completo |
+| S9 | [Governança de skills e agentes](sessao-09-governanca-de-skills-e-agentes/index.md) | 4 — Skills, agentes e ciclo completo |
+| S10 | [SDD ciclo completo](sessao-10-sdd-ciclo-completo/index.md) | 4 — Skills, agentes e ciclo completo |
 
 ## Critérios de sucesso
 
