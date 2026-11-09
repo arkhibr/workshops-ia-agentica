@@ -1,10 +1,10 @@
 # Escolher a abordagem e a profundidade
 
-Duas decisões diferentes costumam ser confundidas numa só. A primeira é qual abordagem de desenvolvimento guiado por especificação adotar, e depende do artefato que o time precisa preservar. A segunda é quanta cerimônia aplicar a uma mudança específica, e depende do risco dela. Uma organização pode acertar a primeira e ainda assim afundar na segunda, aplicando o pacote completo a toda correção de texto.
+Duas decisões diferentes costumam ser confundidas numa só. A primeira é qual abordagem de desenvolvimento guiado por especificação adotar, e depende do artefato que o time precisa preservar. A segunda é quanta cerimônia aplicar a uma mudança específica, e depende do risco dela. Uma organização pode acertar a primeira e errar a segunda, aplicando o pacote completo a toda correção de texto.
 
 ## Método, artefato, ferramenta e governança
 
-Antes da comparação, uma distinção que evita confundir adoção com instalação:
+Antes da comparação, convém distinguir quatro termos, para não confundir adoção do método com instalação da ferramenta:
 
 - **método** é o conjunto de decisões sobre como o trabalho deve avançar.
 - **artefato** é o registro durável de intenção, design, tarefas ou evidências.
@@ -32,14 +32,14 @@ Duas conclusões dessa tabela merecem atenção, porque contrariam a intuição.
 
 A primeira é que **documentação e rigor operacional são eixos diferentes**. O Spec Kit pode ser pesado em documento e leve em exigência de execução. O Superpowers é o inverso. Dizer que uma abordagem é "leve" ou "pesada" sem nomear o eixo omite onde o custo efetivamente aparece.
 
-A segunda é que as abordagens podem ser combinadas. Uma organização pode usar a constitution do Spec Kit para princípios transversais, o delta do OpenSpec para manter o comportamento do domínio legível, e a disciplina de teste e verificação do Superpowers na execução. Combinar dessa forma exige reconhecer que são camadas distintas e evitar que dois artefatos disputem a mesma decisão. Instalar as três ferramentas juntas resolve pouco.
+A segunda é que as abordagens podem ser combinadas. Uma organização pode usar a constitution do Spec Kit para princípios transversais, o delta do OpenSpec para manter o comportamento do domínio legível, e a disciplina de teste e verificação do Superpowers na execução. Combinar dessa forma exige reconhecer que são camadas distintas e evitar que dois artefatos disputem a mesma decisão. Instalar as três ferramentas sem essa divisão de responsabilidades produz artefatos concorrentes para a mesma decisão.
 
 !!! question "Antes de continuar"
     Qual artefato do seu projeto atual precisa sobreviver mais tempo: a intenção do produto, os princípios de engenharia, ou a evidência de que a mudança funciona? A resposta indica qual abordagem encaixa melhor.
 
 ## A régua de profundidade proporcional
 
-Escolhida a abordagem, resta calibrar quanta cerimônia cada mudança recebe. Aplicar o mesmo pacote a toda alteração transforma o método em fila de aprovação. Aplicar só a mudanças grandes deixa riscos pequenos e frequentes se acumularem.
+Escolhida a abordagem, resta calibrar quanta cerimônia cada mudança recebe. Aplicar o mesmo pacote a toda alteração cria fila de aprovação para ajustes triviais, e reservar o método às mudanças grandes permite o acúmulo de riscos pequenos e frequentes.
 
 Três classes resolvem a maior parte dos casos:
 
@@ -49,9 +49,9 @@ Três classes resolvem a maior parte dos casos:
 | M, funcionalidade | comportamento novo, mais de um componente ou decisão | especificação, critérios, plano, fatias e testes |
 | L, iniciativa | múltiplos domínios, migração, risco material ou vários times | constitution aplicável, especificação, plano, decisões registradas e portões |
 
-A classificação é pelo maior risco, não pelo número de linhas. Corrigir um texto de interface em três telas é classe S, porque não há regra associada e o retorno é trivial. Permitir que o cliente cancele um pedido até a separação começar é classe L, mesmo sendo poucas linhas, porque a regra de cancelamento hoje só existe no código e ninguém sabe recitá-la. Migrar duzentos arquivos para um formato novo é classe M apesar do tamanho, porque a transformação é mecânica e reversível arquivo a arquivo.
+A classificação considera o maior risco da mudança, e o número de linhas não entra no critério. Corrigir um texto de interface em três telas é classe S, porque não há regra associada e o retorno é trivial. Permitir que o cliente cancele um pedido até a separação começar é classe L, mesmo sendo poucas linhas, porque a regra de cancelamento hoje só existe no código e ninguém sabe recitá-la. Migrar duzentos arquivos para um formato novo é classe M apesar do tamanho, porque a transformação é mecânica e reversível arquivo a arquivo.
 
-A segunda é a que mais se subestima. Uma linha que altera autorização carrega mais risco do que duzentos arquivos que mudam formato.
+O caso do cancelamento é o mais subestimado dos três, porque a mudança de poucas linhas induz a classificação como S.
 
 ## Cinco perguntas que definem a classe
 

@@ -76,7 +76,7 @@ A coluna da DoR corresponde às linhas "Dono e finalidade", "Dados e ferramentas
 
 ## Do controle à história
 
-A ficha C do guia transforma um controle em trabalho de backlog, com sete elementos: a história ou mudança técnica, o risco tratado, o critério de aceite observável, o teste positivo e o adversarial, a evidência de execução com o local de guarda, o gate com quem aprova, e o monitoramento com o gatilho de suspensão. O critério de aceite usa a forma "dado, quando, então" da linguagem [Gherkin](../referencia/bibliografia.md#cucumber-gherkin-reference), o que permite automatizá-lo como cenário executável.
+A ficha C do guia transforma um controle em trabalho de backlog, com sete elementos: a história ou mudança técnica, o risco tratado, o critério de aceite observável, o teste positivo e o adversarial, a evidência de execução com o local de guarda, o gate com quem aprova e o monitoramento com o gatilho de suspensão. O critério de aceite usa a forma "dado, quando, então" da linguagem [Gherkin](../referencia/bibliografia.md#cucumber-gherkin-reference), o que permite automatizá-lo como cenário executável.
 
 ![Os sete elementos da ficha C em linhas numeradas, da história ao monitoramento com gatilho de suspensão, ao lado do exemplo preenchido do guia para acesso de leitura. O exemplo preenche a história, o critério de aceite, a evidência e o gate, e o critério de aceite aparece destacado pela expressão “independentemente da resposta do modelo”.](assets/do-controle-a-historia.png)
 

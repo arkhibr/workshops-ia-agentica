@@ -6,7 +6,7 @@
 
 ## Problema
 
-A Sessão 5 mostrou que o agente preenche sozinho o que o pedido do PO deixa em aberto e que o Spec Kit grava essas decisões em arquivo. Gravar não basta quando ninguém pergunta ao PO antes do plano, quando ninguém confere se os requisitos estão bem escritos antes das tarefas e quando o teste que deveria provar a regra já nasce verde. Os três comandos opcionais do Spec Kit e um princípio de teste vermelho na constitution atacam esses três pontos, cada um numa posição diferente do fluxo.
+A Sessão 5 mostrou que o agente preenche sozinho o que o pedido do PO deixa em aberto e que o Spec Kit grava essas decisões em arquivo. O registro em arquivo deixa três problemas sem tratamento: o PO não é consultado antes do plano, a redação dos requisitos não é conferida antes das tarefas, e o teste que deveria provar a regra pode passar antes de existir código. Os três comandos opcionais do Spec Kit e um princípio de teste vermelho na constitution tratam esses problemas, cada um numa posição diferente do fluxo.
 
 ## Como usar este material
 

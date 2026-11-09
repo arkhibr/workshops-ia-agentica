@@ -1,13 +1,13 @@
 # Exercícios — skills, agentes e escolha do mecanismo
 
-Faça o exercício 1. Em seguida, use o exercício 5 para criar o subagente de leitura, pedir uma edição e observar se a restrição funciona. Os demais exercícios são opcionais para depois da sessão.
+Faça o exercício 1 e, em seguida, use o exercício 5 para criar o subagente de leitura, pedir uma edição e observar se a restrição funciona. Os exercícios 2 a 4 e 6 a 8 são opcionais e ficam para depois da sessão.
 
 !!! note "Ambiente"
-    Os exemplos usam **Claude Code** em um projeto de teste, sem dados sensíveis nem credenciais reais. Execute os comandos de terminal na raiz do projeto: use PowerShell no Windows ou as alternativas para Linux/macOS e os comandos `/...` dentro do Claude Code. Reinicie a sessão após alterar arquivos de configuração. Os campos e comandos são específicos do Claude Code.
+    Os exemplos usam **Claude Code** em um projeto de teste, sem dados sensíveis nem credenciais reais. Execute os comandos de terminal na raiz do projeto: use PowerShell no Windows ou as alternativas para Linux/macOS e os comandos `/...` dentro do Claude Code. Os campos e comandos desta página são específicos do Claude Code, e a sessão precisa ser reiniciada após cada alteração de arquivo de configuração.
 
 ## 1. Criar e invocar uma skill
 
-Uma skill é um procedimento reutilizável. O arquivo `SKILL.md` define seu nome, quando ela é útil e o que deve fazer. Os comandos abaixo criam a skill e uma transcrição fictícia para testá-la. O marcador `$ARGUMENTS` recebe o texto informado após o nome da skill.
+Uma skill é um procedimento reutilizável, e o arquivo `SKILL.md` define o nome dela, a situação em que ela é útil e o que ela deve fazer. Os comandos abaixo criam a skill e uma transcrição fictícia para testá-la, e o marcador `$ARGUMENTS` recebe o texto informado após o nome da skill.
 
 **Windows — PowerShell**
 
@@ -121,11 +121,11 @@ Inicie o Claude Code na raiz do projeto e invoque a skill, passando o arquivo co
 /resumir-notas notas-exemplo.md
 ```
 
-Compare a saída com a transcrição: Bruno ficou responsável pela especificação e Carla por consultar o fornecedor e confirmar a cobertura contratual. A verificação do ambiente e o plano de contingência ainda não têm responsáveis; o atraso da API pode afetar os testes e a homologação. A opção de lote não está aprovada. Confira as evidências, os prazos ausentes e os riscos inferidos. Depois, retire o prazo da especificação e execute novamente: a skill deve marcá-lo como `A confirmar`, sem inventar uma data.
+Compare a saída com a transcrição: Bruno ficou responsável pela especificação e Carla por consultar o fornecedor e confirmar a cobertura contratual. A verificação do ambiente e o plano de contingência ainda não têm responsáveis, o atraso da API pode afetar os testes e a homologação, e a opção de lote continua sem aprovação. Confira as evidências, os prazos ausentes e os riscos inferidos. Depois, retire o prazo da especificação e execute novamente: a skill deve marcá-lo como `A confirmar`, sem inventar uma data.
 
 ## 2. Controlar o acionamento
 
-Por padrão, você pode chamar uma skill pelo nome e o modelo também pode escolhê-la pela descrição. Este experimento restringe a invocação ao usuário e compara os dois caminhos. Uma resposta resumida, por si só, não prova que a skill foi usada: observe a indicação de invocação na interface.
+Por padrão, você pode chamar uma skill pelo nome e o modelo também pode escolhê-la pela descrição. Este experimento restringe a invocação ao usuário e compara os dois caminhos. A evidência de que a skill foi usada é a indicação de invocação na interface, porque um resumo na resposta pode ter sido produzido sem a skill.
 
 No front-matter da skill anterior, acrescente:
 
@@ -140,7 +140,7 @@ Resuma notas-exemplo.md usando a skill apropriada.
 /resumir-notas notas-exemplo.md
 ```
 
-Remova o campo, reinicie e repita o pedido em linguagem natural. Registre quando a skill foi acionada. Compare também o efeito de `user-invocable: false` no menu `/`.
+Remova o campo, reinicie a sessão, repita o pedido em linguagem natural e registre em quais casos a skill foi acionada. Compare também o efeito de `user-invocable: false` sobre o menu `/` e sobre o acionamento pelo modelo.
 
 <details>
 <summary>Confira</summary>
@@ -151,7 +151,7 @@ Com `disable-model-invocation: true`, a chamada pelo nome continua disponível, 
 
 ## 3. Comparar contexto normal e fork
 
-Uma skill comum usa o contexto da conversa. Com `context: fork`, ela executa em um subagente com contexto separado. Neste teste, compare se uma preferência informada na conversa chega à skill.
+Uma skill comum usa o contexto da conversa, e com `context: fork` ela executa em um subagente com contexto separado. O teste verifica, nos dois casos, se uma preferência informada na conversa chega à skill.
 
 Acrescente ao corpo da skill: `Use a preferência de formato informada na conversa; se não houver, use tópicos.` Abra uma nova sessão e envie esta mensagem:
 
@@ -165,7 +165,7 @@ Em seguida, envie outra mensagem para executar a skill:
 /resumir-notas notas-exemplo.md
 ```
 
-Anote o formato da resposta. Acrescente `context: fork` ao front-matter, reinicie a sessão e repita as duas mensagens. Compare os formatos: o subagente recebeu a preferência da conversa?
+Anote o formato da resposta, acrescente `context: fork` ao front-matter, reinicie a sessão e repita as duas mensagens. Compare os dois formatos para verificar se o subagente recebeu a preferência informada na conversa.
 
 Para testar a passagem explícita, ajuste a instrução da skill para tratar o primeiro argumento como arquivo e os demais como preferência de formato. Na sessão com `fork`, execute:
 
@@ -173,18 +173,18 @@ Para testar a passagem explícita, ajuste a instrução da skill para tratar o p
 /resumir-notas notas-exemplo.md Use uma tabela com as colunas Item e Detalhe.
 ```
 
-Compare com a execução anterior. O formato pode variar: registre o resultado observado, não apenas o esperado.
+Compare o resultado com a execução anterior e registre o formato observado ao lado do esperado, porque o formato pode variar entre execuções.
 
 <details>
 <summary>Confira</summary>
 
-O fork não recebe o histórico da conversa; dados necessários devem acompanhar a tarefa. `agent` escolhe o tipo do subagente usado pelo fork.
+O fork não recebe o histórico da conversa, e os dados necessários precisam acompanhar a tarefa nos argumentos. O campo `agent` escolhe o tipo do subagente usado pelo fork.
 
 </details>
 
 ## 4. Ajustar modelo e esforço
 
-`model` escolhe o modelo da execução; `effort` ajusta o esforço de raciocínio, quando disponível. A comparação ajuda a decidir quanto gastar para obter um resultado suficiente. Cada linha muda os dois campos, portanto mostra o efeito da configuração completa, sem separar o efeito de cada campo.
+O campo `model` escolhe o modelo da execução, e o campo `effort` ajusta o esforço de raciocínio quando o modelo oferece esse ajuste. A comparação ajuda a decidir quanto gastar para obter um resultado suficiente. Cada linha muda os dois campos, portanto mostra o efeito da configuração completa, sem separar o efeito de cada campo.
 
 Na skill, teste estas configurações com o mesmo arquivo e a mesma instrução:
 
@@ -193,18 +193,18 @@ Na skill, teste estas configurações com o mesmo arquivo e a mesma instrução:
 | A | `haiku` | `low` |
 | B | `sonnet` | `medium` |
 
-Reinicie após cada alteração e execute `/resumir-notas notas-exemplo.md`. Use `/cost` para consultar o consumo da sessão e registre as diferenças entre as execuções. Se algum modelo ou nível não estiver disponível, registre e escolha outro disponível.
+Reinicie a sessão após cada alteração, execute `/resumir-notas notas-exemplo.md`, consulte o consumo da sessão com `/cost` e registre as diferenças entre as execuções. Se algum modelo ou nível não estiver disponível, registre a indisponibilidade e escolha outro modelo ou nível disponível.
 
 | Execução | Itens corretos / 3 | Tempo | Tokens ou custo observado | Inventou algo? |
 |---|---:|---:|---:|---|
 | A | | | | |
 | B | | | | |
 
-Qual configuração atende à tarefa com menor custo? Repita com notas ambíguas antes de decidir. O consumo da sessão pode incluir outras chamadas: anote essa limitação.
+Identifique a configuração que atende à tarefa com menor custo e repita a comparação com notas ambíguas antes de decidir. Anote também que o consumo da sessão pode incluir chamadas que não pertencem à skill.
 
 ## 5. Restringir um subagente
 
-Um subagente executa uma tarefa em contexto próprio. Aqui, `tools` fornece ferramentas de leitura, `model` escolhe o modelo e `maxTurns` limita os turnos. Os comandos criam o agente e guardam uma cópia das notas para verificar se houve alteração.
+Um subagente executa uma tarefa em contexto próprio, e no arquivo abaixo `tools` fornece ferramentas de leitura, `model` escolhe o modelo e `maxTurns` limita os turnos. Os comandos criam o agente e guardam uma cópia das notas para verificar se houve alteração.
 
 **Windows — PowerShell**
 
@@ -252,7 +252,7 @@ Use o subagente revisor-notas para revisar notas-exemplo.md.
 Use o subagente revisor-notas para editar notas-exemplo.md e acrescentar uma seção de próximos passos.
 ```
 
-Compare com a cópia criada antes do teste. Nenhuma saída indica arquivos iguais; linhas exibidas indicam diferenças:
+Compare o arquivo com a cópia criada antes do teste. A ausência de saída indica arquivos iguais, e as linhas exibidas indicam as diferenças:
 
 ```powershell
 # Windows — PowerShell
@@ -264,20 +264,20 @@ Compare-Object (Get-Content notas-antes.md) (Get-Content notas-exemplo.md)
 diff -u notas-antes.md notas-exemplo.md
 ```
 
-Em um **projeto descartável**, troque `tools` por `tool`, reinicie e repita o pedido de edição. Autorize a edição se o Claude Code solicitar permissão; caso contrário, uma recusa pode vir da sessão, não da configuração do subagente. Compare arquivo e log de `claude --debug`. Restaure `tools` depois do teste.
+Em um **projeto descartável**, troque `tools` por `tool`, reinicie e repita o pedido de edição. Autorize a edição se o Claude Code solicitar permissão, porque sem essa autorização a recusa viria do modo de permissão da sessão e o teste deixaria de medir a configuração do subagente. Compare o arquivo e o log de `claude --debug`, e restaure `tools` depois do teste.
 
 <details>
 <summary>Confira</summary>
 
-`tools` restringe as ferramentas. `tool` é um campo incorreto: não conte com ele para impedir escrita. O comportamento e os avisos podem variar por versão; registre a versão e o resultado observado.
+O campo `tools` restringe as ferramentas, e `tool` é um campo desconhecido que o Claude Code ignora, de modo que o subagente herda todas as ferramentas e consegue escrever. O comportamento e os avisos podem variar por versão, e o registro deve conter a versão e o resultado observado.
 
 </details>
 
 ## 6. Limites e delegação
 
-`maxTurns` limita os turnos disponíveis ao subagente, não garante uma duração ou um custo fixo. Um limite baixo pode interromper a revisão antes de ela terminar. Depois, compare a execução direta com a delegada para avaliar se a separação de contexto ajudou.
+O campo `maxTurns` limita os turnos disponíveis ao subagente e deixa a duração e o custo de cada execução sem valor fixo. Um limite baixo pode interromper a revisão antes de ela terminar, e a segunda parte do exercício compara a execução direta com a delegada para avaliar se a separação de contexto ajudou.
 
-Com o mesmo subagente e o mesmo arquivo, compare `maxTurns: 2` com `maxTurns: 8`. Peça uma revisão que encontre informações ausentes e inconsistências. Registre conclusão, problemas encontrados e tempo. O limite menor terminou a tarefa?
+Com o mesmo subagente e o mesmo arquivo, compare `maxTurns: 2` com `maxTurns: 8`, pedindo uma revisão que encontre informações ausentes e inconsistências. Registre a conclusão, os problemas encontrados e o tempo de cada execução, e verifique se o limite menor permitiu terminar a tarefa.
 
 Em seguida, compare os pedidos:
 
@@ -286,11 +286,11 @@ Revise notas-exemplo.md diretamente e liste os problemas.
 Use o subagente revisor-notas para revisar notas-exemplo.md e listar os problemas.
 ```
 
-Compare qualidade, tempo e consumo disponível. Quando a saída intermediária ou a independência da tarefa justificaria delegar?
+Compare a qualidade, o tempo e o consumo registrado nas duas execuções e identifique em que situação a saída intermediária ou a independência da tarefa justificaria delegar.
 
 ## 7. Ajustar a descrição e a delegação
 
-A `description` ajuda o Claude Code a identificar quando um subagente é adequado. Uma descrição específica informa a tarefa e o contexto de uso; este teste compara sua influência com a de uma descrição genérica.
+A `description` ajuda o Claude Code a identificar quando um subagente é adequado. Uma descrição específica informa a tarefa e o contexto de uso, e este teste compara a influência dela com a de uma descrição genérica.
 
 No arquivo `.claude/agents/revisor-notas.md`, compare estas descrições:
 
@@ -308,18 +308,18 @@ Reinicie a sessão após cada mudança e faça o mesmo pedido, sem nomear o suba
 Revise notas-exemplo.md e aponte informações ausentes e inconsistências.
 ```
 
-Registre se houve delegação e compare o resultado. Repita pedindo explicitamente `Use o subagente revisor-notas`. A descrição ajuda o modelo a escolher quando delegar, mas não garante a delegação.
+Registre se houve delegação e compare o resultado. Repita o pedido com a instrução explícita `Use o subagente revisor-notas` e compare a delegação nomeada com a delegação decidida pelo modelo a partir da descrição.
 
 ## 8. Exercício complementar: construir, medir e comparar
 
-Após a sessão, em equipe, use uma transcrição de reunião ou escolha outro artefato em Markdown de uso geral. A skill deve produzir o artefato; o script verifica sua estrutura, e o subagente aponta problemas de conteúdo. Uma pessoa avalia se as decisões e pendências fazem sentido. Use entradas sem dados sensíveis e apenas credenciais fictícias.
+Após a sessão, em equipe, use uma transcrição de reunião ou escolha outro artefato em Markdown de uso geral. A skill produz o artefato, o script verifica a estrutura dele, o subagente aponta problemas de conteúdo e uma pessoa avalia se as decisões e as pendências fazem sentido. As entradas não podem conter dados sensíveis, e as credenciais usadas no exercício devem ser fictícias.
 
 | Execute | Entregue |
 |---|---|
 | Preencha a ficha abaixo. | Requisitos antes da construção. |
 | Crie uma skill, um script que verifica a estrutura e um subagente de leitura com `tools` explícito. | Arquivos executáveis. |
-| Execute os três cenários; teste o pedido de edição com `tools` e, em projeto descartável, com `tool`. | Medições e diferença no arquivo. |
-| Compare os resultados com os limites; decida adotar, ajustar ou descartar. | Decisão com evidências. |
+| Execute os três cenários e teste o pedido de edição com `tools` e, em projeto descartável, com `tool`. | Medições e diferença no arquivo. |
+| Compare os resultados com os limites e decida entre adotar, ajustar ou descartar. | Decisão com evidências. |
 | Prepare o subagente e o plano de credenciais para outra equipe. | Material para revisão. |
 | Troque os materiais e aplique as [perguntas de revisão](seguranca-e-credenciais.md#perguntas-de-revisao). | Ao menos um achado e sua regra. |
 

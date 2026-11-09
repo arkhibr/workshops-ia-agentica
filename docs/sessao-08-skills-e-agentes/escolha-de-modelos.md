@@ -1,10 +1,10 @@
 # Escolha de modelos
 
-A escolha do modelo de uma skill ou de um agente é uma decisão de projeto que equilibra capacidade, velocidade e custo, e não uma configuração herdada da conversa. Esta página reúne os critérios e as duas estratégias de partida do [guia de escolha de modelo](../referencia/bibliografia.md#anthropic-choosing-the-right-model-documentacao) da Anthropic e mostra onde cada decisão aparece nos arquivos de skill e de subagente. A página preenche, na [ficha de requisitos](index.md#a-ficha-de-requisitos), a linha "Modelo e esforço".
+A escolha do modelo de uma skill ou de um agente é uma decisão de projeto, tomada pelos critérios descritos abaixo e declarada no arquivo para que o modelo da conversa não seja herdado sem análise. Esta página reúne os critérios e as duas estratégias de partida do [guia de escolha de modelo](../referencia/bibliografia.md#anthropic-choosing-the-right-model-documentacao) da Anthropic e mostra onde cada decisão aparece nos arquivos de skill e de subagente. A página preenche, na [ficha de requisitos](index.md#a-ficha-de-requisitos), a linha "Modelo e esforço".
 
 ## Quatro critérios
 
-O guia recomenda avaliar, antes de escolher, quatro fatores. A capacidade responde que recursos a tarefa exige. A velocidade responde em quanto tempo a resposta precisa chegar, e o modo rápido entrega até 2,5 vezes mais velocidade de saída, a preço premium, nos modelos que o suportam. O custo responde ao orçamento de desenvolvimento e de produção. O esforço é um parâmetro, disponível em vários modelos, que troca inteligência por latência e custo dentro de um mesmo modelo, e o guia afirma que ajustar o esforço costuma ser uma alavanca melhor que trocar de modelo.
+O guia recomenda avaliar, antes de escolher, quatro fatores. A capacidade responde que recursos a tarefa exige. A velocidade responde em quanto tempo a resposta precisa chegar, e o modo rápido entrega até 2,5 vezes mais velocidade de saída, a preço premium, nos modelos que o suportam. O custo responde ao orçamento de desenvolvimento e de produção. O esforço é um parâmetro, disponível em vários modelos, que troca inteligência por latência e custo dentro de um mesmo modelo, e o guia afirma que ajustar o esforço costuma ter efeito melhor que trocar de modelo.
 
 ## Duas estratégias de partida
 
@@ -13,7 +13,7 @@ O guia recomenda avaliar, antes de escolher, quatro fatores. A capacidade respon
 | Eficiência primeiro | Implementar com o Claude Haiku 5.5, testar a fundo e subir de modelo apenas diante de uma lacuna de capacidade específica | Protótipos, latência apertada, volume alto de tarefas simples, custo sensível |
 | Capacidade primeiro | Implementar com o Claude Opus 5.5, otimizar o prompt para ele, avaliar e reduzir o esforço ou o modelo ao longo do tempo | Raciocínio complexo, programação avançada e agentes de alta autonomia, em que a precisão pesa mais que o custo |
 
-Se as avaliações no esforço `xhigh` ou `max` ainda ficam abaixo do necessário em raciocínio exigente ou em trabalho agêntico de longo horizonte, o guia indica passar ao Claude Fable 5.1. Os dois caminhos têm o mesmo requisito: um conjunto de avaliações próprio. O guia classifica esse conjunto como o passo mais importante do processo.
+Se as avaliações no esforço `xhigh` ou `max` ainda ficam abaixo do necessário em raciocínio exigente ou em trabalho agêntico de longo horizonte, o guia indica passar ao Claude Fable 5.1. Os dois caminhos exigem um conjunto de avaliações próprio da equipe, que o guia classifica como o passo mais importante do processo de escolha.
 
 ![Duas faixas de estratégia. Eficiência primeiro: implementar com Claude Haiku 5.5, testar a fundo e subir de modelo só diante de uma lacuna de capacidade específica. Capacidade primeiro: implementar com Claude Opus 5.5, otimizar o prompt e avaliar, e reduzir o esforço ou o modelo ao longo do tempo. Abaixo, o esforço como alavanca dentro do modelo e a indicação do Claude Fable 5.1 quando xhigh ou max ainda ficam abaixo do necessário.](assets/estrategias-de-escolha-de-modelo.png)
 

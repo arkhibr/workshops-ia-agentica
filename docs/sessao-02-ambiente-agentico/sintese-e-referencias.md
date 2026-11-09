@@ -3,19 +3,19 @@
 ## Quatorze ideias essenciais
 
 1. **Um ambiente agêntico tem quatro peças: aplicação agêntica, arquivo de configuração, MCP e isolamento por ramo.** Só a primeira depende da ferramenta que o time escolheu. As outras três funcionam com qualquer agente.
-2. **O conjunto que cerca o modelo tem nome: arnês.** A equação é agente = modelo + arnês, e das quatro peças do ambiente agêntico, três são arnês. Reconstruir o arnês costuma render mais que trocar de modelo, e a troca de modelo é a última decisão da fila.
-3. **Cada tipo de falha do agente aponta para uma peça diferente do arnês.** Convenção violada indica arquivo de instrução. Ferramenta errada indica catálogo. Erro que atravessa várias etapas indica ausência de verificação. Mexer na peça errada gasta tempo sem mover o resultado.
+2. **O conjunto que cerca o modelo tem nome: arnês.** A equação é agente = modelo + arnês, e das quatro peças do ambiente agêntico, três são arnês. Ajustar o arnês costuma render mais que trocar de modelo, e por isso a troca de modelo fica por último.
+3. **Cada tipo de falha do agente aponta para uma peça diferente do arnês.** Convenção violada indica o arquivo de instrução, ferramenta errada indica o catálogo e erro que atravessa várias etapas indica ausência de verificação. Mexer na peça errada consome tempo sem alterar o resultado.
 4. **A engenharia de contexto é mais ampla que a engenharia de prompt.** Ela cuida de tudo que chega à janela numa execução: o texto da instrução, o histórico, os arquivos lidos e o retorno das ferramentas.
 5. **A janela de contexto degrada gradualmente conforme cresce, sem um ponto de corte visível.** A degradação de contexto (*context rot*) é o motivo técnico por trás de recuperação just-in-time, compactação e sub-agentes com contexto isolado.
 6. **Ferramentas são o contrato entre o agente e o ambiente.** Uma ferramenta mal desenhada consome espaço de contexto que poderia ir para informação relevante.
-7. **O MCP transforma M×N integrações numa soma.** Cada modelo e cada ferramenta implementam o protocolo uma vez, em vez de cada par precisar da própria integração. As três primitivas do protocolo (*tools*, *resources*, *prompts*) ajudam a decidir que tipo de acesso pedir depois de decidir conectar.
+7. **O MCP reduz M×N integrações a M+N.** Cada modelo e cada ferramenta implementam o protocolo uma vez, e nenhum par precisa de integração própria. As três primitivas do protocolo (*tools*, *resources*, *prompts*) ajudam a decidir que tipo de acesso pedir depois de decidir conectar.
 8. **O AGENTS.md é um padrão aberto.** Mantido pela [Agentic AI Foundation (Linux Foundation)](../referencia/bibliografia.md#agentic-ai-foundation-agentsmd-standard), lido por agentes de múltiplos fornecedores concorrentes, com suporte nativo a mais de um arquivo por monorepo.
-9. **Uma linha de arquivo de instrução só vale a pena se muda uma decisão real do agente.** "Escreva código limpo" não muda nada. "O comando de teste é X" muda.
+9. **Uma linha de arquivo de instrução só vale a pena se muda uma decisão real do agente.** "O comando de teste é X" atende ao critério, porque informa algo que o agente não saberia sem o arquivo.
 10. **Conectar um servidor MCP exige avaliar origem, escopo e auditabilidade antes de autorizar.** Servidor de terceiro pede mais cautela que servidor mantido pelo próprio fornecedor da ferramenta.
 11. **Isolamento por ramo resolve conflito de sistema de arquivos.** Conflito de comunicação entre pessoas é outro problema, mesmo quando os dois aparecem juntos no mesmo incidente.
 12. **Arquivo de instrução decai como qualquer documentação.** A correção é revisá-lo no mesmo PR que muda a convenção que ele documenta, e verificar periodicamente, manualmente ou pela esteira de CI, se os comandos documentados ainda existem.
 13. **Isolar por ramo custa mais que um comando de git.** Cada worktree precisa da própria instalação de dependências. Sem automatizar esse passo, a fricção de esperar a instalação desestimula o hábito exatamente nos casos em que ele mais evitaria um conflito.
-14. **Autonomia é uma propriedade do ambiente.** O mesmo modelo pode operar sob supervisão apertada ou com autonomia ampla, dependendo de como a aplicação agêntica foi configurada. A decisão certa depende de reversibilidade da ação e do raio de impacto contido pelo isolamento.
+14. **Autonomia é uma propriedade do ambiente.** O mesmo modelo pode operar sob supervisão constante ou com autonomia ampla, dependendo de como a aplicação agêntica foi configurada. A decisão depende da reversibilidade da ação e de o isolamento restringir ou não o efeito de um erro.
 
 ## Checklist antes de encerrar a sessão
 
@@ -23,7 +23,7 @@
 - [ ] Cada participante consegue classificar um erro real de agente numa linha da tabela de diagnóstico do arnês.
 - [ ] Cada participante saiu com um `AGENTS.md`/`CLAUDE.md` real, escrito para um repositório em uso real.
 - [ ] O grupo discutiu o Estudo de caso e chegou a um critério (não a uma opinião) para quando isolamento por ramo é obrigatório.
-- [ ] Ninguém saiu achando que MCP é uma ferramenta específica — é um protocolo que qualquer ferramenta pode implementar.
+- [ ] Ninguém saiu achando que MCP é uma ferramenta específica, porque ele é um protocolo que qualquer ferramenta pode implementar.
 - [ ] O grupo sabe nomear os três critérios (origem, escopo, auditabilidade) para avaliar um servidor MCP antes de conectar.
 - [ ] O grupo sabe explicar por que um worktree novo pode exigir instalação de dependências antes de estar pronto para uso.
 - [ ] Cada participante sabe dizer qual modo de permissão o próprio agente usa hoje, e se essa escolha foi deliberada.
@@ -34,7 +34,7 @@
 2. Sei dizer, para o meu próprio repositório, uma linha de arquivo de instrução que muda comportamento real do agente?
 3. Consigo explicar o problema M×N que o MCP resolve, com um exemplo próprio?
 4. Sei distinguir um conflito de sistema de arquivos (que isolamento por ramo resolve) de um conflito de comunicação entre pessoas (que não resolve)?
-5. Diante de um agente que erra, sei dizer qual peça do arnês investigar primeiro, em vez de propor trocar de modelo?
+5. Diante de um agente que erra, sei dizer qual peça do arnês investigar primeiro, antes de propor a troca de modelo?
 6. Antes de conectar um servidor MCP novo, sei dizer quais das três primitivas (*tool*, *resource*, *prompt*) ele deveria expor para o meu caso, e qual escopo de permissão pedir?
 
 Se duas ou mais respostas forem "ainda não", releia [Engenharia de contexto](engenharia-de-contexto.md) e [MCP e ferramentas externas](mcp.md) antes da Sessão 3.

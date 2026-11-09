@@ -2,17 +2,17 @@
 
 ## Onze ideias essenciais
 
-1. **Vibe coding, assistência de codificação e SDD são famílias de risco.** Ninguém precisa subir de um para o outro. A escolha depende do risco que a tarefa carrega.
+1. **Vibe coding, assistência de codificação e SDD são famílias de risco.** Não há ordem obrigatória de progressão entre os três modos, e a escolha depende do risco que a tarefa carrega.
 2. **Um prompt funciona como programa porque o modelo aprende em contexto**, sem ajuste de peso. [Brown et al. (2020)](../referencia/bibliografia.md#brown-et-al-language-models-are-few-shot-learners-2020) demonstraram esse mecanismo no artigo que apresentou o GPT-3.
-3. **A janela de contexto é o programa.** O que não está escrito explicitamente no pedido não existe para o agente, por mais óbvio que pareça para quem escreveu.
-4. **O que separa um agente de um chat é o ciclo de raciocínio e ação** ([Yao et al., ReAct](../referencia/bibliografia.md#yao-et-al-react-2023)). O tamanho do modelo pesa muito menos nessa diferença.
-5. **Piso, teto e julgamento humano sobem em ritmos diferentes.** "O código roda" e "o código está correto" são duas afirmações diferentes, e confundi-las é o erro mais caro desta lista.
-6. **Quem reúne a regra de negócio inteira antes de escrever o pedido é uma pessoa, e não o modelo.** É esse trabalho que separa um prompt intuitivo de um estruturado, e o modelo quase nunca avisa que ele faltou.
-7. **O ganho de produtividade depende do tipo de tarefa, com números reais para provar.** [Peng et al.](../referencia/bibliografia.md#peng-et-al-copilot-productivity-2023) mediram 55,8% de ganho numa tarefa nova e delimitada. O [METR](../referencia/bibliografia.md#metr-experienced-developer-productivity-2025) mediu 19% de perda numa tarefa de manutenção em sistema maduro, e os próprios desenvolvedores não perceberam a perda.
+3. **O agente só considera o que está na janela de contexto.** Uma regra que não está escrita explicitamente no pedido fica fora do alcance do agente, por mais óbvia que pareça para quem escreveu.
+4. **O que separa um agente de um chat é o ciclo de raciocínio e ação** ([Yao et al., ReAct](../referencia/bibliografia.md#yao-et-al-react-2023)), com peso maior que o do tamanho do modelo.
+5. **Piso, teto e julgamento humano mudam em ritmos diferentes.** "O código roda" descreve o piso, "o código está correto" descreve o teto, e só a verificação feita por uma pessoa permite passar da primeira afirmação para a segunda.
+6. **Uma pessoa precisa reunir a regra de negócio completa antes de escrever o pedido.** Esse trabalho distingue um prompt intuitivo de um estruturado, e o modelo raramente avisa quando ele faltou.
+7. **O ganho de produtividade depende do tipo de tarefa.** [Peng et al.](../referencia/bibliografia.md#peng-et-al-copilot-productivity-2023) mediram 55,8% de ganho numa tarefa nova e delimitada. O [METR](../referencia/bibliografia.md#metr-experienced-developer-productivity-2025) mediu 19% de perda numa tarefa de manutenção em sistema maduro, e os próprios desenvolvedores não perceberam a perda.
 8. **Decida pela simplicidade.** A recomendação da [Anthropic em "Building Effective Agents"](../referencia/bibliografia.md#anthropic-building-effective-agents-2024) vale para os três modos desta sessão: comece pelo mais simples que a tarefa permitir.
-9. **A capacidade de resolver problemas reais deu um salto medido.** O [SWE-bench](../referencia/bibliografia.md#jimenez-et-al-swe-bench-2024) foi de 1,96% de resolução em 2024 para cerca de 97% em 2026. É o mesmo "works.any() vira works.all()" de [Karpathy](../referencia/bibliografia.md#karpathy-software-is-changing-again-2025), numa escala de dois anos.
+9. **A taxa de resolução de problemas reais cresceu de forma medida.** O [SWE-bench](../referencia/bibliografia.md#jimenez-et-al-swe-bench-2024) foi de 1,96% de resolução em 2024 para cerca de 97% em 2026, evolução que corresponde à passagem de works.any() para works.all() descrita por [Karpathy](../referencia/bibliografia.md#karpathy-software-is-changing-again-2025).
 10. **Reversibilidade e tempo de vida importam porque corrigir cedo é mais barato.** [Boehm](../referencia/bibliografia.md#boehm-software-engineering-economics-1981) documentou isso em 1981, décadas antes de qualquer LLM: quanto mais tarde uma ambiguidade aparece, mais caro fica resolvê-la.
-11. **Escolher modelo pelo nome mais falado repete o erro do vibe coding, que é aceitar sem verificar.** Use benchmark de engenharia real e independente (como o [DeepSWE](../referencia/bibliografia.md#datacurve-deepswe-leaderboard)), desconfie de número autorreportado pelo fabricante, e lembre que o placar muda a cada poucas semanas.
+11. **Escolher modelo pelo nome mais falado repete o erro do vibe coding, que é aceitar sem verificar.** Use benchmark de engenharia real e independente (como o [DeepSWE](../referencia/bibliografia.md#datacurve-deepswe-leaderboard)), desconfie de número autorreportado pelo fabricante e lembre que o placar muda a cada poucas semanas.
 
 ## Checklist antes de encerrar a sessão
 

@@ -10,13 +10,13 @@ Um pedido vago ao agente ("ative o desconto de atacado") produz código que comp
 
 ## Como usar este material
 
-Estas páginas não são leitura prévia. O instrutor conduz a exploração dos conceitos ao vivo, intercalada com a prática, e cada bloco de teoria tem uma atividade correspondente logo em seguida. Chegar sem ter lido nada é a expectativa normal.
+Estas páginas não são leitura prévia, e o participante pode chegar à sessão sem ter lido nenhuma delas. O instrutor conduz a exploração dos conceitos ao vivo, intercalada com a prática, e cada bloco de teoria tem uma atividade correspondente logo em seguida.
 
-## Dois temas, duas profundidades
+## Organização em dois temas
 
-A sessão organiza o conteúdo em dois temas, e cada tema percorre a mesma progressão de profundidade: **conceitos** (teoria comum a todos), **exemplo de aplicação de IA** (demonstração conduzida pelo instrutor, comum a todos), e dois exercícios finais — **geral**, para quem não escreve código, e **especialista**, para quem implementa. Os dois exercícios partem do mesmo pedido e chegam à mesma especificação, um verificando por retrotradução e conferência manual, o outro por execução de teste.
+A sessão organiza o conteúdo em dois temas, e cada tema percorre a mesma progressão de profundidade: **conceitos** (teoria comum a todos), **exemplo de aplicação de IA** (demonstração conduzida pelo instrutor, comum a todos), e dois exercícios finais: **geral**, para quem não escreve código, e **especialista**, para quem implementa. Os dois exercícios partem do mesmo pedido e chegam à mesma especificação. O exercício geral verifica o resultado por retrotradução e conferência manual, e o especialista verifica por execução de teste.
 
-- **Tema 1 — Intervenção socrática.** O ciclo de especificação e o método que mantém mais de uma leitura de um pedido vago viva por mais tempo, antes de convergir cedo demais para a primeira interpretação.
+- **Tema 1 — Intervenção socrática.** O ciclo de especificação e o método que mantém mais de uma leitura de um pedido vago em consideração até que as respostas de quem pediu permitam escolher entre elas.
 - **Tema 2 — Decomposição de requisitos.** O vocabulário que separa regra de negócio, requisito funcional e requisito não funcional, e o critério que torna cada um verificável.
 
 ## Objetivos de aprendizagem
@@ -24,7 +24,7 @@ A sessão organiza o conteúdo em dois temas, e cada tema percorre a mesma progr
 Ao final desta sessão, o participante deve ser capaz de:
 
 1. **Aplicar** o ciclo explorar → perguntar → propor → especificar a um pedido vago antes de acionar o agente.
-2. **Conduzir** uma intervenção socrática que mantém mais de uma leitura de um pedido viva, em vez de convergir para a primeira interpretação.
+2. **Conduzir** uma intervenção socrática que mantém mais de uma leitura de um pedido em consideração até que as respostas permitam escolher entre elas.
 3. **Classificar** um requisito como regra de negócio (BR), requisito funcional (FR) ou requisito não funcional (NFR).
 4. **Escrever** um requisito não funcional como cenário de qualidade verificável, com a função de aptidão que o mantém verdadeiro.
 5. **Escrever** uma especificação que um agente segue sem precisar decidir sozinho o que o pedido queria dizer.
@@ -48,7 +48,7 @@ O conteúdo soma 115 minutos, e o intervalo consome os 5 restantes.
 
 ## Como conduzir
 
-As quatro páginas de conceitos e exemplo têm caixas de destaque embutidas no texto. Pare nesses pontos, em lugar de ler a pergunta e seguir em frente.
+As quatro páginas de conceitos e exemplo têm caixas de destaque embutidas no texto. Pare em cada caixa e dê tempo para a turma responder à pergunta antes de continuar a exposição.
 
 Ao chegar no exercício, a trilha especialista monta o projeto do zero a partir dos blocos de código da própria página, o que leva poucos minutos e garante que todos partam do mesmo estado. A trilha geral parte da regra descrita em texto na própria página do exercício, e verifica o resultado por retrotradução e conferência manual, sem terminal.
 

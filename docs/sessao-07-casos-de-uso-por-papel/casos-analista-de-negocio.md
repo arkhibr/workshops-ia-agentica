@@ -14,29 +14,29 @@ A norma [ISO/IEC/IEEE 29148:2018](../referencia/bibliografia.md#isoiecieee-29148
 
 | Caso | Entrada e saída | Pedido-base | Conferência |
 |---|---|---|---|
-| Processar entrevistas | Transcrição de conversa com especialista vira termos, regras e dúvidas | "Separe o que o especialista afirmou do que você inferiu e liste as dúvidas" | Devolver a lista de regras ao especialista e pedir correção |
-| Montar glossário do domínio | Documentos viram vocabulário com definição e sinônimos a evitar (Sessão 4) | "Defina cada termo e liste os sinônimos usados nos documentos" | O especialista valida cada definição |
-| Formalizar regra em RuleSpeak | Regra em prosa vira sentença numerada com "deve", "não deve" ou "pode ... somente se" (Sessão 4) | "Reescreva a regra numa das três formas e cite a evidência" | Retrotradução em conversa limpa, comparada com a regra original |
-| Construir tabela de decisão | Regras com várias condições viram tabela com política de acerto declarada (Sessão 4) | "Monte a tabela e declare a política de acerto" | Preencher à mão quatro casos e comparar com o resultado da tabela |
-| Modelar processo atual e futuro | Descrição do processo vira fluxo antes e depois, em notação [BPMN](../referencia/bibliografia.md#omg-bpmn-202-2014) | "Desenhe só os passos citados e marque como lacuna o que faltar" | Quem executa o processo percorre o fluxo e aponta os passos ausentes |
-| Escrever requisitos BR, FR e NFR | Pedido vira requisitos classificados e numerados (Sessão 3) | "Classifique cada requisito e escreva o critério verificável" | Cada requisito tem um teste imaginável, critério da norma 29148 |
-| Verificar por retrotradução | Especificação vira descrição em prosa numa conversa nova (Sessão 3) | "Descreva em prosa o comportamento que esta especificação produz" | Comparar a prosa com a intenção original e registrar a divergência |
-| Preparar perguntas de elicitação | Tema da reunião vira perguntas que expõem ambiguidade (Sessão 3) | "Gere perguntas abertas que revelem o que o pedido deixa em aberto" | O analista descarta as perguntas decorativas, que não mudam a especificação |
-| Avaliar impacto normativo | Norma nova e regras atuais viram lista de regras e sistemas afetados | "Para cada regra, diga se a norma a altera e cite o artigo" | Um especialista confere cada artigo citado, porque o agente pode citar artigo inexistente |
-| Rastrear requisito até o teste | Requisitos e testes viram matriz de rastreabilidade | "Liste requisitos sem teste e testes sem requisito" | Conferir dez linhas da matriz contra os documentos originais |
+| Processar entrevistas | Transcrição de conversa com especialista → termos, regras e dúvidas | "Separe o que o especialista afirmou do que você inferiu e liste as dúvidas" | Devolver a lista de regras ao especialista e pedir correção |
+| Montar glossário do domínio | Documentos → vocabulário com definição e sinônimos a evitar (Sessão 4) | "Defina cada termo e liste os sinônimos usados nos documentos" | O especialista valida cada definição |
+| Formalizar regra em RuleSpeak | Regra em prosa → sentença numerada com "deve", "não deve" ou "pode ... somente se" (Sessão 4) | "Reescreva a regra numa das três formas e cite a evidência" | Retrotradução em conversa limpa, comparada com a regra original |
+| Construir tabela de decisão | Regras com várias condições → tabela com política de acerto declarada (Sessão 4) | "Monte a tabela e declare a política de acerto" | Preencher à mão quatro casos e comparar com o resultado da tabela |
+| Modelar processo atual e futuro | Descrição do processo → fluxo antes e depois, em notação [BPMN](../referencia/bibliografia.md#omg-bpmn-202-2014) | "Desenhe só os passos citados e marque como lacuna o que faltar" | Quem executa o processo percorre o fluxo e aponta os passos ausentes |
+| Escrever requisitos BR, FR e NFR | Pedido → requisitos classificados e numerados (Sessão 3) | "Classifique cada requisito e escreva o critério verificável" | Cada requisito tem um teste imaginável, critério da norma 29148 |
+| Verificar por retrotradução | Especificação → descrição em prosa numa conversa nova (Sessão 3) | "Descreva em prosa o comportamento que esta especificação produz" | Comparar a prosa com a intenção original e registrar a divergência |
+| Preparar perguntas de elicitação | Tema da reunião → perguntas que expõem ambiguidade (Sessão 3) | "Gere perguntas abertas que revelem o que o pedido deixa em aberto" | O analista descarta as perguntas decorativas, que não mudam a especificação |
+| Avaliar impacto normativo | Norma nova e regras atuais → lista de regras e sistemas afetados | "Para cada regra, diga se a norma a altera e cite o artigo" | Um especialista confere cada artigo citado, porque o agente pode citar artigo inexistente |
+| Rastrear requisito até o teste | Requisitos e testes → matriz de rastreabilidade | "Liste requisitos sem teste e testes sem requisito" | Conferir dez linhas da matriz contra os documentos originais |
 
 ## Casos complementares
 
 | Caso | Entrada e saída | Conferência |
 |---|---|---|
-| Revisar ambiguidade em requisito escrito | Texto de requisito vira lista de termos vagos com sugestão de reescrita | O analista aceita ou rejeita cada sugestão |
-| Comparar duas versões de um documento normativo | Duas versões viram lista de diferenças | Conferir cada diferença nos dois textos originais |
-| Extrair regras de documento de política | Documento vira lista de regras candidatas com trecho de origem | O trecho citado existe e sustenta a regra |
-| Resumir documento longo | Norma ou manual vira resumo por seção | Conferir três afirmações do resumo no texto original |
-| Gerar perguntas de validação | Especificação vira perguntas para o usuário confirmar | O analista escolhe as perguntas e conduz a validação |
+| Revisar ambiguidade em requisito escrito | Texto de requisito → lista de termos vagos com sugestão de reescrita | O analista aceita ou rejeita cada sugestão |
+| Comparar duas versões de um documento normativo | Duas versões → lista de diferenças | Conferir cada diferença nos dois textos originais |
+| Extrair regras de documento de política | Documento → lista de regras candidatas com trecho de origem | O trecho citado existe e sustenta a regra |
+| Resumir documento longo | Norma ou manual → resumo por seção | Conferir três afirmações do resumo no texto original |
+| Gerar perguntas de validação | Especificação → perguntas para o usuário confirmar | O analista escolhe as perguntas e conduz a validação |
 
 ## Onde os casos falham
 
-Os casos de formalização e rastreabilidade produzem texto com aparência de rigor, e esse é o risco: uma regra numerada e com evidência citada parece verificada mesmo quando a evidência não existe. A conferência por retrotradução, a devolução ao especialista e a amostra de linhas contra o documento original são os três mecanismos desta página, e nenhum depende de o analista conhecer o domínio melhor do que o especialista. Em resumo de conversas, [Tang et al. (2024)](../referencia/bibliografia.md#tang-et-al-tofueval-2024) encontraram erros factuais em resumos de diálogo gerados por modelos de vários tamanhos, o que justifica a devolução ao especialista nos casos que partem de transcrição.
+Os casos de formalização e rastreabilidade produzem texto com aparência de rigor, e uma regra numerada e com evidência citada parece verificada mesmo quando a evidência não existe. A conferência por retrotradução, a devolução ao especialista e a amostra de linhas contra o documento original são os três mecanismos desta página, e nenhum depende de o analista conhecer o domínio melhor do que o especialista. Em resumo de conversas, [Tang et al. (2024)](../referencia/bibliografia.md#tang-et-al-tofueval-2024) encontraram erros factuais em resumos de diálogo gerados por modelos de vários tamanhos, o que justifica a devolução ao especialista nos casos que partem de transcrição.
 
 **Próxima página:** [Oficina de ferramentas](oficina-de-ferramentas.md).

@@ -1,12 +1,12 @@
 # Skills
 
-Uma **skill** é uma capacidade reutilizável que uma equipe entrega ao agente. Ela reúne instruções, critérios e, quando necessário, modelos e scripts para executar um tipo de tarefa. Em vez de explicar as regras de novo em cada conversa, a equipe as escreve uma vez e as aplica quando precisa.
+Uma **skill** é uma capacidade reutilizável que uma equipe entrega ao agente. Ela reúne instruções, critérios e, quando necessário, modelos e scripts para executar um tipo de tarefa. A equipe escreve as regras uma vez, e o agente passa a aplicá-las em cada conversa em que a skill é acionada.
 
-A skill entra em cena quando a pessoa a chama pelo nome ou quando o agente identifica que ela corresponde ao pedido, conforme a configuração. Ao acioná-la, o agente recebe as instruções e trabalha com a entrada daquele uso. A skill orienta o trabalho, mas não garante que o resultado esteja correto: é preciso testá-lo e conferir o que foi produzido.
+A skill entra em cena quando a pessoa a chama pelo nome ou quando o agente identifica que ela corresponde ao pedido, conforme a configuração. Ao acioná-la, o agente recebe as instruções e trabalha com a entrada daquele uso. O resultado produzido com a skill continua sujeito a erro e precisa ser testado e conferido contra a entrada.
 
 ![Fluxo de uma skill: pedido e transcrição entram no agente, que carrega a skill, utiliza seus modelos e scripts quando necessário e entrega um relatório conferível.](assets/como-funciona-uma-skill.png)
 
-### Um exemplo: analisar reuniões
+### Exemplo de skill para análise de reuniões
 
 Uma equipe precisa transformar transcrições em tarefas e riscos de projeto. Sem uma skill, cada pessoa precisa lembrar de pedir o formato do relatório, a indicação de evidências e o tratamento de informações ausentes. Com a skill `identificando-tarefas-e-riscos`, essas orientações ficam registradas para os próximos usos.
 
@@ -16,13 +16,13 @@ Uma equipe precisa transformar transcrições em tarefas e riscos de projeto. Se
 | **Entrada** | A transcrição da reunião, fornecida no pedido ou em um arquivo. |
 | **Instruções** | Identificar tarefas e riscos, citar trechos da transcrição e marcar dados ausentes como “A confirmar”. |
 | **Recursos** | Um modelo de relatório e um script que verifica sua estrutura. |
-| **Saída e conferência** | Um relatório em Markdown; o script verifica campos e seções, e uma pessoa confere o conteúdo contra a transcrição. |
+| **Saída e conferência** | Um relatório em Markdown. O script verifica campos e seções, e uma pessoa confere o conteúdo contra a transcrição. |
 
-Cada reunião traz uma entrada diferente; a skill preserva as orientações da equipe. O resultado pode variar, pois o agente interpreta a transcrição. Um script pode verificar se o campo “Responsável” existe, mas não garante que o responsável foi identificado corretamente.
+A skill preserva as orientações da equipe de uma reunião para outra, e cada reunião fornece uma entrada diferente. O resultado pode variar, porque o agente interpreta a transcrição, e um script consegue verificar se o campo “Responsável” existe sem conseguir verificar se o responsável identificado é o correto.
 
-### Onde o trabalho acontece?
+### Local de execução da skill
 
-Por padrão, a skill é executada na conversa principal: o agente aplica suas instruções no contexto da conversa. No Claude Code, `context: fork` faz a skill executar em um subagente com contexto separado. A receita continua sendo a da skill; muda onde ela é executada e quais informações da conversa estão disponíveis. Um subagente personalizado, por sua vez, define um especialista que pode receber tarefas diferentes. A [comparação com exemplos](escolher-o-mecanismo.md#skill-com-fork-ou-subagente-qual-e-a-diferenca) mostra as duas configurações lado a lado.
+Por padrão, a skill é executada na conversa principal: o agente aplica suas instruções no contexto da conversa. No Claude Code, `context: fork` faz a skill executar em um subagente com contexto separado. A receita continua sendo a da skill, e o que muda é o lugar de execução e o conjunto de informações da conversa disponíveis para ela. Um subagente personalizado, por sua vez, define um especialista que pode receber tarefas diferentes. A [comparação com exemplos](escolher-o-mecanismo.md#diferenca-entre-skill-com-fork-e-subagente) mostra as duas configurações lado a lado.
 
 A implementação dessa capacidade é uma pasta com `SKILL.md` e, se necessário, arquivos auxiliares. Esta página apresenta como escrever esses arquivos e como o agente encontra e carrega a skill.
 
@@ -222,7 +222,7 @@ O comando `git --version` é igual em macOS, Linux e Windows, e a documentação
     **Claude Code:** as variáveis constam de [Available string substitutions](https://code.claude.com/docs/en/skills#available-string-substitutions), e a injeção de comando de [Inject dynamic context](https://code.claude.com/docs/en/skills#inject-dynamic-context).
     **Codex CLI:** o uso de `$ARGUMENTS` e de injeção de comando em skills do Codex continua sem confirmação, e o estado documentado das skills está em [Build skills](https://learn.chatgpt.com/docs/build-skills).
 
-## Liberar não é restringir
+## Liberação e restrição de ferramentas na skill
 
 O nome `allowed-tools` sugere uma lista de ferramentas permitidas, e a documentação diz o contrário: o campo concede permissão para as ferramentas listadas durante o turno da skill, e todas as outras ferramentas continuam disponíveis, regidas pelas configurações de permissão. A restrição vem de `disallowed-tools`. A tabela resume o que se observou numa skill que pede a criação de um arquivo com a ferramenta `Write`.
 

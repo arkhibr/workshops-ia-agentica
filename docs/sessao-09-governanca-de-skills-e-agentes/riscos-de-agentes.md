@@ -56,9 +56,9 @@ A avaliação pré-registrada de [Magesh et al.](../referencia/bibliografia.md#m
 
 ## Risco escrito como evento e consequência
 
-A ficha de registro de riscos do guia, chamada ficha B, exige que cada risco seja formulado como evento e consequência. A formulação "documento malicioso induz chamada a API externa e expõe dados do usuário" descreve o que acontece, em que ordem e com que dano, e por isso permite escolher um controle e escrever um teste. A formulação "segurança" nomeia uma categoria inteira e deixa a escolha do controle sem critério.
+A ficha de registro de riscos do guia, chamada ficha B, exige que cada risco seja formulado como evento e consequência. A formulação "documento malicioso induz chamada a API externa e expõe dados do usuário" descreve a sequência entre o evento e o dano causado, e por isso permite escolher um controle e escrever um teste. A formulação "segurança" nomeia uma categoria inteira e deixa a escolha do controle sem critério.
 
-![À esquerda, a categoria “segurança”, que não permite escolher controle. À direita, a cadeia que a formulação por evento e consequência permite: o evento de um documento malicioso induzir chamada a API externa, a consequência de expor dados do usuário, o controle de bloqueio de saída de rede e o teste T01. Abaixo, a nota de que uma hipótese registrada vira tarefa de verificação com dono.](assets/risco-como-evento-e-consequencia.png)
+![À esquerda, a categoria “segurança”, que não permite escolher controle. À direita, a cadeia que a formulação por evento e consequência permite: o evento de um documento malicioso induzir chamada a API externa, a consequência de expor dados do usuário, o controle de bloqueio de saída de rede e o teste T01. Abaixo, a nota de que uma hipótese registrada passa a ser uma tarefa de verificação com dono.](assets/risco-como-evento-e-consequencia.png)
 
 A mesma ficha pede que cada linha distinga o fato verificado, a hipótese e a decisão pendente. Um risco registrado como hipótese, como "o token talvez permita escrita", passa a ser uma tarefa de verificação com dono, e o resultado da verificação atualiza a faixa de risco definida na página [Triagem por criticidade](triagem-por-criticidade.md).
 

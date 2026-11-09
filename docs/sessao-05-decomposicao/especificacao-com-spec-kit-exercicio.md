@@ -10,7 +10,7 @@ cd vetor-frete
 git init
 ```
 
-A pasta começa vazia. Todo o código vai sair do pedido do PO.
+A pasta começa vazia, e todo o código do projeto será gerado a partir do pedido do PO.
 
 ## Passo 2: instale o Spec Kit no projeto
 
@@ -80,7 +80,7 @@ Abra a `spec.md` e leia só as seções indicadas.
 | 2 | *Assumptions* e *Edge Cases* | Algum item decide o que o PO não disse, como o valor exato do limite ou o que fazer com entrada inválida? | nenhum / cite o item |
 | 3 | *Success Criteria* | Algum `SC` não tem origem no pedido do PO? | nenhum / cite o `SC` |
 
-Depois, procure na história do atacado um cenário em que o valor do pedido passa de R$ 3.000,00 e o valor depois do desconto não. Um pedido de atacado de R$ 3.500,00 com R$ 600,00 de desconto, por exemplo, fica em R$ 2.900,00 e paga R$ 80,00. Se a spec não tiver nenhum cenário desse tipo, anote: é o caso que a frase "vale o valor do pedido depois do desconto" existe para pegar.
+Depois, procure na história do atacado um cenário em que o valor do pedido passa de R$ 3.000,00 e o valor depois do desconto não. Um pedido de atacado de R$ 3.500,00 com R$ 600,00 de desconto, por exemplo, fica em R$ 2.900,00 e paga R$ 80,00. Se a spec não tiver nenhum cenário desse tipo, anote: é o caso que a frase "vale o valor do pedido depois do desconto" foi escrita para cobrir.
 
 Anote também o ID que a spec deu à regra do frete grátis do atacado. O exercício da segunda metade procura esse ID no código.
 

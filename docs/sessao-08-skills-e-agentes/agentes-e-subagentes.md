@@ -1,14 +1,14 @@
 # Agentes e subagentes
 
-Um **agente** recebe um objetivo e usa um modelo para escolher ações ao longo do trabalho. Ele pode ler um arquivo, decidir que precisa consultar outro, usar uma ferramenta, examinar o resultado e escolher o próximo passo. A pessoa define o objetivo e os limites; o agente conduz a sequência dentro das ferramentas e permissões disponíveis.
+Um **agente** recebe um objetivo e usa um modelo para escolher ações ao longo do trabalho. Ele pode ler um arquivo, decidir que precisa consultar outro, usar uma ferramenta, examinar o resultado e escolher o próximo passo. A pessoa define o objetivo e os limites, e o agente conduz a sequência dentro das ferramentas e permissões disponíveis.
 
-Por exemplo, ao receber “identifique os riscos do projeto nesta transcrição”, o agente pode ler a reunião, localizar trechos relevantes, procurar esclarecimentos em outro documento indicado e apresentar os riscos com evidências. Ele decide os passos conforme o que encontra. Um programa com uma sequência fixa, por outro lado, executa as etapas que foram definidas antecipadamente.
+Por exemplo, ao receber “identifique os riscos do projeto nesta transcrição”, o agente pode ler a reunião, localizar trechos relevantes, procurar esclarecimentos em outro documento indicado e apresentar os riscos com evidências. Ele decide os passos conforme o que encontra, enquanto um programa de sequência fixa executa apenas as etapas definidas antecipadamente.
 
-![Um objetivo chega ao agente; ele escolhe uma ação, usa uma ferramenta, observa o resultado e decide se precisa de outra ação antes de responder.](assets/como-funciona-um-agente.png)
+![Um objetivo chega ao agente, que escolhe uma ação, usa uma ferramenta, observa o resultado e decide se precisa de outra ação antes de responder.](assets/como-funciona-um-agente.png)
 
-### Onde entra o subagente?
+### Papel do subagente
 
-Um **subagente** é um agente auxiliar ao qual o agente principal delega parte do trabalho. Ele recebe uma tarefa e trabalha em contexto separado; ao terminar, devolve seu resultado para a conversa principal. A equipe pode configurar um subagente especializado, por exemplo, para revisar relatórios de reunião sem editar arquivos.
+Um **subagente** é um agente auxiliar ao qual o agente principal delega parte do trabalho. Ele recebe uma tarefa e trabalha em contexto separado e, ao terminar, devolve seu resultado para a conversa principal. A equipe pode configurar um subagente especializado, por exemplo, para revisar relatórios de reunião sem editar arquivos.
 
 ```text
 Pessoa: analise a transcrição e confira o relatório.
@@ -20,9 +20,9 @@ Subagente revisor: compara o relatório com a transcrição e devolve achados.
 Agente principal: apresenta o relatório e os pontos encontrados.
 ```
 
-O subagente é útil quando há uma parte do trabalho que pode ser delegada com objetivo e contexto claros, ou que precisa de ferramentas próprias. Ele não vê automaticamente o histórico da conversa: a delegação precisa incluir os arquivos e as informações necessários. Um contexto separado também não é uma permissão somente de leitura; as ferramentas e permissões devem ser configuradas.
+O subagente é útil quando há uma parte do trabalho que pode ser delegada com objetivo e contexto claros, ou que precisa de ferramentas próprias. Ele não vê automaticamente o histórico da conversa: a delegação precisa incluir os arquivos e as informações necessários. O contexto separado não restringe o subagente à leitura, e as ferramentas e as permissões precisam ser configuradas no arquivo dele.
 
-Uma skill registra um procedimento; um subagente configura um especialista que recebe tarefas. Uma skill com `context: fork` combina as duas ideias: suas instruções são executadas em um subagente. A [comparação com o exemplo da reunião](escolher-o-mecanismo.md#skill-com-fork-ou-subagente-qual-e-a-diferenca) mostra quando escolher cada opção.
+A skill registra um procedimento, e o subagente define um especialista que recebe tarefas variadas, enquanto a skill com `context: fork` executa as instruções de uma skill dentro de um subagente. A [comparação com o exemplo da reunião](escolher-o-mecanismo.md#diferenca-entre-skill-com-fork-e-subagente) mostra quando escolher cada opção.
 
 Esta página apresenta a estrutura do arquivo de subagente, o isolamento de contexto e a configuração de ferramentas e permissões.
 
@@ -79,7 +79,7 @@ Não edite arquivos. Devolva uma lista curta, com a linha de cada problema.
 
 O campo `name` aceita até 256 caracteres, exige um primeiro caractere diferente de `-` e proíbe `:`, símbolo que pertence aos identificadores de plugin, como `meu-plugin:revisor`. Na observação, um arquivo com `name: meu:revisor` não carregou, e o log de depuração registrou `names must not contain ':' (reserved for plugin namespacing)`.
 
-O campo `color` mostra a diferença entre o que a documentação lista e o que a versão instalada aceita. Um subagente com `color: magenta`, valor fora da lista, foi carregado sem nenhum aviso no log da versão 2.1.309, e o efeito visual do valor não foi observado. Uma lista de valores válidos é, por isso, mais segura do que um exemplo copiado de outro projeto.
+O campo `color` mostra a diferença entre o que a documentação lista e o que a versão instalada aceita. Um subagente com `color: magenta`, valor fora da lista, foi carregado sem nenhum aviso no log da versão 2.1.309, e o efeito visual do valor não foi observado. Por isso, o valor de `color` deve ser escolhido na lista documentada, porque um exemplo copiado de outro projeto pode trazer um valor fora dela sem gerar aviso.
 
 !!! note "Claude Code e Codex CLI"
     **Claude Code:** os subagentes ficam em `.claude/agents/` e a [tabela de campos](https://code.claude.com/docs/en/sub-agents#frontmatter-reference) lista cada campo aceito.
@@ -87,11 +87,11 @@ O campo `color` mostra a diferença entre o que a documentação lista e o que a
 
 ## Contexto e isolamento
 
-Cada subagente começa com uma janela de contexto nova, sem ver o histórico da conversa nem os arquivos já lidos, e o corpo do arquivo é o prompt de sistema dele. A saída volumosa, como a de uma suíte de testes, permanece no contexto do subagente, e apenas o resumo retorna à conversa principal. A documentação aponta esse efeito como o principal benefício, e o guia de custo recomenda delegar a subagentes a execução de testes, a busca em documentação e o processamento de logs. Uma skill comum carrega suas instruções na janela principal; com `context: fork`, suas instruções são executadas em um subagente. Para comparar os dois casos com um exemplo completo de reunião, veja [Skill com fork ou subagente: qual é a diferença?](escolher-o-mecanismo.md#skill-com-fork-ou-subagente-qual-e-a-diferenca).
+Cada subagente começa com uma janela de contexto nova, sem ver o histórico da conversa nem os arquivos já lidos, e o corpo do arquivo é o prompt de sistema dele. A saída volumosa, como a de uma suíte de testes, permanece no contexto do subagente, e apenas o resumo retorna à conversa principal. A documentação aponta esse efeito como o principal benefício, e o guia de custo recomenda delegar a subagentes a execução de testes, a busca em documentação e o processamento de logs. Uma skill comum carrega as instruções na janela principal, e com `context: fork` as instruções são executadas em um subagente. A seção [Diferença entre skill com fork e subagente](escolher-o-mecanismo.md#diferenca-entre-skill-com-fork-e-subagente) compara os dois casos com um exemplo completo de reunião.
 
 ![Três colunas comparam onde o trabalho acontece. Na skill, o corpo e a saída das ferramentas somam à janela principal. No subagente, uma janela própria começa vazia, recebe o corpo do arquivo como prompt de sistema e devolve só o resumo. Na skill com context fork, a janela do subagente recebe o corpo da skill como prompt, sem o histórico, e devolve só o resumo.](assets/contexto-skill-subagente-fork.png)
 
-Os pedidos de um subagente contam para os mesmos limites de uso da conversa principal. O isolamento reduz o tamanho do contexto da conversa principal, mas não reduz o consumo total de tokens, que costuma aumentar pela soma dos contextos.
+Os pedidos de um subagente contam para os mesmos limites de uso da conversa principal. O isolamento reduz o tamanho do contexto da conversa principal, e o consumo total de tokens costuma aumentar, porque os contextos de cada janela se somam.
 
 O campo `skills` injeta o conteúdo completo das skills listadas na inicialização do subagente, e uma skill com `disable-model-invocation: true` não pode ser pré-carregada dessa forma. Um subagente pode criar subagentes próprios, até três camadas abaixo da conversa principal, e a variável `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH` altera o limite. No limite, o Claude Code retira a ferramenta `Agent` do subagente, que executa o trabalho sozinho e devolve um único resumo.
 

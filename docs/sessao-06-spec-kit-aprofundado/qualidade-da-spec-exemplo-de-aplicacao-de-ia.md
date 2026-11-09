@@ -124,7 +124,7 @@ controle.
 lista no registro e continua nela na liquidação. |
 ```
 
-A resposta "C" fechou a brecha. A segunda pergunta pediu a confirmação da RN-06, que o agente havia deduzido, e a resposta "yes" a transformou em regra do PO. Depois disso, o agente encerrou com duas perguntas, antes do limite de cinco, com a justificativa de que "nada mais que ficou em aberto mudaria a implementação ou os testes", e gravou na spec a seção a seguir, aqui com o texto das perguntas encurtado:
+A resposta "C" resolveu essa lacuna. A segunda pergunta pediu a confirmação da RN-06, que o agente havia deduzido, e a resposta "yes" a transformou em regra do PO. Depois disso, o agente encerrou com duas perguntas, antes do limite de cinco, com a justificativa de que "nada mais que ficou em aberto mudaria a implementação ou os testes", e gravou na spec a seção a seguir, aqui com o texto das perguntas encurtado:
 
 ```text
 ## Clarifications

@@ -8,11 +8,11 @@ Esta é uma demonstração conduzida pelo instrutor. O objetivo é acompanhar o 
 
 > "Ative o desconto de atacado que a gente conversou semana passada."
 
-Isso é tudo que o time recebeu. Nenhuma faixa, nenhum valor, nenhuma menção ao teto que já existe para os outros clientes.
+Essa frase é tudo que o time recebeu. Ela não informa a faixa nem o valor de corte e não menciona o teto que já vale para os outros clientes.
 
 ## Explorar
 
-Antes da primeira pergunta, o código já revela parte da resposta: `calcularDesconto(valorTotal, tipoCliente)` já aceita `tipoCliente`, e uma conversa anterior documentou que a intenção sempre foi uma faixa de 20% acima de R$ 10.000,00. Isso ainda não é a especificação, mas evita perguntar algo cuja resposta já está registrada no código.
+Antes da primeira pergunta, o código já revela parte da resposta: `calcularDesconto(valorTotal, tipoCliente)` já aceita `tipoCliente`, e uma conversa anterior documentou que a intenção sempre foi uma faixa de 20% acima de R$ 10.000,00. Essa informação ainda precisa ser confirmada com quem pediu, e com ela o time deixa de perguntar algo cuja resposta já está registrada no código.
 
 ## Perguntar
 
@@ -24,13 +24,13 @@ Antes da primeira pergunta, o código já revela parte da resposta: `calcularDes
 | O que acontece se `tipoCliente` vier diferente de `'padrao'` ou `'atacado'`? | Já lança erro hoje, e continua assim |
 | A faixa de atacado pode ficar mais lenta que as outras, já que envolve mais um cálculo? | Não. O checkout roda sob pico de tráfego e precisa continuar respondendo rápido para todo tipo de cliente |
 
-Cinco perguntas, cinco respostas, e cada uma já é uma regra de negócio ou de qualidade que precisa entrar na especificação.
+Cada uma das cinco respostas contém uma regra de negócio ou um requisito de qualidade que precisa entrar na especificação.
 
 ## Propor
 
 > Proposta: implementar a faixa de 20% de desconto para clientes atacado, com pedidos acima de R$ 10.000,00 (exclusive), respeitando o teto de R$ 1.000,00 já existente. Nenhuma outra faixa muda.
 
-Três frases, devolvidas para quem pediu antes de especificar em detalhe, no ponto mais barato para descobrir se a proposta pegou o problema certo.
+A proposta volta para quem pediu antes da especificação detalhada, porque nesse ponto corrigir um entendimento errado do problema custa menos do que em qualquer etapa posterior.
 
 ## Especificar
 
@@ -59,18 +59,18 @@ Três frases, devolvidas para quem pediu antes de especificar em detalhe, no pon
 
 | # | Valor do pedido | Tipo de cliente | Desconto esperado |
 |---|---|---|---|
-| 1 | R$ 10.000,00 | atacado | R$ 1.000,00 (faixa de 15%, não a nova) |
+| 1 | R$ 10.000,00 | atacado | R$ 1.000,00 (faixa de 15%, porque "acima de" é estrito) |
 | 2 | R$ 10.000,01 | atacado | R$ 1.000,00 (20% seria R$ 2.000,00, mas o teto prevalece) |
 | 3 | R$ 6.000,00 | atacado | R$ 900,00 (faixa de 15%, sem mudança) |
 
 ## Retrotradução da especificação
 
-A especificação acima foi escrita por quem conduziu a conversa, e quem escreve enxerga nela a intenção que tinha na cabeça, não apenas o que o texto diz. A retrotradução separa as duas coisas: abre-se uma conversa nova com o agente, sem nenhum histórico desta sessão, cola-se somente as regras e os requisitos, e pede-se a descrição em prosa do comportamento que eles produzem, sem julgamento e sem sugestão de melhoria.
+A especificação acima foi escrita por quem conduziu a conversa, e quem escreve tende a ler nela, além do que o texto diz, a intenção que tinha ao escrever. A retrotradução separa as duas leituras: abre-se uma conversa nova com o agente, sem nenhum histórico desta sessão, cola-se somente as regras e os requisitos, e pede-se a descrição em prosa do comportamento que eles produzem, sem julgamento e sem sugestão de melhoria.
 
-O que volta é a leitura de quem só tem o texto, e a conferência é comparar essa leitura com a intenção original. Três divergências aparecem com frequência nesta especificação: a faixa de atacado substituir ou somar à faixa por volume, o valor de R$ 10.000,00 exato entrar ou ficar de fora, e o teto incidir sobre o percentual final ou sobre cada faixa isoladamente. A retrotradução é a única verificação disponível para quem não vai executar código, e ela funciona igualmente bem para quem vai: um caso de teste prova que a implementação corresponde à especificação, e a retrotradução prova que a especificação corresponde à intenção, uma pergunta anterior que nenhum teste responde.
+O que volta é a leitura de quem só tem o texto, e a conferência é comparar essa leitura com a intenção original. Três divergências aparecem com frequência nesta especificação: a faixa de atacado substituir ou somar à faixa por volume, o valor de R$ 10.000,00 exato entrar ou ficar de fora, e o teto incidir sobre o percentual final ou sobre cada faixa isoladamente. A retrotradução é a única verificação disponível para quem não vai executar código. Ela também serve a quem vai executar, porque o caso de teste compara a implementação com a especificação e deixa sem conferência a correspondência entre a especificação e a intenção de quem pediu.
 
 ## Leitura do exemplo
 
-Nenhuma das cinco linhas de regra veio de "pensar bem" sobre o problema. Vieram de perguntar e registrar a resposta antes de escrever código. Se o time tivesse pedido direto ao agente "ative o desconto de atacado", ele teria adivinhado um valor de corte, uma regra de arredondamento na fronteira, uma posição sobre o teto e nenhuma exigência de desempenho sob carga — quatro decisões que aqui vieram de quem realmente sabia a resposta, a última só porque alguém perguntou por um atributo de qualidade em vez de assumir que "rápido o bastante" já estava implícito.
+As cinco linhas de regra vieram de perguntas feitas a quem pediu, com a resposta registrada antes de qualquer código. Se o time tivesse pedido direto ao agente "ative o desconto de atacado", o agente teria escolhido sozinho o valor de corte, o tratamento do valor exato na fronteira e a posição do teto, e não teria registrado exigência de desempenho sob carga. Neste exemplo as quatro decisões vieram de quem conhecia a resposta, e a de desempenho só entrou na especificação porque alguém perguntou explicitamente por um atributo de qualidade.
 
 **Próxima página:** [Exercício de IA — Geral](decomposicao-de-requisitos-exercicio-geral.md).

@@ -18,7 +18,7 @@ git commit -m "plano"
 
 Cada passo deste roteiro termina com um commit. Os comandos do Spec Kit criam e reescrevem arquivos, e o commit separa o que cada comando produziu: depois do comando seguinte, `git diff` mostra só o que ele mudou. Se o resultado de um comando não servir, o commit anterior é o ponto para onde voltar.
 
-**O que o agente gerou.** O comando levou cerca de dois minutos e gerou, além do `plan.md`, quatro documentos de apoio: `research.md`, `data-model.md`, `contracts/` e `quickstart.md`. Dois pontos interessam aqui.
+**O que o agente gerou.** O comando levou cerca de dois minutos e gerou, além do `plan.md`, quatro documentos de apoio: `research.md`, `data-model.md`, `contracts/` e `quickstart.md`, e dois trechos desses documentos interessam à sessão.
 
 *Uma decisão de interface que o PO não tomou.* O `research.md` decidiu como o dinheiro entra na função:
 
@@ -29,9 +29,9 @@ Cada passo deste roteiro termina com um commit. Os comandos do Spec Kit criam e 
   999.9999999 e recusar um pedido que deveria passar.
 ```
 
-A justificativa é boa, e a decisão muda o contrato: quem chama a função passa a enviar `100000` em vez de `1000`. O pedido do PO dizia que o valor "já chega calculado", sem dizer em que formato. Quem integra com o resto da plataforma precisa saber disso antes do código.
+A justificativa técnica é consistente, mas a decisão muda o contrato da função: quem chama a função passa a enviar `100000` em vez de `1000`. O pedido do PO dizia que o valor "já chega calculado", sem dizer em que formato. A equipe que integra a função ao resto da plataforma precisa conhecer esse formato antes da implementação.
 
-*O acréscimo da spec virou contrato.* No exemplo do Tema 1, o FR-003 acrescentou "quanto falta" à regra do mínimo. O `research.md` transformou o acréscimo em campos de retorno:
+*O acréscimo da spec entrou no contrato.* No exemplo do Tema 1, o FR-003 acrescentou "quanto falta" à regra do mínimo. O `research.md` transformou o acréscimo em campos de retorno:
 
 ```text
 - Decision: retorno estruturado { aceito, motivo?, minimoCentavos?,
@@ -41,7 +41,7 @@ A justificativa é boa, e a decisão muda o contrato: quem chama a função pass
   falta.
 ```
 
-Junto vieram a formatação monetária e uma nota sobre o espaço não separável que o `Intl` insere depois de `R$`, que os testes precisam respeitar. Nada disso estava no pedido do PO.
+Junto vieram a formatação monetária e uma nota sobre o espaço não separável que o `Intl` insere depois de `R$`, que os testes precisam respeitar, e nenhum desses itens constava do pedido do PO.
 
 ## Passo 2: gere as tarefas
 
@@ -58,7 +58,7 @@ git add -A
 git commit -m "tarefas"
 ```
 
-**O que o agente gerou.** O `tasks.md` saiu com 27 tarefas em 222 linhas. O esqueleto por fase:
+**O que o agente gerou.** O `tasks.md` saiu com 27 tarefas em 222 linhas, distribuídas nas fases da tabela abaixo:
 
 | Fase | Tarefas | Conteúdo | Checkpoint |
 |---|---|---|---|
@@ -66,7 +66,7 @@ git commit -m "tarefas"
 | 2. Foundational | T002–T004 | Módulo e arquivo de teste vazios, `npm test` conectado | `npm test` roda |
 | 3. US1 (P1) 🎯 | T005–T009 | Testes da RN-01, ver falhar, implementar | regra do mínimo funciona para atacado |
 | 4. US2 (P1) | T010–T013 | Testes da RN-02, ver falhar, implementar | MVP completo: atacado tem mínimo, padrão não |
-| 5. US3 (P2) | T014–T022 | Testes da RN-03 e da RN-04, sabotagens para provar que pegam o erro | todas as regras com teste que já falhou |
+| 5. US3 (P2) | T014–T022 | Testes da RN-03 e da RN-04, sabotagens para provar que detectam o erro | todas as regras com teste que já falhou |
 | 6. Polish | T023–T027 | Conferir contrato, busca pelos IDs, ausência de dependências | nenhum |
 
 O arquivo tem três pontos que interessam à sessão.
@@ -79,11 +79,11 @@ um pedido padrão abaixo de R$ 1.000,00 também é recusado — a US2
 corrige. Não entregar US1 sem US2 (ambas P1).
 ```
 
-O agente separou as histórias para que o teste da RN-02 pudesse falhar antes do código, como manda o princípio II. O preço é um estado intermediário com defeito conhecido, e só uma parada humana nesse ponto o vê.
+O agente separou as histórias para que o teste da RN-02 pudesse falhar antes do código, como manda o princípio II. Como consequência, existe um estado intermediário com defeito conhecido, que só é observado se houver uma parada humana nesse ponto.
 
-*A tarefa composta.* A T008 tem um parágrafo inteiro. Ela cria a constante do mínimo, o formatador monetário, a função auxiliar de formatação, a comparação, o cálculo de `faltaCentavos` e a mensagem de recusa, e ainda instrui o agente a não incluir a checagem do tipo de cliente. São seis decisões numa tarefa, e duas delas vêm do acréscimo do FR-003. Ela é a candidata natural a uma parada humana antes da execução.
+*A tarefa composta.* A T008 tem um parágrafo inteiro. Ela cria a constante do mínimo, o formatador monetário, a função auxiliar de formatação, a comparação, o cálculo de `faltaCentavos` e a mensagem de recusa, e ainda instrui o agente a não incluir a checagem do tipo de cliente. A tarefa concentra seis decisões, duas delas originadas no acréscimo do FR-003, e por isso é a principal candidata a uma parada humana antes da execução.
 
-*Os testes que nasceriam verdes.* Os testes da RN-03 verificam que o desconto não muda o resultado, e o código da US1 já usa o valor antes do desconto. Eles passariam na primeira execução. O agente percebeu e criou tarefas de sabotagem:
+*Os testes que passariam antes do código.* Os testes da RN-03 verificam que o desconto não muda o resultado, e o código da US1 já usa o valor antes do desconto. Esses testes passariam já na primeira execução, e o agente identificou o problema e criou tarefas de sabotagem:
 
 ```text
 - T019 [US3] Provar que os testes RN-03: pegam o erro: em
@@ -123,7 +123,7 @@ git diff --stat
 npm test
 ```
 
-O `npm test` mostra 3 testes passando, todos com nome começando por `RN-01`. Esse é o ponto de controle humano que o modo básico não cria sozinho: quem revisa decide se o estado com defeito conhecido pode virar commit ou se as duas histórias precisam seguir juntas. Com a revisão feita, registre a parada:
+O `npm test` mostra 3 testes passando, todos com nome começando por `RN-01`. Esse é o ponto de controle humano que o modo básico não cria sozinho: quem revisa decide se o estado com defeito conhecido pode ser registrado em commit ou se as duas histórias precisam seguir juntas. Com a revisão feita, registre a parada:
 
 ```bash
 git add -A
@@ -154,7 +154,7 @@ O agente também registrou que um tipo de cliente desconhecido, como `'Atacado'`
 
 ## O que levar para o exercício
 
-O plano e as tarefas carregam para o código tudo o que a spec deixou passar, como o "quanto falta" que virou campo, formatação e teste. No exercício do frete, a classificação de três tarefas e a parada depois da primeira história são os dois momentos em que você pode interromper essa cadeia.
+O plano e as tarefas carregam para o código tudo o que a spec deixou sem revisão, como o "quanto falta", que foi convertido em campo de retorno, formatação e teste. No exercício do frete, a classificação de três tarefas e a parada depois da primeira história são os dois momentos em que você pode interromper essa cadeia.
 
 Os trechos vêm de uma execução real com Spec Kit 1.1.1 e Claude Code, em 07/10/2026. Outra execução produz texto diferente, e os pontos a observar costumam se repetir.
 

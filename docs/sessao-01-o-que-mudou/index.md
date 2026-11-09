@@ -6,11 +6,11 @@
 
 ## Problema
 
-A equipe usa IA como um completador de código mais esperto, e ninguém sabe dizer o que está ficando na mesa.
+A equipe usa IA como um completador de código mais sofisticado, e ninguém sabe dizer quanto ganho de qualidade e de produtividade deixa de ser obtido com esse uso.
 
 ## Como usar este material
 
-Estas páginas não são leitura prévia. O instrutor conduz a exploração dos conceitos ao vivo, intercalada com a prática. Cada bloco de teoria tem uma atividade correspondente logo em seguida. Chegar sem ter lido nada é a expectativa normal.
+Estas páginas não são leitura prévia. O instrutor conduz a exploração dos conceitos ao vivo, intercalada com a prática, e cada bloco de teoria tem uma atividade correspondente logo em seguida, de modo que o participante pode chegar sem ter lido nada.
 
 ## Objetivos de aprendizagem
 
@@ -27,7 +27,7 @@ Ao final desta sessão, o participante deve ser capaz de:
 |---|---|---|---|---|
 | 1 | [Modos de trabalho com IA](modos-de-trabalho.md) | Teoria | 9 min | Vocabulário dos três modos e critério para escolher um por tarefa |
 | 2 | [Evidência empírica de produtividade](evidencia-empirica.md) | Teoria | 4 min | O contraste entre os dois estudos e o critério que sai dele |
-| 3 | [A tese do Software 3.0](software-3-0.md) | Teoria | 7 min | O prompt como artefato que governa o sistema, mais piso, teto e julgamento |
+| 3 | [A tese do Software 3.0](software-3-0.md) | Teoria | 7 min | O prompt como artefato que governa o sistema e os termos piso, teto e julgamento humano |
 | 4 | [Sistemas agênticos e simplicidade](sistemas-agenticos.md) | Teoria | 7 min | Fronteira entre fluxo de trabalho e agente, e a recomendação de simplicidade |
 | 5 | [Avaliação de modelos](avaliacao-de-modelos.md) | Teoria | 3 min | Cinco critérios para ler um benchmark antes de escolher um modelo |
 | 6 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 10 min | Ver, com a Vetor, plataforma fictícia de e-commerce B2B, onde um prompt vago perde regra de negócio |

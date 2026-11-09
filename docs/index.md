@@ -1,14 +1,14 @@
 # Workshop: IA Agêntica na Prática
 
-Workshop de engenharia agêntica disciplinada para equipes de desenvolvimento C#, JavaScript e TypeScript. Dez sessões que levam o time do uso ad hoc de LLMs (cada desenvolvedor com seu próprio jeito de pedir código, sem vocabulário ou contrato compartilhado) a uma esteira de engenharia com IA como parceiro de execução controlado e saídas previsíveis.
+Workshop de engenharia agêntica disciplinada para equipes de desenvolvimento C#, JavaScript e TypeScript. As dez sessões conduzem o time do uso ad hoc de LLMs, em que cada desenvolvedor pede código do próprio jeito e sem vocabulário compartilhado, até uma esteira de engenharia em que o agente executa sob especificação e verificação definidas pela equipe.
 
-A tese: a janela de contexto virou o programa. O LLM é o interpretador; o desenvolvedor escreve em linguagem natural, e o que era arte ou intuição agora é engenharia — especificação, decomposição, verificação. O piso sobe para todos; o teto sobe só com disciplina; o julgamento humano sobe de valor.
+A tese do workshop parte de uma mudança no modo de programar. Num fluxo agêntico, o comportamento do código gerado depende do que está escrito na janela de contexto do modelo, e o desenvolvedor escreve boa parte desse conteúdo em linguagem natural, que o LLM interpreta e executa. O workshop trata a escrita desse conteúdo como prática de engenharia, composta por especificar o comportamento esperado, decompor o trabalho em tarefas que o agente consegue executar e verificar o resultado contra critérios de aceitação. A IA eleva o resultado mínimo de qualquer desenvolvedor, enquanto chegar à qualidade de produto exige disciplina de método, e por isso o julgamento humano sobre o que especificar e o que aceitar passa a ter mais peso no trabalho da equipe.
 
 **Público:** desenvolvedores C#, JavaScript e TypeScript com experiência intermediária nessas linguagens, que já experimentam IA no dia a dia sem processo formal.
 
 **Formato:** 10 sessões de 2h cada (problema → método → exercício), 20h no total, modalidade online. Cenários genéricos C#/JS/TS alternam com casos de projetos de pesquisa da ACME, uma universidade fictícia, no Bloco 3.
 
-**Cadeia de ferramentas:** conteúdo metodológico agnóstico ao ambiente. Recomendado Claude Code + Codex CLI; também compatível com GitHub Copilot + VS Code/JetBrains e Cursor IDE, todos via os comandos `/specify` · `/plan` · `/tasks` do [GitHub Spec Kit](referencia/bibliografia.md).
+**Cadeia de ferramentas:** o conteúdo metodológico não depende do ambiente. A combinação recomendada é Claude Code com Codex CLI, e o material também funciona com GitHub Copilot em VS Code ou JetBrains e com o Cursor IDE, todos por meio d os comandos `/specify` · `/plan` · `/tasks` do [GitHub Spec Kit](referencia/bibliografia.md).
 
 ---
 
@@ -16,9 +16,9 @@ A tese: a janela de contexto virou o programa. O LLM é o interpretador; o desen
 
 | Bloco | Sessões | Tema | Intenção metodológica |
 |---|---|---|---|
-| 1 — Modelo mental e ambiente agêntico | S1–S2 | O novo modelo mental, a primeira ferramenta nas mãos | Software 3.0 · Engenharia Agêntica · cadeia de ferramentas e isolamento por ramo |
-| 2 — Especificação com precisão | S3–S5 | A habilidade mais valiosa da era agêntica: dizer o quê com precisão | Requisitos BR/FR/NFR · SBVR + RuleSpeak + tabelas de decisão · caminho básico do Spec Kit, da regra ao código |
-| 3 — Qualidade da spec e adoção por papel | S6–S7 | Do plano ao código verificado, e do uso individual ao uso por papel | Qualidade da spec e teste antes do código · casos de uso de IA por papel, com mural das equipes e pitch |
+| 1 — Modelo mental e ambiente agêntico | S1–S2 | Modelo mental do Software 3.0 e primeiro uso da ferramenta | Software 3.0 · Engenharia Agêntica · cadeia de ferramentas e isolamento por ramo |
+| 2 — Especificação com precisão | S3–S5 | Especificação precisa do comportamento esperado | Requisitos BR/FR/NFR · SBVR + RuleSpeak + tabelas de decisão · caminho básico do Spec Kit, da regra ao código |
+| 3 — Qualidade da spec e adoção por papel | S6–S7 | Verificação do código contra o plano e uso de IA por papel | Qualidade da spec e teste antes do código · casos de uso de IA por papel, com mural das equipes e pitch |
 | 4 — Skills, agentes e ciclo completo | S8–S10 | Skills e agentes próprios, governança antes do compartilhamento e SDD de ponta a ponta | Criação de skills e agentes · governança de skills e agentes · SDD ciclo completo |
 
 ## Sessões
@@ -51,7 +51,7 @@ Ao final das 20h, cada participante consegue:
 
 ## Fora de escopo
 
-Para deixar claro o que este workshop não cobre: treinamento em LLMs (operação de modelos, ajuste fino, infraestrutura), esteiras CI/CD automatizadas e operação de agentes em produção. A criação de skills e de subagentes e a estimativa de custo de tokens são cobertas na Sessão 8.
+O workshop não cobre treinamento em LLMs (operação de modelos, ajuste fino, infraestrutura), esteiras CI/CD automatizadas e operação de agentes em produção. A criação de skills e de subagentes e a estimativa de custo de tokens são cobertas na Sessão 8.
 
 ## Referências
 

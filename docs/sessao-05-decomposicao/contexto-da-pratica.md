@@ -12,8 +12,8 @@ Os exemplos usam a pasta `vetor-pedido-minimo` e os exercícios, a pasta `vetor-
 
 | Página | Feature | Comandos | Objetivo | Produto | Tempo |
 |---|---|---|---|---|---:|
-| [Exemplo do Tema 1](especificacao-com-spec-kit-exemplo-de-aplicacao-de-ia.md) | Pedido mínimo | `init`, `constitution`, `specify` | Mostrar como o pedido do PO vira regras com ID e quais decisões o agente toma sozinho | Spec do pedido mínimo e três achados sobre ela | 8 min |
-| [Exercício do Tema 1](especificacao-com-spec-kit-exercicio.md) | Frete | `init`, `constitution`, `specify` | Encontrar na própria spec requisito que diz mais que o pedido, suposição que decide negócio e critério sem lastro | `spec.md` do frete versionada e três respostas | 25 min |
+| [Exemplo do Tema 1](especificacao-com-spec-kit-exemplo-de-aplicacao-de-ia.md) | Pedido mínimo | `init`, `constitution`, `specify` | Mostrar como o pedido do PO é convertido em regras com ID e quais decisões o agente toma sozinho | Spec do pedido mínimo e três achados sobre ela | 8 min |
+| [Exercício do Tema 1](especificacao-com-spec-kit-exercicio.md) | Frete | `init`, `constitution`, `specify` | Encontrar na própria spec requisito que diz mais que o pedido, suposição que decide negócio e critério sem origem no pedido | `spec.md` do frete versionada e três respostas | 25 min |
 | [Exemplo do Tema 2](do-plano-ao-codigo-exemplo-de-aplicacao-de-ia.md) | Pedido mínimo | `plan`, `tasks`, `implement` | Mostrar o que o plano e as tarefas carregam da spec para o código, e onde entra a parada humana | Pedido mínimo implementado, com 10 testes passando | 8 min |
 | [Exercício do Tema 2](do-plano-ao-codigo-exercicio.md) | Frete | `plan`, `tasks`, `implement` | Classificar tarefas, parar depois da primeira história e localizar uma regra no código | Frete implementado, testes passando e a regra do frete grátis localizada | 30 min |
 

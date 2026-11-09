@@ -123,7 +123,7 @@ assinatura compatível. Cada princípio precisa declarar a consequência de viol
 
 **Saída esperada.** O arquivo `.specify/memory/constitution.md` deixa de ter marcadores como `[PRINCIPLE_1_NAME]` e passa a conter os princípios redigidos, com versão e data.
 
-**Consideração.** Leia o que saiu antes de seguir. O teste é se cada princípio consegue rejeitar uma mudança plausível. "Mantém assinatura compatível" rejeita a proposta de trocar os parâmetros por um objeto de configuração, que é justamente o que o agente costuma sugerir mais adiante. Um princípio que não rejeita nada é decoração, e a hora de descobrir isso é agora, antes do portão de arquitetura.
+**Consideração.** Leia o que saiu antes de seguir. O teste é se cada princípio consegue rejeitar uma mudança plausível. "Mantém assinatura compatível" rejeita a proposta de trocar os parâmetros por um objeto de configuração, que é justamente o que o agente costuma sugerir mais adiante. Um princípio que não rejeita nada precisa ser reescrito nesta etapa, antes do portão de arquitetura.
 
 ### A.3 `/speckit-specify`
 
@@ -154,7 +154,7 @@ Abra o `spec.md` e procure a seção *Assumptions*. É lá que o agente registra
 
 **Saída esperada.** O agente faz até cinco perguntas dirigidas, uma por vez, e grava as respostas de volta no `spec.md`, numa seção de esclarecimentos.
 
-**Consideração, e é o ponto central da oficina.** Uma das perguntas deve tocar no teto de R$ 1.000,00. Vinte por cento de um pedido de R$ 12.000,00 são R$ 2.400,00, e o código existente limita qualquer desconto a R$ 1.000,00. O pedido original não disse nada sobre isso, e há três saídas defensáveis:
+**Consideração central da oficina.** Uma das perguntas deve tocar no teto de R$ 1.000,00. Vinte por cento de um pedido de R$ 12.000,00 são R$ 2.400,00, e o código existente limita qualquer desconto a R$ 1.000,00. O pedido original não disse nada sobre isso, e há três saídas defensáveis:
 
 1. O teto continua valendo, e o desconto de atacado fica limitado a R$ 1.000,00. Nesse caso a faixa de 20% quase nunca difere da de 15%, e o pedido perde o sentido prático.
 2. O teto não se aplica ao atacado. Precisa ser dito, porque muda o risco financeiro por pedido.
@@ -191,7 +191,7 @@ sem dependências externas.
 
 **Saída esperada.** Um relatório de consistência entre `spec.md`, `plan.md` e `tasks.md`, apontando requisito sem tarefa, tarefa sem requisito e divergência entre artefatos. O comando não altera arquivos.
 
-**Consideração.** Um relatório limpo prova coerência interna e nada mais. Se a decisão do teto ficou errada em A.4, os três artefatos vão concordar entre si e o relatório vai passar. Coerência entre artefatos e correspondência com a necessidade real são verificações diferentes, e só a segunda depende de alguém que conheça o negócio.
+**Consideração.** Um relatório limpo prova apenas coerência interna entre os artefatos. Se a decisão do teto ficou errada em A.4, os três artefatos vão concordar entre si e o relatório vai passar. Coerência entre artefatos e correspondência com a necessidade real são verificações diferentes, e só a segunda depende de alguém que conheça o negócio.
 
 ### A.8 `/speckit-implement`
 
@@ -201,7 +201,7 @@ sem dependências externas.
 
 **Saída esperada.** O agente percorre `tasks.md`, escreve código e testes e marca as tarefas concluídas.
 
-**Consideração.** Rode `git diff` e `npm test` antes de aceitar. Duas conferências valem mais que as outras: os três testes originais continuam passando, e o teste novo da faixa de atacado reflete a decisão que **você** registrou em A.4, não outra. Se o seu registro disse que o teto não se aplica ao atacado, o teste precisa esperar `2400` para um pedido de R$ 12.000,00.
+**Consideração.** Rode `git diff` e `npm test` antes de aceitar. Duas conferências valem mais que as outras: os três testes originais continuam passando, e o teste novo da faixa de atacado reflete a decisão que **você** registrou em A.4. Se o seu registro disse que o teto não se aplica ao atacado, o teste precisa esperar `2400` para um pedido de R$ 12.000,00.
 
 **Evidência a entregar:** o `constitution.md`, os três arquivos em `specs/001-.../`, a saída de `npm test` e o `git diff` final.
 

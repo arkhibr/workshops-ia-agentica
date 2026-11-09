@@ -10,7 +10,7 @@ A adoção foi considerada um sucesso interno. As métricas do trimestre mostram
 
 Na quinta-feira, um cliente contesta uma cobrança. A investigação mostra que o cálculo de frete para entregas interestaduais com carga refrigerada estava errado desde a implementação, cinco meses antes. O erro afetou 1.847 entregas, com prejuízo estimado em R$ 210 mil.
 
-O ciclo daquela mudança está todo lá. A especificação tem catorze requisitos funcionais numerados, cada um com caso concreto. O plano registra três decisões e duas alternativas descartadas. As tarefas são fatias verticais, com definição de pronto. Os três portões têm aprovação nominal, com data e responsável. A revisão de aderência registra "todos os requisitos verificados, sem desvio".
+O ciclo daquela mudança está completo no repositório. A especificação tem catorze requisitos funcionais numerados, cada um com caso concreto, e o plano registra três decisões e duas alternativas descartadas. As tarefas são fatias verticais com definição de pronto, e os três portões têm aprovação nominal, com data e responsável. A revisão de aderência registra "todos os requisitos verificados, sem desvio".
 
 O requisito FR-009 dizia: "o sistema deve aplicar a taxa de refrigeração sobre o valor base do frete". O código aplica a taxa sobre o valor base. O teste verifica que a taxa é aplicada sobre o valor base, e passa.
 
@@ -18,9 +18,9 @@ A regra de negócio real, que consta na tabela de preços acordada com o cliente
 
 ## O ponto de falha
 
-Nenhuma etapa foi pulada. Nenhum artefato está desatualizado. O rastro de FR-009 até o teste está íntegro e navegável nos dois sentidos. A revisão de aderência fez exatamente o que deveria: conferiu o código contra a especificação, e eles correspondem.
+Nenhuma etapa foi pulada e nenhum artefato está desatualizado. O rastro de FR-009 até o teste está íntegro e navegável nos dois sentidos, e a revisão de aderência fez o que deveria: conferiu o código contra a especificação e encontrou correspondência.
 
-O erro entrou na especificação, e o processo inteiro se encarregou de implementá-lo com fidelidade.
+O erro entrou na especificação, e todas as etapas seguintes implementaram e verificaram o comportamento conforme o texto de FR-009.
 
 ## Perguntas para orientar a discussão
 
@@ -40,7 +40,7 @@ O erro entrou na especificação, e o processo inteiro se encarregou de implemen
 
 ## Para fechar a discussão
 
-Uma cadeia de artefatos coerente prova que a implementação corresponde à intenção registrada. Ela não prova, e não tem como provar, que a intenção registrada corresponde à necessidade real.
+Uma cadeia de artefatos coerente prova que a implementação corresponde à intenção registrada. Ela não prova que a intenção registrada corresponde à necessidade real.
 
 A pergunta que fica para o grupo é onde, no fluxo de cada um, essa segunda verificação acontece hoje, e quem tem autoridade para reprovar por esse motivo.
 

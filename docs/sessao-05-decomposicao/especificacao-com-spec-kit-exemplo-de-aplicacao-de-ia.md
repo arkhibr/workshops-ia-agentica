@@ -10,7 +10,7 @@ cd vetor-pedido-minimo
 git init
 ```
 
-A pasta começa vazia. Todo o código vai sair do pedido do PO.
+A pasta começa vazia, e todo o código do projeto será gerado a partir do pedido do PO.
 
 ## Passo 2: instale o Spec Kit no projeto
 
@@ -54,7 +54,7 @@ git add -A
 git commit -m "constitution"
 ```
 
-**O que o agente gerou.** O comando levou cerca de 35 segundos. O agente gravou os três princípios em `.specify/memory/constitution.md` e acrescentou a cada um uma justificativa. A do princípio I diz para que serve o ID:
+**O que o agente gerou.** O comando levou cerca de 35 segundos, e o agente gravou os três princípios em `.specify/memory/constitution.md` e acrescentou a cada um uma justificativa. A do princípio I diz para que serve o ID:
 
 ```text
 **Por quê**: o PO precisa conseguir partir de uma frase do pedido dele e
@@ -63,7 +63,7 @@ código até a regra, também precisa existir. Um `grep RN-07` resolve as
 duas direções.
 ```
 
-Ele também criou uma seção de governança com versionamento semântico da própria constitution, que ninguém pediu. A seção não muda nenhuma saída dos comandos seguintes, e por isso passa pelo critério da página de conceitos como decoração inofensiva. A pergunta para discussão é se ela é ganho ou ruído.
+Ele também criou uma seção de governança com versionamento semântico da própria constitution, que ninguém pediu. A seção não muda nenhuma saída dos comandos seguintes e, pelo critério da página de conceitos, não altera o que o agente gera. A discussão em aula decide se a seção permanece na constitution ou é removida.
 
 ## Passo 4: gere a spec a partir do pedido do PO
 
@@ -88,7 +88,7 @@ git commit -m "spec do pedido minimo"
 
 **O que o agente gerou.** O comando levou cerca de um minuto e criou a pasta `specs/001-pedido-minimo-atacado/` com uma `spec.md` de 111 linhas. Os pontos a observar estão em três trechos.
 
-*O pedido virou regras com ID.* Por causa do princípio I, o agente abriu a spec com uma tabela que quebra o pedido em regras e guarda a frase de origem de cada uma:
+*O pedido foi convertido em regras com ID.* Por causa do princípio I, o agente abriu a spec com uma tabela que quebra o pedido em regras e guarda a frase de origem de cada uma:
 
 ```text
 | ID | Regra | Origem no pedido do PO |
@@ -109,7 +109,7 @@ A coluna de origem é o que permite ao PO conferir a tradução frase por frase.
   atendimento.
 ```
 
-Uma verificação que só procura o ID aprova esse requisito. O PO pediu o mínimo, e o agente acrescentou o valor que falta, que exige outro cálculo e outra mensagem. O critério de sucesso SC-003 repete o acréscimo.
+Uma verificação que só procura o ID aprova esse requisito, embora o PO tenha pedido apenas o mínimo e o agente tenha acrescentado o valor que falta, que exige outro cálculo e outra mensagem. O critério de sucesso SC-003 repete o acréscimo.
 
 *Suposição que decide o negócio.* Na seção *Assumptions*:
 
@@ -119,13 +119,13 @@ Uma verificação que só procura o ID aprova esse requisito. O PO pediu o míni
   incluir frete no cálculo, isso muda RN-03 e precisa ser revisto.
 ```
 
-O PO não disse se o frete conta para o mínimo. O agente decidiu que não conta, e a decisão muda quais pedidos são aceitos. Ela volta para o PO antes do plano.
+O PO não disse se o frete conta para o mínimo, e o agente decidiu que não conta, o que muda quais pedidos são aceitos. Por isso a suposição volta para o PO antes do plano.
 
 Na mesma seção, o agente se recusou a inventar uma regra para o tipo de cliente ausente ou desconhecido e registrou que o PO não definiu esse caso. É o princípio I funcionando: criar a regra exigiria um `RN-xx` sem frase de origem.
 
 ## O que levar para o exercício
 
-Os três achados correspondem às três perguntas do exercício: requisito que diz mais que a frase do PO, decisão tomada fora do pedido e critério sem lastro. Nenhum deles impede o ciclo de seguir, e todos chegariam ao código se ninguém lesse as três seções.
+Os três achados correspondem às três perguntas do exercício: requisito que diz mais que a frase do PO, decisão tomada fora do pedido e critério sem origem no pedido. Nenhum deles impede o ciclo de seguir, e todos chegariam ao código se ninguém lesse as três seções.
 
 Os trechos vêm de uma execução real com Spec Kit 1.1.1 e Claude Code, em 07/10/2026. Outra execução produz texto diferente, e os pontos a observar costumam se repetir.
 

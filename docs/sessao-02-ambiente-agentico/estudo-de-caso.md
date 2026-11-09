@@ -2,11 +2,11 @@
 
 **Tempo:** 15 min · **Formato:** 8 min em grupos de 3–4 pessoas, 7 min de plenária.
 
-Um commit sumiu na Vetor. A decisão em aberto é se o time passa a exigir isolamento por ramo em toda tarefa.
+Na Vetor, parte de uma alteração se perdeu num conflito entre dois agentes, e a decisão em aberto é se o time passa a exigir isolamento por ramo em toda tarefa.
 
 ## Situação
 
-Dois desenvolvedores da Vetor, empresa fictícia de e-commerce B2B usada nos exemplos deste workshop, usaram o agente ao mesmo tempo no mesmo diretório de trabalho, sem worktree separado. Um estava corrigindo o cálculo de desconto. O outro ajustava a mesma função para adicionar um log de auditoria. Os dois agentes leram o arquivo antes de o outro salvar, e a edição de um sobrescreveu silenciosamente parte da edição do outro. O bug só apareceu dias depois, em produção, quando o log de auditoria simplesmente não aparecia em alguns pedidos.
+Dois desenvolvedores da Vetor, empresa fictícia de e-commerce B2B usada nos exemplos deste workshop, usaram o agente ao mesmo tempo no mesmo diretório de trabalho, sem worktree separado. Um corrigia o cálculo de desconto, e o outro ajustava a mesma função para adicionar um log de auditoria. Os dois agentes leram o arquivo antes de o outro salvar, e a edição de um sobrescreveu silenciosamente parte da edição do outro. O bug só apareceu dias depois, em produção, quando o log de auditoria simplesmente não aparecia em alguns pedidos.
 
 Na reunião de retrospectiva, uma pessoa sugere: "vamos exigir que todos usem worktree separado a partir de agora, para qualquer tarefa, mesmo pequena." Outra pessoa acha exagero: "isso só aconteceu porque os dois mexeram no mesmo arquivo ao mesmo tempo, é raro, basta avisar no chat quando for mexer em algo compartilhado."
 
@@ -14,7 +14,7 @@ Na reunião de retrospectiva, uma pessoa sugere: "vamos exigir que todos usem wo
 
 ## Como usar este estudo de caso
 
-Não existe resposta única aqui. Pratique o critério da tabela de [O ambiente compartilhado](ambiente-compartilhado.md#quando-vale-configurar-um-ambiente-compartilhado) num caso ambíguo.
+O caso não tem resposta única e serve para praticar o critério da tabela de [O ambiente compartilhado](ambiente-compartilhado.md#quando-vale-configurar-um-ambiente-compartilhado) numa situação ambígua.
 
 ## Perguntas para orientar a análise
 

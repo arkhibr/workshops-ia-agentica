@@ -1,4 +1,4 @@
-# Conceitos, fatos e regras: do vocabulário à decisão
+# Conceitos, fatos e regras
 
 Para formalizar uma regra, o time precisa definir os conceitos e registrar os fatos que os relacionam antes de escrever a frase normativa que diz o que deve valer. Esta página apresenta o percurso completo do SBVR à tabela de decisão e fornece o esquema usado no restante da sessão. Os exemplos usam o regulamento de inscrição de um congresso fictício, criado apenas para ilustrar os conceitos e sem relação com o conteúdo dos exercícios da sessão.
 
@@ -18,7 +18,7 @@ Misturar as camadas produz sentenças difíceis de testar: “Participante estud
 
 *Leitura da figura: siga as setas da esquerda para a direita, das camadas 1 a 4 até a tabela e os testes, e depois leia a faixa 5, cujas linhas tracejadas indicam as camadas em que cada controle é registrado.*
 
-## Conceitos: o que precisa de nome
+## Conceitos
 
 Um **conceito** representa uma coisa ou categoria relevante para o negócio, e sua definição informa o critério que permite reconhecer cada instância.
 
@@ -30,7 +30,7 @@ Um **conceito** representa uma coisa ou categoria relevante para o negócio, e s
 
 O campo “sinônimos a evitar” denuncia lugares em que duas palavras podem indicar conceitos diferentes ou em que a mesma coisa recebeu nomes incompatíveis.
 
-## Fatos: como os conceitos se relacionam
+## Tipos de fato
 
 Um **tipo de fato** é uma relação que pode ser afirmada sobre instâncias dos conceitos. “Participante possui vínculo acadêmico” é um tipo de fato, e “Ana possui o vínculo acadêmico de matrícula 2026-0042” é uma instância desse fato.
 
@@ -42,7 +42,7 @@ Um **tipo de fato** é uma relação que pode ser afirmada sobre instâncias dos
 
 Escrever a leitura inversa expõe cardinalidades e pressupostos, e quando a fonte não informa quantidade ou exclusividade o mapa registra a lacuna com a pergunta correspondente.
 
-## Regras estruturais: classificação e derivação
+## Regras estruturais de classificação e derivação
 
 Uma **regra estrutural** define como o domínio é organizado. Ela usa modalidade alética, ligada ao que necessariamente vale dentro do modelo, e por isso nenhum ator a cumpre ou a descumpre.
 
@@ -51,7 +51,7 @@ Uma **regra estrutural** define como o domínio é organizado. Ela usa modalidad
 
 O teste prático é perguntar se existe infração. Uma fórmula pode produzir valor errado e uma classificação pode ser aplicada incorretamente, mas em nenhum dos dois casos há obrigação dirigida a um ator que alguém tenha deixado de cumprir. Passos de cálculo, limites de um valor derivado e critérios de inclusão num total pertencem, portanto, às regras estruturais.
 
-## Regras operativas: obrigação, proibição e permissão
+## Regras operativas de obrigação, proibição e permissão
 
 Uma **regra operativa** rege a conduta de um ator identificável e pode ser violada, e nesta sessão as sentenças controladas que a expressam seguem as formas do [RuleSpeak](../referencia/bibliografia.md#ross-rulespeak):
 
@@ -64,7 +64,7 @@ Uma **regra operativa** rege a conduta de um ator identificável e pode ser viol
 !!! question "Teste de classificação"
     “Participante com comprovante validado é Participante Estudante” e “a comissão organizadora deve aplicar o desconto ao Participante Estudante” pertencem ao mesmo tipo? A primeira sentença classifica participantes e a segunda rege a ação de quem cobra a inscrição, por isso a primeira é estrutural e a segunda é operativa.
 
-## Atomicidade: uma condição verificável por sentença
+## Atomicidade das sentenças
 
 Uma regra atômica tem um único efeito normativo. Se uma sentença contém “e”, “exceto”, “salvo”, “quando” ou “desde que”, verifique se ela comprime outra regra, exceção ou definição.
 

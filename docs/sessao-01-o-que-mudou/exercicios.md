@@ -33,7 +33,7 @@ Explique por que vibe coding não é, por si, uma prática ruim, e onde exatamen
 <details>
 <summary>Ver resposta</summary>
 
-Vibe coding é legítimo para prototipagem descartável. O risco aparece quando o protótipo atravessa, sem ninguém decidir isso explicitamente, a fronteira para produto, carregando decisões que nunca chegam ao repositório.
+Vibe coding é legítimo para prototipagem descartável. O risco aparece quando o protótipo passa a ser usado como produto sem que ninguém tenha decidido isso explicitamente, levando consigo decisões que nunca chegam ao repositório.
 </details>
 
 ### 4. Piso, teto e julgamento
@@ -52,7 +52,7 @@ Confunde piso (o código roda) com teto (o código está correto e testável) e 
 
 **O que é:** o mesmo problema, resolvido duas vezes pelo agente, com dois níveis de contexto diferentes. A diferença entre as duas saídas mede piso e teto na prática.
 
-**Execute os passos na ordem.** Este exercício só mede alguma coisa se você executar os passos 1 e 2 sem conhecer a regra completa, que aparece no passo 3. Ler a regra antes, ou pular direto para o prompt estruturado porque "já sacou o padrão" do Exemplo arquitetural, apaga a distância entre o código ingênuo e o código correto. Essa distância é justamente o que o exercício quer que você veja no seu próprio trabalho. Role a página na ordem, não abra o bloco "Regra completa" antes de terminar o passo 2, e não peça ajuda a quem já fez o exercício.
+**Execute os passos na ordem.** Este exercício só mede alguma coisa se você executar os passos 1 e 2 sem conhecer a regra completa, que aparece no passo 3. Ler a regra antes, ou ir direto para o prompt estruturado por já ter entendido o padrão do Exemplo arquitetural, elimina a diferença entre o código ingênuo e o código correto, que é a diferença que o exercício pretende mostrar no seu próprio trabalho. Role a página na ordem, não abra o bloco "Regra completa" antes de terminar o passo 2 e não peça ajuda a quem já fez o exercício.
 
 **Situação**
 
@@ -99,7 +99,7 @@ Seu agente de codificação configurado na Sessão 0, e o SDK do .NET instalado.
 
 **Entrega esperada**
 
-O código gerado no passo 1, a saída de `dotnet run` do passo 2 (incluindo os casos que não puderam ser testados e por quê), o código reescrito no passo 3, e a saída de `dotnet run` confirmando os cinco casos.
+O código gerado no passo 1, a saída de `dotnet run` do passo 2 (incluindo os casos que não puderam ser testados e por quê), o código reescrito no passo 3 e a saída de `dotnet run` confirmando os cinco casos.
 
 **Critérios de avaliação**
 
@@ -120,11 +120,11 @@ O código gerado no passo 1, a saída de `dotnet run` do passo 2 (incluindo os c
 
 **Situação**
 
-Você tem um backlog real, com tarefas de tamanhos e riscos diferentes. A tabela de cinco critérios de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica) diz qual modo cada tarefa pede. Aqui você vai aplicar essa tabela a um caso em que a resposta não salta aos olhos.
+Você tem um backlog real, com tarefas de tamanhos e riscos diferentes. A tabela de cinco critérios de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica) diz qual modo cada tarefa pede. Aqui você vai aplicar essa tabela a um caso em que a resposta não é evidente.
 
 **Seu papel**
 
-Você decide, por escrito e antes de abrir o agente, como vai atacar cada uma das três tarefas, e depois defende essa decisão para um colega que não conhece o seu sistema.
+Você decide, por escrito e antes de abrir o agente, como vai tratar cada uma das três tarefas, e depois defende essa decisão para um colega que não conhece o seu sistema.
 
 **Insumos disponíveis**
 
@@ -132,7 +132,7 @@ Seu próprio backlog, a tabela de cinco critérios e um colega de dupla. Nenhum 
 
 **Como conduzir**
 
-**Etapa 1: levantamento (5 min, individual).** Escreva três tarefas reais do seu backlog, uma linha cada, escolhidas assim: uma que você faria hoje sem pensar duas vezes com vibe coding, uma que pediria assistência de codificação com revisão, e uma que você suspeita que exija SDD. Se não conseguir preencher as três, a lacuna já é um achado: registre qual faltou.
+**Etapa 1: levantamento (5 min, individual).** Escreva três tarefas reais do seu backlog, uma linha cada, escolhidas assim: uma que você faria hoje com vibe coding sem hesitar, uma que pediria assistência de codificação com revisão e uma que você suspeita que exija SDD. Se não conseguir preencher as três, a lacuna já é um achado: registre qual faltou.
 
 **Etapa 2: classificação (7 min, individual).** Escolha a tarefa sobre a qual você tem *menos* certeza e preencha a tabela abaixo para ela. Feche com duas frases: qual modo você vai usar e por quê.
 
@@ -150,7 +150,7 @@ Seu próprio backlog, a tabela de cinco critérios e um colega de dupla. Nenhum 
 
 **Entrega esperada**
 
-As três tarefas em uma linha cada, a tabela preenchida para a tarefa escolhida, as duas frases de decisão, e o critério em que a dupla divergiu (ou a confirmação de que não divergiu em nenhum).
+As três tarefas em uma linha cada, a tabela preenchida para a tarefa escolhida, as duas frases de decisão e o critério em que a dupla divergiu (ou a confirmação de que não divergiu em nenhum).
 
 **Critérios de avaliação**
 
@@ -164,7 +164,7 @@ As três tarefas em uma linha cada, a tabela preenchida para a tarefa escolhida,
 **Como verificar antes de entregar:** se todas as cinco linhas apontaram para o mesmo modo, você provavelmente escolheu a tarefa fácil. Troque pela que estava em segundo lugar na sua lista de incerteza.
 
 !!! tip "Depois da aula"
-    Rode a tarefa no modo que você decidiu e compare: o resultado confirmou a classificação, ou revelou que ela pedia mais cuidado do que você achava? Faça essa comparação, porque é com ela que o critério passa a ser seu.
+    Rode a tarefa no modo que você decidiu e compare: o resultado confirmou a classificação ou mostrou que a tarefa pedia mais cuidado do que você estimou? Registre o resultado dessa comparação para calibrar o uso da tabela nas próximas tarefas.
 
 ## Analisar
 
@@ -184,7 +184,7 @@ Releia o [Estudo de caso](estudo-de-caso.md). Em até 100 palavras, defenda uma 
 
 ### 9. Checklist de time
 
-Escreva um checklist de no máximo cinco itens que qualquer prompt de geração de código na Vetor deveria atender antes de ser aceito em produção. Outra pessoa precisa conseguir verificar cada item olhando o prompt. "Ser claro" não passa nesse teste.
+Escreva um checklist de no máximo cinco itens que qualquer prompt de geração de código na Vetor deveria atender antes de ser aceito em produção. Outra pessoa precisa conseguir verificar cada item olhando o prompt, e por isso um item como "ser claro" não atende ao enunciado.
 
 ### 10. Um ciclo avaliador-otimizador para a função de frete
 
@@ -195,18 +195,18 @@ Você já gerou, no exercício 5, duas versões da função de frete: uma a part
 **Execute:**
 
 1. Volte à saída do prompt intuitivo (exercício 5, passo 1). Não abra de novo a tabela de 5 casos de teste.
-2. Numa nova interação, peça ao agente para atuar como revisor crítico dessa função: cole a regra de negócio completa do bloco "Regra completa da Vetor para frete" (exercício 5) e peça que ele aponte todos os casos em que a função produz um valor errado. Não mencione o item frágil, a região Norte, nem que as duas exceções se compõem. Deixe o agente encontrar sozinho.
+2. Numa nova interação, peça ao agente para atuar como revisor crítico dessa função: cole a regra de negócio completa do bloco "Regra completa da Vetor para frete" (exercício 5) e peça que ele aponte todos os casos em que a função produz um valor errado. Não mencione o item frágil, a região Norte, nem que as duas exceções se compõem, para que o agente encontre os erros sozinho.
 3. Compare os casos que o agente encontrou sozinho com os 5 casos de teste oficiais do exercício 5. Ele achou o caso 3 (isenção negada por item frágil)? Achou o caso 5, em que as duas exceções se cruzam?
 4. Peça ao agente para corrigir a função com base na própria crítica, sem que você aponte a correção.
 
-**Entrega esperada:** a crítica do passo 2, a comparação do passo 3, e a versão corrigida do passo 4, testada contra os 5 casos oficiais.
+**Entrega esperada:** a crítica do passo 2, a comparação do passo 3 e a versão corrigida do passo 4, testada contra os 5 casos oficiais.
 
 **O que torna este desafio mais difícil:** nos exercícios anteriores, você forneceu a regra de negócio completa de uma vez. Aqui, o agente precisa descobrir sozinho onde a primeira versão falha, o papel de "avaliador" do padrão visto em Sistemas agênticos e simplicidade, e você precisa julgar se a autocrítica dele foi rigorosa ou só superficial. O caso 5 é o teste mais duro porque exige perceber que duas regras corretas isoladamente ainda podem compor errado.
 
 <details>
 <summary>O que evidencia um bom resultado</summary>
 
-O agente identificou o caso 3 (isenção negada por item frágil) sem que isso fosse mencionado no prompt. O caso 5 exige perceber a interação entre duas exceções. Não encontrá-lo sozinho também é um resultado válido para discutir. Um ciclo de autocrítica pega bem uma regra esquecida, e pega mal um erro de composição entre duas regras corretas. Por isso a verificação por teste automatizado continua necessária mesmo com um passo de revisão a mais.
+O agente identificou o caso 3 (isenção negada por item frágil) sem que isso fosse mencionado no prompt. O caso 5 exige perceber a interação entre duas exceções, e um agente que não o encontra sozinho também produz um resultado válido para a discussão. Um ciclo de autocrítica costuma detectar uma regra esquecida e tem mais dificuldade com um erro de composição entre duas regras corretas, e por isso a verificação por teste automatizado continua necessária mesmo com um passo de revisão a mais.
 </details>
 
 Concluída a prática, faça a [síntese e autoavaliação](sintese-e-referencias.md).

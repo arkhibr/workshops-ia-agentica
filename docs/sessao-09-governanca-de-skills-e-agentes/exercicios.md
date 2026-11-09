@@ -44,11 +44,11 @@ As respostas compõem a ficha de governança desta skill, um registro curto que 
 ## 4. Risco como evento e consequência
 
 1. Um dos [incidentes típicos](riscos-de-agentes.md#tres-incidentes) de agentes é a permissão maior que a finalidade, quando a skill tem mais acesso do que a tarefa pede. Para escolher um controle, escreve-se o risco no formato "se este evento acontecer, esta consequência ocorre". Como fica o risco desta skill nesse formato?
-2. Uma fronteira de confiança é o ponto em que o dado muda de nível de confiança, e num agente há três: o conteúdo lido entra no contexto do modelo, a saída do modelo vira chamada de ferramenta, e a resposta produz efeito fora do sistema. Em qual delas o evento desta skill ocorre?
+2. Uma fronteira de confiança é o ponto em que o dado muda de nível de confiança, e num agente há três: o conteúdo lido entra no contexto do modelo, a saída do modelo é convertida em chamada de ferramenta e a resposta produz efeito fora do sistema. Em qual delas o evento desta skill ocorre?
 
 ??? note "Resposta esperada"
     1. Se a skill escrever em outro repositório com a credencial pessoal, o código será alterado sem revisão humana.
-    2. Quando a saída do modelo vira chamada de ferramenta, e o código do pull request, que não é confiável, leva o modelo a chamar uma escrita.
+    2. Na fronteira em que a saída do modelo é convertida em chamada de ferramenta, porque o código do pull request, que não é confiável, leva o modelo a chamar uma escrita.
 
 ## 5. Controle preventivo e evidência
 

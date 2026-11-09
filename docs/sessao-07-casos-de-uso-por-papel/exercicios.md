@@ -35,7 +35,7 @@ Um colega afirma que já tem um caso de uso de IA, porque toda semana cola no ag
 <details>
 <summary>Ver resposta</summary>
 
-A entrada não declara se a lista pode ser compartilhada com o agente, e a saída não tem formato nem destinatário, de modo que cada semana o resultado vem diferente. O pedido não traz papel, tarefa nem restrição, e "organize" não diz por qual critério. Não existe conferência, porque nenhuma fonte é nomeada para comparar a lista organizada com a original, e não há decisão humana declarada sobre o que o resultado vira. O hábito vira caso quando os cinco elementos estão escritos e a equipe consegue repeti-lo com o mesmo resultado esperado.
+A entrada não declara se a lista pode ser compartilhada com o agente, e a saída não tem formato nem destinatário, de modo que cada semana o resultado vem diferente. O pedido não traz papel, tarefa nem restrição, e "organize" não diz por qual critério. Não existe conferência, porque nenhuma fonte é nomeada para comparar a lista organizada com a original, e não há decisão humana declarada sobre o uso do resultado. O hábito passa a ser um caso de uso quando os cinco elementos estão escritos e a equipe consegue repeti-lo com o mesmo resultado esperado.
 
 </details>
 
@@ -137,7 +137,7 @@ Uma analista de negócio da ACME tem três tarefas candidatas a caso de uso e te
 <details>
 <summary>Ver análise sugerida</summary>
 
-A tarefa 3 entra primeiro: a fonte de comparação existe e é o próprio quadro, o erro é detectável antes de circular, a frequência é semanal e o material não traz dado pessoal. A tarefa 1 tem fonte e dados adequados, mas a frequência é de uma única execução, e o esforço de escrever o pedido-base dificilmente se paga. A tarefa 2 tem frequência alta e fonte conferível, e fica por último por causa dos dados, porque nomes e e-mails de terceiros não devem ser colados no agente. Ela entra depois que a entrada for anonimizada, com os nomes e e-mails substituídos por descrições genéricas antes do envio.
+A tarefa 3 entra primeiro: a fonte de comparação existe e é o próprio quadro, o erro é detectável antes de circular, a frequência é semanal e o material não traz dado pessoal. A tarefa 1 tem fonte e dados adequados, mas a frequência é de uma única execução, e o esforço de escrever o pedido-base dificilmente compensa. A tarefa 2 tem frequência alta e fonte conferível, e fica por último por causa dos dados, porque nomes e e-mails de terceiros não devem ser colados no agente. Ela entra depois que a entrada for anonimizada, com os nomes e e-mails substituídos por descrições genéricas antes do envio.
 
 </details>
 

@@ -32,7 +32,7 @@ Cada pessoa trabalha com os cartões do papel que exerce na equipe. Uma equipe c
 | Já experimentamos | Pelo menos uma pessoa da equipe aplicou o caso a uma tarefa real, mas o uso não é recorrente ou o resultado não é conferido |
 | Ainda não experimentamos | Ninguém da equipe aplicou o caso a uma tarefa real, ou a equipe só leu a respeito |
 
-O critério de conferência na primeira linha é uma decisão desta oficina. Um caso usado todo dia sem conferência do resultado fica em "Já experimentamos", porque a [página sobre como escolher um caso de uso](como-escolher-um-caso-de-uso.md) trata a conferência como parte do caso e não como etapa opcional.
+O critério de conferência na primeira linha é uma decisão desta oficina. Um caso usado todo dia sem conferência do resultado fica em "Já experimentamos", porque a [página sobre como escolher um caso de uso](como-escolher-um-caso-de-uso.md) trata a conferência como etapa obrigatória do caso.
 
 ## Experimento B: ler o mural
 

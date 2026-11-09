@@ -2,15 +2,15 @@
 
 Um agente de codificação oferece seis mecanismos para guardar uma instrução, um procedimento ou uma restrição: o arquivo de instrução, a skill (um procedimento reutilizável escrito em Markdown), o subagente (um agente auxiliar com janela de contexto própria), a skill executada em contexto isolado com `context: fork`, o hook e o servidor MCP. Esta página reúne os critérios da escolha, compara skill, subagente e agente principal dimensão por dimensão e lista os antipadrões. Ela preenche, na [ficha de requisitos](index.md#a-ficha-de-requisitos), a linha "Mecanismo".
 
-## Skill com fork ou subagente: qual é a diferença?
+## Diferença entre skill com fork e subagente
 
-Uma **skill** guarda um procedimento reutilizável: o que fazer, em que ordem e como entregar o resultado. Um **subagente personalizado** configura um especialista: seu papel, suas instruções e, quando necessário, suas ferramentas e seu modelo.
+A **skill** guarda um procedimento reutilizável, com a sequência de passos e o formato de entrega do resultado. O **subagente personalizado** define um especialista por meio de um papel e de instruções próprias, e pode declarar também ferramentas e modelo.
 
-A skill pode rodar na conversa principal ou em um subagente. Com `context: fork`, o Claude Code inicia um subagente em contexto separado e entrega a ele as instruções da skill. Por isso, os dois caminhos usam um subagente; a diferença é se o ponto de partida é **um procedimento a executar** ou **um especialista para receber uma tarefa**.
+A skill pode rodar na conversa principal ou em um subagente. Com `context: fork`, o Claude Code inicia um subagente em contexto separado e entrega a ele as instruções da skill. Os dois caminhos usam um subagente, e a diferença está no ponto de partida, que é **um procedimento a executar** na skill com fork e **um especialista que recebe uma tarefa** no subagente personalizado.
 
-![Comparação de dois fluxos: uma skill com fork entrega seu procedimento e uma entrada a um subagente; um subagente personalizado recebe uma tarefa e executa segundo seu papel. Ambos devolvem o resultado à conversa principal.](assets/skill-fork-e-subagente.png)
+![Comparação de dois fluxos: uma skill com fork entrega seu procedimento e uma entrada a um subagente, e um subagente personalizado recebe uma tarefa e executa segundo seu papel. Ambos devolvem o resultado à conversa principal.](assets/skill-fork-e-subagente.png)
 
-### Exemplo: analisar uma reunião
+### Exemplo com a análise de uma reunião
 
 A equipe quer identificar tarefas e riscos numa transcrição. Ela cria a skill `.claude/skills/analisar-reuniao/SKILL.md`:
 
@@ -26,7 +26,7 @@ Liste tarefas e riscos, cite os trechos que sustentam cada item e marque
 responsáveis ou prazos ausentes como "A confirmar".
 ```
 
-A chamada `/analisar-reuniao reuniao.md` envia a receita e o caminho da transcrição ao subagente. Ele executa o procedimento em sua própria janela e devolve o resultado à conversa principal. O mesmo procedimento pode ser usado com outras transcrições.
+A chamada `/analisar-reuniao reuniao.md` envia a receita e o caminho da transcrição ao subagente, que executa o procedimento na própria janela de contexto e devolve o resultado à conversa principal. A mesma skill atende às transcrições das reuniões seguintes, com o caminho de cada uma passado como argumento.
 
 Agora a equipe quer um **revisor** que receba diferentes pedidos: conferir um relatório, verificar uma correção ou comparar versões. Ela define `.claude/agents/revisor-reuniao.md`:
 
@@ -50,9 +50,9 @@ A pessoa pode pedir: “Use o revisor-reuniao para comparar `relatorio.md` com `
 | Onde executa? | Em contexto separado | Em contexto separado |
 | O que volta à conversa? | O resultado da execução | O resultado da tarefa delegada |
 
-Escolha uma **skill com fork** quando quiser repetir um procedimento e manter o trabalho intermediário fora da conversa. Escolha um **subagente personalizado** quando quiser reutilizar um especialista, com ferramentas ou modelo próprios, para diferentes tarefas. Isso é uma orientação, não uma fronteira rígida: uma skill pode deixar decisões em aberto e um subagente pode seguir passos fixos.
+Escolha uma **skill com fork** quando quiser repetir um procedimento e manter o trabalho intermediário fora da conversa. Escolha um **subagente personalizado** quando quiser reutilizar um especialista, com ferramentas ou modelo próprios, para diferentes tarefas. O critério admite exceções, porque uma skill pode deixar decisões em aberto e um subagente pode seguir passos fixos.
 
-A equipe também pode usar os dois juntos: a skill gera o relatório e o subagente revisor compara o resultado com a transcrição. Em qualquer dos casos, informe os caminhos e o contexto necessários no pedido: o subagente não recebe automaticamente o histórico da conversa. Contexto separado não garante acesso somente de leitura; para isso, configure ferramentas e permissões, como `tools: Read, Grep, Glob` no exemplo do revisor.
+A equipe também pode usar os dois juntos: a skill gera o relatório e o subagente revisor compara o resultado com a transcrição. Nos dois casos, o pedido precisa informar os caminhos e o contexto necessários, porque o subagente não recebe automaticamente o histórico da conversa. O contexto separado não restringe o acesso à leitura, e essa restrição exige configurar ferramentas e permissões, como `tools: Read, Grep, Glob` no exemplo do revisor.
 
 ## A árvore de seis perguntas
 
@@ -118,7 +118,7 @@ A tabela transforma cada fator da escolha numa pergunta, indica a evidência da 
 |---|---|---|---|
 | A saída intermediária é grande e a conversa não precisa lê-la? | Subagente, ou skill com `context: fork` | Documentado: o subagente tem contexto próprio e só o resumo retorna | A conversa precisa dos trechos da saída para decidir o passo seguinte, e o resumo perderia o que importa. Fica o agente principal |
 | A tarefa precisa de menos ferramentas que a conversa? | Subagente com `tools`, ou skill com `disallowed-tools` enquanto o procedimento durar | Observado: `tools` impediu a edição, e `disallowed-tools` bloqueou a escrita | A restrição precisa valer na sessão inteira ou contra a vontade do agente. Fica um hook ou uma regra de negação nas configurações de permissão |
-| A tarefa precisa de um modelo diferente do da conversa? | Subagente com `model`, ou skill com `model`, que vale só no turno | Documentado | A diferença de preço é pequena diante de uma tarefa curta. A configuração extra não se paga |
+| A tarefa precisa de um modelo diferente do da conversa? | Subagente com `model`, ou skill com `model`, que vale só no turno | Documentado | A diferença de preço é pequena diante de uma tarefa curta, e o custo da configuração extra supera a economia |
 | O procedimento se repete e deve sair igual para todos? | Skill | Documentado: o procedimento carrega sob demanda e fica versionado | A tarefa ocorre uma só vez. Fica o pedido avulso |
 | A pessoa precisa decidir o momento de acionar? | Skill com `disable-model-invocation: true` | Observado: o pedido em linguagem natural não acionou a skill, e a chamada pelo nome funcionou | O procedimento deve ocorrer sempre que o assunto surgir. Fica a skill acionada pelo modelo, com uma `description` precisa |
 | As partes são independentes e o valor justifica o custo? | Vários subagentes em paralelo | Documentado: reduz o tempo, ao preço de mais tokens | As partes dependem do mesmo contexto. Fica um agente, com subagentes só de leitura |
@@ -155,7 +155,7 @@ Na primeira combinação, a pessoa escreve a tarefa na skill e escolhe o tipo de
 
 ### Quando usar fork
 
-A skill com `context: fork` combina o procedimento fixo de uma skill com o isolamento de um subagente: o conteúdo da skill vira o prompt de um subagente que não enxerga o histórico da conversa, e o campo `agent` escolhe o tipo desse subagente. A combinação serve a tarefas recorrentes de saída volumosa, como rodar uma suíte de testes e relatar só as falhas, em que a pessoa quer o mesmo roteiro a cada uso e uma conversa principal limpa.
+A skill com `context: fork` combina o procedimento fixo de uma skill com o isolamento de um subagente: o conteúdo da skill passa a ser o prompt de um subagente que não enxerga o histórico da conversa, e o campo `agent` escolhe o tipo desse subagente. A combinação serve a tarefas recorrentes de saída volumosa, como rodar uma suíte de testes e relatar só as falhas, em que a pessoa quer o mesmo roteiro a cada uso e a conversa principal sem a saída intermediária.
 
 O custo da combinação é a ausência do histórico. Na observação, a skill bifurcada respondeu que não via mensagens anteriores da conversa, e por isso tudo o que a tarefa precisa deve chegar pelos argumentos ou pelo corpo da skill.
 
@@ -165,7 +165,7 @@ O custo da combinação é a ausência do histórico. Na observação, a skill b
 
 ### Hook, MCP e arquivo de instrução
 
-Os três mecanismos restantes cobrem necessidades que skill e subagente não atendem. O arquivo de instrução guarda a orientação que vale para toda sessão do projeto, e a página [O arquivo de instrução](../sessao-02-ambiente-agentico/arquivo-de-instrucao.md) aplica a régua de que uma linha só entra no arquivo se mudar uma decisão do agente. O hook entra quando a regra precisa ser cumprida mesmo que o agente decida ignorá-la, porque a verificação ocorre fora do modelo. O servidor MCP entra quando falta ao agente uma ferramenta ou um dado externo.
+Os três mecanismos restantes cobrem necessidades que skill e subagente não atendem. O arquivo de instrução guarda a orientação que vale para toda sessão do projeto, e a página [O arquivo de instrução](../sessao-02-ambiente-agentico/arquivo-de-instrucao.md) aplica o critério de que uma linha só entra no arquivo se mudar uma decisão do agente. O hook entra quando a regra precisa ser cumprida mesmo que o agente decida ignorá-la, porque a verificação ocorre fora do modelo. O servidor MCP entra quando falta ao agente uma ferramenta ou um dado externo.
 
 !!! note "Claude Code e Codex CLI"
     **Claude Code:** a Sessão 2 apresenta os hooks como pontos de interceptação antes e depois da execução de uma ferramenta, na página [Autonomia e supervisão](../sessao-02-ambiente-agentico/autonomia-e-supervisao.md).
@@ -175,7 +175,7 @@ Os três mecanismos restantes cobrem necessidades que skill e subagente não ate
 
 | Antipadrão | Sintoma | Correção |
 |---|---|---|
-| Skill enciclopédica | O corpo ultrapassa o limite recomendado de 5 mil tokens e o procedimento se dilui entre exceções | Mover referências e scripts para o terceiro nível de carga, que só consome tokens quando acessado |
+| Skill enciclopédica | O corpo ultrapassa o limite recomendado de 5 mil tokens e o procedimento fica disperso entre exceções | Mover referências e scripts para o terceiro nível de carga, que só consome tokens quando acessado |
 | Subagente por cargo | Subagentes chamados analista, desenvolvedor e testador, criados para espelhar o organograma sem que a tarefa peça contexto isolado, ferramentas restritas ou modelo próprio | Criar subagente somente quando a pergunta 4 da árvore tiver resposta afirmativa. A origem é o [princípio de simplicidade](../sessao-01-o-que-mudou/sistemas-agenticos.md#o-principio-de-simplicidade), e a aplicação ao caso é inferência deste material |
 | Fork sem tarefa | Uma skill com `context: fork` que traz só diretrizes, como convenções de API, e nenhuma tarefa, de modo que o subagente retorna sem produzir resultado útil | Reservar o `fork` a skills com instruções explícitas de tarefa, e deixar as diretrizes numa skill comum ou no arquivo de instrução |
 | Skill para tarefa única | Uma pasta de skill criada para um pedido que não se repetirá | Fazer o pedido avulso e criar a skill só quando a tarefa se repetir |

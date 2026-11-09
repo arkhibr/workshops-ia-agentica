@@ -1,12 +1,12 @@
 # Oficina de ferramentas
 
-Neste exercício nós vamos explorar o efeito do contexto explícito num pedido de código. Você vai trabalhar sobre o mesmo problema duas vezes, com dois níveis de contexto, e comparar as saídas.
+Esta oficina explora o efeito do contexto explícito num pedido de código. Você vai trabalhar sobre o mesmo problema duas vezes, com dois níveis de contexto, e comparar as saídas.
 
 **Objetivo Bloom:** Compreender e Aplicar.
 
 ## Ferramenta
 
-Você vai usar o agente de codificação que já configurou (Claude Code, Copilot, Cursor ou equivalente). Nada de novo para instalar. Tempo estimado: 30 minutos.
+Você vai usar o agente de codificação que já configurou (Claude Code, Copilot, Cursor ou equivalente), sem nada novo para instalar, e o tempo estimado é de 30 minutos.
 
 Faça os três experimentos individualmente, na ordem em que aparecem.
 
@@ -20,7 +20,7 @@ Faça os três experimentos individualmente, na ordem em que aparecem.
 
 1. Qual foi o último prompt que você escreveu para gerar ou alterar código em trabalho real? Reconstitua de memória.
 2. Esse prompt tinha contexto (linguagem, formato esperado, regra de negócio, casos de borda) ou pedia só o resultado final?
-3. Classifique seu uso de IA hoje: ad hoc, inconsistente, ou já tem rede de testes e revisão?
+3. Classifique seu uso de IA hoje: ad hoc, inconsistente ou já apoiado em testes e revisão?
 4. Da última vez que um código gerado por IA quebrou, você investigou sistematicamente ou foi tentativa e erro?
 
 **Observe:** guarde as respostas por escrito, como registro do uso declarado hoje, para comparar com o que a prática mostrar ao longo das sessões seguintes do workshop.
@@ -29,7 +29,7 @@ Faça os três experimentos individualmente, na ordem em que aparecem.
 
 **Objetivo:** ver, num caso com regras de negócio reais, o que o contexto explícito muda, antes de aplicar isso no exercício-âncora.
 
-**Cenário:** validar se um cupom de desconto pode ser aplicado a um pedido de e-commerce. Use as quatro regras abaixo só na parte 2. Execute a parte 1 antes de olhar a lista.
+**Cenário:** validar se um cupom de desconto pode ser aplicado a um pedido de e-commerce. Execute a parte 1 antes de olhar a lista e use as quatro regras abaixo somente na parte 2.
 
 Regras:
 
@@ -71,20 +71,20 @@ Exemplos:
 **Questões exploratórias:**
 
 - Qual das duas saídas você aceitaria em produção sem revisão adicional?
-- O que fez a segunda saída ser melhor: o modelo, ou o pedido?
+- O que fez a segunda saída ser melhor: o modelo ou o pedido?
 - A regra de não acumulação (frete grátis + percentual) foi a mais fácil de esquecer nas duas saídas? Por que essa costuma ser a regra que primeiro passa despercebida em revisão de código real?
 
 Guarde as duas saídas: o Experimento C usa exatamente elas.
 
 ## Experimento C
 
-**Objetivo:** achar, nas suas duas saídas do Experimento B, onde cada uma das três setas de [A tese do Software 3.0](software-3-0.md#o-que-sobe-piso-teto-julgamento) apareceu.
+**Objetivo:** achar, nas suas duas saídas do Experimento B, onde cada um dos três termos de [A tese do Software 3.0](software-3-0.md#efeitos-sobre-o-trabalho-de-quem-desenvolve) apareceu.
 
-**Execute:** para cada seta, aponte um trecho concreto das duas saídas do Experimento B:
+**Execute:** para cada termo, aponte um trecho concreto das duas saídas do Experimento B:
 
-1. **Piso subiu para todos:** o que as duas saídas resolveram igualmente bem, sem esforço adicional?
-2. **Teto subiu com disciplina:** o que só a segunda saída resolveu, e que exigiu saber de antemão quais regras de negócio existiam?
-3. **Julgamento humano continuou necessário:** existe alguma decisão que nenhuma das duas saídas tomou sozinha?
+1. **Piso:** o que as duas saídas resolveram igualmente bem, sem esforço adicional?
+2. **Teto:** o que só a segunda saída resolveu, e que exigiu saber de antemão quais regras de negócio existiam?
+3. **Julgamento humano:** existe alguma decisão que nenhuma das duas saídas tomou sozinha?
 
 **Questões exploratórias:**
 

@@ -1,6 +1,6 @@
 # Segurança e credenciais
 
-Uma skill ou um agente atua com as permissões e as credenciais que recebe, e uma instrução maliciosa ou um erro do modelo têm o alcance dessas permissões. Esta página trata das permissões mínimas, do cuidado com as credenciais que o agente usa, em especial a regra de não emprestar a identidade pessoal do Windows e de preferir tokens de escopo restrito, e do ciclo de vida do token. A página preenche, na [ficha de requisitos](index.md#a-ficha-de-requisitos), as linhas "Ferramentas e permissões" e "Identidade, credencial e cofre".
+Uma skill ou um agente atua com as permissões e as credenciais que recebe, e uma instrução maliciosa ou um erro do modelo têm o alcance dessas permissões. Esta página trata das permissões mínimas, do cuidado com as credenciais que o agente usa, em especial a regra de não usar no agente a identidade pessoal do Windows e de preferir tokens de escopo restrito, e do ciclo de vida do token. A página preenche, na [ficha de requisitos](index.md#a-ficha-de-requisitos), as linhas "Ferramentas e permissões" e "Identidade, credencial e cofre".
 
 ## Onde o risco entra
 
@@ -14,7 +14,7 @@ A documentação lista boas práticas para conteúdo não confiável: revisar os
 
 ## Permissões mínimas por construção
 
-A restrição de permissões é declarada no arquivo do subagente e não depende da boa conduta do modelo.
+A restrição de permissões é declarada no arquivo do subagente e vale qualquer que seja a decisão do modelo.
 
 | Mecanismo | Efeito | Cuidado |
 |---|---|---|
@@ -27,7 +27,7 @@ A restrição de permissões é declarada no arquivo do subagente e não depende
 
 Um subagente de revisão, que apenas lê e comenta, declara `tools: Read, Grep, Glob`. Um subagente que precisa de rede ou de escrita declara, no arquivo, o motivo, e a equipe revisa essa declaração como revisa uma mudança de código.
 
-Numa skill, o campo `allowed-tools` libera ferramentas sem pedir aprovação e deixa as demais disponíveis, e a restrição vem de `disallowed-tools`, como mostra a página [Skills](skills.md#liberar-nao-e-restringir). A documentação alerta que o Claude Code aplica o `allowed-tools` de uma skill de projeto até numa execução com `-p` em pasta nunca marcada como confiável, de modo que o `allowed-tools` de uma skill versionada no repositório entra na revisão como mudança de permissão.
+Numa skill, o campo `allowed-tools` libera ferramentas sem pedir aprovação e deixa as demais disponíveis, e a restrição vem de `disallowed-tools`, como mostra a página [Skills](skills.md#liberacao-e-restricao-de-ferramentas-na-skill). A documentação alerta que o Claude Code aplica o `allowed-tools` de uma skill de projeto até numa execução com `-p` em pasta nunca marcada como confiável, de modo que o `allowed-tools` de uma skill versionada no repositório entra na revisão como mudança de permissão.
 
 !!! note "Claude Code e Codex CLI"
     **Claude Code:** o alerta sobre `allowed-tools` consta de [Pre-approve tools for a skill](https://code.claude.com/docs/en/skills#pre-approve-tools-for-a-skill).
@@ -55,7 +55,7 @@ O agente age em nome de alguma identidade, e a pergunta de projeto é qual. As r
 | Definir sempre a expiração. No GitHub, o padrão do token de granularidade fina é de 30 dias | GitHub Docs |
 | Não incluir dado pessoal nem parte do valor do token no nome do token | Microsoft Learn |
 
-Um PAT identifica a pessoa que o criou e não concede mais permissões do que ela possui. A frase delimita o dano máximo e não o elimina: o PAT com escopo de leitura de código só lê código, e o PAT de escopo total faz tudo o que a pessoa faz. A Microsoft informa ainda que os PATs globais do Azure DevOps deixam de funcionar em 1º de dezembro de 2026 e que se deve usar PATs de escopo de organização ou autenticação do Microsoft Entra.
+Um PAT identifica a pessoa que o criou e não concede mais permissões do que ela possui. Essa regra limita o dano máximo ao conjunto de permissões da pessoa, de modo que o PAT com escopo de leitura de código só lê código e o PAT de escopo total executa tudo o que a pessoa pode executar. A Microsoft informa ainda que os PATs globais do Azure DevOps deixam de funcionar em 1º de dezembro de 2026 e que se deve usar PATs de escopo de organização ou autenticação do Microsoft Entra.
 
 ![À esquerda, o que evitar: a identidade integrada do Windows ou a senha de domínio da pessoa, que daria ao agente tudo o que a pessoa pode fazer. À direita, o que preferir, em ordem: identidade de aplicação, PAT de escopo de organização com escopos mínimos e vida curta, e token de granularidade fina no GitHub. Abaixo, três regras: um token para cada ferramenta ou fluxo, expiração sempre definida e valor no cofre de segredos.](assets/identidade-propria-e-credencial.png)
 

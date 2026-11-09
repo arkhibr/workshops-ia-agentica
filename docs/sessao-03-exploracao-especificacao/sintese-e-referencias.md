@@ -3,13 +3,13 @@
 ## Nove ideias essenciais
 
 1. **O ciclo é explorar, perguntar, propor, especificar, nessa ordem.** Pular uma etapa transfere o custo dela para a fase em que corrigir já significa reescrever.
-2. **Um pedido vago não é descuido de quem pediu.** A cabeça de quem pediu já resolveu a ambiguidade sem perceber. Perguntar é externalizar essa resolução antes que o agente a externalize errado.
-3. **A intervenção socrática atrasa a convergência prematura.** Uma pergunta de cada vez, escolhida em função da resposta anterior, mantém mais de uma leitura de um pedido viva por mais tempo do que uma lista de perguntas escrita de uma vez só.
-4. **BR, FR e NFR respondem perguntas diferentes.** Regra de negócio existiria sem o sistema. Requisito funcional só existe em relação a ele. Requisito não funcional é o critério de qualidade sob o qual o funcional acontece.
+2. **Um pedido vago contém decisões que quem pediu já tomou sem registrar.** As perguntas registram essas decisões por escrito antes que o agente as preencha com suposições próprias.
+3. **A intervenção socrática atrasa a convergência prematura.** Uma pergunta de cada vez, escolhida em função da resposta anterior, mantém mais de uma leitura de um pedido em consideração por mais tempo do que uma lista de perguntas escrita de uma vez só.
+4. **BR, FR e NFR respondem perguntas diferentes.** A regra de negócio existiria sem o sistema, o requisito funcional descreve o comportamento do sistema que cumpre a regra, e o requisito não funcional define o critério de qualidade desse comportamento.
 5. **Regra de negócio disfarçada de requisito funcional é o antipadrão mais comum.** Quando a regra muda, ninguém encontra o número certo para trocar, porque ele nunca teve linha própria.
-6. **Especificação executável traz valor de entrada e resultado esperado.** O teste: alguém que nunca ouviu falar do domínio consegue escrever os casos de conferência sem perguntar mais nada?
-7. **Uma especificação pode estar certa e ainda produzir o sistema errado.** O incidente do pedido acumulado, na página de decomposição de requisitos, mostrou isso: a falha estava na pergunta que nunca foi feita, com BR e FR perfeitamente fiéis um ao outro.
-8. **O ciclo completo nem sempre compensa.** Mudança pequena, reversível, sem regra nova: resolve-se perguntando de cabeça. O ciclo formal se paga quando a regra é nova ou mais de uma pessoa vai manter o código depois.
+6. **Especificação executável traz valor de entrada e resultado esperado.** O critério é verificar se alguém que nunca ouviu falar do domínio consegue escrever os casos de conferência sem perguntar mais nada?
+7. **Uma especificação fiel ao pedido depende de uma elicitação que tenha feito todas as perguntas relevantes.** O incidente do pedido acumulado, na página de decomposição de requisitos, mostrou isso: a falha estava na pergunta que nunca foi feita, com BR e FR perfeitamente fiéis um ao outro.
+8. **O ciclo completo nem sempre compensa.** Uma mudança pequena, reversível e sem regra nova pode ser resolvida com perguntas informais, sem registro escrito. O ciclo formal compensa o esforço quando a regra é nova ou quando mais de uma pessoa vai manter o código depois.
 9. **O critério de decisão desta sessão prepara a próxima.** A Sessão 4 parte da separação entre regra de negócio e requisito funcional feita aqui e formaliza a regra com o vocabulário controlado do SBVR, as sentenças do RuleSpeak e tabelas de decisão, aplicados a um exemplo didático de IRPF com valores hipotéticos, a exercícios sobre o cashback do IBS e da CBS que terminam em casos de teste escritos em TDD e à recuperação de regras implícitas numa consulta SQL.
 
 ## Checklist antes de encerrar a sessão
@@ -17,8 +17,8 @@
 - [ ] O grupo consegue nomear as quatro etapas do ciclo e explicar por que pular uma delas custa mais caro depois.
 - [ ] Cada participante conduziu uma intervenção socrática completa, com o contrato de uma pergunta por mensagem respeitado, até um dossiê com registro de proveniência.
 - [ ] Cada participante classifica um requisito real como BR, FR ou NFR sem hesitar.
-- [ ] Cada participante rodou o exercício-âncora do seu tema e verificou os casos novos por execução de teste ou por retrotradução, e não por leitura do texto.
-- [ ] Ninguém saiu achando que "especificar" é só escrever mais texto. O que conta é o texto ser verificável.
+- [ ] Cada participante rodou o exercício-âncora do seu tema e verificou os casos novos por execução de teste ou por retrotradução.
+- [ ] O grupo reconhece que uma especificação só está pronta quando cada requisito tem um caso concreto que permite verificá-lo.
 
 ## Autoavaliação
 

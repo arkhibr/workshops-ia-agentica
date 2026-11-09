@@ -6,11 +6,11 @@
 
 ## Problema
 
-Especificação, plano e testes que não se conectam num ciclo executável viram documentação que ninguém segue. Cada artefato precisa alimentar o próximo, e a mudança precisa deixar rastro: quando alguém perguntar, seis meses depois, por que aquela regra existe, a resposta não pode estar só no histórico de um chat que ninguém guardou.
+Especificação, plano e testes desconectados de um ciclo executável produzem documentação que ninguém consulta. Cada artefato precisa alimentar o próximo, e a mudança precisa deixar rastro: quando alguém perguntar, seis meses depois, por que aquela regra existe, a resposta não pode estar só no histórico de um chat que ninguém guardou.
 
 ## Como usar este material
 
-Estas páginas não são leitura prévia. O instrutor conduz a exploração dos conceitos ao vivo, intercalada com a prática. Chegar sem ter lido nada é a expectativa normal.
+Estas páginas não são leitura prévia: o instrutor conduz a exploração dos conceitos ao vivo, intercalada com a prática, e o participante pode chegar sem ter lido nada.
 
 ## Objetivos de aprendizagem
 
@@ -19,7 +19,7 @@ Ao final desta sessão, o participante deve ser capaz de:
 1. **Executar** um ciclo SDD completo, da constitution ao código verificado, com os quatro artefatos canônicos.
 2. **Distinguir** as quatro abordagens de SDD pelo artefato que cada uma preserva e pelo tipo de rigor que cada uma cobra.
 3. **Classificar** uma prática como *spec-first*, *spec-anchored* ou *spec-as-source*.
-4. **Escolher** a profundidade de processo proporcional ao risco da mudança, em vez de aplicar o pacote completo a tudo.
+4. **Escolher** a profundidade de processo proporcional ao risco de cada mudança.
 5. **Reconhecer** os antipadrões que transformam SDD em documentação cara que ninguém consulta.
 6. **Propor** o que medir num piloto de adoção, sem confundir volume gerado com fluxo de entrega.
 
@@ -30,7 +30,7 @@ Ao final desta sessão, o participante deve ser capaz de:
 | 1 | [O ciclo e os quatro artefatos](ciclo-e-artefatos.md) | Teoria | 8 min | O que cada artefato decide e o custo de inverter a ordem entre eles |
 | 2 | [Abordagens de SDD](abordagens-sdd.md) | Teoria | 9 min | Spec Kit, OpenSpec, SPDD e Superpowers, e o que cada um preserva |
 | 3 | [Escolher a abordagem e a profundidade](escolher-a-abordagem.md) | Teoria | 7 min | Dez critérios de comparação e a régua de profundidade proporcional ao risco |
-| 4 | [Manter os artefatos vivos](artefatos-vivos.md) | Teoria | 7 min | Que mudança atualiza qual artefato, e o que regenerar às cegas destrói |
+| 4 | [Manter os artefatos vivos](artefatos-vivos.md) | Teoria | 7 min | Que mudança atualiza qual artefato e o risco de regenerar texto já aprovado |
 | 5 | [Quando o SDD falha](quando-sdd-falha.md) | Teoria | 7 min | Os antipadrões, os casos em que o método não compensa e o que medir num piloto |
 | 6 | [Exemplo arquitetural](exemplo-arquitetural.md) | Demonstração | 12 min | Ver o ciclo inteiro na Vetor, plataforma fictícia de e-commerce B2B, da constitution ao teste verde |
 | 7 | [Estudo de caso](estudo-de-caso.md) | Discussão em grupo | 12 min | Julgar um ciclo que produziu todos os artefatos e ainda assim entregou errado |

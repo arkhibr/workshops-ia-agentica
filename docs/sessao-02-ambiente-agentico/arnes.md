@@ -15,9 +15,9 @@ Comparando com a página anterior: das quatro peças do ambiente agêntico, o mo
 
 ## A aritmética do erro composto
 
-Esta é a razão técnica pela qual o arnês existe, e ela é menos intuitiva do que parece.
+A razão técnica para a existência do arnês está na forma como a confiabilidade se acumula ao longo das etapas de um agente.
 
-Um agente é um processo de muitas etapas, e etapas se compõem por multiplicação, não por média. Suponha uma confiabilidade de 99% por etapa, um número que soaria excelente em qualquer outro contexto:
+Um agente é um processo de muitas etapas, e a confiabilidade de uma trajetória é o produto das confiabilidades de cada etapa. Suponha uma confiabilidade de 99% por etapa, um número que soaria excelente em qualquer outro contexto:
 
 | Etapas na trajetória | Confiabilidade por etapa | Chance de a trajetória inteira dar certo |
 |---:|---:|---:|
@@ -34,7 +34,7 @@ Trocar de modelo não altera essa conta, porque o resultado depende do encadeame
 - **Redução do espaço de decisão.** Menos ambiguidade por etapa significa menos chance de escolha errada.
 - **Contexto limpo.** Menos ruído na janela significa menos chance de o modelo interpretar mal o estado atual.
 
-A matemática também impõe um limite honesto, que contraria o reflexo de melhorar cada passo. Reduzir o número de etapas costuma ser mais eficaz que aumentar a confiabilidade de cada uma: um fluxo de dez passos com 99% é mais confiável que um de cinquenta passos com 99,5%.
+A mesma conta mostra que reduzir o número de etapas costuma ser mais eficaz que aumentar a confiabilidade de cada uma: um fluxo de dez passos com 99% é mais confiável que um de cinquenta passos com 99,5%.
 
 !!! question "Antes de continuar"
     Pense na tarefa mais longa que você já entregou a um agente. Quantas etapas ela tinha, mais ou menos? Aplicando a tabela acima, qual era a chance de a trajetória inteira sair certa, e isso bate com o que aconteceu?
@@ -53,7 +53,7 @@ A lista abaixo reúne os componentes que aparecem de forma recorrente nos ensaio
 | Isolamento | Onde o agente roda sem alcançar o trabalho de outra pessoa? | [Isolamento por ramo](isolamento-por-ramo.md) |
 | *Hooks* | Em que ponto do ciclo um controle determinístico intervém? | [Autonomia e supervisão](autonomia-e-supervisao.md) |
 
-Os dois primeiros itens costumam receber toda a atenção, e são os de menor retorno isolado. O quarto, verificação, é o de maior retorno comprovado, pelo motivo aritmético da seção anterior.
+Instrução de sistema e ferramentas costumam receber a maior parte da atenção, embora tenham o menor retorno isolado. A verificação, quarto item da tabela, tem o maior retorno comprovado, pelo motivo aritmético da seção anterior.
 
 Vale registrar de onde vem esse vocabulário, para não importá-lo sem crítica. Ele nasceu na comunidade de agentes de codificação, que é exatamente o caso deste workshop, onde o arnês é um programa de linha de comando e os componentes têm nomes de arquivo concretos. A [Anthropic documenta essa camada em "Steering Claude Code"](../referencia/bibliografia.md#anthropic-steering-claude-code-2026), separando os mecanismos que **guiam** o modelo, como arquivos de contexto, dos que **impõem** comportamento, como *hooks* e permissões. A distinção sustenta uma regra que vale para o resto do workshop: uma proteção real precisa ser determinística. O arquivo de instrução pede um comportamento ao modelo, e o *hook* o impõe na camada de execução.
 
@@ -61,32 +61,30 @@ Vale registrar de onde vem esse vocabulário, para não importá-lo sem crítica
 
 ## Estabelecer o arnês rende mais que trocar de modelo
 
-[Trivedy](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026) relata que a mesma família de modelo sai de fora das trinta primeiras posições para as cinco primeiras do Terminal Bench 2.0 quando apenas o arnês muda, e que um mesmo modelo pontua diferente dentro e fora do arnês de um produto comercial. A posição num placar envelhece rápido e não vale decorar. O que dura é a direção da relação. [Osmani formula o mesmo achado em "Agent Harness Engineering"](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026): um modelo mediano dentro de um bom arnês supera um bom modelo dentro de um arnês ruim.
+[Trivedy](../referencia/bibliografia.md#trivedy-the-anatomy-of-an-agent-harness-2026) relata que a mesma família de modelo sai de fora das trinta primeiras posições para as cinco primeiras do Terminal Bench 2.0 quando apenas o arnês muda, e que um mesmo modelo pontua diferente dentro e fora do arnês de um produto comercial. As posições mudam a cada edição do placar, e o que se mantém entre edições é a direção da relação. [Osmani formula o mesmo achado em "Agent Harness Engineering"](../referencia/bibliografia.md#osmani-agent-harness-engineering-2026): um modelo mediano dentro de um bom arnês supera um bom modelo dentro de um arnês ruim.
 
-Isso fecha um ponto aberto na Sessão 1. Em [Avaliação de modelos](../sessao-01-o-que-mudou/avaliacao-de-modelos.md) ficou dito que o número divulgado num *benchmark* depende tanto da forma como o teste foi conduzido quanto do modelo medido, e que a leitura independente do DeepSWE roda cada modelo na melhor configuração disponível do `mini-swe-agent`. Essa configuração se chama arnês, e é por isso que a nota mede o desempenho do par.
+Esse resultado completa um ponto deixado em aberto na Sessão 1. Em [Avaliação de modelos](../sessao-01-o-que-mudou/avaliacao-de-modelos.md) ficou dito que o número divulgado num *benchmark* depende tanto da forma como o teste foi conduzido quanto do modelo medido, e que a leitura independente do DeepSWE roda cada modelo na melhor configuração disponível do `mini-swe-agent`. Essa configuração se chama arnês, e é por isso que a nota mede o desempenho do par.
 
-A consequência prática é de ordem de gasto. Trocar de modelo é uma decisão cara e visível, que costuma vir primeiro na conversa. Estabelecer o arnês é barato e invisível, e frequentemente move mais o resultado.
+A consequência prática diz respeito à ordem dos gastos. Antes de pagar pela troca de modelo, que costuma ser a primeira opção discutida, recomenda-se ajustar o arnês, que custa menos e, nos dois relatos acima, alterou mais o resultado.
 
 ## Mais ferramentas não significa menos erro
 
-Diante de um agente que erra, a vontade é ampliar a capacidade dele. A evidência aponta para o lado oposto. A [Vercel removeu 80% das ferramentas](../referencia/bibliografia.md#vercel-removing-80-of-agent-tools-2026) de um agente que traduzia texto para SQL, trocando dezesseis ferramentas especializadas por acesso a um sistema de arquivos com execução de comandos, e relatou a taxa de sucesso subindo de 80% para 100%, com 40% menos *tokens*, 40% menos passos e o tempo médio de resposta caindo de 274 para 77 segundos.
+Diante de um agente que erra, a reação comum é dar a ele mais ferramentas. A [Vercel removeu 80% das ferramentas](../referencia/bibliografia.md#vercel-removing-80-of-agent-tools-2026) de um agente que traduzia texto para SQL, trocando dezesseis ferramentas especializadas por acesso a um sistema de arquivos com execução de comandos, e relatou a taxa de sucesso subindo de 80% para 100%, com 40% menos *tokens*, 40% menos passos e o tempo médio de resposta caindo de 274 para 77 segundos.
 
 A explicação é a mesma do erro composto. Cada ferramenta adicional amplia o espaço de decisão de cada etapa, e ferramentas com fronteiras parecidas criam pontos de decisão ambíguos. A [orientação da Anthropic em "Writing effective tools for agents"](../referencia/bibliografia.md#anthropic-writing-effective-tools-for-agents-2025) formula o critério de um jeito que dá para verificar: se uma pessoa da engenharia não consegue dizer com segurança qual ferramenta usar numa situação, o modelo também não vai conseguir. Daí a recomendação: consolide ferramentas por fluxo de trabalho, em vez de espelhar cada endpoint da API, e use prefixos de nome que deixem a fronteira clara.
 
-Existe um custo simétrico que a lição não deve esconder. Descrições de ferramenta ocupam contexto antes de qualquer requisição: a [Anthropic relata, em "Code execution with MCP"](../referencia/bibliografia.md#anthropic-code-execution-with-mcp-2025), um caso em que carregar definições sob demanda, em vez de todas de uma vez, reduziu o consumo de 150 mil para 2 mil *tokens*. Catálogo mínimo é, ao mesmo tempo, decisão de qualidade e decisão de custo.
-
-Projetar um arnês é otimizar o caminho até o resultado certo, e a operação que mais frequentemente melhora esse caminho é uma remoção.
+Descrições de ferramenta também ocupam contexto antes de qualquer requisição: a [Anthropic relata, em "Code execution with MCP"](../referencia/bibliografia.md#anthropic-code-execution-with-mcp-2025), um caso em que carregar definições sob demanda, em vez de todas de uma vez, reduziu o consumo de 150 mil para 2 mil *tokens*, o que faz do tamanho do catálogo também uma questão de custo.
 
 ## Diagnosticar pelo tipo de falha
 
-A utilidade de decompor o arnês em peças é transformar "o agente errou" numa hipótese endereçável. Cada tipo de falha aponta para uma peça diferente, e mexer na peça errada consome tempo sem mover o resultado.
+A utilidade de decompor o arnês em peças é transformar "o agente errou" numa hipótese endereçável. Cada tipo de falha aponta para uma peça diferente, e mexer na peça errada consome tempo sem alterar o resultado.
 
 | Sintoma observado | Peça provável | Primeira intervenção |
 |---|---|---|
 | Violou uma convenção que ninguém escreveu | arquivo de instrução | tornar explícitos os comandos, as convenções e o que nunca fazer |
 | Escolheu a ferramenta errada entre opções parecidas | catálogo de ferramentas | consolidar o catálogo e descrever fronteiras |
 | Buscou informação que não existe no repositório | acesso externo | avaliar se o caso pede um servidor MCP |
-| Perdeu o fio numa tarefa longa | gestão de contexto | recortar o contexto por etapa e resumir o estado |
+| Perdeu o estado da tarefa numa execução longa | gestão de contexto | recortar o contexto por etapa e resumir o estado |
 | Duas sessões se atrapalharam no mesmo diretório | isolamento | um ramo de trabalho por tarefa |
 | Produziu efeito difícil de reverter sem ninguém aprovar | autonomia | baixar o nível de permissão para aquele tipo de ação |
 | Ignorou a convenção documentada no momento de executar | *hooks* | impor o limite na camada de execução |
@@ -94,13 +92,20 @@ A utilidade de decompor o arnês em peças é transformar "o agente errou" numa 
 
 A última linha é a de maior retorno, porque a investigação de uma falha de agente começa por perguntar em que etapa a verificação faltou. A Sessão 9 retoma as linhas de autonomia, *hooks* e verificação ao tratar dos controles que uma skill ou um agente precisa ter antes de ser compartilhado com a equipe.
 
-Quatro perguntas organizam o trabalho de melhoria. Onde este agente falha mais, e a que peça esse tipo de falha corresponde? Ele tem alguma forma de conferir o próprio trabalho, e se não tem, qual seria a mais barata de dar a ele? Que contexto ele não recebe hoje e deveria receber, que hoje existe só na cabeça de alguém? E qual das tarefas que ele executa tem critério de sucesso inteiramente objetivo, porque essa é a candidata a receber mais autonomia. A ordem entre elas importa, e trocar de modelo é a última.
+Quatro perguntas organizam o trabalho de melhoria. Onde este agente falha mais, e a que peça esse tipo de falha corresponde? Ele tem alguma forma de conferir o próprio trabalho, e se não tem, qual seria a mais barata de dar a ele? Que contexto ele não recebe hoje e deveria receber, que hoje não está registrado em lugar nenhum? E qual das tarefas que ele executa tem critério de sucesso inteiramente objetivo, porque essa é a candidata a receber mais autonomia. A troca de modelo só deve ser considerada depois de respondidas essas quatro perguntas.
 
 ## O arnês é onde mora a autoridade
 
-O vocabulário de arnês deixa nítida uma leitura arquitetural. Tudo que decide **se** uma ação acontece vive no arnês, fora do modelo. O catálogo apresentado ao modelo é interface de descoberta. A permissão é avaliada por quem executa. A aprovação vincula uma pessoa a um objeto e a um prazo. O *hook* interrompe num ponto definido pelo projeto. Quando alguém diz que "o agente decidiu pedir confirmação", ou o arnês define esse ponto explicitamente, ou não existe ponto nenhum e o que houve foi coincidência.
+O vocabulário de arnês deixa nítida uma leitura arquitetural. Tudo que decide **se** uma ação acontece fica no arnês, fora do modelo:
 
-Vale saber até onde um bom arnês chega. Ele reduz a probabilidade de erro e limita o raio de impacto. Fora isso, uma ação irreversível continua perigosa, alguém com nome continua tendo que aceitar o risco, e a autorização continua vindo de uma pessoa.
+- O catálogo apresentado ao modelo serve apenas para que ele descubra as ferramentas disponíveis.
+- A permissão é avaliada pelo componente que executa a ação.
+- A aprovação vincula uma pessoa a um objeto e a um prazo.
+- O *hook* interrompe a execução num ponto definido pelo projeto.
+
+Quando alguém diz que "o agente decidiu pedir confirmação", ou o arnês define esse ponto explicitamente, ou não existe ponto nenhum e o que houve foi coincidência.
+
+Um bom arnês reduz a probabilidade de erro e limita o alcance do dano quando o erro acontece. Ele não torna segura uma ação irreversível e não dispensa a pessoa nomeada que aceita o risco e autoriza a ação.
 
 !!! tip "Aplique agora"
     Pense na última vez em que um agente errou de um jeito que irritou você. Classifique aquele erro numa linha da tabela de diagnóstico. A intervenção sugerida já existe no seu ambiente, ou é exatamente ela que está faltando?
