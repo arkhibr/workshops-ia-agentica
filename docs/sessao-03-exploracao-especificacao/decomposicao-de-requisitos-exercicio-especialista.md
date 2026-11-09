@@ -1,4 +1,4 @@
-# Exercício de IA — Especialista: especifique, implemente, verifique
+# Exercício de IA — Especialista: bônus de primeiro pedido em código
 
 **Para quem implementa em código.** Este exercício usa o agente de codificação já configurado, o git e o Node.js 20 ou superior. Todos os experimentos partem de um projeto vazio, montado nesta oficina.
 
@@ -73,23 +73,23 @@ Os cinco testes precisam passar antes de continuar.
 
 > "Quero um desconto de lançamento pra atrair cliente novo: primeiro pedido dele, se for baixinho, ganha um desconto a mais."
 
-## Passo 1 — perguntas
+## Passo 1. Escrever as perguntas
 
 Escreva, sem abrir o bloco abaixo, de três a cinco perguntas que você faria antes de redigir a especificação, aplicando a disciplina da [intervenção socrática](intervencao-socratica-conceitos.md): uma de cada vez, sem a resposta embutida na formulação.
 
-## Passo 2 — respostas
+## Passo 2. Ler as respostas
 
-??? note "Respostas de quem pediu — abra só depois do passo 1"
+??? note "Respostas de quem pediu, para abrir depois do passo 1"
     - O que conta como "primeiro pedido"? Cliente com `pedidosAprovados` igual a zero, e vale para cliente padrão e atacado, sem distinção de tipo.
     - O que conta como "baixinho"? Valor do pedido menor que R$ 1.000,00. Pedidos grandes de cliente novo não se qualificam.
     - Quanto é o desconto a mais? 3 pontos percentuais, somados à faixa normal.
     - O teto de R$ 1.000,00 continua valendo? Sim, sempre.
 
-## Passo 3 — especifique
+## Passo 3. Escrever a especificação
 
 Escreva a regra de negócio (BR) e o requisito funcional (FR), no formato do [Exemplo de aplicação de IA](decomposicao-de-requisitos-exemplo-de-aplicacao-de-ia.md). `calcularDesconto` vai precisar de um terceiro parâmetro, `pedidosAprovados`, opcional, com valor padrão que preserve o comportamento dos cinco testes já existentes.
 
-## Passo 4 — implemente e verifique
+## Passo 4. Implementar e verificar
 
 Cole sua especificação para o agente e peça a implementação, com testes, dentro do projeto que você montou. Rode os quatro casos abaixo contra o resultado, com `node --test`:
 
@@ -98,22 +98,22 @@ Cole sua especificação para o agente e peça a implementação, com testes, de
 | 1 | R$ 800,00 | padrão | 0 | R$ 64,00 (5% + 3% = 8%) |
 | 2 | R$ 1.500,00 | padrão | 0 | R$ 75,00 (5%, sem bônus, valor não é "baixinho") |
 | 3 | R$ 800,00 | atacado | 0 | R$ 64,00 (o bônus não distingue tipo de cliente) |
-| 4 | R$ 400,00 | padrão | 3 | R$ 0,00 (faixa de 0%, sem bônus, não é primeiro pedido) |
+| 4 | R$ 400,00 | padrão | 3 | R$ 0,00 (faixa de 0% e sem bônus, porque o cliente já tem pedidos aprovados) |
 
 Confira também que os cinco testes originais continuam passando.
 
-## Passo 5 — escreva a função de aptidão
+## Passo 5. Escrever a função de aptidão
 
 A Vetor pede que `calcularDesconto` "continue rápida mesmo com muito tráfego". Escreva o cenário de qualidade completo (fonte, estímulo, ambiente, artefato, resposta, medida), seguindo o template de [decomposição de requisitos](decomposicao-de-requisitos-conceitos.md#cenario-de-qualidade-e-funcao-de-aptidao). Depois peça ao agente uma função de aptidão: um teste em Node que chama `calcularDesconto` quinhentas vezes, mede o tempo com `performance.now()`, e falha se a média ultrapassar o limiar que você declarou no cenário.
 
-**Observe:** o caso 2, de valor grande, e o caso 4, que não é primeiro pedido, são os dois que provam que o bônus tem fronteira, em vez de nunca se aplicar. Se qualquer um dos dois falhar, é sinal de que a especificação do passo 3 não deixou a fronteira explícita o bastante para o agente implementar sem adivinhar.
+**Observe:** o caso 2, de valor grande, e o caso 4, que não é primeiro pedido, são os dois que mostram em que ponto o bônus deixa de se aplicar. Se qualquer um dos dois falhar, é sinal de que a especificação do passo 3 não deixou a fronteira explícita o bastante para o agente implementar sem adivinhar.
 
 **Critérios de avaliação**
 
 | Critério | Peso | O que evidencia atendimento adequado |
 |---|---:|---|
 | Perguntas antes da resposta | 20% | As perguntas do passo 1 foram escritas e preservadas antes de abrir o bloco de respostas |
-| Especificação no padrão BR/FR | 40% | A regra de negócio e o requisito funcional estão separados, com valores concretos, não uma frase genérica |
+| Especificação no padrão BR/FR | 40% | A regra de negócio e o requisito funcional estão separados e trazem valores concretos em cada frase |
 | Verificação real executada | 40% | Executou `node --test` contra os quatro casos novos, os cinco originais, e a função de aptidão do passo 5 |
 
 **Próxima página:** [Síntese e referências](sintese-e-referencias.md).

@@ -4,7 +4,7 @@ Responda antes de abrir os blocos de resposta nos dois primeiros níveis. A prog
 
 ## Situação compartilhada
 
-Todos os exercícios desta página usam o mesmo caso da [Oficina de ferramentas](oficina-de-ferramentas.md#o-caso-fechamento-de-descontos-da-vetor). Se você não fez a oficina, o que está aqui basta para responder.
+Todos os exercícios desta página usam o mesmo caso da [Oficina de ferramentas](oficina-de-ferramentas.md#caso-do-fechamento-de-descontos-da-vetor). Se você não fez a oficina, o que está aqui basta para responder.
 
 A **Vetor** é uma empresa fictícia de e-commerce B2B, usada nos exemplos deste workshop. Ela classifica cada cliente como padrão ou atacado, e dá desconto por faixa de valor do pedido. A pasta da oficina, `oficina-arnes`, tem uma planilha do Excel, `pedidos-setembro.xlsx`, com 22 pedidos de setembro de 2026. Três deles estão cancelados, então 19 entram no fechamento, que soma **R$ 68.668,44**.
 
@@ -57,7 +57,7 @@ Quatro fatos deste arquivo **não dá para deduzir olhando a planilha de pedidos
 - Que o projeto resolve em JavaScript com `exceljs`, e nunca em Python.
 - Que nenhuma entrega é considerada pronta sem a aba `Conferência` conferida.
 
-Para montar o caso do zero, salve o CSV publicado na [oficina](oficina-de-ferramentas.md#o-caso-fechamento-de-descontos-da-vetor) dentro de uma pasta nova:
+Para montar o caso do zero, salve o CSV publicado na [oficina](oficina-de-ferramentas.md#caso-do-fechamento-de-descontos-da-vetor) dentro de uma pasta nova:
 
 ```bash
 mkdir oficina-arnes && cd oficina-arnes
@@ -83,7 +83,7 @@ Complete: agente = modelo + ______. E diga qual das quatro peças do exercício 
 <details>
 <summary>Ver resposta</summary>
 
-Agente = modelo + **arnês**. Nenhuma das quatro peças fica de fora: as quatro são arnês. O que fica de fora é o modelo, que não está entre elas.
+Agente = modelo + **arnês**. As quatro peças do exercício anterior pertencem ao arnês, e o termo que fica de fora é o modelo, que não está entre elas.
 </details>
 
 ### 3. O problema M×N
@@ -93,7 +93,7 @@ Em uma frase, explique o problema que o MCP resolve.
 <details>
 <summary>Ver resposta</summary>
 
-Sem um protocolo comum, conectar M modelos a N ferramentas exige M×N integrações específicas. O MCP faz cada modelo e cada ferramenta implementarem o protocolo uma única vez, reduzindo a multiplicação a uma soma.
+Sem um protocolo comum, conectar M modelos a N ferramentas exige M×N integrações específicas. O MCP faz cada modelo e cada ferramenta implementarem o protocolo uma única vez, o que reduz o número de integrações de M×N para M+N.
 </details>
 
 ## Compreender
@@ -105,7 +105,7 @@ Explique a diferença entre as duas práticas, sem usar a palavra "melhor" para 
 <details>
 <summary>Ver resposta</summary>
 
-A engenharia de prompt cuida do texto da instrução. A engenharia de contexto cuida de tudo que chega à janela de contexto numa execução: instruções, histórico, resultado de ferramentas, arquivos lidos. A segunda é mais ampla que a primeira, e continua precisando dela.
+A engenharia de contexto inclui o texto da instrução, que é o objeto da engenharia de prompt, e trata de tudo que chega à janela de contexto numa execução: instruções, histórico, resultado de ferramentas, arquivos lidos. Por isso a engenharia de contexto é mais ampla que a de prompt e continua dependendo dela.
 </details>
 
 ### 5. O efeito de uma linha genérica de instrução
@@ -115,7 +115,7 @@ Um colega abre um `AGENTS.md` na pasta `oficina-arnes` e escreve uma única linh
 <details>
 <summary>Ver resposta</summary>
 
-A linha genérica não informa nada que o agente já não tentasse fazer, então nenhuma decisão dele muda por causa dela. Uma linha que muda decisão responde uma pergunta cuja resposta só existe dentro da Vetor. Por exemplo: "o desconto nunca passa de R$ 1.000,00 por pedido" decide um número que o agente chutaria de outro jeito. Ou: "cliente atacado tem uma faixa de 20% acima de R$ 10.000,00", que nenhum prior de mercado adivinha.
+A linha genérica não informa nada que o agente já não tentasse fazer, então nenhuma decisão dele muda por causa dela. Uma linha que muda decisão responde uma pergunta cuja resposta só existe dentro da Vetor. Por exemplo: "o desconto nunca passa de R$ 1.000,00 por pedido" decide um número que o agente teria de supor sem o arquivo. Outro exemplo é "cliente atacado tem uma faixa de 20% acima de R$ 10.000,00", regra que nenhuma prática geral de mercado permite deduzir.
 </details>
 
 ### 6. Tool ou resource?
@@ -148,7 +148,7 @@ A pasta `oficina-arnes`, a planilha `pedidos-setembro.xlsx`, o `AGENTS.md` da si
 
 **Como conduzir**
 
-1. Antes de tudo, confira que o arquivo ainda descreve a realidade. Rode o fechamento uma vez com as regras atuais e confirme que o total bate com os R$ 68.668,44 da situação compartilhada, como manda [O arquivo de instrução](arquivo-de-instrucao.md#como-saber-se-o-arquivo-ainda-funciona). Se o resultado não reproduz a regra escrita, tudo que vier depois mede outra coisa.
+1. Antes de tudo, confira que o arquivo ainda descreve a realidade. Rode o fechamento uma vez com as regras atuais e confirme que o total bate com os R$ 68.668,44 da situação compartilhada, como manda [O arquivo de instrução](arquivo-de-instrucao.md#como-saber-se-o-arquivo-ainda-funciona). Se o resultado não reproduz a regra escrita, os passos seguintes não medem o efeito da mudança.
 2. **Entrada.** Edite o `AGENTS.md` para refletir o teto novo, e peça ao agente, numa conversa nova: *"Refaça o fechamento com as regras atuais do AGENTS.md."*
 3. **Resposta.** Confira três pontos contra o arquivo de instrução. Ele aplicou o teto novo nos cinco pedidos que batiam no teto antigo? Ele deixou intactos os pedidos cujo desconto já era menor que R$ 1.000,00? Ele alterou a aba `Pedidos`, que o arquivo manda preservar sem alteração?
 4. **Verificação.** Abra a aba `Conferência`. O total final correto depois da mudança é **R$ 66.600,44**, sobre os mesmos 19 pedidos elegíveis. Se a sua planilha mostrar outro número, decida se o erro está na regra que você escreveu ou no que o agente fez com ela.
@@ -185,7 +185,7 @@ Compare o `AGENTS.md` que você escreveu com o arquivo de [Exemplo arquitetural]
 
 ## Avaliar
 
-### 11. O commit que sumiu
+### 11. A alteração perdida no estudo de caso
 
 No [Estudo de caso](estudo-de-caso.md) desta sessão, dois desenvolvedores da Vetor rodaram agentes ao mesmo tempo no mesmo diretório de trabalho, e a alteração de um desapareceu sem que ninguém percebesse na hora. Em até 100 palavras, defenda uma posição: o time deveria exigir worktree separado para toda tarefa, inclusive as pequenas e feitas por uma pessoa só? Justifique pelos critérios de tamanho de time e frequência de uso da tabela de [O ambiente compartilhado](ambiente-compartilhado.md#quando-vale-configurar-um-ambiente-compartilhado).
 

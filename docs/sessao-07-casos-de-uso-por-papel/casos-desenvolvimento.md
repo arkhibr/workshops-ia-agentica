@@ -14,26 +14,26 @@ Em documentação de código legado, [Diggs et al. (2024)](../referencia/bibliog
 
 | Caso | Entrada e saída | Pedido-base | Conferência |
 |---|---|---|---|
-| Entender código legado | Módulo desconhecido vira mapa de responsabilidades e explicação do comportamento | "Descreva o que o módulo faz citando a linha de cada afirmação" | Executar o módulo com um caso conhecido e comparar com a explicação |
-| Extrair regras do código | Condicionais viram regras em RuleSpeak com evidência (Sessão 4) | "Reescreva cada condição como regra de negócio e cite arquivo, função e linha" | Retrotradução da regra em conversa limpa e conferência da linha citada |
-| Implementar da especificação | Especificação vira código com teste (Sessões 5 e 6) | "Implemente apenas o que a especificação declara e escreva o teste antes do código" | Teste vermelho antes da implementação e verde depois |
-| Gerar testes de unidade | Função vira casos de teste com valores de borda (Sessão 6) | "Inclua casos de fronteira e de erro e não altere o código de produção" | Alterar a comparação de fronteira e confirmar que um teste falha |
-| Depurar com hipóteses | Erro e log viram hipóteses ordenadas por probabilidade | "Liste hipóteses e o dado que confirmaria ou descartaria cada uma" | Verificar a primeira hipótese com um experimento antes de alterar o código |
-| Revisar código antes do pull request | Alteração vira lista de achados por severidade | "Classifique cada achado como bloqueio, sugestão ou dúvida e cite a linha" | O autor confere cada achado e descarta o que não se aplica |
-| Escrever commit e descrição de PR | Alteração vira mensagem de commit e descrição de pull request | "Descreva o que mudou e por quê, sem listar arquivos" | O autor confirma que a mensagem não promete o que o diff não faz |
-| Refatorar com rede de testes | Código e testes viram alteração que preserva o comportamento | "Refatore sem alterar o comportamento e rode a suíte a cada passo" | A suíte passa antes e depois, sem teste alterado |
-| Documentar API e código | Código vira documentação de uso | "Documente parâmetros, retorno e erros observáveis no código" | Executar o exemplo da documentação |
-| Planejar migração de versão | Projeto e versão alvo viram plano por etapas | "Liste as mudanças incompatíveis da versão e o impacto em cada módulo" | Conferir cada mudança incompatível na documentação oficial da versão |
+| Entender código legado | Módulo desconhecido → mapa de responsabilidades e explicação do comportamento | "Descreva o que o módulo faz citando a linha de cada afirmação" | Executar o módulo com um caso conhecido e comparar com a explicação |
+| Extrair regras do código | Condicionais → regras em RuleSpeak com evidência (Sessão 4) | "Reescreva cada condição como regra de negócio e cite arquivo, função e linha" | Retrotradução da regra em conversa limpa e conferência da linha citada |
+| Implementar da especificação | Especificação → código com teste (Sessões 5 e 6) | "Implemente apenas o que a especificação declara e escreva o teste antes do código" | Teste vermelho antes da implementação e verde depois |
+| Gerar testes de unidade | Função → casos de teste com valores de borda (Sessão 6) | "Inclua casos de fronteira e de erro e não altere o código de produção" | Alterar a comparação de fronteira e confirmar que um teste falha |
+| Depurar com hipóteses | Erro e log → hipóteses ordenadas por probabilidade | "Liste hipóteses e o dado que confirmaria ou descartaria cada uma" | Verificar a primeira hipótese com um experimento antes de alterar o código |
+| Revisar código antes do pull request | Alteração → lista de achados por severidade | "Classifique cada achado como bloqueio, sugestão ou dúvida e cite a linha" | O autor confere cada achado e descarta o que não se aplica |
+| Escrever commit e descrição de PR | Alteração → mensagem de commit e descrição de pull request | "Descreva o que mudou e por quê, sem listar arquivos" | O autor confirma que a mensagem não promete o que o diff não faz |
+| Refatorar com a suíte de testes | Código e testes → alteração que preserva o comportamento | "Refatore sem alterar o comportamento e rode a suíte a cada passo" | A suíte passa antes e depois, sem teste alterado |
+| Documentar API e código | Código → documentação de uso | "Documente parâmetros, retorno e erros observáveis no código" | Executar o exemplo da documentação |
+| Planejar migração de versão | Projeto e versão alvo → plano por etapas | "Liste as mudanças incompatíveis da versão e o impacto em cada módulo" | Conferir cada mudança incompatível na documentação oficial da versão |
 
 ## Casos complementares
 
 | Caso | Entrada e saída | Conferência |
 |---|---|---|
-| Explicar mensagem de erro ou log | Erro e contexto viram explicação e passos de verificação | Reproduzir o erro e aplicar um passo de cada vez |
-| Converter código entre linguagens ou frameworks | Trecho vira equivalente na outra linguagem | Rodar os testes do original contra o convertido |
-| Escrever consultas SQL e explicar o plano | Descrição da necessidade vira consulta e leitura do plano | Executar a consulta em base de teste e comparar o resultado esperado |
-| Escrever script de automação | Tarefa repetitiva vira script | Rodar em ambiente descartável antes de usar em produção |
-| Preparar exemplos de uso de uma biblioteca | Documentação vira exemplos executáveis | Executar cada exemplo |
+| Explicar mensagem de erro ou log | Erro e contexto → explicação e passos de verificação | Reproduzir o erro e aplicar um passo de cada vez |
+| Converter código entre linguagens ou frameworks | Trecho → equivalente na outra linguagem | Rodar os testes do original contra o convertido |
+| Escrever consultas SQL e explicar o plano | Descrição da necessidade → consulta e leitura do plano | Executar a consulta em base de teste e comparar o resultado esperado |
+| Escrever script de automação | Tarefa repetitiva → script | Rodar em ambiente descartável antes de usar em produção |
+| Preparar exemplos de uso de uma biblioteca | Documentação → exemplos executáveis | Executar cada exemplo |
 
 ## Onde os casos falham
 

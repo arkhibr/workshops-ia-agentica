@@ -52,8 +52,6 @@ O guia do facilitador propõe um kit para os primeiros 30 dias de um programa de
 | Semana 3 | Escolher os controles críticos e automatizar os testes T01 a T03 no pipeline do repositório da equipe | Pull requests com as verificações e com o escopo dos tokens revisto |
 | Semana 4 | Revisar um piloto, simular um incidente e ajustar o portão de publicação do marketplace da equipe | Decisão de continuidade, riscos residuais e plano do mês seguinte |
 
-![Linha do tempo de quatro semanas com a atividade e o resultado registrado de cada uma: inventário, ficha de triagem, testes T01 a T03 no pipeline e revisão de um piloto com incidente simulado. Uma nota tracejada indica que as configurações gerenciadas e o console de administração ficam fora do kit, e que a restrição das origens de marketplace vira pedido ao administrador.](assets/kit-de-30-dias.png)
-
 Os passos que dependem das configurações gerenciadas ou do console de administração do claude.ai ficam fora do kit. Quando a equipe concluir que as origens de marketplace precisam ser restritas em todas as máquinas, a decisão passa a ser um pedido ao administrador, acompanhado da ficha de governança e da evidência da semana 4, e o mecanismo correspondente está descrito na seção [Nível de organização](compartilhamento-governado.md#nivel-de-organizacao).
 
 ## Indicadores de partida
@@ -66,6 +64,10 @@ O guia propõe quatro indicadores para o primeiro mês, apresentados na página 
 | Prevenção | Percentual dos agentes com permissões verificadas e testes adversariais mínimos | Testes T01 a T03 da semana 3 |
 | Entrega | Percentual das mudanças de modelo ou de skill submetidas a reavaliação documentada | Versões publicadas no marketplace com revisão registrada na ficha |
 | Operação | Incidentes e quase incidentes observados, tempo até a suspensão e consumo por execução | Incidente simulado da semana 4 |
+
+A figura abaixo liga as duas tabelas pela ficha de governança: cada semana do kit preenche linhas da ficha, e três dos quatro indicadores são calculados a partir dessas linhas.
+
+![Kit de 30 dias ligado às oito linhas da ficha e aos indicadores. A semana 1, de inventário, preenche dono e finalidade e dados e ferramentas. A semana 2, da ficha de triagem, preenche autonomia e faixa de risco. A semana 3, dos controles críticos e dos testes T01 a T03, preenche riscos e controles e evidência e gate. A semana 4, de revisão de piloto, incidente simulado e ajuste do portão, preenche evidência e gate e revisão e retirada. O indicador de cobertura sai das linhas dono e finalidade e faixa de risco, o de prevenção sai de dados e ferramentas e de evidência e gate, e o de entrega sai de canal e versão e de revisão e retirada. O indicador de operação é medido no incidente simulado da semana 4, e a linha canal e versão não aparece em nenhuma atividade do kit.](assets/kit-de-30-dias-e-a-ficha.png)
 
 O guia recomenda evitar metas artificiais de perfeição no primeiro mês e usar os indicadores para descobrir a exposição real e melhorar os controles, sem premiar a subnotificação de incidentes e de quase incidentes.
 

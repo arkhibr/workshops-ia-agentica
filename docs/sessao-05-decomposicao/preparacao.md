@@ -36,7 +36,7 @@ winget install --id Git.Git -e --source winget
 winget install --id OpenJS.NodeJS.LTS -e --source winget
 ```
 
-Feche o PowerShell, abra outro e repita as duas verificações. O terminal só enxerga um programa recém-instalado depois de reaberto.
+Feche o PowerShell, abra outro e repita as duas verificações. Um programa recém-instalado só fica disponível no terminal depois que ele é reaberto.
 
 ## Passo 3: uv
 
@@ -120,7 +120,7 @@ Com Codex, se o `specify init` responder `codex not found`, o Codex CLI não est
 
 | Sintoma | Causa provável | O que fazer |
 |---|---|---|
-| `specify` ou `uv` não é reconhecido como comando | o terminal foi aberto antes da instalação | reabra o PowerShell; se persistir, rode `uv tool update-shell` e reabra |
+| `specify` ou `uv` não é reconhecido como comando | o terminal foi aberto antes da instalação | reabra o PowerShell. Se persistir, rode `uv tool update-shell` e reabra |
 | `a execução de scripts foi desabilitada neste sistema` ao rodar `claude` ou `codex` | política de execução do PowerShell bloqueia os scripts instalados pelo npm | `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` e reabra o PowerShell |
 | erro de certificado ou SSL durante `uv tool install` | a rede da instituição inspeciona o tráfego HTTPS | rode `$env:UV_SYSTEM_CERTS = "true"` e repita a instalação no mesmo terminal |
 | `winget` não é reconhecido | Windows sem o Instalador de Aplicativo | instale o Git por [git-scm.com](https://git-scm.com/download/win) e o Node.js por [nodejs.org](https://nodejs.org/) |
@@ -130,12 +130,12 @@ Se a política de execução for definida pela TI e o comando `Set-ExecutionPoli
 
 ## macOS e Linux
 
-A sequência é a mesma, e muda só a forma de instalar. Git e Node.js vêm pelo gerenciador de pacotes do sistema (Homebrew no macOS). O uv é instalado com:
+A sequência é a mesma, com diferença apenas na forma de instalar. Git e Node.js são instalados pelo gerenciador de pacotes do sistema (Homebrew no macOS), e o uv é instalado com:
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-O Claude Code usa `curl -fsSL https://claude.ai/install.sh | bash`. No teste do Passo 6, troque `--script ps` por `--script sh` e apague a pasta com `rm -rf teste-speckit`. Os demais comandos são idênticos.
+O Claude Code é instalado com `curl -fsSL https://claude.ai/install.sh | bash`. No teste do Passo 6, troque `--script ps` por `--script sh` e apague a pasta com `rm -rf teste-speckit`, e os demais comandos permanecem idênticos.
 
 **Próxima página:** [Contexto da prática: exemplos e exercícios](contexto-da-pratica.md).

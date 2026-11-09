@@ -4,7 +4,7 @@ Um artefato é o arquivo que uma skill ou um agente entrega ao final da tarefa, 
 
 ## O artefato como saída conferível
 
-A Sessão 7 apresentou os cinco elementos de um caso de uso: entrada, saída, pedido, conferência e decisão humana. Numa skill, o artefato é a saída, e o quarto elemento, a conferência, é a fonte contra a qual o artefato é comparado antes de circular. Um artefato sem conferência declarada herda o problema descrito na [Sessão 7](../sessao-07-casos-de-uso-por-papel/como-escolher-um-caso-de-uso.md): circula na confiança de quem o gerou.
+A Sessão 7 apresentou os cinco elementos de um caso de uso: entrada, saída, pedido, conferência e decisão humana. Numa skill, o artefato é a saída, e o quarto elemento, a conferência, é a fonte contra a qual o artefato é comparado antes de circular. Um artefato sem conferência declarada herda o problema descrito na [Sessão 7](../sessao-07-casos-de-uso-por-papel/como-escolher-um-caso-de-uso.md): é usado com base apenas na confiança em quem o gerou.
 
 A conferência de um artefato tem duas camadas que dependem de quem as executa. A camada estrutural verifica o que um script consegue decidir sem interpretar o texto, como seções obrigatórias, campos preenchidos, formato de data e referências existentes. A camada de conteúdo verifica o que só uma pessoa decide, como se uma tarefa ou um risco é sustentado pela transcrição, e permanece como decisão humana nomeada.
 
@@ -77,7 +77,7 @@ ERRO: campo "Responsável" ausente na tarefa 1.
 | `validar_reuniao.py`, até OK ou três tentativas | Verificação e limite de correção | Estrutural |
 | Evidências, riscos inferidos e itens a confirmar | Comparação com a transcrição por uma pessoa | Conteúdo |
 
-A [oficina](oficina-de-ferramentas.md#experimento-a-criar-a-skill-e-gerar-um-artefato) constrói a skill e confere o relatório nas duas camadas. A validação estrutural não comprova fidelidade ou completude.
+A [oficina](oficina-de-ferramentas.md#experimento-a-criar-a-skill-e-gerar-um-artefato) constrói a skill e confere o relatório nas duas camadas. A validação estrutural confirma seções e campos, e a fidelidade e a completude do conteúdo dependem da conferência feita pela pessoa.
 
 ## Que forma de conferência cada artefato pede
 

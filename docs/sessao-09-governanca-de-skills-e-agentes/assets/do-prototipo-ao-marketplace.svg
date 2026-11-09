@@ -33,7 +33,7 @@
 <text x="588" y="416" font-size="22" font-weight="bold" fill="#12302b">5. Repositório git da equipe</text>
 <text x="590" y="472" font-size="18" fill="#37474f">Fonte github ou git em extraKnownMarketplaces,</text>
 <text x="590" y="496" font-size="18" fill="#37474f">sem caminho absoluto</text>
-<text x="590" y="566" font-size="16" font-weight="bold" fill="#78909c">Forma descrita na documentação</text>
+<text x="590" y="566" font-size="16" font-weight="bold" fill="#78909c">Registro por owner/repo ou URL git</text>
 <line x1="1033" y1="485" x2="1077" y2="485" stroke="#78909c" stroke-width="3" marker-end="url(#sn)"/>
 <rect x="1080" y="380" width="460" height="210" rx="14" fill="#ffffff" stroke="#78909c" stroke-width="3" stroke-dasharray="10 7"/>
 <rect x="1080" y="380" width="460" height="56" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="3" stroke-dasharray="10 7"/>

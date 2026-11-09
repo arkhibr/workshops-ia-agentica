@@ -1,6 +1,6 @@
 # Isolamento por ramo
 
-Duas sessões de agente no mesmo diretório de trabalho disputam os mesmos arquivos, e o resultado aparece como trabalho que some. Aqui você vê o que o `git worktree` isola e o cuidado que ele exige.
+Duas sessões de agente no mesmo diretório de trabalho disputam os mesmos arquivos, e o resultado costuma ser edição perdida. Aqui você vê o que o `git worktree` isola e o cuidado que ele exige.
 
 ## O que o worktree isola
 
@@ -15,7 +15,7 @@ git worktree add ../repo-tarefa-a -b tarefa/a
 git worktree add ../repo-tarefa-b -b tarefa/b
 ```
 
-Cada comando cria um diretório de trabalho novo, numa branch nova, apontando para o mesmo repositório. Fechar a aba de um chat com o agente não desfaz nada em disco. Remover o worktree (`git worktree remove ../repo-tarefa-a`) desfaz. É por isso que os dois problemas pedem soluções diferentes, mesmo aparecendo juntos no mesmo incidente.
+Cada comando cria um diretório de trabalho novo, numa branch nova, apontando para o mesmo repositório. Fechar a aba de um chat com o agente não desfaz nada em disco, e só a remoção do worktree (`git worktree remove ../repo-tarefa-a`) apaga o diretório. É por isso que os dois problemas pedem soluções diferentes, mesmo aparecendo juntos no mesmo incidente.
 
 !!! question "Antes de continuar"
     Pense na última vez que dois agentes (ou duas pessoas usando IA) mexeram no mesmo repositório ao mesmo tempo. Alguém percebeu um conflito antes ou depois de acontecer?

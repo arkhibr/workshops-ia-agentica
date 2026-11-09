@@ -1,6 +1,6 @@
 # Estudo de caso
 
-Um tech lead propõe proibir vibe coding em todo tipo de tarefa depois de dois incidentes em produção. O dilema não tem resposta pronta. Use as perguntas abaixo para conduzir a discussão.
+Um tech lead propõe proibir vibe coding em todo tipo de tarefa depois de dois incidentes em produção. O dilema não tem resposta pronta, e as perguntas abaixo servem para conduzir a discussão do grupo.
 
 **Tempo:** 15 min · **Formato:** 8 min em grupos de 3–4 pessoas, 7 min de plenária.
 
@@ -12,17 +12,17 @@ Parte do time apoia, cansada de código quebrado sem explicação. Outra parte t
 
 ## Como usar este estudo de caso
 
-Não existe resposta única aqui. Pratique o critério da tabela de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica) num caso ambíguo, antes de aplicá-lo a um código real na oficina.
+O caso não tem resposta única e serve para praticar o critério da tabela de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica) num caso ambíguo, antes de aplicá-lo a um código real na oficina.
 
 ## Perguntas para orientar a análise
 
 1. Usando a tabela de critérios (reversibilidade, tempo de vida, quantas pessoas mexem depois, regra de negócio envolvida), existe alguma tarefa do dia a dia da Vetor para a qual vibe coding continua sendo a escolha certa mesmo depois do incidente?
 2. O tech lead está resolvendo o problema certo? Os dois incidentes foram causados pela ausência de especificação, ou pela ausência de revisão antes do merge? A resposta muda a solução proposta?
-3. Que critério objetivo (não "bom senso") o time poderia usar para decidir, tarefa por tarefa, se exige SDD completo, assistência de codificação, ou permite vibe coding?
+3. Que critério objetivo (não "bom senso") o time poderia usar para decidir, tarefa por tarefa, se exige SDD completo, assistência de codificação ou permite vibe coding?
 4. Se você fosse a pessoa que precisa aplicar essa política amanhã de manhã, o que perguntaria ao tech lead antes de concordar?
 
 ## Depois da discussão
 
-Compare a posição que o grupo chegou com a tabela de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica). A Sessão 10, sobre o ciclo completo de SDD, volta a esse dilema com uma ferramenta mais precisa: uma régua de profundidade proporcional ao risco, com os artefatos versionados. Com ela, a proporcionalidade fica escrita, em vez de depender da memória de alguém ou de uma regra geral.
+Compare a posição a que o grupo chegou com a tabela de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica). A Sessão 10, sobre o ciclo completo de SDD, volta a esse dilema com uma ferramenta mais precisa: uma régua de profundidade proporcional ao risco, com os artefatos versionados. Com ela, a proporcionalidade entre o risco da tarefa e a profundidade da especificação fica registrada nos artefatos versionados do time.
 
 **Próxima página:** [Oficina de ferramentas](oficina-de-ferramentas.md).

@@ -6,7 +6,7 @@
 
 ## Problema
 
-As sessões anteriores trabalharam o método com casos comuns a todos os participantes. Cada papel da equipe, porém, tem tarefas próprias, e a equipe não sabe quais delas já são rotina em outras equipes, quais foram experimentadas e abandonadas e quais ninguém tentou. Sem esse mapa, a adoção segue o interesse de cada pessoa, e a conferência do resultado, trabalhada nas Sessões 3 e 4 para especificações e regras, deixa de acontecer nas tarefas que não envolvem código.
+As sessões anteriores trabalharam o método com casos comuns a todos os participantes. Cada papel da equipe, porém, tem tarefas próprias, e a equipe não sabe se cada uma delas já é rotina em outras equipes, foi experimentada e abandonada ou nunca foi tentada. Sem esse mapa, a adoção segue o interesse de cada pessoa, e a conferência do resultado, trabalhada nas Sessões 3 e 4 para especificações e regras, deixa de acontecer nas tarefas que não envolvem código.
 
 ## Como usar este material
 

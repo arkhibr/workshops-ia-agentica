@@ -1,10 +1,10 @@
-# Arqueologia de regras: recuperar decisões de negócio do código
+# Arqueologia de regras
 
 Sistemas em produção há muitos anos costumam conter decisões de negócio que nenhum documento atual registra, e a única descrição completa dessas decisões é o próprio código que as executa. A arqueologia de regras é a recuperação disciplinada dessas decisões, com o produto expresso em [SBVR](../referencia/bibliografia.md#omg-semantics-of-business-vocabulary-and-business-rules) (*Semantics of Business Vocabulary and Business Rules*, especificação da OMG para vocabulário e regras de negócio com semântica controlada). Esta página apresenta a base conceitual da atividade, o método de seis movimentos usado na sessão e os limites de um agente de IA nessa tarefa.
 
 ## Engenharia reversa e arqueologia de software
 
-[Chikofsky e Cross](../referencia/bibliografia.md#chikofsky-e-cross-reverse-engineering-and-design-recovery-1990) publicaram em 1990, na *IEEE Software*, uma taxonomia dos termos usados na manutenção e na compreensão de sistemas existentes. Eles definem **engenharia reversa** como o processo de analisar um sistema para identificar seus componentes e as relações entre eles e para criar representações desse sistema em outra forma ou num nível mais alto de abstração. A definição tem uma consequência prática que orienta toda esta sessão: a engenharia reversa é um processo de exame, e nada nela altera o sistema analisado.
+[Chikofsky e Cross](../referencia/bibliografia.md#chikofsky-e-cross-reverse-engineering-and-design-recovery-1990) publicaram em 1990, na *IEEE Software*, uma taxonomia dos termos usados na manutenção e na compreensão de sistemas existentes. Eles definem **engenharia reversa** como o processo de analisar um sistema para identificar seus componentes e as relações entre eles e para criar representações desse sistema em outra forma ou num nível mais alto de abstração. Pela definição, a engenharia reversa examina o sistema sem alterá-lo, e todas as atividades desta sessão seguem essa restrição.
 
 A taxonomia distingue seis termos, engenharia direta, engenharia reversa, redocumentação, recuperação de projeto, reestruturação e reengenharia, e a tabela abaixo reúne os quatro que delimitam a recuperação de regras.
 

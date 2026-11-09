@@ -55,7 +55,7 @@ O conteúdo soma 100 minutos depois do Kahoot, e o intervalo das 11:00 às 11:05
 
 Durante o Kahoot, cada participante confere se o `specify version` responde `1.1.1`. Quem chegou sem a instalação resolve nesse intervalo, com a tabela de problemas comuns da preparação.
 
-Os comandos do agente levam de 40 segundos a 2 minutos cada. Nos exercícios, a espera é o tempo de responder às perguntas da página. Se a rede da sala estiver lenta, as demonstrações usam os artefatos gerados antes da aula.
+Os comandos do agente levam de 40 segundos a 2 minutos cada, e nos exercícios esse tempo de espera é usado para responder às perguntas da página. Se a rede da sala estiver lenta, as demonstrações usam os artefatos gerados antes da aula.
 
 Os exercícios pedem a leitura de seções específicas dos artefatos, nunca do arquivo inteiro, porque uma `spec.md` passa de cem linhas e um `tasks.md` passa de cento e cinquenta.
 

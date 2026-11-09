@@ -47,7 +47,7 @@ Explique, em duas frases, por que faz diferença declarar os princípios do proj
 <details>
 <summary>Ver resposta</summary>
 
-Declarados antes, os princípios restringem o espaço de soluções que o plano pode propor, e a violação aparece no portão de arquitetura, quando corrigir custa pouco. Revisados no final, eles só conseguem reprovar trabalho já feito, o que cria pressão para aprovar com ressalva em vez de refazer.
+Quando são declarados antes, os princípios restringem o espaço de soluções que o plano pode propor, e a violação aparece no portão de arquitetura, quando a correção custa pouco. Uma revisão feita só no final consegue apenas reprovar trabalho pronto, o que pressiona o revisor a aprovar com ressalva para evitar o retrabalho.
 </details>
 
 ### 5. Fatia vertical e fatia horizontal
@@ -78,7 +78,7 @@ Certo no eixo documental: ele não mantém constitution nem especificação cons
 
 **O que é:** o ciclo completo sobre a faixa de atacado, a partir do projeto montado na oficina, terminando com a suíte verde e a decisão registrada.
 
-**Antes de começar: a ordem importa.** O passo 2 só tem valor se acontecer antes do passo 4. Escrever a especificação depois de ver o código gerado produz um documento que descreve o que saiu, não um contrato que orienta o que deveria sair.
+**Antes de começar: a ordem importa.** O passo 2 só tem valor se acontecer antes do passo 4. Escrever a especificação depois de ver o código gerado produz um documento que descreve o código gerado e não orienta a implementação como contrato.
 
 **Situação**
 
@@ -109,7 +109,7 @@ A classificação com motivo, a especificação com dois requisitos e a regra do
 
 | Critério | Peso | O que evidencia atendimento adequado |
 |---|---:|---|
-| Decisão do teto registrada e justificada | 30% | A regra está numerada na especificação com o motivo, e o código a implementa. Qual das três saídas foi escolhida não pontua, o registro sim |
+| Decisão do teto registrada e justificada | 30% | A regra está numerada na especificação com o motivo, e o código a implementa. A escolha entre as três saídas não pontua, e o registro com motivo pontua |
 | Caso de fronteira presente e testado | 25% | R$ 10.000,00 exato aparece na especificação e tem teste correspondente que distingue a faixa anterior da nova |
 | Falha observada antes da implementação | 25% | A mensagem de falha guardada mostra o valor errado esperado pela regra nova, não erro de sintaxe nem teste que já passava |
 | Verificação em dois eixos separados | 20% | Existem duas leituras distintas registradas, uma de aderência e uma de qualidade, não um parecer único |

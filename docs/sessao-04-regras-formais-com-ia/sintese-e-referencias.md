@@ -1,6 +1,6 @@
 # Síntese e referências
 
-A sessão percorreu duas direções: da política escrita para o modelo formal e do código existente para as regras que ele implementa. Nos dois casos, o produto é um mapa rastreável em que cada regra aponta para o artigo ou a linha de código que a sustenta.
+A sessão tratou dois percursos. O Tema 1 parte da política escrita e chega ao modelo formal, e o Tema 2 parte do código existente e recupera as regras que ele implementa. Nos dois casos, o produto é um mapa rastreável em que cada regra aponta para o artigo ou a linha de código que a sustenta.
 
 ## Ideias essenciais
 

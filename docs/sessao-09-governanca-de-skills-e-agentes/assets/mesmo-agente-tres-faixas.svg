@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 690" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="s00695c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="se65100" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="s78909c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="690" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Um mesmo agente em três configurações: o que muda a faixa e o que entra no tratamento</text>
+<rect x="60" y="110" width="440" height="520" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="2.5"/>
+<rect x="60" y="110" width="440" height="60" rx="14" fill="#e0f2f1" stroke="#00695c" stroke-width="2.5"/>
+<text x="80" y="150" font-size="24" font-weight="bold" fill="#12302b">Faixa baixa</text>
+<text x="80" y="206" font-size="17" font-weight="bold" fill="#00695c">Configuração</text>
+<text x="80" y="234" font-size="18" fill="#37474f">Lê documentação aberta, só com permissão</text>
+<text x="80" y="258" font-size="18" fill="#37474f">de leitura, e toda saída passa por revisão</text>
+<text x="80" y="282" font-size="18" fill="#37474f">humana</text>
+<text x="80" y="322" font-size="17" font-weight="bold" fill="#00695c">Fator que decide a faixa</text>
+<text x="80" y="350" font-size="18" font-weight="bold" fill="#12302b">Nenhum fator de faixa moderada ou alta</text>
+<text x="80" y="390" font-size="17" font-weight="bold" fill="#00695c">Tratamento mínimo</text>
+<text x="80" y="418" font-size="18" fill="#12302b">Registro na ficha e testes básicos</text>
+<text x="80" y="458" font-size="17" font-weight="bold" fill="#00695c">Quem revisa</text>
+<text x="80" y="486" font-size="18" fill="#12302b">PO e líder técnico</text>
+<rect x="580" y="110" width="440" height="520" rx="14" fill="#ffffff" stroke="#78909c" stroke-width="2.5"/>
+<rect x="580" y="110" width="440" height="60" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="2.5"/>
+<text x="600" y="150" font-size="24" font-weight="bold" fill="#12302b">Faixa moderada</text>
+<text x="600" y="206" font-size="17" font-weight="bold" fill="#546e7a">Configuração</text>
+<text x="600" y="234" font-size="18" fill="#37474f">Passa a ler itens de trabalho internos por</text>
+<text x="600" y="258" font-size="18" fill="#37474f">recuperação de documentos</text>
+<text x="600" y="298" font-size="17" font-weight="bold" fill="#546e7a">Fator que decide a faixa</text>
+<text x="600" y="326" font-size="18" font-weight="bold" fill="#12302b">Conteúdo interno e recuperação de</text>
+<text x="600" y="350" font-size="18" font-weight="bold" fill="#12302b">documentos (RAG)</text>
+<text x="600" y="390" font-size="17" font-weight="bold" fill="#546e7a">Tratamento mínimo</text>
+<text x="600" y="418" font-size="18" fill="#12302b">Acrescenta avaliação de riscos e testes</text>
+<text x="600" y="442" font-size="18" fill="#12302b">adversariais</text>
+<text x="600" y="482" font-size="17" font-weight="bold" fill="#546e7a">Quem revisa</text>
+<text x="600" y="510" font-size="18" fill="#12302b">Entra a revisão de segurança e</text>
+<text x="600" y="534" font-size="18" fill="#12302b">privacidade, conforme os dados</text>
+<rect x="1100" y="110" width="440" height="520" rx="14" fill="#ffffff" stroke="#e65100" stroke-width="2.5"/>
+<rect x="1100" y="110" width="440" height="60" rx="14" fill="#fff3e0" stroke="#e65100" stroke-width="2.5"/>
+<text x="1120" y="150" font-size="24" font-weight="bold" fill="#12302b">Faixa alta</text>
+<text x="1120" y="206" font-size="17" font-weight="bold" fill="#e65100">Configuração</text>
+<text x="1120" y="234" font-size="18" fill="#37474f">Recebe permissão para fechar os itens de</text>
+<text x="1120" y="258" font-size="18" fill="#37474f">trabalho, e a permissão passa de ler para</text>
+<text x="1120" y="282" font-size="18" fill="#37474f">escrever</text>
+<text x="1120" y="322" font-size="17" font-weight="bold" fill="#e65100">Fator que decide a faixa</text>
+<text x="1120" y="350" font-size="18" font-weight="bold" fill="#12302b">Escrita em sistemas, um fator crítico</text>
+<text x="1120" y="374" font-size="18" font-weight="bold" fill="#12302b">que basta sozinho</text>
+<text x="1120" y="414" font-size="17" font-weight="bold" fill="#e65100">Tratamento mínimo</text>
+<text x="1120" y="442" font-size="18" fill="#12302b">Acrescenta avaliação aprofundada,</text>
+<text x="1120" y="466" font-size="18" fill="#12302b">restrições fortes e a possibilidade de não</text>
+<text x="1120" y="490" font-size="18" fill="#12302b">implementar</text>
+<text x="1120" y="530" font-size="17" font-weight="bold" fill="#e65100">Quem revisa</text>
+<text x="1120" y="558" font-size="18" fill="#12302b">Aprovações formais e aceitação do risco</text>
+<text x="1120" y="582" font-size="18" fill="#12302b">residual pelo patrocinador ou gestor</text>
+<text x="1120" y="606" font-size="18" fill="#12302b">competente</text>
+<line x1="504" y1="390" x2="574" y2="390" stroke="#e65100" stroke-width="3" marker-end="url(#se65100)"/>
+<text x="540" y="372" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">Muda o</text>
+<text x="540" y="420" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">dado</text>
+<line x1="1024" y1="390" x2="1094" y2="390" stroke="#e65100" stroke-width="3" marker-end="url(#se65100)"/>
+<text x="1060" y="372" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">Muda a</text>
+<text x="1060" y="420" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">permissão</text>
+<text x="60" y="668" font-size="17" fill="#37474f">Antes de cada mudança de dado ou de permissão, a ficha é revista e a faixa é decidida de novo pelo fator mais grave.</text>
+</svg>

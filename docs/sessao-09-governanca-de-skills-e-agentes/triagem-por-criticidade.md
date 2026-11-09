@@ -8,7 +8,7 @@ A triagem só classifica os casos que a equipe conhece, e por isso o primeiro pa
 
 Numa equipe de desenvolvimento, o inventário inclui itens que raramente aparecem numa lista de sistemas. Entram as skills guardadas na pasta pessoal de cada pessoa, os subagentes versionados nos repositórios, os servidores MCP configurados localmente, os tokens criados para o agente e os scripts que chamam a API de um provedor de modelo. Cada item recebe ao menos três campos, o nome do dono, a finalidade em uma frase e as classes de dado que ele lê, e um item sem dono identificado já é uma pendência registrada.
 
-![Fluxo em quatro etapas, do inventário à faixa: inventariar skills, subagentes, servidores MCP, tokens e scripts de API, registrar os campos mínimos de dono, finalidade e classes de dado, descrever dados e ferramentas pela classe de dado e pelo nível de permissão e chegar à faixa de risco com o fator decisivo e as premissas. As duas primeiras etapas correspondem à função Map do NIST AI RMF, e um item sem dono vira pendência registrada.](assets/do-inventario-a-faixa.png)
+![Fluxo em quatro etapas, do inventário à faixa: inventariar skills, subagentes, servidores MCP, tokens e scripts de API, registrar os campos mínimos de dono, finalidade e classes de dado, descrever dados e ferramentas pela classe de dado e pelo nível de permissão e chegar à faixa de risco com o fator decisivo e as premissas. As duas primeiras etapas correspondem à função Map do NIST AI RMF, e um item sem dono passa a constar como pendência registrada.](assets/do-inventario-a-faixa.png)
 
 ## Dados e ferramentas
 
@@ -33,7 +33,9 @@ O guia propõe três faixas de criticidade, cada uma com características típic
 | Moderada | Conteúdo interno, recuperação de documentos (RAG), integração limitada ou decisão assistida | Avaliação de riscos, revisão de segurança e privacidade conforme os dados e testes adversariais |
 | Alta | Dado sensível, efeito relevante sobre pessoas, escrita em sistemas ou execução financeira | Avaliação aprofundada, aprovações formais, restrições fortes e a possibilidade de não implementar |
 
-![Três cartões, baixa, moderada e alta, cada um com as características típicas e o tratamento mínimo da faixa, sobre uma seta de tratamento mais exigente. A nota de rodapé lembra que as faixas são ferramenta pedagógica e que, com dado pessoal, a faixa fica preliminar até a avaliação jurídica e de privacidade.](assets/tres-faixas-de-criticidade.png)
+A figura abaixo aplica as três faixas a um mesmo agente genérico cuja configuração muda em dois momentos e mostra, a cada mudança, o fator que passa a decidir a faixa, o tratamento mínimo acrescentado e quem entra na revisão.
+
+![Um mesmo agente em três configurações. Na faixa baixa, ele lê documentação aberta, só com permissão de leitura, e toda saída passa por revisão humana, sem fator de faixa moderada ou alta, com registro na ficha, testes básicos e revisão do PO e do líder técnico. Quando muda o dado e o agente passa a ler itens de trabalho internos por recuperação de documentos, o conteúdo interno e o RAG levam à faixa moderada, que acrescenta avaliação de riscos, testes adversariais e a revisão de segurança e privacidade conforme os dados. Quando muda a permissão e o agente passa a fechar os itens de trabalho, a escrita em sistemas é um fator crítico que leva sozinho à faixa alta, que acrescenta avaliação aprofundada, restrições fortes, a possibilidade de não implementar, aprovações formais e a aceitação do risco residual pelo patrocinador ou gestor competente. Antes de cada mudança, a ficha é revista.](assets/mesmo-agente-tres-faixas.png)
 
 As faixas são uma ferramenta pedagógica adaptada do guia, sem valor de classificação normativa oficial. A faixa de um caso real depende do apetite a risco aprovado pela organização e, quando há dado pessoal, da avaliação jurídica e de privacidade, e a ficha registra a faixa como "preliminar" até essa avaliação.
 
@@ -65,7 +67,7 @@ A quinta pergunta inclui na análise os usos possíveis que a finalidade declara
 
 ## Premissas não verificadas
 
-A ficha separa o que é fato verificado, o que é hipótese e o que é decisão pendente. Uma triagem feita no início do projeto depende de premissas, como "o token tem só escopo de leitura" ou "a base de documentos não contém dado pessoal", e cada premissa fica escrita na ficha com o nome de quem vai verificá-la. Como recomendação desta sessão, sem origem no guia, a premissa não verificada que mudaria a faixa caso fosse falsa torna a faixa preliminar, e a verificação dessa premissa passa a ser condição do gate de publicação registrado na linha "Evidência e gate" da ficha.
+A ficha classifica cada afirmação em um de três estados: fato verificado, hipótese ou decisão pendente. Uma triagem feita no início do projeto depende de premissas, como "o token tem só escopo de leitura" ou "a base de documentos não contém dado pessoal", e cada premissa fica escrita na ficha com o nome de quem vai verificá-la. Como recomendação desta sessão, sem origem no guia, a premissa não verificada que mudaria a faixa caso fosse falsa torna a faixa preliminar, e a verificação dessa premissa passa a ser condição do gate de publicação registrado na linha "Evidência e gate" da ficha.
 
 ![Fluxo de uma premissa escrita na ficha com o nome de quem vai verificá-la. Se a faixa mudaria caso a premissa fosse falsa, a faixa fica preliminar e a verificação passa a ser condição do gate de publicação, e quando a faixa não mudaria a premissa continua registrada com responsável. Acima, os três estados que a ficha separa: fato verificado, hipótese e decisão pendente.](assets/premissa-nao-verificada.png)
 

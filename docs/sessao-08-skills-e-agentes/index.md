@@ -18,7 +18,7 @@ A ficha existe para que as decisões fiquem escritas antes do primeiro teste. Um
 
 ## Mapa da sessão
 
-A sessão alterna teoria e dois blocos de exercícios. O primeiro aplica skills, subagentes e escolha do mecanismo; o segundo cria e mede uma skill após o estudo de artefatos, modelos, custo, performance e segurança.
+A sessão alterna teoria e dois blocos de exercícios. O primeiro aplica skills, subagentes e escolha do mecanismo, e o segundo cria e mede uma skill após o estudo de artefatos, modelos, custo, performance e segurança.
 
 ![Sequência dos temas e dos dois blocos de exercícios.](assets/mapa-da-sessao.png)
 

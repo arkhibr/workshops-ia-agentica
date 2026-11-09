@@ -1,6 +1,6 @@
 # Abordagens de SDD
 
-O Spec Kit implementa o desenvolvimento guiado por especificação, e é uma implementação entre outras. Quatro abordagens resolvem o mesmo problema, transformar intenção em evidência, com formas bem diferentes de organizar o trabalho. Conhecê-las evita confundir a sintaxe de um comando com o princípio que ele serve.
+O Spec Kit é uma entre várias implementações do desenvolvimento guiado por especificação. Quatro abordagens resolvem o mesmo problema, transformar intenção em evidência, com formas bem diferentes de organizar o trabalho. Conhecê-las evita confundir a sintaxe de um comando com o princípio que ele serve.
 
 ## Três níveis de compromisso com a especificação
 
@@ -10,14 +10,14 @@ A expressão *Spec-Driven Development* reúne fluxos com níveis muito diferente
 2. **Spec-anchored.** Especificação e código evoluem juntos. Cada mudança parte do estado documentado e reconcilia os dois lados antes de terminar.
 3. **Spec-as-source.** A especificação é o artefato primário editável, e o código é uma projeção regenerável dela. É a forma mais ambiciosa e a mais difícil, porque a especificação precisaria expressar detalhe suficiente para reproduzir o comportamento sem decisões escondidas no código.
 
-As quatro abordagens desta página se concentram entre *spec-first* e *spec-anchored*. Nenhuma delas alcança *spec-as-source* hoje, e desconfiar de quem promete isso é uma postura razoável.
+As quatro abordagens desta página se concentram entre *spec-first* e *spec-anchored*. Nenhuma delas alcança *spec-as-source* hoje, e uma ferramenta que anuncie esse nível precisa demonstrar como a especificação reproduz o comportamento sem decisões escondidas no código.
 
 !!! question "Antes de continuar"
     No seu time, depois que uma funcionalidade entra em produção, alguém volta ao documento que a descreveu? Se a resposta for não, o fluxo é *spec-first*, mesmo que a ferramenta prometa outra coisa.
 
 ## OpenSpec
 
-O [OpenSpec](../referencia/bibliografia.md#fission-ai-openspec) organiza o trabalho em torno da mudança, não de um fluxo completo por funcionalidade. O repositório tem dois espaços: um que descreve o comportamento atual do sistema e outro que contém uma pasta por mudança proposta, com proposta, especificação-delta, design e tarefas. Quando o trabalho termina, o delta é incorporado à especificação principal e a pasta da mudança é arquivada.
+O [OpenSpec](../referencia/bibliografia.md#fission-ai-openspec) usa a mudança individual como unidade de trabalho. O repositório tem dois espaços: um que descreve o comportamento atual do sistema e outro que contém uma pasta por mudança proposta, com proposta, especificação-delta, design e tarefas. Quando o trabalho termina, o delta é incorporado à especificação principal e a pasta da mudança é arquivada.
 
 O ganho central é separar o estado do sistema da história das mudanças. Quem mantém o código lê a especificação consolidada para saber como o comportamento funciona hoje, e consulta a pasta arquivada quando precisa entender por que a regra foi introduzida. O delta também reduz a tentação de reescrever documentos inteiros a cada alteração.
 
@@ -29,11 +29,11 @@ O Spec Kit, detalhado na [página anterior](ciclo-e-artefatos.md), adiciona uma 
 
 A separação rígida entre especificação funcional e plano técnico é o que impede que uma escolha prematura de tecnologia seja confundida com necessidade de negócio. Os portões intermediários também distribuem a carga de revisão: primeiro a ambiguidade, depois a arquitetura, depois a consistência entre artefatos.
 
-O custo é o número de fases. Uma cadeia completa se justifica em funcionalidade crítica e transversal, e vira burocracia quando aplicada a todo ajuste pequeno. O time precisa de critério explícito para abreviar o fluxo, sob pena de cada pessoa improvisar uma versão diferente do método.
+O custo é o número de fases. Uma cadeia completa se justifica em funcionalidade crítica e transversal, e se torna burocracia quando aplicada a todo ajuste pequeno. O time precisa de critério explícito para abreviar o fluxo, sob pena de cada pessoa improvisar uma versão diferente do método.
 
 ## SPDD
 
-O [Structured Prompt-Driven Development](../referencia/bibliografia.md#zhang-e-xia-structured-prompt-driven-development-2026), publicado por um time de tecnologia interna da Thoughtworks, trata o prompt como artefato de entrega versionado, revisável e mantido junto do código. Seu núcleo é o Painel REASONS, que organiza a especificação em sete dimensões:
+O [Structured Prompt-Driven Development](../referencia/bibliografia.md#zhang-e-xia-structured-prompt-driven-development-2026), publicado por um time de tecnologia interna da Thoughtworks, trata o prompt como artefato de entrega, versionado no repositório e revisado como o código. Seu núcleo é o Painel REASONS, que organiza a especificação em sete dimensões:
 
 | Dimensão | O que registra |
 |---|---|
@@ -45,15 +45,15 @@ O [Structured Prompt-Driven Development](../referencia/bibliografia.md#zhang-e-x
 | **N**orms | convenções transversais de engenharia |
 | **S**afeguards | limites e invariantes que não podem ser violados |
 
-O Painel comprime num artefato só o que o Spec Kit distribui entre constitution, especificação e plano. O que distingue o método é o laço fechado: correção de lógica atualiza o prompt antes do código, e refatoração sincroniza do código de volta ao prompt, para que nenhum dos dois lados divirja em silêncio.
+O Painel comprime num artefato só o que o Spec Kit distribui entre constitution, especificação e plano. O que distingue o método é o laço fechado: correção de lógica atualiza o prompt antes do código, e refatoração sincroniza do código de volta ao prompt, para que nenhum dos dois lados diverja sem registro.
 
-Duas ressalvas. A estrutura reduz mas não elimina variação, porque duas pessoas produzem Painéis diferentes a partir do mesmo requisito, e um Painel formalmente completo ainda pode estar semanticamente errado. E a sequência de testes diverge do TDD praticado na Sessão 6: o fluxo de referência valida a interface antes da revisão detalhada e gera testes de unidade depois que a implementação estabiliza, o que conflita com política que exige teste guiando o design desde o início.
+O método tem duas ressalvas. A estrutura reduz a variação sem eliminá-la, porque duas pessoas produzem Painéis diferentes a partir do mesmo requisito, e um Painel formalmente completo ainda pode estar semanticamente errado. E a sequência de testes diverge do TDD praticado na Sessão 6: o fluxo de referência valida a interface antes da revisão detalhada e gera testes de unidade depois que a implementação estabiliza, o que conflita com política que exige teste guiando o design desde o início.
 
 ## Superpowers
 
 O [Superpowers](../referencia/bibliografia.md#vincent-e-prime-radiant-superpowers-2026) pertence a outra categoria. É um conjunto de habilidades combináveis acionadas automaticamente conforme a situação, com uma metodologia de execução em volta: levantamento de ideias e aprovação do design, cópia isolada do repositório, plano de tarefas pequenas, ciclo vermelho-verde-refatorar obrigatório, revisão em duas etapas e verificação antes de qualquer declaração de conclusão.
 
-A disciplina é levada ao extremo: o próprio sistema apaga código escrito antes de o teste correspondente existir. A revisão separada de conformidade com o plano e de qualidade interna é o mesmo princípio dos dois eixos de verificação, chegando por outro caminho.
+A disciplina é levada ao extremo: o próprio sistema apaga código escrito antes de o teste correspondente existir. A revisão separada de conformidade com o plano e de qualidade interna aplica o princípio dos dois eixos de verificação descrito na página sobre o ciclo.
 
 A diferença estrutural importa para classificá-lo corretamente. O Superpowers registra design e plano, então não se resume a "código e conversa", mas não mantém uma especificação consolidada do comportamento do sistema que receba deltas ao longo de várias mudanças. Ele é melhor entendido como disciplina de execução adjacente ao SDD, que pode consumir uma especificação produzida por outro processo.
 
@@ -61,8 +61,8 @@ Também é enganoso chamá-lo de leve. A governança documental é menor que a d
 
 ## O núcleo comum
 
-As quatro concordam no princípio e divergem no mecanismo. Todas separam intenção de execução, e todas exigem alguma forma de evidência antes de considerar o trabalho concluído. Em nenhuma delas o agente recebe autoridade sobre as decisões que cabem à pessoa.
+As quatro abordagens separam intenção de execução e exigem alguma forma de evidência antes de considerar o trabalho concluído. Em nenhuma delas o agente recebe autoridade sobre as decisões que cabem à pessoa.
 
-A divergência está em onde o contrato mora, quantos portões existem e se o comando é digitado ou disparado automaticamente. A [página seguinte](escolher-a-abordagem.md) compara as quatro sob dez critérios e oferece a régua para escolher.
+As diferenças estão em onde o contrato fica registrado, quantos portões existem e se o comando é digitado ou disparado automaticamente. A [página seguinte](escolher-a-abordagem.md) compara as quatro sob dez critérios e oferece a régua para escolher.
 
 **Próxima página:** [Escolher a abordagem e a profundidade](escolher-a-abordagem.md).

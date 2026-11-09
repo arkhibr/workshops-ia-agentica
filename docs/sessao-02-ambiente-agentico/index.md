@@ -10,7 +10,7 @@ Cada desenvolvedor configura o próprio agente do próprio jeito: arquivo de ins
 
 ## Como usar este material
 
-Estas páginas não são leitura prévia. O instrutor conduz a exploração dos conceitos ao vivo, intercalada com a prática. Chegar sem ter lido nada é a expectativa normal.
+Estas páginas não são leitura prévia, e o participante pode chegar à sessão sem ter lido nenhuma delas, porque o instrutor conduz a exploração dos conceitos ao vivo, intercalada com a prática.
 
 ## Objetivos de aprendizagem
 
@@ -19,7 +19,7 @@ Ao final desta sessão, o participante deve ser capaz de:
 1. **Distinguir** engenharia de prompt de engenharia de contexto, e explicar por que ferramentas são o contrato entre o agente e o ambiente.
 2. **Explicar** o problema que o Model Context Protocol (MCP) resolve.
 3. **Configurar**, para o próprio repositório, um arquivo de instrução compartilhado pelo time.
-4. **Isolar** o trabalho de um agente por ramo, evitando que duas sessões pisem no mesmo contexto.
+4. **Isolar** o trabalho de um agente por ramo, evitando que duas sessões alterem os mesmos arquivos de trabalho.
 5. **Diagnosticar** uma falha do agente pela peça do arnês que provavelmente a causou, antes de considerar a troca de modelo.
 
 ## Roteiro da sessão (2h, das 10h às 12h)
@@ -43,7 +43,7 @@ Ao final desta sessão, o participante deve ser capaz de:
 
 ## Como conduzir
 
-As sete páginas de teoria têm caixas de destaque embutidas no texto. Pare nesses pontos e espere a turma responder, em vez de ler a pergunta e seguir em frente.
+As sete páginas de teoria têm caixas de destaque embutidas no texto. Pare nesses pontos e espere a turma responder antes de passar ao parágrafo seguinte.
 
 Na oficina, todos criam a mesma pasta vazia, `oficina-arnes`, com dois comandos (`mkdir` e `git init`), e salvam nela o mesmo arquivo de 22 pedidos. Daí em diante cada participante faz o mesmo pedido de fechamento cinco vezes, acrescentando uma peça de arnês por rodada e conferindo contra um gabarito publicado na página. A transposição para um repositório real fica na extensão ao fim da página, e é o que mantém o arquivo de instrução em uso depois da aula.
 

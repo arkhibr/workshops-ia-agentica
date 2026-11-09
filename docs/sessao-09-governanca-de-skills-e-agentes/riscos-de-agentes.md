@@ -12,18 +12,9 @@ A consequência dessa separação é que o modelo não pode ser o mecanismo de a
 
 ## Etapas e fronteiras de confiança
 
-O guia descreve a execução de um agente em seis etapas, com uma ameaça típica em cada uma. A tabela abaixo adapta essas etapas a um agente genérico com recuperação de documentos e uma ferramenta de escrita.
+O guia descreve a execução de um agente em seis etapas, com uma ameaça típica em cada uma. A figura abaixo adapta essas etapas a um agente genérico com recuperação de documentos e uma ferramenta de escrita e marca entre elas as três fronteiras de confiança.
 
-| Etapa | Fluxo | Ameaça típica |
-|---|---|---|
-| 1. Solicitação | Usuário, interface e serviço de orquestração | Entrada com dado pessoal ou com instrução maliciosa |
-| 2. Recuperação | Orquestrador e índice de documentos | Documento desatualizado, sem autorização de acesso ou contaminado |
-| 3. Inferência | Orquestrador e provedor do modelo | Envio de dado ao provedor e resposta inventada |
-| 4. Ferramenta | Agente, skill e API do sistema | Excesso de privilégio e ação não autorizada |
-| 5. Saída | Resposta com fontes e revisão humana | Alegação falsa, exposição de informação e confiança excessiva do revisor |
-| 6. Operação | Eventos, telemetria, alerta e suspensão | Falha não detectada, custo sem limite e ausência de rastreabilidade |
-
-![Cinco etapas de um agente em sequência, solicitação, recuperação, inferência, ferramenta e saída, seguidas do efeito externo, com a ameaça típica de cada etapa abaixo dela. Uma sexta etapa, a operação, aparece como faixa que acompanha todas as outras. Três linhas tracejadas marcam as fronteiras de confiança: F1 entre a recuperação e a inferência, onde o conteúdo recuperado entra como dado não confiável, F2 entre a inferência e a ferramenta, onde a autorização é aplicada fora do modelo, e F3 entre a saída e o efeito externo, onde fica a revisão humana com autoridade para rejeitar.](assets/fronteiras-de-confianca.png)
+![Seis etapas de um agente com a ameaça típica de cada uma. A solicitação passa pelo usuário, pela interface e pelo serviço de orquestração, com a ameaça de entrada com dado pessoal ou com instrução maliciosa. A recuperação passa pelo orquestrador e pelo índice de documentos, com a ameaça de documento desatualizado, sem autorização de acesso ou contaminado. A inferência passa pelo orquestrador e pelo provedor do modelo, com a ameaça de envio de dado ao provedor e de resposta inventada. A ferramenta passa pelo agente, pela skill e pela API do sistema, com a ameaça de excesso de privilégio e de ação não autorizada. A saída traz a resposta com fontes e a revisão humana, com a ameaça de alegação falsa, exposição de informação e confiança excessiva do revisor. A operação, com eventos, telemetria, alerta e suspensão, acompanha todas as etapas, com a ameaça de falha não detectada, custo sem limite e ausência de rastreabilidade. Três linhas tracejadas marcam as fronteiras de confiança: F1 entre a recuperação e a inferência, onde o conteúdo recuperado entra como dado não confiável, F2 entre a inferência e a ferramenta, onde a autorização é aplicada fora do modelo, e F3 entre a saída e o efeito externo, onde fica a revisão humana com autoridade para rejeitar.](assets/fronteiras-de-confianca.png)
 
 Uma fronteira de confiança é o ponto em que o dado passa de uma origem com um nível de confiança para outra com nível diferente. Três fronteiras concentram as decisões de controle num agente: o ponto em que o conteúdo recuperado entra no contexto do modelo, o ponto em que a saída do modelo se torna chamada de ferramenta e o ponto em que a resposta produz efeito fora do sistema. O guia orienta o facilitador a perguntar, diante do desenho, onde o conteúdo deixa de ser confiável, onde há ação externa e onde a pessoa é necessária, e cada resposta aponta uma dessas fronteiras.
 
@@ -49,7 +40,9 @@ O guia usa três cartões de incidente para concentrar a discussão em poucos ri
 | B, agência excessiva | Credencial por serviço com menor privilégio, lista explícita de operações e confirmação humana para escrita | Auditoria das ações, alerta para chamada fora do escopo e revogação do token |
 | C, desinformação | Fonte e data na resposta, recuperação da versão vigente e proibição de resposta categórica sem evidência | Avaliação com gabarito, revisão humana, sinalização de incerteza e canal de correção |
 
-![Três cartões de incidente: A, instrução escondida no documento, ligado ao LLM01 (2026), B, permissão maior que a finalidade, ligado ao LLM03 (2026), e C, resposta plausível e incorreta, ligado ao LLM07 (2026). Cada cartão traz o cenário, o controle preventivo que roda fora do modelo em destaque, os demais controles preventivos e os controles de detecção e resposta.](assets/tres-incidentes.png)
+A figura abaixo situa os três incidentes nas etapas e nas fronteiras de confiança da seção anterior, com a etapa em que cada um começa, o ponto em que o controle fora do modelo interrompe a cadeia e o teste de aceite que verifica esse controle.
+
+![Os três incidentes no caminho do agente, da solicitação ao efeito externo, com as fronteiras F1, F2 e F3. No incidente A, LLM01 (2026), o documento recuperado traz instrução escondida, atravessa F1 e F2 e é interrompido na etapa de ferramenta pelo bloqueio de saída de rede não autorizada, que evita o envio do conteúdo a uma URL externa e é verificado pelo teste T01. No incidente B, LLM03 (2026), o modelo chama a função de escrita errada, atravessa F2 e é interrompido pelo escopo do token, com a API rejeitando a operação, o que evita cadastro alterado ou pagamento aprovado e é verificado pelo teste T03. No incidente C, LLM07 (2026), o controle fora do modelo age antes, na recuperação restrita à versão vigente, e, se ele falhar, o modelo cita norma revogada, e a fonte e a data na resposta com revisão humana ficam antes de F3, para evitar que o analista encaminhe o prazo errado, com os testes T04 e T05. A nota de rodapé informa que o T02 completa com T01 e T03 o primeiro conjunto a automatizar e que T06 e T07 verificam controles da operação.](assets/incidentes-nas-fronteiras.png)
 
 Nas três linhas, a coluna de prevenção traz pelo menos um controle que roda fora do modelo, como o bloqueio de rede, o escopo do token e a recuperação restrita à versão vigente. A página [Controles e evidências](controles-e-evidencias.md) trata dessa diferença entre controle aplicado fora do modelo e instrução textual dirigida ao modelo, e dos testes T01 a T07 que verificam cada controle.
 
@@ -63,9 +56,9 @@ A avaliação pré-registrada de [Magesh et al.](../referencia/bibliografia.md#m
 
 ## Risco escrito como evento e consequência
 
-A ficha de registro de riscos do guia, chamada ficha B, exige que cada risco seja formulado como evento e consequência. A formulação "documento malicioso induz chamada a API externa e expõe dados do usuário" descreve o que acontece, em que ordem e com que dano, e por isso permite escolher um controle e escrever um teste. A formulação "segurança" nomeia uma categoria inteira e deixa a escolha do controle sem critério.
+A ficha de registro de riscos do guia, chamada ficha B, exige que cada risco seja formulado como evento e consequência. A formulação "documento malicioso induz chamada a API externa e expõe dados do usuário" descreve a sequência entre o evento e o dano causado, e por isso permite escolher um controle e escrever um teste. A formulação "segurança" nomeia uma categoria inteira e deixa a escolha do controle sem critério.
 
-![À esquerda, a categoria “segurança”, que não permite escolher controle. À direita, a cadeia que a formulação por evento e consequência permite: o evento de um documento malicioso induzir chamada a API externa, a consequência de expor dados do usuário, o controle de bloqueio de saída de rede e o teste T01. Abaixo, a nota de que uma hipótese registrada vira tarefa de verificação com dono.](assets/risco-como-evento-e-consequencia.png)
+![À esquerda, a categoria “segurança”, que não permite escolher controle. À direita, a cadeia que a formulação por evento e consequência permite: o evento de um documento malicioso induzir chamada a API externa, a consequência de expor dados do usuário, o controle de bloqueio de saída de rede e o teste T01. Abaixo, a nota de que uma hipótese registrada passa a ser uma tarefa de verificação com dono.](assets/risco-como-evento-e-consequencia.png)
 
 A mesma ficha pede que cada linha distinga o fato verificado, a hipótese e a decisão pendente. Um risco registrado como hipótese, como "o token talvez permita escrita", passa a ser uma tarefa de verificação com dono, e o resultado da verificação atualiza a faixa de risco definida na página [Triagem por criticidade](triagem-por-criticidade.md).
 

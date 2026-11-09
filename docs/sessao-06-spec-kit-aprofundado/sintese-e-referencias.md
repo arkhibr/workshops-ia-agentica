@@ -1,6 +1,6 @@
 # Síntese e referências
 
-A sessão retomou o fluxo do GitHub Spec Kit com os três comandos opcionais, `clarify`, `checklist` e `analyze`, e com um princípio de constitution que exige o teste vermelho antes da implementação de cada história. Os exemplos e exercícios usaram dois pedidos de um sistema de pagamentos de projetos de pesquisa da ACME, uma universidade fictícia, e em cada comando a pergunta foi o que ele examina, o que grava e o que deixa de ver.
+A sessão retomou o fluxo do GitHub Spec Kit com os três comandos opcionais, `clarify`, `checklist` e `analyze`, e com um princípio de constitution que exige o teste vermelho antes da implementação de cada história. Os exemplos e exercícios usaram dois pedidos de um sistema de pagamentos de projetos de pesquisa da ACME, uma universidade fictícia, e em cada comando a sessão conferiu os artefatos lidos e gravados e as decisões que ficaram fora da leitura.
 
 ## Ideias essenciais
 
@@ -9,7 +9,7 @@ A sessão retomou o fluxo do GitHub Spec Kit com os três comandos opcionais, `c
 3. **A recomendação do `clarify` é uma proposta do agente.** Aceitá-la grava na spec, como resposta do PO, uma decisão que pode alterar o pedido original, e a pergunta a fazer antes de cada "yes" é quem tem autoridade sobre aquela regra.
 4. **O checklist testa a escrita dos requisitos.** Os itens `CHK` perguntam se o requisito é completo e verificável, a marcação `[x]` é decisão de quem revisa, e o `implement` para quando encontra item desmarcado.
 5. **O princípio de teste vermelho muda as tarefas.** Sem ele, o modelo da versão 1.1.1 trata os testes como opcionais, e com ele cada história ganha uma seção de testes antes da implementação.
-6. **O `analyze` aponta o teste que nasce verde.** As instruções do comando mandam classificar como CRITICAL toda violação da constitution, e no ensaio o agente classificou como HIGH um dos achados do princípio de teste vermelho, o que faz da severidade uma proposta a conferir.
+6. **O `analyze` aponta o teste que passaria antes do código.** As instruções do comando mandam classificar como CRITICAL toda violação da constitution, e no ensaio o agente classificou como HIGH um dos achados do princípio de teste vermelho, o que faz da severidade uma proposta a conferir.
 7. **Conferir o vermelho é ler o motivo da falha.** Asserção sobre o valor esperado e esqueleto ainda não implementado são motivos certos, módulo inexistente (`ERR_MODULE_NOT_FOUND`) é um vermelho fraco que pede os esqueletos e uma nova execução, e erro de digitação e teste que já passava indicam problema no teste.
 8. **A troca do operador mostra se a fronteira tem teste.** Trocar `<=` por `<` muda o resultado só no valor exato do limite, e se nenhum teste falha a suíte não cobre esse valor.
 
@@ -38,7 +38,7 @@ Se duas respostas forem "ainda não", refaça o exercício do saldo da rubrica c
 - **[GitHub Spec Kit](../referencia/bibliografia.md#github-spec-kit).** Instruções dos comandos `clarify`, `checklist`, `analyze`, `tasks` e `implement` instaladas pelo `specify init` da versão 1.1.1, usadas em todos os trechos desta sessão.
 - **[Beck — Test-Driven Development: By Example (2002)](../referencia/bibliografia.md#beck-test-driven-development-by-example-2002).** Ciclo vermelho, verde e refatoração, com o teste escrito antes do código e visto falhando.
 - **[Mathews e Nagappan — Test-Driven Development and LLM-based Code Generation (2024)](../referencia/bibliografia.md#mathews-e-nagappan-test-driven-development-and-llm-based-code-generation-2024).** Efeito de fornecer os testes junto com o enunciado na proporção de soluções corretas geradas por modelos de linguagem.
-- **[Intervenção socrática, Sessão 3](../sessao-03-exploracao-especificacao/intervencao-socratica-conceitos.md#uma-pergunta-por-mensagem-cinco-fases-seis-categorias).** Contrato de uma pergunta por mensagem, sem sugerir a resposta, usado como comparação com o formato de pergunta do `clarify`.
+- **[Intervenção socrática, Sessão 3](../sessao-03-exploracao-especificacao/intervencao-socratica-conceitos.md#regras-de-conduta-e-estrutura-da-entrevista-socratica).** Contrato de uma pergunta por mensagem, sem sugerir a resposta, usado como comparação com o formato de pergunta do `clarify`.
 
 As referências completas e seus links estão na [bibliografia do curso](../referencia/bibliografia.md).
 

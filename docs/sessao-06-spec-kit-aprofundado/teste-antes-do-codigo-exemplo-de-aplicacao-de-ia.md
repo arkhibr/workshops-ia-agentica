@@ -147,7 +147,7 @@ No fim da execução, o agente registrou: "Três cenários da US3 já nasceram v
 
 ## O que levar para o exercício
 
-O `analyze` previu, antes da execução, os dois casos de teste que nascem verde, e o achado que não foi corrigido apareceu de novo no fim do `implement`. O vermelho do Passo 5 foi conferido pelo motivo das falhas, uma a uma, e o exercício acrescenta uma verificação depois do verde, com a troca do operador da comparação de fronteira.
+O `analyze` previu, antes da execução, os dois casos de teste que passariam antes do código, e o achado que não foi corrigido apareceu de novo no fim do `implement`. O vermelho do Passo 5 foi conferido pelo motivo das falhas, uma a uma, e o exercício acrescenta uma verificação depois do verde, com a troca do operador da comparação de fronteira.
 
 Os trechos vêm de uma execução real com Spec Kit 1.1.1 e Claude Code, em 13/10/2026, com os blocos de tarefas e de achados encurtados. Outra execução produz números e achados diferentes, e os tipos de achado costumam se repetir.
 

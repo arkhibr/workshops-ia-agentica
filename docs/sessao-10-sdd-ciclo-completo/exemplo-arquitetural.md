@@ -4,7 +4,7 @@ Esta demonstração percorre o ciclo completo na Vetor, plataforma fictícia de 
 
 O estado inicial é o mesmo que a oficina monta do zero: a função `calcularDesconto` recebe `tipoCliente` e não usa esse parâmetro em nenhum ponto do corpo. Existe um teto de desconto de R$ 1.000,00 por pedido. As faixas atuais são 0% até R$ 500,00, 5% de R$ 500,01 a R$ 2.000,00, 10% de R$ 2.000,01 a R$ 5.000,00 e 15% acima de R$ 5.000,00.
 
-O pedido que chega é o de sempre: "ativa o desconto de atacado, 20% acima de dez mil".
+O pedido chega no formato habitual: "ativa o desconto de atacado, 20% acima de dez mil".
 
 ## Constitution
 
@@ -48,7 +48,7 @@ O sistema deve preservar as faixas atuais para cliente do tipo padrão.
 Caso concreto: valorTotal = 12000, tipoCliente = 'padrao' → faixa de 15%.
 ```
 
-O caso concreto de FR-001 diz `desconto = 2400`. Essa linha é a razão de a próxima etapa existir.
+O caso concreto de FR-001 diz `desconto = 2400`, valor que o teto atual de R$ 1.000,00 não permite, e esse conflito é o assunto da etapa seguinte.
 
 ## Clarify
 
@@ -58,7 +58,7 @@ O teto de R$ 1.000,00 já existe e vale para todos os pedidos. Vinte por cento d
 2. O teto não se aplica ao atacado. Precisa ser dito explicitamente, porque muda o risco financeiro por pedido.
 3. O teto sobe para o atacado, com um valor novo. Alguém precisa decidir qual.
 
-Esta é a pergunta que separa o ciclo disciplinado do agente que escolhe sozinho. Sem clarificação, o modelo vai adotar uma das três, provavelmente a primeira, porque é a que exige menos alteração no código existente. E a decisão financeira do negócio terá sido tomada por um critério de conveniência de implementação.
+Sem a etapa de clarificação, o modelo adota sozinho uma das três, provavelmente a primeira, porque é a que exige menos alteração no código existente, e a decisão financeira do negócio passa a depender de um critério de conveniência de implementação.
 
 A decisão registrada, para esta demonstração, é a segunda: o teto não se aplica ao atacado. O registro entra na especificação:
 
@@ -119,14 +119,14 @@ Rodar e ver falhar com `2400 !== 1000` é a evidência de que o teste alcança a
 
 A revisão de **aderência** confere FR-001, FR-002 e BR-004 contra o código, e pergunta se alguma decisão de produto foi tomada durante a implementação sem passar pela especificação.
 
-A revisão de **qualidade** confere se a tabela de faixas segue as convenções do repositório, se os nomes expressam o domínio e se os testes observam comportamento pela interface pública em vez de espelhar a estrutura interna.
+A revisão de **qualidade** confere se a tabela de faixas segue as convenções do repositório, se os nomes expressam o domínio e se os testes observam comportamento pela interface pública sem depender da estrutura interna.
 
-Um "passa" na segunda não compensa uma falha na primeira. Um código elegante que aplica o teto ao atacado continua resolvendo o problema errado.
+Uma aprovação na revisão de qualidade não compensa reprovação na de aderência: uma tabela de faixas bem escrita que aplica o teto ao atacado viola BR-004.
 
 ## Leitura do exemplo
 
-A pergunta da etapa de clarificação valeu mais do que qualquer artefato produzido no ciclo. O conflito entre o teto de R$ 1.000,00 e os 20% de R$ 12.000,00 estava presente desde o pedido original, invisível, e qualquer fluxo que fosse direto do pedido ao código teria resolvido esse conflito por acidente.
+A pergunta da etapa de clarificação valeu mais do que qualquer artefato produzido no ciclo. O conflito entre o teto de R$ 1.000,00 e os 20% de R$ 12.000,00 estava presente desde o pedido original sem estar explícito, e qualquer fluxo que fosse direto do pedido ao código teria resolvido esse conflito sem decisão de ninguém.
 
-Um agente competente teria produzido código que passa em testes que ele mesmo escreveu, com o teto aplicado, e ninguém teria motivo para desconfiar. A regra financeira do negócio teria sido decidida pela ordem das linhas na função.
+Um agente competente teria produzido código que passa em testes que ele mesmo escreveu, com o teto aplicado, e ninguém teria motivo para desconfiar. A regra financeira do negócio teria sido definida pela posição do `Math.min` na função.
 
 **Próxima página:** [Estudo de caso](estudo-de-caso.md).

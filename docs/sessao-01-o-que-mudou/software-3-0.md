@@ -10,35 +10,35 @@ Karpathy já vinha nessa linha desde antes. Em 2017, no mesmo ano do artigo de V
 
 - **Software 1.0** é código explícito, escrito por humanos em linguagens de programação.
 - **Software 2.0** são redes neurais: em vez de código, o time ajusta pesos por treinamento.
-- **Software 3.0** é o prompt em linguagem natural funcionando como o próprio programa, interpretado por um LLM. Karpathy resume a virada numa frase que já circula como definição: "the hottest new programming language is English."
+- **Software 3.0** é o prompt em linguagem natural funcionando como o próprio programa, interpretado por um LLM. Karpathy resume a mudança numa frase que já circula como definição: "the hottest new programming language is English."
 
-O prompt sai da posição de pedido informal a um assistente e vira a especificação executável. Tudo que o LLM enxerga numa execução precisa caber na **janela de contexto**, que é o limite de unidades de entrada e saída que o modelo consegue considerar. Convenção do repositório, regra de negócio e caso de borda precisam estar escritos ali dentro. O que ficou de fora não existe para o agente. É daí que vem a ideia central desta sessão: a janela de contexto virou o programa.
+O prompt passa a funcionar como especificação executável. Tudo que o LLM considera numa execução precisa caber na **janela de contexto**, que é o limite de unidades de entrada e saída que o modelo consegue considerar. Convenção do repositório, regra de negócio e caso de borda precisam estar escritos ali dentro, porque o agente não tem acesso a nada que ficou fora da janela. Por isso esta sessão trata o conteúdo da janela de contexto como o programa que o agente executa.
 
-Karpathy prevê o resto da década na mesma linha: "Software 3.0 is eating 1.0/2.0". Código explícito e modelos treinados continuam existindo. O que cresce é a fatia do comportamento do sistema escrita direto em linguagem natural.
+Karpathy prevê o resto da década na mesma linha: "Software 3.0 is eating 1.0/2.0". Código explícito e modelos treinados continuam existindo, e a parcela que cresce é a do comportamento do sistema escrito diretamente em linguagem natural.
 
 ![Evolução de Software 1.0, no qual humanos escrevem regras em código, para Software 2.0, no qual dados e otimização produzem pesos, e Software 3.0, no qual linguagem natural, regras, convenções, exemplos e casos de borda entram na janela de contexto de um LLM.](../assets/images/s1-software-1-2-3.png)
 
 ## A curva de capacidade que tornou isso prático
 
-Karpathy explica o que está mudando. O [SWE-bench, apresentado por Jimenez et al. em 2024](../referencia/bibliografia.md#jimenez-et-al-swe-bench-2024), mostra quando a mudança passou a valer na prática. O benchmark pega problemas reais, registrados como *issues* em repositórios populares do GitHub, e pede ao agente o patch que resolve cada um. Gerar uma função isolada é bem mais simples do que isso: aqui o agente precisa achar a causa no repositório inteiro e passar nos testes que a própria comunidade usa para aceitar contribuição.
+Karpathy explica o que está mudando, e o [SWE-bench, apresentado por Jimenez et al. em 2024](../referencia/bibliografia.md#jimenez-et-al-swe-bench-2024), mostra quando a mudança passou a valer na prática. O benchmark pega problemas reais, registrados como *issues* em repositórios populares do GitHub, e pede ao agente o patch que resolve cada um. Gerar uma função isolada é bem mais simples do que isso: aqui o agente precisa achar a causa no repositório inteiro e passar nos testes que a própria comunidade usa para aceitar contribuição.
 
-No artigo original, o melhor resultado (Claude 2 com recuperação por palavras-chave) resolveu 1,96% dos problemas. Em 2026, os agentes de codificação mais avançados resolvem cerca de 97% dos mesmos problemas na versão revisada do benchmark (SWE-bench Verified). Essa curva mede o amadurecimento da disciplina em volta do modelo: navegação melhor do repositório, uso real de ferramentas, verificação antes de declarar a tarefa concluída. São as mesmas três setas da próxima seção, numa escala de dois anos em vez de uma sessão de trabalho.
+No artigo original, o melhor resultado (Claude 2 com recuperação por palavras-chave) resolveu 1,96% dos problemas. Em 2026, os agentes de codificação mais avançados resolvem cerca de 97% dos mesmos problemas na versão revisada do benchmark (SWE-bench Verified). Essa curva mede o amadurecimento da disciplina em volta do modelo: navegação melhor do repositório, uso real de ferramentas, verificação antes de declarar a tarefa concluída. Essas três práticas correspondem às responsabilidades humanas descritas na próxima seção, observadas aqui ao longo de dois anos de evolução do benchmark.
 
-## O que sobe: piso, teto, julgamento
+## Efeitos sobre o trabalho de quem desenvolve
 
-Três coisas sobem ao mesmo tempo, em ritmos diferentes:
+Esta sessão usa três termos para separar os efeitos do Software 3.0 sobre o trabalho de desenvolvimento, e cada um deles muda em ritmo próprio:
 
-- **O piso sobe para todos.** Se a linguagem de programação é o português ou o inglês, qualquer desenvolvedor produz hoje código que compila e roda. Isso já não é diferencial.
-- **O teto sobe só com disciplina.** Karpathy nomeia a lacuna: "demo is works.any(), product is works.all()". Um protótipo só precisa funcionar uma vez. Um produto precisa funcionar em todos os casos que importam. Fechar essa lacuna é o *generation-verification loop*: gerar, verificar, ajustar, repetir.
-- **O julgamento humano sobe de valor.** As três responsabilidades de [Willison](../referencia/bibliografia.md#willison-what-is-agentic-engineering-2026) (especificar, prover ferramentas, verificar) são decisões que o modelo não toma sozinho.
+- **Piso** é o resultado mínimo que qualquer desenvolvedor obtém com um agente: código que compila e roda. Quando a linguagem de programação é o português ou o inglês, esse resultado fica ao alcance de toda a equipe e deixa de diferenciar quem desenvolve.
+- **Teto** é a qualidade máxima que a equipe alcança: código que resolve o problema em todos os casos que importam. Karpathy descreve a distância entre os dois níveis com a frase "demo is works.any(), product is works.all()", porque um protótipo precisa funcionar uma vez e um produto precisa funcionar em todos os casos relevantes. O teto só sobe quando a equipe adota o *generation-verification loop*, ciclo em que o agente gera o código, a equipe verifica o resultado e o agente ajusta até a verificação passar.
+- **Julgamento humano** é a parte do trabalho que o modelo não executa sozinho, formada pelas três responsabilidades de [Willison](../referencia/bibliografia.md#willison-what-is-agentic-engineering-2026): especificar, prover ferramentas e verificar. O valor dessa parte aumenta à medida que o piso fica acessível a toda a equipe.
 
-[Willison](../referencia/bibliografia.md#willison-what-is-agentic-engineering-2026) localiza esse julgamento em "figuring out *what* code to write": navegar as decisões de arquitetura que sobram depois que o agente gera uma proposta. Código que roda ainda está longe de código correto, testável e alinhado à arquitetura do sistema. E nenhum dos dois responde se aquele era o problema certo de resolver.
+[Willison](../referencia/bibliografia.md#willison-what-is-agentic-engineering-2026) localiza esse julgamento em "figuring out *what* code to write": navegar as decisões de arquitetura que sobram depois que o agente gera uma proposta. Um código pode rodar e ainda falhar em correção, em testabilidade ou em aderência à arquitetura do sistema, e nenhuma dessas propriedades indica se o problema resolvido era o problema que a equipe precisava resolver.
 
-| Seta                            | Responsabilidade que sobe de valor | Pergunta que ela responde                                                                             |
-| ------------------------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Piso sobe para todos            | —                                  | O código compila e roda?                                                                              |
-| Teto sobe com disciplina        | Especificação + ferramental        | O código resolve exatamente o problema, nos casos de borda que importam?                              |
-| Julgamento humano sobe de valor | Verificação                        | Esse era o problema certo? O resultado está pronto para produção, ou é só um demo que passou uma vez? |
+| Termo             | Responsabilidade humana associada | Pergunta que o termo responde                                                                       |
+| ----------------- | --------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Piso              | —                                 | O código compila e roda?                                                                            |
+| Teto              | Especificação + ferramental       | O código resolve exatamente o problema, nos casos de borda que importam?                            |
+| Julgamento humano | Verificação                       | Esse era o problema certo? O resultado está pronto para produção ou passou uma única vez num demo?  |
 
 !!! question "Antes de continuar"  
     Pense num código aceito recentemente sem revisão cuidadosa. Ele passou pela coluna "piso" (rodou) ou também pela coluna "teto" (foi verificado nos casos que importam)?

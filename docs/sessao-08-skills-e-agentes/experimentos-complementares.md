@@ -1,10 +1,10 @@
 # Experimentos complementares
 
-Estas atividades opcionais aprofundam os exercícios da sessão: teste restrições de subagentes, erros de configuração, acionamento de skills, argumentos e execução em contexto isolado.
+Estas atividades opcionais aprofundam os exercícios da sessão com testes de restrição de subagentes, de erros de configuração, de acionamento de skills, de argumentos e de execução em contexto isolado.
 
 ## Experimento C: restringir um subagente e testar a restrição
 
-Este experimento é opcional. Peça ao agente que crie o subagente `revisor-de-reuniao` em `.claude/agents/`, com `tools: Read, Grep, Glob`, `model: haiku` e a instrução de apenas listar problemas, sem editar arquivos. Em seguida, peça que o subagente corrija um problema do relatório e observe a resposta.
+Peça ao agente que crie o subagente `revisor-de-reuniao` em `.claude/agents/`, com `tools: Read, Grep, Glob`, `model: haiku` e a instrução de apenas listar problemas, sem editar arquivos. Em seguida, peça que o subagente corrija um problema do relatório e observe a resposta.
 
 Depois repita o teste com o campo escrito com erro de grafia, trocando `tools` por `tool`. A [documentação dos subagentes](../referencia/bibliografia.md#anthropic-subagents-no-claude-code-documentacao) informa que os campos desconhecidos são ignorados em silêncio e que o campo `tools` omitido faz o subagente herdar todas as ferramentas, e o teste verifica se essa combinação se confirma na versão instalada. O resultado esperado, confirmado na execução com a versão 2.1.309 do Claude Code, é que o subagente com `tools: Read, Grep, Glob` não consiga editar o arquivo e que o subagente com o campo escrito errado o edite.
 
@@ -34,7 +34,7 @@ O log de depuração é a única fonte que nomeia o erro de um subagente ou de u
 
 O caminho no Windows segue a documentação, que escreve `~/.claude/debug`, e não foi observado nessa plataforma.
 
-O comando `claude plugin validate` aceita uma pasta de skills ou de agentes, como `.claude/skills` ou `.claude/agents`, e exige a versão 2.1.233 ou posterior. Na observação, a pasta de skills passou, e a pasta de agentes produziu um único aviso, sobre o arquivo sem `description`. O comando deixou sem sinalização o `name` com `:`, o campo `tool`, o valor `magenta` e a primeira linha em branco, e a documentação confirma o limite: o comando verifica se o YAML pode ser lido e não sinaliza um arquivo cujo front-matter é válido e sem `name`. A ordem recomendada é rodar `claude plugin validate` antes da sessão para pegar erros de leitura do YAML e consultar o log de depuração quando o agente se comportar de modo diferente do esperado.
+O comando `claude plugin validate` aceita uma pasta de skills ou de agentes, como `.claude/skills` ou `.claude/agents`, e exige a versão 2.1.233 ou posterior. Na observação, a pasta de skills passou, e a pasta de agentes produziu um único aviso, sobre o arquivo sem `description`. O comando deixou sem sinalização o `name` com `:`, o campo `tool`, o valor `magenta` e a primeira linha em branco, e a documentação confirma o limite: o comando verifica se o YAML pode ser lido e não sinaliza um arquivo cujo front-matter é válido e sem `name`. A ordem recomendada é rodar `claude plugin validate` antes da sessão para encontrar erros de leitura do YAML e consultar o log de depuração quando o agente se comportar de modo diferente do esperado.
 
 ```bash
 claude plugin validate .claude/agents
@@ -188,7 +188,7 @@ Escreva o resumo semanal da fila de chamados da ACME. Comece a resposta com a li
 
 O resultado observado no `claude 2.1.309` com o modelo haiku, em uma execução por variação, foi o disparo nas três primeiras descrições e nenhum disparo na quarta. Uma execução por variação e uma única skill disponível não permitem concluir que uma descrição vaga seja suficiente, e a extensão do experimento cria uma segunda skill, `rotina-b3`, sobre outro assunto, e repete as quatro variações com as duas skills presentes.
 
-**E.2: liberar não é restringir.** Crie quatro skills com o mesmo corpo, que pede a criação de um arquivo com a ferramenta `Write`, e linhas de front-matter diferentes.
+**E.2: liberação e restrição de ferramentas.** Crie quatro skills com o mesmo corpo, que pede a criação de um arquivo com a ferramenta `Write`, e linhas de front-matter diferentes.
 
 **Passo 1:** crie uma pasta por skill, com os nomes `sem-campo`, `liberar-escrita`, `liberar-leitura` e `bloquear-escrita` dentro de `.claude/skills/`.
 
@@ -234,7 +234,7 @@ Crie o arquivo saida-<nome>.txt contendo apenas a palavra ok, usando a ferrament
     Get-ChildItem saida-*.txt
     ```
 
-O resultado observado foi a escrita negada na skill `sem-campo`, o arquivo criado em `liberar-escrita`, o arquivo criado em `liberar-leitura`, apesar de o campo listar só `Read`, e o arquivo ausente em `bloquear-escrita`. O terceiro caso é o que desfaz a leitura intuitiva de `allowed-tools`, porque o campo libera as ferramentas listadas sem restringir as demais.
+O resultado observado foi a escrita negada na skill `sem-campo`, o arquivo criado em `liberar-escrita`, o arquivo criado em `liberar-leitura`, apesar de o campo listar só `Read`, e o arquivo ausente em `bloquear-escrita`. O terceiro caso contraria a leitura intuitiva de `allowed-tools`, porque o campo libera as ferramentas listadas sem restringir as demais.
 
 !!! note "Claude Code e Codex CLI"
     **Claude Code:** `description`, `allowed-tools` e `disallowed-tools` constam da [tabela de campos das skills](https://code.claude.com/docs/en/skills#frontmatter-reference) e de [Pre-approve tools for a skill](https://code.claude.com/docs/en/skills#pre-approve-tools-for-a-skill), e o acionamento por `/nome` em modo não interativo foi observado na versão 2.1.309.

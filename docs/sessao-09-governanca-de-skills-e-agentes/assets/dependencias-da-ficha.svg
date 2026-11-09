@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="s00695c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00695c"/></marker><marker id="se65100" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="s78909c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#78909c"/></marker></defs>
+<rect width="1600" height="760" fill="#ffffff"/>
+<text x="60" y="62" font-size="32" font-weight="bold" fill="#12302b">Como as linhas da ficha dependem umas das outras</text>
+<text x="60" y="102" font-size="19" fill="#37474f">Cada seta indica o que uma linha recebe de outra antes de ser preenchida ou revista</text>
+<rect x="60" y="130" width="720" height="400" rx="14" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<text x="84" y="164" font-size="19" font-weight="bold" fill="#00695c">Definition of Ready: claro antes de começar</text>
+<rect x="820" y="130" width="720" height="400" rx="14" fill="#f5f7f8" stroke="#cfd8dc" stroke-width="2"/>
+<text x="844" y="164" font-size="19" font-weight="bold" fill="#00695c">Definition of Done: provado antes de concluir</text>
+<rect x="90" y="190" width="300" height="84" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="2.5"/>
+<text x="108" y="224" font-size="20" font-weight="bold" fill="#12302b">Dono e finalidade</text>
+<text x="108" y="252" font-size="16" fill="#37474f">Quem responde e por quê</text>
+<rect x="90" y="300" width="300" height="84" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="2.5"/>
+<text x="108" y="334" font-size="20" font-weight="bold" fill="#12302b">Dados e ferramentas</text>
+<text x="108" y="362" font-size="16" fill="#37474f">Classe de dado e permissão</text>
+<rect x="90" y="410" width="300" height="84" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="2.5"/>
+<text x="108" y="444" font-size="20" font-weight="bold" fill="#12302b">Autonomia</text>
+<text x="108" y="472" font-size="16" fill="#37474f">Sugere, prepara ou executa</text>
+<rect x="450" y="300" width="300" height="84" rx="14" fill="#ffffff" stroke="#e65100" stroke-width="2.5"/>
+<text x="468" y="334" font-size="20" font-weight="bold" fill="#12302b">Faixa de risco</text>
+<text x="468" y="362" font-size="16" fill="#37474f">Fator decisivo e premissas</text>
+<rect x="870" y="190" width="300" height="84" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="2.5"/>
+<text x="888" y="224" font-size="20" font-weight="bold" fill="#12302b">Riscos e controles</text>
+<text x="888" y="252" font-size="16" fill="#37474f">Preventivo e detectivo</text>
+<rect x="1210" y="300" width="300" height="84" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="2.5"/>
+<text x="1228" y="334" font-size="20" font-weight="bold" fill="#12302b">Evidência e gate</text>
+<text x="1228" y="362" font-size="16" fill="#37474f">Prova, guarda e aprovador</text>
+<rect x="870" y="410" width="300" height="84" rx="14" fill="#ffffff" stroke="#00695c" stroke-width="2.5"/>
+<text x="888" y="444" font-size="20" font-weight="bold" fill="#12302b">Revisão e retirada</text>
+<text x="888" y="472" font-size="16" fill="#37474f">Gatilhos e procedimento</text>
+<rect x="1210" y="616" width="300" height="84" rx="14" fill="#eceff1" stroke="#78909c" stroke-width="2.5"/>
+<text x="1228" y="650" font-size="20" font-weight="bold" fill="#12302b">Canal e versão</text>
+<text x="1228" y="678" font-size="16" fill="#37474f">Fora da DoR e da DoD</text>
+<line x1="390" y1="342" x2="446" y2="342" stroke="#00695c" stroke-width="3" marker-end="url(#s00695c)"/>
+<path d="M390,452 H420 V362 H446" fill="none" stroke="#00695c" stroke-width="3" marker-end="url(#s00695c)"/>
+<text x="456" y="420" font-size="16" fill="#37474f">A triagem combina dado,</text>
+<text x="456" y="440" font-size="16" fill="#37474f">permissão e autonomia</text>
+<line x1="750" y1="350" x2="1206" y2="350" stroke="#e65100" stroke-width="3" marker-end="url(#se65100)"/>
+<text x="850" y="336" font-size="16" font-weight="bold" fill="#e65100">Faixa alta exige aprovação formal no gate</text>
+<text x="850" y="376" font-size="16" fill="#37474f">Premissa que mudaria a faixa passa</text>
+<text x="850" y="396" font-size="16" fill="#37474f">a ser condição do gate</text>
+<path d="M1170,232 H1360 V296" fill="none" stroke="#00695c" stroke-width="3" marker-end="url(#s00695c)"/>
+<text x="1186" y="262" font-size="16" fill="#37474f">A evidência prova</text>
+<text x="1186" y="282" font-size="16" fill="#37474f">cada controle</text>
+<line x1="1360" y1="384" x2="1360" y2="612" stroke="#00695c" stroke-width="3" marker-end="url(#s00695c)"/>
+<text x="1376" y="560" font-size="16" fill="#37474f">O gate libera</text>
+<text x="1376" y="580" font-size="16" fill="#37474f">a publicação</text>
+<path d="M1210,658 H1020 V498" fill="none" stroke="#78909c" stroke-width="3" marker-end="url(#s78909c)"/>
+<text x="1036" y="560" font-size="16" fill="#37474f">A revisão registra</text>
+<text x="1036" y="580" font-size="16" fill="#37474f">a versão vigente</text>
+<path d="M870,452 H800 V560 H720 V388" fill="none" stroke="#e65100" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#se65100)"/>
+<text x="450" y="596" font-size="16" font-weight="bold" fill="#e65100">Troca de modelo, de base, de permissão, de skill ou</text>
+<text x="450" y="618" font-size="16" font-weight="bold" fill="#e65100">de finalidade: a ficha é revista antes da mudança</text>
+<text x="60" y="730" font-size="17" fill="#37474f">A ficha de governança estende a ficha de requisitos da Sessão 8, que registra as decisões anteriores à construção.</text>
+</svg>

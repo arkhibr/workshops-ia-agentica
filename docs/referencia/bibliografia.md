@@ -144,7 +144,7 @@ Especificação aberta do formato de skill: `name` (1 a 64 caracteres, igual ao 
 
 **Agentic AI Foundation (Linux Foundation). "AGENTS.md".** Padrão aberto, formalizado em ago. 2025 por OpenAI, Google, Cursor, Factory e Sourcegraph. <https://agents.md/>
 
-Arquivo markdown na raiz do repositório, sem esquema obrigatório, que instrui agentes de codificação sobre build, testes, convenções e segurança — mais de 20 mil repositórios adotantes, lido por ferramentas de múltiplos fornecedores concorrentes.
+Arquivo markdown na raiz do repositório, sem esquema obrigatório, que instrui agentes de codificação sobre build, testes, convenções e segurança. O formato tem mais de 20 mil repositórios adotantes e é lido por ferramentas de múltiplos fornecedores concorrentes.
 
 → Sessão 2.
 
@@ -214,7 +214,7 @@ Caso em que carregar definições de ferramenta sob demanda, em vez de todas de 
 
 **ANTHROPIC. "Effective context engineering for AI agents".** Anthropic Engineering, set. 2025. <https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents>
 
-Define context engineering como a evolução do prompt engineering: cuidar de tudo que chega à janela de contexto numa execução, não só do texto da instrução. Descreve ferramentas como o contrato entre o agente e o ambiente, desenhadas para eficiência de token.
+Define context engineering como a evolução do prompt engineering: cuidar de tudo que chega à janela de contexto numa execução, incluindo o texto da instrução e os demais insumos. Descreve ferramentas como o contrato entre o agente e o ambiente, desenhadas para eficiência de token.
 
 → Sessão 2.
 
@@ -314,7 +314,7 @@ Documentação das skills no Claude Code: arquivo `SKILL.md` com frontmatter YAM
 
 **ANTHROPIC. "Steering Claude Code".** Anthropic Blog, 2026. <https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more>
 
-Separa os mecanismos que guiam o modelo, como arquivos de contexto, dos que impõem comportamento, como hooks e permissões — a base da regra de que proteção real precisa ser determinística.
+Separa os mecanismos que guiam o modelo, como arquivos de contexto, dos que impõem comportamento, como hooks e permissões. Essa separação fundamenta a regra de que proteção real precisa ser determinística.
 
 → Sessões 2, 10.
 
@@ -394,7 +394,7 @@ Comparação de três ferramentas de SDD que estabelece a taxonomia usada na Ses
 
 **BOEHM, Barry W. *Software Engineering Economics*.** Prentice-Hall, 1981.
 
-Documentou empiricamente que o custo de corrigir um defeito cresce a cada fase do desenvolvimento — em sistemas grandes e críticos, um problema descoberto depois da entrega pode custar da ordem de 100 vezes mais do que o mesmo problema pego na fase de requisitos. Pesquisa mais recente questiona o multiplicador exato em times ágeis com integração contínua, mas não a direção do efeito. Fundamenta por que reversibilidade e tempo de vida pesam na escolha entre vibe coding, assistência e SDD.
+Documentou empiricamente que o custo de corrigir um defeito cresce a cada fase do desenvolvimento. Em sistemas grandes e críticos, um problema descoberto depois da entrega pode custar da ordem de 100 vezes mais do que o mesmo problema pego na fase de requisitos. Pesquisa mais recente questiona o multiplicador exato em times ágeis com integração contínua e mantém a direção do efeito. Fundamenta por que reversibilidade e tempo de vida pesam na escolha entre vibe coding, assistência e SDD.
 
 → Sessão 1.
 
@@ -414,7 +414,7 @@ Ementa: "Dispõe sobre a proteção de dados pessoais e altera a Lei nº 12.965,
 
 **BROWN, Tom B. et al. *Language Models are Few-Shot Learners*.** NeurIPS, 2020. <https://arxiv.org/abs/2005.14165>
 
-Demonstra que aumentar a escala de modelos de linguagem melhora substancialmente o desempenho em aprendizado com poucos exemplos, sem necessidade de ajuste fino. Apresenta o GPT-3, modelo autorregressivo com 175 bilhões de parâmetros, aplicado apenas via interação textual sem atualização de gradientes. Alcança desempenho competitivo em tradução, resposta a perguntas, preenchimento de texto, raciocínio e adaptação de domínio. Gera textos tão realistas que avaliadores humanos têm dificuldade em distinguir de conteúdo humano — mecanismo técnico que torna um prompt capaz de funcionar como programa (Software 3.0).
+Demonstra que aumentar a escala de modelos de linguagem melhora substancialmente o desempenho em aprendizado com poucos exemplos, sem necessidade de ajuste fino. Apresenta o GPT-3, modelo autorregressivo com 175 bilhões de parâmetros, aplicado apenas via interação textual sem atualização de gradientes. Alcança desempenho competitivo em tradução, resposta a perguntas, preenchimento de texto, raciocínio e adaptação de domínio. Gera textos tão realistas que avaliadores humanos têm dificuldade em distinguir de conteúdo humano, e esse é o mecanismo técnico que torna um prompt capaz de funcionar como programa (Software 3.0).
 
 → Sessão 1.
 
@@ -504,7 +504,7 @@ Referência da sintaxe do Gherkin, usada para escrever critérios de aceite como
 
 **DATACURVE. *DeepSWE Leaderboard*.** Publicado em benchlm.ai. <https://benchlm.ai/benchmarks/deepswe>
 
-Leitura independente de modelos em 113 tarefas de engenharia de software de longo horizonte, tiradas de 91 repositórios de código aberto em 5 linguagens, verificadas por programa. Espelha o placar público do DeepSWE usando, para cada modelo, a melhor configuração disponível do `mini-swe-agent` — o que mede o par modelo mais arnês, e não o modelo isolado.
+Leitura independente de modelos em 113 tarefas de engenharia de software de longo horizonte, tiradas de 91 repositórios de código aberto em 5 linguagens, verificadas por programa. Espelha o placar público do DeepSWE usando, para cada modelo, a melhor configuração disponível do `mini-swe-agent`, e por isso mede o par formado por modelo e arnês.
 
 → Sessões 1, 2.
 
@@ -524,7 +524,7 @@ Padrão para representar regras condicionais como tabelas de decisão, complemen
 
 **DELIMARSKY, Den. "Spec-driven development with AI: Get started with a new open source toolkit".** *The GitHub Blog*, 2 set. 2025. <https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/>
 
-Post oficial de lançamento do GitHub Spec Kit — define o problema do vibe coding ("você descreve o objetivo, recebe um bloco de código de volta, e frequentemente... parece certo, mas não funciona direito") e o papel da especificação como "contrato para como seu código deve se comportar".
+Post oficial de lançamento do GitHub Spec Kit. Define o problema do vibe coding ("você descreve o objetivo, recebe um bloco de código de volta, e frequentemente... parece certo, mas não funciona direito") e o papel da especificação como "contrato para como seu código deve se comportar".
 
 → Sessões 1, 3, 5, 8.
 
@@ -582,7 +582,7 @@ Referência para a manutenção de código sem testes. Cunha o termo *characteri
 
 **FISSION-AI. *OpenSpec*.** Repositório de software. <https://github.com/Fission-AI/OpenSpec>
 
-Ferramenta de SDD que organiza o trabalho em torno da mudança, não da funcionalidade: um espaço descreve o comportamento atual do sistema e outro contém uma pasta por mudança proposta, com proposta, especificação-delta, design e tarefas. O arquivamento incorpora o delta à especificação principal e preserva o histórico da mudança. Serve na Sessão 10 como contraste ao Spec Kit, por operar sem uma camada de princípios de projeto acima das mudanças individuais.
+Ferramenta de SDD que usa a mudança individual como unidade de trabalho: um espaço descreve o comportamento atual do sistema e outro contém uma pasta por mudança proposta, com proposta, especificação-delta, design e tarefas. O arquivamento incorpora o delta à especificação principal e preserva o histórico da mudança. Serve na Sessão 10 como contraste ao Spec Kit, por operar sem uma camada de princípios de projeto acima das mudanças individuais.
 
 → Sessão 10.
 
@@ -592,7 +592,7 @@ Ferramenta de SDD que organiza o trabalho em torno da mudança, não da funciona
 
 **FORD, Neal; PARSONS, Rebecca; KUA, Patrick; SADALAGE, Pramod. *Building Evolutionary Architectures: Automated Software Governance*, 2ª ed.** O'Reilly Media, 2023.
 
-Origem do termo função de aptidão arquitetural (*architectural fitness function*): "uma função de aptidão arquitetural fornece uma avaliação objetiva de integridade de alguma característica arquitetural." A tríade usada neste workshop para documentar uma função de aptidão (limiar, responsável, reação à falha) é uma adaptação pedagógica para fins de verificação prática, não uma citação literal do livro; o texto original classifica funções de aptidão por outros eixos (atômica ou holística, disparada ou contínua, estática ou dinâmica, entre outros).
+Origem do termo função de aptidão arquitetural (*architectural fitness function*): "uma função de aptidão arquitetural fornece uma avaliação objetiva de integridade de alguma característica arquitetural." A tríade usada neste workshop para documentar uma função de aptidão (limiar, responsável, reação à falha) é uma adaptação pedagógica para fins de verificação prática e não aparece literalmente no livro. O texto original classifica funções de aptidão por outros eixos (atômica ou holística, disparada ou contínua, estática ou dinâmica, entre outros).
 
 → Sessão 3.
 
@@ -610,7 +610,7 @@ Descreve os componentes de um mapa de jornada. Afirma que as ações do ator no 
 
 ### GitHub Spec Kit
 
-**GitHub Spec Kit.** Implementação de referência open source do Spec-Driven Development (SDD) — mais de 90 mil estrelas no GitHub. Define os quatro artefatos canônicos (`constitution.md`, `spec.md`, `plan.md`, `tasks.md`) e os comandos `/specify`, `/plan`, `/tasks`, compatíveis com Claude Code, GitHub Copilot e Cursor. O modelo de especificação (`spec-template.md`) numera cada requisito funcional com prefixo `FR-001`, `FR-002` etc., em frases no padrão "o sistema deve..."; não reserva uma seção separada para requisito não funcional.
+**GitHub Spec Kit.** Implementação de referência open source do Spec-Driven Development (SDD), com mais de 90 mil estrelas no GitHub. Define os quatro artefatos canônicos (`constitution.md`, `spec.md`, `plan.md`, `tasks.md`) e os comandos `/specify`, `/plan`, `/tasks`, compatíveis com Claude Code, GitHub Copilot e Cursor. O modelo de especificação (`spec-template.md`) numera cada requisito funcional com prefixo `FR-001`, `FR-002` etc., em frases no padrão "o sistema deve...", e não reserva uma seção separada para requisito não funcional.
 
 As Sessões 5 e 6 usam a versão 1.1.1, de 6 out. 2026 (<https://github.com/github/spec-kit/releases/tag/v1.1.1>), instalada com `uv tool install specify-cli==1.1.1`. Nessa versão, o `specify init` apresenta como caminho básico `constitution`, `specify`, `plan`, `tasks`, `implement` e `converge`, este último fora do escopo do workshop, e como comandos opcionais `clarify`, `analyze` e `checklist`. Os comandos se chamam `/speckit-<comando>` no Claude Code e no Copilot e `$speckit-<comando>` no Codex CLI. O modelo de tarefas (`tasks-template.md`) declara as tarefas de teste como opcionais, incluídas só quando a especificação as pede.
 
@@ -642,7 +642,7 @@ Mostra que aplicações integradas a LLMs apagam a fronteira entre dado e instru
 
 **GSZHANGWEI. *OpenSPDD: A SPDD AI coding assistant command template manager*.** Repositório de software. <https://github.com/gszhangwei/open-spdd>
 
-Implementação de referência da comunidade para o método SPDD, com os comandos que materializam o fluxo: analisar requisitos e código existente, produzir o Painel REASONS, gerar a implementação e sincronizar de volta as alterações feitas no código. A distinção que o projeto faz entre plano e Painel é a citada na Sessão 10: um plano diz o que fazer, o Painel especifica como fazer. Projeto de terceiros, não vinculado à Thoughtworks.
+Implementação de referência da comunidade para o método SPDD, com os comandos que materializam o fluxo: analisar requisitos e código existente, produzir o Painel REASONS, gerar a implementação e sincronizar de volta as alterações feitas no código. A distinção que o projeto faz entre plano e Painel é a citada na Sessão 10: o plano diz o que fazer, e o Painel especifica como fazer. O projeto é de terceiros e não tem vínculo com a Thoughtworks.
 
 → Sessão 10.
 
@@ -682,7 +682,7 @@ Norma de sistema de gestão preparada pelo ISO/IEC JTC 1/SC 42. Segundo a págin
 
 **ISO/IEC/IEEE. *Systems and software engineering — Life cycle processes — Requirements engineering*, 29148:2018.** <https://www.iso.org/standard/72089.html>
 
-Norma internacional de engenharia de requisitos, sucessora do IEEE 830. Distingue requisito funcional (o que o sistema deve fazer) de requisito não funcional ou de qualidade (o critério usado para julgar como o sistema opera, não um comportamento específico), e subdivide requisito não funcional em classes mais finas — desempenho, usabilidade, interface, entre outras. O texto normativo integral está atrás de paywall; a distinção funcional/não funcional citada aqui segue paráfrase amplamente aceita do padrão, não transcrição literal.
+Norma internacional de engenharia de requisitos, sucessora do IEEE 830. Distingue requisito funcional (o que o sistema deve fazer) de requisito não funcional ou de qualidade (o critério usado para julgar como o sistema opera, sem descrever um comportamento específico), e subdivide requisito não funcional em classes mais finas, como desempenho, usabilidade e interface. O texto normativo integral é pago, e a distinção funcional/não funcional citada aqui segue paráfrase amplamente aceita do padrão, sem transcrição literal.
 
 → Sessões 3 e 7.
 
@@ -820,7 +820,7 @@ Material da disciplina de pós-graduação que fundamenta a distinção entre wo
 
 **MESZAROS, Gerard. *xUnit Test Patterns: Refactoring Test Code*. Addison-Wesley, 2007.**
 
-Referência canônica em padrões de teste. Cataloga 60+ padrões para escrever testes mantíveis e confiáveis em frameworks xUnit (JUnit, NUnit, etc.). Cobre testes de unidade, integração e aceitação com padrões como Arrange-Act-Assert, Test Fixtures, Mocks, Stubs e Test Data Builders. Fundamenta a família xUnit de ferramentas de teste, da qual descendem as bibliotecas de teste usadas no workshop. Essencial para qualidade de teste: sem padrões aplicados, testes viram débito técnico que desacelera evolução — base para TDD assistido por IA e para detectar quando o agente erra ao gerar testes.
+Referência canônica em padrões de teste. Cataloga 60+ padrões para escrever testes mantíveis e confiáveis em frameworks xUnit (JUnit, NUnit, etc.). Cobre testes de unidade, integração e aceitação com padrões como Arrange-Act-Assert, Test Fixtures, Mocks, Stubs e Test Data Builders. Fundamenta a família xUnit de ferramentas de teste, da qual descendem as bibliotecas de teste usadas no workshop. Sem esses padrões, os testes acumulam débito técnico que torna a evolução do código mais lenta. O catálogo serve de base para TDD assistido por IA e para identificar quando o agente erra ao gerar testes.
 
 → Sessão 6.
 
@@ -830,7 +830,7 @@ Referência canônica em padrões de teste. Cataloga 60+ padrões para escrever 
 
 **METR. *Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity*.** jul. 2025. <https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/>
 
-Experimento randomizado com 16 desenvolvedores experientes (cerca de 5 anos de trajetória nos próprios projetos) em 246 tarefas reais de manutenção de código aberto. Usar IA tornou a conclusão das tarefas 19% mais lenta. Mais revelador ainda: os próprios desenvolvedores, depois de terminar, estimaram que a IA os havia deixado 20% mais rápidos — o oposto exato do que os dados mediram. Contraponto empírico direto à métrica de produtividade de Peng et al., evidenciando a diferença entre tarefas novas e delimitadas (onde vibe coding ganha) versus manutenção em sistema maduro com contexto implícito.
+Experimento randomizado com 16 desenvolvedores experientes (cerca de 5 anos de trajetória nos próprios projetos) em 246 tarefas reais de manutenção de código aberto. Usar IA tornou a conclusão das tarefas 19% mais lenta. Os próprios desenvolvedores, depois de terminar, estimaram que a IA os havia deixado 20% mais rápidos, em sentido oposto ao que os dados mediram. Contraponto empírico direto à métrica de produtividade de Peng et al., que evidencia a diferença entre tarefas novas e delimitadas, em que o vibe coding tem melhor resultado, e manutenção em sistema maduro com contexto implícito.
 
 → Sessões 1 e 7.
 
@@ -1050,7 +1050,7 @@ Propõe organizar as histórias de usuário num mapa pela ordem em que o sistema
 
 **PAUL, Richard; ELDER, Linda. *The Thinker's Guide to Socratic Questioning*.** Foundation for Critical Thinking Press, 2019.
 
-Define o questionamento socrático como a forma disciplinada de pensamento crítico aplicada em diálogo, e não como técnica de retórica: uma pergunta bem colocada expõe a estrutura lógica de um pensamento (o que ele pressupõe, que evidência sustenta, que implicação segue) em vez de aceitar a primeira formulação como definitiva. Classifica as perguntas em seis categorias — esclarecimento, pressupostos, evidências e razões, implicações e consequências, pontos de vista alternativos, e perguntas sobre a própria pergunta —, adotadas neste workshop como as seis categorias da entrevista socrática. O argumento central é que perguntar bem adia o fechamento em uma única leitura, e por isso mantém mais de uma interpretação viva por mais tempo do que a convergência prematura permitiria.
+Define o questionamento socrático como a forma disciplinada de pensamento crítico aplicada em diálogo: uma pergunta bem colocada expõe a estrutura lógica de um pensamento (o que ele pressupõe, que evidência o sustenta, que implicação segue) antes que a primeira formulação seja aceita como definitiva. Classifica as perguntas em seis categorias — esclarecimento, pressupostos, evidências e razões, implicações e consequências, pontos de vista alternativos, e perguntas sobre a própria pergunta —, adotadas neste workshop como as seis categorias da entrevista socrática. O argumento central é que perguntar bem adia a escolha de uma única leitura e mantém mais de uma interpretação em consideração por mais tempo do que a convergência prematura permitiria.
 
 → Sessão 3.
 
@@ -1060,7 +1060,7 @@ Define o questionamento socrático como a forma disciplinada de pensamento crít
 
 **PEARCE, Hammond et al. *Asleep at the Keyboard? Assessing the Security of GitHub Copilot's Code Contributions*.** IEEE Symposium on Security and Privacy (S&P), 2022. <https://arxiv.org/abs/2108.09293>
 
-Investiga segurança do GitHub Copilot avaliando com que frequência recomenda código inseguro. Criou 89 cenários sobre vulnerabilidades de alto risco (Top 25 MITRE), gerando 1.689 programas. Resultado preocupante: aproximadamente 40% foram classificados como vulneráveis. Atribui achado ao fato de Copilot ser treinado em código aberto do GitHub, que inclui código bugado e padrões explorados — base empírica para o risco "sem rede" do vibe coding.
+Investiga segurança do GitHub Copilot avaliando com que frequência recomenda código inseguro. Criou 89 cenários sobre vulnerabilidades de alto risco (Top 25 MITRE), gerando 1.689 programas. Aproximadamente 40% deles foram classificados como vulneráveis. Atribui achado ao fato de Copilot ser treinado em código aberto do GitHub, que inclui código com defeito e padrões explorados. O estudo é a base empírica para o risco de segurança do vibe coding.
 
 → Sessão 1.
 
@@ -1228,7 +1228,7 @@ Apresenta a arquitetura Transformer, substituindo modelos recorrentes e convoluc
 
 **VERCEL. "We removed 80% of our agent's tools".** *Vercel Blog*, 2026. <https://vercel.com/blog/we-removed-80-percent-of-our-agents-tools>
 
-Relato de redução de dezesseis ferramentas especializadas para acesso a sistema de arquivos num agente de texto para SQL, com taxa de sucesso subindo de 80% para 100% e 40% menos passos — evidência de que catálogo mínimo de ferramentas é decisão de qualidade.
+Relato de redução de dezesseis ferramentas especializadas para acesso a sistema de arquivos num agente de texto para SQL, com taxa de sucesso subindo de 80% para 100% e 40% menos passos, o que indica que reduzir o catálogo de ferramentas é decisão de qualidade.
 
 → Sessão 2.
 
@@ -1268,7 +1268,7 @@ Demonstra que solicitar ao modelo que gere uma sequência de passos intermediár
 
 **WIEGERS, Karl; BEATTY, Joy. *Software Requirements*, 3ª ed.** Microsoft Press, 2013. <https://www.microsoftpressstore.com/store/software-requirements-9780735679665>
 
-Referência de mercado em engenharia de requisitos. Organiza requisitos em camadas (requisito de negócio, requisito de usuário, requisito funcional de software) e trata regra de negócio como categoria própria e anterior a essas camadas: uma regra de negócio não é, em si, um requisito de software, porque também rege operação manual; ela é a origem de onde requisitos funcionais são derivados, não um requisito por si só.
+Referência de mercado em engenharia de requisitos. Organiza requisitos em camadas (requisito de negócio, requisito de usuário, requisito funcional de software) e trata regra de negócio como categoria própria e anterior a essas camadas: uma regra de negócio não é, em si, um requisito de software, porque também rege operação manual. Ela é a origem de onde requisitos funcionais são derivados.
 
 → Sessões 3 e 7.
 
@@ -1288,7 +1288,7 @@ Define engenharia agêntica como "a prática de desenvolver software com o auxí
 
 **YAO, Shunyu et al. *ReAct: Synergizing Reasoning and Acting in Language Models*.** ICLR, 2023. <https://arxiv.org/abs/2210.03629>
 
-Propõe ReAct, que integra raciocínio e ação em modelos de linguagem, permitindo que gerem simultaneamente pensamento e ações específicas da tarefa. O raciocínio induz e atualiza planos de ação, e as ações permitem interface com fontes externas como bases de conhecimento. Reduz alucinação em QA ao integrar APIs de conhecimento e alcança 34% e 10% de melhoria em benchmarks ALFWorld e WebShop em relação a métodos de imitação. As trajetórias de resolução são mais interpretáveis e confiáveis que abordagens sem raciocínio — a base técnica que distingue um agente de codificação de um LLM respondendo uma pergunta isolada.
+Propõe ReAct, que integra raciocínio e ação em modelos de linguagem, permitindo que gerem simultaneamente pensamento e ações específicas da tarefa. O raciocínio induz e atualiza planos de ação, e as ações permitem interface com fontes externas como bases de conhecimento. Reduz alucinação em QA ao integrar APIs de conhecimento e alcança 34% e 10% de melhoria em benchmarks ALFWorld e WebShop em relação a métodos de imitação. As trajetórias de resolução são mais interpretáveis e confiáveis que abordagens sem raciocínio. O artigo fornece a base técnica que distingue um agente de codificação de um LLM respondendo uma pergunta isolada.
 
 → Sessão 1.
 

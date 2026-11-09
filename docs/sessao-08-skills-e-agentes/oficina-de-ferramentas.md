@@ -1,14 +1,14 @@
 # Exercícios — artefatos, modelos, custo e segurança
 
-Crie e teste a skill `identificando-tarefas-e-riscos` com uma transcrição fictícia. Trabalhe em uma pasta vazia, sem credenciais reais.
+Os experimentos desta página criam e testam a skill `identificando-tarefas-e-riscos` com uma transcrição fictícia, numa pasta vazia e sem credenciais reais.
 
-Crie a skill e gere `docs/reunioes/relatorio.md`. Depois compare modelo e esforço, examine o custo e revise as permissões.
+O experimento A cria a skill e gera `docs/reunioes/relatorio.md`, e os experimentos seguintes comparam modelo e esforço, examinam o custo e revisam as permissões.
 
 Para praticar depois da sessão, consulte os [experimentos complementares](experimentos-complementares.md).
 
 ## Preparação
 
-Use Claude Code e Python 3. Sem Python, peça um validador em Node ou C#.
+A oficina usa Claude Code e Python 3, e quem não tem Python pode pedir ao agente um validador em Node ou C#.
 
 === "macOS/Linux"
     ```bash
@@ -79,7 +79,7 @@ Cole o pedido no Claude Code.
     Ana: Combinado. Ainda não definimos quem fará essa verificação.
     ```
 
-4. Abra `docs/reunioes/relatorio.md` e confira o `OK` do script. Verifique se o arquivo contém as seções Tarefas, Riscos e Pontos a confirmar; depois compare cada item com a transcrição: a tarefa de Ana tem prazo, a verificação tem responsável e prazo a confirmar, e o atraso de homologação é um risco explícito. Confira evidências, omissões e riscos inferidos; não aceite fatos inventados.
+4. Abra `docs/reunioes/relatorio.md` e confira o `OK` do script. Verifique se o arquivo contém as seções Tarefas, Riscos e Pontos a confirmar e depois compare cada item com a transcrição: a tarefa de Ana tem prazo, a verificação tem responsável e prazo a confirmar, e o atraso de homologação é um risco explícito. Confira as evidências, as omissões e os riscos inferidos, e rejeite qualquer fato que não esteja na transcrição.
 
 ## Experimento B: medir o custo e o resultado em dois modelos
 
@@ -92,8 +92,8 @@ Compare a mesma transcrição e os mesmos critérios em três configurações. A
 | C | `sonnet` | `low` | Muda o esforço em relação a A |
 
 1. Em cada configuração, inicie uma conversa nova, invoque a skill com a transcrição do experimento A e gere o relatório. Guarde uma cópia de cada arquivo para compará-los.
-2. Marque o tempo entre o pedido e a entrega. Anote os tokens e o custo estimado exibidos em `/cost`, quando disponíveis; use `/usage` para consultar os limites de uso. Registre valores não exibidos como “indisponível”. O consumo pode incluir outras chamadas da sessão: anote essa limitação.
-3. Confira cada relatório contra a transcrição e preencha a tabela. Uma estrutura válida não garante conteúdo correto.
+2. Marque o tempo entre o pedido e a entrega. Anote os tokens e o custo estimado exibidos em `/cost`, quando disponíveis, e use `/usage` para consultar os limites de uso. Registre como “indisponível” os valores não exibidos e anote que o consumo pode incluir outras chamadas da sessão.
+3. Confira cada relatório contra a transcrição e preencha a tabela, porque a aprovação do validador cobre só a estrutura do relatório.
 
 | Registro | A | B | C |
 |---|---|---|---|
@@ -105,23 +105,23 @@ Compare a mesma transcrição e os mesmos critérios em três configurações. A
 | Tarefas e risco presentes, com evidências? | | | |
 | Ausências marcadas sem invenção? | | | |
 
-Qual configuração entrega o resultado correto com menor custo e tempo? A comparação A–B isola a troca de modelo; A–C, a de esforço. Uma execução por configuração não comprova superioridade: indique que outras transcrições e repetições seriam necessárias.
+Identifique a configuração que entrega o resultado correto com menor custo e tempo. A comparação entre A e B isola a troca de modelo, e a comparação entre A e C isola a troca de esforço. Uma execução por configuração é insuficiente para afirmar que uma configuração supera a outra, e o registro deve indicar que outras transcrições e repetições seriam necessárias.
 
 ## Experimento C: estimar o efeito do cache
 
-Considere um prefixo estável de 100 mil tokens enviado em 10 pedidos. Use as unidades relativas da [página de custo](custo-de-tokens.md#o-cache-de-prompt-em-unidades-relativas): entrada sem cache = 1, escrita no cache = 1,25 e leitura = 0,1 por token. Calcule o custo do prefixo sem cache e com uma escrita seguida de nove leituras. Compare com o consumo observado no experimento B, se houver dados de cache.
+Considere um prefixo estável de 100 mil tokens enviado em 10 pedidos. Use as unidades relativas da [página de custo](custo-de-tokens.md#o-cache-de-prompt-em-unidades-relativas): entrada sem cache = 1, escrita no cache = 1,25 e leitura = 0,1 por token. Calcule o custo do prefixo sem cache e com uma escrita seguida de nove leituras, e compare o resultado com o consumo observado no experimento B quando houver dados de cache.
 
 | Cenário | Cálculo | Total em unidades relativas |
 |---|---|---|
 | Sem cache | | |
 | Com cache | | |
 
-Confira: os totais são 1.000.000 e 215.000 unidades, respectivamente. O cálculo não inclui tokens novos nem saída; a medição real pode não usar cache por tamanho de entrada, validade ou mudança no prefixo.
+Os totais corretos são 1.000.000 e 215.000 unidades, respectivamente. O cálculo não inclui tokens novos nem saída, e a medição real pode não usar cache por tamanho de entrada, validade ou mudança no prefixo.
 
 ## Experimento D: permissões e credenciais
 
-1. Liste as operações necessárias: ler a transcrição e o modelo, escrever o relatório e executar o validador. A skill local não precisa de rede nem de credencial. Revise o `SKILL.md` e seus arquivos auxiliares: há ferramentas ou permissões além das necessárias?
-2. Identifique o que `allowed-tools` libera e o que ele **não** restringe. Para um revisor que só lê o relatório e a transcrição, escreva um front-matter de subagente com `tools: Read, Grep, Glob`; justifique a ausência de escrita e shell. No projeto descartável, peça ao revisor que edite o relatório e observe se a restrição impede a edição.
+1. Liste as operações necessárias: ler a transcrição e o modelo, escrever o relatório e executar o validador. A skill local não precisa de rede nem de credencial, e a revisão do `SKILL.md` e dos arquivos auxiliares procura ferramentas ou permissões além das necessárias.
+2. Identifique o que `allowed-tools` libera e o que ele **não** restringe. Para um revisor que só lê o relatório e a transcrição, escreva um front-matter de subagente com `tools: Read, Grep, Glob` e justifique a ausência de escrita e de shell. No projeto descartável, peça ao revisor que edite o relatório e observe se a restrição impede a edição.
 3. Imagine que, numa versão futura, a transcrição venha de um serviço externo. Sem criar ou usar credenciais, preencha a ficha abaixo e justifique cada escolha com as [perguntas de revisão](seguranca-e-credenciais.md#perguntas-de-revisao).
 
 | Decisão | Plano para a integração futura |

@@ -1,6 +1,6 @@
 # Performance
 
-O desempenho de uma skill ou de um agente tem três medidas, o tempo até o resultado, o consumo de tokens e a taxa de resultados corretos, e melhorar uma delas costuma custar as outras. Esta página reúne as alavancas de tempo que a documentação e o relato da Anthropic descrevem e o método de avaliação que permite saber se uma mudança melhorou o conjunto. A página preenche, na [ficha de requisitos](index.md#a-ficha-de-requisitos), a linha "Tempo".
+O desempenho de uma skill ou de um agente tem três medidas, o tempo até o resultado, o consumo de tokens e a taxa de resultados corretos, e a melhoria de uma delas costuma piorar as outras. Esta página reúne as práticas de redução de tempo que a documentação e o relato da Anthropic descrevem e o método de avaliação que permite saber se uma mudança melhorou o conjunto. A página preenche, na [ficha de requisitos](index.md#a-ficha-de-requisitos), a linha "Tempo".
 
 ## Três medidas que se compensam
 
@@ -8,9 +8,9 @@ O tempo total depende do número de chamadas, do tamanho do contexto e do modelo
 
 ![Três cartões ligados por setas duplas: o tempo até o resultado, que depende do número de chamadas, do tamanho do contexto e do modelo, o consumo de tokens, que determina o custo, e a taxa de resultados corretos, medida contra a conferência declarada na skill. Abaixo, o que o relato multiagente mediu no BrowseComp, o registro por execução e a avaliação com cerca de 20 consultas reais.](assets/tres-medidas-de-desempenho.png)
 
-## Alavancas de tempo
+## Práticas para reduzir o tempo
 
-| Alavanca | Fonte | O que se informa |
+| Prática | Fonte | O que se informa |
 |---|---|---|
 | Paralelizar subagentes e ferramentas | Relato multiagente | Executar de 3 a 5 subagentes em paralelo e 3 ou mais ferramentas por subagente reduziu o tempo de pesquisa em até 90% em consultas complexas |
 | Cache de prompt | [Documentação do cache](../referencia/bibliografia.md#anthropic-prompt-caching-documentacao) | Melhora o tempo até o primeiro token em documentos longos, sem efeito na geração da saída |
@@ -24,7 +24,7 @@ O relato também aponta um gargalo: quando o orquestrador espera cada subagente 
 
 ## Avaliar com casos reais
 
-Toda alavanca da tabela troca algo por tempo, e a troca só se justifica com medição. O relato recomenda começar com cerca de 20 consultas que representem o uso real, sem esperar por um conjunto grande de avaliações.
+Cada prática da tabela reduz o tempo à custa de tokens ou de acerto, e a adoção de cada uma depende de medição. O relato recomenda começar com cerca de 20 consultas que representem o uso real, sem esperar por um conjunto grande de avaliações.
 
 Para a nota, o relato usou um modelo como juiz, com uma rubrica de exatidão factual, exatidão das citações, completude, qualidade das fontes e eficiência no uso de ferramentas, em uma única chamada que devolve uma nota de 0,0 a 1,0 e um resultado de aprovação. Segundo o relato, essa forma foi a mais consistente com o julgamento humano, e os testes feitos por pessoas ainda encontraram vieses que a avaliação automática não detectou. Para agentes que alteram estado, o relato avalia o estado final e não a sequência exata de passos.
 
@@ -38,7 +38,7 @@ As execuções de agente não são determinísticas, o que dificulta a depuraç�
     Tempo:
 
     - Qual o tempo máximo por execução, e a medição foi feita com casos reais da equipe?
-    - Que alavanca de tempo a skill ou o agente usa, e o que ela troca em tokens ou em acerto?
+    - Que prática de redução de tempo a skill ou o agente usa, e o que ela troca em tokens ou em acerto?
     - Que registro cada execução deixa: modelo, esforço, tokens, tempo e resultado da conferência?
 
 **Próxima página:** [Segurança e credenciais](seguranca-e-credenciais.md).

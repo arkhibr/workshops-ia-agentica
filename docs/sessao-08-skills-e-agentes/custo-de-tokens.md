@@ -1,6 +1,6 @@
 # Custo de tokens
 
-O custo de uma skill ou de um agente cresce com o tamanho do contexto enviado a cada pedido e com o número de pedidos, e por isso precisa ser declarado como requisito antes da construção. Esta página apresenta de onde o custo vem, o efeito do cache de prompt em unidades relativas e as alavancas de redução que o guia de custo do Claude Code documenta. A página preenche, na [ficha de requisitos](index.md#a-ficha-de-requisitos), a linha "Orçamento de tokens".
+O custo de uma skill ou de um agente cresce com o tamanho do contexto enviado a cada pedido e com o número de pedidos, e por isso precisa ser declarado como requisito antes da construção. Esta página apresenta de onde o custo vem, o efeito do cache de prompt em unidades relativas e as práticas de redução que o guia de custo do Claude Code documenta. A página preenche, na [ficha de requisitos](index.md#a-ficha-de-requisitos), a linha "Orçamento de tokens".
 
 ## De onde o custo vem
 
@@ -37,11 +37,11 @@ A redução calculada é de 78,5% sobre a entrada do prefixo. A conta considera 
 
 ![À esquerda, barras com os multiplicadores do cache sobre o preço-base de entrada: escrita de 5 minutos a 1,25, escrita de 1 hora a 2, leitura a 0,1 na maioria dos modelos, 0,05 no Opus 5.5 e no Sonnet 5.5 e 0,025 no Fable 5.1. À direita, o exemplo de um prefixo de 100 mil tokens em 10 pedidos: 1.000 mil sem cache e 215 mil com cache de 5 minutos, uma redução de 78,5%.](assets/cache-em-unidades-relativas.png)
 
-## Alavancas de redução
+## Práticas de redução de custo
 
 O guia reúne as práticas abaixo. A coluna da direita indica onde cada uma aparece num projeto com skills e agentes.
 
-| Alavanca | O que o guia recomenda | Efeito numa skill ou agente |
+| Prática | O que o guia recomenda | Efeito numa skill ou agente |
 |---|---|---|
 | Limpar o contexto | `/clear` ao trocar de tarefa e `/compact` com instruções do que preservar | Cada execução de uma skill começa de um contexto pequeno |
 | Escolher o modelo | Sonnet para a maioria das tarefas, Opus para decisões complexas, `model: haiku` em subagentes simples | O campo `model` do subagente é uma decisão de custo |
@@ -56,7 +56,7 @@ O guia observa que os modelos Opus 5.5, Sonnet 5.5, Haiku 5.5 e Fable sempre usa
 
 ## Vários agentes multiplicam o custo
 
-Os dois relatos citam multiplicadores da mesma ordem de grandeza. O [relato do sistema multiagente](../referencia/bibliografia.md#anthropic-how-we-built-our-multi-agent-research-system) cita cerca de 15 vezes os tokens de um chat, e o guia de custo do Claude Code cita cerca de 7 vezes os tokens de uma sessão comum para equipes de agentes em modo de plano. As duas medidas diferem em tarefa, em modelo e em configuração, e por isso servem como ordem de grandeza e não como previsão. O mesmo relato informa que o uso de tokens, sozinho, explicou 80% da variação de desempenho no benchmark BrowseComp, o que sugere que parte do ganho de qualidade é paga em tokens.
+Os dois relatos citam multiplicadores da mesma ordem de grandeza. O [relato do sistema multiagente](../referencia/bibliografia.md#anthropic-how-we-built-our-multi-agent-research-system) cita cerca de 15 vezes os tokens de um chat, e o guia de custo do Claude Code cita cerca de 7 vezes os tokens de uma sessão comum para equipes de agentes em modo de plano. As duas medidas diferem em tarefa, em modelo e em configuração, e por isso servem apenas como ordem de grandeza. O mesmo relato informa que o uso de tokens, sozinho, explicou 80% da variação de desempenho no benchmark BrowseComp, o que sugere que parte do ganho de qualidade é paga em tokens.
 
 ## Medir e declarar
 
@@ -91,7 +91,7 @@ O comando mais direto é `/context`, que no `claude 2.1.309` funcionou também e
 !!! abstract "Linha da ficha"
     Orçamento de tokens:
 
-    - Qual o orçamento de tokens por execução, medido na oficina e não estimado de cabeça?
+    - Qual o orçamento de tokens por execução, medido na oficina e não estimado sem medição?
     - Que comandos medem o consumo e o que foi carregado, e quem registra o resultado?
     - A listagem de skills cabe no orçamento de 1% da janela, ou alguma `description` precisa ser encurtada?
 
