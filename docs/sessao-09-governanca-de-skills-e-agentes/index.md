@@ -33,9 +33,9 @@ A ficha existe para que a decisão de compartilhar fique escrita antes da primei
 
 A sessão alterna teoria e dois blocos de exercícios. O primeiro bloco aplica a triagem por criticidade e a análise de riscos a uma skill de uma organização fictícia, e o segundo empacota uma skill como plugin num marketplace local, com a ficha de governança dentro do plugin, e percorre a publicação, a instalação, a correção e a retirada.
 
-## Como usar este material
+## Pré-requisitos
 
-Estas páginas apoiam uma sessão conduzida ao vivo pelo instrutor, sem leitura prévia obrigatória, e o roteiro abaixo apresenta a sequência dos temas e das atividades. A sessão pressupõe o ambiente configurado nas Sessões 1 e 2, o uso do Claude Code e a página de [segurança e credenciais da Sessão 8](../sessao-08-skills-e-agentes/seguranca-e-credenciais.md), que trata de permissões mínimas, identidade própria do agente e ciclo de vida do token e que esta sessão não repete.
+A sessão pressupõe o ambiente configurado nas Sessões 1 e 2, o uso do Claude Code e a página de [segurança e credenciais da Sessão 8](../sessao-08-skills-e-agentes/seguranca-e-credenciais.md), que trata de permissões mínimas, identidade própria do agente e ciclo de vida do token e que esta sessão não repete.
 
 As referências normativas entram como quadro de referência, sem estudo aprofundado: o NIST AI RMF 1.0, o perfil NIST AI 600-1, a ISO/IEC 42001:2023, o OWASP Top 10 para aplicações de LLM na edição 2026, a LGPD e o PL 2338/2023, projeto de lei em tramitação na Câmara dos Deputados na consulta de 03/11/2026. As fontes estão listadas na [bibliografia do curso](../referencia/bibliografia.md), com a data de consulta de cada uma.
 

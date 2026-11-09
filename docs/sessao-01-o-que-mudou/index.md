@@ -8,10 +8,6 @@
 
 A equipe usa IA como um completador de código mais sofisticado, e ninguém sabe dizer quanto ganho de qualidade e de produtividade deixa de ser obtido com esse uso.
 
-## Como usar este material
-
-Estas páginas não são leitura prévia. O instrutor conduz a exploração dos conceitos ao vivo, intercalada com a prática, e cada bloco de teoria tem uma atividade correspondente logo em seguida, de modo que o participante pode chegar sem ter lido nada.
-
 ## Objetivos de aprendizagem
 
 Ao final desta sessão, o participante deve ser capaz de:

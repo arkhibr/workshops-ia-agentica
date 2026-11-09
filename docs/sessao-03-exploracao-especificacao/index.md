@@ -8,13 +8,9 @@
 
 Um pedido vago ao agente ("ative o desconto de atacado") produz código que compila, passa nos testes que já existiam e ainda assim resolve o problema errado. A regra de negócio inteira não chegou a ser escrita em nenhum documento, e permanecia apenas com quem fez o pedido.
 
-## Como usar este material
-
-Estas páginas não são leitura prévia, e o participante pode chegar à sessão sem ter lido nenhuma delas. O instrutor conduz a exploração dos conceitos ao vivo, intercalada com a prática, e cada bloco de teoria tem uma atividade correspondente logo em seguida.
-
 ## Organização em dois temas
 
-A sessão organiza o conteúdo em dois temas, e cada tema percorre a mesma progressão de profundidade: **conceitos** (teoria comum a todos), **exemplo de aplicação de IA** (demonstração conduzida pelo instrutor, comum a todos), e dois exercícios finais: **geral**, para quem não escreve código, e **especialista**, para quem implementa. Os dois exercícios partem do mesmo pedido e chegam à mesma especificação. O exercício geral verifica o resultado por retrotradução e conferência manual, e o especialista verifica por execução de teste.
+A sessão organiza o conteúdo em dois temas, e cada tema percorre a mesma progressão de profundidade: **conceitos** (teoria comum a todos), **exemplo de aplicação de IA** (caso aplicado com o agente, comum a todos), e dois exercícios finais: **geral**, para quem não escreve código, e **especialista**, para quem implementa. Os dois exercícios partem do mesmo pedido e chegam à mesma especificação. O exercício geral verifica o resultado por retrotradução e conferência manual, e o especialista verifica por execução de teste.
 
 - **Tema 1 — Intervenção socrática.** O ciclo de especificação e o método que mantém mais de uma leitura de um pedido vago em consideração até que as respostas de quem pediu permitam escolher entre elas.
 - **Tema 2 — Decomposição de requisitos.** O vocabulário que separa regra de negócio, requisito funcional e requisito não funcional, e o critério que torna cada um verificável.

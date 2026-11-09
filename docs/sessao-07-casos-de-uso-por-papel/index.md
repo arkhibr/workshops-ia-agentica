@@ -8,11 +8,9 @@
 
 As sessões anteriores trabalharam o método com casos comuns a todos os participantes. Cada papel da equipe, porém, tem tarefas próprias, e a equipe não sabe se cada uma delas já é rotina em outras equipes, foi experimentada e abandonada ou nunca foi tentada. Sem esse mapa, a adoção segue o interesse de cada pessoa, e a conferência do resultado, trabalhada nas Sessões 3 e 4 para especificações e regras, deixa de acontecer nas tarefas que não envolvem código.
 
-## Como usar este material
+## Organização da sessão
 
-Estas páginas apoiam uma sessão conduzida ao vivo, sem leitura prévia obrigatória. A sessão tem duas partes: na primeira, as equipes classificam num mural do Miro os casos de uso do catálogo por papel, e na segunda, cada equipe aplica um caso a uma tarefa real e apresenta o resultado num pitch de cerca de cinco minutos. A sessão pressupõe o ambiente configurado nas Sessões 1 e 2 e o uso de um agente de IA de escolha de cada participante.
-
-As páginas dos cinco papéis são material de consulta. O instrutor apresenta cada papel em quatro minutos e a turma volta às páginas durante a oficina e o exercício-âncora.
+A sessão tem duas partes: na primeira, as equipes classificam num mural do Miro os casos de uso do catálogo por papel, e na segunda, cada equipe aplica um caso a uma tarefa real e apresenta o resultado num pitch de cerca de cinco minutos. A sessão pressupõe o ambiente configurado nas Sessões 1 e 2 e o uso de um agente de IA de escolha de cada participante.
 
 ## Objetivos de aprendizagem
 
@@ -47,11 +45,11 @@ O conteúdo soma 115 minutos, e o intervalo das 11h00 às 11h05 completa os 120 
 
 ## Como conduzir
 
-O instrutor cria o quadro do Miro antes da sessão com cinco molduras de catálogo, uma por papel, cada uma com os dez primeiros casos da página correspondente em cartões, e uma moldura para cada equipe, com as colunas "Já é rotina", "Já experimentamos" e "Ainda não experimentamos". A [oficina](oficina-de-ferramentas.md) descreve o quadro e os critérios de classificação, e o link é compartilhado com permissão de edição no início da atividade.
+O quadro do Miro tem cinco molduras de catálogo, uma por papel, cada uma com os dez primeiros casos da página correspondente em cartões, e uma moldura para cada equipe, com as colunas "Já é rotina", "Já experimentamos" e "Ainda não experimentamos". A [oficina](oficina-de-ferramentas.md) descreve o quadro e os critérios de classificação, e o link é compartilhado com permissão de edição no início da atividade.
 
-As equipes são formadas antes da sessão, e o instrutor informa o número de cada uma. Cada equipe dispõe de cerca de cinco minutos para o pitch, e o instrutor administra o tempo da rodada de vinte minutos reservada no roteiro, incluindo quantas equipes apresentam e em que ordem. Os comentários do quadro de cada equipe são escritos até as 12h00.
+As equipes são formadas antes da sessão, e cada uma recebe um número. O pitch de cada equipe dura cerca de cinco minutos, dentro da rodada de vinte minutos reservada no roteiro. Os comentários do quadro de cada equipe são escritos até as 12h00.
 
-A apresentação dos cinco papéis dura quatro minutos cada e cobre apenas o quadro de casos, a evidência citada e o limite do papel. A tabela de cada página fica à disposição da turma durante a oficina, e o instrutor não percorre as quinze linhas.
+A apresentação dos cinco papéis dura quatro minutos cada e cobre apenas o quadro de casos, a evidência citada e o limite do papel. A tabela de cada página fica à disposição da turma durante a oficina.
 
 !!! warning "Limite da IA nesta sessão"
     Os casos desta sessão são hipóteses de trabalho. A evidência citada em cada página vem de estudos com tarefas, populações e modelos específicos, e nenhum deles mede as tarefas da equipe. A equipe decide a adoção de cada caso depois de conferir o resultado numa tarefa real, e o material de entrada não contém dado pessoal nem sigiloso.

@@ -27,8 +27,8 @@ Uma equipe com papéis diversos pode escolher o caso de qualquer um dos papéis 
 1. Cada equipe apresenta um único caso.
 2. O material de entrada é anonimizado antes de ser colado no agente, com nomes de pessoas, números de documentos e dados de projetos substituídos por descrições genéricas.
 3. A apresentação usa a tela do agente e dispensa slides.
-4. Cada equipe dispõe de cerca de cinco minutos, e o instrutor administra o tempo da rodada.
-5. Cada ouvinte registra, para cada pitch, uma pergunta sobre a conferência, que o instrutor lê ao fim da rodada.
+4. Cada equipe dispõe de cerca de cinco minutos.
+5. Cada ouvinte registra, para cada pitch, uma pergunta sobre a conferência, lida ao fim da rodada.
 
 ## Exemplo de pitch
 

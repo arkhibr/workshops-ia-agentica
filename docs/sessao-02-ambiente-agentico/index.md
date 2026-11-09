@@ -8,10 +8,6 @@
 
 Cada desenvolvedor configura o próprio agente do próprio jeito: arquivo de instrução diferente, quando existe um, ferramentas conectadas diferentes, e nenhum isolamento entre o trabalho de um agente e o resto do repositório. O que funciona na máquina de um raramente se repete na do colega ao lado.
 
-## Como usar este material
-
-Estas páginas não são leitura prévia, e o participante pode chegar à sessão sem ter lido nenhuma delas, porque o instrutor conduz a exploração dos conceitos ao vivo, intercalada com a prática.
-
 ## Objetivos de aprendizagem
 
 Ao final desta sessão, o participante deve ser capaz de:

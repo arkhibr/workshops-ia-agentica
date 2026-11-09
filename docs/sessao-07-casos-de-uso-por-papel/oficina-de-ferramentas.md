@@ -1,20 +1,20 @@
 # Oficina de ferramentas: o mural de maturidade das equipes
 
-Esta oficina usa um quadro do Miro para que cada equipe registre, a partir do catálogo de casos de uso por papel, o que já é rotina, o que já foi experimentado e o que ainda não foi experimentado. O instrutor compartilha o link do quadro no início da atividade, e a única preparação necessária é ter acesso de edição ao Miro. O resultado é um mural com todas as equipes lado a lado, que serve de base para o debate dos últimos minutos do primeiro bloco da sessão.
+Esta oficina usa um quadro do Miro para que cada equipe registre, a partir do catálogo de casos de uso por papel, o que já é rotina, o que já foi experimentado e o que ainda não foi experimentado. A única preparação necessária é ter acesso de edição ao Miro. O resultado é um mural com todas as equipes lado a lado, que serve de base para o debate dos últimos minutos do primeiro bloco da sessão.
 
 ## Roteiro sugerido para a sessão
 
 | Experimento | Tempo | Classificação |
 |---|---:|---|
 | A. Classificar os cartões do próprio papel | 25 min | Essencial em aula |
-| B. Ler o mural e debater | 7 min | Essencial em aula, conduzido pelo instrutor |
+| B. Ler o mural e debater | 7 min | Essencial em aula |
 | C. Propor um cartão que falta no catálogo | fora do relógio | Extensão opcional |
 
 ## O quadro
 
 O quadro tem duas áreas. A área "Catálogo" reúne cinco molduras, uma por papel (Product Owner, Scrum Master, Desenvolvimento, Testes e Analista de Negócio), cada uma com dez cartões nas cores do papel. A área "Mural das equipes" reúne quinze molduras, de "Equipe 01" a "Equipe 15", e cada moldura tem as três colunas "Já é rotina", "Já experimentamos" e "Ainda não experimentamos".
 
-Os cartões do catálogo reproduzem os dez primeiros casos de cada página de papel desta sessão. Cada cartão traz o nome do caso no título e, na descrição, a entrada e a saída esperada. O instrutor informa o número de cada equipe antes do início, e cada equipe trabalha apenas na própria moldura.
+Os cartões do catálogo reproduzem os dez primeiros casos de cada página de papel desta sessão. Cada cartão traz o nome do caso no título e, na descrição, a entrada e a saída esperada. Cada equipe trabalha apenas na moldura com o próprio número.
 
 ## Experimento A: classificar os cartões do próprio papel
 
@@ -36,13 +36,13 @@ O critério de conferência na primeira linha é uma decisão desta oficina. Um 
 
 ## Experimento B: ler o mural
 
-O instrutor percorre o mural das quinze equipes e conta, para cada cartão, em quantas equipes ele aparece em cada coluna. A leitura segue três perguntas, uma por vez, com dois minutos de debate cada.
+A leitura do mural conta, para cada cartão, em quantas das quinze equipes ele aparece em cada coluna, e segue três perguntas, uma por vez, com dois minutos de debate cada.
 
 1. Quais cartões aparecem como rotina em várias equipes, e que conferência cada equipe faz antes de usar o resultado?
 2. Quais cartões aparecem como não experimentados em quase todas as equipes, e o que as equipes citam como obstáculo?
 3. Quais cartões aparecem como rotina em uma equipe e como não experimentados em outra do mesmo papel, e o que a segunda equipe precisaria para adotá-lo?
 
-O debate registra no próprio quadro, em post-its soltos ao lado da moldura de cada equipe, as razões citadas. Nenhuma equipe é solicitada a justificar uma classificação, e a tabela de contagem do instrutor não identifica pessoas.
+O debate registra no próprio quadro, em post-its soltos ao lado da moldura de cada equipe, as razões citadas. Nenhuma equipe é solicitada a justificar uma classificação, e a tabela de contagem não identifica pessoas.
 
 ## Experimento C: propor um cartão que falta no catálogo
 

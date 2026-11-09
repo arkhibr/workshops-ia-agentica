@@ -1,6 +1,6 @@
 # Exemplo de aplicação de IA: arqueologia de regras
 
-A arqueologia de regras é a recuperação disciplinada das decisões de negócio que um sistema em produção executa sem que nenhum documento atual as registre, com o produto expresso no vocabulário do SBVR (*Semantics of Business Vocabulary and Business Rules*, especificação da OMG para vocabulário e regras de negócio). Esta é uma demonstração conduzida pelo instrutor, que aplica a um método C# legado os seis movimentos descritos em [Conceitos: arqueologia de regras](arqueologia-de-regras-conceitos.md#o-metodo-em-seis-movimentos) e mostra onde a saída do agente precisa de correção antes de entrar no catálogo.
+A arqueologia de regras é a recuperação disciplinada das decisões de negócio que um sistema em produção executa sem que nenhum documento atual as registre, com o produto expresso no vocabulário do SBVR (*Semantics of Business Vocabulary and Business Rules*, especificação da OMG para vocabulário e regras de negócio). Este exemplo aplica a um método C# legado os seis movimentos descritos em [Conceitos: arqueologia de regras](arqueologia-de-regras-conceitos.md#o-metodo-em-seis-movimentos) e mostra onde a saída do agente precisa de correção antes de entrar no catálogo.
 
 !!! warning "Código e valores fictícios"
     O método, a biblioteca, os tipos de leitor e todos os valores desta página são fictícios e foram criados para a aula. Nenhum número do exemplo representa regra real de biblioteca, e o artefato é diferente do usado no exercício seguinte, para que a demonstração não antecipe a resposta.
@@ -125,7 +125,7 @@ se nenhuma RN descreve cálculo e se toda precedência cita as linhas da ordem.
 
 ## Movimento 1: inventário
 
-O instrutor cola o arquivo e o prompt numa conversa nova e mostra primeiro a seção de inventário, que ainda não contém nenhuma regra. O trecho abaixo reproduz a parte da saída do agente usada na demonstração.
+O arquivo e o prompt vão para uma conversa nova, e a primeira seção da saída é o inventário, que ainda não contém nenhuma regra. O trecho abaixo reproduz essa parte da saída do agente.
 
 ```text
 Entradas: dataPrevista (L06), dataDevolucao, anulável (L06), tipoLeitor (L07),
@@ -140,7 +140,7 @@ Os candidatos a conceito que o agente propõe a partir desse inventário são Le
 
 ## Movimento 2: captura de evidência
 
-O instrutor confere cada intervalo de linhas contra a listagem antes de aceitar a tabela, porque os movimentos seguintes citam estes IDs.
+Cada intervalo de linhas precisa ser conferido contra a listagem antes de a tabela ser aceita, porque os movimentos seguintes citam estes IDs.
 
 | ID | Linhas | Trecho literal |
 |---|---|---|
@@ -156,7 +156,7 @@ O instrutor confere cada intervalo de linhas contra a listagem antes de aceitar 
 
 ## Movimento 3: hipóteses de regra
 
-Nesta seção aparecem os três erros que o instrutor corrige adiante, e a demonstração os deixa visíveis de propósito. O trecho abaixo reproduz a saída do agente sem edição.
+Nesta seção aparecem os três erros tratados na seção de correções. O trecho abaixo reproduz a saída do agente sem edição.
 
 ```text
 H1  Sem data de devolução, o atraso é contado até a data corrente.
@@ -171,11 +171,11 @@ H5  Multa diária de R$ 2,50 por dia de atraso. Evidência E5 (L24).
     Confiança alta.
 ```
 
-H1 e H5 conferem com o código. H3 e H4 contêm os erros tratados na seção de correções, e o agente não registrou nenhuma hipótese sobre a combinação de L18 com L24, que produz o caso provavelmente não intencional do método. Para leitor de tipo diferente de PROFESSOR e ESTUDANTE, uma obra com valor de R$ 40,00 gera multa de R$ 75,00 no 30º dia de atraso (30 × R$ 2,50 em L24) e de R$ 40,00 no 31º dia (L20), de modo que esse leitor paga menos quando devolve mais tarde, e o instrutor acrescenta essa hipótese como H6. Para estudante, a multa do 30º dia é R$ 37,50 (L27), e a queda no 31º dia ocorre somente com obra de valor abaixo de R$ 37,50, enquanto o professor paga R$ 0,00 nos dois dias (L16).
+H1 e H5 conferem com o código. H3 e H4 contêm os erros tratados na seção de correções, e o agente não registrou nenhuma hipótese sobre a combinação de L18 com L24, que produz o caso provavelmente não intencional do método. Para leitor de tipo diferente de PROFESSOR e ESTUDANTE, uma obra com valor de R$ 40,00 gera multa de R$ 75,00 no 30º dia de atraso (30 × R$ 2,50 em L24) e de R$ 40,00 no 31º dia (L20), de modo que esse leitor paga menos quando devolve mais tarde, e essa hipótese entra no catálogo como H6. Para estudante, a multa do 30º dia é R$ 37,50 (L27), e a queda no 31º dia ocorre somente com obra de valor abaixo de R$ 37,50, enquanto o professor paga R$ 0,00 nos dois dias (L16).
 
 ## Movimento 4: validação de domínio
 
-As hipóteses chegam ao especialista do domínio, neste caso a pessoa responsável pelo acervo da biblioteca fictícia, como perguntas fechadas geradas pelo agente e revisadas pelo instrutor. Cada pergunta traz o caso concreto que o código produz hoje.
+As hipóteses chegam ao especialista do domínio, neste caso a pessoa responsável pelo acervo da biblioteca fictícia, como perguntas fechadas geradas pelo agente e revisadas por uma pessoa antes do envio. Cada pergunta traz o caso concreto que o código produz hoje.
 
 | ID | Pergunta ao especialista | Caso produzido pelo código |
 |---|---|---|
@@ -189,7 +189,7 @@ A demonstração não apresenta respostas, porque o especialista é fictício, e
 
 ## Movimento 5: formalização SBVR
 
-O agente formaliza as hipóteses nas seções A a H do prompt. O trecho abaixo mostra as seções D, E e F antes da revisão, e a seção E contém o primeiro erro corrigido pelo instrutor.
+O agente formaliza as hipóteses nas seções A a H do prompt. O trecho abaixo mostra as seções D, E e F antes da revisão, e a seção E contém o primeiro erro corrigido na revisão.
 
 ```text
 D. RD-01  Data de Referência é calculada como a Data de Devolução ou, na
@@ -234,7 +234,7 @@ As exceções e a precedência entre as regras ficam numa tabela própria, confo
 
 Os controles registrados são um CONFLITO entre o comentário de L04 e o comportamento de L18–L27, uma LACUNA sobre o ator responsável pela cobrança e uma LACUNA sobre a origem dos literais 30, 2.50m e 0.5m. A comparação `tipoLeitor != "PROFESSOR"` em L16 usa o operador de igualdade de `string` do C#, que compara de forma ordinal e distingue maiúsculas de minúsculas, e por isso o catálogo registra com evidência em L16 e confiança alta que o valor "professor" em minúsculas recebe multa. A ocorrência desse valor nos cadastros fica como LACUNA, porque a demonstração não recebeu dados de produção.
 
-## Correções do instrutor
+## Correções da revisão humana
 
 A tabela reúne as correções feitas sobre a saída do agente nos movimentos 3 e 5, cada uma com a evidência do arquivo que a sustenta.
 

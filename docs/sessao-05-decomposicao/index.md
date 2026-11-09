@@ -8,9 +8,9 @@
 
 Uma regra de negócio bem formulada ainda pode chegar errada ao código. Entre a regra e o teste verde, o agente toma dezenas de decisões: o que acontece no valor exato do limite, que critério conta como sucesso, em quantas tarefas o trabalho se divide e em que ordem. Se essas decisões ficam só na conversa, ninguém consegue revisá-las, e a primeira chance de descobrir uma delas é um defeito em produção.
 
-## Como usar este material
+## Pré-requisitos
 
-Estas páginas apoiam uma sessão conduzida ao vivo, sem leitura prévia obrigatória. A aula alterna explicação, demonstração e prática, e cada participante trabalha na própria máquina. A única tarefa antes da aula é a [preparação do ambiente](preparacao.md), que instala o GitHub Spec Kit 1.1.1.
+Cada participante trabalha na própria máquina. A única tarefa antes da aula é a [preparação do ambiente](preparacao.md), que instala o GitHub Spec Kit 1.1.1.
 
 ## Os dois temas
 

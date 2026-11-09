@@ -198,7 +198,7 @@ Cada participante parte do próprio trabalho, sem material real, e produz dois c
 
 ### 11. Exercício-âncora: um caso real e o pitch
 
-**O que é:** a equipe aplica um caso de uso a uma tarefa real, confere o resultado e apresenta o pitch de cerca de cinco minutos descrito na página [Pitch de um caso de uso](pitch-de-caso-de-uso.md). A atividade ocupa 23 minutos de preparação e 20 minutos reservados às apresentações, que o instrutor administra.
+**O que é:** a equipe aplica um caso de uso a uma tarefa real, confere o resultado e apresenta o pitch de cerca de cinco minutos descrito na página [Pitch de um caso de uso](pitch-de-caso-de-uso.md). A atividade ocupa 23 minutos de preparação e 20 minutos reservados às apresentações.
 
 **Situação**
 

@@ -1,6 +1,6 @@
 # Exemplo arquitetural
 
-O instrutor conduz esta demonstração, montando do zero o ambiente agêntico da Vetor. Você vai ver as três peças compartilhadas sendo instaladas num repositório real, uma de cada vez.
+Este exemplo monta do zero o ambiente agêntico da Vetor e instala as três peças compartilhadas num repositório real, uma de cada vez.
 
 A **Vetor** é uma empresa fictícia de e-commerce B2B, usada nos exemplos deste workshop. Ela atende clientes padrão e atacado. Hoje os quatro desenvolvedores do time usam agentes configurados de formas diferentes. Dois têm um `CLAUDE.md` pessoal e desatualizado, um não tem arquivo nenhum, e nenhum deles conecta o agente ao rastreador de tarefas da empresa. Há três semanas esse arranjo já custou um bug em produção: um agente comparou o tipo de cliente com `"Atacado"`, maiúsculo, do jeito que aparece na tela, em vez de `"atacado"`, que é o valor gravado no banco. A faixa de desconto de 20% nunca disparou para um lote inteiro de pedidos.
 

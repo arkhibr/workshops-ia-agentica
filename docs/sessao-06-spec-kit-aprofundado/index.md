@@ -8,9 +8,9 @@
 
 A Sessão 5 mostrou que o agente preenche sozinho o que o pedido do PO deixa em aberto e que o Spec Kit grava essas decisões em arquivo. O registro em arquivo deixa três problemas sem tratamento: o PO não é consultado antes do plano, a redação dos requisitos não é conferida antes das tarefas, e o teste que deveria provar a regra pode passar antes de existir código. Os três comandos opcionais do Spec Kit e um princípio de teste vermelho na constitution tratam esses problemas, cada um numa posição diferente do fluxo.
 
-## Como usar este material
+## Pré-requisitos
 
-Estas páginas apoiam uma sessão conduzida ao vivo, sem leitura prévia obrigatória. A aula alterna explicação, demonstração e prática, e cada participante trabalha na própria máquina, com o GitHub Spec Kit 1.1.1 instalado na Sessão 5. Quem ainda não tem a ferramenta segue a [preparação do ambiente da Sessão 5](../sessao-05-decomposicao/preparacao.md).
+Cada participante trabalha na própria máquina, com o GitHub Spec Kit 1.1.1 instalado na Sessão 5. Quem ainda não tem a ferramenta segue a [preparação do ambiente da Sessão 5](../sessao-05-decomposicao/preparacao.md).
 
 ## Os dois temas
 

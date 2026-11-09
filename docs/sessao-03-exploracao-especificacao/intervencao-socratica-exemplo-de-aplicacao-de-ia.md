@@ -1,6 +1,6 @@
 # Exemplo de aplicação de IA: intervenção socrática
 
-Esta é uma demonstração conduzida pelo instrutor. O objetivo é ver o agente atuando como entrevistador socrático sobre uma especificação ruim, expondo decisões de negócio que a primeira leitura não capturou, antes de qualquer linha de código ser escrita a partir dela.
+Este exemplo mostra o agente atuando como entrevistador socrático sobre uma especificação ruim, expondo decisões de negócio que a primeira leitura não capturou, antes de qualquer linha de código ser escrita a partir dela.
 
 ## O prompt de intervenção socrática
 
@@ -52,11 +52,11 @@ A Vetor, plataforma fictícia de e-commerce B2B usada em toda esta sessão, rece
 
 > "Precisamos de um painel de relatórios de desconto pro time comercial. Ele deve ter um botão de exportar pra Excel, mostrar um gráfico de pizza com os descontos aplicados no mês, e ser bem intuitivo e moderno. Como os gerentes vão usar isso todo dia, o relatório precisa carregar rápido. Todo desconto aplicado aparece lá. Entrega até sexta, com testes completos e cobertura de 100%."
 
-Antes de colar essa especificação no agente, o instrutor registra por escrito quantos defeitos enxerga numa leitura só: quatro adjetivos vagos (intuitivo, moderno, rápido, "todo desconto"), um prazo sem escopo fechado, e uma meta de cobertura de teste sem relação declarada com o que precisa ser coberto. Esse número é a linha de base contra a qual o dossiê final será comparado.
+Antes de a especificação ser colada no agente, registram-se por escrito os defeitos visíveis numa leitura só: quatro adjetivos vagos (intuitivo, moderno, rápido, "todo desconto"), um prazo sem escopo fechado, e uma meta de cobertura de teste sem relação declarada com o que precisa ser coberto. Esse número é a linha de base contra a qual o dossiê final será comparado.
 
 ## A entrevista, em recorte
 
-**Fase de enquadramento.** O agente pergunta quem vai responder pela especificação e qual o critério de encerramento. O instrutor responde como se fosse o próprio gerente comercial que escreveu o pedido.
+**Fase de enquadramento.** O agente pergunta quem vai responder pela especificação e qual o critério de encerramento, e as respostas desta página são dadas no papel do gerente comercial que escreveu o pedido de painel de descontos.
 
 **Fase de exploração, categoria de esclarecimento.** Diante de "bem intuitivo e moderno", a regra do adjetivo vago é acionada, e a próxima pergunta exige um comportamento observável. "Qual tarefa um gerente precisa completar sem ajuda, na primeira vez que abre o painel?" A resposta ("encontrar o desconto total do mês em menos de 10 segundos") traduz "intuitivo" em comportamento observável.
 
@@ -72,6 +72,6 @@ Ao final, o comando "fechar entrevista" produz um dossiê com as três canônica
 
 ## Leitura do exemplo
 
-O dossiê final contém mais decisões de negócio do que a leitura inicial do instrutor havia registrado como linha de base, e ao menos uma delas — a distinção entre a urgência da extração manual e a urgência do painel futuro — não estava em nenhuma frase da especificação original, nem podia ser deduzida dela por releitura, por mais atenta que fosse. Ela só apareceu porque uma pergunta específica, da categoria de perspectivas alternativas, forçou o entrevistado a considerar um ângulo que não tinha ocorrido a ele sozinho. Uma análise direta da mesma especificação, pedindo ao agente "aponte os problemas desta especificação" sem o contrato de entrevista, aponta os adjetivos vagos e deixa de fora essa distinção, porque nenhuma pergunta leva o entrevistado a considerá-la.
+O dossiê final contém mais decisões de negócio do que a leitura inicial havia registrado como linha de base, e ao menos uma delas — a distinção entre a urgência da extração manual e a urgência do painel futuro — não estava em nenhuma frase da especificação original, nem podia ser deduzida dela por releitura, por mais atenta que fosse. Ela só apareceu porque uma pergunta específica, da categoria de perspectivas alternativas, forçou o entrevistado a considerar um ângulo que não tinha ocorrido a ele sozinho. Uma análise direta da mesma especificação, pedindo ao agente "aponte os problemas desta especificação" sem o contrato de entrevista, aponta os adjetivos vagos e deixa de fora essa distinção, porque nenhuma pergunta leva o entrevistado a considerá-la.
 
 **Próxima página:** [Exercício de IA — Geral](intervencao-socratica-exercicio-geral.md).

@@ -1,6 +1,6 @@
 # Exemplo arquitetural
 
-O instrutor conduz esta demonstração sem que os participantes executem nada, para mostrar, antes da prática, em que ponto um prompt vago perde uma regra de negócio.
+Este exemplo mostra em que ponto um prompt vago perde uma regra de negócio.
 
 A **Vetor** é uma empresa fictícia de e-commerce B2B, usada nos exemplos deste workshop. Ela atende dois tipos de cliente, padrão e atacado.
 

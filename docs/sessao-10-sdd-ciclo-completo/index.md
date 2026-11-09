@@ -8,10 +8,6 @@
 
 Especificação, plano e testes desconectados de um ciclo executável produzem documentação que ninguém consulta. Cada artefato precisa alimentar o próximo, e a mudança precisa deixar rastro: quando alguém perguntar, seis meses depois, por que aquela regra existe, a resposta não pode estar só no histórico de um chat que ninguém guardou.
 
-## Como usar este material
-
-Estas páginas não são leitura prévia: o instrutor conduz a exploração dos conceitos ao vivo, intercalada com a prática, e o participante pode chegar sem ter lido nada.
-
 ## Objetivos de aprendizagem
 
 Ao final desta sessão, o participante deve ser capaz de:

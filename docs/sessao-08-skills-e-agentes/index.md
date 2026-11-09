@@ -35,9 +35,9 @@ A sessão alterna teoria e dois blocos de exercícios. O primeiro aplica skills,
 | [Exercícios — artefatos, modelos, custo e segurança](oficina-de-ferramentas.md) | Construção e medição da skill |
 | [Exercícios — skills, agentes e escolha do mecanismo](exercicios.md) | Criação e restrição de ferramentas |
 
-## Como usar este material
+## Pré-requisitos e versões
 
-Estas páginas apoiam uma sessão conduzida ao vivo, sem leitura prévia obrigatória. O roteiro abaixo apresenta a sequência dos temas e das atividades. A sessão pressupõe o ambiente configurado nas Sessões 1 e 2 e o uso do Claude Code, e as notas "Claude Code e Codex CLI" das páginas indicam o equivalente no Codex CLI quando a documentação o descreve.
+A sessão pressupõe o ambiente configurado nas Sessões 1 e 2 e o uso do Claude Code, e as notas "Claude Code e Codex CLI" das páginas indicam o equivalente no Codex CLI quando a documentação o descreve.
 
 !!! info "Versões verificadas"
     A versão instalada em cada máquina aparece nos comandos `claude --version` e `codex --version`. As observações foram feitas em 23/10/2026 com `claude 2.1.309` e `codex-cli 0.140.0`, e o comando `codex doctor` informa a versão 0.164.0 como disponível. O modelo padrão da conta exigiu uma versão mais nova do Codex e os demais modelos do catálogo foram recusados com conta ChatGPT, de modo que nenhum agente do Codex foi executado e as linhas de subagente do Codex têm o status documentado.
@@ -77,7 +77,7 @@ Ao final desta sessão, o participante deve ser capaz de:
 
 ## Como conduzir
 
-Cada página de teoria apresenta um tema, termina com o bloco "Linha da ficha" e traz tabelas de decisão que os exercícios reutilizam. O instrutor apresenta o tema e não precisa percorrer as tabelas linha a linha, porque elas ficam à disposição da turma durante a prática.
+Cada página de teoria termina com o bloco "Linha da ficha" e traz tabelas de decisão que os exercícios reutilizam e que ficam à disposição da turma durante a prática.
 
 O segundo bloco de exercícios usa a skill `identificando-tarefas-e-riscos`, que gera um relatório de tarefas e riscos a partir de uma transcrição de reunião para a ACME, uma universidade fictícia. O exemplo foi escolhido porque o artefato tem estrutura verificável por script e conteúdo que só uma pessoa confere, o que permite discutir as duas formas de conferência.
 

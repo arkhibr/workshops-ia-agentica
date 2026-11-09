@@ -1,6 +1,6 @@
 # Exemplo de aplicação de IA: decomposição de requisitos
 
-Esta é uma demonstração conduzida pelo instrutor. O objetivo é acompanhar o ciclo inteiro — explorar, perguntar, propor, especificar — sobre um pedido vago real da Vetor, até uma especificação decomposta em BR, FR e NFR, verificada por retrotradução, antes de qualquer linha de código mudar.
+Este exemplo acompanha o ciclo inteiro — explorar, perguntar, propor, especificar — sobre um pedido vago real da Vetor, até uma especificação decomposta em BR, FR e NFR, verificada por retrotradução, antes de qualquer linha de código mudar.
 
 **A Vetor**, usada como caso em toda esta sessão, é uma plataforma fictícia de e-commerce B2B que atende dois tipos de cliente: padrão e atacado. Sua função `calcularDesconto` recebe um parâmetro `tipoCliente` que não usa, e a faixa de atacado nunca foi implementada.
 
