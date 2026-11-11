@@ -9,12 +9,14 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [A2A Project — Agent2Agent Protocol (documentação)](#a2a-project-agent2agent-protocol-documentacao)
 - [Agent Skills — Especificação aberta](#agent-skills-especificacao-aberta)
 - [Agentic AI Foundation — AGENTS.md Standard](#agentic-ai-foundation-agentsmd-standard)
+- [Aislin Consulting — Agentic AI Is at the Peak (2026)](#aislin-consulting-agentic-ai-is-at-the-peak-2026)
 - [Anthropic — Agent Skills (documentação)](#anthropic-agent-skills-documentacao)
 - [Anthropic — Avaliação de plugins no Claude Code (documentação)](#anthropic-avaliacao-de-plugins-no-claude-code-documentacao)
 - [Anthropic — Building Effective Agents (2024)](#anthropic-building-effective-agents-2024)
 - [Anthropic — Choosing the Right Model (documentação)](#anthropic-choosing-the-right-model-documentacao)
 - [Anthropic — Claude Code Security (documentação)](#anthropic-claude-code-security-documentacao)
 - [Anthropic — Code Execution with MCP (2025)](#anthropic-code-execution-with-mcp-2025)
+- [Anthropic — Computer use no Cowork (documentação)](#anthropic-computer-use-no-cowork-documentacao)
 - [Anthropic — Demystifying Evals for AI Agents (2026)](#anthropic-demystifying-evals-for-ai-agents-2026)
 - [Anthropic — Effective Context Engineering (2025)](#anthropic-effective-context-engineering-2025)
 - [Anthropic — Gerenciar plugins na organização (documentação do Claude Code)](#anthropic-gerenciar-plugins-na-organizacao-documentacao-do-claude-code)
@@ -62,12 +64,18 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Ford, Parsons, Kua e Sadalage — Building Evolutionary Architectures (2023)](#ford-parsons-kua-e-sadalage-building-evolutionary-architectures-2023)
 - [Forrester — Predictions 2027 (2026)](#forrester-predictions-2027-2026)
 - [Forrester — The State of Agentic AI (2026)](#forrester-the-state-of-agentic-ai-2026)
+- [Gartner — Hype Cycle (metodologia)](#gartner-hype-cycle-metodologia)
+- [Gartner — Hype Cycle for Agentic AI, 2026 (2026)](#gartner-hype-cycle-for-agentic-ai-2026-2026)
+- [Gartner — Hype Cycle for Artificial Intelligence, 2026 (2026)](#gartner-hype-cycle-for-artificial-intelligence-2026-2026)
+- [Gartner — Hype Cycle for Generative AI, 2026 (2026)](#gartner-hype-cycle-for-generative-ai-2026-2026)
 - [Gartner — Mastering Agentic AI (2026)](#gartner-mastering-agentic-ai-2026)
 - [Gartner — Previsão de cancelamento de projetos agênticos (2025)](#gartner-previsao-de-cancelamento-de-projetos-agenticos-2025)
 - [Gartner — Top Strategic Technology Trends for 2027 (2026)](#gartner-top-strategic-technology-trends-for-2027-2026)
 - [Gibbons — Journey Mapping 101 (2018)](#gibbons-journey-mapping-101-2018)
+- [GitHub — Copilot cloud agent (documentação)](#github-copilot-cloud-agent-documentacao)
 - [GitHub Spec Kit](#github-spec-kit)
 - [GitHub — Managing Your Personal Access Tokens (documentação)](#github-managing-your-personal-access-tokens-documentacao)
+- [Google — Agent Payments Protocol (2026)](#google-agent-payments-protocol-2026)
 - [Google Cloud — Gemini at Work (2026)](#google-cloud-gemini-at-work-2026)
 - [Google DeepMind — Co-Scientist (2026)](#google-deepmind-co-scientist-2026)
 - [Google Research — Towards a Science of Scaling Agent Systems (2026)](#google-research-towards-a-science-of-scaling-agent-systems-2026)
@@ -81,6 +89,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Karpathy — Software 2.0 (2017)](#karpathy-software-20-2017)
 - [Karpathy — Software Is Changing Again (2025)](#karpathy-software-is-changing-again-2025)
 - [Kwa et al. — Measuring AI Ability to Complete Long Software Tasks (2025)](#kwa-et-al-measuring-ai-ability-to-complete-long-software-tasks-2025)
+- [LangChain — Runtime de Deep Agents (2026)](#langchain-runtime-de-deep-agents-2026)
 - [Lee et al. — Impact of Generative AI on Critical Thinking (2025)](#lee-et-al-impact-of-generative-ai-on-critical-thinking-2025)
 - [Lei Complementar 214/2025 — IBS, CBS e Imposto Seletivo](#lei-complementar-2142025-ibs-cbs-e-imposto-seletivo)
 - [Little — A Proof for the Queuing Formula (1961)](#little-a-proof-for-the-queuing-formula-1961)
@@ -97,6 +106,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [METR — Mudança no desenho do experimento de produtividade (2026)](#metr-mudanca-no-desenho-do-experimento-de-produtividade-2026)
 - [Microsoft — Ask Microsoft com Copilot Studio (2026)](#microsoft-ask-microsoft-com-copilot-studio-2026)
 - [Microsoft — Entra Agent ID (documentação)](#microsoft-entra-agent-id-documentacao)
+- [Microsoft — IA local no Windows (documentação)](#microsoft-ia-local-no-windows-documentacao)
 - [Microsoft — Use Personal Access Tokens in Azure DevOps (documentação)](#microsoft-use-personal-access-tokens-in-azure-devops-documentacao)
 - [Miranda et al. — Monte Carlo para Prever Projetos de Software (2021)](#miranda-et-al-monte-carlo-para-prever-projetos-de-software-2021)
 - [NIST — AI 600-1: Generative Artificial Intelligence Profile (2024)](#nist-ai-600-1-generative-artificial-intelligence-profile-2024)
@@ -104,6 +114,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [NIST — AI Risk Management Framework 1.0, Core (2023)](#nist-ai-risk-management-framework-10-core-2023)
 - [Noy e Zhang — Productivity Effects of Generative AI (2023)](#noy-e-zhang-productivity-effects-of-generative-ai-2023)
 - [Nubank — When AI Skills Become Supply-Chain Dependencies (2026)](#nubank-when-ai-skills-become-supply-chain-dependencies-2026)
+- [NVIDIA — Isaac GR00T (documentação)](#nvidia-isaac-gr00t-documentacao)
 - [Olewicki et al. — Impact of LLM-based Review Comment Generation (2024)](#olewicki-et-al-impact-of-llm-based-review-comment-generation-2024)
 - [OMG — BPMN 2.0.2 (2014)](#omg-bpmn-202-2014)
 - [OMG — Semantics of Business Vocabulary and Business Rules](#omg-semantics-of-business-vocabulary-and-business-rules)
@@ -115,6 +126,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [OpenAI — Codex: Developer Commands (documentação)](#openai-codex-developer-commands-documentacao)
 - [OpenAI — Codex: Subagents (documentação)](#openai-codex-subagents-documentacao)
 - [OpenAI — Introducing dots (2026)](#openai-introducing-dots-2026)
+- [OpenAI e Stripe — Agentic Commerce Protocol (especificação)](#openai-e-stripe-agentic-commerce-protocol-especificacao)
 - [Osmani — Agent Harness Engineering (2026)](#osmani-agent-harness-engineering-2026)
 - [OWASP — Top 10 for Agentic Applications 2026](#owasp-top-10-for-agentic-applications-2026)
 - [OWASP — Top 10 for LLM Applications 2026](#owasp-top-10-for-llm-applications-2026)
@@ -124,6 +136,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Parnas — On the Criteria to Be Used in Decomposing Systems into Modules (1972)](#parnas-on-the-criteria-to-be-used-in-decomposing-systems-into-modules-1972)
 - [Patton — The New User Story Backlog is a Map (2008)](#patton-the-new-user-story-backlog-is-a-map-2008)
 - [Paul e Elder — The Thinker's Guide to Socratic Questioning (2019)](#paul-e-elder-the-thinkers-guide-to-socratic-questioning-2019)
+- [Pavic — Gartner AI Hype Cycle 2026 (2026)](#pavic-gartner-ai-hype-cycle-2026-2026)
 - [Pearce et al. — Copilot Security (2022)](#pearce-et-al-copilot-security-2022)
 - [Peng et al. — Copilot Productivity (2023)](#peng-et-al-copilot-productivity-2023)
 - [Prasad et al. — ADaPT: As-Needed Decomposition and Planning (2024)](#prasad-et-al-adapt-as-needed-decomposition-and-planning-2024)
@@ -143,6 +156,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Tantithamthavorn et al. — RovoDev Code Reviewer (2026)](#tantithamthavorn-et-al-rovodev-code-reviewer-2026)
 - [Temporal — Durable AI (documentação)](#temporal-durable-ai-documentacao)
 - [Trivedy — The Anatomy of an Agent Harness (2026)](#trivedy-the-anatomy-of-an-agent-harness-2026)
+- [UiPath — Maestro Orchestrate (documentação)](#uipath-maestro-orchestrate-documentacao)
 - [Vacanti — When Will It Be Done?](#vacanti-when-will-it-be-done)
 - [Vaswani et al. — Attention Is All You Need (2017)](#vaswani-et-al-attention-is-all-you-need-2017)
 - [Vercel — Removing 80% of Agent Tools (2026)](#vercel-removing-80-of-agent-tools-2026)
@@ -184,6 +198,15 @@ Especificação aberta do formato de skill: `name` (1 a 64 caracteres, igual ao 
 Arquivo markdown na raiz do repositório, sem esquema obrigatório, que instrui agentes de codificação sobre build, testes, convenções e segurança. O formato tem mais de 20 mil repositórios adotantes e é lido por ferramentas de múltiplos fornecedores concorrentes.
 
 → Sessão 2.
+
+---
+### Aislin Consulting — Agentic AI Is at the Peak (2026)
+
+**AISLIN CONSULTING. "Agentic AI Is at the Peak. Generative AI Is in the Trough."** 20 ago. 2026. <https://www.aislinconsulting.com/blog/hype-cycle-2026>
+
+Análise secundária dos Hype Cycles do Gartner de 2026, que cita o Hype Cycle for Agentic AI de 2 de abril de 2026 (agentes no pico de expectativas infladas) e o Hype Cycle for Generative AI, 2026 (IA generativa no vale da desilusão), além da pesquisa do Gartner com executivos de tecnologia (17% das organizações com agentes em uso e mais de 60% com intenção de uso em até dois anos). O texto informa que o gráfico foi desenhado pelo autor e não reproduz o do Gartner.
+
+→ Sessão 10.
 
 ---
 ### Anthropic — Agent Skills (documentação)
@@ -238,6 +261,15 @@ Documentação de segurança do Claude Code: modelo de permissões, isolamento d
 Caso em que carregar definições de ferramenta sob demanda, em vez de todas de uma vez, reduziu o consumo de 150 mil para 2 mil tokens.
 
 → Sessão 2.
+
+---
+### Anthropic — Computer use no Cowork (documentação)
+
+**ANTHROPIC. "Let Claude use your computer in Cowork".** Central de suporte, consultada em 10 nov. 2026. <https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork>
+
+Documentação do recurso em que o agente opera telas, clicando e preenchendo campos, em versão de teste no Cowork e no Claude Code.
+
+→ Sessão 10.
 
 ---
 ### Anthropic — Demystifying Evals for AI Agents (2026)
@@ -661,6 +693,42 @@ Relatório comercial consultado pelo resumo público e pelo comentário dos anal
 → Sessão 10.
 
 ---
+### Gartner — Hype Cycle (metodologia)
+
+**GARTNER. "Gartner Hype Cycle".** Página de metodologia. <https://www.gartner.com/en/research/methodologies/gartner-hype-cycle>
+
+Descrição das cinco fases do Hype Cycle (gatilho da inovação, pico de expectativas infladas, vale da desilusão, rampa de consolidação e platô de produtividade) e do uso da representação para avaliar o momento de adoção de uma tecnologia. As posições são avaliações dos analistas do Gartner.
+
+→ Sessão 10.
+
+---
+### Gartner — Hype Cycle for Agentic AI, 2026 (2026)
+
+**GARTNER. "What the 2026 Hype Cycle for Agentic AI Reveals".** 15 abr. 2026. <https://www.gartner.com/en/articles/hype-cycle-for-agentic-ai>
+
+Artigo público sobre o primeiro Hype Cycle dedicado a agentes, publicado em abril de 2026. A página do Gartner recusa leitura automática, e as posições citadas na Sessão 10 vêm de análises secundárias que citam o relatório.
+
+→ Sessão 10.
+
+---
+### Gartner — Hype Cycle for Artificial Intelligence, 2026 (2026)
+
+**GARTNER. "Hype Cycle for Artificial Intelligence, 2026".** Resumo do relatório, 28 ago. 2026. <https://www.gartner.com/en/documents/8319853>. Comentado no artigo "The Latest Hype Cycle for Artificial Intelligence Puts Control Ahead of Capability", 1 out. 2026. <https://www.gartner.com/en/articles/hype-cycle-for-artificial-intelligence>
+
+Relatório pago. Segundo análises secundárias, posiciona os agentes de IA logo depois do pico de expectativas infladas, a IA generativa perto do fundo do vale da desilusão, o comércio por agentes no início da curva e os grafos de conhecimento perto do platô de produtividade.
+
+→ Sessão 10.
+
+---
+### Gartner — Hype Cycle for Generative AI, 2026 (2026)
+
+**GARTNER. "Hype Cycle for Generative AI, 2026".** Arun Chandrasekaran e Leinar Ramos, 20 maio 2026. <https://www.gartner.com/en/documents/7883077>
+
+Relatório pago sobre as inovações de IA generativa. Análises secundárias de 2026 registram a IA generativa no vale da desilusão.
+
+→ Sessão 10.
+
+---
 ### Gartner — Mastering Agentic AI (2026)
 
 **GARTNER. "Mastering Agentic AI: Multimillion-Dollar ROI Lessons".** 10 set. 2026. <https://www.gartner.com/en/articles/agentic-ai-roi>
@@ -697,6 +765,15 @@ Descreve os componentes de um mapa de jornada. Afirma que as ações do ator no 
 → Sessão 7.
 
 ---
+### GitHub — Copilot cloud agent (documentação)
+
+**GITHUB. "About GitHub Copilot cloud agent".** Documentação, consultada em 10 nov. 2026. <https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent>
+
+Documentação do agente de programação do GitHub que pesquisa o repositório, prepara um plano e altera o código num ramo separado para revisão.
+
+→ Sessão 10.
+
+---
 ### GitHub Spec Kit
 
 **GitHub Spec Kit.** Implementação de referência open source do Spec-Driven Development (SDD), com mais de 90 mil estrelas no GitHub. Define os quatro artefatos canônicos (`constitution.md`, `spec.md`, `plan.md`, `tasks.md`) e os comandos `/specify`, `/plan`, `/tasks`, compatíveis com Claude Code, GitHub Copilot e Cursor. O modelo de especificação (`spec-template.md`) numera cada requisito funcional com prefixo `FR-001`, `FR-002` etc., em frases no padrão "o sistema deve...", e não reserva uma seção separada para requisito não funcional.
@@ -713,6 +790,15 @@ As Sessões 5 e 6 usam a versão 1.1.1, de 6 out. 2026 (<https://github.com/gith
 Documentação dos tokens de acesso pessoal do GitHub: recomendação de tokens de granularidade fina, restritos a repositórios e permissões mínimas, validade padrão de 30 dias, orientação de tratar o token como senha, alternativas como o Git Credential Manager e o `GITHUB_TOKEN` de workflows, e remoção do que não é mais necessário.
 
 → Sessão 8.
+
+---
+### Google — Agent Payments Protocol (2026)
+
+**GOOGLE. "Google donates Agent Payments Protocol to FIDO Alliance".** 28 abr. 2026. <https://blog.google/products-and-platforms/platforms/google-pay/agent-payments-protocol-fido-alliance/>
+
+Anúncio da transferência do protocolo de pagamentos por agentes (AP2), que trata da prova de autorização de um pagamento feito por agente, para a FIDO Alliance.
+
+→ Sessão 10.
 
 ---
 ### Google Cloud — Gemini at Work (2026)
@@ -830,6 +916,15 @@ Formulação dos três paradigmas coexistentes: Software 1.0 (código explícito
 Propõe medir a capacidade de um agente pelo horizonte de tarefa de 50%: o tempo que um humano leva para fazer as tarefas que o modelo completa com 50% de sucesso. Para os modelos de fronteira avaliados em março de 2025, o horizonte era de cerca de 50 minutos, e vinha dobrando a cada sete meses desde 2019. A taxa de sucesso cai à medida que a tarefa cresce, o que fundamenta o tamanho de tarefa como variável relativa ao executor.
 
 → Sessão 5.
+
+---
+### LangChain — Runtime de Deep Agents (2026)
+
+**LANGCHAIN. "The Runtime Behind Production Deep Agents".** 2026. <https://www.langchain.com/blog/runtime-behind-production-deep-agents>
+
+Artigo técnico do fornecedor que separa a lógica que orienta o modelo da camada que grava o estado do trabalho, a memória e os registros, com pausa para revisão humana e retomada depois de falhas.
+
+→ Sessão 10.
 
 ---
 ### Lee et al. — Impact of Generative AI on Critical Thinking (2025)
@@ -976,6 +1071,15 @@ Documentação de identidade e autorização para agentes, com proprietário, es
 → Sessão 10.
 
 ---
+### Microsoft — IA local no Windows (documentação)
+
+**MICROSOFT. "Build with Local AI on Windows".** Documentação, consultada em 10 nov. 2026. <https://developer.microsoft.com/en-us/windows/local-ai>
+
+Documentação do Foundry Local e do Windows ML para executar modelos de IA no próprio computador, usada como exemplo de execução local por restrição de dados.
+
+→ Sessão 10.
+
+---
 ### Microsoft — Use Personal Access Tokens in Azure DevOps (documentação)
 
 **MICROSOFT. "Use personal access tokens".** Microsoft Learn, atualizada em 21 set. 2026, acessada em 22 out. 2026. <https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate>
@@ -1035,6 +1139,15 @@ O resumo publicado relata 453 profissionais, redução de 40% no tempo e aumento
 **NUBANK. "When AI skills become supply-chain dependencies".** Building Nubank, 2 set. 2026. <https://building.nubank.com/when-ai-skills-become-supply-chain-dependencies-2/>
 
 Relato técnico do banco sobre a revisão de mais de 2.000 skills com o Skill Vetter antes da distribuição, combinando análise determinística e análise por modelo.
+
+→ Sessão 10.
+
+---
+### NVIDIA — Isaac GR00T (documentação)
+
+**NVIDIA. "Isaac GR00T".** Página da plataforma, consultada em 10 nov. 2026. <https://www.nvidia.com/en-us/industries/robotics/isaac-groot/>
+
+Plataforma para desenvolver e treinar em simulação as políticas de controle de robôs humanoides antes do uso real.
 
 → Sessão 10.
 
@@ -1138,6 +1251,15 @@ Anúncio do assistente com responsabilidade contínua dentro do ChatGPT, em que 
 → Sessão 10.
 
 ---
+### OpenAI e Stripe — Agentic Commerce Protocol (especificação)
+
+**OPENAI; STRIPE. "Agentic Commerce Protocol".** Especificação, consultada em 10 nov. 2026. <https://www.agenticcommerce.dev/>
+
+Especificação aberta para compras feitas por agentes dentro de assistentes, com catálogo estruturado e finalização da compra por programa.
+
+→ Sessão 10.
+
+---
 ### Osmani — Agent Harness Engineering (2026)
 
 **OSMANI, Addy. "Agent Harness Engineering".** Blog pessoal, 2026. <https://addyosmani.com/blog/agent-harness-engineering/>
@@ -1217,6 +1339,15 @@ Propõe organizar as histórias de usuário num mapa pela ordem em que o sistema
 Define o questionamento socrático como a forma disciplinada de pensamento crítico aplicada em diálogo: uma pergunta bem colocada expõe a estrutura lógica de um pensamento (o que ele pressupõe, que evidência o sustenta, que implicação segue) antes que a primeira formulação seja aceita como definitiva. Classifica as perguntas em seis categorias — esclarecimento, pressupostos, evidências e razões, implicações e consequências, pontos de vista alternativos, e perguntas sobre a própria pergunta —, adotadas neste workshop como as seis categorias da entrevista socrática. O argumento central é que perguntar bem adia a escolha de uma única leitura e mantém mais de uma interpretação em consideração por mais tempo do que a convergência prematura permitiria.
 
 → Sessão 3.
+
+---
+### Pavic — Gartner AI Hype Cycle 2026 (2026)
+
+**PAVIC, Darko. "AI Is Both Overhyped and Underestimated. Gartner's 2026 Hype Cycle Explains Why".** 23 out. 2026. <https://darkopavic.xyz/gartner-ai-hype-cycle-2026/>
+
+Análise secundária do Hype Cycle for Artificial Intelligence, 2026, com os agentes logo depois do pico de expectativas infladas e prazo de dois a cinco anos até o platô, a IA generativa perto do fundo do vale da desilusão, o comércio por agentes no início da curva, com cinco a dez anos até o platô, e os grafos de conhecimento perto do platô.
+
+→ Sessão 10.
 
 ---
 ### Pearce et al. — Copilot Security (2022)
@@ -1386,6 +1517,15 @@ Documentação de fluxos de trabalho duráveis para agentes: o fluxo mantém coo
 Formulação canônica do arnês (*harness*) como tudo o que cerca o modelo e o transforma em agente: "if you're not the model, you're the harness". Traz a medição de que a mesma família de modelo muda de faixa no Terminal Bench 2.0 quando só o arnês muda.
 
 → Sessão 2.
+
+---
+### UiPath — Maestro Orchestrate (documentação)
+
+**UIPATH. "Maestro Orchestrate".** Página do produto, consultada em 10 nov. 2026. <https://www.uipath.com/product/maestro>
+
+Produto que coordena agentes, robôs de software e pessoas no mesmo processo de negócio, modelado em BPMN, Case e Flow.
+
+→ Sessão 10.
 
 ---
 ### Vacanti — When Will It Be Done?

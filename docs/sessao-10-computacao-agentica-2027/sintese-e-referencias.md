@@ -89,6 +89,20 @@ A tabela lista, para parte das mudanças esperadas e para os assistentes proativ
 | [OWASP, Top 10 for Agentic Applications](../referencia/bibliografia.md#owasp-top-10-for-agentic-applications-2026) | Referencial comunitário de riscos | Componentes de um agente com controle |
 | [NIST, AI Agent Standards Initiative](../referencia/bibliografia.md#nist-ai-agent-standards-initiative-2026) | Iniciativa de padronização | Componentes de um agente com controle |
 | [Anthropic, Demystifying Evals for AI Agents](../referencia/bibliografia.md#anthropic-demystifying-evals-for-ai-agents-2026) | Orientação técnica de fornecedor | Medição do custo e do resultado |
+| [LangChain, runtime de Deep Agents](../referencia/bibliografia.md#langchain-runtime-de-deep-agents-2026) | Orientação técnica de fornecedor | Mudanças esperadas para 2027 a 2030 |
+| [UiPath, Maestro Orchestrate](../referencia/bibliografia.md#uipath-maestro-orchestrate-documentacao) | Anúncio de produto | Mudanças esperadas para 2027 a 2030 |
+| [Anthropic, computer use no Cowork](../referencia/bibliografia.md#anthropic-computer-use-no-cowork-documentacao) | Anúncio de produto | Mudanças esperadas para 2027 a 2030 |
+| [GitHub, Copilot cloud agent](../referencia/bibliografia.md#github-copilot-cloud-agent-documentacao) | Anúncio de produto | Mudanças esperadas para 2027 a 2030 |
+| [Microsoft, IA local no Windows](../referencia/bibliografia.md#microsoft-ia-local-no-windows-documentacao) | Anúncio de produto | Mudanças esperadas para 2027 a 2030 |
+| [OpenAI e Stripe, Agentic Commerce Protocol](../referencia/bibliografia.md#openai-e-stripe-agentic-commerce-protocol-especificacao) | Especificação de protocolo | Mudanças esperadas para 2027 a 2030 |
+| [Google, Agent Payments Protocol](../referencia/bibliografia.md#google-agent-payments-protocol-2026) | Especificação de protocolo | Mudanças esperadas para 2027 a 2030 |
+| [NVIDIA, Isaac GR00T](../referencia/bibliografia.md#nvidia-isaac-gr00t-documentacao) | Anúncio de produto | Mudanças esperadas para 2027 a 2030 |
+| [Gartner, metodologia do Hype Cycle](../referencia/bibliografia.md#gartner-hype-cycle-metodologia) | Descrição de método | Mudanças esperadas para 2027 a 2030 |
+| [Gartner, Hype Cycle for Agentic AI, 2026](../referencia/bibliografia.md#gartner-hype-cycle-for-agentic-ai-2026-2026) | Previsão de analista | Mudanças esperadas para 2027 a 2030 |
+| [Gartner, Hype Cycle for Generative AI, 2026](../referencia/bibliografia.md#gartner-hype-cycle-for-generative-ai-2026-2026) | Previsão de analista | Mudanças esperadas para 2027 a 2030 |
+| [Gartner, Hype Cycle for Artificial Intelligence, 2026](../referencia/bibliografia.md#gartner-hype-cycle-for-artificial-intelligence-2026-2026) | Previsão de analista | Mudanças esperadas para 2027 a 2030 |
+| [Pavic, análise do Hype Cycle de 2026](../referencia/bibliografia.md#pavic-gartner-ai-hype-cycle-2026-2026) | Análise secundária | Mudanças esperadas para 2027 a 2030 |
+| [Aislin Consulting, análise do Hype Cycle de 2026](../referencia/bibliografia.md#aislin-consulting-agentic-ai-is-at-the-peak-2026) | Análise secundária | Mudanças esperadas para 2027 a 2030 |
 
 Os relatórios completos da Forrester e de parte do Gartner são pagos, e os números desta sessão vêm dos resumos públicos. Os resultados de empresas não passaram por auditoria independente, e os endereços da documentação de produtos podem mudar depois da consulta de 10/11/2026.
 

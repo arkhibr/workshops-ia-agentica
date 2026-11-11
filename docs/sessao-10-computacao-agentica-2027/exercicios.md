@@ -1,6 +1,6 @@
 # Exercícios
 
-Os exercícios desta página usam o conteúdo das páginas de teoria da primeira hora da sessão, sobre formas de delegar trabalho à IA, avaliação de afirmações sobre agentes, mudanças esperadas para 2027 a 2030, assistentes proativos e resultados publicados por empresas. Os exercícios 1 a 7 são feitos no bloco de 10 minutos do roteiro, e os exercícios 8 a 10 ficam para estudo depois do curso.
+Os exercícios desta página usam o conteúdo das páginas de teoria da primeira hora da sessão, sobre formas de delegar trabalho à IA, avaliação de afirmações sobre agentes, mudanças esperadas para 2027 a 2030, assistentes proativos e resultados publicados por empresas. Os exercícios 1 a 7 são feitos no bloco de 8 minutos do roteiro, e os exercícios 8 a 10 ficam para estudo depois do curso.
 
 ## Situação compartilhada
 
