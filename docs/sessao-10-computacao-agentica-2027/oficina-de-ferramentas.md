@@ -1,6 +1,6 @@
 # Oficina de ferramentas
 
-Nesta oficina, cada dupla prepara com o agente a ficha de um piloto de 90 dias para um processo da ACME, a universidade fictícia das Sessões 8 e 9, e depois pede a revisão da ficha numa conversa separada. Os campos da ficha usam o critério de aceite da Sessão 3, a ficha de requisitos da Sessão 8, a ficha de governança da Sessão 9 e a métrica de custo por resultado aceito da página [Métricas e economia](metricas-e-economia.md).
+Nesta oficina, cada dupla prepara com um agente de IA a ficha de um piloto de 90 dias para um processo da ACME, a universidade fictícia das Sessões 8 e 9, e depois pede a revisão da ficha numa conversa separada. Um piloto é um teste do agente num processo real, com prazo e escopo limitados, e a ficha de piloto é o documento que registra, antes do início, o que será testado, como será medido e o que decide a continuação, conforme a página [Plano de 90 dias para testar um agente](plano-de-90-dias.md).
 
 ## Roteiro sugerido para a sessão
 
@@ -18,13 +18,13 @@ A oficina usa um agente de linha de comando já configurado na Sessão 2, como C
 
 ## Três processos da ACME
 
-Os três processos abaixo são fictícios e foram escritos para esta oficina, com números de linha de base inventados. O processo P3 é inspirado no domínio administrativo de projetos de pesquisa e não reproduz regra vigente de nenhuma instituição.
+Os três processos abaixo são fictícios e foram escritos para esta oficina. As colunas de volume, tempo e qualidade formam a linha de base de cada processo, isto é, a medição de como o processo funciona hoje, sem o agente, com números inventados para o exercício. O processo P3 é inspirado no domínio administrativo de projetos de pesquisa e não reproduz regra vigente de nenhuma instituição.
 
 | Código | Processo | Volume mensal | Tempo humano atual | Qualidade atual | Responsável |
 |---|---|---|---|---|---|
-| P1 | Revisão de pull requests com a skill de revisão publicada na Sessão 9 | 140 pull requests | 35 minutos de revisão por pull request | 12% dos pull requests reabertos depois da integração | Líder técnico da equipe de sistemas acadêmicos |
+| P1 | Revisão de pull requests (pedidos de integração de código) com a skill de revisão publicada na Sessão 9 | 140 pull requests | 35 minutos de revisão por pull request | 12% dos pull requests reabertos depois da integração | Líder técnico da equipe de sistemas acadêmicos |
 | P2 | Preparação da pauta das reuniões de acompanhamento de projetos de pesquisa | 60 reuniões | 40 minutos de preparação por reunião | 15% das pautas apontadas como incompletas na própria reunião | Coordenação do escritório de projetos |
-| P3 | Conferência das prestações de contas de despesas de projetos de pesquisa, com prazo interno de 30 dias | 220 prestações | 25 minutos de conferência por prestação | 4 conferências por mês reabertas por erro do conferente | Gerência financeira de projetos |
+| P3 | Conferência das prestações de contas de projetos de pesquisa, em que o pesquisador comprova as despesas feitas com o dinheiro do projeto, com prazo interno de 30 dias | 220 prestações | 25 minutos de conferência por prestação | 4 conferências por mês reabertas por erro do conferente | Gerência financeira de projetos |
 
 ## Preparação
 
@@ -40,11 +40,25 @@ O agente deve abrir a sessão interativa na pasta `oficina-piloto`, ainda vazia.
 
 ## Experimento A: escolher o processo
 
-A dupla escolhe um dos três processos aplicando os quatro critérios de passagem do primeiro mês do [plano de 90 dias](horizontes-e-90-dias.md#plano-de-90-dias), que são resultado observável, responsável pelo processo, acesso viável e volume conhecido. A dupla anota também qual das [quatro formas de delegação](da-interacao-a-delegacao.md#as-quatro-formas-de-delegacao) se aplica a cada etapa do processo, considerando que etapas previsíveis podem usar fluxo de trabalho com IA e etapas de investigação podem usar agente com autonomia delimitada.
+A dupla escolhe um dos três processos aplicando os quatro critérios de passagem do primeiro mês do [plano de 90 dias](plano-de-90-dias.md#as-tres-fases-do-piloto): o resultado do processo pode ser observado, há um responsável pelo processo, o agente pode ter acesso aos dados necessários e o volume de trabalho é conhecido. A dupla anota também qual das [quatro formas de delegar trabalho à IA](quatro-formas-de-delegar.md#as-quatro-formas) se aplica a cada etapa do processo, considerando que etapas previsíveis podem usar fluxo de trabalho com IA e etapas de investigação podem usar agente com autonomia delimitada.
 
 O registro esperado é uma linha por critério, com a informação da tabela de partida que o atende ou com a lacuna que impediria o piloto. No processo P2, por exemplo, a dupla precisa definir os itens de uma pauta completa antes de medir o percentual de pautas incompletas.
 
 ## Experimento B: preencher a ficha com o agente
+
+A ficha de piloto tem nove campos. A tabela explica o que cada campo registra, e os termos dela aparecem no prompt que a dupla vai colar no agente.
+
+| Campo | O que registra |
+|---|---|
+| 1. Processo e responsável | O processo escolhido e a pessoa que responde por ele |
+| 2. Decisões delegáveis e forma de delegação | Quais decisões o agente pode tomar e qual das quatro formas de delegar trabalho à IA vale para cada etapa |
+| 3. Linha de base | Volume, tempo, custo e qualidade do processo hoje, sem o agente |
+| 4. Casos de avaliação | Exemplos de entrada com o resultado esperado, incluindo casos típicos, exceções e ataques simulados, como um documento com instruções maliciosas |
+| 5. Métrica principal e contramétricas | O custo por resultado aceito e as medidas de efeito colateral que o acompanham, como o número de entregas reabertas |
+| 6. Controles fora do modelo e identidade do agente | As regras de permissão aplicadas por sistemas que o agente não altera e o usuário próprio do agente nos sistemas da ACME |
+| 7. Recuperação | Onde fica gravada uma tarefa que espera aprovação, quais operações são idempotentes (produzem o mesmo efeito se repetidas) e como interromper o agente |
+| 8. Faixa de risco e aprovação | A faixa de risco baixa, moderada ou alta da ficha de governança da Sessão 9 e quem aprova formalmente o início do piloto, etapa chamada de gate |
+| 9. Critérios de passagem | O que precisa estar comprovado nos dias 30, 60 e 90 para continuar |
 
 **Passo 1:** colar o prompt abaixo no agente, substituindo `<P1, P2 ou P3>` pelo código escolhido no Experimento A e colando a linha correspondente da tabela de partida no lugar indicado.
 
@@ -79,11 +93,11 @@ O resultado esperado é um arquivo com os nove campos preenchidos ou marcados co
 
 ## Experimento C: calcular o custo por resultado aceito
 
-Este experimento usa o processo P3 para todos, para que os resultados sejam comparáveis. No segundo mês de um piloto fictício, o agente prepara a conferência das 220 prestações, e um conferente revisa cada uma antes do aceite. Os custos do mês são os da tabela abaixo, com hora de trabalho do conferente fixada em R$ 80 para o exercício.
+O custo por resultado aceito é o custo total do mês dividido pelo número de entregas que o processo aceitou como corretas, como explica a página [Medição do custo e do resultado de um agente](medicao-de-custo-e-resultado.md). Este experimento usa o processo P3 para todos, para que os resultados sejam comparáveis. No segundo mês de um piloto fictício, o agente prepara a conferência das 220 prestações, e um conferente revisa cada uma antes do aceite. Os custos do mês são os da tabela abaixo, com hora de trabalho do conferente fixada em R$ 80 para o exercício.
 
 | Item de custo | Valor no mês |
 |---|---|
-| Inferência | R$ 900 |
+| Inferência, isto é, uso do modelo de IA, cobrado pelo volume de texto processado | R$ 900 |
 | Ferramentas e infraestrutura | R$ 600 |
 | Supervisão: 6 minutos de revisão por prestação, nas 220 prestações | 22 horas |
 | Retrabalho: 18 conferências reabertas, com 30 minutos cada | 9 horas |
@@ -108,7 +122,7 @@ O custo por resultado aceito caiu cerca de 27%, enquanto as reaberturas subiram 
 
 ## Experimento D: revisar a ficha numa conversa separada
 
-A revisão numa conversa que não participou da entrevista segue o princípio da retrotradução da [Sessão 4](../sessao-04-regras-formais-com-ia/index.md). A nova conversa conhece apenas o texto da ficha, e por isso aponta as informações que a dupla deixou de escrever por considerá-las óbvias.
+Na [Sessão 4](../sessao-04-regras-formais-com-ia/index.md), a equipe usou a retrotradução: uma conversa nova, que não viu como uma regra foi escrita, reescreve a regra com as próprias palavras, e as diferenças mostram o que ficou ambíguo. Este experimento usa a mesma ideia com a ficha de piloto, porque a nova conversa conhece apenas o texto da ficha e aponta as informações que a dupla deixou de escrever por considerá-las óbvias.
 
 **Passo 1:** sair do agente, abrir uma nova sessão na mesma pasta e colar o prompt abaixo.
 

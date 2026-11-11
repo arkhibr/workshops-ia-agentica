@@ -1,66 +1,66 @@
 # Exercícios
 
-Os exercícios desta página usam o conteúdo das cinco páginas de teoria da primeira hora da sessão. Os exercícios 1 a 7 são feitos no bloco de 13 minutos do roteiro, e os exercícios 8 a 10 ficam para estudo depois do curso.
+Os exercícios desta página usam o conteúdo das cinco páginas de teoria da primeira hora da sessão, sobre formas de delegar trabalho à IA, avaliação de afirmações sobre agentes, mudanças esperadas para 2027 a 2030, assistentes proativos e resultados publicados por empresas. Os exercícios 1 a 7 são feitos no bloco de 13 minutos do roteiro, e os exercícios 8 a 10 ficam para estudo depois do curso.
 
 ## Situação compartilhada
 
-A ACME é uma universidade fictícia, a mesma das Sessões 8 e 9, cuja equipe de tecnologia construiu durante o ano uma skill de revisão de pull requests e um agente que prepara a pauta das reuniões de acompanhamento de projetos de pesquisa. Em novembro de 2026, a diretoria da ACME recebe uma apresentação de fornecedor com as frases abaixo e pede à equipe uma posição sobre o que investigar em 2027.
+A ACME é uma universidade fictícia, a mesma das Sessões 8 e 9. A equipe de tecnologia da ACME construiu durante o ano uma skill, isto é, um pacote de instruções reutilizável pelo agente, que revisa pull requests (pedidos de integração de código), e um agente que prepara a pauta das reuniões de acompanhamento de projetos de pesquisa. Em novembro de 2026, a diretoria da ACME recebe uma apresentação de fornecedor com as frases abaixo e pede à equipe uma posição sobre o que testar em 2027.
 
 | Código | Frase da apresentação |
 |---|---|
-| F1 | "40% das grandes empresas já escalam agentes em pelo menos uma função." |
-| F2 | "Mais de 40% dos projetos agênticos serão cancelados até o fim de 2027." |
-| F3 | "Um banco brasileiro reduziu a revisão documental de uma hora para cinco minutos." |
+| F1 | "40% das grandes empresas já usam agentes em escala em pelo menos uma área." |
+| F2 | "Mais de 40% dos projetos com agentes serão cancelados até o fim de 2027." |
+| F3 | "Um banco brasileiro reduziu a revisão de documentos de uma hora para cinco minutos." |
 | F4 | "Nosso assistente acompanha sua agenda e avisa sobre conflitos antes que você perceba." |
-| F5 | "Em 68% dos sistemas em produção, o agente executa no máximo dez passos antes de uma intervenção humana." |
-| F6 | "Agentes iniciam e concluem pagamentos de faturas em portais de fornecedores." |
+| F5 | "Em 68% dos sistemas em uso real, o agente executa no máximo dez passos antes de uma pessoa intervir." |
+| F6 | "Agentes já pagam faturas em portais de fornecedores." |
 | F7 | "Com mais agentes cooperando, qualquer processo fica mais rápido." |
 
 ## Recordar
 
-### 1. As quatro formas de delegação
+### 1. As quatro formas de delegar trabalho
 
-Nomeie as quatro formas de delegação de trabalho descritas na página [Formas de delegação de trabalho](da-interacao-a-delegacao.md) e indique, para cada uma, quem escolhe o próximo passo.
+Nomeie as quatro formas de delegar trabalho à IA descritas na página [Quatro formas de delegar trabalho à IA](quatro-formas-de-delegar.md) e indique, para cada uma, quem escolhe o próximo passo.
 
 <details>
 <summary>Gabarito</summary>
 
-Resposta assistida, em que a pessoa recebe a informação e escolhe o que fazer. Fluxo de trabalho com IA, em que o código define a sequência antes da execução. Agente com autonomia delimitada, em que o agente escolhe o próximo passo dentro do escopo autorizado. Sistema com múltiplos agentes, em que vários agentes com ferramentas ou contextos distintos dividem o trabalho e conciliam os resultados sob coordenação.
+Na resposta assistida, a pessoa lê a resposta da IA e escolhe o que fazer. No fluxo de trabalho com IA, um programa segue uma sequência definida antes da execução. No agente com autonomia delimitada, o agente escolhe o próximo passo dentro dos limites autorizados. Com vários agentes coordenados, cada agente tem ferramentas ou informações próprias, e um programa ou outro agente coordena o trabalho.
 
 </details>
 
-### 2. Os quatro grupos de tendências
+### 2. As quatro áreas das mudanças esperadas
 
-Cite os quatro grupos em que o relatório agrupa as onze tendências para 2027 a 2030.
+Cite as quatro áreas em que o infográfico da página [Onze mudanças esperadas para 2027 a 2030](mudancas-esperadas-2027-2030.md) agrupa as onze mudanças.
 
 <details>
 <summary>Gabarito</summary>
 
-Execução e contexto, integração e processos, software e economia, transações e mundo físico, conforme a página [Tendências para 2027 a 2030](tendencias-2027-2030.md).
+Execução e contexto, integração e processos, software e economia, transações e mundo físico. Na página, essas áreas aparecem como agentes que trabalham por mais tempo e com mais informação, agentes conectados a outros sistemas e a processos de negócio, software, custo e escolha de modelos, e pagamentos, pesquisa científica e robôs.
 
 </details>
 
 ## Compreender
 
-### 3. Previsão e taxa observada
+### 3. Previsão e resposta de pesquisa
 
-Explique por que a frase F2 não pode ser comparada diretamente com a frase F1 para concluir que o mercado está "dividido ao meio".
+Explique por que a frase F2 não pode ser comparada com a frase F1 para concluir que o mercado está "dividido ao meio".
 
 <details>
 <summary>Gabarito</summary>
 
-F1 é uma resposta declarada numa pesquisa de 2026 da McKinsey, restrita a organizações com receita anual acima de US$ 1 bilhão. F2 é uma previsão do Gartner publicada em 2025 para uma data futura, o fim de 2027, que ainda não foi observada. As duas frases medem coisas diferentes, a escala declarada em uma função e o cancelamento futuro de projetos, em populações diferentes, e a página [Evidência e previsão](evidencia-e-previsao.md) recomenda não somar pesquisa, caso e previsão numa taxa única.
+F1 é uma resposta dada por participantes de uma pesquisa da McKinsey de 2026, restrita a organizações com receita anual acima de US$ 1 bilhão. F2 é uma previsão do Gartner, publicada em 2025, para o fim de 2027, e ainda não aconteceu. As duas frases medem coisas diferentes, o uso declarado em uma área e o cancelamento futuro de projetos, em grupos de empresas diferentes.
 
 </details>
 
-### 4. Proatividade e capacidade do serviço
+### 4. Assistente proativo e prazo de aprovação
 
-Explique por que um assistente proativo que acelera a preparação das pautas de reunião de cada pesquisador da ACME pode não reduzir o tempo total até a aprovação de um projeto.
+Um assistente proativo é um agente que acompanha agenda, e-mail e documentos e toma a iniciativa de avisar ou preparar algo. Explique por que um assistente proativo que acelera a preparação das pautas de cada pesquisador da ACME pode não reduzir o tempo total até a aprovação de um projeto.
 
 <details>
 <summary>Gabarito</summary>
 
-Se a aprovação depende de uma etapa concentrada, como a análise de um comitê, a produtividade individual aumenta a chegada de itens a essa etapa sem aumentar a capacidade dela. Com a fila maior nessa etapa, o *lead time* do projeto pode aumentar. O efeito na organização só aparece nas medidas do fluxo completo, como *lead time*, *throughput* aceito, trabalho em andamento e retrabalho, conforme a página [Assistentes pessoais proativos](assistentes-proativos.md#objecoes-a-tendencia).
+Se a aprovação depende de uma etapa feita por poucas pessoas, como a análise de um comitê, as pautas prontas mais cedo chegam mais depressa a essa etapa sem aumentar a quantidade de projetos que o comitê consegue analisar. A fila do comitê aumenta, e o tempo total do pedido até a aprovação pode até crescer. O efeito só aparece quando se mede o processo inteiro, como explica a página [Assistentes que agem sem receber pedido](assistentes-que-agem-sem-pedido.md#motivos-para-desconfiar).
 
 </details>
 
@@ -68,7 +68,7 @@ Se a aprovação depende de uma etapa concentrada, como a análise de um comitê
 
 ### 5. Classificar as frases da apresentação
 
-Classifique cada uma das frases F1 a F7 em um dos seis tipos de afirmação da página [Evidência e previsão](evidencia-e-previsao.md#seis-tipos-de-afirmacao) e escreva, para cada uma, a pergunta que a equipe da ACME faria ao fornecedor antes de usar o número.
+Classifique cada uma das frases F1 a F7 em um dos seis tipos de afirmação da página [Avaliação de números e promessas sobre agentes](avaliacao-de-numeros-e-promessas.md#seis-tipos-de-afirmacao) e escreva, para cada uma, a pergunta que a equipe da ACME faria ao fornecedor antes de usar a frase numa decisão.
 
 | Código | Tipo de afirmação | Pergunta ao fornecedor |
 |---|---|---|
@@ -84,34 +84,34 @@ Classifique cada uma das frases F1 a F7 em um dos seis tipos de afirmação da p
 
 | Critério | Atende | Não atende |
 |---|---|---|
-| Classificação | F1 como resposta de pesquisa sem auditoria, F2 como previsão de analista, F3 como caso operacional relatado pelo fornecedor, F4 como capacidade de produto, F5 como evidência empírica com amostra, F6 como piloto e F7 como afirmação sem sustentação, contrária à evidência do Google Research | Trata as sete frases como fatos equivalentes ou confunde previsão com taxa observada |
-| Pergunta ao fornecedor | Cada pergunta identifica a lacuna do tipo de afirmação, como quem mediu, contra qual base, em que população ou em que prazo | Pergunta genérica repetida para todas as frases |
-| F7 | A resposta cita a degradação em tarefas sequenciais encontrada nas 180 configurações avaliadas | Aceita F7 por ser intuitiva |
+| Classificação | F1 como resultado de estudo baseado em respostas declaradas, F2 como previsão de analista, F3 como relato de empresa publicado pelo fornecedor, F4 como anúncio de produto, F5 como resultado de estudo com amostra descrita, F6 como piloto e F7 como afirmação contrária ao estudo do Google Research com 180 configurações | Trata as sete frases como fatos equivalentes ou confunde previsão com resultado já observado |
+| Pergunta ao fornecedor | Cada pergunta identifica o que falta naquele tipo de afirmação, como quem mediu, contra o que comparou, com quais empresas ou em que prazo | A mesma pergunta genérica para todas as frases |
+| F7 | A resposta cita a piora observada quando vários agentes trabalham em tarefas em que cada passo depende do anterior | Aceita F7 por parecer intuitiva |
 
-### 6. Relacionar tendências e práticas do curso
+### 6. Relacionar mudanças e sessões do curso
 
-Para cada uma das tendências 4.2, 4.3, 4.5 e 4.7, indique a sessão do curso em que a equipe da ACME já praticou a capacidade correspondente e o artefato que essa sessão deixou.
+Para cada uma das mudanças 4.2 (informação fornecida ao agente), 4.3 (identidade própria para cada agente), 4.5 (desenvolvimento de software por agentes) e 4.7 (processos que combinam agentes e regras fixas), indique a sessão do curso em que a equipe da ACME praticou algo relacionado e o que essa sessão produziu. A página [O que cada sessão do curso produziu](o-que-cada-sessao-produziu.md) lista os resultados de cada sessão.
 
-### 7. Ler um percentual de caso
+### 7. Ler um percentual publicado
 
-Aplique as quatro perguntas da página [Casos reais](casos-reais.md#leitura-de-um-percentual-de-caso-relatado) à frase F3 e registre o que a frase informa e o que ela deixa sem resposta.
+Aplique as quatro perguntas da página [Resultados publicados por empresas](resultados-publicados-por-empresas.md#quatro-perguntas-antes-de-usar-um-percentual) à frase F3 e registre o que a frase informa e o que ela deixa sem resposta.
 
 ## Analisar
 
 ### 8. Registros de um assistente proativo
 
-A frase F4 descreve um assistente proativo. Compare os registros que a ACME precisaria guardar para distinguir execução por software, operação assistida e intervenção humana, tomando como referência o caso do Muse descrito na página [Assistentes pessoais proativos](assistentes-proativos.md).
+A frase F4 descreve um assistente proativo. Liste os registros que a ACME precisaria guardar para saber quais tarefas o software fez sozinho, quais teve ajuda de uma pessoa e quais foram feitas por uma pessoa, usando como referência o caso do assistente Muse, da Meta, descrito na página [Assistentes que agem sem receber pedido](assistentes-que-agem-sem-pedido.md).
 
 ## Avaliar
 
 ### 9. Contratação de assistentes proativos
 
-A diretoria da ACME pergunta se deve contratar um assistente proativo para todos os coordenadores de projeto em 2027. Avalie a pergunta com base na posição do relatório, que recomenda experimentar primeiro com responsabilidades delimitadas, e proponha uma resposta com escopo, duração e critério de interrupção.
+A diretoria da ACME pergunta se deve contratar um assistente proativo para todos os coordenadores de projeto em 2027. Avalie a pergunta considerando que ainda não há medição independente do ganho desses produtos e proponha uma resposta com escopo do teste, duração e critério para interrompê-lo.
 
 ## Criar
 
-### 10. Tendências a acompanhar em 2027
+### 10. Mudanças a acompanhar em 2027
 
-Escolha três das onze tendências que tenham relação com o trabalho da sua equipe. Para cada uma, escreva a condição que precisa estar atendida antes de um piloto e os sinais que confirmariam ou enfraqueceriam a tendência, usando a seção [Depois do curso](sintese-e-referencias.md#depois-do-curso) como modelo de formulação.
+Escolha três das onze mudanças que tenham relação com o trabalho da sua equipe. Para cada uma, escreva o que precisa estar resolvido antes de um teste e os sinais que confirmariam ou enfraqueceriam a mudança, usando a seção [Sinais a acompanhar depois do curso](sintese-e-referencias.md#sinais-a-acompanhar-depois-do-curso) como modelo.
 
-**Próxima página:** [Arquitetura de referência](arquitetura-de-referencia.md).
+**Próxima página:** [Componentes de um agente que age com controle](componentes-de-um-agente-com-controle.md).

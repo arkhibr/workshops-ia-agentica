@@ -31,7 +31,6 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Anthropic — Steering Claude Code (2026)](#anthropic-steering-claude-code-2026)
 - [Anthropic — Subagents no Claude Code (documentação)](#anthropic-subagents-no-claude-code-documentacao)
 - [Anthropic — Writing Effective Tools for Agents (2025)](#anthropic-writing-effective-tools-for-agents-2025)
-- [Arkhi — Computação agêntica para 2027 e além (2026)](#arkhi-computacao-agentica-para-2027-e-alem-2026)
 - [Arkhi — Governança de IA na prática (2026)](#arkhi-governanca-de-ia-na-pratica-2026)
 - [AWS — Bedrock AgentCore Policy e Evaluations (2025)](#aws-bedrock-agentcore-policy-e-evaluations-2025)
 - [AWS — Cox Automotive (2026)](#aws-cox-automotive-2026)
@@ -383,15 +382,6 @@ Documentação dos subagentes do Claude Code: arquivo Markdown com frontmatter (
 Critério verificável para catálogo de ferramentas: se uma pessoa da engenharia não sabe dizer qual ferramenta usar numa situação, o modelo também não saberá. Recomenda consolidar por fluxo de trabalho em vez de espelhar endpoints.
 
 → Sessão 2.
-
----
-### Arkhi — Computação agêntica para 2027 e além (2026)
-
-**ARKHI. "Computação agêntica para 2027 e além: tecnologias, casos reais e implicações para as empresas".** Relatório de pesquisa RF-2026-11, com corte em 10 nov. 2026. Material próprio, sem URL pública.
-
-Relatório que reúne as leituras de McKinsey, Gartner e Forrester, estudos empíricos, onze tendências para 2027 a 2030, assistentes pessoais proativos, casos relatados, arquitetura de referência, métricas de custo por resultado aceito e um plano de 90 dias, acompanhado de onze infográficos reproduzidos na Sessão 10. Classifica cada afirmação como evidência empírica, caso relatado, piloto, capacidade de produto, previsão ou hipótese. As fontes primárias citadas nas páginas da sessão estão listadas individualmente nesta bibliografia.
-
-→ Sessão 10.
 
 ---
 ### Arkhi — Governança de IA na prática (2026)

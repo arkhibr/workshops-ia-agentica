@@ -150,16 +150,16 @@ nav:
           - Síntese e referências: sessao-09-governanca-de-skills-e-agentes/sintese-e-referencias.md
       - S10 — Computação agêntica em 2027:
           - "Visão geral": sessao-10-computacao-agentica-2027/index.md
-          - "O percurso do curso": sessao-10-computacao-agentica-2027/percurso-do-curso.md
-          - "Formas de delegação de trabalho": sessao-10-computacao-agentica-2027/da-interacao-a-delegacao.md
-          - "Evidência e previsão": sessao-10-computacao-agentica-2027/evidencia-e-previsao.md
-          - "Tendências para 2027 a 2030": sessao-10-computacao-agentica-2027/tendencias-2027-2030.md
-          - "Assistentes pessoais proativos": sessao-10-computacao-agentica-2027/assistentes-proativos.md
-          - "Casos reais": sessao-10-computacao-agentica-2027/casos-reais.md
+          - "O que cada sessão do curso produziu": sessao-10-computacao-agentica-2027/o-que-cada-sessao-produziu.md
+          - "Quatro formas de delegar trabalho à IA": sessao-10-computacao-agentica-2027/quatro-formas-de-delegar.md
+          - "Avaliação de números e promessas sobre agentes": sessao-10-computacao-agentica-2027/avaliacao-de-numeros-e-promessas.md
+          - "Onze mudanças esperadas para 2027 a 2030": sessao-10-computacao-agentica-2027/mudancas-esperadas-2027-2030.md
+          - "Assistentes que agem sem receber pedido": sessao-10-computacao-agentica-2027/assistentes-que-agem-sem-pedido.md
+          - "Resultados publicados por empresas": sessao-10-computacao-agentica-2027/resultados-publicados-por-empresas.md
           - "Exercícios": sessao-10-computacao-agentica-2027/exercicios.md
-          - "Arquitetura de referência": sessao-10-computacao-agentica-2027/arquitetura-de-referencia.md
-          - "Métricas e economia": sessao-10-computacao-agentica-2027/metricas-e-economia.md
-          - "Cenários e plano de 90 dias": sessao-10-computacao-agentica-2027/horizontes-e-90-dias.md
+          - "Componentes de um agente que age com controle": sessao-10-computacao-agentica-2027/componentes-de-um-agente-com-controle.md
+          - "Medição do custo e do resultado de um agente": sessao-10-computacao-agentica-2027/medicao-de-custo-e-resultado.md
+          - "Plano de 90 dias para testar um agente": sessao-10-computacao-agentica-2027/plano-de-90-dias.md
           - "Oficina de ferramentas": sessao-10-computacao-agentica-2027/oficina-de-ferramentas.md
           - "Síntese e referências": sessao-10-computacao-agentica-2027/sintese-e-referencias.md
   - Referência:
