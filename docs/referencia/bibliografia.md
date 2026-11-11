@@ -6,6 +6,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 
 ## Índice Alfabético
 
+- [A2A Project — Agent2Agent Protocol (documentação)](#a2a-project-agent2agent-protocol-documentacao)
 - [Agent Skills — Especificação aberta](#agent-skills-especificacao-aberta)
 - [Agentic AI Foundation — AGENTS.md Standard](#agentic-ai-foundation-agentsmd-standard)
 - [Anthropic — Agent Skills (documentação)](#anthropic-agent-skills-documentacao)
@@ -14,23 +15,30 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Anthropic — Choosing the Right Model (documentação)](#anthropic-choosing-the-right-model-documentacao)
 - [Anthropic — Claude Code Security (documentação)](#anthropic-claude-code-security-documentacao)
 - [Anthropic — Code Execution with MCP (2025)](#anthropic-code-execution-with-mcp-2025)
+- [Anthropic — Demystifying Evals for AI Agents (2026)](#anthropic-demystifying-evals-for-ai-agents-2026)
 - [Anthropic — Effective Context Engineering (2025)](#anthropic-effective-context-engineering-2025)
 - [Anthropic — Gerenciar plugins na organização (documentação do Claude Code)](#anthropic-gerenciar-plugins-na-organizacao-documentacao-do-claude-code)
 - [Anthropic — How We Built Our Multi-Agent Research System](#anthropic-how-we-built-our-multi-agent-research-system)
 - [Anthropic — Instalação e requisitos do Claude Code (documentação)](#anthropic-instalacao-e-requisitos-do-claude-code-documentacao)
+- [Anthropic — Introducing Claude Duet (2026)](#anthropic-introducing-claude-duet-2026)
 - [Anthropic — Introducing the Model Context Protocol (2024)](#anthropic-introducing-the-model-context-protocol-2024)
 - [Anthropic — Manage Costs Effectively (documentação do Claude Code)](#anthropic-manage-costs-effectively-documentacao-do-claude-code)
 - [Anthropic — Marketplaces de plugins no Claude Code (documentação)](#anthropic-marketplaces-de-plugins-no-claude-code-documentacao)
 - [Anthropic — Prompt Caching (documentação)](#anthropic-prompt-caching-documentacao)
+- [Anthropic — Scaling Managed Agents (2026)](#anthropic-scaling-managed-agents-2026)
 - [Anthropic — Skill Authoring Best Practices (documentação)](#anthropic-skill-authoring-best-practices-documentacao)
 - [Anthropic — Skills no Claude Code (documentação)](#anthropic-skills-no-claude-code-documentacao)
 - [Anthropic — Steering Claude Code (2026)](#anthropic-steering-claude-code-2026)
 - [Anthropic — Subagents no Claude Code (documentação)](#anthropic-subagents-no-claude-code-documentacao)
 - [Anthropic — Writing Effective Tools for Agents (2025)](#anthropic-writing-effective-tools-for-agents-2025)
+- [Arkhi — Computação agêntica para 2027 e além (2026)](#arkhi-computacao-agentica-para-2027-e-alem-2026)
 - [Arkhi — Governança de IA na prática (2026)](#arkhi-governanca-de-ia-na-pratica-2026)
+- [AWS — Bedrock AgentCore Policy e Evaluations (2025)](#aws-bedrock-agentcore-policy-e-evaluations-2025)
+- [AWS — Cox Automotive (2026)](#aws-cox-automotive-2026)
 - [Bass, Clements e Kazman — Software Architecture in Practice (2021)](#bass-clements-e-kazman-software-architecture-in-practice-2021)
 - [Beck — Test-Driven Development: By Example (2002)](#beck-test-driven-development-by-example-2002)
 - [Beurer-Kellner et al. — Design Patterns for Securing LLM Agents (2025)](#beurer-kellner-et-al-design-patterns-for-securing-llm-agents-2025)
+- [BMW Group — Robôs humanoides (2026)](#bmw-group-robos-humanoides-2026)
 - [Böckeler — Understanding Spec-Driven Development (2025)](#bockeler-understanding-spec-driven-development-2025)
 - [Boehm — Software Engineering Economics (1981)](#boehm-software-engineering-economics-1981)
 - [Brasil — Lei Geral de Proteção de Dados Pessoais (2018)](#brasil-lei-geral-de-protecao-de-dados-pessoais-2018)
@@ -41,6 +49,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Chikofsky e Cross — Reverse Engineering and Design Recovery (1990)](#chikofsky-e-cross-reverse-engineering-and-design-recovery-1990)
 - [Cihan et al. — Automated Code Review In Practice (2025)](#cihan-et-al-automated-code-review-in-practice-2025)
 - [Claessen e Hughes — QuickCheck (2000)](#claessen-e-hughes-quickcheck-2000)
+- [Cognition — Devin em São Paulo (2026)](#cognition-devin-em-sao-paulo-2026)
 - [Coleman et al. — The Kanban Guide (2025)](#coleman-et-al-the-kanban-guide-2025)
 - [Cucumber — Gherkin Reference](#cucumber-gherkin-reference)
 - [Datacurve — DeepSWE Leaderboard](#datacurve-deepswe-leaderboard)
@@ -51,13 +60,19 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Diggs et al. — LLMs for Legacy Code Documentation (2024)](#diggs-et-al-llms-for-legacy-code-documentation-2024)
 - [fast-check e FsCheck — Property-Based Testing](#fast-check-e-fscheck-property-based-testing)
 - [Feathers — Working Effectively with Legacy Code (2004)](#feathers-working-effectively-with-legacy-code-2004)
-- [Fission-AI — OpenSpec](#fission-ai-openspec)
 - [Ford, Parsons, Kua e Sadalage — Building Evolutionary Architectures (2023)](#ford-parsons-kua-e-sadalage-building-evolutionary-architectures-2023)
+- [Forrester — Predictions 2027 (2026)](#forrester-predictions-2027-2026)
+- [Forrester — The State of Agentic AI (2026)](#forrester-the-state-of-agentic-ai-2026)
+- [Gartner — Mastering Agentic AI (2026)](#gartner-mastering-agentic-ai-2026)
+- [Gartner — Previsão de cancelamento de projetos agênticos (2025)](#gartner-previsao-de-cancelamento-de-projetos-agenticos-2025)
+- [Gartner — Top Strategic Technology Trends for 2027 (2026)](#gartner-top-strategic-technology-trends-for-2027-2026)
 - [Gibbons — Journey Mapping 101 (2018)](#gibbons-journey-mapping-101-2018)
 - [GitHub Spec Kit](#github-spec-kit)
 - [GitHub — Managing Your Personal Access Tokens (documentação)](#github-managing-your-personal-access-tokens-documentacao)
+- [Google Cloud — Gemini at Work (2026)](#google-cloud-gemini-at-work-2026)
+- [Google DeepMind — Co-Scientist (2026)](#google-deepmind-co-scientist-2026)
+- [Google Research — Towards a Science of Scaling Agent Systems (2026)](#google-research-towards-a-science-of-scaling-agent-systems-2026)
 - [Greshake et al. — Indirect Prompt Injection (2023)](#greshake-et-al-indirect-prompt-injection-2023)
-- [gszhangwei — OpenSPDD](#gszhangwei-openspdd)
 - [Harman et al. — Mutation-Guided LLM Test Generation at Meta (2025)](#harman-et-al-mutation-guided-llm-test-generation-at-meta-2025)
 - [Hunt e Thomas — Software Archaeology (2002)](#hunt-e-thomas-software-archaeology-2002)
 - [ISO/IEC 42001:2023](#isoiec-420012023)
@@ -71,17 +86,25 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Lei Complementar 214/2025 — IBS, CBS e Imposto Seletivo](#lei-complementar-2142025-ibs-cbs-e-imposto-seletivo)
 - [Little — A Proof for the Queuing Formula (1961)](#little-a-proof-for-the-queuing-formula-1961)
 - [Luo et al. — An Empirical Analysis of Flaky Tests (2014)](#luo-et-al-an-empirical-analysis-of-flaky-tests-2014)
-- [MADR — Markdown Architectural Decision Records v4](#madr-markdown-architectural-decision-records-v4)
 - [Magesh et al. — Hallucination-Free? (2025)](#magesh-et-al-hallucination-free-2025)
 - [Mathews e Nagappan — Test-Driven Development and LLM-based Code Generation (2024)](#mathews-e-nagappan-test-driven-development-and-llm-based-code-generation-2024)
+- [McKinsey — The State of AI in 2026 (2026)](#mckinsey-the-state-of-ai-in-2026-2026)
+- [McKinsey — Where AI Agents Pay Off (2026)](#mckinsey-where-ai-agents-pay-off-2026)
 - [Mendes — Controle e Autonomia (Módulo 4, Agentes)](#mendes-controle-e-autonomia-modulo-4-agentes)
 - [Meszaros — xUnit Test Patterns (2007)](#meszaros-xunit-test-patterns-2007)
+- [Meta — Introducing Muse (2026)](#meta-introducing-muse-2026)
+- [METR — Clarifying Limitations of Time Horizon (2026)](#metr-clarifying-limitations-of-time-horizon-2026)
 - [METR — Experienced Developer Productivity (2025)](#metr-experienced-developer-productivity-2025)
+- [METR — Mudança no desenho do experimento de produtividade (2026)](#metr-mudanca-no-desenho-do-experimento-de-produtividade-2026)
+- [Microsoft — Ask Microsoft com Copilot Studio (2026)](#microsoft-ask-microsoft-com-copilot-studio-2026)
+- [Microsoft — Entra Agent ID (documentação)](#microsoft-entra-agent-id-documentacao)
 - [Microsoft — Use Personal Access Tokens in Azure DevOps (documentação)](#microsoft-use-personal-access-tokens-in-azure-devops-documentacao)
 - [Miranda et al. — Monte Carlo para Prever Projetos de Software (2021)](#miranda-et-al-monte-carlo-para-prever-projetos-de-software-2021)
 - [NIST — AI 600-1: Generative Artificial Intelligence Profile (2024)](#nist-ai-600-1-generative-artificial-intelligence-profile-2024)
+- [NIST — AI Agent Standards Initiative (2026)](#nist-ai-agent-standards-initiative-2026)
 - [NIST — AI Risk Management Framework 1.0, Core (2023)](#nist-ai-risk-management-framework-10-core-2023)
 - [Noy e Zhang — Productivity Effects of Generative AI (2023)](#noy-e-zhang-productivity-effects-of-generative-ai-2023)
+- [Nubank — When AI Skills Become Supply-Chain Dependencies (2026)](#nubank-when-ai-skills-become-supply-chain-dependencies-2026)
 - [Olewicki et al. — Impact of LLM-based Review Comment Generation (2024)](#olewicki-et-al-impact-of-llm-based-review-comment-generation-2024)
 - [OMG — BPMN 2.0.2 (2014)](#omg-bpmn-202-2014)
 - [OMG — Semantics of Business Vocabulary and Business Rules](#omg-semantics-of-business-vocabulary-and-business-rules)
@@ -92,8 +115,11 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [OpenAI — Codex: Configuration Reference (documentação)](#openai-codex-configuration-reference-documentacao)
 - [OpenAI — Codex: Developer Commands (documentação)](#openai-codex-developer-commands-documentacao)
 - [OpenAI — Codex: Subagents (documentação)](#openai-codex-subagents-documentacao)
+- [OpenAI — Introducing dots (2026)](#openai-introducing-dots-2026)
 - [Osmani — Agent Harness Engineering (2026)](#osmani-agent-harness-engineering-2026)
+- [OWASP — Top 10 for Agentic Applications 2026](#owasp-top-10-for-agentic-applications-2026)
 - [OWASP — Top 10 for LLM Applications 2026](#owasp-top-10-for-llm-applications-2026)
+- [Pan et al. — Measuring Agents in Production (2026)](#pan-et-al-measuring-agents-in-production-2026)
 - [Papadakis et al. — Mutation Testing Advances (2019)](#papadakis-et-al-mutation-testing-advances-2019)
 - [Parasuraman e Manzey — Complacency and Bias in Human Use of Automation (2010)](#parasuraman-e-manzey-complacency-and-bias-in-human-use-of-automation-2010)
 - [Parnas — On the Criteria to Be Used in Decomposing Systems into Modules (1972)](#parnas-on-the-criteria-to-be-used-in-decomposing-systems-into-modules-1972)
@@ -103,33 +129,46 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Peng et al. — Copilot Productivity (2023)](#peng-et-al-copilot-productivity-2023)
 - [Prasad et al. — ADaPT: As-Needed Decomposition and Planning (2024)](#prasad-et-al-adapt-as-needed-decomposition-and-planning-2024)
 - [Quattrocchi et al. — User stories geradas por LLMs (2025)](#quattrocchi-et-al-user-stories-geradas-por-llms-2025)
+- [Reuters — Muse e o concierge humano (2026)](#reuters-muse-e-o-concierge-humano-2026)
 - [Ross (ed.) — Business Rules Manifesto (2003)](#ross-ed-business-rules-manifesto-2003)
 - [Ross — RuleSpeak](#ross-rulespeak)
+- [Salesforce — OpenTable com Agentforce (2025)](#salesforce-opentable-com-agentforce-2025)
 - [Saltzer e Schroeder — The Protection of Information in Computer Systems (1975)](#saltzer-e-schroeder-the-protection-of-information-in-computer-systems-1975)
 - [Schäfer et al. — TestPilot (2024)](#schafer-et-al-testpilot-2024)
 - [Schwaber e Sutherland — The 2020 Scrum Guide (2020)](#schwaber-e-sutherland-the-2020-scrum-guide-2020)
+- [ServiceNow — Thrive (2026)](#servicenow-thrive-2026)
 - [Sneed e Erdős — Extracting Business Rules from Source Code (1996)](#sneed-e-erdos-extracting-business-rules-from-source-code-1996)
 - [Stryker Mutator — Documentação](#stryker-mutator-documentacao)
 - [StrykerJS e Stryker.NET — Mutation Testing](#strykerjs-e-strykernet-mutation-testing)
 - [Tang et al. — TofuEval (2024)](#tang-et-al-tofueval-2024)
 - [Tantithamthavorn et al. — RovoDev Code Reviewer (2026)](#tantithamthavorn-et-al-rovodev-code-reviewer-2026)
+- [Temporal — Durable AI (documentação)](#temporal-durable-ai-documentacao)
 - [Trivedy — The Anatomy of an Agent Harness (2026)](#trivedy-the-anatomy-of-an-agent-harness-2026)
 - [Vacanti — When Will It Be Done?](#vacanti-when-will-it-be-done)
 - [Vaswani et al. — Attention Is All You Need (2017)](#vaswani-et-al-attention-is-all-you-need-2017)
 - [Vercel — Removing 80% of Agent Tools (2026)](#vercel-removing-80-of-agent-tools-2026)
-- [Vincent e Prime Radiant — Superpowers (2026)](#vincent-e-prime-radiant-superpowers-2026)
+- [Visa — Piloto de pagamentos por agentes (2026)](#visa-piloto-de-pagamentos-por-agentes-2026)
 - [Wake — INVEST in Good Stories and SMART Tasks (2003)](#wake-invest-in-good-stories-and-smart-tasks-2003)
 - [Wei et al. — Chain-of-Thought Prompting (2022)](#wei-et-al-chain-of-thought-prompting-2022)
 - [Wiegers e Beatty — Software Requirements (2013)](#wiegers-e-beatty-software-requirements-2013)
 - [Willison — What is Agentic Engineering (2026)](#willison-what-is-agentic-engineering-2026)
+- [xAI — Grok Bot (documentação)](#xai-grok-bot-documentacao)
 - [Yao et al. — ReAct (2023)](#yao-et-al-react-2023)
 - [Zadenoori et al. — LLMs para Engenharia de Requisitos (2025)](#zadenoori-et-al-llms-para-engenharia-de-requisitos-2025)
-- [Zhang e Xia — Structured Prompt-Driven Development (2026)](#zhang-e-xia-structured-prompt-driven-development-2026)
 - [Zeller — Why Programs Fail (2005)](#zeller-why-programs-fail-2005)
 - [Zhang et al. — LLMs para Mensagens de Commit (2024)](#zhang-et-al-llms-para-mensagens-de-commit-2024)
 - [Ziftci et al. — Migrating Code at Scale with LLMs at Google (2025)](#ziftci-et-al-migrating-code-at-scale-with-llms-at-google-2025)
 ---
 
+### A2A Project — Agent2Agent Protocol (documentação)
+
+**AGENT2AGENT PROJECT. "A2A Protocol".** Documentação, consultada em 10 nov. 2026. <https://a2a-protocol.org/>
+
+Especificação de protocolo para comunicação entre agentes independentes, que complementa o MCP: o MCP conecta uma aplicação de IA a ferramentas e dados, e o A2A organiza a interação entre agentes de sistemas ou fornecedores diferentes. Integra a Agentic AI Foundation, ao lado de MCP e AGENTS.md.
+
+→ Sessão 10.
+
+---
 ### Agent Skills — Especificação aberta
 
 **AGENT SKILLS. "Specification".** agentskills.io, acessado em 23 out. 2026. <https://agentskills.io/specification>
@@ -139,7 +178,6 @@ Especificação aberta do formato de skill: `name` (1 a 64 caracteres, igual ao 
 → Sessão 8.
 
 ---
-
 ### Agentic AI Foundation — AGENTS.md Standard
 
 **Agentic AI Foundation (Linux Foundation). "AGENTS.md".** Padrão aberto, formalizado em ago. 2025 por OpenAI, Google, Cursor, Factory e Sourcegraph. <https://agents.md/>
@@ -149,7 +187,6 @@ Arquivo markdown na raiz do repositório, sem esquema obrigatório, que instrui 
 → Sessão 2.
 
 ---
-
 ### Anthropic — Agent Skills (documentação)
 
 **ANTHROPIC. "Agent Skills".** Claude Platform Docs, acessado em 22 out. 2026. <https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview>
@@ -159,7 +196,6 @@ Documentação oficial das skills: pasta com `SKILL.md` e frontmatter obrigatór
 → Sessão 8.
 
 ---
-
 ### Anthropic — Avaliação de plugins no Claude Code (documentação)
 
 **ANTHROPIC. "Test plugins with evals".** Claude Code Docs, acessado em 3 nov. 2026. <https://code.claude.com/docs/en/plugin-evals.md>
@@ -169,7 +205,6 @@ O comando `claude plugin eval` executa o plugin contra um conjunto de casos e po
 → Sessão 9.
 
 ---
-
 ### Anthropic — Building Effective Agents (2024)
 
 **ANTHROPIC. "Building Effective Agents".** Anthropic Engineering, dez. 2024. <https://www.anthropic.com/engineering/building-effective-agents>
@@ -179,7 +214,6 @@ Guia de referência do mercado para decidir entre workflow (código orquestra o 
 → Sessões 1 e 8.
 
 ---
-
 ### Anthropic — Choosing the Right Model (documentação)
 
 **ANTHROPIC. "Choosing the right model".** Claude Platform Docs, acessado em 22 out. 2026. <https://platform.claude.com/docs/en/about-claude/models/choosing-a-model>
@@ -189,7 +223,6 @@ Guia de escolha de modelo: critérios de capacidade, velocidade, custo e esforç
 → Sessão 8.
 
 ---
-
 ### Anthropic — Claude Code Security (documentação)
 
 **ANTHROPIC. "Security".** Claude Code Docs, acessado em 22 out. 2026. <https://code.claude.com/docs/en/security>
@@ -199,7 +232,6 @@ Documentação de segurança do Claude Code: modelo de permissões, isolamento d
 → Sessão 8.
 
 ---
-
 ### Anthropic — Code Execution with MCP (2025)
 
 **ANTHROPIC. "Code execution with MCP".** Anthropic Engineering, 2025. <https://www.anthropic.com/engineering/code-execution-with-mcp>
@@ -209,7 +241,15 @@ Caso em que carregar definições de ferramenta sob demanda, em vez de todas de 
 → Sessão 2.
 
 ---
+### Anthropic — Demystifying Evals for AI Agents (2026)
 
+**ANTHROPIC. "Demystifying evals for AI agents".** Anthropic Research, 9 jan. 2026. <https://www.anthropic.com/research/demystifying-evals-for-ai-agents>
+
+Orientação técnica do fornecedor sobre avaliação de agentes com casos típicos, exceções e ataques simulados, combinando verificações determinísticas, julgamento humano e avaliadores baseados em modelo calibrados por pessoas.
+
+→ Sessão 10.
+
+---
 ### Anthropic — Effective Context Engineering (2025)
 
 **ANTHROPIC. "Effective context engineering for AI agents".** Anthropic Engineering, set. 2025. <https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents>
@@ -219,7 +259,6 @@ Define context engineering como a evolução do prompt engineering: cuidar de tu
 → Sessão 2.
 
 ---
-
 ### Anthropic — Gerenciar plugins na organização (documentação do Claude Code)
 
 **ANTHROPIC. "Manage Claude Code plugins for your organization".** Claude Code Docs, acessado em 3 nov. 2026. <https://code.claude.com/docs/en/plugins/org.md>
@@ -229,7 +268,6 @@ As configurações gerenciadas definem quais plugins o Claude Code instala e per
 → Sessão 9.
 
 ---
-
 ### Anthropic — How We Built Our Multi-Agent Research System
 
 **ANTHROPIC. "How we built our multi-agent research system".** Anthropic Engineering. <https://www.anthropic.com/engineering/multi-agent-research-system>
@@ -239,7 +277,6 @@ Relato de engenharia sobre um sistema de pesquisa com vários agentes: o orquest
 → Sessão 8.
 
 ---
-
 ### Anthropic — Instalação e requisitos do Claude Code (documentação)
 
 **ANTHROPIC. "Advanced setup".** Claude Code Docs, acessado em 3 nov. 2026. <https://code.claude.com/docs/en/setup.md>
@@ -249,7 +286,15 @@ Lista como sistemas operacionais suportados macOS 13.0 ou superior, Windows 10 1
 → Sessão 9.
 
 ---
+### Anthropic — Introducing Claude Duet (2026)
 
+**ANTHROPIC. "Introducing Claude Duet".** Claude, 21 out. 2026. <https://claude.com/resources/articles/claude-duet>
+
+Anúncio do assistente proativo da Anthropic em prévia de pesquisa com lista de espera, que acompanha aplicativos conectados e trabalha numa máquina virtual própria. O anúncio traz depoimentos de testadores selecionados pelo fornecedor e reconhece que a versão inicial pode interpretar conversas incorretamente e calibrar mal a urgência.
+
+→ Sessão 10.
+
+---
 ### Anthropic — Introducing the Model Context Protocol (2024)
 
 **ANTHROPIC. "Introducing the Model Context Protocol".** Anthropic News, 25 nov. 2024. <https://www.anthropic.com/news/model-context-protocol>
@@ -259,7 +304,6 @@ Anúncio do MCP, protocolo aberto que resolve o problema M×N de integrações e
 → Sessão 2.
 
 ---
-
 ### Anthropic — Manage Costs Effectively (documentação do Claude Code)
 
 **ANTHROPIC. "Manage costs effectively".** Claude Code Docs, acessado em 22 out. 2026. <https://code.claude.com/docs/en/costs>
@@ -269,7 +313,6 @@ Guia de custo do Claude Code: média de cerca de US$ 13 por desenvolvedor por di
 → Sessão 8.
 
 ---
-
 ### Anthropic — Marketplaces de plugins no Claude Code (documentação)
 
 **ANTHROPIC. "Create a marketplace" e "Host and maintain a marketplace".** Claude Code Docs, acessados em 3 nov. 2026. <https://code.claude.com/docs/en/plugin-marketplaces> e <https://code.claude.com/docs/en/plugins/host-marketplace.md>
@@ -279,7 +322,6 @@ Um marketplace é um diretório ou repositório com `.claude-plugin/marketplace.
 → Sessão 9.
 
 ---
-
 ### Anthropic — Prompt Caching (documentação)
 
 **ANTHROPIC. "Prompt caching".** Claude Platform Docs, acessado em 22 out. 2026. <https://platform.claude.com/docs/en/build-with-claude/prompt-caching>
@@ -289,7 +331,15 @@ Documentação do cache de prompt: escrita de 5 minutos a 1,25 vez o preço-base
 → Sessão 8.
 
 ---
+### Anthropic — Scaling Managed Agents (2026)
 
+**ANTHROPIC. "Scaling Managed Agents: Decoupling the brain from the hands".** Anthropic Research, 8 abr. 2026. <https://www.anthropic.com/research/managed-agents>
+
+Descrição da arquitetura do Claude Managed Agents, que separa a sessão (registro de eventos), o arnês (condução das chamadas ao modelo e encaminhamento de ferramentas) e o *sandbox* (execução de código e manipulação de arquivos), com interfaces que permitem trocar cada componente. A documentação consultada indica o produto em beta.
+
+→ Sessão 10.
+
+---
 ### Anthropic — Skill Authoring Best Practices (documentação)
 
 **ANTHROPIC. "Skill authoring best practices".** Claude Platform Docs, acessado em 22 out. 2026. <https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices>
@@ -299,7 +349,6 @@ Guia de escrita de skills: contexto como recurso compartilhado, graus de liberda
 → Sessão 8.
 
 ---
-
 ### Anthropic — Skills no Claude Code (documentação)
 
 **ANTHROPIC. "Extend Claude with skills".** Claude Code Docs, acessado em 23 out. 2026. <https://code.claude.com/docs/en/skills>
@@ -309,17 +358,15 @@ Documentação das skills no Claude Code: arquivo `SKILL.md` com frontmatter YAM
 → Sessões 8 e 9.
 
 ---
-
 ### Anthropic — Steering Claude Code (2026)
 
 **ANTHROPIC. "Steering Claude Code".** Anthropic Blog, 2026. <https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more>
 
 Separa os mecanismos que guiam o modelo, como arquivos de contexto, dos que impõem comportamento, como hooks e permissões. Essa separação fundamenta a regra de que proteção real precisa ser determinística.
 
-→ Sessões 2, 10.
+→ Sessão 2.
 
 ---
-
 ### Anthropic — Subagents no Claude Code (documentação)
 
 **ANTHROPIC. "Create custom subagents".** Claude Code Docs, acessado em 22 out. 2026. <https://code.claude.com/docs/en/sub-agents>
@@ -329,7 +376,6 @@ Documentação dos subagentes do Claude Code: arquivo Markdown com frontmatter (
 → Sessão 8.
 
 ---
-
 ### Anthropic — Writing Effective Tools for Agents (2025)
 
 **ANTHROPIC. "Writing effective tools for agents".** Anthropic Engineering, 2025. <https://www.anthropic.com/engineering/writing-tools-for-agents>
@@ -339,7 +385,15 @@ Critério verificável para catálogo de ferramentas: se uma pessoa da engenhari
 → Sessão 2.
 
 ---
+### Arkhi — Computação agêntica para 2027 e além (2026)
 
+**ARKHI. "Computação agêntica para 2027 e além: tecnologias, casos reais e implicações para as empresas".** Relatório de pesquisa RF-2026-11, com corte em 10 nov. 2026. Material próprio, sem URL pública.
+
+Relatório que reúne as leituras de McKinsey, Gartner e Forrester, estudos empíricos, onze tendências para 2027 a 2030, assistentes pessoais proativos, casos relatados, arquitetura de referência, métricas de custo por resultado aceito e um plano de 90 dias, acompanhado de onze infográficos reproduzidos na Sessão 10. Classifica cada afirmação como evidência empírica, caso relatado, piloto, capacidade de produto, previsão ou hipótese. As fontes primárias citadas nas páginas da sessão estão listadas individualmente nesta bibliografia.
+
+→ Sessão 10.
+
+---
 ### Arkhi — Governança de IA na prática (2026)
 
 **ARKHI. "Governança de IA na prática".** Guia do facilitador, versão 1.0, nov. 2026. Material próprio adaptado, sem URL pública.
@@ -349,7 +403,24 @@ Guia de oficina de 120 minutos sobre governança de IA para desenvolvedores, Pro
 → Sessão 9.
 
 ---
+### AWS — Bedrock AgentCore Policy e Evaluations (2025)
 
+**AWS. "Amazon Bedrock AgentCore adds quality evaluations and policy controls for deploying trusted AI agents".** AWS News Blog, 2 dez. 2025, com disponibilidade geral em mar. 2026. <https://aws.amazon.com/blogs/aws/amazon-bedrock-agentcore-adds-quality-evaluations-and-policy-controls-for-deploying-trusted-ai-agents/>
+
+Anúncio de políticas executáveis e avaliações de qualidade aplicadas fora do modelo na plataforma de agentes da AWS, exemplo de controle externo ao prompt.
+
+→ Sessão 10.
+
+---
+### AWS — Cox Automotive (2026)
+
+**AWS. "How Cox Automotive launched AI agents at scale using Amazon Bedrock AgentCore".** Estudo de caso, data editorial não identificada, consultado em 10 nov. 2026. <https://aws.amazon.com/solutions/case-studies/cox-auto-case-study/>
+
+Caso relatado pelo fornecedor com 17 soluções agênticas em produção em menos de um ano, das quais a aplicação de Fleet Services permanecia em piloto.
+
+→ Sessão 10.
+
+---
 ### Bass, Clements e Kazman — Software Architecture in Practice (2021)
 
 **BASS, Len; CLEMENTS, Paul; KAZMAN, Rick. *Software Architecture in Practice*, 4ª ed.** Addison-Wesley (SEI Series in Software Engineering), 2021.
@@ -359,7 +430,6 @@ Referência canônica para o vocabulário de requisito arquiteturalmente signifi
 → Sessão 3.
 
 ---
-
 ### Beck — Test-Driven Development: By Example (2002)
 
 **BECK, Kent. *Test-Driven Development: By Example*. Addison-Wesley, 2002.**
@@ -369,7 +439,6 @@ O ciclo vermelho-verde-refatoração, adaptado neste workshop para o fluxo assis
 → Sessão 6.
 
 ---
-
 ### Beurer-Kellner et al. — Design Patterns for Securing LLM Agents (2025)
 
 **BEURER-KELLNER, Luca et al. *Design Patterns for Securing LLM Agents against Prompt Injections*.** arXiv:2506.08837, jun. 2025 (v3 de 27 jun. 2025). Versão consultada em 3 nov. 2026 na página do arXiv: <https://arxiv.org/abs/2506.08837>
@@ -379,17 +448,24 @@ Propõe padrões de projeto para agentes com resistência demonstrável à inje�
 → Sessão 9.
 
 ---
+### BMW Group — Robôs humanoides (2026)
 
+**BMW GROUP. "Leipzig debut: BMW Group introduces humanoid robots".** 21 set. 2026. <https://www.bmwgroup.com/en/news/general/2026/humanoid-robot-in-leipzig.html>
+
+Comunicado que inclui o relato do piloto em Spartanburg, em que o robô Figure 02 auxiliou a produção de mais de 30 mil BMW X3 em tarefas delimitadas de movimentação e posicionamento de componentes.
+
+→ Sessão 10.
+
+---
 ### Böckeler — Understanding Spec-Driven Development (2025)
 
 **BÖCKELER, Birgitta. "Understanding Spec-Driven Development: Kiro, spec-kit, and Tessl".** *martinfowler.com*, 15 out. 2025. <https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html>
 
-Comparação de três ferramentas de SDD que estabelece a taxonomia usada na Sessão 10 para distinguir graus de compromisso entre especificação e código: *spec-first* (a especificação orienta a primeira geração e pode ser abandonada depois), *spec-anchored* (especificação e código evoluem juntos, com reconciliação a cada mudança) e *spec-as-source* (a especificação é o artefato primário e o código é projeção regenerável). O argumento central é que ferramentas distintas não são equivalentes só porque todas produzem arquivos Markdown.
+Comparação de três ferramentas de SDD que estabelece uma taxonomia para distinguir graus de compromisso entre especificação e código: *spec-first* (a especificação orienta a primeira geração e pode ser abandonada depois), *spec-anchored* (especificação e código evoluem juntos, com reconciliação a cada mudança) e *spec-as-source* (a especificação é o artefato primário e o código é projeção regenerável). O argumento central é que ferramentas distintas não são equivalentes só porque todas produzem arquivos Markdown.
 
 → Sessões 5, 8.
 
 ---
-
 ### Boehm — Software Engineering Economics (1981)
 
 **BOEHM, Barry W. *Software Engineering Economics*.** Prentice-Hall, 1981.
@@ -399,7 +475,6 @@ Documentou empiricamente que o custo de corrigir um defeito cresce a cada fase d
 → Sessão 1.
 
 ---
-
 ### Brasil — Lei Geral de Proteção de Dados Pessoais (2018)
 
 **BRASIL. Lei nº 13.709, de 14 de agosto de 2018.** Lei Geral de Proteção de Dados Pessoais (LGPD). Planalto, consultada em 3 nov. 2026 (leitura parcial: os artigos 6º, 20 e 46 e a ementa). <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm>
@@ -409,7 +484,6 @@ Ementa: "Dispõe sobre a proteção de dados pessoais e altera a Lei nº 12.965,
 → Sessão 9.
 
 ---
-
 ### Brown et al. — Language Models are Few-Shot Learners (2020)
 
 **BROWN, Tom B. et al. *Language Models are Few-Shot Learners*.** NeurIPS, 2020. <https://arxiv.org/abs/2005.14165>
@@ -419,7 +493,6 @@ Demonstra que aumentar a escala de modelos de linguagem melhora substancialmente
 → Sessão 1.
 
 ---
-
 ### Brynjolfsson, Li e Raymond — Generative AI at Work (2025)
 
 **BRYNJOLFSSON, Erik, LI, Danielle e RAYMOND, Lindsey R. "Generative AI at Work".** *The Quarterly Journal of Economics*, v. 140, n. 2, p. 889-942, 2025. DOI: [10.1093/qje/qjae044](https://doi.org/10.1093/qje/qjae044)
@@ -429,7 +502,6 @@ O resumo publicado relata 5.172 agentes de atendimento, produtividade 15% maior,
 → Sessão 7.
 
 ---
-
 ### Câmara dos Deputados — PL 2338/2023 (ficha de tramitação)
 
 **CÂMARA DOS DEPUTADOS. "PL 2338/2023 — Dispõe sobre o desenvolvimento, o fomento e o uso ético e responsável da inteligência artificial".** Ficha de tramitação, consultada em 3 nov. 2026 (leitura parcial: cerca de 100 mil dos 274 mil caracteres da página). <https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2487262>
@@ -439,7 +511,6 @@ Na consulta de 3 nov. 2026 a ficha exibe a situação "Aguardando Parecer do(a) 
 → Sessão 9.
 
 ---
-
 ### Chen et al. — Codex e HumanEval (2021)
 
 **CHEN, Mark et al. *Evaluating Large Language Models Trained on Code*.** arXiv:2107.03374, 2021. <https://arxiv.org/abs/2107.03374>
@@ -449,7 +520,6 @@ Apresenta Codex, versão do GPT ajustada em código do GitHub, com foco em sínt
 → Sessão 1.
 
 ---
-
 ### Chikofsky e Cross — Reverse Engineering and Design Recovery (1990)
 
 **CHIKOFSKY, Elliot J.; CROSS II, James H. "Reverse Engineering and Design Recovery: A Taxonomy".** *IEEE Software*, v. 7, n. 1, p. 13-17, jan. 1990. DOI: [10.1109/52.43044](https://doi.org/10.1109/52.43044)
@@ -459,7 +529,6 @@ Taxonomia que define e relaciona seis termos da manutenção de software: engenh
 → Sessão 4.
 
 ---
-
 ### Cihan et al. — Automated Code Review In Practice (2025)
 
 **CIHAN, Umut et al. *Automated Code Review In Practice*.** ICSE 2025, trilha Software Engineering in Practice, arXiv:2412.18531. <https://arxiv.org/abs/2412.18531>
@@ -469,7 +538,6 @@ Estudo industrial de uma ferramenta de revisão automatizada de código. O resum
 → Sessão 7.
 
 ---
-
 ### Claessen e Hughes — QuickCheck (2000)
 
 **CLAESSEN, Koen e HUGHES, John. "QuickCheck: A Lightweight Tool for Random Testing of Haskell Programs".** ICFP 2000, p. 268-279. DOI: [10.1145/351240.351266](https://doi.org/10.1145/351240.351266)
@@ -479,7 +547,15 @@ Apresenta o QuickCheck, origem do teste de propriedade. A seção 5.1.4, "A Fals
 → Sessão 7.
 
 ---
+### Cognition — Devin em São Paulo (2026)
 
+**COGNITION. "Building the future of software engineering in Latin America".** 22 set. 2026. <https://cognition.com/blog/devin-comes-to-sao-paulo>
+
+Relato do fornecedor que inclui o uso do Devin em mais de 75% dos times de tecnologia do Itaú e aumento de 20 a 30% no *throughput* de engenharia, sem experimento causal público na página.
+
+→ Sessão 10.
+
+---
 ### Coleman et al. — The Kanban Guide (2025)
 
 **COLEMAN, John, VACANTI, Daniel, JOHNSON, Colleen et al. *The Kanban Guide*.** kanbanguides.org, maio 2025. <https://kanbanguides.org/english/>
@@ -489,7 +565,6 @@ Define quatro métricas de fluxo, que são o trabalho em andamento, a vazão, a 
 → Sessão 7.
 
 ---
-
 ### Cucumber — Gherkin Reference
 
 **CUCUMBER. *Gherkin Reference*.** Documentação oficial. <https://cucumber.io/docs/gherkin/reference/>
@@ -499,7 +574,6 @@ Referência da sintaxe do Gherkin, usada para escrever critérios de aceite como
 → Sessões 7 e 9.
 
 ---
-
 ### Datacurve — DeepSWE Leaderboard
 
 **DATACURVE. *DeepSWE Leaderboard*.** Publicado em benchlm.ai. <https://benchlm.ai/benchmarks/deepswe>
@@ -509,7 +583,6 @@ Leitura independente de modelos em 113 tarefas de engenharia de software de long
 → Sessões 1, 2.
 
 ---
-
 ### Decision Model and Notation (DMN)
 
 **OMG. *Decision Model and Notation (DMN)*, versão 1.5.** Object Management Group, ago. 2024. <https://www.omg.org/spec/DMN/>
@@ -519,7 +592,6 @@ Padrão para representar regras condicionais como tabelas de decisão, complemen
 → Sessões 4 e 7.
 
 ---
-
 ### Delimarsky — Spec-Driven Development with AI (2025)
 
 **DELIMARSKY, Den. "Spec-driven development with AI: Get started with a new open source toolkit".** *The GitHub Blog*, 2 set. 2025. <https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/>
@@ -529,7 +601,6 @@ Post oficial de lançamento do GitHub Spec Kit. Define o problema do vibe coding
 → Sessões 1, 3, 5, 8.
 
 ---
-
 ### Dell'Acqua et al. — Navigating the Jagged Technological Frontier (2026)
 
 **DELL'ACQUA, Fabrizio et al. "Navigating the Jagged Technological Frontier".** *Organization Science*, v. 37, n. 2, p. 403-423, mar. 2026. DOI: [10.1287/orsc.2025.21838](https://doi.org/10.1287/orsc.2025.21838). Versão anterior: HBS Working Paper 24-013.
@@ -539,7 +610,6 @@ O resumo da editora, obtido pelo Crossref, relata 758 profissionais e 18 tarefas
 → Sessão 7.
 
 ---
-
 ### Derby e Larsen — Agile Retrospectives (2006)
 
 **DERBY, Esther e LARSEN, Diana. *Agile Retrospectives: Making Good Teams Great*.** Pragmatic Bookshelf, jul. 2006. <https://pragprog.com/titles/dlret/agile-retrospectives/>
@@ -549,7 +619,6 @@ Trata as retrospectivas como prática ao longo do projeto e não só ao final, p
 → Sessão 7.
 
 ---
-
 ### Diggs et al. — LLMs for Legacy Code Documentation (2024)
 
 **DIGGS, Colin et al. *Leveraging LLMs for Legacy Code Modernization: Challenges and Opportunities for LLM-Generated Documentation*.** arXiv:2411.14971, nov. 2024. Versão resumida submetida ao workshop LLM4Code 2025, colocalizado com o ICSE 2025. <https://arxiv.org/abs/2411.14971>
@@ -559,7 +628,6 @@ Estudo empírico com quatro modelos (Claude 3.0 Sonnet, Llama 3 Instruct 70B, Mi
 → Sessões 4 e 7.
 
 ---
-
 ### fast-check e FsCheck — Property-Based Testing
 
 **fast-check** (JavaScript/TypeScript) e **FsCheck** (.NET) — bibliotecas de referência para testes baseados em propriedade.
@@ -567,7 +635,6 @@ Estudo empírico com quatro modelos (Claude 3.0 Sonnet, Llama 3 Instruct 70B, Mi
 → Sessão 7.
 
 ---
-
 ### Feathers — Working Effectively with Legacy Code (2004)
 
 **FEATHERS, Michael C. *Working Effectively with Legacy Code*.** Prentice Hall, 2004. ISBN 978-0-13-117705-5.
@@ -577,17 +644,6 @@ Referência para a manutenção de código sem testes. Cunha o termo *characteri
 → Sessão 4.
 
 ---
-
-### Fission-AI — OpenSpec
-
-**FISSION-AI. *OpenSpec*.** Repositório de software. <https://github.com/Fission-AI/OpenSpec>
-
-Ferramenta de SDD que usa a mudança individual como unidade de trabalho: um espaço descreve o comportamento atual do sistema e outro contém uma pasta por mudança proposta, com proposta, especificação-delta, design e tarefas. O arquivamento incorpora o delta à especificação principal e preserva o histórico da mudança. Serve na Sessão 10 como contraste ao Spec Kit, por operar sem uma camada de princípios de projeto acima das mudanças individuais.
-
-→ Sessão 10.
-
----
-
 ### Ford, Parsons, Kua e Sadalage — Building Evolutionary Architectures (2023)
 
 **FORD, Neal; PARSONS, Rebecca; KUA, Patrick; SADALAGE, Pramod. *Building Evolutionary Architectures: Automated Software Governance*, 2ª ed.** O'Reilly Media, 2023.
@@ -597,7 +653,51 @@ Origem do termo função de aptidão arquitetural (*architectural fitness functi
 → Sessão 3.
 
 ---
+### Forrester — Predictions 2027 (2026)
 
+**FORRESTER. "Predictions 2027: Artificial Intelligence".** 14 out. 2026. <https://www.forrester.com/report/predictions-2027-artificial-intelligence/RES202186>. Complementado por "Predictions 2027: Disruption Unleashed", 21 out. 2026. <https://www.forrester.com/blogs/predictions-2027-disruption-unleashed/>
+
+Previsões de analista para 2027, consultadas pelos resumos e comentários públicos: contexto e adaptação do modelo operacional como barreiras, IA com 20% dos gastos de tecnologia de negócios e apenas uma em quatro iniciativas de camada de contexto sustentando agentes em produção.
+
+→ Sessão 10.
+
+---
+### Forrester — The State of Agentic AI (2026)
+
+**FORRESTER. "The State of Agentic AI, 2026".** 29 maio 2026. <https://www.forrester.com/report/the-state-of-agentic-ai-2026/RES196198>
+
+Relatório comercial consultado pelo resumo público e pelo comentário dos analistas de 3 jun. 2026, que associa a dificuldade de escalar agentes à orquestração, à governança executável e à identidade não humana.
+
+→ Sessão 10.
+
+---
+### Gartner — Mastering Agentic AI (2026)
+
+**GARTNER. "Mastering Agentic AI: Multimillion-Dollar ROI Lessons".** 10 set. 2026. <https://www.gartner.com/en/articles/agentic-ai-roi>
+
+Análise de 107 exemplos públicos com a previsão de que agentes especializados responderão por 80% do retorno tangível até 2028.
+
+→ Sessão 10.
+
+---
+### Gartner — Previsão de cancelamento de projetos agênticos (2025)
+
+**GARTNER. "Gartner predicts over 40% of agentic AI projects will be canceled by end of 2027".** Comunicado, 25 jun. 2025. <https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027>
+
+Previsão de analista que associa o cancelamento de projetos agênticos a custos, valor indefinido e controles insuficientes.
+
+→ Sessão 10.
+
+---
+### Gartner — Top Strategic Technology Trends for 2027 (2026)
+
+**GARTNER. "Gartner identifies the top strategic technology trends for 2027".** Comunicado, 20 out. 2026. <https://www.gartner.com/en/newsroom/press-releases/2026-10-20-gartner-identifies-the-top-strategic-technology-trends-for-2027>
+
+Lista de tendências que destaca *AI context platforms*, *AI coding agent harness*, *AI agent identity* e *disposable applications*, colocando contexto, execução e autorização entre as capacidades de plataforma.
+
+→ Sessão 10.
+
+---
 ### Gibbons — Journey Mapping 101 (2018)
 
 **GIBBONS, Sarah. "Journey Mapping 101".** Nielsen Norman Group, 9 dez. 2018, revisado em 15 jul. 2026. <https://www.nngroup.com/articles/journey-mapping-101/>
@@ -607,7 +707,6 @@ Descreve os componentes de um mapa de jornada. Afirma que as ações do ator no 
 → Sessão 7.
 
 ---
-
 ### GitHub Spec Kit
 
 **GitHub Spec Kit.** Implementação de referência open source do Spec-Driven Development (SDD), com mais de 90 mil estrelas no GitHub. Define os quatro artefatos canônicos (`constitution.md`, `spec.md`, `plan.md`, `tasks.md`) e os comandos `/specify`, `/plan`, `/tasks`, compatíveis com Claude Code, GitHub Copilot e Cursor. O modelo de especificação (`spec-template.md`) numera cada requisito funcional com prefixo `FR-001`, `FR-002` etc., em frases no padrão "o sistema deve...", e não reserva uma seção separada para requisito não funcional.
@@ -617,7 +716,6 @@ As Sessões 5 e 6 usam a versão 1.1.1, de 6 out. 2026 (<https://github.com/gith
 → Sessões 3, 5, 6, 8.
 
 ---
-
 ### GitHub — Managing Your Personal Access Tokens (documentação)
 
 **GITHUB. "Managing your personal access tokens".** GitHub Docs, acessado em 22 out. 2026. <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens>
@@ -627,7 +725,33 @@ Documentação dos tokens de acesso pessoal do GitHub: recomendação de tokens 
 → Sessão 8.
 
 ---
+### Google Cloud — Gemini at Work (2026)
 
+**GOOGLE CLOUD. "Welcome to Gemini at Work 2026: Introducing the Gemini Agent".** 8 out. 2026. <https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026>
+
+Relato do fornecedor que inclui o caso Bradesco, com redução da revisão documental de uma hora para cinco minutos num fluxo de análise fiscal, contábil e contratual.
+
+→ Sessão 10.
+
+---
+### Google DeepMind — Co-Scientist (2026)
+
+**GOOGLE DEEPMIND. "Co-Scientist: a multi-agent AI partner to accelerate research".** 19 maio 2026. <https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research/>
+
+Sistema com múltiplos agentes para gerar e refinar hipóteses científicas, com pesquisa publicada na Nature e acesso experimental anunciado. As hipóteses dependem de validação em laboratório.
+
+→ Sessão 10.
+
+---
+### Google Research — Towards a Science of Scaling Agent Systems (2026)
+
+**GOOGLE RESEARCH. "Towards a science of scaling agent systems: when and why agent systems work".** 28 jan. 2026. <https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/>
+
+Avaliação de 180 configurações de sistemas de agentes que encontrou benefício de coordenação em tarefas paralelizáveis e degradação em tarefas predominantemente sequenciais, com resultados dependentes da arquitetura e dos *benchmarks*.
+
+→ Sessão 10.
+
+---
 ### Greshake et al. — Indirect Prompt Injection (2023)
 
 **GRESHAKE, Kai et al. *Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection*.** arXiv:2302.12173, fev. 2023 (v2 de 5 maio 2023). Versão consultada em 3 nov. 2026 na página do arXiv: <https://arxiv.org/abs/2302.12173>
@@ -637,17 +761,6 @@ Mostra que aplicações integradas a LLMs apagam a fronteira entre dado e instru
 → Sessão 9.
 
 ---
-
-### gszhangwei — OpenSPDD
-
-**GSZHANGWEI. *OpenSPDD: A SPDD AI coding assistant command template manager*.** Repositório de software. <https://github.com/gszhangwei/open-spdd>
-
-Implementação de referência da comunidade para o método SPDD, com os comandos que materializam o fluxo: analisar requisitos e código existente, produzir o Painel REASONS, gerar a implementação e sincronizar de volta as alterações feitas no código. A distinção que o projeto faz entre plano e Painel é a citada na Sessão 10: o plano diz o que fazer, e o Painel especifica como fazer. O projeto é de terceiros e não tem vínculo com a Thoughtworks.
-
-→ Sessão 10.
-
----
-
 ### Harman et al. — Mutation-Guided LLM Test Generation at Meta (2025)
 
 **HARMAN, Mark, RITCHEY, Jillian, HARPER, Inna, SENGUPTA, Shubho, MAO, Ke e GULATI, Abhishek. *Mutation-Guided LLM-based Test Generation at Meta*.** FSE Companion 2025, p. 180-191. DOI: [10.1145/3696630.3728544](https://doi.org/10.1145/3696630.3728544). Preprint: arXiv:2501.12862.
@@ -657,7 +770,6 @@ No preprint, que foi lido, 10.795 classes Kotlin geraram 9.095 mutantes e 571 te
 → Sessão 7.
 
 ---
-
 ### Hunt e Thomas — Software Archaeology (2002)
 
 **HUNT, Andy; THOMAS, Dave. "Software Archaeology".** *IEEE Software*, v. 19, n. 2, p. 20-22, mar./abr. 2002. DOI: [10.1109/52.991327](https://doi.org/10.1109/52.991327)
@@ -667,7 +779,6 @@ Coluna da série dos autores na *IEEE Software* que desenvolve a analogia entre 
 → Sessão 4.
 
 ---
-
 ### ISO/IEC 42001:2023
 
 **ISO/IEC. *Information technology — Artificial intelligence — Management system*, 42001:2023.** Edição 1.0, publicada em 18 dez. 2023. Página da IEC Webstore consultada em 3 nov. 2026. <https://webstore.iec.ch/publication/90574>. Página da ISO: <https://www.iso.org/standard/42001>
@@ -677,7 +788,6 @@ Norma de sistema de gestão preparada pelo ISO/IEC JTC 1/SC 42. Segundo a págin
 → Sessão 9.
 
 ---
-
 ### ISO/IEC/IEEE 29148:2018
 
 **ISO/IEC/IEEE. *Systems and software engineering — Life cycle processes — Requirements engineering*, 29148:2018.** <https://www.iso.org/standard/72089.html>
@@ -687,7 +797,6 @@ Norma internacional de engenharia de requisitos, sucessora do IEEE 830. Distingu
 → Sessões 3 e 7.
 
 ---
-
 ### ISTQB — Certified Tester Foundation Level Syllabus v4.0.1 (2024)
 
 **ISTQB. *Certified Tester Foundation Level Syllabus*, v4.0.1.** 15 set. 2024. <https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf>
@@ -697,7 +806,6 @@ A seção 4.2.1 trata da partição de equivalência e a seção 4.2.2, da anál
 → Sessão 7.
 
 ---
-
 ### Jimenez et al. — SWE-bench (2024)
 
 **JIMENEZ, Carlos E. et al. *SWE-bench: Can Language Models Resolve Real-World GitHub Issues?*.** ICLR, 2024. <https://arxiv.org/abs/2310.06770>
@@ -707,7 +815,6 @@ Apresenta SWE-bench, benchmark contendo 2.294 problemas reais de engenharia de s
 → Sessões 1 e 7.
 
 ---
-
 ### Karpathy — Software 2.0 (2017)
 
 **KARPATHY, Andrej. "Software 2.0".** Medium, nov. 2017. <https://karpathy.medium.com/software-2-0-a64152b37c35>
@@ -717,7 +824,6 @@ Ensaio precursor da tese de Software 3.0: uma rede neural treinada é compilada 
 → Sessão 1.
 
 ---
-
 ### Karpathy — Software Is Changing Again (2025)
 
 **KARPATHY, Andrej. *Software Is Changing (Again)*.** Palestra, YC AI Startup School, 17 jun. 2025. Recapitulação: Latent Space, <https://www.latent.space/p/s3>
@@ -727,7 +833,6 @@ Formulação dos três paradigmas coexistentes: Software 1.0 (código explícito
 → Sessão 1.
 
 ---
-
 ### Kwa et al. — Measuring AI Ability to Complete Long Software Tasks (2025)
 
 **KWA, Thomas; WEST, Ben; BECKER, Joel et al. *Measuring AI Ability to Complete Long Software Tasks*.** METR, arXiv:2503.14499, 18 mar. 2025. <https://arxiv.org/abs/2503.14499>
@@ -737,7 +842,6 @@ Propõe medir a capacidade de um agente pelo horizonte de tarefa de 50%: o tempo
 → Sessão 5.
 
 ---
-
 ### Lee et al. — Impact of Generative AI on Critical Thinking (2025)
 
 **LEE, Hao-Ping (Hank), SARKAR, Advait, TANKELEVITCH, Lev, DROSOS, Ian, RINTEL, Sean, BANKS, Richard e WILSON, Nicholas. "The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers".** CHI 2025, artigo 1121. DOI: [10.1145/3706598.3713778](https://doi.org/10.1145/3706598.3713778)
@@ -747,7 +851,6 @@ Pesquisa com 319 trabalhadores do conhecimento e 936 exemplos de uso de IA gener
 → Sessão 7.
 
 ---
-
 ### Lei Complementar 214/2025 — IBS, CBS e Imposto Seletivo
 
 **BRASIL. *Lei Complementar nº 214, de 16 de janeiro de 2025: texto compilado*.** Presidência da República, com alterações posteriores, inclusive da Lei Complementar nº 227/2026. <https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214compilado.htm>. Acesso em: 29 set. 2026.
@@ -757,7 +860,6 @@ Institui IBS, CBS e Imposto Seletivo. Os arts. 112, 113, 116, 117, 118 e 124, re
 → Sessão 4.
 
 ---
-
 ### Little — A Proof for the Queuing Formula (1961)
 
 **LITTLE, John D. C. "A Proof for the Queuing Formula: L = λW".** *Operations Research*, v. 9, n. 3, p. 383-387, 1961. DOI: [10.1287/opre.9.3.383](https://doi.org/10.1287/opre.9.3.383)
@@ -767,7 +869,6 @@ Demonstra a fórmula L = λW, que relaciona o número médio de itens num sistem
 → Sessão 7.
 
 ---
-
 ### Luo et al. — An Empirical Analysis of Flaky Tests (2014)
 
 **LUO, Qingzhou, HARIRI, Farah, ELOUSSI, Lamyaa e MARINOV, Darko. "An Empirical Analysis of Flaky Tests".** FSE 2014, p. 643-653. DOI: [10.1145/2635868.2635920](https://doi.org/10.1145/2635868.2635920)
@@ -777,15 +878,6 @@ Analisa 201 commits de correção em 51 projetos. Espera assíncrona, concorrên
 → Sessão 7.
 
 ---
-
-### MADR — Markdown Architectural Decision Records v4
-
-**MADR (Markdown Architectural Decision Records) v4.** Template leve para registro de decisões arquiteturais — contexto, opções consideradas, decisão, consequências.
-
-→ Sessão 10.
-
----
-
 ### Magesh et al. — Hallucination-Free? (2025)
 
 **MAGESH, Varun et al. "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools".** *Journal of Empirical Legal Studies*, v. 22, n. 2, p. 216-242, 2025. DOI: [10.1111/jels.12413](https://doi.org/10.1111/jels.12413). Versão preliminar de maio de 2024 consultada em 3 nov. 2026 na página do arXiv: <https://arxiv.org/abs/2405.20362>
@@ -795,7 +887,6 @@ Primeira avaliação empírica pré-registrada de ferramentas de pesquisa juríd
 → Sessão 9.
 
 ---
-
 ### Mathews e Nagappan — Test-Driven Development and LLM-based Code Generation (2024)
 
 **MATHEWS, Noble Saji; NAGAPPAN, Meiyappan. "Test-Driven Development and LLM-based Code Generation".** *Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering (ASE 2024)*, p. 1583-1594, out. 2024. DOI 10.1145/3691620.3695527. Preprint com o título "Test-Driven Development for Code Generation": <https://arxiv.org/abs/2402.13521>.
@@ -805,7 +896,24 @@ Avalia o efeito de fornecer os casos de teste junto com o enunciado do problema 
 → Sessão 6.
 
 ---
+### McKinsey — The State of AI in 2026 (2026)
 
+**MCKINSEY. "The State of AI in 2026: On the Road to ROI".** 25 ago. 2026. <https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai>
+
+Pesquisa com 1.719 participantes de 97 países, coletada entre maio e junho de 2026: 40% dos respondentes de organizações com receita acima de US$ 1 bilhão relatam escalar agentes em uma ou mais funções, contra 22% nas menores, e 32% relatam desistir de comprar um produto ou funcionalidade por construí-lo com agentes de código. São respostas declaradas, sem auditoria das implantações.
+
+→ Sessão 10.
+
+---
+### McKinsey — Where AI Agents Pay Off (2026)
+
+**MCKINSEY / QUANTUMBLACK. "Where AI agents pay off: a practical guide to the economics of agentic workflows".** 24 ago. 2026. <https://www.mckinsey.com/capabilities/quantumblack/our-insights/where-ai-agents-pay-off-a-practical-guide-to-the-economics-of-agentic-workflows>
+
+Análise da economia de fluxos agênticos centrada no custo integral do trabalho concluído, incluindo supervisão e reutilização, base da métrica de custo por resultado aceito.
+
+→ Sessão 10.
+
+---
 ### Mendes — Controle e Autonomia (Módulo 4, Agentes)
 
 **MENDES, Marco. "Controle e Autonomia".** *Arquitetura de Soluções com IA Generativa*, Módulo 4 — Agentes. <https://aulas-marco.github.io/arquitetura-solucoes-ia-generativa/modulo-4-agentes/controle-e-autonomia/>
@@ -815,7 +923,6 @@ Material da disciplina de pós-graduação que fundamenta a distinção entre wo
 → Sessões 1 e 9.
 
 ---
-
 ### Meszaros — xUnit Test Patterns (2007)
 
 **MESZAROS, Gerard. *xUnit Test Patterns: Refactoring Test Code*. Addison-Wesley, 2007.**
@@ -825,7 +932,24 @@ Referência canônica em padrões de teste. Cataloga 60+ padrões para escrever 
 → Sessão 6.
 
 ---
+### Meta — Introducing Muse (2026)
 
+**META. "Introducing Muse: the world's first personal AI agent built for everyone".** 8 set. 2026, atualizado em 30 set. 2026. <https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/>
+
+Anúncio do assistente pessoal da Meta, com entrada pelo WhatsApp e computador dedicado na nuvem, distribuído inicialmente nos Estados Unidos. A descrição técnica dos controles, com o componente Sentinel separado do agente principal, está em "How we built safety into Muse", Meta AI Research, 8 set. 2026.
+
+→ Sessão 10.
+
+---
+### METR — Clarifying Limitations of Time Horizon (2026)
+
+**METR. "Clarifying limitations of time horizon".** 22 jan. 2026. <https://metr.org/notes/2026-01-22-time-horizon-limitations/>
+
+Nota metodológica segundo a qual um horizonte de tarefa medido a 50% de sucesso não indica que um agente receba com confiabilidade operacional qualquer trabalho daquela duração.
+
+→ Sessão 10.
+
+---
 ### METR — Experienced Developer Productivity (2025)
 
 **METR. *Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity*.** jul. 2025. <https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/>
@@ -835,7 +959,33 @@ Experimento randomizado com 16 desenvolvedores experientes (cerca de 5 anos de t
 → Sessões 1 e 7.
 
 ---
+### METR — Mudança no desenho do experimento de produtividade (2026)
 
+**METR. "We are changing our developer productivity experiment design".** 24 fev. 2026. <https://metr.org/blog/2026-02-24-uplift-update/>
+
+Atualização metodológica que registra efeitos de seleção e dificuldades de medição na nova rodada do experimento e limita o resultado de 2025 a desenvolvedores experientes, repositórios conhecidos e ferramentas do início de 2025.
+
+→ Sessão 10.
+
+---
+### Microsoft — Ask Microsoft com Copilot Studio (2026)
+
+**MICROSOFT. "Microsoft uses Copilot Studio to reshape customer experience and drive higher engagement".** 27 fev. 2026. <https://www.microsoft.com/en/customers/story/26166-microsoft-microsoft-copilot-studio/>
+
+Caso do próprio fornecedor em que o Ask Microsoft usa subagentes especializados, com até 61% menos latência e até 70% menos escalonamentos humanos frente à solução anterior.
+
+→ Sessão 10.
+
+---
+### Microsoft — Entra Agent ID (documentação)
+
+**MICROSOFT. "What is Microsoft Entra Agent ID?".** Microsoft Learn, atualizado em 24 jun. 2026. <https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id>
+
+Documentação de identidade e autorização para agentes, com proprietário, escopo de acesso e ciclo de vida explícitos.
+
+→ Sessão 10.
+
+---
 ### Microsoft — Use Personal Access Tokens in Azure DevOps (documentação)
 
 **MICROSOFT. "Use personal access tokens".** Microsoft Learn, atualizada em 21 set. 2026, acessada em 22 out. 2026. <https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate>
@@ -845,7 +995,6 @@ Documentação dos PATs do Azure DevOps: o PAT funciona como senha alternativa e
 → Sessão 8.
 
 ---
-
 ### Miranda et al. — Monte Carlo para Prever Projetos de Software (2021)
 
 **MIRANDA, Pedro, FARIA, J. Pascoal, CORREIA, Filipe F., FARES, Ahmed, GRAÇA, Ricardo e MOREIRA, João Mendes. "An analysis of Monte Carlo simulations for forecasting software projects".** *Proceedings of the 36th ACM Symposium on Applied Computing (SAC 2021)*, p. 1550-1558. DOI: [10.1145/3412841.3442030](https://doi.org/10.1145/3412841.3442030)
@@ -855,7 +1004,6 @@ Analisa simulações de Monte Carlo na previsão de projetos de software, confor
 → Sessão 7.
 
 ---
-
 ### NIST — AI 600-1: Generative Artificial Intelligence Profile (2024)
 
 **NIST. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile*, NIST AI 600-1.** National Institute of Standards and Technology, jul. 2024, aprovado pelo Editorial Review Board em 25/07/2024. Lido em 3 nov. 2026. <https://doi.org/10.6028/NIST.AI.600-1>
@@ -865,7 +1013,15 @@ Descreve-se como perfil transversal e recurso complementar do AI RMF 1.0 para IA
 → Sessão 9.
 
 ---
+### NIST — AI Agent Standards Initiative (2026)
 
+**NIST / CAISI. "Announcing the AI Agent Standards Initiative for interoperable and secure innovation".** 17 fev. 2026. <https://www.nist.gov/news-events/news/2026/02/announcing-ai-agent-standards-initiative-interoperable-and-secure>
+
+Iniciativa de padronização para agentes de IA voltada a interoperabilidade e segurança, que não equivale a uma certificação de agentes.
+
+→ Sessão 10.
+
+---
 ### NIST — AI Risk Management Framework 1.0, Core (2023)
 
 **NIST. "AI RMF Core".** *AI Risk Management Framework 1.0*, jan. 2023. AIRC (NIST), consultada em 3 nov. 2026. <https://airc.nist.gov/airmf-resources/airmf/5-sec-core/>
@@ -875,7 +1031,6 @@ O Core se compõe de quatro funções: govern, map, measure e manage. A página 
 → Sessão 9.
 
 ---
-
 ### Noy e Zhang — Productivity Effects of Generative AI (2023)
 
 **NOY, Shakked e ZHANG, Whitney. "Experimental evidence on the productivity effects of generative artificial intelligence".** *Science*, v. 381, n. 6654, p. 187-192, 14 jul. 2023. DOI: [10.1126/science.adh2586](https://doi.org/10.1126/science.adh2586)
@@ -885,7 +1040,15 @@ O resumo publicado relata 453 profissionais, redução de 40% no tempo e aumento
 → Sessão 7.
 
 ---
+### Nubank — When AI Skills Become Supply-Chain Dependencies (2026)
 
+**NUBANK. "When AI skills become supply-chain dependencies".** Building Nubank, 2 set. 2026. <https://building.nubank.com/when-ai-skills-become-supply-chain-dependencies-2/>
+
+Relato técnico do banco sobre a revisão de mais de 2.000 skills com o Skill Vetter antes da distribuição, combinando análise determinística e análise por modelo.
+
+→ Sessão 10.
+
+---
 ### Olewicki et al. — Impact of LLM-based Review Comment Generation (2024)
 
 **OLEWICKI, Doriane et al. *Impact of LLM-based Review Comment Generation in Practice: A Mixed Open-/Closed-source User Study*.** arXiv:2411.07091, nov. 2024 (preprint). <https://arxiv.org/abs/2411.07091>
@@ -895,7 +1058,6 @@ Estudo com a ferramenta RevMate em mais de 587 revisões de patches na Mozilla e
 → Sessão 7.
 
 ---
-
 ### OMG — BPMN 2.0.2 (2014)
 
 **OMG. *Business Process Model and Notation (BPMN)*, versão 2.0.2.** Object Management Group, jan. 2014. <https://www.omg.org/spec/BPMN/2.0.2/About-BPMN>
@@ -905,7 +1067,6 @@ Especificação da notação de modelagem de processos de negócio. Segundo a p�
 → Sessão 7.
 
 ---
-
 ### OMG — Semantics of Business Vocabulary and Business Rules
 
 **OMG. *Semantics of Business Vocabulary and Business Rules (SBVR)*, versão 1.5.** Object Management Group, dez. 2019. <https://www.omg.org/spec/SBVR/1.5/About-SBVR/>
@@ -915,7 +1076,6 @@ Especificação para vocabulário de negócio e regras formais, usada como base 
 → Sessões 4 e 7.
 
 ---
-
 ### OpenAI — Codex: Agent Approvals and Security (documentação)
 
 **OPENAI. "Agent approvals & security".** Codex Docs, acessado em 23 out. 2026. <https://learn.chatgpt.com/docs/agent-approvals-security>
@@ -925,7 +1085,6 @@ Aprovações e sandbox do Codex CLI: o `sandbox_mode` com os valores `read-only`
 → Sessão 8.
 
 ---
-
 ### OpenAI — Codex: AGENTS.md (documentação)
 
 **OPENAI. "Custom instructions with AGENTS.md".** Codex Docs, acessado em 23 out. 2026. <https://learn.chatgpt.com/docs/agent-configuration/agents-md>
@@ -935,7 +1094,6 @@ Documentação do `AGENTS.md` no Codex CLI: busca da raiz do projeto até o dire
 → Sessão 8.
 
 ---
-
 ### OpenAI — Codex: Build Plugins (documentação)
 
 **OPENAI. "Build plugins".** Codex Docs, acessado em 3 nov. 2026. <https://developers.openai.com/codex/plugins/build.md>
@@ -945,7 +1103,6 @@ Descreve a distribuição de skills do Codex por plugins, em que um marketplace 
 → Sessão 9.
 
 ---
-
 ### OpenAI — Codex: Build Skills (documentação)
 
 **OPENAI. "Build skills".** Codex Docs, acessado em 23 out. 2026. <https://learn.chatgpt.com/docs/build-skills>
@@ -955,7 +1112,6 @@ Documentação das skills no Codex CLI: diretório com `SKILL.md` descoberto em 
 → Sessão 8.
 
 ---
-
 ### OpenAI — Codex: Configuration Reference (documentação)
 
 **OPENAI. "Configuration Reference".** Codex Docs, acessado em 23 out. 2026. <https://learn.chatgpt.com/docs/config-file/config-reference>
@@ -965,7 +1121,6 @@ Referência de configuração do Codex CLI: `model` e `model_reasoning_effort`, 
 → Sessão 8.
 
 ---
-
 ### OpenAI — Codex: Developer Commands (documentação)
 
 **OPENAI. "Developer commands".** Codex Docs, acessado em 23 out. 2026. <https://learn.chatgpt.com/docs/developer-commands>
@@ -975,7 +1130,6 @@ Comandos do Codex CLI: `/skills` para listar e usar skills, `/subagents` para al
 → Sessão 8.
 
 ---
-
 ### OpenAI — Codex: Subagents (documentação)
 
 **OPENAI. "Subagents".** Codex Docs, acessado em 23 out. 2026. <https://learn.chatgpt.com/docs/agent-configuration/subagents>
@@ -985,7 +1139,15 @@ Documentação dos subagentes no Codex CLI: agentes customizados em arquivos TOM
 → Sessão 8.
 
 ---
+### OpenAI — Introducing dots (2026)
 
+**OPENAI. "Introducing dots".** 29 set. 2026, atualizado em 3 nov. 2026. <https://openai.com/index/introducing-dots/>
+
+Anúncio do assistente com responsabilidade contínua dentro do ChatGPT, em que cada dot tem computador na nuvem. Distingue a pesquisa proativa em segundo plano, restrita a ferramentas de leitura, das ações que alteram sistemas, submetidas a regras e revisão.
+
+→ Sessão 10.
+
+---
 ### Osmani — Agent Harness Engineering (2026)
 
 **OSMANI, Addy. "Agent Harness Engineering".** Blog pessoal, 2026. <https://addyosmani.com/blog/agent-harness-engineering/>
@@ -995,7 +1157,15 @@ Síntese prática do mesmo achado: um modelo mediano dentro de um bom arnês sup
 → Sessão 2.
 
 ---
+### OWASP — Top 10 for Agentic Applications 2026
 
+**OWASP GENAI SECURITY PROJECT. "OWASP Top 10 for Agentic Applications for 2026".** 9 dez. 2025. <https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/>
+
+Referencial comunitário dos principais riscos de aplicações agênticas, usado como base dos modos de falha da arquitetura de referência.
+
+→ Sessão 10.
+
+---
 ### OWASP — Top 10 for LLM Applications 2026
 
 **OWASP GenAI Security Project. "OWASP Top 10 for Large Language Model Applications 2026".** Publicação em genai.owasp.org e repositório oficial, consultados em 3 nov. 2026. <https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/>. Fonte canônica em Markdown: <https://github.com/GenAI-Security-Project/GenAI-LLM-Top10> (pasta `2026/final/`).
@@ -1005,7 +1175,15 @@ Edição vigente em 3/11/2026. A página da publicação indica 3 ago. 2026 e o 
 → Sessão 9.
 
 ---
+### Pan et al. — Measuring Agents in Production (2026)
 
+**PAN, M. et al. "Measuring Agents in Production".** *Proceedings of the 43rd International Conference on Machine Learning* (ICML 2026), PMLR v. 306, p. 95649-95695. <https://proceedings.mlr.press/v306/pan26a.html>
+
+Estudo com 20 estudos de caso e pesquisa com 86 profissionais de sistemas implantados em 26 domínios. Na amostra, 68% dos sistemas executavam no máximo dez passos antes de intervenção humana, e a confiabilidade aparece como desafio central.
+
+→ Sessão 10.
+
+---
 ### Papadakis et al. — Mutation Testing Advances (2019)
 
 **PAPADAKIS, Mike, KINTIS, Marinos, ZHANG, Jie, JIA, Yue, LE TRAON, Yves e HARMAN, Mark. "Mutation Testing Advances: An Analysis and Survey".** *Advances in Computers*, v. 112, p. 275-378, 2019. DOI: [10.1016/bs.adcom.2018.03.015](https://doi.org/10.1016/bs.adcom.2018.03.015)
@@ -1015,7 +1193,6 @@ Levantamento sobre teste de mutação, lido na versão preprint de dez. 2017, di
 → Sessão 7.
 
 ---
-
 ### Parasuraman e Manzey — Complacency and Bias in Human Use of Automation (2010)
 
 **PARASURAMAN, Raja e MANZEY, Dietrich H. "Complacency and Bias in Human Use of Automation: An Attentional Integration".** *Human Factors*, v. 52, n. 3, p. 381-410, jun. 2010. DOI: [10.1177/0018720810376055](https://doi.org/10.1177/0018720810376055)
@@ -1025,7 +1202,6 @@ Revisão cujo resumo, obtido pelo Crossref, afirma que a complacência e o viés
 → Sessões 7 e 9.
 
 ---
-
 ### Parnas — On the Criteria to Be Used in Decomposing Systems into Modules (1972)
 
 **PARNAS, David L. "On the Criteria to Be Used in Decomposing Systems into Modules".** *Communications of the ACM*, v. 15, n. 12, p. 1053–1058, dez. 1972. <https://doi.org/10.1145/361598.361623>
@@ -1035,7 +1211,6 @@ Compara duas decomposições do mesmo sistema e mostra que dividir pelas etapas 
 → Sessão 5.
 
 ---
-
 ### Patton — The New User Story Backlog is a Map (2008)
 
 **PATTON, Jeff. "The New User Story Backlog is a Map".** Jeff Patton & Associates, 8 out. 2008, atualizado em 12 abr. 2023. <https://www.jpattonassociates.com/the-new-backlog/>
@@ -1045,7 +1220,6 @@ Propõe organizar as histórias de usuário num mapa pela ordem em que o sistema
 → Sessão 7.
 
 ---
-
 ### Paul e Elder — The Thinker's Guide to Socratic Questioning (2019)
 
 **PAUL, Richard; ELDER, Linda. *The Thinker's Guide to Socratic Questioning*.** Foundation for Critical Thinking Press, 2019.
@@ -1055,7 +1229,6 @@ Define o questionamento socrático como a forma disciplinada de pensamento crít
 → Sessão 3.
 
 ---
-
 ### Pearce et al. — Copilot Security (2022)
 
 **PEARCE, Hammond et al. *Asleep at the Keyboard? Assessing the Security of GitHub Copilot's Code Contributions*.** IEEE Symposium on Security and Privacy (S&P), 2022. <https://arxiv.org/abs/2108.09293>
@@ -1065,7 +1238,6 @@ Investiga segurança do GitHub Copilot avaliando com que frequência recomenda c
 → Sessão 1.
 
 ---
-
 ### Peng et al. — Copilot Productivity (2023)
 
 **PENG, Sida; KALLIAMVAKOU, Eirini; CIHON, Peter; DEMIRER, Mert. *The Impact of AI on Developer Productivity: Evidence from GitHub Copilot*.** arXiv:2302.06590, 2023. <https://arxiv.org/abs/2302.06590>
@@ -1075,7 +1247,6 @@ Experimento randomizado com 70 desenvolvedores profissionais que completam uma t
 → Sessões 1 e 7.
 
 ---
-
 ### Prasad et al. — ADaPT: As-Needed Decomposition and Planning (2024)
 
 **PRASAD, Archiki; KOLLER, Alexander; HARTMANN, Mareike; CLARK, Peter; SABHARWAL, Ashish; BANSAL, Mohit; KHOT, Tushar. "ADaPT: As-Needed Decomposition and Planning with Language Models".** *Findings of the Association for Computational Linguistics: NAACL 2024*. arXiv:2311.05772. <https://arxiv.org/abs/2311.05772>
@@ -1085,7 +1256,6 @@ Decompõe uma subtarefa só quando o modelo executor não consegue concluí-la, 
 → Sessão 5.
 
 ---
-
 ### Quattrocchi et al. — User stories geradas por LLMs (2025)
 
 **QUATTROCCHI, Giovanni, PASQUALE, Liliana, SPOLETINI, Paola e BARESI, Luciano. *Can LLMs Generate User Stories and Assess Their Quality?*.** arXiv:2507.15157, jul. 2025 (preprint). <https://arxiv.org/abs/2507.15157>
@@ -1095,7 +1265,15 @@ Dez modelos de linguagem geraram histórias de usuário a partir de entrevistas 
 → Sessão 7.
 
 ---
+### Reuters — Muse e o concierge humano (2026)
 
+**PAUL, Katie. "Meta testing a 'human concierge' for its new personal AI agent, Muse".** Reuters, 22 set. 2026, consultado na republicação do MarketScreener. <https://www.marketscreener.com/news/meta-testing-a-human-concierge-for-its-new-personal-ai-agent-muse-ce785ad8de8cf025>
+
+Reportagem sobre um teste em que prestadores humanos realizavam algumas chamadas atribuídas ao Muse, com reconhecimento de falhas de transparência e suspensão temporária do recurso pela Meta.
+
+→ Sessão 10.
+
+---
 ### Ross (ed.) — Business Rules Manifesto (2003)
 
 **ROSS, Ronald G. (ed.). *Business Rules Manifesto — The Principles of Rule Independence*, versão 2.0.** Business Rules Group, 1 nov. 2003. <https://www.businessrulesgroup.org/brmanifesto/BRManifesto.pdf>
@@ -1105,7 +1283,6 @@ Dez artigos que definem regra de negócio como categoria própria de conheciment
 → Sessão 3.
 
 ---
-
 ### Ross — RuleSpeak
 
 **ROSS, Ronald G. *RuleSpeak Sentence Forms*, versão 2.2.** Business Rule Solutions, LLC. Desenvolvido a partir de 1996. <https://www.rulespeak.com/en/>
@@ -1115,7 +1292,15 @@ Notação em linguagem natural controlada para expressar regra de negócio sem a
 → Sessões 4 e 7.
 
 ---
+### Salesforce — OpenTable com Agentforce (2025)
 
+**SALESFORCE. "OpenTable dishes out faster restaurant and diner help with Agentforce".** 7 ago. 2025. <https://www.salesforce.com/customer-stories/opentable/>
+
+Caso relatado pelo fornecedor com 73% de resolução no agente de restaurantes nas três primeiras semanas e 11 mil conversas semanais, indicadores medidos sobre populações distintas.
+
+→ Sessão 10.
+
+---
 ### Saltzer e Schroeder — The Protection of Information in Computer Systems (1975)
 
 **SALTZER, Jerome H. e SCHROEDER, Michael D. "The Protection of Information in Computer Systems".** *Proceedings of the IEEE*, v. 63, n. 9, p. 1278-1308, 1975. DOI: [10.1109/PROC.1975.9939](https://doi.org/10.1109/PROC.1975.9939). Texto consultado em 3 nov. 2026 na cópia mantida pela Universidade da Virgínia: <https://www.cs.virginia.edu/~evans/cs551/saltzer/>
@@ -1125,7 +1310,6 @@ Formula os princípios de projeto de mecanismos de proteção de informação. A
 → Sessão 9.
 
 ---
-
 ### Schäfer et al. — TestPilot (2024)
 
 **SCHÄFER, Max, NADI, Sarah, EGHBALI, Aryaz e TIP, Frank. "An Empirical Evaluation of Using Large Language Models for Automated Unit Test Generation".** *IEEE Transactions on Software Engineering*, v. 50, n. 1, p. 85-105, jan. 2024. DOI: [10.1109/TSE.2023.3334955](https://doi.org/10.1109/TSE.2023.3334955). Preprint: arXiv:2302.06527.
@@ -1135,7 +1319,6 @@ Avalia a ferramenta TestPilot, com o modelo gpt-3.5-turbo, em 25 pacotes npm e 1
 → Sessão 7.
 
 ---
-
 ### Schwaber e Sutherland — The 2020 Scrum Guide (2020)
 
 **SCHWABER, Ken e SUTHERLAND, Jeff. *The 2020 Scrum Guide*.** Scrum.org e Scrum Inc., nov. 2020. <https://scrumguides.org/scrum-guide.html>
@@ -1145,7 +1328,15 @@ Define a retrospectiva da sprint como o evento em que o time planeja maneiras de
 → Sessão 7.
 
 ---
+### ServiceNow — Thrive (2026)
 
+**SERVICENOW. "Thrive scales customer experience with ServiceNow AI, achieving 73% first-contact resolution".** 22 out. 2026. <https://newsroom.servicenow.com/press-releases/details/2026/Thrive-scales-customer-experience-with-ServiceNow-AI-achieving-73-first-contact-resolution/default.aspx>
+
+Caso relatado pelo fornecedor com 73% de resolução no primeiro contato e redução de 63% no tempo de resolução, resultado conjunto de plataforma, processos, automação e agentes.
+
+→ Sessão 10.
+
+---
 ### Sneed e Erdős — Extracting Business Rules from Source Code (1996)
 
 **SNEED, Harry M.; ERDŐS, Katalin. "Extracting Business Rules from Source Code".** In: *WPC '96, 4th Workshop on Program Comprehension*, Berlim, 1996. IEEE Computer Society Press, p. 240-247. DOI: [10.1109/WPC.1996.501138](https://doi.org/10.1109/WPC.1996.501138)
@@ -1155,7 +1346,6 @@ Revisa o estado da arte da aquisição de conhecimento de aplicação a partir d
 → Sessão 4.
 
 ---
-
 ### Stryker Mutator — Documentação
 
 **STRYKER MUTATOR. *Documentação oficial*.** <https://stryker-mutator.io/docs/> e <https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/>
@@ -1165,7 +1355,6 @@ Define mutante morto e mutante sobrevivente e a pontuação de mutação como (m
 → Sessão 7.
 
 ---
-
 ### StrykerJS e Stryker.NET — Mutation Testing
 
 **StrykerJS** (JavaScript/TypeScript) e **Stryker.NET** (.NET) — ferramentas de referência para testes de mutação.
@@ -1173,7 +1362,6 @@ Define mutante morto e mutante sobrevivente e a pontuação de mutação como (m
 → Sessão 7.
 
 ---
-
 ### Tang et al. — TofuEval (2024)
 
 **TANG, Liyan et al. *TofuEval: Evaluating Hallucinations of LLMs on Topic-Focused Dialogue Summarization*.** NAACL 2024, arXiv:2402.13249. <https://arxiv.org/abs/2402.13249>
@@ -1183,7 +1371,6 @@ Benchmark de resumo de diálogo focado em tópicos, com resumos de modelos de v�
 → Sessão 7.
 
 ---
-
 ### Tantithamthavorn et al. — RovoDev Code Reviewer (2026)
 
 **TANTITHAMTHAVORN, Kla et al. *RovoDev Code Reviewer: A Large-Scale Online Evaluation of LLM-based Code Review Automation at Atlassian*.** ICSE 2026, trilha SEIP, arXiv:2601.01129. <https://arxiv.org/abs/2601.01129>
@@ -1193,7 +1380,15 @@ Avaliação de um revisor de código com modelo de linguagem feita pela empresa 
 → Sessão 7.
 
 ---
+### Temporal — Durable AI (documentação)
 
+**TEMPORAL. "Durable AI".** Documentação, consultada em 10 nov. 2026. <https://docs.temporal.io/ai>
+
+Documentação de fluxos de trabalho duráveis para agentes: o fluxo mantém coordenação e histórico, chamadas de modelo e ferramentas rodam como *Activities*, e decisões humanas chegam por *Signal* ou *Update*. Operações de negócio continuam exigindo idempotência e reconciliação.
+
+→ Sessão 10.
+
+---
 ### Trivedy — The Anatomy of an Agent Harness (2026)
 
 **TRIVEDY, Vivek. "The Anatomy of an Agent Harness".** *LangChain Blog*, 2026. <https://www.langchain.com/blog/the-anatomy-of-an-agent-harness>
@@ -1203,7 +1398,6 @@ Formulação canônica do arnês (*harness*) como tudo o que cerca o modelo e o 
 → Sessão 2.
 
 ---
-
 ### Vacanti — When Will It Be Done?
 
 **VACANTI, Daniel S. *When Will It Be Done?*.** Leanpub. <https://leanpub.com/whenwillitbedone>
@@ -1213,7 +1407,6 @@ O sumário da página do livro inclui capítulos sobre a estabilidade do process
 → Sessão 7.
 
 ---
-
 ### Vaswani et al. — Attention Is All You Need (2017)
 
 **VASWANI, Ashish et al. *Attention Is All You Need*.** NeurIPS, 2017. <https://arxiv.org/abs/1706.03762>
@@ -1223,7 +1416,6 @@ Apresenta a arquitetura Transformer, substituindo modelos recorrentes e convoluc
 → Sessão 1.
 
 ---
-
 ### Vercel — Removing 80% of Agent Tools (2026)
 
 **VERCEL. "We removed 80% of our agent's tools".** *Vercel Blog*, 2026. <https://vercel.com/blog/we-removed-80-percent-of-our-agents-tools>
@@ -1233,17 +1425,15 @@ Relato de redução de dezesseis ferramentas especializadas para acesso a sistem
 → Sessão 2.
 
 ---
+### Visa — Piloto de pagamentos por agentes (2026)
 
-### Vincent e Prime Radiant — Superpowers (2026)
+**VISA. "Visa launches first live pilot for trusted AI agent payments between buyer and supplier".** Atualização de 16 out. 2026. <https://www.visa.com/en-us/thought-leadership/innovation/first-live-pilot-for-ai-payments>
 
-**VINCENT, Jesse; PRIME RADIANT. *Superpowers: An agentic skills framework & software development methodology*.** Repositório de software. <https://github.com/obra/superpowers>
-
-Conjunto de habilidades combináveis para agentes de codificação, acionadas automaticamente conforme a situação, com uma metodologia de execução em volta: levantamento de ideias e aprovação do design antes de qualquer código, cópia isolada do repositório, plano de tarefas pequenas, ciclo vermelho-verde-refatorar obrigatório, revisão em duas etapas e verificação antes de declarar conclusão. Entra na Sessão 10 como o contraponto que mostra que disciplina documental e disciplina operacional são eixos independentes: o projeto não mantém especificação consolidada do domínio e ainda assim é mais exigente que o Spec Kit na execução.
+Piloto real, com BILL e Billtrust, em que agentes iniciam e concluem pagamentos aprovados de faturas em portais de fornecedores, sem dados públicos suficientes para estimar economia em escala.
 
 → Sessão 10.
 
 ---
-
 ### Wake — INVEST in Good Stories and SMART Tasks (2003)
 
 **WAKE, Bill. "INVEST in Good Stories, and SMART Tasks".** XP123, 17 ago. 2003. <https://xp123.com/invest-in-good-stories-and-smart-tasks/>
@@ -1253,7 +1443,6 @@ Propõe seis critérios para avaliar uma história de usuário: independente, ne
 → Sessão 7.
 
 ---
-
 ### Wei et al. — Chain-of-Thought Prompting (2022)
 
 **WEI, Jason et al. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*.** NeurIPS, 2022. <https://arxiv.org/abs/2201.11903>
@@ -1263,7 +1452,6 @@ Demonstra que solicitar ao modelo que gere uma sequência de passos intermediár
 → Sessão 1.
 
 ---
-
 ### Wiegers e Beatty — Software Requirements (2013)
 
 **WIEGERS, Karl; BEATTY, Joy. *Software Requirements*, 3ª ed.** Microsoft Press, 2013. <https://www.microsoftpressstore.com/store/software-requirements-9780735679665>
@@ -1273,7 +1461,6 @@ Referência de mercado em engenharia de requisitos. Organiza requisitos em camad
 → Sessões 3 e 7.
 
 ---
-
 ### Willison — What is Agentic Engineering (2026)
 
 **WILLISON, Simon. "What is agentic engineering?"** — *Agentic Engineering Patterns*. simonwillison.net, mar. 2026. <https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/>
@@ -1283,7 +1470,15 @@ Define engenharia agêntica como "a prática de desenvolver software com o auxí
 → Sessão 1.
 
 ---
+### xAI — Grok Bot (documentação)
 
+**XAI. "Grok Bot — Overview".** Documentação, consultada em 10 nov. 2026. <https://docs.x.ai/grok-bot/overview>
+
+Documentação do agente proativo com computador na nuvem, integrações e rotinas entre aplicativos. As páginas "Manage Grok Bot computers" e "Settings and notifications" da mesma documentação descrevem o computador compartilhado pelos bots de um usuário, com telas que não são fronteiras de segurança, e os limites de uso e consumo adicional.
+
+→ Sessão 10.
+
+---
 ### Yao et al. — ReAct (2023)
 
 **YAO, Shunyu et al. *ReAct: Synergizing Reasoning and Acting in Language Models*.** ICLR, 2023. <https://arxiv.org/abs/2210.03629>
@@ -1293,7 +1488,6 @@ Propõe ReAct, que integra raciocínio e ação em modelos de linguagem, permiti
 → Sessão 1.
 
 ---
-
 ### Zadenoori et al. — LLMs para Engenharia de Requisitos (2025)
 
 **ZADENOORI, Mohammad Amin, DĄBROWSKI, Jacek, ALHOSHAN, Waad, ZHAO, Liping e FERRARI, Alessio. *Large Language Models (LLMs) for Requirements Engineering (RE): A Systematic Literature Review*.** arXiv:2509.11446, set. 2025 (preprint). <https://arxiv.org/abs/2509.11446>
@@ -1303,17 +1497,6 @@ Revisão sistemática de 74 estudos primários publicados em 2023 e 2024. A maio
 → Sessão 7.
 
 ---
-
-### Zhang e Xia — Structured Prompt-Driven Development (2026)
-
-**ZHANG, Wei; XIA, Jing Jing. "Structured-Prompt-Driven Development (SPDD)".** *martinfowler.com*, 28 abr. 2026. <https://martinfowler.com/articles/structured-prompt-driven/>
-
-Método desenvolvido por um time de tecnologia interna da Thoughtworks que trata o prompt como artefato de entrega versionado, organizado no Painel REASONS de sete dimensões (Requirements, Entities, Approach, Structure, Operations, Norms, Safeguards). O artigo é também a fonte do diagnóstico usado na Sessão 10 sobre por que escalar geração desloca o gargalo, com a metáfora do motor de Ferrari em estrada ruim: a potência local não determina o horário de chegada. Os autores são explícitos sobre os limites do método, incluindo o custo de experiência sênior antecipada e a variação remanescente entre praticantes que escrevem o mesmo Painel.
-
-→ Sessão 10.
-
----
-
 ### Zeller — Why Programs Fail (2005)
 
 **ZELLER, Andreas. *Why Programs Fail: A Guide to Systematic Debugging*. Morgan Kaufmann, 2005.**
@@ -1323,7 +1506,6 @@ Livro clássico sobre depuração sistemática de programas. Apresenta metodolog
 → Sessões sem citação direta (referência geral).
 
 ---
-
 ### Zhang et al. — LLMs para Mensagens de Commit (2024)
 
 **ZHANG, Linghao, ZHAO, Jingshu, WANG, Chong e LIANG, Peng. *Using Large Language Models for Commit Message Generation: A Preliminary Study*.** SANER 2024, arXiv:2401.05926. <https://arxiv.org/abs/2401.05926>
@@ -1333,7 +1515,6 @@ O resumo relata que, na avaliação humana, as mensagens de commit geradas por m
 → Sessão 7.
 
 ---
-
 ### Ziftci et al. — Migrating Code at Scale with LLMs at Google (2025)
 
 **ZIFTCI, Celal, NIKOLOV, Stoyan, SJÖVALL, Anna, KIM, Bo, CODECASA, Daniele e KIM, Max. *Migrating Code At Scale With LLMs At Google*.** arXiv:2504.09691, abr. 2025 (preprint). <https://arxiv.org/abs/2504.09691>

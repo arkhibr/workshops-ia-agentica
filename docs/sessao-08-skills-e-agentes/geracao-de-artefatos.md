@@ -95,7 +95,7 @@ A tabela abaixo é uma síntese deste material e não uma classificação da doc
 
 A Anthropic publica skills prontas para gerar apresentações (`pptx`), planilhas (`xlsx`), documentos de texto (`docx`) e arquivos PDF, disponíveis no claude.ai e na API. A [documentação das skills](../referencia/bibliografia.md#anthropic-agent-skills-documentacao) informa que essas skills de documento não estão disponíveis no Claude Code, que oferece skills personalizadas baseadas em arquivos. Quem precisa dessas saídas no Claude Code cria a própria skill ou usa as skills de documento no claude.ai, e em ambos os casos a conferência do artefato continua sendo declarada.
 
-Artefatos de que outras pessoas dependem, como registros de decisão e especificações, devem ficar no repositório e ser atualizados junto com o código. A [Sessão 10](../sessao-10-sdd-ciclo-completo/artefatos-vivos.md) trata de quais mudanças atualizam qual artefato.
+Artefatos de que outras pessoas dependem, como registros de decisão e especificações, devem ficar no repositório e ser atualizados junto com o código. A [Sessão 5](../sessao-05-decomposicao/index.md) trata dos artefatos de especificação que o GitHub Spec Kit mantém versionados no repositório, da constitution às tarefas.
 
 !!! abstract "Linha da ficha"
     Artefato e conferência:

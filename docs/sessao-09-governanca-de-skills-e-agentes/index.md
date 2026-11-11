@@ -1,6 +1,6 @@
 # S9 — Governança de skills e agentes
 
-**Bloco:** 4 — Skills, agentes e ciclo completo
+**Bloco:** 4 — Skills, agentes e computação agêntica
 
 > **Pergunta-guia:** o que precisa estar decidido e registrado antes que outra pessoa da equipe instale uma skill ou um agente construído por um colega?
 

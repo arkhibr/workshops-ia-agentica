@@ -148,17 +148,19 @@ nav:
           - "Oficina — marketplace local governado": sessao-09-governanca-de-skills-e-agentes/oficina-de-ferramentas.md
           - Experimentos complementares: sessao-09-governanca-de-skills-e-agentes/experimentos-complementares.md
           - Síntese e referências: sessao-09-governanca-de-skills-e-agentes/sintese-e-referencias.md
-      - S10 — SDD ciclo completo:
-          - Visão geral: sessao-10-sdd-ciclo-completo/index.md
-          - "O ciclo e os quatro artefatos": sessao-10-sdd-ciclo-completo/ciclo-e-artefatos.md
-          - "Abordagens de SDD": sessao-10-sdd-ciclo-completo/abordagens-sdd.md
-          - "Escolher a abordagem e a profundidade": sessao-10-sdd-ciclo-completo/escolher-a-abordagem.md
-          - "Manter os artefatos vivos": sessao-10-sdd-ciclo-completo/artefatos-vivos.md
-          - "Quando o SDD falha": sessao-10-sdd-ciclo-completo/quando-sdd-falha.md
-          - "Exemplo arquitetural": sessao-10-sdd-ciclo-completo/exemplo-arquitetural.md
-          - "Estudo de caso": sessao-10-sdd-ciclo-completo/estudo-de-caso.md
-          - "Oficina de ferramentas": sessao-10-sdd-ciclo-completo/oficina-de-ferramentas.md
-          - "Exercícios": sessao-10-sdd-ciclo-completo/exercicios.md
-          - "Síntese e referências": sessao-10-sdd-ciclo-completo/sintese-e-referencias.md
+      - S10 — Computação agêntica em 2027:
+          - "Visão geral": sessao-10-computacao-agentica-2027/index.md
+          - "O percurso do curso": sessao-10-computacao-agentica-2027/percurso-do-curso.md
+          - "Da interação à delegação": sessao-10-computacao-agentica-2027/da-interacao-a-delegacao.md
+          - "Evidência e previsão": sessao-10-computacao-agentica-2027/evidencia-e-previsao.md
+          - "Tendências para 2027 a 2030": sessao-10-computacao-agentica-2027/tendencias-2027-2030.md
+          - "Assistentes pessoais proativos": sessao-10-computacao-agentica-2027/assistentes-proativos.md
+          - "Casos reais": sessao-10-computacao-agentica-2027/casos-reais.md
+          - "Exercícios": sessao-10-computacao-agentica-2027/exercicios.md
+          - "Arquitetura de referência": sessao-10-computacao-agentica-2027/arquitetura-de-referencia.md
+          - "Métricas e economia": sessao-10-computacao-agentica-2027/metricas-e-economia.md
+          - "Horizontes e plano de 90 dias": sessao-10-computacao-agentica-2027/horizontes-e-90-dias.md
+          - "Oficina de ferramentas": sessao-10-computacao-agentica-2027/oficina-de-ferramentas.md
+          - "Síntese e referências": sessao-10-computacao-agentica-2027/sintese-e-referencias.md
   - Referência:
       - Bibliografia: referencia/bibliografia.md

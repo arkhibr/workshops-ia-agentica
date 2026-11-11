@@ -133,7 +133,23 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
             "assets/kit-de-30-dias-e-a-ficha.png",
         ),
     ),
-    "sessao-10-sdd-ciclo-completo": ("SDD ciclo completo", True, ()),
+    "sessao-10-computacao-agentica-2027": (
+        "Computação agêntica em 2027",
+        True,
+        (
+            "assets/formas-de-delegacao.png",
+            "assets/tres-condicoes-para-escalar.png",
+            "assets/onze-tendencias-em-quatro-frentes.png",
+            "assets/responsabilidade-entre-conversas.png",
+            "assets/oferta-e-pratica-sustentavel.png",
+            "assets/alcance-da-evidencia-nos-casos.png",
+            "assets/arquitetura-de-referencia.png",
+            "assets/sessao-arnes-e-ambiente.png",
+            "assets/economia-do-resultado-aceito.png",
+            "assets/horizontes-de-evolucao.png",
+            "assets/decisao-nos-90-dias.png",
+        ),
+    ),
 }
 
 # As seis páginas de papel fixo do esquema clássico. Tudo o mais numa sessão
@@ -174,6 +190,13 @@ PAGINAS_FIXAS_POR_SESSAO: dict[str, tuple[str, ...]] = {
         "sintese-e-referencias.md",
     ),
     "sessao-09-governanca-de-skills-e-agentes": (
+        "index.md",
+        "oficina-de-ferramentas.md",
+        "exercicios.md",
+        "sintese-e-referencias.md",
+    ),
+    # Sessão 10, 11/11/2026: fechamento do curso, sem exemplo arquitetural nem estudo de caso.
+    "sessao-10-computacao-agentica-2027": (
         "index.md",
         "oficina-de-ferramentas.md",
         "exercicios.md",

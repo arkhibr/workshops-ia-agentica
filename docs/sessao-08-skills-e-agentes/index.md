@@ -1,6 +1,6 @@
 # S8 — Skills e agentes
 
-**Bloco:** 4 — Skills, agentes e ciclo completo
+**Bloco:** 4 — Skills, agentes e computação agêntica
 
 > **Pergunta-guia:** o que uma skill ou um agente precisa declarar antes de ser construído para que o custo, a segurança e o resultado possam ser conferidos depois?
 

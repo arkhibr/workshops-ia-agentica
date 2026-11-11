@@ -19,7 +19,7 @@ A tese do workshop parte de uma mudança no modo de programar. Num fluxo agênti
 | 1 — Modelo mental e ambiente agêntico | S1–S2 | Modelo mental do Software 3.0 e primeiro uso da ferramenta | Software 3.0 · Engenharia Agêntica · cadeia de ferramentas e isolamento por ramo |
 | 2 — Especificação com precisão | S3–S5 | Especificação precisa do comportamento esperado | Requisitos BR/FR/NFR · SBVR + RuleSpeak + tabelas de decisão · caminho básico do Spec Kit, da regra ao código |
 | 3 — Qualidade da spec e adoção por papel | S6–S7 | Verificação do código contra o plano e uso de IA por papel | Qualidade da spec e teste antes do código · casos de uso de IA por papel, com mural das equipes e pitch |
-| 4 — Skills, agentes e ciclo completo | S8–S10 | Skills e agentes próprios, governança antes do compartilhamento e SDD de ponta a ponta | Criação de skills e agentes · governança de skills e agentes · SDD ciclo completo |
+| 4 — Skills, agentes e computação agêntica | S8–S10 | Skills e agentes próprios, governança antes do compartilhamento e fechamento do curso com o horizonte de 2027 | Criação de skills e agentes · governança de skills e agentes · computação agêntica em 2027 e plano de 90 dias |
 
 ## Sessões
 
@@ -32,9 +32,9 @@ A tese do workshop parte de uma mudança no modo de programar. Num fluxo agênti
 | S5 | [Spec Kit: da regra ao código](sessao-05-decomposicao/index.md) | 2 — Especificação com precisão |
 | S6 | [Spec Kit: qualidade da spec e teste antes do código](sessao-06-spec-kit-aprofundado/index.md) | 3 — Qualidade da spec e adoção por papel |
 | S7 | [Casos de uso de IA por papel](sessao-07-casos-de-uso-por-papel/index.md) | 3 — Qualidade da spec e adoção por papel |
-| S8 | [Skills e agentes](sessao-08-skills-e-agentes/index.md) | 4 — Skills, agentes e ciclo completo |
-| S9 | [Governança de skills e agentes](sessao-09-governanca-de-skills-e-agentes/index.md) | 4 — Skills, agentes e ciclo completo |
-| S10 | [SDD ciclo completo](sessao-10-sdd-ciclo-completo/index.md) | 4 — Skills, agentes e ciclo completo |
+| S8 | [Skills e agentes](sessao-08-skills-e-agentes/index.md) | 4 — Skills, agentes e computação agêntica |
+| S9 | [Governança de skills e agentes](sessao-09-governanca-de-skills-e-agentes/index.md) | 4 — Skills, agentes e computação agêntica |
+| S10 | [Computação agêntica em 2027](sessao-10-computacao-agentica-2027/index.md) | 4 — Skills, agentes e computação agêntica |
 
 ## Critérios de sucesso
 
@@ -45,9 +45,9 @@ Ao final das 20h, cada participante consegue:
 - Formalizar regras de negócio em SBVR com auxílio de IA
 - Aplicar TDD com assistência de IA em funcionalidades novas
 - Escolher, aplicar e conferir casos de uso de IA do próprio papel, com a fonte de comparação declarada
-- Executar um ciclo SDD completo com os modelos de especificação agênticas da Arkhi
+- Executar o caminho do SDD com o GitHub Spec Kit, da constitution ao código com testes passando
 - Classificar e governar skills e agentes antes de compartilhá-los
-- Registrar decisões arquiteturais em ADRs (MADR v4)
+- Classificar afirmações sobre agentes pelo tipo de evidência e propor um piloto de 90 dias medido por custo por resultado aceito
 
 ## Fora de escopo
 

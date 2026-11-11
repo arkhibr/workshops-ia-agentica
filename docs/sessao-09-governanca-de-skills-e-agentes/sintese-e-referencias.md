@@ -92,4 +92,4 @@ O guia do facilitador é material próprio adaptado, sem URL pública, e as afir
 
 ## Conexão com a próxima sessão
 
-A [Sessão 10](../sessao-10-sdd-ciclo-completo/index.md) executa um ciclo completo de desenvolvimento orientado por especificação com o GitHub Spec Kit, da constitution ao código verificado, com os quatro artefatos canônicos versionados. A faixa de risco desta sessão tem correspondência na régua de profundidade da Sessão 10, que escolhe o processo proporcional ao risco da mudança, e as skills e os agentes que executarem etapas desse ciclo chegam a ele com dono, controles e evidência registrados na ficha de governança.
+A [Sessão 10](../sessao-10-computacao-agentica-2027/index.md) encerra o curso confrontando as práticas das nove sessões com o panorama de computação agêntica para 2027, a partir das leituras de McKinsey, Gartner e Forrester, de estudos empíricos e de casos relatados por empresas. A ficha de governança desta sessão compõe, com a ficha de requisitos da Sessão 8, os campos de faixa de risco, controles e gate da ficha de piloto de 90 dias preparada na oficina da Sessão 10.

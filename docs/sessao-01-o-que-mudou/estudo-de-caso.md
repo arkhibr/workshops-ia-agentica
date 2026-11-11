@@ -23,6 +23,6 @@ O caso não tem resposta única e serve para praticar o critério da tabela de [
 
 ## Depois da discussão
 
-Compare a posição a que o grupo chegou com a tabela de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica). A Sessão 10, sobre o ciclo completo de SDD, volta a esse dilema com uma ferramenta mais precisa: uma régua de profundidade proporcional ao risco, com os artefatos versionados. Com ela, a proporcionalidade entre o risco da tarefa e a profundidade da especificação fica registrada nos artefatos versionados do time.
+Compare a posição a que o grupo chegou com a tabela de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica). A [Sessão 9](../sessao-09-governanca-de-skills-e-agentes/triagem-por-criticidade.md) volta a esse dilema com a triagem por criticidade, que classifica cada skill ou agente numa faixa de risco pelo fator mais grave e registra a decisão na ficha de governança da equipe.
 
 **Próxima página:** [Oficina de ferramentas](oficina-de-ferramentas.md).

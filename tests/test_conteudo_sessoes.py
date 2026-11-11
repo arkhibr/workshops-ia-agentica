@@ -1177,7 +1177,7 @@ class SessaoNoveTest(unittest.TestCase):
         self.assertNotIn("depuração", bloco_4.lower())
         self.assertIn("governança de skills e agentes", bloco_4.lower())
         self.assertIn("Classificar e governar skills e agentes antes de compartilhá-los", indice)
-        sintese_s10 = (DOCS / "sessao-10-sdd-ciclo-completo" / "sintese-e-referencias.md").read_text(encoding="utf-8")
+        sintese_s10 = (DOCS / "sessao-10-computacao-agentica-2027" / "sintese-e-referencias.md").read_text(encoding="utf-8")
         conexao = sintese_s10.split("## Conexão com as sessões anteriores", 1)[1].split("\n## ", 1)[0]
         self.assertNotIn("depuração", conexao.lower())
 
@@ -1193,7 +1193,7 @@ class SessaoNoveTest(unittest.TestCase):
         for termo in ("managed-settings", "Organization settings"):
             with self.subTest(termo=termo):
                 self.assertNotIn(termo, texto)
-        self.assertIn("../sessao-10-sdd-ciclo-completo/index.md", texto)
+        self.assertIn("../sessao-10-computacao-agentica-2027/index.md", texto)
 
     def test_fundamentacao_cobre_toda_citacao_da_sessao(self):
         fundamentacao = self.sintese().split("## Fundamentação", 1)[-1]
