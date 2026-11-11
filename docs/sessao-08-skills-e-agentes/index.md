@@ -1,6 +1,6 @@
-# S8 — Skills e agentes
+# S8 — Construção de skills e agentes próprios da equipe
 
-**Bloco:** 4 — Skills, agentes e computação agêntica
+**Bloco:** 4 — Skills, agentes e uso nas empresas
 
 > **Pergunta-guia:** o que uma skill ou um agente precisa declarar antes de ser construído para que o custo, a segurança e o resultado possam ser conferidos depois?
 

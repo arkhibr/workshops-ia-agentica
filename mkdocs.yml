@@ -38,8 +38,8 @@ markdown_extensions:
 
 nav:
   - Início: index.md
-  - Bloco 1 — Modelo mental e ambiente agêntico:
-      - S1 — O que mudou:
+  - Bloco 1 — Fundamentos e ambiente de trabalho com agentes:
+      - S1 — Modos de trabalho com IA no desenvolvimento de software:
           - Visão geral: sessao-01-o-que-mudou/index.md
           - Modos de trabalho com IA: sessao-01-o-que-mudou/modos-de-trabalho.md
           - Evidência empírica de produtividade: sessao-01-o-que-mudou/evidencia-empirica.md
@@ -51,7 +51,7 @@ nav:
           - Oficina de ferramentas: sessao-01-o-que-mudou/oficina-de-ferramentas.md
           - Exercícios: sessao-01-o-que-mudou/exercicios.md
           - Síntese e referências: sessao-01-o-que-mudou/sintese-e-referencias.md
-      - S2 — O ambiente agêntico:
+      - S2 — Configuração do ambiente compartilhado de agentes na equipe:
           - Visão geral: sessao-02-ambiente-agentico/index.md
           - O ambiente compartilhado: sessao-02-ambiente-agentico/ambiente-compartilhado.md
           - O arnês do agente: sessao-02-ambiente-agentico/arnes.md
@@ -65,8 +65,8 @@ nav:
           - Oficina de ferramentas: sessao-02-ambiente-agentico/oficina-de-ferramentas.md
           - Exercícios: sessao-02-ambiente-agentico/exercicios.md
           - Síntese e referências: sessao-02-ambiente-agentico/sintese-e-referencias.md
-  - Bloco 2 — Especificação com precisão:
-      - S3 — Exploração e especificação:
+  - Bloco 2 — Especificação de requisitos e regras de negócio:
+      - S3 — Especificação de requisitos antes de pedir código ao agente:
           - Visão geral: sessao-03-exploracao-especificacao/index.md
           - "Tema 1 — Conceitos: Intervenção socrática": sessao-03-exploracao-especificacao/intervencao-socratica-conceitos.md
           - "Tema 1 — Exemplo de aplicação de IA": sessao-03-exploracao-especificacao/intervencao-socratica-exemplo-de-aplicacao-de-ia.md
@@ -77,7 +77,7 @@ nav:
           - "Tema 2 — Exercício de IA (Geral)": sessao-03-exploracao-especificacao/decomposicao-de-requisitos-exercicio-geral.md
           - "Tema 2 — Exercício de IA (Especialista)": sessao-03-exploracao-especificacao/decomposicao-de-requisitos-exercicio-especialista.md
           - Síntese e referências: sessao-03-exploracao-especificacao/sintese-e-referencias.md
-      - S4 — Regras formais com IA:
+      - S4 — Regras de negócio escritas em formato verificável com IA:
           - Visão geral: sessao-04-regras-formais-com-ia/index.md
           - "Tema 1 — Conceitos: Regras formais com SBVR": sessao-04-regras-formais-com-ia/regras-formais-conceitos.md
           - "Tema 1 — Exemplo de aplicação de IA": sessao-04-regras-formais-com-ia/regras-formais-exemplo-de-aplicacao-de-ia.md
@@ -87,7 +87,7 @@ nav:
           - "Tema 2 — Exemplo de aplicação de IA": sessao-04-regras-formais-com-ia/arqueologia-de-regras-exemplo-de-aplicacao-de-ia.md
           - "Tema 2 — Exercício de IA": sessao-04-regras-formais-com-ia/arqueologia-de-regras-exercicio.md
           - Síntese e referências: sessao-04-regras-formais-com-ia/sintese-e-referencias.md
-      - "S5 — Spec Kit: da regra ao código":
+      - "S5 — Desenvolvimento guiado por especificação com o GitHub Spec Kit":
           - Visão geral: sessao-05-decomposicao/index.md
           - Preparação do ambiente: sessao-05-decomposicao/preparacao.md
           - Contexto da prática: sessao-05-decomposicao/contexto-da-pratica.md
@@ -98,8 +98,8 @@ nav:
           - "Tema 2 — Exemplo de aplicação de IA": sessao-05-decomposicao/do-plano-ao-codigo-exemplo-de-aplicacao-de-ia.md
           - "Tema 2 — Exercício de IA": sessao-05-decomposicao/do-plano-ao-codigo-exercicio.md
           - Síntese e referências: sessao-05-decomposicao/sintese-e-referencias.md
-  - Bloco 3 — Qualidade da spec e adoção por papel:
-      - "S6 — Spec Kit: qualidade da spec e teste antes do código":
+  - Bloco 3 — Testes e uso de IA por papel:
+      - "S6 — Revisão da especificação e testes escritos antes do código":
           - Visão geral: sessao-06-spec-kit-aprofundado/index.md
           - Contexto da prática: sessao-06-spec-kit-aprofundado/contexto-da-pratica.md
           - "Tema 1 — Conceitos: Qualidade da spec": sessao-06-spec-kit-aprofundado/qualidade-da-spec-conceitos.md
@@ -110,7 +110,7 @@ nav:
           - "Tema 2 — Exercício de IA": sessao-06-spec-kit-aprofundado/teste-antes-do-codigo-exercicio.md
           - Síntese e referências: sessao-06-spec-kit-aprofundado/sintese-e-referencias.md
           - Tarefa entre sessões: sessao-06-spec-kit-aprofundado/tarefa-entre-sessoes.md
-      - S7 — Casos de uso de IA por papel:
+      - S7 — Usos de IA conferíveis em cada papel da equipe:
           - Visão geral: sessao-07-casos-de-uso-por-papel/index.md
           - Como escolher um caso de uso: sessao-07-casos-de-uso-por-papel/como-escolher-um-caso-de-uso.md
           - Product Owner: sessao-07-casos-de-uso-por-papel/casos-product-owner.md
@@ -122,8 +122,8 @@ nav:
           - Pitch de um caso de uso: sessao-07-casos-de-uso-por-papel/pitch-de-caso-de-uso.md
           - Exercícios: sessao-07-casos-de-uso-por-papel/exercicios.md
           - Síntese e referências: sessao-07-casos-de-uso-por-papel/sintese-e-referencias.md
-  - Bloco 4 — Skills, agentes e ciclo completo:
-      - S8 — Skills e agentes:
+  - Bloco 4 — Skills, agentes e uso nas empresas:
+      - S8 — Construção de skills e agentes próprios da equipe:
           - Visão geral: sessao-08-skills-e-agentes/index.md
           - Skills: sessao-08-skills-e-agentes/skills.md
           - Agentes e subagentes: sessao-08-skills-e-agentes/agentes-e-subagentes.md
@@ -137,7 +137,7 @@ nav:
           - "Exercícios — artefatos, modelos, custo e segurança": sessao-08-skills-e-agentes/oficina-de-ferramentas.md
           - Experimentos complementares: sessao-08-skills-e-agentes/experimentos-complementares.md
           - Síntese e referências: sessao-08-skills-e-agentes/sintese-e-referencias.md
-      - S9 — Governança de skills e agentes:
+      - S9 — Regras para compartilhar skills e agentes entre colegas:
           - Visão geral: sessao-09-governanca-de-skills-e-agentes/index.md
           - Governança de IA: sessao-09-governanca-de-skills-e-agentes/governanca-de-ia.md
           - Triagem por criticidade: sessao-09-governanca-de-skills-e-agentes/triagem-por-criticidade.md
@@ -148,9 +148,9 @@ nav:
           - "Oficina — marketplace local governado": sessao-09-governanca-de-skills-e-agentes/oficina-de-ferramentas.md
           - Experimentos complementares: sessao-09-governanca-de-skills-e-agentes/experimentos-complementares.md
           - Síntese e referências: sessao-09-governanca-de-skills-e-agentes/sintese-e-referencias.md
-      - S10 — Computação agêntica em 2027:
+      - S10 — Uso de agentes nas empresas em 2027 e plano de teste de 90 dias:
           - "Visão geral": sessao-10-computacao-agentica-2027/index.md
-          - "O que cada sessão do curso produziu": sessao-10-computacao-agentica-2027/o-que-cada-sessao-produziu.md
+          - "Práticas do curso e o uso de agentes nas empresas": sessao-10-computacao-agentica-2027/praticas-do-curso-e-agentes-nas-empresas.md
           - "Formas de delegar trabalho à IA": sessao-10-computacao-agentica-2027/formas-de-delegar-trabalho.md
           - "Avaliação de números e promessas sobre agentes": sessao-10-computacao-agentica-2027/avaliacao-de-numeros-e-promessas.md
           - "Mudanças esperadas para 2027 a 2030": sessao-10-computacao-agentica-2027/mudancas-esperadas-2027-2030.md

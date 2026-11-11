@@ -16,25 +16,25 @@ A tese do workshop parte de uma mudança no modo de programar. Num fluxo agênti
 
 | Bloco | Sessões | Tema | Intenção metodológica |
 |---|---|---|---|
-| 1 — Modelo mental e ambiente agêntico | S1–S2 | Modelo mental do Software 3.0 e primeiro uso da ferramenta | Software 3.0 · Engenharia Agêntica · cadeia de ferramentas e isolamento por ramo |
-| 2 — Especificação com precisão | S3–S5 | Especificação precisa do comportamento esperado | Requisitos BR/FR/NFR · SBVR + RuleSpeak + tabelas de decisão · caminho básico do Spec Kit, da regra ao código |
-| 3 — Qualidade da spec e adoção por papel | S6–S7 | Verificação do código contra o plano e uso de IA por papel | Qualidade da spec e teste antes do código · casos de uso de IA por papel, com mural das equipes e pitch |
-| 4 — Skills, agentes e computação agêntica | S8–S10 | Skills e agentes próprios, governança antes do compartilhamento e fechamento do curso com o horizonte de 2027 | Criação de skills e agentes · governança de skills e agentes · computação agêntica em 2027 e plano de 90 dias |
+| 1 — Fundamentos e ambiente de trabalho com agentes | S1–S2 | Modelo mental do Software 3.0 e primeiro uso da ferramenta | Software 3.0 · Engenharia Agêntica · cadeia de ferramentas e isolamento por ramo |
+| 2 — Especificação de requisitos e regras de negócio | S3–S5 | Especificação precisa do comportamento esperado | Requisitos BR/FR/NFR · SBVR + RuleSpeak + tabelas de decisão · caminho básico do Spec Kit, da regra ao código |
+| 3 — Testes e uso de IA por papel | S6–S7 | Verificação do código contra o plano e uso de IA por papel | Qualidade da spec e teste antes do código · casos de uso de IA por papel, com mural das equipes e pitch |
+| 4 — Skills, agentes e uso nas empresas | S8–S10 | Skills e agentes próprios, governança antes do compartilhamento e fechamento do curso com o horizonte de 2027 | Criação de skills e agentes · governança de skills e agentes · computação agêntica em 2027 e plano de 90 dias |
 
 ## Sessões
 
 | # | Sessão | Bloco |
 |---|---|---|
-| S1 | [O que mudou](sessao-01-o-que-mudou/index.md) | 1 — Modelo mental e ambiente agêntico |
-| S2 | [O ambiente agêntico](sessao-02-ambiente-agentico/index.md) | 1 — Modelo mental e ambiente agêntico |
-| S3 | [Exploração e especificação](sessao-03-exploracao-especificacao/index.md) | 2 — Especificação com precisão |
-| S4 | [Regras formais com IA](sessao-04-regras-formais-com-ia/index.md) | 2 — Especificação com precisão |
-| S5 | [Spec Kit: da regra ao código](sessao-05-decomposicao/index.md) | 2 — Especificação com precisão |
-| S6 | [Spec Kit: qualidade da spec e teste antes do código](sessao-06-spec-kit-aprofundado/index.md) | 3 — Qualidade da spec e adoção por papel |
-| S7 | [Casos de uso de IA por papel](sessao-07-casos-de-uso-por-papel/index.md) | 3 — Qualidade da spec e adoção por papel |
-| S8 | [Skills e agentes](sessao-08-skills-e-agentes/index.md) | 4 — Skills, agentes e computação agêntica |
-| S9 | [Governança de skills e agentes](sessao-09-governanca-de-skills-e-agentes/index.md) | 4 — Skills, agentes e computação agêntica |
-| S10 | [Computação agêntica em 2027](sessao-10-computacao-agentica-2027/index.md) | 4 — Skills, agentes e computação agêntica |
+| S1 | [Modos de trabalho com IA no desenvolvimento de software](sessao-01-o-que-mudou/index.md) | 1 — Fundamentos e ambiente de trabalho com agentes |
+| S2 | [Configuração do ambiente compartilhado de agentes na equipe](sessao-02-ambiente-agentico/index.md) | 1 — Fundamentos e ambiente de trabalho com agentes |
+| S3 | [Especificação de requisitos antes de pedir código ao agente](sessao-03-exploracao-especificacao/index.md) | 2 — Especificação de requisitos e regras de negócio |
+| S4 | [Regras de negócio escritas em formato verificável com IA](sessao-04-regras-formais-com-ia/index.md) | 2 — Especificação de requisitos e regras de negócio |
+| S5 | [Desenvolvimento guiado por especificação com o GitHub Spec Kit](sessao-05-decomposicao/index.md) | 2 — Especificação de requisitos e regras de negócio |
+| S6 | [Revisão da especificação e testes escritos antes do código](sessao-06-spec-kit-aprofundado/index.md) | 3 — Testes e uso de IA por papel |
+| S7 | [Usos de IA conferíveis em cada papel da equipe](sessao-07-casos-de-uso-por-papel/index.md) | 3 — Testes e uso de IA por papel |
+| S8 | [Construção de skills e agentes próprios da equipe](sessao-08-skills-e-agentes/index.md) | 4 — Skills, agentes e uso nas empresas |
+| S9 | [Regras para compartilhar skills e agentes entre colegas](sessao-09-governanca-de-skills-e-agentes/index.md) | 4 — Skills, agentes e uso nas empresas |
+| S10 | [Uso de agentes nas empresas em 2027 e plano de teste de 90 dias](sessao-10-computacao-agentica-2027/index.md) | 4 — Skills, agentes e uso nas empresas |
 
 ## Critérios de sucesso
 

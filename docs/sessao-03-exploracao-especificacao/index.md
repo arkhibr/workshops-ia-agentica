@@ -1,6 +1,6 @@
-# S3 — Exploração e especificação
+# S3 — Especificação de requisitos antes de pedir código ao agente
 
-**Bloco:** 2 — Especificação com precisão
+**Bloco:** 2 — Especificação de requisitos e regras de negócio
 
 > **Pergunta-guia:** por que um pedido tecnicamente correto ainda produz o sistema errado?
 

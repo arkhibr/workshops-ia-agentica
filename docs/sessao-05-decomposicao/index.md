@@ -1,6 +1,6 @@
-# S5 — Spec Kit: da regra ao código
+# S5 — Desenvolvimento guiado por especificação com o GitHub Spec Kit
 
-**Bloco:** 2 — Especificação com precisão
+**Bloco:** 2 — Especificação de requisitos e regras de negócio
 
 > **Pergunta-guia:** o que precisa estar escrito antes que um agente transforme uma regra de negócio em código, e onde o humano intervém no caminho?
 

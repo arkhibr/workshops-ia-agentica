@@ -1,6 +1,6 @@
-# S4 — Regras formais com IA
+# S4 — Regras de negócio escritas em formato verificável com IA
 
-**Bloco:** 2 — Especificação com precisão
+**Bloco:** 2 — Especificação de requisitos e regras de negócio
 
 > **Pergunta-guia:** como transformar uma regra espalhada entre prosa e código em um modelo que pessoas, agentes e testes consigam verificar?
 

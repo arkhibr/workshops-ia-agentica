@@ -1,6 +1,6 @@
-# S2 — O ambiente agêntico
+# S2 — Configuração do ambiente compartilhado de agentes na equipe
 
-**Bloco:** 1 — Modelo mental e ambiente agêntico
+**Bloco:** 1 — Fundamentos e ambiente de trabalho com agentes
 
 > **Pergunta-guia:** o que muda quando o time para de usar IA cada um do seu próprio jeito e passa a compartilhar um ambiente?
 

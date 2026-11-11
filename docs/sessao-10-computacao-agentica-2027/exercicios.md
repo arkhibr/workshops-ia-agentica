@@ -1,6 +1,6 @@
 # Exercícios
 
-Os exercícios desta página usam o conteúdo das páginas de teoria da primeira hora da sessão, sobre formas de delegar trabalho à IA, avaliação de afirmações sobre agentes, mudanças esperadas para 2027 a 2030, assistentes proativos e resultados publicados por empresas. Os exercícios 1 a 7 são feitos no bloco de 13 minutos do roteiro, e os exercícios 8 a 10 ficam para estudo depois do curso.
+Os exercícios desta página usam o conteúdo das páginas de teoria da primeira hora da sessão, sobre formas de delegar trabalho à IA, avaliação de afirmações sobre agentes, mudanças esperadas para 2027 a 2030, assistentes proativos e resultados publicados por empresas. Os exercícios 1 a 7 são feitos no bloco de 10 minutos do roteiro, e os exercícios 8 a 10 ficam para estudo depois do curso.
 
 ## Situação compartilhada
 
@@ -90,7 +90,7 @@ Classifique cada uma das frases F1 a F7 em um dos tipos de afirmação da págin
 
 ### 6. Relacionar mudanças e sessões do curso
 
-Para cada uma das mudanças 4.2 (informação fornecida ao agente), 4.3 (identidade própria para cada agente), 4.5 (desenvolvimento de software por agentes) e 4.7 (processos que combinam agentes e regras fixas), indique a sessão do curso em que a equipe da ACME praticou algo relacionado e o que essa sessão produziu. A página [O que cada sessão do curso produziu](o-que-cada-sessao-produziu.md) lista os resultados de cada sessão.
+Para cada uma das mudanças 4.2 (informação fornecida ao agente), 4.3 (identidade própria para cada agente), 4.5 (desenvolvimento de software por agentes) e 4.7 (processos que combinam agentes e regras fixas), indique a sessão do curso em que a equipe da ACME praticou algo relacionado e o que essa sessão produziu. A página [Práticas do curso e o uso de agentes nas empresas](praticas-do-curso-e-agentes-nas-empresas.md) lista os resultados de cada sessão.
 
 ### 7. Ler um percentual publicado
 

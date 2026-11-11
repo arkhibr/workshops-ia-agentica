@@ -1,6 +1,6 @@
-# S10 — Computação agêntica em 2027
+# S10 — Uso de agentes nas empresas em 2027 e plano de teste de 90 dias
 
-**Bloco:** 4 — Skills, agentes e computação agêntica
+**Bloco:** 4 — Skills, agentes e uso nas empresas
 
 > **Pergunta-guia:** quais usos de agentes de IA a equipe deve testar em 2027, e como saber se uma afirmação de mercado sobre agentes tem evidência suficiente para orientar essa escolha?
 
@@ -31,13 +31,13 @@ Ao final desta sessão, o participante deve ser capaz de:
 
 | # | Página | Bloco | Tempo | Resultado esperado |
 |---|---|---|---|---|
-| 1 | [O que cada sessão do curso produziu](o-que-cada-sessao-produziu.md) | Retomada | 8 min | Artefato de cada sessão e mudança de 2027 relacionada a ele |
+| 1 | [Práticas do curso e o uso de agentes nas empresas](praticas-do-curso-e-agentes-nas-empresas.md) | Retomada | 18 min | Práticas das Sessões 1 a 9 comparadas ao uso de agentes nas empresas em 2026, com fontes |
 | 2 | [Formas de delegar trabalho à IA](formas-de-delegar-trabalho.md) | Teoria | 6 min | Quem escolhe o próximo passo em cada forma e quando o trabalho termina |
-| 3 | [Avaliação de números e promessas sobre agentes](avaliacao-de-numeros-e-promessas.md) | Teoria | 9 min | Tipos de afirmação aplicados a pesquisas e estudos de 2026 |
-| 4 | [Mudanças esperadas para 2027 a 2030](mudancas-esperadas-2027-2030.md) | Teoria | 12 min | O que cada mudança exige para produzir resultado |
-| 5 | [Assistentes que agem sem receber pedido](assistentes-que-agem-sem-pedido.md) | Teoria | 6 min | Produtos lançados em 2026, argumentos a favor e objeções |
-| 6 | [Resultados publicados por empresas](resultados-publicados-por-empresas.md) | Teoria | 6 min | O que cada número publicado permite concluir |
-| 7 | [Exercícios](exercicios.md) | Prática | 13 min | Exercícios 1 a 7 |
+| 3 | [Avaliação de números e promessas sobre agentes](avaliacao-de-numeros-e-promessas.md) | Teoria | 7 min | Tipos de afirmação aplicados a pesquisas e estudos de 2026 |
+| 4 | [Mudanças esperadas para 2027 a 2030](mudancas-esperadas-2027-2030.md) | Teoria | 9 min | O que cada mudança exige para produzir resultado |
+| 5 | [Assistentes que agem sem receber pedido](assistentes-que-agem-sem-pedido.md) | Teoria | 5 min | Produtos lançados em 2026, argumentos a favor e objeções |
+| 6 | [Resultados publicados por empresas](resultados-publicados-por-empresas.md) | Teoria | 5 min | O que cada número publicado permite concluir |
+| 7 | [Exercícios](exercicios.md) | Prática | 10 min | Exercícios 1 a 7 |
 | | Intervalo às 11:00 | | 5 min | |
 | 8 | [Componentes de um agente que age com controle](componentes-de-um-agente-com-controle.md) | Teoria | 10 min | Função de cada componente e falhas mais comuns |
 | 9 | [Medição do custo e do resultado de um agente](medicao-de-custo-e-resultado.md) | Teoria | 9 min | Custo por resultado aceito e medidas de efeito colateral |
@@ -55,4 +55,4 @@ A oficina usa a ACME, universidade fictícia já usada nas Sessões 8 e 9, com p
 !!! warning "Limite desta sessão"
     Os resultados de empresas citados nesta sessão foram publicados pelas próprias empresas ou pelos seus fornecedores e não passaram por auditoria independente, e as previsões de analistas descrevem expectativas para datas futuras. Os produtos citados correspondem à documentação consultada em 10/11/2026.
 
-**Próxima página:** [O que cada sessão do curso produziu](o-que-cada-sessao-produziu.md).
+**Próxima página:** [Práticas do curso e o uso de agentes nas empresas](praticas-do-curso-e-agentes-nas-empresas.md).

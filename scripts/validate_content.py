@@ -28,7 +28,7 @@ INTERNOS = DOCS / "superpowers"
 # nome simples para docs/assets/images/, ou caminho relativo à pasta da sessão.
 SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
     "sessao-01-o-que-mudou": (
-        "O que mudou",
+        "Modos de trabalho com IA no desenvolvimento de software",
         True,
         (
             "s1-tres-modos-trabalho.png",
@@ -39,7 +39,7 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
         ),
     ),
     "sessao-02-ambiente-agentico": (
-        "O ambiente agêntico",
+        "Configuração do ambiente compartilhado de agentes na equipe",
         True,
         (
             "s2-anatomia-ambiente-agentico.png",
@@ -52,9 +52,9 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
             "s2-vetor-ambiente-tres-passos.png",
         ),
     ),
-    "sessao-03-exploracao-especificacao": ("Exploração e especificação", True, ()),
+    "sessao-03-exploracao-especificacao": ("Especificação de requisitos antes de pedir código ao agente", True, ()),
     "sessao-04-regras-formais-com-ia": (
-        "Regras formais com IA",
+        "Regras de negócio escritas em formato verificável com IA",
         True,
         (
             "assets/mapa-de-regras.png",
@@ -65,7 +65,7 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
         ),
     ),
     "sessao-05-decomposicao": (
-        "Spec Kit: da regra ao código",
+        "Desenvolvimento guiado por especificação com o GitHub Spec Kit",
         True,
         (
             "assets/caminho-basico-spec-kit.png",
@@ -75,7 +75,7 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
         ),
     ),
     "sessao-06-spec-kit-aprofundado": (
-        "Spec Kit: qualidade da spec e teste antes do código",
+        "Revisão da especificação e testes escritos antes do código",
         True,
         (
             "assets/opcionais-no-fluxo.png",
@@ -83,9 +83,9 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
             "assets/teste-vermelho-csharp.png",
         ),
     ),
-    "sessao-07-casos-de-uso-por-papel": ("Casos de uso de IA por papel", True, ()),
+    "sessao-07-casos-de-uso-por-papel": ("Usos de IA conferíveis em cada papel da equipe", True, ()),
     "sessao-08-skills-e-agentes": (
-        "Skills e agentes",
+        "Construção de skills e agentes próprios da equipe",
         True,
         (
             "assets/ficha-de-requisitos.png",
@@ -107,7 +107,7 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
         ),
     ),
     "sessao-09-governanca-de-skills-e-agentes": (
-        "Governança de skills e agentes",
+        "Regras para compartilhar skills e agentes entre colegas",
         True,
         (
             "assets/dependencias-da-ficha.png",
@@ -134,7 +134,7 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
         ),
     ),
     "sessao-10-computacao-agentica-2027": (
-        "Computação agêntica em 2027",
+        "Uso de agentes nas empresas em 2027 e plano de teste de 90 dias",
         True,
         (
             "assets/formas-de-delegacao.png",
@@ -148,6 +148,9 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
             "assets/economia-do-resultado-aceito.png",
             "assets/horizontes-de-evolucao.png",
             "assets/decisao-nos-90-dias.png",
+            "assets/praticas-do-curso-e-mercado.png",
+            "assets/uso-de-agentes-por-porte-2026.png",
+            "assets/confiabilidade-por-numero-de-passos.png",
         ),
     ),
 }

@@ -1,6 +1,6 @@
-# S7 — Casos de uso de IA por papel
+# S7 — Usos de IA conferíveis em cada papel da equipe
 
-**Bloco:** 3 — Qualidade da spec e adoção por papel
+**Bloco:** 3 — Testes e uso de IA por papel
 
 > **Pergunta-guia:** em quais tarefas do meu papel a IA já entrega um resultado que eu consigo conferir, e em quais ainda não?
 

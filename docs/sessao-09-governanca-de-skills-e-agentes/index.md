@@ -1,6 +1,6 @@
-# S9 — Governança de skills e agentes
+# S9 — Regras para compartilhar skills e agentes entre colegas
 
-**Bloco:** 4 — Skills, agentes e computação agêntica
+**Bloco:** 4 — Skills, agentes e uso nas empresas
 
 > **Pergunta-guia:** o que precisa estar decidido e registrado antes que outra pessoa da equipe instale uma skill ou um agente construído por um colega?
 

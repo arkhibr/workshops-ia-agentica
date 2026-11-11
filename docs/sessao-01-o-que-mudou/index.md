@@ -1,6 +1,6 @@
-# S1 — O que mudou
+# S1 — Modos de trabalho com IA no desenvolvimento de software
 
-**Bloco:** 1 — Modelo mental e ambiente agêntico
+**Bloco:** 1 — Fundamentos e ambiente de trabalho com agentes
 
 > **Pergunta-guia:** por que a equipe já usa IA todo dia e o resultado continua desigual?
 
