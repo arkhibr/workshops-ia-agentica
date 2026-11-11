@@ -90,7 +90,7 @@ Classifique cada uma das frases F1 a F7 em um dos tipos de afirmação da págin
 
 ### 6. Relacionar mudanças e sessões do curso
 
-Para cada uma das mudanças 4.2 (informação fornecida ao agente), 4.3 (identidade própria para cada agente), 4.5 (desenvolvimento de software por agentes) e 4.7 (processos que combinam agentes e regras fixas), indique a sessão do curso em que a equipe da ACME praticou algo relacionado e o que essa sessão produziu. A página [Práticas do curso e o uso de agentes nas empresas](praticas-do-curso-e-agentes-nas-empresas.md) lista os resultados de cada sessão.
+Para cada uma das mudanças 1.2 (informação fornecida ao agente), 1.3 (identidade própria para cada agente), 3.1 (desenvolvimento de software por agentes) e 2.2 (processos que combinam agentes e regras fixas), indique a sessão do curso em que a equipe da ACME praticou algo relacionado e o que essa sessão produziu. A página [Práticas do curso e o uso de agentes nas empresas](praticas-do-curso-e-agentes-nas-empresas.md) lista os resultados de cada sessão.
 
 ### 7. Ler um percentual publicado
 

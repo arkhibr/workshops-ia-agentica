@@ -139,7 +139,7 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
         (
             "assets/formas-de-delegacao.png",
             "assets/tres-condicoes-para-escalar.png",
-            "assets/onze-tendencias-em-quatro-frentes.png",
+            "assets/visao-geral-das-mudancas.png",
             "assets/responsabilidade-entre-conversas.png",
             "assets/oferta-e-pratica-sustentavel.png",
             "assets/alcance-da-evidencia-nos-casos.png",

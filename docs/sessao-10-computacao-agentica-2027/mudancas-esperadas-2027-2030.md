@@ -2,13 +2,13 @@
 
 Esta página descreve as mudanças no uso de agentes de IA que fornecedores, consultorias e pesquisadores documentaram até novembro de 2026 e que devem se ampliar entre 2027 e 2030. Um agente de IA, nesta página, é um sistema que recebe um objetivo, escolhe os passos para atingi-lo, usa ferramentas como leitura de arquivos e chamadas a outros sistemas e confere o resultado de cada passo antes do seguinte. Para cada mudança, a página explica o funcionamento, cita produtos ou estudos que a documentam, relaciona a mudança ao que a equipe praticou no curso e indica o que observar em 2027. A última seção apresenta a leitura que o Gartner fez do mesmo período no seu Hype Cycle de IA.
 
-![Quatro quadros com as onze tendências. Execução e contexto reúne 4.1 persistência e execução assíncrona, com eventos, checkpoints e retomada, 4.2 contexto, memória e skills, com origem, autorização e validade, e 4.3 identidade e controles externos, com escopo, políticas e credenciais. Integração e processos reúne 4.4 interoperabilidade, com MCP para ferramentas e A2A para agentes, 4.7 processos híbridos, com agentes, regras, APIs e pessoas, e 4.8 multimodalidade e interfaces, com voz, documentos e sistemas legados. Software e economia reúne 4.5 engenharia por delegação, com branch, testes e revisão, 4.6 software temporário, com validade, manutenção e descarte, e 4.9 economia por resultado, com modelos combinados e custo integral. Transações e mundo físico reúne 4.10 comércio e pagamentos, com intenção, autorização e confirmação, e 4.11 ciência e robótica, com hipóteses, simulação e validação física.](assets/onze-tendencias-em-quatro-frentes.png)
+![Quatro quadros com as mudanças esperadas para 2027 a 2030, agrupadas por área. Área 1, agentes que trabalham por mais tempo e com mais informação: 1.1 agentes que continuam trabalhando depois da conversa, 1.2 informação fornecida ao agente como ativo da equipe e 1.3 identidade própria para cada agente. Área 2, agentes conectados a outros sistemas e a processos de negócio: 2.1 padrões abertos para conectar agentes, 2.2 processos que combinam agentes, regras fixas, sistemas e pessoas e 2.3 agentes que usam voz, documentos e telas. Área 3, software, custo e escolha de modelos: 3.1 desenvolvimento de software por agentes, 3.2 aplicações temporárias criadas com agentes e 3.3 escolha de modelo pelo custo do resultado. Área 4, pagamentos, pesquisa científica e robôs: 1.1 compras e pagamentos feitos por agentes e 1.2 agentes em pesquisa científica, matemática e robôs.](assets/visao-geral-das-mudancas.png)
 
-O infográfico agrupa as mudanças por área e as numera de 4.1 a 4.11, e esta página usa a mesma numeração. As áreas podem avançar ao mesmo tempo e não formam uma sequência obrigatória, de modo que uma empresa pode adotar agentes de programação antes de resolver a identidade dos agentes, por exemplo, assumindo o risco correspondente.
+A figura agrupa as mudanças em quatro áreas, e cada mudança recebe um número formado pela área e pela posição dentro dela, de 1.1 a 1.2. As áreas podem avançar ao mesmo tempo e não formam uma sequência obrigatória, de modo que uma empresa pode adotar agentes de programação antes de resolver a identidade dos agentes, por exemplo, assumindo o risco correspondente.
 
-## Agentes que trabalham por mais tempo e com mais informação
+## 1. Agentes que trabalham por mais tempo e com mais informação
 
-### 4.1 Agentes que continuam trabalhando depois da conversa
+### 1.1 Agentes que continuam trabalhando depois da conversa
 
 ![Fluxo em cinco caixas: pedido com objetivo e limite, agente executa os passos, estado gravado enquanto espera aprovação, retomada depois da aprovação ou de uma falha, e resultado registrado. Nota abaixo: operação idempotente, em que o sistema reconhece um registro repetido e não o duplica.](assets/tendencia-persistencia.png)
 
@@ -18,7 +18,7 @@ A Anthropic descreve essa separação no [Claude Managed Agents](../referencia/b
 
 A retomada cria um risco que a equipe precisa tratar antes de usar o recurso. Se o agente registrou um pagamento e a resposta do sistema se perdeu antes da falha, o agente pode registrar o pagamento de novo ao retomar. A proteção é tornar cada operação com efeito no negócio idempotente, isto é, capaz de produzir o mesmo efeito se for executada uma ou várias vezes, por exemplo enviando um identificador único que o sistema de destino reconhece. Em 2027, o sinal de que a mudança está funcionando é o aumento de tarefas longas aceitas sem retomada manual, e o sinal contrário é a permanência de sessões que perdem o andamento do trabalho em falhas.
 
-### 4.2 Informação fornecida ao agente como ativo da equipe
+### 1.2 Informação fornecida ao agente como ativo da equipe
 
 ![Fluxo em quatro caixas: dados, procedimentos e regras da empresa, catálogo com origem, validade e responsável, agente lê apenas o que é autorizado, e resposta com a fonte citada. Nota abaixo: uma regra vencida, lida como vigente, produz resposta errada com aparência de correta.](assets/tendencia-contexto.png)
 
@@ -28,7 +28,7 @@ A Anthropic documenta as [Agent Skills](../referencia/bibliografia.md#anthropic-
 
 Cada instrução ou memória fornecida ao agente precisa de origem conhecida, data de validade, permissão de uso e responsável, pelo mesmo motivo que a Sessão 9 exigiu dono para cada skill compartilhada. Uma confusão comum em material comercial é chamar de aprendizado o armazenamento de memória do agente: guardar uma informação para consultar depois não altera o modelo de IA, que continua o mesmo para todos os clientes. O sinal a observar em 2027 é a existência, na empresa, de um responsável pelas informações que os agentes leem, com revisão periódica.
 
-### 4.3 Identidade própria para cada agente
+### 1.3 Identidade própria para cada agente
 
 ![Dois quadros lado a lado. À esquerda, o agente com a identidade do usuário, exemplificado pelo Grok Bot: os bots do usuário trabalham no mesmo computador, usam os logins e as permissões da pessoa, e o sistema registra a ação como se fosse da pessoa, de modo que os registros não separam o que o agente fez do que a pessoa fez. À direita, o agente com identidade própria, exemplificado pelo Microsoft Entra Agent ID: o agente tem usuário próprio, responsável e prazo, um gateway confere a permissão e o limite do agente, e o sistema registra a ação como do agente, que fica atribuída a ele, com permissões mínimas.](assets/tendencia-identidade.png)
 
@@ -40,9 +40,9 @@ No modelo do agente com identidade própria, cada agente em operação tem um us
 
 A identidade resolve a pergunta "quem fez", e a pergunta "a ação estava certa" continua com as regras de negócio. Um agente com identidade válida pode aprovar mil reembolsos corretos do ponto de vista de permissão e errados do ponto de vista do negócio, e por isso a Sessão 9 exigiu, além da permissão, limites de volume e alertas para comportamento fora do padrão. Em 2027, convém observar se os sistemas da empresa conseguem separar, nos registros, as ações de agentes das ações de pessoas.
 
-## Agentes conectados a outros sistemas e a processos de negócio
+## 2. Agentes conectados a outros sistemas e a processos de negócio
 
-### 4.4 Padrões abertos para conectar agentes
+### 2.1 Padrões abertos para conectar agentes
 
 ![Quatro caixas: MCP, que liga o agente a ferramentas e dados, A2A, em que o agente de uma empresa conversa com outro, AGENTS.md, com instruções do projeto para o agente, e permissões que continuam em cada sistema conectado. Nota abaixo: os padrões são mantidos pela Agentic AI Foundation e reduzem a dependência de um único fornecedor.](assets/tendencia-padroes.png)
 
@@ -58,7 +58,7 @@ O exemplo mais concreto publicado em 2026 veio da Microsoft e da SAP. Em maio de
 
 Os padrões definem a forma da conversa entre sistemas e deixam com cada sistema a decisão sobre o que o agente pode acessar. Um servidor MCP que expõe uma base de dados inteira dá ao agente acesso à base inteira, qualquer que seja o padrão. O sinal de confirmação a acompanhar são transações reais concluídas entre agentes de fornecedores diferentes, com responsável identificado e resultado conferível, para além de demonstrações de conectividade.
 
-### 4.7 Processos que combinam agentes, regras fixas, sistemas e pessoas
+### 2.2 Processos que combinam agentes, regras fixas, sistemas e pessoas
 
 ![Fluxo em quatro caixas: agente lê a solicitação e reúne os comprovantes, tabela de decisão define se é permitido, sistema registra o pagamento, e pessoa trata as exceções. Nota abaixo: cada etapa recebe a autonomia compatível com a facilidade de conferir o resultado.](assets/tendencia-hibrido.png)
 
@@ -68,7 +68,7 @@ A [UiPath](../referencia/bibliografia.md#uipath-maestro-orchestrate-documentacao
 
 O risco desse desenho é usar o agente na etapa que deveria ser regra fixa, porque o agente pode dar respostas diferentes para a mesma entrada. O agente também precisa consultar o sistema de registro, que guarda os dados oficiais do negócio, antes de agir, para não decidir com base numa cópia desatualizada. Em 2027, o sinal a observar é a proporção de casos que chegam às pessoas como exceção: se ela não cai, o processo apenas acrescentou uma etapa de agente ao trabalho que já existia.
 
-### 4.8 Agentes que usam voz, documentos e telas
+### 2.3 Agentes que usam voz, documentos e telas
 
 ![Fluxo em quatro caixas: voz, documento digitalizado ou tela, agente interpreta o conteúdo, API quando existe e operação da tela quando não existe, e resultado conferido. Nota abaixo: a operação de tela sofre com mudança de layout e falhas silenciosas, e a API tem preferência.](assets/tendencia-multimodal.png)
 
@@ -78,9 +78,9 @@ A operação de tela tem limitações que a API não tem. A tela muda de layout 
 
 O sinal a observar em 2027 é a taxa de operações de tela que precisam de correção humana. Um agente capaz de clicar em botões ainda precisa de controle de acesso e de evidência de confiabilidade antes de operar um processo crítico, como o lançamento de notas fiscais.
 
-## Software, custo e escolha de modelos
+## 3. Software, custo e escolha de modelos
 
-### 4.5 Desenvolvimento de software por agentes
+### 3.1 Desenvolvimento de software por agentes
 
 ![Fluxo em cinco caixas: pessoa escreve a especificação, agente planeja e altera o código num ramo, testes automáticos, pessoa revisa a alteração, e integração ao produto. Nota abaixo: limite de alterações em andamento, porque a revisão humana define o ritmo de entrega.](assets/tendencia-desenvolvimento.png)
 
@@ -90,7 +90,7 @@ A Cognition, fabricante do Devin, [relata](../referencia/bibliografia.md#cogniti
 
 Quantidade de pull requests, de tokens consumidos e de linhas escritas são medidas de atividade, e o valor entregue aparece no tempo até a alteração ser aceita. O sinal contrário a acompanhar em 2027 é o crescimento persistente de retrabalho, de falhas de segurança e da fila de revisão, que anularia o ganho na escrita de código.
 
-### 4.6 Aplicações temporárias criadas com agentes
+### 3.2 Aplicações temporárias criadas com agentes
 
 ![Fluxo em quatro caixas: necessidade pontual, como uma campanha, aplicação criada em poucos dias, uso com responsável, acesso e prazo definidos, e desativação na data combinada. Nota abaixo: uma aplicação esquecida continua acessando dados e exigindo suporte.](assets/tendencia-temporario.png)
 
@@ -100,7 +100,7 @@ Construir depressa não elimina os custos que vêm depois. Uma aplicação tempo
 
 A mudança não justifica reconstruir com agentes os sistemas que guardam os dados oficiais da empresa, como o sistema financeiro, e não indica o fim da compra de software. O sinal a observar em 2027 é o inventário de aplicações temporárias da empresa: se ele não existe, as aplicações desativadas não são conhecidas.
 
-### 4.9 Escolha de modelo pelo custo do resultado
+### 3.3 Escolha de modelo pelo custo do resultado
 
 ![Fluxo em quatro caixas: tarefa, roteamento por complexidade, prazo e restrição de dados, modelo pequeno, modelo grande ou execução local, e custo por resultado aceito. Nota abaixo: um modelo barato que exige mais revisão humana pode sair mais caro por entrega aceita.](assets/tendencia-custo.png)
 
@@ -110,9 +110,9 @@ A métrica recomendada para escolher o modelo é o custo por resultado aceito, e
 
 A execução local resolve a restrição de dados apenas para a etapa executada no computador da empresa, e o restante do fluxo pode continuar dependendo de serviços externos. Em 2027, o sinal a observar é se a equipe consegue informar o custo por entrega aceita de cada agente em uso, além do valor da fatura mensal do fornecedor.
 
-## Pagamentos, pesquisa científica e robôs
+## 4. Pagamentos, pesquisa científica e robôs
 
-### 4.10 Compras e pagamentos feitos por agentes
+### 4.1 Compras e pagamentos feitos por agentes
 
 ![Fluxo em quatro caixas: pessoa autoriza valor, fornecedor e prazo, agente compara e escolhe, pagamento com prova da autorização, e registro para contestação ou cancelamento. Nota abaixo: sem registro de quem autorizou o quê, uma contestação não tem como ser resolvida.](assets/tendencia-pagamentos.png)
 
@@ -122,7 +122,7 @@ A questão central dessa mudança é a autorização. Cada pagamento feito por a
 
 O relatório do piloto não traz dados suficientes para estimar a economia em escala. O sinal de maturidade a observar entre 2027 e 2029 são pagamentos recorrentes por agentes em operação normal, com taxas de falha e de contestação publicadas.
 
-### 4.11 Agentes em pesquisa científica, matemática e robôs
+### 4.2 Agentes em pesquisa científica, matemática e robôs
 
 ![Fluxo em quatro caixas: agentes propõem hipóteses, simulação, experimento real em laboratório ou fábrica, e medição e revisão da hipótese. Nota abaixo: a confirmação continua no experimento físico, e um robô treinado para uma tarefa não executa outras sem novo treino.](assets/tendencia-ciencia.png)
 
@@ -166,7 +166,7 @@ Em 2026, o Gartner publicou o [Hype Cycle for Agentic AI](../referencia/bibliogr
 
 Segundo essas análises, os agentes de IA estavam no pico de expectativas infladas no Hype Cycle de agentes de abril e apareciam logo depois do pico na edição de agosto, com prazo de dois a cinco anos até o platô de produtividade. A mesma pesquisa do Gartner com executivos de tecnologia, citada pelas duas análises, registrou que 17% das organizações já usavam agentes e que mais de 60% esperavam usá-los em até dois anos. A IA generativa, isto é, a geração de texto, imagem e código por modelos de IA, aparece perto do fundo do vale da desilusão. O comércio feito por agentes está no início da curva, com cinco a dez anos até o platô, e os grafos de conhecimento, bases que registram entidades de negócio e as relações entre elas, estão perto do platô.
 
-A leitura conjunta tem consequências práticas para a equipe. A posição da IA generativa no vale da desilusão indica que as empresas passaram a abandonar os projetos sem retorno medido e a manter os que comprovaram resultado, o que torna a medição de custo por resultado aceito, vista nesta sessão, o critério de sobrevivência dos projetos. Os agentes no pico de expectativas são coerentes com a previsão do próprio Gartner de que mais de 40% dos projetos com agentes serão cancelados até o fim de 2027, citada na página [Avaliação de números e promessas sobre agentes](avaliacao-de-numeros-e-promessas.md), e indicam que a passagem pelo vale ainda está por vir. Os grafos de conhecimento perto do platô se relacionam com a mudança 4.2, porque são uma forma madura de organizar a informação que os agentes leem.
+A leitura conjunta tem consequências práticas para a equipe. A posição da IA generativa no vale da desilusão indica que as empresas passaram a abandonar os projetos sem retorno medido e a manter os que comprovaram resultado, o que torna a medição de custo por resultado aceito, vista nesta sessão, o critério de sobrevivência dos projetos. Os agentes no pico de expectativas são coerentes com a previsão do próprio Gartner de que mais de 40% dos projetos com agentes serão cancelados até o fim de 2027, citada na página [Avaliação de números e promessas sobre agentes](avaliacao-de-numeros-e-promessas.md), e indicam que a passagem pelo vale ainda está por vir. Os grafos de conhecimento perto do platô se relacionam com a mudança 1.2, porque são uma forma madura de organizar a informação que os agentes leem.
 
 O Hype Cycle tem limites que convém registrar ao usá-lo numa decisão. As posições resultam da avaliação dos analistas do Gartner, sem medição publicada de adoção ou de retorno, e uma tecnologia pode sair da curva sem chegar ao platô. Para a equipe, a curva serve como indicação do momento do mercado, e a decisão de testar um agente continua dependendo da medição do próprio processo, como propõe o [plano de 90 dias](plano-de-90-dias.md).
 

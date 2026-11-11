@@ -39,11 +39,11 @@ A tabela lista, para parte das mudanças esperadas e para os assistentes proativ
 
 | Mudança | Sinal a acompanhar |
 |---|---|
-| 4.1 Agentes que continuam trabalhando depois da conversa | A mudança perde força se os produtos continuarem perdendo o andamento do trabalho em falhas, com retomada manual cara e poucas tarefas aceitas |
-| 4.4 Padrões para conectar agentes e empresas | A mudança se confirma quando agentes de fornecedores diferentes concluírem transações entre si, com responsável e resultado conferível |
-| 4.5 Desenvolvimento de software por agentes | O sinal contrário é o crescimento persistente de retrabalho, falhas de segurança e fila de revisão, anulando o ganho na escrita de código |
-| 4.10 Compras e pagamentos feitos por agentes | A mudança se confirma com pagamentos recorrentes em operação normal, com taxas de falha e de contestação publicadas |
-| 4.11 Pesquisa científica e robôs | A mudança se confirma quando outros laboratórios repetirem os resultados científicos e quando robôs operarem de forma estável com menos intervenção humana por tarefa |
+| 1.1 Agentes que continuam trabalhando depois da conversa | A mudança perde força se os produtos continuarem perdendo o andamento do trabalho em falhas, com retomada manual cara e poucas tarefas aceitas |
+| 2.1 Padrões para conectar agentes e empresas | A mudança se confirma quando agentes de fornecedores diferentes concluírem transações entre si, com responsável e resultado conferível |
+| 3.1 Desenvolvimento de software por agentes | O sinal contrário é o crescimento persistente de retrabalho, falhas de segurança e fila de revisão, anulando o ganho na escrita de código |
+| 4.1 Compras e pagamentos feitos por agentes | A mudança se confirma com pagamentos recorrentes em operação normal, com taxas de falha e de contestação publicadas |
+| 4.2 Pesquisa científica e robôs | A mudança se confirma quando outros laboratórios repetirem os resultados científicos e quando robôs operarem de forma estável com menos intervenção humana por tarefa |
 | Assistentes proativos | A mudança perde força com queda do uso depois das primeiras semanas, revisão igual ou maior que o tempo poupado, limite de uso impedindo a rotina ou automação simples entregando o mesmo resultado |
 
 ## Fontes citadas nesta sessão

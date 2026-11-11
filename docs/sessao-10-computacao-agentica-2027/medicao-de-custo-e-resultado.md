@@ -31,7 +31,7 @@ Quando a equipe melhora uma medida, outra pode piorar sem que ninguém perceba. 
 | Segurança | Ações sem autorização ou fora das regras | Tentativas bloqueadas e suas causas |
 | Operação | Recuperação depois de falhas | Ações duplicadas e dados inconsistentes |
 
-Quando agentes produzem alterações mais depressa do que as pessoas conseguem revisar, a fila de revisão cresce, e por isso ela é a medida de efeito colateral mais importante no desenvolvimento de software com agentes, descrito na página [Mudanças esperadas para 2027 a 2030](mudancas-esperadas-2027-2030.md#software-custo-e-escolha-de-modelos).
+Quando agentes produzem alterações mais depressa do que as pessoas conseguem revisar, a fila de revisão cresce, e por isso ela é a medida de efeito colateral mais importante no desenvolvimento de software com agentes, descrito na página [Mudanças esperadas para 2027 a 2030](mudancas-esperadas-2027-2030.md#31-desenvolvimento-de-software-por-agentes).
 
 ## Como testar um agente antes de liberá-lo
 
