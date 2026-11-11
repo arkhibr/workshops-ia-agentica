@@ -1,6 +1,6 @@
 # Resultados publicados por empresas
 
-Esta página reúne resultados de uso de agentes de IA que empresas, ou os fornecedores delas, publicaram até novembro de 2026. Nenhum desses números passou por auditoria independente, e a coluna "O que o número permite concluir" usa os seis tipos de afirmação da página [Avaliação de números e promessas sobre agentes](avaliacao-de-numeros-e-promessas.md): um relato de empresa descreve uma implantação sem comparação controlada, e um piloto é um teste real com escopo e prazo limitados.
+Esta página reúne resultados de uso de agentes de IA que empresas, ou os fornecedores delas, publicaram até novembro de 2026. Nenhum desses números passou por auditoria independente, e a coluna "O que o número permite concluir" usa os tipos de afirmação da página [Avaliação de números e promessas sobre agentes](avaliacao-de-numeros-e-promessas.md): um relato de empresa descreve uma implantação sem comparação controlada, e um piloto é um teste real com escopo e prazo limitados.
 
 ![Seis cartões com resultados relatados e quatro cartões menores. Itaú com Devin relata aumento de 20 a 30% no throughput de engenharia, relato do fornecedor. Nubank com Skill Vetter revisou mais de 2.000 skills, governança antes da distribuição. Bradesco com Gemini reduziu a revisão documental de 1 hora para 5 minutos, fluxo específico relatado. Ask Microsoft reduziu em até 61% a latência do atendimento, valor máximo frente à solução anterior. OpenTable com Agentforce atingiu 73% de resolução do agente nas três primeiras semanas. Thrive com ServiceNow reduziu em 63% o tempo de resolução, efeito de plataforma, processos e agentes. Os cartões menores citam Cox com 17 soluções e Fleet Services em piloto, Visa, BILL e Billtrust com piloto de pagamentos, BMW com Figure 02 em piloto industrial delimitado e Co-Scientist em pesquisa e validação.](assets/alcance-da-evidencia-nos-casos.png)
 
@@ -31,9 +31,9 @@ O Nubank trata cada skill compartilhada como um componente de software de tercei
 | [BMW e Figure](../referencia/bibliografia.md#bmw-group-robos-humanoides-2026) | O robô humanoide Figure 02 participou da produção de mais de 30 mil carros BMW X3 durante um piloto | Piloto restrito a mover e posicionar peças, sem montagem completa do carro pelo robô |
 | [Google Co-Scientist](../referencia/bibliografia.md#google-deepmind-co-scientist-2026) | Sistema com vários agentes que propõe e refina hipóteses científicas, com pesquisa publicada na revista Nature | Resultado de pesquisa, e cada hipótese ainda depende de confirmação em laboratório |
 
-## Quatro perguntas antes de usar um percentual
+## Perguntas antes de usar um percentual
 
-Antes de usar um percentual publicado por uma empresa numa decisão da equipe, convém responder às quatro perguntas da tabela.
+Antes de usar um percentual publicado por uma empresa numa decisão da equipe, convém responder às perguntas da tabela.
 
 | Pergunta | Exemplo desta página |
 |---|---|

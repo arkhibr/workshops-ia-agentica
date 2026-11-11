@@ -16,9 +16,9 @@ Nesta oficina, cada dupla prepara com um agente de IA a ficha de um piloto de 90
 
 A oficina usa um agente de linha de comando já configurado na Sessão 2, como Claude Code, Codex CLI ou Gemini CLI, e funciona também numa conversa de chat comum, com a ficha copiada para um arquivo local ao final. Os dados dos três processos e do Experimento C são fictícios, e nenhum experimento usa credencial real ou documento interno da equipe.
 
-## Três processos da ACME
+## Processos da ACME usados na oficina
 
-Os três processos abaixo são fictícios e foram escritos para esta oficina. As colunas de volume, tempo e qualidade formam a linha de base de cada processo, isto é, a medição de como o processo funciona hoje, sem o agente, com números inventados para o exercício. O processo P3 é inspirado no domínio administrativo de projetos de pesquisa e não reproduz regra vigente de nenhuma instituição.
+Os processos abaixo são fictícios e foram escritos para esta oficina. As colunas de volume, tempo e qualidade formam a linha de base de cada processo, isto é, a medição de como o processo funciona hoje, sem o agente, com números inventados para o exercício. O processo P3 é inspirado no domínio administrativo de projetos de pesquisa e não reproduz regra vigente de nenhuma instituição.
 
 | Código | Processo | Volume mensal | Tempo humano atual | Qualidade atual | Responsável |
 |---|---|---|---|---|---|
@@ -40,18 +40,18 @@ O agente deve abrir a sessão interativa na pasta `oficina-piloto`, ainda vazia.
 
 ## Experimento A: escolher o processo
 
-A dupla escolhe um dos três processos aplicando os quatro critérios de passagem do primeiro mês do [plano de 90 dias](plano-de-90-dias.md#as-tres-fases-do-piloto): o resultado do processo pode ser observado, há um responsável pelo processo, o agente pode ter acesso aos dados necessários e o volume de trabalho é conhecido. A dupla anota também qual das [quatro formas de delegar trabalho à IA](quatro-formas-de-delegar.md#as-quatro-formas) se aplica a cada etapa do processo, considerando que etapas previsíveis podem usar fluxo de trabalho com IA e etapas de investigação podem usar agente com autonomia delimitada.
+A dupla escolhe um dos processos aplicando os critérios de passagem do primeiro mês do [plano de 90 dias](plano-de-90-dias.md#fases-do-piloto): o resultado do processo pode ser observado, há um responsável pelo processo, o agente pode ter acesso aos dados necessários e o volume de trabalho é conhecido. A dupla anota também qual das [quatro formas de delegar trabalho à IA](formas-de-delegar-trabalho.md#quem-escolhe-o-proximo-passo) se aplica a cada etapa do processo, considerando que etapas previsíveis podem usar fluxo de trabalho com IA e etapas de investigação podem usar agente com autonomia delimitada.
 
 O registro esperado é uma linha por critério, com a informação da tabela de partida que o atende ou com a lacuna que impediria o piloto. No processo P2, por exemplo, a dupla precisa definir os itens de uma pauta completa antes de medir o percentual de pautas incompletas.
 
 ## Experimento B: preencher a ficha com o agente
 
-A ficha de piloto tem nove campos. A tabela explica o que cada campo registra, e os termos dela aparecem no prompt que a dupla vai colar no agente.
+A tabela explica o que cada campo da ficha de piloto registra, e os termos dela aparecem no prompt que a dupla vai colar no agente.
 
 | Campo | O que registra |
 |---|---|
 | 1. Processo e responsável | O processo escolhido e a pessoa que responde por ele |
-| 2. Decisões delegáveis e forma de delegação | Quais decisões o agente pode tomar e qual das quatro formas de delegar trabalho à IA vale para cada etapa |
+| 2. Decisões delegáveis e forma de delegação | Quais decisões o agente pode tomar e qual das formas de delegar trabalho à IA vale para cada etapa |
 | 3. Linha de base | Volume, tempo, custo e qualidade do processo hoje, sem o agente |
 | 4. Casos de avaliação | Exemplos de entrada com o resultado esperado, incluindo casos típicos, exceções e ataques simulados, como um documento com instruções maliciosas |
 | 5. Métrica principal e contramétricas | O custo por resultado aceito e as medidas de efeito colateral que o acompanham, como o número de entregas reabertas |
@@ -75,7 +75,7 @@ Regras da entrevista:
   "a definir" e diga quem na ACME deveria responder.
 - Não proponha soluções antes de terminar as perguntas de um campo.
 
-Ao final, grave o arquivo ficha-piloto.md com estes nove campos:
+Ao final, grave o arquivo ficha-piloto.md com estes campos:
 1. Processo e responsável
 2. Decisões delegáveis e forma de delegação de cada etapa
 3. Linha de base (volume, tempo, custo e qualidade)
@@ -89,7 +89,7 @@ Ao final, grave o arquivo ficha-piloto.md com estes nove campos:
 
 **Passo 2:** responder às perguntas do agente até que ele grave o arquivo `ficha-piloto.md` na pasta.
 
-O resultado esperado é um arquivo com os nove campos preenchidos ou marcados como "a definir", com o responsável indicado para cada lacuna. Se o agente preencher um número que a dupla não forneceu, a dupla registra o campo como falha da entrevista e pede a correção, porque o campo 3 só tem valor quando os números vêm da medição do processo.
+O resultado esperado é um arquivo com todos os campos preenchidos ou marcados como "a definir", com o responsável indicado para cada lacuna. Se o agente preencher um número que a dupla não forneceu, a dupla registra o campo como falha da entrevista e pede a correção, porque o campo 3 só tem valor quando os números vêm da medição do processo.
 
 ## Experimento C: calcular o custo por resultado aceito
 

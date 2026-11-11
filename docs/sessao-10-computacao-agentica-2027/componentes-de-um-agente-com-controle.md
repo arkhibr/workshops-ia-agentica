@@ -21,11 +21,11 @@ O *gateway* corresponde ao controle aplicado fora do modelo, tratado na [Sessão
 
 ## Como os fornecedores organizam esses componentes
 
-Os produtos de agentes que trabalham por longos períodos separam três partes. A sessão é o histórico do trabalho, com o que já foi feito e o que está pendente. O arnês, nome dado no curso a tudo o que cerca o modelo dentro de um agente e chamado de *harness* em inglês e no infográfico, monta a informação enviada ao modelo, chama o modelo e as ferramentas e decide quando continuar. O ambiente é o computador, físico ou virtual, onde as ferramentas rodam, como navegador, arquivos e acesso a outros sistemas.
+Os produtos de agentes que trabalham por longos períodos separam sessão, arnês e ambiente. A sessão é o histórico do trabalho, com o que já foi feito e o que está pendente. O arnês, nome dado no curso a tudo o que cerca o modelo dentro de um agente e chamado de *harness* em inglês e no infográfico, monta a informação enviada ao modelo, chama o modelo e as ferramentas e decide quando continuar. O ambiente é o computador, físico ou virtual, onde as ferramentas rodam, como navegador, arquivos e acesso a outros sistemas.
 
 ![Três colunas com responsabilidades e ciclos de vida diferentes. Sessão ou estado reúne histórico de eventos, checkpoint e artefatos e espera persistente, e preserva o trabalho registrado. Harness, que este curso chama de arnês, monta o contexto, chama modelo e ferramentas e observa e continua, conduzindo a execução e aplicando limites. Ambiente reúne código e processos, navegador, arquivos e APIs, e rede e recursos limitados, oferecendo as ferramentas de trabalho. Abaixo, Claude Managed Agents separa sessão, harness e sandbox com contêiner novo por sessão no ambiente gerenciado, Grok Bot usa um computador por usuário compartilhado pelos bots, com telas que não isolam segurança, e LangChain com Temporal oferece execução durável e espera humana. A faixa final cita microVM por sessão na AWS, runtime, sessões e memória no Google e checkpoints na Microsoft.](assets/sessao-arnes-e-ambiente.png)
 
-| Fornecedor | Como o produto organiza as três partes |
+| Fornecedor | Como o produto organiza sessão, arnês e ambiente |
 |---|---|
 | Anthropic | No [Claude Managed Agents](../referencia/bibliografia.md#anthropic-scaling-managed-agents-2026), a sessão, o arnês e o ambiente de execução isolado, chamado *sandbox*, são componentes separados que podem ser trocados um a um |
 | xAI | No [Grok Bot](../referencia/bibliografia.md#xai-grok-bot-documentacao), todos os bots de um usuário trabalham no mesmo computador na nuvem e compartilham arquivos e sessões de navegador |
@@ -34,9 +34,9 @@ Os produtos de agentes que trabalham por longos períodos separam três partes. 
 | AWS | O AgentCore pode criar um computador virtual isolado para cada sessão e guardar os arquivos da sessão para que continuem disponíveis depois de uma parada |
 | Google e Microsoft | O Google separa execução, histórico das conversas e memória de longo prazo, e a Microsoft grava *checkpoints* e pausa a execução quando uma ferramenta exige aprovação |
 
-Ao avaliar um produto, três propriedades precisam ser conferidas separadamente: guardar a conversa, guardar os arquivos e retomar uma execução interrompida. No Grok Bot, por exemplo, o computador pode ser recriado mantendo o disco, o que preserva arquivos e logins, sem garantia de que uma tarefa em andamento continue do ponto em que parou. Dar a cada agente um nome, um prompt ou uma tela próprios não separa os dados e as permissões de um agente dos de outro, e essa separação exige computadores ou contas diferentes.
+Ao avaliar um produto, guardar a conversa, guardar os arquivos e retomar uma execução interrompida são propriedades que precisam ser conferidas separadamente. No Grok Bot, por exemplo, o computador pode ser recriado mantendo o disco, o que preserva arquivos e logins, sem garantia de que uma tarefa em andamento continue do ponto em que parou. Dar a cada agente um nome, um prompt ou uma tela próprios não separa os dados e as permissões de um agente dos de outro, e essa separação exige computadores ou contas diferentes.
 
-## Três falhas do exemplo da fatura
+## Falhas no exemplo da fatura
 
 | Falha | O que precisa existir |
 |---|---|

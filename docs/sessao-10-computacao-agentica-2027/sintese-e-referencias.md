@@ -2,11 +2,11 @@
 
 ## Ideias essenciais
 
-1. **Trabalho delegado concluído.** O trabalho entregue a um agente termina quando o processo aceita o resultado, depois de uma verificação e, quando exigido, da aprovação de uma pessoa, conforme a página [Quatro formas de delegar trabalho à IA](quatro-formas-de-delegar.md#quando-o-trabalho-delegado-termina).
+1. **Trabalho delegado concluído.** O trabalho entregue a um agente termina quando o processo aceita o resultado, depois de uma verificação e, quando exigido, da aprovação de uma pessoa, conforme a página [Formas de delegar trabalho à IA](formas-de-delegar-trabalho.md#quando-o-trabalho-delegado-termina).
 2. **Formas de delegar.** Na resposta assistida a pessoa escolhe o próximo passo, no fluxo de trabalho com IA um programa segue uma sequência fixa, no agente com autonomia delimitada o agente escolhe dentro de limites, e com vários agentes coordenados cada agente cuida de uma parte. Um mesmo processo pode usar formas diferentes em etapas diferentes.
-3. **Tipos de afirmação.** Resultado de estudo, relato de empresa, piloto, anúncio de produto, previsão de analista e hipótese permitem conclusões diferentes e não podem ser somados numa taxa única de adoção, conforme a página [Avaliação de números e promessas sobre agentes](avaliacao-de-numeros-e-promessas.md#seis-tipos-de-afirmacao).
+3. **Tipos de afirmação.** Resultado de estudo, relato de empresa, piloto, anúncio de produto, previsão de analista e hipótese permitem conclusões diferentes e não podem ser somados numa taxa única de adoção, conforme a página [Avaliação de números e promessas sobre agentes](avaliacao-de-numeros-e-promessas.md#tipos-de-afirmacao-sobre-agentes).
 4. **Uso atual de agentes.** No estudo [Measuring Agents in Production](../referencia/bibliografia.md#pan-et-al-measuring-agents-in-production-2026), 68% dos sistemas em uso real executavam no máximo dez passos antes de uma pessoa intervir, e a [avaliação do Google Research](../referencia/bibliografia.md#google-research-towards-a-science-of-scaling-agent-systems-2026) mostrou piora com vários agentes em tarefas em que cada passo depende do anterior.
-5. **Condições das mudanças esperadas.** Agentes que retomam o trabalho depois de falhas precisam de operações idempotentes, que produzem o mesmo efeito se repetidas, informações fornecidas ao agente precisam de origem e validade, e agentes que escrevem código exigem limite de alterações em andamento, conforme a página [Onze mudanças esperadas para 2027 a 2030](mudancas-esperadas-2027-2030.md).
+5. **Condições das mudanças esperadas.** Agentes que retomam o trabalho depois de falhas precisam de operações idempotentes, que produzem o mesmo efeito se repetidas, informações fornecidas ao agente precisam de origem e validade, e agentes que escrevem código exigem limite de alterações em andamento, conforme a página [Mudanças esperadas para 2027 a 2030](mudancas-esperadas-2027-2030.md).
 6. **Assistentes proativos.** Quatro fornecedores lançaram assistentes que agem sem receber pedido entre setembro e outubro de 2026, e o ganho para quem usa ainda não foi medido de forma independente, o que pode ser testado com um piloto de oito a doze semanas.
 7. **Componentes de controle.** Um agente que altera sistemas da empresa precisa de um fluxo de trabalho que guarde o andamento, de um *gateway* que aplique as permissões fora do agente e de um registro das ações, conforme a página [Componentes de um agente que age com controle](componentes-de-um-agente-com-controle.md#funcao-de-cada-componente).
 8. **Custo por resultado aceito.** A métrica inclui supervisão e retrabalho e vem acompanhada de medidas de efeito colateral, e no Experimento C da oficina o custo por resultado caiu cerca de 27% enquanto as reaberturas subiram de 4 para 18 no mês.
@@ -14,7 +14,7 @@
 
 ## Checklist antes de encerrar o curso
 
-- [ ] Sei classificar uma afirmação sobre agentes em um dos seis tipos e formular a pergunta que falta para usá-la numa decisão.
+- [ ] Sei classificar uma afirmação sobre agentes num dos tipos de afirmação e formular a pergunta que falta para usá-la numa decisão.
 - [ ] Sei apontar, para pelo menos quatro das onze mudanças esperadas, a sessão do curso em que pratiquei algo relacionado.
 - [ ] Sei identificar, no desenho de um agente, onde fica o andamento do trabalho, quem autoriza as ações e onde ficam os dados oficiais.
 - [ ] Sei calcular o custo por resultado aceito e escolher a medida de efeito colateral que o acompanha.
@@ -35,7 +35,7 @@ Se duas ou mais respostas forem "ainda não", a releitura de [Avaliação de nú
 
 ## Sinais a acompanhar depois do curso
 
-A tabela lista, para cinco das onze mudanças e para os assistentes proativos, os sinais que confirmam ou enfraquecem cada uma. A equipe pode revisar a tabela a cada trimestre de 2027 para identificar qual dos três cenários da página [Plano de 90 dias para testar um agente](plano-de-90-dias.md#tres-cenarios-de-adocao-ate-2030) está acontecendo.
+A tabela lista, para parte das mudanças esperadas e para os assistentes proativos, os sinais que confirmam ou enfraquecem cada uma. A equipe pode revisar a tabela a cada trimestre de 2027 para identificar qual dos três cenários da página [Plano de 90 dias para testar um agente](plano-de-90-dias.md#cenarios-de-adocao-ate-2030) está acontecendo.
 
 | Mudança | Sinal a acompanhar |
 |---|---|

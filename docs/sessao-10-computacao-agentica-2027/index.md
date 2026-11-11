@@ -10,7 +10,7 @@ Computação agêntica é o uso de agentes de IA, isto é, sistemas que recebem 
 
 ## Conteúdo da sessão
 
-A sessão é a última do curso e tem duas partes, separadas pelo intervalo das 11h.
+A sessão é a última do curso, e o intervalo das 11h separa a parte de análise do mercado da parte de aplicação a um processo.
 
 Na primeira hora, a sessão relaciona o que a equipe construiu nas Sessões 1 a 9 às mudanças esperadas para 2027 a 2030, apresenta um critério para avaliar números e promessas sobre agentes e analisa assistentes que agem sem receber pedido e resultados publicados por empresas.
 
@@ -20,7 +20,7 @@ Na segunda hora, a sessão apresenta os componentes que permitem a um agente agi
 
 Ao final desta sessão, o participante deve ser capaz de:
 
-1. **Distinguir** quatro formas de delegar trabalho a sistemas de IA pelo responsável pela escolha do próximo passo, que pode ser a pessoa, o código ou o agente.
+1. **Distinguir** as formas de delegar trabalho a sistemas de IA pelo responsável pela escolha do próximo passo, que pode ser a pessoa, o código ou o agente.
 2. **Classificar** uma afirmação sobre agentes como resultado de estudo, relato de empresa, piloto, anúncio de produto, previsão de analista ou hipótese.
 3. **Relacionar** as mudanças esperadas para 2027 a 2030 aos artefatos produzidos nas Sessões 1 a 9.
 4. **Identificar**, no desenho de um agente, onde ficam o estado do trabalho, a autorização das ações, os dados oficiais do negócio e a intervenção humana.
@@ -32,25 +32,25 @@ Ao final desta sessão, o participante deve ser capaz de:
 | # | Página | Bloco | Tempo | Resultado esperado |
 |---|---|---|---|---|
 | 1 | [O que cada sessão do curso produziu](o-que-cada-sessao-produziu.md) | Retomada | 8 min | Artefato de cada sessão e mudança de 2027 relacionada a ele |
-| 2 | [Quatro formas de delegar trabalho à IA](quatro-formas-de-delegar.md) | Teoria | 6 min | Quem escolhe o próximo passo em cada forma e quando o trabalho termina |
-| 3 | [Avaliação de números e promessas sobre agentes](avaliacao-de-numeros-e-promessas.md) | Teoria | 9 min | Seis tipos de afirmação aplicados a pesquisas e estudos de 2026 |
-| 4 | [Onze mudanças esperadas para 2027 a 2030](mudancas-esperadas-2027-2030.md) | Teoria | 12 min | O que cada mudança exige para produzir resultado |
-| 5 | [Assistentes que agem sem receber pedido](assistentes-que-agem-sem-pedido.md) | Teoria | 6 min | Quatro produtos lançados em 2026, argumentos a favor e objeções |
+| 2 | [Formas de delegar trabalho à IA](formas-de-delegar-trabalho.md) | Teoria | 6 min | Quem escolhe o próximo passo em cada forma e quando o trabalho termina |
+| 3 | [Avaliação de números e promessas sobre agentes](avaliacao-de-numeros-e-promessas.md) | Teoria | 9 min | Tipos de afirmação aplicados a pesquisas e estudos de 2026 |
+| 4 | [Mudanças esperadas para 2027 a 2030](mudancas-esperadas-2027-2030.md) | Teoria | 12 min | O que cada mudança exige para produzir resultado |
+| 5 | [Assistentes que agem sem receber pedido](assistentes-que-agem-sem-pedido.md) | Teoria | 6 min | Produtos lançados em 2026, argumentos a favor e objeções |
 | 6 | [Resultados publicados por empresas](resultados-publicados-por-empresas.md) | Teoria | 6 min | O que cada número publicado permite concluir |
 | 7 | [Exercícios](exercicios.md) | Prática | 13 min | Exercícios 1 a 7 |
 | | Intervalo às 11:00 | | 5 min | |
 | 8 | [Componentes de um agente que age com controle](componentes-de-um-agente-com-controle.md) | Teoria | 10 min | Função de cada componente e falhas mais comuns |
 | 9 | [Medição do custo e do resultado de um agente](medicao-de-custo-e-resultado.md) | Teoria | 9 min | Custo por resultado aceito e medidas de efeito colateral |
-| 10 | [Plano de 90 dias para testar um agente](plano-de-90-dias.md) | Teoria | 7 min | Fases do piloto e três cenários de adoção |
+| 10 | [Plano de 90 dias para testar um agente](plano-de-90-dias.md) | Teoria | 7 min | Fases do piloto e cenários de adoção |
 | 11 | [Oficina de ferramentas](oficina-de-ferramentas.md) | Prática guiada | 22 min | Ficha de piloto preenchida com o agente e revisada em outra conversa |
 | 12 | [Síntese e referências](sintese-e-referencias.md) | Fechamento | 7 min | Checklist do curso, sinais a acompanhar em 2027 e fontes |
 | | | | **120 min** | |
 
 ## Como conduzir
 
-A página [Avaliação de números e promessas sobre agentes](avaliacao-de-numeros-e-promessas.md) define seis tipos de afirmação, e todos os números citados nas páginas seguintes indicam a qual tipo pertencem. Os produtos citados na sessão aparecem como exemplos da função que desempenham, porque nomes e versões de produtos mudam a cada poucos meses.
+A página [Avaliação de números e promessas sobre agentes](avaliacao-de-numeros-e-promessas.md) classifica as afirmações por tipo, e todos os números citados nas páginas seguintes indicam a qual tipo pertencem. Os produtos citados na sessão aparecem como exemplos da função que desempenham, porque nomes e versões de produtos mudam a cada poucos meses.
 
-A oficina usa a ACME, universidade fictícia já usada nas Sessões 8 e 9, com três processos descritos na própria página da oficina. Os exercícios não usam dado real, credencial real nem documento interno, e a aplicação a um processo da equipe aparece como extensão no fim da oficina, para ser feita no ambiente interno da equipe, sem publicação.
+A oficina usa a ACME, universidade fictícia já usada nas Sessões 8 e 9, com processos descritos na própria página da oficina. Os exercícios não usam dado real, credencial real nem documento interno, e a aplicação a um processo da equipe aparece como extensão no fim da oficina, para ser feita no ambiente interno da equipe, sem publicação.
 
 !!! warning "Limite desta sessão"
     Os resultados de empresas citados nesta sessão foram publicados pelas próprias empresas ou pelos seus fornecedores e não passaram por auditoria independente, e as previsões de analistas descrevem expectativas para datas futuras. Os produtos citados correspondem à documentação consultada em 10/11/2026.

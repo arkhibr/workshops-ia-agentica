@@ -2,7 +2,7 @@
 
 Um assistente proativo é um agente de IA que acompanha, com permissão do usuário, fontes como agenda, e-mail e documentos, guarda o histórico entre conversas e toma a iniciativa de avisar ou agir, por exemplo ao perceber um conflito de agenda ou ao preparar a pauta de uma reunião antes de alguém pedir. A diferença em relação a um assistente comum é o que o usuário entrega: no assistente comum ele faz um pedido de cada vez, e no proativo ele entrega uma responsabilidade contínua, como acompanhar as pendências de um projeto. Quatro fornecedores lançaram produtos desse tipo entre setembro e outubro de 2026, e ainda não há medição independente do ganho obtido por quem os usa.
 
-## Quatro produtos lançados em 2026
+## Produtos lançados em 2026
 
 | Produto | Lançamento | O que o fornecedor descreve | Limite informado |
 |---|---|---|---|
@@ -35,7 +35,7 @@ A objeção sobre o processo usa medidas que voltam nas páginas seguintes: *lea
 
 ![Três faixas em sequência. Oferta observável reúne produtos e capacidades, com Duet, Grok Bot, dots e Muse. Piloto acompanhado dura oito a doze semanas e registra aceites, alertas, falhas e supervisão. Prática sustentável exige comparação com a linha de base, com ganho recorrente, controle e orçamento. Um quadro de alerta lista as hipóteses concorrentes: uso de nicho, abandono, incorporação às suítes e automação simples equivalente.](assets/oferta-e-pratica-sustentavel.png)
 
-Um teste útil acompanha uma única responsabilidade, por exemplo preparar as pautas de reunião de um projeto, durante oito a doze semanas. Antes de começar, a equipe mede como a tarefa é feita sem o assistente, o que se chama linha de base, e define o resultado que justificaria continuar, e durante as semanas de teste registra os cinco itens da lista.
+Um teste útil acompanha uma única responsabilidade, por exemplo preparar as pautas de reunião de um projeto, durante oito a doze semanas. Antes de começar, a equipe mede como a tarefa é feita sem o assistente, o que se chama linha de base, e define o resultado que justificaria continuar, e durante as semanas de teste registra os itens da lista.
 
 - Entregas do assistente aceitas sem correção.
 - Falhas do assistente.

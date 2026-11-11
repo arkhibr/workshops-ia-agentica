@@ -1,10 +1,10 @@
-# Onze mudanças esperadas para 2027 a 2030
+# Mudanças esperadas para 2027 a 2030
 
-Esta página descreve onze mudanças no uso de agentes de IA que fornecedores, consultorias e pesquisadores documentaram até novembro de 2026 e que devem se ampliar entre 2027 e 2030. Um agente de IA, nesta página, é um sistema que recebe um objetivo, escolhe os passos para atingi-lo e usa ferramentas para executá-los. Para cada mudança, a página explica o que muda, cita exemplos de produtos ou estudos e indica o que precisa estar resolvido para que a mudança reduza custo ou prazo no negócio.
+Esta página descreve mudanças no uso de agentes de IA que fornecedores, consultorias e pesquisadores documentaram até novembro de 2026 e que devem se ampliar entre 2027 e 2030. Um agente de IA, nesta página, é um sistema que recebe um objetivo, escolhe os passos para atingi-lo e usa ferramentas para executá-los. Para cada mudança, a página explica o que muda, cita exemplos de produtos ou estudos e indica o que precisa estar resolvido para que a mudança reduza custo ou prazo no negócio.
 
 ![Quatro quadros com as onze tendências. Execução e contexto reúne 4.1 persistência e execução assíncrona, com eventos, checkpoints e retomada, 4.2 contexto, memória e skills, com origem, autorização e validade, e 4.3 identidade e controles externos, com escopo, políticas e credenciais. Integração e processos reúne 4.4 interoperabilidade, com MCP para ferramentas e A2A para agentes, 4.7 processos híbridos, com agentes, regras, APIs e pessoas, e 4.8 multimodalidade e interfaces, com voz, documentos e sistemas legados. Software e economia reúne 4.5 engenharia por delegação, com branch, testes e revisão, 4.6 software temporário, com validade, manutenção e descarte, e 4.9 economia por resultado, com modelos combinados e custo integral. Transações e mundo físico reúne 4.10 comércio e pagamentos, com intenção, autorização e confirmação, e 4.11 ciência e robótica, com hipóteses, simulação e validação física.](assets/onze-tendencias-em-quatro-frentes.png)
 
-O infográfico agrupa as onze mudanças em quatro áreas e as numera de 4.1 a 4.11, e esta página usa a mesma numeração. As áreas podem avançar ao mesmo tempo e não formam uma sequência obrigatória.
+O infográfico agrupa as mudanças por área e as numera de 4.1 a 4.11, e esta página usa a mesma numeração. As áreas podem avançar ao mesmo tempo e não formam uma sequência obrigatória.
 
 ## Agentes que trabalham por mais tempo e com mais informação
 
@@ -16,7 +16,7 @@ O infográfico agrupa as onze mudanças em quatro áreas e as numera de 4.1 a 4.
 
 ## Agentes conectados a outros sistemas e a processos de negócio
 
-**4.4 Padrões para conectar agentes, ferramentas e empresas.** Três padrões abertos reduzem a dependência de um único fornecedor. O MCP (*Model Context Protocol*), usado na Sessão 2, define como um agente se conecta a uma ferramenta ou base de dados. O [A2A](../referencia/bibliografia.md#a2a-project-agent2agent-protocol-documentacao) (*Agent2Agent*) define como dois agentes de sistemas diferentes trocam mensagens. O [AGENTS.md](../referencia/bibliografia.md#agentic-ai-foundation-agentsmd-standard) é um arquivo de instrução padronizado que os agentes de programação leem no início do trabalho. Os três são mantidos pela Agentic AI Foundation, uma fundação sem fins lucrativos, e continuam dependendo de cada sistema conectado para decidir o que o agente pode acessar.
+**4.4 Padrões para conectar agentes, ferramentas e empresas.** O MCP, o A2A e o AGENTS.md são padrões abertos que reduzem a dependência de um único fornecedor. O MCP (*Model Context Protocol*), usado na Sessão 2, define como um agente se conecta a uma ferramenta ou base de dados. O [A2A](../referencia/bibliografia.md#a2a-project-agent2agent-protocol-documentacao) (*Agent2Agent*) define como dois agentes de sistemas diferentes trocam mensagens. O [AGENTS.md](../referencia/bibliografia.md#agentic-ai-foundation-agentsmd-standard) é um arquivo de instrução padronizado que os agentes de programação leem no início do trabalho. Os três são mantidos pela Agentic AI Foundation, uma fundação sem fins lucrativos, e continuam dependendo de cada sistema conectado para decidir o que o agente pode acessar.
 
 **4.7 Processos que combinam agentes, regras fixas, sistemas e pessoas.** Num processo de reembolso, por exemplo, o agente pode ler a solicitação e reunir os comprovantes, uma tabela de regras fixas decide se o reembolso é permitido, um sistema registra o pagamento e uma pessoa trata os casos fora do padrão. Cada etapa recebe a autonomia compatível com a facilidade de conferir o resultado e com o prejuízo de um erro. As tabelas de decisão da [Sessão 4](../sessao-04-regras-formais-com-ia/index.md) são o formato adequado para a etapa de regras fixas.
 
@@ -38,7 +38,7 @@ O infográfico agrupa as onze mudanças em quatro áreas e as numera de 4.1 a 4.
 
 ## Conclusões que as evidências de 2026 não sustentam
 
-As evidências disponíveis até novembro de 2026 não sustentam as cinco conclusões abaixo, comuns em apresentações de fornecedores.
+As evidências disponíveis até novembro de 2026 não sustentam as conclusões abaixo, comuns em apresentações de fornecedores.
 
 - Data confiável para uma inteligência artificial geral ou para a substituição generalizada de profissões.
 - Retorno financeiro garantido pelo aumento do número de agentes.

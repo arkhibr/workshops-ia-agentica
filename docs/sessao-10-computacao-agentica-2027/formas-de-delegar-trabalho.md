@@ -1,4 +1,4 @@
-# Quatro formas de delegar trabalho à IA
+# Formas de delegar trabalho à IA
 
 Um agente de IA é um sistema que recebe um objetivo, escolhe os passos para atingi-lo, usa ferramentas como busca, leitura de arquivos e chamadas a outros sistemas, observa o resultado de cada passo e decide o passo seguinte. O modelo de IA, como Claude ou GPT, é a parte do agente que interpreta texto e propõe a próxima ação, e o restante do agente, chamado no curso de arnês, reúne as instruções, as ferramentas disponíveis, a memória e as regras de execução, como explicado na [Sessão 2](../sessao-02-ambiente-agentico/arnes.md).
 
@@ -6,9 +6,9 @@ Um agente de IA é um sistema que recebe um objetivo, escolhe os passos para ati
 
 O texto [Building Effective Agents](../referencia/bibliografia.md#anthropic-building-effective-agents-2024), publicado pela Anthropic em dezembro de 2024, separa dois tipos de sistema com IA. Num fluxo de trabalho, um programa define a sequência de etapas antes da execução, e o modelo executa cada etapa prevista, por exemplo extrair campos de um documento e depois classificá-lo. Num agente, o modelo escolhe a próxima etapa a cada iteração, dentro de um conjunto de ferramentas autorizadas, por exemplo decidindo se precisa ler outro documento antes de responder.
 
-## As quatro formas
+## Quem escolhe o próximo passo
 
-As quatro formas de delegar trabalho abaixo diferem pelo responsável pela escolha do próximo passo.
+As formas de delegar trabalho da tabela diferem pelo responsável pela escolha do próximo passo, que pode ser a pessoa, um programa ou o próprio agente.
 
 | Forma | Quem escolhe o próximo passo | Exemplo |
 |---|---|---|
@@ -21,7 +21,7 @@ Um mesmo processo pode usar formas diferentes em etapas diferentes. A [Sessão 1
 
 ## Quando o trabalho delegado termina
 
-O trabalho delegado termina quando o processo aceita o resultado, o que acontece depois de uma verificação e, nos casos que exigem, da aprovação de uma pessoa. O infográfico mostra as seis etapas com o exemplo de uma divergência de faturamento, em que o valor cobrado na fatura difere do valor do pedido.
+O trabalho delegado termina quando o processo aceita o resultado, o que acontece depois de uma verificação e, nos casos que exigem, da aprovação de uma pessoa. O infográfico mostra as etapas com o exemplo de uma divergência de faturamento, em que o valor cobrado na fatura difere do valor do pedido.
 
 ![Ciclo de seis etapas do objetivo ao resultado aceito, ilustrado pela investigação de uma divergência de faturamento. A etapa 1, objetivo, recebe a fatura e a divergência, com escopo e critério de aceite. A etapa 2, contexto, reúne contrato e pedido com origem e acesso verificados. A etapa 3, ação, faz consulta e cálculo com ferramentas delimitadas. A etapa 4, verificação, produz proposta e evidências para validar antes de executar. A etapa 5, aprovação, registra a decisão quando exigida, vinculada à proposta. A etapa 6, resultado, entrega correção e comprovante aceitos pelo processo. Uma faixa inferior indica registrar estado, observar o resultado e retomar dentro dos limites.](assets/formas-de-delegacao.png)
 

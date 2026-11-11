@@ -1,6 +1,6 @@
 # Exercícios
 
-Os exercícios desta página usam o conteúdo das cinco páginas de teoria da primeira hora da sessão, sobre formas de delegar trabalho à IA, avaliação de afirmações sobre agentes, mudanças esperadas para 2027 a 2030, assistentes proativos e resultados publicados por empresas. Os exercícios 1 a 7 são feitos no bloco de 13 minutos do roteiro, e os exercícios 8 a 10 ficam para estudo depois do curso.
+Os exercícios desta página usam o conteúdo das páginas de teoria da primeira hora da sessão, sobre formas de delegar trabalho à IA, avaliação de afirmações sobre agentes, mudanças esperadas para 2027 a 2030, assistentes proativos e resultados publicados por empresas. Os exercícios 1 a 7 são feitos no bloco de 13 minutos do roteiro, e os exercícios 8 a 10 ficam para estudo depois do curso.
 
 ## Situação compartilhada
 
@@ -18,9 +18,9 @@ A ACME é uma universidade fictícia, a mesma das Sessões 8 e 9. A equipe de te
 
 ## Recordar
 
-### 1. As quatro formas de delegar trabalho
+### 1. Formas de delegar trabalho
 
-Nomeie as quatro formas de delegar trabalho à IA descritas na página [Quatro formas de delegar trabalho à IA](quatro-formas-de-delegar.md) e indique, para cada uma, quem escolhe o próximo passo.
+Nomeie as formas de delegar trabalho à IA descritas na página [Formas de delegar trabalho à IA](formas-de-delegar-trabalho.md) e indique, para cada uma, quem escolhe o próximo passo.
 
 <details>
 <summary>Gabarito</summary>
@@ -29,9 +29,9 @@ Na resposta assistida, a pessoa lê a resposta da IA e escolhe o que fazer. No f
 
 </details>
 
-### 2. As quatro áreas das mudanças esperadas
+### 2. Áreas das mudanças esperadas
 
-Cite as quatro áreas em que o infográfico da página [Onze mudanças esperadas para 2027 a 2030](mudancas-esperadas-2027-2030.md) agrupa as onze mudanças.
+Cite as áreas em que o infográfico da página [Mudanças esperadas para 2027 a 2030](mudancas-esperadas-2027-2030.md) agrupa as mudanças.
 
 <details>
 <summary>Gabarito</summary>
@@ -68,7 +68,7 @@ Se a aprovação depende de uma etapa feita por poucas pessoas, como a análise 
 
 ### 5. Classificar as frases da apresentação
 
-Classifique cada uma das frases F1 a F7 em um dos seis tipos de afirmação da página [Avaliação de números e promessas sobre agentes](avaliacao-de-numeros-e-promessas.md#seis-tipos-de-afirmacao) e escreva, para cada uma, a pergunta que a equipe da ACME faria ao fornecedor antes de usar a frase numa decisão.
+Classifique cada uma das frases F1 a F7 em um dos tipos de afirmação da página [Avaliação de números e promessas sobre agentes](avaliacao-de-numeros-e-promessas.md#tipos-de-afirmacao-sobre-agentes) e escreva, para cada uma, a pergunta que a equipe da ACME faria ao fornecedor antes de usar a frase numa decisão.
 
 | Código | Tipo de afirmação | Pergunta ao fornecedor |
 |---|---|---|
@@ -94,7 +94,7 @@ Para cada uma das mudanças 4.2 (informação fornecida ao agente), 4.3 (identid
 
 ### 7. Ler um percentual publicado
 
-Aplique as quatro perguntas da página [Resultados publicados por empresas](resultados-publicados-por-empresas.md#quatro-perguntas-antes-de-usar-um-percentual) à frase F3 e registre o que a frase informa e o que ela deixa sem resposta.
+Aplique as perguntas da página [Resultados publicados por empresas](resultados-publicados-por-empresas.md#perguntas-antes-de-usar-um-percentual) à frase F3 e registre o que a frase informa e o que ela deixa sem resposta.
 
 ## Analisar
 
@@ -112,6 +112,6 @@ A diretoria da ACME pergunta se deve contratar um assistente proativo para todos
 
 ### 10. Mudanças a acompanhar em 2027
 
-Escolha três das onze mudanças que tenham relação com o trabalho da sua equipe. Para cada uma, escreva o que precisa estar resolvido antes de um teste e os sinais que confirmariam ou enfraqueceriam a mudança, usando a seção [Sinais a acompanhar depois do curso](sintese-e-referencias.md#sinais-a-acompanhar-depois-do-curso) como modelo.
+Escolha três das mudanças esperadas que tenham relação com o trabalho da sua equipe. Para cada uma, escreva o que precisa estar resolvido antes de um teste e os sinais que confirmariam ou enfraqueceriam a mudança, usando a seção [Sinais a acompanhar depois do curso](sintese-e-referencias.md#sinais-a-acompanhar-depois-do-curso) como modelo.
 
 **Próxima página:** [Componentes de um agente que age com controle](componentes-de-um-agente-com-controle.md).

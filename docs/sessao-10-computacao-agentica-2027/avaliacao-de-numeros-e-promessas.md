@@ -1,8 +1,8 @@
 # Avaliação de números e promessas sobre agentes
 
-Pesquisas de consultoria, anúncios de fornecedores e reportagens sobre agentes de IA publicam afirmações de naturezas diferentes, como respostas a questionários, relatos de clientes escolhidos pelo fornecedor e previsões para os próximos anos. Esta página apresenta seis tipos de afirmação, explica o que cada tipo permite concluir e aplica a classificação a pesquisas das consultorias McKinsey, Gartner e Forrester e a três estudos publicados em 2026.
+Pesquisas de consultoria, anúncios de fornecedores e reportagens sobre agentes de IA publicam afirmações de naturezas diferentes, como respostas a questionários, relatos de clientes escolhidos pelo fornecedor e previsões para os próximos anos. Esta página classifica essas afirmações por tipo, explica o que cada tipo permite concluir e aplica a classificação a pesquisas das consultorias McKinsey, Gartner e Forrester e a estudos publicados em 2026.
 
-## Seis tipos de afirmação
+## Tipos de afirmação sobre agentes
 
 | Tipo | O que é | O que não permite concluir |
 |---|---|---|
@@ -21,7 +21,7 @@ A [Sessão 1](../sessao-01-o-que-mudou/avaliacao-de-modelos.md) aplicou o mesmo 
 
 A McKinsey publicou em agosto de 2026 a pesquisa [The State of AI in 2026](../referencia/bibliografia.md#mckinsey-the-state-of-ai-in-2026-2026), com 1.719 participantes de 97 países. Nas organizações com receita anual acima de US$ 1 bilhão, 40% dos respondentes afirmam usar agentes em escala em pelo menos uma área da empresa, contra 22% nas organizações menores. Na mesma pesquisa, 32% dos respondentes afirmam ter desistido de comprar pelo menos um produto de software porque conseguiram construí-lo com agentes de programação. Os dois números são respostas dos 1.719 participantes, e a McKinsey não conferiu as implantações que eles descreveram.
 
-O Gartner publicou três previsões. A lista de [tendências de tecnologia para 2027](../referencia/bibliografia.md#gartner-top-strategic-technology-trends-for-2027-2026) inclui plataformas para fornecer contexto aos agentes, plataformas para controlar a execução de agentes de programação e identidade própria para agentes nos sistemas da empresa. Uma [previsão de 2025](../referencia/bibliografia.md#gartner-previsao-de-cancelamento-de-projetos-agenticos-2025) estima que mais de 40% dos projetos com agentes serão cancelados até o fim de 2027 por custo alto, valor pouco claro ou controles insuficientes. Uma [análise de 107 casos públicos](../referencia/bibliografia.md#gartner-mastering-agentic-ai-2026) prevê que agentes especializados num assunto responderão por 80% do retorno financeiro mensurável até 2028.
+Entre as previsões do Gartner, a lista de [tendências de tecnologia para 2027](../referencia/bibliografia.md#gartner-top-strategic-technology-trends-for-2027-2026) inclui plataformas para fornecer contexto aos agentes, plataformas para controlar a execução de agentes de programação e identidade própria para agentes nos sistemas da empresa. Uma [previsão de 2025](../referencia/bibliografia.md#gartner-previsao-de-cancelamento-de-projetos-agenticos-2025) estima que mais de 40% dos projetos com agentes serão cancelados até o fim de 2027 por custo alto, valor pouco claro ou controles insuficientes. Uma [análise de 107 casos públicos](../referencia/bibliografia.md#gartner-mastering-agentic-ai-2026) prevê que agentes especializados num assunto responderão por 80% do retorno financeiro mensurável até 2028.
 
 A Forrester publicou o resumo do estudo [The State of Agentic AI, 2026](../referencia/bibliografia.md#forrester-the-state-of-agentic-ai-2026), que associa a dificuldade de ampliar o uso de agentes à coordenação entre agentes, a regras de governança aplicadas automaticamente e à identidade de sistemas que agem sem uma pessoa. Nas [previsões para 2027](../referencia/bibliografia.md#forrester-predictions-2027-2026), a Forrester estima que a IA receberá 20% dos gastos de tecnologia das áreas de negócio em 2027.
 
@@ -33,9 +33,9 @@ A Forrester publicou o resumo do estudo [The State of Agentic AI, 2026](../refer
 | Agentes especializados responderão por 80% do retorno até 2028 | Previsão de analista |
 | IA receberá 20% dos gastos de tecnologia das áreas de negócio em 2027 | Previsão de analista |
 
-As três consultorias recomendam escolher processos cujo resultado possa ser conferido, medir o custo completo do uso de agentes e aplicar os controles durante a operação. Os relatórios completos da Forrester e de parte do Gartner são pagos, e os números desta página vêm dos resumos públicos.
+McKinsey, Gartner e Forrester recomendam escolher processos cujo resultado possa ser conferido, medir o custo completo do uso de agentes e aplicar os controles durante a operação. Os relatórios completos da Forrester e de parte do Gartner são pagos, e os números desta página vêm dos resumos públicos.
 
-## O que três estudos de 2026 mostram
+## Estudos publicados em 2026
 
 O estudo [Measuring Agents in Production](../referencia/bibliografia.md#pan-et-al-measuring-agents-in-production-2026), apresentado na conferência acadêmica ICML em 2026, analisou 20 casos e entrevistou 86 profissionais responsáveis por agentes em uso real, em 26 áreas de atuação. Em 68% dos sistemas, o agente executava no máximo dez passos antes de uma pessoa intervir, e os participantes apontaram a confiabilidade como a principal dificuldade. Os sistemas estudados não representam todas as empresas, mas o resultado indica que o uso atual se concentra em tarefas curtas e fáceis de conferir.
 
@@ -45,8 +45,8 @@ O METR, organização independente que mede a capacidade de modelos de IA, publi
 
 O METR também publica uma medida chamada horizonte de tarefa, que indica a duração das tarefas que um agente completa com 50% de sucesso. Numa [nota de janeiro de 2026](../referencia/bibliografia.md#metr-clarifying-limitations-of-time-horizon-2026), a organização explicou que essa medida não significa que o agente execute com segurança qualquer tarefa daquela duração, porque metade das tentativas ainda falha.
 
-## Três medidas que não se substituem
+## Ganho num caso, nota em benchmark e efeito no processo
 
 O ganho medido num caso isolado, a nota de um modelo num *benchmark* (conjunto padronizado de tarefas usado para comparar modelos) e o efeito do agente no processo completo da empresa são medidas diferentes. Apenas a terceira indica se o uso do agente reduz custo ou prazo para a organização, e por isso é a medida usada no plano de 90 dias desta sessão.
 
-**Próxima página:** [Onze mudanças esperadas para 2027 a 2030](mudancas-esperadas-2027-2030.md).
+**Próxima página:** [Mudanças esperadas para 2027 a 2030](mudancas-esperadas-2027-2030.md).

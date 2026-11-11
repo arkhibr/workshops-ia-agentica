@@ -6,7 +6,7 @@ As Sessões 1 a 9 do workshop trataram do uso de agentes de IA no trabalho de um
 
 | Sessão | Pergunta que a sessão respondeu | O que a equipe passou a ter |
 |---|---|---|
-| [S1 — O que mudou](../sessao-01-o-que-mudou/index.md) | Por que a equipe já usa IA todo dia e o resultado continua desigual? | Três modos de trabalho com IA para escolher conforme a tarefa: pedir código sem especificar (vibe coding), pedir ajuda pontual sobre código existente (assistência de codificação) e escrever a especificação antes de pedir o código (SDD, desenvolvimento guiado por especificação) |
+| [S1 — O que mudou](../sessao-01-o-que-mudou/index.md) | Por que a equipe já usa IA todo dia e o resultado continua desigual? | Modos de trabalho com IA para escolher conforme a tarefa: pedir código sem especificar (vibe coding), pedir ajuda pontual sobre código existente (assistência de codificação) e escrever a especificação antes de pedir o código (SDD, desenvolvimento guiado por especificação) |
 | [S2 — O ambiente agêntico](../sessao-02-ambiente-agentico/index.md) | O que muda quando o time passa a compartilhar um ambiente? | Um arquivo de instrução comum, lido pelo agente no início de cada conversa, a conexão do agente a ferramentas externas pelo MCP (*Model Context Protocol*, protocolo padrão para essa conexão) e o hábito de isolar o trabalho de cada agente num ramo próprio do repositório |
 | [S3 — Exploração e especificação](../sessao-03-exploracao-especificacao/index.md) | Por que um pedido tecnicamente correto ainda produz o sistema errado? | Especificações em que cada requisito é classificado como regra de negócio, requisito funcional (o que o sistema faz) ou requisito não funcional (como o sistema deve se comportar, por exemplo em desempenho) |
 | [S4 — Regras formais com IA](../sessao-04-regras-formais-com-ia/index.md) | Como transformar uma regra espalhada entre prosa e código em um modelo verificável? | Regras de negócio escritas em frases padronizadas e em tabelas de decisão, que listam todas as combinações de condições e o resultado de cada uma |
@@ -18,7 +18,7 @@ As Sessões 1 a 9 do workshop trataram do uso de agentes de IA no trabalho de um
 
 ## Decisão presente em todas as sessões
 
-Todas as sessões tratam da mesma decisão de projeto, que é definir quanto o agente executa sem aprovação humana e que evidência a equipe exige antes de aceitar o resultado dele, como mostram os quatro exemplos da tabela.
+Todas as sessões tratam da mesma decisão de projeto, que é definir quanto o agente executa sem aprovação humana e que evidência a equipe exige antes de aceitar o resultado dele, como mostram os exemplos da tabela.
 
 | Sessão | Como a decisão apareceu |
 |---|---|
@@ -44,4 +44,4 @@ As empresas que adotam agentes tomam essa mesma decisão para processos inteiros
 
 A equipe praticou essas decisões em ferramentas de desenvolvimento de software e em casos fictícios, enquanto as empresas citadas aplicam agentes a processos de negócio completos. A segunda hora desta sessão trata da aplicação a processos de negócio, com os componentes de um agente que age com controle, a medição de custo e resultado e o plano de 90 dias.
 
-**Próxima página:** [Quatro formas de delegar trabalho à IA](quatro-formas-de-delegar.md).
+**Próxima página:** [Formas de delegar trabalho à IA](formas-de-delegar-trabalho.md).
