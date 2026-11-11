@@ -163,6 +163,8 @@ SESSOES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
             "assets/tendencia-pagamentos.png",
             "assets/tendencia-ciencia.png",
             "assets/hype-cycle-ia-2026.png",
+            "assets/tendencia-a2a-copilot-joule.png",
+            "assets/erdos-gemini-2026.png",
         ),
     ),
 }

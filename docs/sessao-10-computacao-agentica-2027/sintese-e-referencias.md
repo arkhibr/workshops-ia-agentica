@@ -103,6 +103,12 @@ A tabela lista, para parte das mudanças esperadas e para os assistentes proativ
 | [Gartner, Hype Cycle for Artificial Intelligence, 2026](../referencia/bibliografia.md#gartner-hype-cycle-for-artificial-intelligence-2026-2026) | Previsão de analista | Mudanças esperadas para 2027 a 2030 |
 | [Pavic, análise do Hype Cycle de 2026](../referencia/bibliografia.md#pavic-gartner-ai-hype-cycle-2026-2026) | Análise secundária | Mudanças esperadas para 2027 a 2030 |
 | [Aislin Consulting, análise do Hype Cycle de 2026](../referencia/bibliografia.md#aislin-consulting-agentic-ai-is-at-the-peak-2026) | Análise secundária | Mudanças esperadas para 2027 a 2030 |
+| [Linux Foundation, balanço do A2A](../referencia/bibliografia.md#linux-foundation-a2a-protocol-surpasses-150-organizations-2026) | Relato da entidade mantenedora | Mudanças esperadas para 2027 a 2030 |
+| [Microsoft, A2A entre Copilot e Joule](../referencia/bibliografia.md#microsoft-sap-on-azure-na-sap-sapphire-2026-2026) | Anúncio de produto | Mudanças esperadas para 2027 a 2030 |
+| [Feng et al., problemas de Erdős com o Gemini](../referencia/bibliografia.md#feng-et-al-semi-autonomous-mathematics-discovery-with-gemini-2026) | Resultado de estudo | Mudanças esperadas para 2027 a 2030 |
+| [Wikipedia, publicação em massa da OpenAI](../referencia/bibliografia.md#wikipedia-openai-bulk-release-of-mathematical-papers-2026) | Fonte terciária | Mudanças esperadas para 2027 a 2030 |
+| [Bloom, mudanças no site dos problemas de Erdős](../referencia/bibliografia.md#bloom-changes-to-the-erdos-problems-web-site-2026) | Relato do mantenedor | Mudanças esperadas para 2027 a 2030 |
+| [Tao, posições sobre IA na matemática](../referencia/bibliografia.md#tao-terence-tao-on-ai-2026) | Análise de especialista | Mudanças esperadas para 2027 a 2030 |
 
 Os relatórios completos da Forrester e de parte do Gartner são pagos, e os números desta sessão vêm dos resumos públicos. Os resultados de empresas não passaram por auditoria independente, e os endereços da documentação de produtos podem mudar depois da consulta de 10/11/2026.
 

@@ -39,6 +39,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Bass, Clements e Kazman — Software Architecture in Practice (2021)](#bass-clements-e-kazman-software-architecture-in-practice-2021)
 - [Beck — Test-Driven Development: By Example (2002)](#beck-test-driven-development-by-example-2002)
 - [Beurer-Kellner et al. — Design Patterns for Securing LLM Agents (2025)](#beurer-kellner-et-al-design-patterns-for-securing-llm-agents-2025)
+- [Bloom — Changes to the Erdős Problems Web Site (2026)](#bloom-changes-to-the-erdos-problems-web-site-2026)
 - [BMW Group — Robôs humanoides (2026)](#bmw-group-robos-humanoides-2026)
 - [Böckeler — Understanding Spec-Driven Development (2025)](#bockeler-understanding-spec-driven-development-2025)
 - [Boehm — Software Engineering Economics (1981)](#boehm-software-engineering-economics-1981)
@@ -61,6 +62,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Diggs et al. — LLMs for Legacy Code Documentation (2024)](#diggs-et-al-llms-for-legacy-code-documentation-2024)
 - [fast-check e FsCheck — Property-Based Testing](#fast-check-e-fscheck-property-based-testing)
 - [Feathers — Working Effectively with Legacy Code (2004)](#feathers-working-effectively-with-legacy-code-2004)
+- [Feng et al. — Semi-Autonomous Mathematics Discovery with Gemini (2026)](#feng-et-al-semi-autonomous-mathematics-discovery-with-gemini-2026)
 - [Ford, Parsons, Kua e Sadalage — Building Evolutionary Architectures (2023)](#ford-parsons-kua-e-sadalage-building-evolutionary-architectures-2023)
 - [Forrester — Predictions 2027 (2026)](#forrester-predictions-2027-2026)
 - [Forrester — The State of Agentic AI (2026)](#forrester-the-state-of-agentic-ai-2026)
@@ -92,6 +94,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [LangChain — Runtime de Deep Agents (2026)](#langchain-runtime-de-deep-agents-2026)
 - [Lee et al. — Impact of Generative AI on Critical Thinking (2025)](#lee-et-al-impact-of-generative-ai-on-critical-thinking-2025)
 - [Lei Complementar 214/2025 — IBS, CBS e Imposto Seletivo](#lei-complementar-2142025-ibs-cbs-e-imposto-seletivo)
+- [Linux Foundation — A2A Protocol Surpasses 150 Organizations (2026)](#linux-foundation-a2a-protocol-surpasses-150-organizations-2026)
 - [Little — A Proof for the Queuing Formula (1961)](#little-a-proof-for-the-queuing-formula-1961)
 - [Luo et al. — An Empirical Analysis of Flaky Tests (2014)](#luo-et-al-an-empirical-analysis-of-flaky-tests-2014)
 - [Magesh et al. — Hallucination-Free? (2025)](#magesh-et-al-hallucination-free-2025)
@@ -107,6 +110,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Microsoft — Ask Microsoft com Copilot Studio (2026)](#microsoft-ask-microsoft-com-copilot-studio-2026)
 - [Microsoft — Entra Agent ID (documentação)](#microsoft-entra-agent-id-documentacao)
 - [Microsoft — IA local no Windows (documentação)](#microsoft-ia-local-no-windows-documentacao)
+- [Microsoft — SAP on Azure na SAP Sapphire 2026 (2026)](#microsoft-sap-on-azure-na-sap-sapphire-2026-2026)
 - [Microsoft — Use Personal Access Tokens in Azure DevOps (documentação)](#microsoft-use-personal-access-tokens-in-azure-devops-documentacao)
 - [Miranda et al. — Monte Carlo para Prever Projetos de Software (2021)](#miranda-et-al-monte-carlo-para-prever-projetos-de-software-2021)
 - [NIST — AI 600-1: Generative Artificial Intelligence Profile (2024)](#nist-ai-600-1-generative-artificial-intelligence-profile-2024)
@@ -154,6 +158,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [StrykerJS e Stryker.NET — Mutation Testing](#strykerjs-e-strykernet-mutation-testing)
 - [Tang et al. — TofuEval (2024)](#tang-et-al-tofueval-2024)
 - [Tantithamthavorn et al. — RovoDev Code Reviewer (2026)](#tantithamthavorn-et-al-rovodev-code-reviewer-2026)
+- [Tao — Terence Tao on AI (2026)](#tao-terence-tao-on-ai-2026)
 - [Temporal — Durable AI (documentação)](#temporal-durable-ai-documentacao)
 - [Trivedy — The Anatomy of an Agent Harness (2026)](#trivedy-the-anatomy-of-an-agent-harness-2026)
 - [UiPath — Maestro Orchestrate (documentação)](#uipath-maestro-orchestrate-documentacao)
@@ -164,6 +169,7 @@ Para configurar os recursos de memória na ferramenta, consulte o [apêndice sob
 - [Wake — INVEST in Good Stories and SMART Tasks (2003)](#wake-invest-in-good-stories-and-smart-tasks-2003)
 - [Wei et al. — Chain-of-Thought Prompting (2022)](#wei-et-al-chain-of-thought-prompting-2022)
 - [Wiegers e Beatty — Software Requirements (2013)](#wiegers-e-beatty-software-requirements-2013)
+- [Wikipedia — OpenAI Bulk Release of Mathematical Papers (2026)](#wikipedia-openai-bulk-release-of-mathematical-papers-2026)
 - [Willison — What is Agentic Engineering (2026)](#willison-what-is-agentic-engineering-2026)
 - [xAI — Grok Bot (documentação)](#xai-grok-bot-documentacao)
 - [Yao et al. — ReAct (2023)](#yao-et-al-react-2023)
@@ -470,6 +476,15 @@ Propõe padrões de projeto para agentes com resistência demonstrável à inje�
 → Sessão 9.
 
 ---
+### Bloom — Changes to the Erdős Problems Web Site (2026)
+
+**BLOOM, Thomas. "Changes to the Erdős problems web site".** Publicado no blog de Terence Tao, 6 out. 2026. <https://terrytao.wordpress.com/2026/10/06/changes-to-the-erdos-problems-web-site/>
+
+Anúncio do mantenedor do site dos problemas de Erdős (1.221 problemas) sobre a retirada dos status de resolvido, das contagens e da linguagem de crédito, porque a principal forma de participação passou a ser a divulgação de provas geradas por IA.
+
+→ Sessão 10.
+
+---
 ### BMW Group — Robôs humanoides (2026)
 
 **BMW GROUP. "Leipzig debut: BMW Group introduces humanoid robots".** 21 set. 2026. <https://www.bmwgroup.com/en/news/general/2026/humanoid-robot-in-leipzig.html>
@@ -664,6 +679,15 @@ Estudo empírico com quatro modelos (Claude 3.0 Sonnet, Llama 3 Instruct 70B, Mi
 Referência para a manutenção de código sem testes. Cunha o termo *characterization test* (teste de caracterização) para o teste que descreve o comportamento real de um trecho de código: o teste é escrito depois do código, e o resultado observado na execução passa a ser a expectativa registrada. Fundamenta a distinção, na Sessão 4, entre o teste que registra o comportamento implementado e o teste de aceitação que verifica a intenção confirmada pelo domínio.
 
 → Sessão 4.
+
+---
+### Feng et al. — Semi-Autonomous Mathematics Discovery with Gemini (2026)
+
+**FENG, Tony et al. "Semi-Autonomous Mathematics Discovery with Gemini: A Case Study on the Erdős Problems".** arXiv:2601.22401, jan. 2026, revisado em fev. 2026. <https://arxiv.org/abs/2601.22401>
+
+Estudo de 24 autores em que o Gemini avaliou 700 problemas de Erdős marcados como abertos. Foram encontradas soluções para 13, das quais 8 já existiam na literatura e 5 eram aparentemente novas. Os autores concluem que o status de aberto vinha mais da falta de atenção do que da dificuldade e alertam para o risco de a IA reproduzir resultados existentes sem citá-los.
+
+→ Sessão 10.
 
 ---
 ### Ford, Parsons, Kua e Sadalage — Building Evolutionary Architectures (2023)
@@ -945,6 +969,15 @@ Institui IBS, CBS e Imposto Seletivo. Os arts. 112, 113, 116, 117, 118 e 124, re
 → Sessão 4.
 
 ---
+### Linux Foundation — A2A Protocol Surpasses 150 Organizations (2026)
+
+**LINUX FOUNDATION. "A2A Protocol Surpasses 150 Organizations, Lands in Major Cloud Platforms, and Sees Enterprise Production Use in First Year".** Comunicado, 9 abr. 2026. <https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year>
+
+Balanço do primeiro ano do protocolo A2A: mais de 150 organizações apoiadoras, integração ao Azure AI Foundry, ao Copilot Studio e ao Amazon Bedrock AgentCore, versão 1.0 da especificação com cartões de agente assinados e uso em produção citado em cadeia de suprimentos, serviços financeiros, seguros e operações de TI, sem clientes nomeados.
+
+→ Sessão 10.
+
+---
 ### Little — A Proof for the Queuing Formula (1961)
 
 **LITTLE, John D. C. "A Proof for the Queuing Formula: L = λW".** *Operations Research*, v. 9, n. 3, p. 383-387, 1961. DOI: [10.1287/opre.9.3.383](https://doi.org/10.1287/opre.9.3.383)
@@ -1076,6 +1109,15 @@ Documentação de identidade e autorização para agentes, com proprietário, es
 **MICROSOFT. "Build with Local AI on Windows".** Documentação, consultada em 10 nov. 2026. <https://developer.microsoft.com/en-us/windows/local-ai>
 
 Documentação do Foundry Local e do Windows ML para executar modelos de IA no próprio computador, usada como exemplo de execução local por restrição de dados.
+
+→ Sessão 10.
+
+---
+### Microsoft — SAP on Azure na SAP Sapphire 2026 (2026)
+
+**MICROSOFT. "Advancing enterprise AI: New SAP on Azure announcements from SAP Sapphire 2026".** Azure Blog, Wael El Kabbany e Hiren Shah, 12 maio 2026. <https://azure.microsoft.com/en-us/blog/advancing-enterprise-ai-new-sap-on-azure-announcements-from-sap-sapphire-2026/>
+
+Anúncio da integração por A2A entre o Microsoft 365 Copilot e o SAP Joule, com o cenário de preparação da avaliação de desempenho no Word usando skills do Joule para o SAP SuccessFactors e agendamento da reunião com o gestor. O anúncio não informa data de disponibilidade nem clientes.
 
 → Sessão 10.
 
@@ -1501,6 +1543,15 @@ Avaliação de um revisor de código com modelo de linguagem feita pela empresa 
 → Sessão 7.
 
 ---
+### Tao — Terence Tao on AI (2026)
+
+**TAO, Terence. "Terence Tao on AI: a living summary".** Página compilada por assistente de IA e revisada por Tao, atualizada em 2 nov. 2026. <https://teorth.github.io/tao-web/ai-views.html>
+
+Resumo das posições de Tao sobre IA na matemática, com a distinção entre Matemática 1.0, baseada na escassez de demonstrações, e Matemática 2.0, em que a IA amplia a fronteira de pesquisa e a resolução de problemas deixa de ser o centro do trabalho, tema da palestra no Caltech em 9 de outubro de 2026. Registra a estimativa de Tao para a taxa de acerto da IA nos problemas de Erdős.
+
+→ Sessão 10.
+
+---
 ### Temporal — Durable AI (documentação)
 
 **TEMPORAL. "Durable AI".** Documentação, consultada em 10 nov. 2026. <https://docs.temporal.io/ai>
@@ -1589,6 +1640,15 @@ Demonstra que solicitar ao modelo que gere uma sequência de passos intermediár
 Referência de mercado em engenharia de requisitos. Organiza requisitos em camadas (requisito de negócio, requisito de usuário, requisito funcional de software) e trata regra de negócio como categoria própria e anterior a essas camadas: uma regra de negócio não é, em si, um requisito de software, porque também rege operação manual. Ela é a origem de onde requisitos funcionais são derivados.
 
 → Sessões 3 e 7.
+
+---
+### Wikipedia — OpenAI Bulk Release of Mathematical Papers (2026)
+
+**WIKIPEDIA. "OpenAI bulk release of mathematical papers".** Consultada em 11 nov. 2026. <https://en.wikipedia.org/wiki/OpenAI_bulk_release_of_mathematical_papers>
+
+Fonte terciária sobre a publicação, em 6 de outubro de 2026, de 722 manuscritos gerados por um modelo interno da OpenAI sobre problemas abertos de 372 temas, com cerca de metade acompanhada de demonstrações em Lean, retirada de 3 manuscritos e revisão de 14, e reações de matemáticos. Usada por reunir as referências do episódio, com a ressalva de ser enciclopédia editável.
+
+→ Sessão 10.
 
 ---
 ### Willison — What is Agentic Engineering (2026)
