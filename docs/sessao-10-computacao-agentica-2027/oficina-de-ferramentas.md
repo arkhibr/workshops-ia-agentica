@@ -1,6 +1,6 @@
 # Oficina de ferramentas
 
-Nesta oficina, cada dupla prepara com o agente a ficha de um piloto de 90 dias para um processo da ACME, a universidade fictícia das Sessões 8 e 9, e depois submete a ficha a uma revisão numa conversa separada. A ficha reúne num só documento o que o curso construiu: o critério de aceite da Sessão 3, a ficha de requisitos da Sessão 8, a ficha de governança da Sessão 9 e a métrica de custo por resultado aceito da página [Métricas e economia](metricas-e-economia.md).
+Nesta oficina, cada dupla prepara com o agente a ficha de um piloto de 90 dias para um processo da ACME, a universidade fictícia das Sessões 8 e 9, e depois pede a revisão da ficha numa conversa separada. Os campos da ficha usam o critério de aceite da Sessão 3, a ficha de requisitos da Sessão 8, a ficha de governança da Sessão 9 e a métrica de custo por resultado aceito da página [Métricas e economia](metricas-e-economia.md).
 
 ## Roteiro sugerido para a sessão
 
@@ -16,7 +16,7 @@ Nesta oficina, cada dupla prepara com o agente a ficha de um piloto de 90 dias p
 
 A oficina usa um agente de linha de comando já configurado na Sessão 2, como Claude Code, Codex CLI ou Gemini CLI, e funciona também numa conversa de chat comum, com a ficha copiada para um arquivo local ao final. Os dados dos três processos e do Experimento C são fictícios, e nenhum experimento usa credencial real ou documento interno da equipe.
 
-## Material de partida: três processos da ACME
+## Três processos da ACME
 
 Os três processos abaixo são fictícios e foram escritos para esta oficina, com números de linha de base inventados. O processo P3 é inspirado no domínio administrativo de projetos de pesquisa e não reproduz regra vigente de nenhuma instituição.
 
@@ -40,9 +40,9 @@ O agente deve abrir a sessão interativa na pasta `oficina-piloto`, ainda vazia.
 
 ## Experimento A: escolher o processo
 
-A dupla escolhe um dos três processos aplicando os quatro critérios de passagem do primeiro mês do [plano de 90 dias](horizontes-e-90-dias.md#o-plano-de-90-dias): resultado observável, responsável pelo processo, acesso viável e volume conhecido. Para o processo escolhido, a dupla anota também qual das [quatro formas de delegação](da-interacao-a-delegacao.md#as-quatro-formas-de-delegacao) se aplica a cada etapa, já que um mesmo processo costuma combinar fluxo de trabalho com IA nas etapas previsíveis e agente com autonomia delimitada nas etapas de investigação.
+A dupla escolhe um dos três processos aplicando os quatro critérios de passagem do primeiro mês do [plano de 90 dias](horizontes-e-90-dias.md#plano-de-90-dias), que são resultado observável, responsável pelo processo, acesso viável e volume conhecido. A dupla anota também qual das [quatro formas de delegação](da-interacao-a-delegacao.md#as-quatro-formas-de-delegacao) se aplica a cada etapa do processo, considerando que etapas previsíveis podem usar fluxo de trabalho com IA e etapas de investigação podem usar agente com autonomia delimitada.
 
-O registro esperado é uma linha por critério, com a informação da tabela de partida que o atende ou com a lacuna que impediria o piloto. No processo P2, por exemplo, o resultado observável depende de definir o que torna uma pauta completa antes de medir.
+O registro esperado é uma linha por critério, com a informação da tabela de partida que o atende ou com a lacuna que impediria o piloto. No processo P2, por exemplo, a dupla precisa definir os itens de uma pauta completa antes de medir o percentual de pautas incompletas.
 
 ## Experimento B: preencher a ficha com o agente
 
@@ -102,13 +102,13 @@ O custo total do piloto é R$ 4.980, somando R$ 900 de inferência, R$ 600 de fe
 
 Na linha de base, 220 conferências de 25 minutos somam cerca de 91,7 horas, ou R$ 7.333 no mês. Com 216 resultados aceitos (220 menos 4 reabertas), o custo por resultado aceito é de cerca de R$ 33,95.
 
-O custo por resultado aceito caiu cerca de 27%, e as reaberturas subiram de 4 para 18 no mês, mais de quatro vezes o valor da linha de base. Pelos critérios do terceiro mês, a ampliação depende de ganho líquido com recuperação funcional, e o aumento das reaberturas indica que o piloto precisa ser corrigido antes de ampliado, com a análise das 18 reaberturas para identificar se a falha está nos casos de avaliação, no contexto entregue ao agente ou na revisão do conferente.
+O custo por resultado aceito caiu cerca de 27%, enquanto as reaberturas subiram de 4 para 18 no mês, 4,5 vezes o valor da linha de base. Pelos critérios do terceiro mês, a decisão é corrigir o piloto antes de ampliá-lo, começando pela análise das 18 reaberturas para identificar se a causa está nos casos de avaliação, no contexto entregue ao agente ou na revisão feita pelo conferente.
 
 </details>
 
 ## Experimento D: revisar a ficha numa conversa separada
 
-A revisão numa conversa que não participou da entrevista aplica o mesmo princípio da retrotradução da [Sessão 4](../sessao-04-regras-formais-com-ia/index.md): quem revisa não conhece as intenções que ficaram fora do texto e por isso encontra as lacunas que a dupla já não enxerga.
+A revisão numa conversa que não participou da entrevista segue o princípio da retrotradução da [Sessão 4](../sessao-04-regras-formais-com-ia/index.md). A nova conversa conhece apenas o texto da ficha, e por isso aponta as informações que a dupla deixou de escrever por considerá-las óbvias.
 
 **Passo 1:** sair do agente, abrir uma nova sessão na mesma pasta e colar o prompt abaixo.
 
@@ -127,7 +127,7 @@ Termine com as três correções que mais reduzem o risco do piloto.
 
 **Passo 2:** comparar os apontamentos com a ficha e registrar, no fim do arquivo `ficha-piloto.md`, quais correções a dupla aceita e quais rejeita, com o motivo de cada rejeição.
 
-O resultado esperado é uma lista de apontamentos em que pelo menos um trata de controle aplicado fora do modelo, o critério de reprovação da [Sessão 9](../sessao-09-governanca-de-skills-e-agentes/controles-e-evidencias.md), e uma seção final com a decisão da dupla sobre cada apontamento.
+O resultado esperado é uma lista de apontamentos com pelo menos um item sobre controle aplicado fora do modelo, conforme o critério da [Sessão 9](../sessao-09-governanca-de-skills-e-agentes/controles-e-evidencias.md), seguida da decisão da dupla sobre cada apontamento.
 
 ## Extensão: transpor para um processo da equipe
 

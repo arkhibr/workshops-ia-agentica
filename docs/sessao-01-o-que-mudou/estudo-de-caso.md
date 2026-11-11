@@ -23,6 +23,6 @@ O caso não tem resposta única e serve para praticar o critério da tabela de [
 
 ## Depois da discussão
 
-Compare a posição a que o grupo chegou com a tabela de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica). A [Sessão 9](../sessao-09-governanca-de-skills-e-agentes/triagem-por-criticidade.md) volta a esse dilema com a triagem por criticidade, que classifica cada skill ou agente numa faixa de risco pelo fator mais grave e registra a decisão na ficha de governança da equipe.
+Compare a posição a que o grupo chegou com a tabela de [Modos de trabalho com IA](modos-de-trabalho.md#quando-cada-modo-se-justifica). A [Sessão 9](../sessao-09-governanca-de-skills-e-agentes/triagem-por-criticidade.md) trata da mesma decisão com a triagem por criticidade, que classifica cada skill ou agente numa faixa de risco pelo fator mais grave e registra a decisão na ficha de governança da equipe.
 
 **Próxima página:** [Oficina de ferramentas](oficina-de-ferramentas.md).

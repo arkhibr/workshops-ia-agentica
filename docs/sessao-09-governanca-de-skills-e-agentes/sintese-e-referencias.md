@@ -92,4 +92,4 @@ O guia do facilitador é material próprio adaptado, sem URL pública, e as afir
 
 ## Conexão com a próxima sessão
 
-A [Sessão 10](../sessao-10-computacao-agentica-2027/index.md) encerra o curso confrontando as práticas das nove sessões com o panorama de computação agêntica para 2027, a partir das leituras de McKinsey, Gartner e Forrester, de estudos empíricos e de casos relatados por empresas. A ficha de governança desta sessão compõe, com a ficha de requisitos da Sessão 8, os campos de faixa de risco, controles e gate da ficha de piloto de 90 dias preparada na oficina da Sessão 10.
+A [Sessão 10](../sessao-10-computacao-agentica-2027/index.md) é a última do curso e relaciona os artefatos das nove sessões às tendências de computação agêntica para 2027, com base nas publicações de McKinsey, Gartner e Forrester, em estudos empíricos e em casos relatados por empresas. Na oficina da Sessão 10, a ficha de governança desta sessão e a ficha de requisitos da Sessão 8 fornecem os campos de controles, faixa de risco e gate da ficha de piloto de 90 dias.

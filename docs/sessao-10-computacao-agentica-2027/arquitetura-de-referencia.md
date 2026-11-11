@@ -1,6 +1,6 @@
 # Arquitetura de referência
 
-Um agente que continua trabalhando depois da conversa precisa de uma arquitetura que preserve o estado do trabalho, restrinja as ações e produza evidência de resultado. Esta página apresenta a arquitetura de referência proposta no relatório [Computação agêntica para 2027 e além](../referencia/bibliografia.md#arkhi-computacao-agentica-para-2027-e-alem-2026), que não corresponde a um produto específico, e a forma como os fornecedores distribuem as mesmas responsabilidades entre seus componentes.
+Esta página apresenta a arquitetura de referência proposta no relatório [Computação agêntica para 2027 e além](../referencia/bibliografia.md#arkhi-computacao-agentica-para-2027-e-alem-2026) para agentes que continuam executando depois que o usuário encerra a conversa. A arquitetura não corresponde a um produto específico, e a segunda seção mostra como seis fornecedores distribuem as mesmas responsabilidades entre os componentes dos seus produtos.
 
 ## Responsabilidades da arquitetura
 
@@ -15,11 +15,11 @@ Um agente que continua trabalhando depois da conversa precisa de uma arquitetura
 | Pessoa responsável | Trata exceções e decisões que excedem a delegação |
 | Observabilidade | Registra ações, resultados e mudanças de estado |
 
-A observabilidade dessa arquitetura se apoia em evidências operacionais, como ações executadas, resultados de ferramentas e mudanças de estado, e dispensa acesso à cadeia de raciocínio interna do modelo. O *gateway* é o mesmo controle aplicado fora do modelo que a [Sessão 9](../sessao-09-governanca-de-skills-e-agentes/controles-e-evidencias.md) distinguiu da instrução textual: a política que ele aplica vale independentemente da resposta do modelo.
+A observabilidade registra as ações executadas, os resultados das ferramentas e as mudanças de estado, sem precisar de acesso ao raciocínio interno do modelo. O *gateway* corresponde ao controle aplicado fora do modelo da [Sessão 9](../sessao-09-governanca-de-skills-e-agentes/controles-e-evidencias.md), cuja política vale independentemente da resposta do modelo.
 
 ## Sessão, arnês e ambiente nos produtos atuais
 
-Os fornecedores de agentes persistentes convergem em quatro responsabilidades: registrar o trabalho, conduzir a execução, oferecer um ambiente de ferramentas e controlar ações. O infográfico usa o termo *harness* do original em inglês, que este curso traduz como arnês desde a [Sessão 2](../sessao-02-ambiente-agentico/arnes.md).
+Os produtos de agentes persistentes analisados no relatório separam quatro responsabilidades, que são registrar o trabalho, conduzir a execução, oferecer o ambiente de ferramentas e controlar as ações. O infográfico usa o termo *harness* do original em inglês, que este curso traduz como arnês desde a [Sessão 2](../sessao-02-ambiente-agentico/arnes.md).
 
 ![Três colunas com responsabilidades e ciclos de vida diferentes. Sessão ou estado reúne histórico de eventos, checkpoint e artefatos e espera persistente, e preserva o trabalho registrado. Harness, que este curso chama de arnês, monta o contexto, chama modelo e ferramentas e observa e continua, conduzindo a execução e aplicando limites. Ambiente reúne código e processos, navegador, arquivos e APIs, e rede e recursos limitados, oferecendo as ferramentas de trabalho. Abaixo, Claude Managed Agents separa sessão, harness e sandbox com contêiner novo por sessão no ambiente gerenciado, Grok Bot usa um computador por usuário compartilhado pelos bots, com telas que não isolam segurança, e LangChain com Temporal oferece execução durável e espera humana. A faixa final cita microVM por sessão na AWS, runtime, sessões e memória no Google e checkpoints na Microsoft.](assets/sessao-arnes-e-ambiente.png)
 
@@ -29,18 +29,26 @@ Os fornecedores de agentes persistentes convergem em quatro responsabilidades: r
 | xAI | No [Grok Bot](../referencia/bibliografia.md#xai-grok-bot-documentacao), cada membro recebe um computador hospedado em que todos os seus bots trabalham, com arquivos e sessões de navegador compartilhados |
 | LangChain | A infraestrutura de Deep Agents separa a lógica que orienta o modelo da camada que mantém *checkpoints*, memória, concorrência e observabilidade |
 | Temporal | O [fluxo de trabalho durável](../referencia/bibliografia.md#temporal-durable-ai-documentacao) mantém coordenação e histórico, chamadas de modelo e ferramentas rodam como *Activities*, e uma decisão humana chega por *Signal* ou *Update* |
-| AWS | O AgentCore oferece uma microVM por sessão nesse modo de execução, com contexto efêmero e armazenamento de sessão para arquivos que sobrevivem a paradas |
+| AWS | O AgentCore oferece uma microVM por sessão nesse modo de execução, com contexto efêmero e armazenamento de sessão para arquivos que permanecem disponíveis depois de uma parada |
 | Google e Microsoft | A Gemini Enterprise Agent Platform separa runtime, sessões e banco de memória, e o Microsoft Agent Framework salva o estado em *checkpoints* e pausa ferramentas que exigem aprovação |
 
-Três propriedades parecidas precisam ser distinguidas ao avaliar um produto: persistir uma conversa, preservar arquivos e recuperar uma execução interrompida. No Grok Bot, por exemplo, a recriação controlada do computador preserva o disco, o que recupera arquivos e logins sem garantir que um processo em andamento retome do ponto anterior. Nome, prompt ou tela próprios não constituem isolamento técnico, e responsabilidades que exigem fronteira entre dados ou privilégios precisam de uma implantação que imponha essa separação.
+Na avaliação de um produto, persistir a conversa, preservar os arquivos e recuperar uma execução interrompida são propriedades diferentes, que precisam ser verificadas uma a uma. No Grok Bot, a recriação controlada do computador preserva o disco e recupera arquivos e logins, sem garantia de que um processo em andamento continue do ponto em que parou. Um nome, um prompt ou uma tela próprios não isolam dados nem privilégios, e esse isolamento exige uma implantação que separe os ambientes.
 
 ## O exemplo da fatura com aprovação
 
-No cenário ilustrativo do relatório, um agente recebe uma divergência de faturamento, consulta contrato e pedido, produz uma proposta de correção e aguarda aprovação. O histórico registra evidências, decisões e resultados das ferramentas, o arnês decide a próxima consulta ou verificação, o ambiente oferece navegador, arquivos e APIs, o fluxo de trabalho durável registra a decisão pendente e retoma quando ela chega, e a ferramenta de negócio verifica a permissão e usa uma chave idempotente antes de registrar a correção.
+No cenário do relatório, um agente recebe uma divergência de faturamento, consulta o contrato e o pedido, prepara uma proposta de correção e aguarda aprovação, com os componentes da arquitetura nos papéis da tabela.
 
-Três falhas mostram por que cada componente é necessário. Se o ambiente de ferramentas falhar, os recursos precisam ser restaurados e os dados pertinentes recuperados. Se a aprovação levar dois dias, o estado pendente precisa sobreviver à espera. Se a resposta da API se perder depois de uma correção bem-sucedida, a retomada precisa consultar o resultado ou reutilizar a chave da operação, e uma máquina virtual persistente, sozinha, não resolve nenhuma das três situações.
+| Componente | Papel no cenário da fatura |
+|---|---|
+| Histórico da sessão | Registra evidências, decisões e resultados das ferramentas |
+| Arnês | Decide a próxima consulta ou verificação |
+| Ambiente | Oferece navegador, arquivos e APIs |
+| Fluxo de trabalho durável | Registra a decisão pendente e continua a execução quando a aprovação chega |
+| Ferramenta de negócio | Verifica a permissão e usa uma chave idempotente antes de registrar a correção |
 
-## Modos de falha a tornar visíveis
+O relatório descreve três falhas desse cenário. Se o ambiente de ferramentas falhar, os recursos precisam ser restaurados e os dados recuperados. Se a aprovação levar dois dias, o estado pendente precisa ficar gravado durante esse período. Se a resposta da API se perder depois de uma correção bem-sucedida, a retomada precisa consultar o resultado ou reutilizar a chave da operação para não registrar a correção duas vezes. O relatório observa que manter uma máquina virtual persistente não resolve nenhuma das três falhas, porque nenhuma delas depende apenas da preservação do ambiente.
+
+## Modos de falha
 
 | Modo de falha | Exemplo | Resposta de engenharia |
 |---|---|---|
@@ -51,8 +59,14 @@ Três falhas mostram por que cada componente é necessário. Se o ambiente de fe
 | Cadeia de suprimentos comprometida | Uma skill introduz comandos indevidos | Revisão, testes, distribuição controlada e revogação |
 | Critério de sucesso inadequado | Maximizar tickets fechados piora a resolução real | Resultado de negócio com a reabertura como contramétrica |
 
-A seleção se apoia no caso do Nubank, no [OWASP Top 10 para aplicações agênticas](../referencia/bibliografia.md#owasp-top-10-for-agentic-applications-2026) e na [iniciativa de padrões para agentes do NIST](../referencia/bibliografia.md#nist-ai-agent-standards-initiative-2026), lançada em fevereiro de 2026, que não equivale a uma certificação de agentes. Os dois primeiros modos de falha correspondem à instrução escondida no documento e à permissão maior que a finalidade, dois dos três incidentes estudados em [Riscos de agentes](../sessao-09-governanca-de-skills-e-agentes/riscos-de-agentes.md), na Sessão 9.
+A tabela foi montada a partir do caso do Nubank, do [OWASP Top 10 para aplicações agênticas](../referencia/bibliografia.md#owasp-top-10-for-agentic-applications-2026) e da [iniciativa de padrões para agentes do NIST](../referencia/bibliografia.md#nist-ai-agent-standards-initiative-2026), lançada em fevereiro de 2026 e sem valor de certificação de agentes. Os dois primeiros modos de falha correspondem à instrução escondida no documento e à permissão maior que a finalidade, dois dos três incidentes estudados em [Riscos de agentes](../sessao-09-governanca-de-skills-e-agentes/riscos-de-agentes.md), na Sessão 9.
 
-A unidade de engenharia passa a incluir uma execução identificável, com estado, permissões, orçamento e evidência de conclusão. O desenho dessa execução responde a cinco perguntas: o que sobrevive à falha do ambiente, onde ficam arquivos e credenciais, como uma pessoa intervém, quais ações podem ser repetidas e como interromper ou revogar a delegação.
+Segundo o relatório, cada execução de agente passa a ter identificador, estado, permissões, orçamento e evidência de conclusão próprios, e o desenho dela responde às perguntas abaixo.
+
+- Que dados permanecem disponíveis depois de uma falha do ambiente?
+- Onde ficam os arquivos e as credenciais?
+- Em que ponto e de que forma uma pessoa intervém?
+- Quais ações podem ser repetidas sem efeito duplicado?
+- Como a delegação é interrompida ou revogada?
 
 **Próxima página:** [Métricas e economia](metricas-e-economia.md).

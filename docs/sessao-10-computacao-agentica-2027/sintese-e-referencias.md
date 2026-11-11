@@ -2,15 +2,15 @@
 
 ## Ideias essenciais
 
-1. **A unidade de delegação passa a ser a tarefa concluída e aceita.** Computação agêntica designa sistemas que escolhem ações, operam ferramentas, observam resultados e ajustam a execução para um objetivo, e a delegação se completa quando o processo aceita o resultado, conforme a página [Da interação à delegação](da-interacao-a-delegacao.md#o-ciclo-do-objetivo-ao-resultado-aceito).
-2. **As quatro formas de delegação diferem pelo responsável pelo próximo passo.** Resposta assistida, fluxo de trabalho com IA, agente com autonomia delimitada e sistema com múltiplos agentes convivem no mesmo processo, e a escolha de cada etapa segue o princípio de simplicidade da Sessão 1.
-3. **Pesquisa, caso relatado, piloto, capacidade de produto, previsão e hipótese têm alcances diferentes.** A página [Evidência e previsão](evidencia-e-previsao.md#seis-tipos-de-afirmacao) mostra por que somar esses tipos numa taxa única de maturidade produz um número sem significado.
-4. **A produção atual delega unidades curtas e verificáveis.** Na amostra de [Measuring Agents in Production](../referencia/bibliografia.md#pan-et-al-measuring-agents-in-production-2026), 68% dos sistemas executavam no máximo dez passos antes de intervenção humana, e a [avaliação do Google Research](../referencia/bibliografia.md#google-research-towards-a-science-of-scaling-agent-systems-2026) encontrou degradação com múltiplos agentes em tarefas sequenciais.
-5. **Cada uma das onze tendências tem uma condição crítica.** Execução persistente exige idempotência, memória exige origem e validade, identidade exige critério de negócio, e engenharia por delegação exige limite de trabalho em andamento e medida de tempo até a mudança aceita, conforme a página [Tendências para 2027 a 2030](tendencias-2027-2030.md).
-6. **A convergência de produtos de assistentes proativos está mais demonstrada do que o ganho econômico sustentado.** O teste proposto acompanha a mesma responsabilidade por oito a doze semanas, com entregas aceitas, alertas descartados, minutos de supervisão e gasto total.
-7. **A arquitetura separa estado, arnês, ambiente, autorização e sistema de registro.** Persistir conversa, preservar arquivos e recuperar uma execução são propriedades diferentes, e a autorização fica num *gateway* que o modelo não altera, como descreve a página [Arquitetura de referência](arquitetura-de-referencia.md#responsabilidades-da-arquitetura).
-8. **O custo por resultado aceito inclui supervisão e retrabalho e vem acompanhado de contramétricas.** No Experimento C da oficina, o custo por resultado aceito caiu cerca de 27% enquanto as reaberturas subiram de 4 para 18 no mês, e a decisão correta foi corrigir o piloto antes de ampliá-lo.
-9. **O plano de 90 dias condiciona cada passagem à evidência do processo.** Linha de base no primeiro mês, execução delimitada no segundo e comparação no terceiro, com a decisão de ampliar, corrigir ou interromper tomada pela liderança a partir dos dados.
+1. **Delegação concluída.** O relatório considera a delegação concluída quando o processo aceita o resultado, depois da verificação e, quando exigida, da aprovação de uma pessoa, conforme a página [Formas de delegação de trabalho](da-interacao-a-delegacao.md#etapas-ate-o-resultado-aceito).
+2. **Formas de delegação.** Resposta assistida, fluxo de trabalho com IA, agente com autonomia delimitada e sistema com múltiplos agentes diferem pelo responsável pela escolha do próximo passo, e um mesmo processo pode usar formas diferentes em etapas diferentes.
+3. **Tipos de afirmação.** Resposta de pesquisa, caso relatado, piloto, anúncio de produto, previsão de analista e hipótese têm alcances diferentes e não podem ser somados numa taxa única de maturidade, conforme a página [Evidência e previsão](evidencia-e-previsao.md#seis-tipos-de-afirmacao).
+4. **Delegação em produção.** Na amostra de [Measuring Agents in Production](../referencia/bibliografia.md#pan-et-al-measuring-agents-in-production-2026), 68% dos sistemas executavam no máximo dez passos antes de uma intervenção humana, e a [avaliação do Google Research](../referencia/bibliografia.md#google-research-towards-a-science-of-scaling-agent-systems-2026) registrou piora com vários agentes em tarefas sequenciais.
+5. **Condição de cada tendência.** Execução persistente exige idempotência, memória exige origem e validade, identidade exige critério de negócio, e engenharia por delegação exige limite de trabalho em andamento e medição do tempo até a mudança aceita, conforme a página [Tendências para 2027 a 2030](tendencias-2027-2030.md).
+6. **Assistentes proativos.** Quatro fornecedores lançaram produtos entre setembro e outubro de 2026, e ainda não há medição independente de ganho econômico, que o relatório propõe testar com um piloto de oito a doze semanas.
+7. **Componentes da arquitetura.** A arquitetura de referência separa estado, arnês, ambiente, *gateway* de autorização e sistema de registro, conforme a página [Arquitetura de referência](arquitetura-de-referencia.md#responsabilidades-da-arquitetura).
+8. **Custo por resultado aceito.** A métrica inclui supervisão e retrabalho e é acompanhada de contramétricas, e no Experimento C da oficina o custo caiu cerca de 27% enquanto as reaberturas subiram de 4 para 18 no mês.
+9. **Plano de 90 dias.** O plano mede a linha de base no primeiro mês, executa com escopo delimitado no segundo e compara os resultados no terceiro, quando a liderança decide ampliar, corrigir ou interromper.
 
 ## Checklist antes de encerrar o curso
 
@@ -35,7 +35,7 @@ Se duas ou mais respostas forem "ainda não", a releitura de [Evidência e previ
 
 ## Depois do curso
 
-O relatório registra sinais que confirmam ou enfraquecem as tendências, e a equipe pode revisá-los a cada trimestre de 2027 para decidir se o cenário base, o de aceleração ou o de adoção restrita está se confirmando.
+O relatório registra, para cinco tendências e para os assistentes proativos, os sinais que confirmam ou enfraquecem cada uma. A equipe pode revisar a tabela a cada trimestre de 2027 para identificar qual dos três cenários da página [Cenários e plano de 90 dias](horizontes-e-90-dias.md#tres-cenarios) está se confirmando.
 
 | Tendência | Sinal a acompanhar |
 |---|---|
@@ -48,7 +48,7 @@ O relatório registra sinais que confirmam ou enfraquecem as tendências, e a eq
 
 ## Fundamentação
 
-A sessão parte do relatório [Computação agêntica para 2027 e além](../referencia/bibliografia.md#arkhi-computacao-agentica-para-2027-e-alem-2026), com corte em 10/11/2026, e cita diretamente as fontes primárias que o relatório usa em cada argumento.
+A sessão usa como fonte principal o relatório [Computação agêntica para 2027 e além](../referencia/bibliografia.md#arkhi-computacao-agentica-para-2027-e-alem-2026), com corte em 10/11/2026, e cita diretamente as fontes primárias que o relatório usa em cada argumento.
 
 | Fonte | Tipo de afirmação | Onde é usada |
 |---|---|---|
@@ -96,4 +96,10 @@ Os relatórios integrais da Forrester e alguns do Gartner são comerciais, e o r
 
 ## Conexão com as sessões anteriores
 
-Esta sessão encerra o workshop retomando as nove anteriores pela mesma pergunta: o que o agente pode decidir sozinho, com que contexto e com qual evidência de resultado. O arnês e o erro composto da [Sessão 2](../sessao-02-ambiente-agentico/index.md) reaparecem na arquitetura de referência e na confiabilidade do processo, a especificação e as regras formais das [Sessões 3](../sessao-03-exploracao-especificacao/index.md) e [4](../sessao-04-regras-formais-com-ia/index.md) reaparecem nos critérios de aceite e nos passos determinísticos dos processos híbridos, o teste antes do código da [Sessão 6](../sessao-06-spec-kit-aprofundado/index.md) reaparece na validação que a engenharia por delegação pressiona, e a ficha de requisitos da [Sessão 8](../sessao-08-skills-e-agentes/index.md) e a ficha de governança da [Sessão 9](../sessao-09-governanca-de-skills-e-agentes/index.md) compõem os campos da ficha de piloto de 90 dias preparada na oficina.
+| Sessão | Uso nesta sessão |
+|---|---|
+| [Sessão 2](../sessao-02-ambiente-agentico/index.md) | O arnês e o cálculo do erro composto aparecem na arquitetura de referência e na confiabilidade do processo |
+| [Sessões 3](../sessao-03-exploracao-especificacao/index.md) e [4](../sessao-04-regras-formais-com-ia/index.md) | A especificação e as regras formais correspondem aos critérios de aceite e aos passos determinísticos dos processos híbridos |
+| [Sessão 6](../sessao-06-spec-kit-aprofundado/index.md) | O teste antes do código é uma das verificações determinísticas da avaliação de agentes |
+| [Sessão 8](../sessao-08-skills-e-agentes/index.md) | A ficha de requisitos define ferramentas e permissões no campo de controles da ficha de piloto |
+| [Sessão 9](../sessao-09-governanca-de-skills-e-agentes/index.md) | A ficha de governança define a faixa de risco e o gate no campo 8 da ficha de piloto |
